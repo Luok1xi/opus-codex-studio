@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+  "commit": "7ed2c3e9c46c880c9780fbce49266e7edfa15141",
+  "license": "MIT",
+  "mode": "template-subset",
+  "files": [
+    {
+      "source": ".claude/docs/templates/milestone-definition.md",
+      "installed": "studio/vendor/ccgs/milestone-definition.md",
+      "sha256": "ecdef4e53c02ea9ee954ae0124291fcd9bd3627ef6a444a4fc7878587a101251"
+    },
+    {
+      "source": ".claude/docs/templates/narrative-character-sheet.md",
+      "installed": "studio/vendor/ccgs/narrative-character-sheet.md",
+      "sha256": "b40bb1cb386727a9c506cbbd76f037990e4461315554e0f78f896f0195cc79e2"
+    },
+    {
+      "source": ".claude/docs/templates/test-plan.md",
+      "installed": "studio/vendor/ccgs/test-plan.md",
+      "sha256": "56e330553c0d7d32f807d9174947ad55ee174eb3f1fabc2d7d5529f1bfdc4377"
+    },
+    {
+      "source": "LICENSE",
+      "installed": "studio/vendor/ccgs/LICENSE",
+      "sha256": "6ecc068715c0edffc4bc21e5dca450803e0a45af145f72221da23d14e7588359"
+    }
+  ]
+}

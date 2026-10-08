@@ -1,0 +1,20 @@
+{
+  "schema_version": 2,
+  "project": "codex-opus-studio",
+  "timezone": "Asia/Shanghai",
+  "mode": "manual-file-handoff",
+  "lead": "claude-opus",
+  "codex_role": "on-request-support",
+  "roles": [
+    "creative-owner",
+    "claude-opus",
+    "codex"
+  ],
+  "automatic_model_calls": false,
+  "hooks_enabled": false,
+  "github_actions_enabled": false,
+  "auto_merge": false,
+  "assignment_file": "production/OPUS_TO_CODEX.md",
+  "report_file": "production/CODEX_TO_OPUS.md",
+  "board_file": "production/BOARD.md"
+}
