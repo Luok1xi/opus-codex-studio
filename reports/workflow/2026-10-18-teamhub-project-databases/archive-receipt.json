@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "repository": "Luok1xi/opus-codex-studio",
+  "visibility": "private",
+  "verified_commit": "b533d0295f934a3ac23d4219d2df346f9b7a9214",
+  "verified_at_utc": "2026-10-18 09:45:56 UTC",
+  "verification": "All 17 allowlisted remote files exactly matched prepared UTF-8 content; main head matched the commit.",
+  "files": [
+    {
+      "path": "schemas/teamhub-v1.sql",
+      "ok": true,
+      "blob_sha": "c1d67706b4991e946a2635d13be80ad615b864cd"
+    },
+    {
+      "path": "tools/studio_runtime/__init__.py",
+      "ok": true,
+      "blob_sha": "d51a4b57e3f163d8934d17c021be563674f50d68"
+    },
+    {
+      "path": "tools/studio_runtime/teamhub.py",
+      "ok": true,
+      "blob_sha": "25612d3ba127b02758df97506eab40281f2a4418"
+    },
+    {
+      "path": "tools/teamdb.py",
+      "ok": true,
+      "blob_sha": "bee949e7833f875540baf74078e789f07fc7349c"
+    },
+    {
+      "path": "tools/teamhub_partition.py",
+      "ok": true,
+      "blob_sha": "1c1d4c8930ecc5f1a5b4478ad5885703642c7526"
+    },
+    {
+      "path": "tests/test_teamhub.py",
+      "ok": true,
+      "blob_sha": "3c7e21ceabec5ab0763686a10805f9f6d94b05d4"
+    },
+    {
+      "path": "tests/test_teamhub_partition.py",
+      "ok": true,
+      "blob_sha": "743e0efdea110d156f5fac357006cf719c6ea50b"
+    },
+    {
+      "path": "tests/test_teamdb_cli.py",
+      "ok": true,
+      "blob_sha": "25a1fdcadcefa263e4239771897001ee948bdbab"
+    },
+    {
+      "path": "docs/TEAMHUB.md",
+      "ok": true,
+      "blob_sha": "ad1fc0d3ee451516f67c86fa812c9c1a32320dd0"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-teamhub-project-databases/review.json",
+      "ok": true,
+      "blob_sha": "be45c08b25826428aafd1bff8573d6c1fd37bb11"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-teamhub-project-databases/review.md",
+      "ok": true,
+      "blob_sha": "f594b9a2fbd2219e7de105f8113a68231aefcdc7"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-teamhub-project-databases/evidence.json",
+      "ok": true,
+      "blob_sha": "b9da9a744facd30a3674fe440b27434a450d6137"
+    },
+    {
+      "path": "AGENTS.md",
+      "ok": true,
+      "blob_sha": "b9f784c4aaf9bdafcfec4178ab0840faf8751c48"
+    },
+    {
+      "path": "CLAUDE.md",
+      "ok": true,
+      "blob_sha": "c21dbcf770e7adac130bd01da6b72582bb406eae"
+    },
+    {
+      "path": "reports/workflow/README.md",
+      "ok": true,
+      "blob_sha": "9d1c739b172792e7f9ad920fcfe2724ede96e563"
+    },
+    {
+      "path": "reports/workflow/IMPROVEMENTS.md",
+      "ok": true,
+      "blob_sha": "9d43263f64152c6150cdc1d44a5181c3ae69f7e1"
+    },
+    {
+      "path": ".gitignore",
+      "ok": true,
+      "blob_sha": "f68e9e760b6a4d88baff604b76b747395ea58344"
+    }
+  ],
+  "measurement_cutoff": "2026-10-18T09:43:55.405142+00:00",
+  "post_cutoff_to_verification_seconds": 120.595,
+  "acceptance": {
+    "physical_projects": 7,
+    "reconciled_project_rows": 1628,
+    "final_clean_source_tests": 21,
+    "deepseek_read": "verified via actual CLI",
+    "deepseek_ack": "pending; nested Windows sandbox write/ACL blocked",
+    "opus_ack": "pending; no actual live receipt"
+  },
+  "excluded": [
+    "live databases",
+    "backups or exports",
+    "raw sessions and reasoning",
+    "credentials",
+    "unrelated staged bridge work"
+  ]
+}
