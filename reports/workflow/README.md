@@ -1,0 +1,10 @@
+# 每轮工作流复盘
+
+Owner 要求自 2026-10-18 起执行。每轮一份可读报告和结构化数据；规则见 [WORKFLOW_REVIEW](../../docs/WORKFLOW_REVIEW.md)，建议进度见 [IMPROVEMENTS](IMPROVEMENTS.md)。
+
+| 轮次 | 结论 | 数据 |
+|---|---|---|
+| [2026-10-18 智能车源码研究](2026-10-18-smartcar-research/review.md) | 发现有价值的复核问题；无同条件基线，净提效未证实 | [JSON](2026-10-18-smartcar-research/review.json)、[遥测](2026-10-18-smartcar-research/evidence.json) |
+| [2026-10-18 建立复盘流程](2026-10-18-workflow-review-setup/review.md) | 本轮建立记录和校验，尚不能证明未来收益 | [JSON](2026-10-18-workflow-review-setup/review.json) |
+
+原始聊天/推理、会话日志、凭据和完整项目源码不进入本目录。`null`为未知，不能解释为零。token数为调用累计处理量，缓存输入是其子集，不代表实付账单。

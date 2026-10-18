@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "round_id": "YYYY-MM-DD-task-name",
+  "task_summary": "填写本轮目标",
+  "workflow_version": "填写工作流版本或提交",
+  "started_at": null,
+  "measurement_cutoff_at": null,
+  "quality": {
+    "status": "unverified",
+    "acceptance": ["填写验收条件"],
+    "completed": [],
+    "remaining": []
+  },
+  "metrics": [
+    {"name": "真实token", "value": null, "unit": "tokens", "basis": "未获取同口径usage，不能用字符数代替"},
+    {"name": "实际费用", "value": null, "unit": "currency", "basis": "没有账单证据"}
+  ],
+  "observations": [],
+  "recommendations": [],
+  "evidence": [],
+  "comparison": null,
+  "limits": ["必须填写未验证事项和数据缺失"]
+}
