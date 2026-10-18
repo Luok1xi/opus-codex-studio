@@ -1,0 +1,11 @@
+{
+  "round_id": "YYYY-MM-DD-task-name",
+  "summary": "本成员本轮负责的目标与完成情况",
+  "completed": [],
+  "remaining": [],
+  "evidence": ["可核对的产物、测试或回执引用"],
+  "metrics": [
+    {"name":"实际耗时","value":null,"unit":"秒","basis":"有计时证据才填写"},
+    {"name":"实际用量","value":null,"unit":"tokens","basis":"没有提供方usage就保持null"}
+  ]
+}

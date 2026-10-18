@@ -1,5 +1,7 @@
 # TeamHub：统一入口，每项目独立数据库
 
+工作流自身的成员报告、效率分析与改进依据使用独立的 **WORKFLOW-STUDIO** 项目库，完整规则见 [WORKFLOW_DATABASE.md](WORKFLOW_DATABASE.md)。业务项目资料仍分别保留在各自数据库。
+
 统一入口位于 `F:/TeamHub`，日常命令使用 `F:/TeamHub/teamdb.py`。每个项目有自己的数据库文件，成员围绕同一个项目库协作。总目录 `catalog.json` 只记录项目代码、名称和数据库路径等元数据，不保存来源正文、任务、交接或其他业务数据。
 
 ```text

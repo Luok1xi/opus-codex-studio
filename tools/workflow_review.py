@@ -5,6 +5,7 @@ import json
 import math
 from pathlib import Path
 import re
+import sqlite3
 
 
 def timestamp(value):
@@ -113,12 +114,28 @@ def render(data):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('record', type=Path)
+    parser.add_argument('--record-db', action='store_true', help='Save the validated report and improvements in WORKFLOW-STUDIO')
+    parser.add_argument('--actor', choices=('codex','opus','dsh'))
+    parser.add_argument('--source-project')
+    parser.add_argument('--evidence', type=Path, help='Sanitized aggregate evidence JSON to retain in the database')
     args = parser.parse_args()
     try:
         data = json.loads(args.record.read_text(encoding='utf-8-sig'))
         output = render(data)
         destination = args.record.with_suffix('.md')
         destination.write_text(output, encoding='utf-8')
-        print(json.dumps(analyse(data), ensure_ascii=False))
-    except (ValueError, KeyError, TypeError, OSError) as exc:
+        result=analyse(data)
+        if args.record_db:
+            if not args.actor or not args.source_project:
+                raise ValueError('--record-db requires --actor and --source-project')
+            if __package__:
+                from .workflow_db import record, PROJECT, TeamHub, resolve_database
+            else:
+                from workflow_db import record, PROJECT, TeamHub, resolve_database
+            result['database_receipt']=record(TeamHub(resolve_database(project=PROJECT)),data,
+                author=args.actor,submitted_by=args.actor,kind='analysis',source_project=args.source_project,
+                provenance=str(args.record.resolve()),
+                evidence=json.loads(args.evidence.read_text('utf-8-sig')) if args.evidence else None)
+        print(json.dumps(result, ensure_ascii=False))
+    except (ValueError, KeyError, TypeError, OSError, sqlite3.Error) as exc:
         parser.exit(1, str(exc) + '\n')
