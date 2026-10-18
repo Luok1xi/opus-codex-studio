@@ -4,3 +4,7 @@
 Opus 主导设计、写作和程序，在 production/OPUS_TO_CODEX.md 分派明确任务。
 每项任务写清目标、允许修改的文件、验收标准和依赖，在 BOARD.md 协调进度。
 核对 Codex 的交付与证据后接入。用户保留最终决定权。
+
+## Shared project database
+Current coordination uses the per-project TeamHub database. Read [docs/TEAMHUB.md](docs/TEAMHUB.md), configure the local catalog, then use tools/teamdb.py projects, context and inbox for the current project. Every project must have a separate database file. Production handoff files remain historical evidence and artifact links; current handoff bodies and recipient acknowledgements live in that project's database. Do not ask the owner to relay routine pasted files.
+Default roles: dsh collects/deduplicates/classifies evidence; codex implements/tests/integrates and maintains the database; opus designs and independently reviews/accepts. Current owner assignments take precedence. Never acknowledge for another agent. Use stable write keys and expected revisions. Role labels are not authentication. Never commit live databases, backups, exports, credentials or raw sessions.

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "measurement_cutoff": "2026-10-18T09:43:55.405142+00:00",
+  "functional": {
+    "projects": 7,
+    "reconciled_scoped_rows": 1628,
+    "context_chars": 8580,
+    "context_utf8_bytes": 8884,
+    "context_read_ms_median": 2.1022000000812113,
+    "context_read_ms_max": 2.6158000000577886,
+    "samples": 10,
+    "scope": "in-process repeated local category context, excludes interpreter startup/model runtime; not matched speedup baseline"
+  },
+  "checks": {
+    "earlier_full_suite": {
+      "tests": 87,
+      "passed": 87,
+      "seconds": 18.452,
+      "scope": "before final catalog hardening; see final clean-package suite"
+    },
+    "final_clean_source_package": {
+      "tests": 21,
+      "passed": 21,
+      "seconds": 12.402,
+      "scope": "only allowlisted standalone TeamHub source, no unpublished bridge dependencies"
+    },
+    "real_database_integrity_checks": 7,
+    "legacy_write_denial_triggers": 63,
+    "deepseek_handoff_read": "actual official CLI read succeeded",
+    "deepseek_ack": "pending; write was blocked by nested Windows sandbox",
+    "opus_ack": "pending; no live Opus reply this round"
+  },
+  "coordination": {
+    "native_codex_worker": 1,
+    "deepseek_premodel_bootstrap_failure": 1,
+    "deepseek_answered_calls": 3,
+    "deepseek_cli_roundtrip_ms": [
+      33578,
+      10984,
+      24921
+    ],
+    "opus_model_calls": 0,
+    "native_worker_context": "short task card with paths; no full-history fork"
+  },
+  "rework": {
+    "defects_fixed": [
+      "explicit SQLite connection closing",
+      "idempotent duplicate receipt field",
+      "catalog duplicate-path and multi-project target rejection",
+      "ambiguous category left unclassified",
+      "prepare activation files and recheck CLI hash before freezing"
+    ],
+    "deployment_recovery": "Windows replace denied twice; no reimport; all partitions rechecked against consistent backup; backed-up entry contents written and reread, catalog activated last",
+    "unresolved": "DeepSeek nested sandbox write/ACL grant; no unsafe sandbox weakening or impersonated acknowledgement"
+  },
+  "source_files": [
+    {
+      "path": "schemas/teamhub-v1.sql",
+      "sha256": "d6c1d605cbb0277b8761c320b94fad34a48f4533b11a90641b9d17994d4932e0"
+    },
+    {
+      "path": "tools/studio_runtime/__init__.py",
+      "sha256": "673ad466db3fb92f7aafa0c10f31a64de44f8def468e9bd169ef5cb71dfcfd91"
+    },
+    {
+      "path": "tools/studio_runtime/teamhub.py",
+      "sha256": "0cfe310fb8f029e1676d26fc37fe947271a0b40772e29e5d362401e52a34d92d"
+    },
+    {
+      "path": "tools/teamdb.py",
+      "sha256": "759d2670365fa04b9919a2129dfbae182ff5a961cd26ec282877d9fce4eff5d2"
+    },
+    {
+      "path": "tools/teamhub_partition.py",
+      "sha256": "34d9ff090f7389bd278c31392fd90d02b082d6663ae19c413853f7a34d56d399"
+    },
+    {
+      "path": "tests/test_teamhub.py",
+      "sha256": "7ea13b56a23942445861adff0e12f62e8b4499bee56879553cc9f2b58c1ac236"
+    },
+    {
+      "path": "tests/test_teamhub_partition.py",
+      "sha256": "397ef1cda6fcb7ccb255a3481539298356044dfaf91bfe1537f58e28780f8a03"
+    },
+    {
+      "path": "tests/test_teamdb_cli.py",
+      "sha256": "54e2ee5d9518e2d732858835bc0ba2cb702317ecd4b7b36cd587796b3d7f39d6"
+    },
+    {
+      "path": "docs/TEAMHUB.md",
+      "sha256": "b30a25c7c07b5683d05588c8c54c645d4079e70e9e834eef7932dd6d2ab208a5"
+    }
+  ],
+  "privacy": "No live database, backup, export, original source material, raw sessions, model reasoning, credential or personal chat uploaded."
+}
