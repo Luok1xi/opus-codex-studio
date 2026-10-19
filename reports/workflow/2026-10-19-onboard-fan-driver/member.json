@@ -1,0 +1,85 @@
+{
+  "round_id": "2026-10-19-onboard-fan-driver",
+  "summary": "核实已购有刷风机是否还需额外驱动，并纠正物料说明不完整。",
+  "completed": [
+    "用户确认已购95元有刷风机整套",
+    "直接核对厂家两版原理图，确认板载风机驱动",
+    "纠正套内无独立驱动不等于整车缺驱动，暂不追加采购"
+  ],
+  "remaining": [
+    "风机额定电压、电流与整板允许负载未确认"
+  ],
+  "metrics": [
+    {
+      "name": "原生独立核验代理",
+      "value": 1,
+      "unit": "agent",
+      "basis": "限定原理图核对，未递归委派"
+    },
+    {
+      "name": "外部模型新调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "交接数据库不等于Opus已回复"
+    },
+    {
+      "name": "核验原理图版本",
+      "value": 2,
+      "unit": "versions",
+      "basis": "两版第5页直接渲染目视核验"
+    },
+    {
+      "name": "代理工具运行耗时",
+      "value": 10.3,
+      "unit": "seconds",
+      "basis": "代理自报工具耗时合计，不是墙钟或节省时间"
+    },
+    {
+      "name": "人工澄清",
+      "value": 1,
+      "unit": "answer",
+      "basis": "用户确认实际下单SKU"
+    },
+    {
+      "name": "本地上下文读取参数错误",
+      "value": 1,
+      "unit": "attempt",
+      "basis": "context误用category-code后改为category"
+    },
+    {
+      "name": "不必要大输出",
+      "value": 1,
+      "unit": "attempt",
+      "basis": "文本搜索误包含生成模型JSON，结果截断；后续使用文件清单定点读取"
+    },
+    {
+      "name": "网页打开失败",
+      "value": 1,
+      "unit": "attempt",
+      "basis": "厂家仓库网页超时，以现有原理图核验"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整提供方usage"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "复核活跃耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未独立计时"
+    }
+  ],
+  "evidence": [
+    "Local manufacturer motherboard V1.0 and V1.1 schematics page 5 inspected by native reviewer.",
+    "User confirmed purchased kit identity.",
+    "Project handoff marker ONBOARD-FAN-DRIVER-20261019"
+  ]
+}
