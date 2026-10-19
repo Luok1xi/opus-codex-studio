@@ -4,13 +4,15 @@
   "completed": [
     "核对明确的控制模块分享范围与原始工程占位接口",
     "确认引脚文件已存在，实际配置版本仍须提供者确认",
-    "为用户准备仅涉及配置和输入语义的询问措辞"
+    "为用户准备仅涉及配置和输入语义的询问措辞",
+    "同目标源码展示补充：改用ADS打开工程，GBK中文注释经屏幕核对正常；未改源文件、未烧录。"
   ],
   "remaining": [],
   "evidence": [
     "Original supplied package checked locally for pin header, input symbol declaration, consumers and empty camera branch.",
     "Sharing-scope statements checked locally; no private dialogue or source uploaded.",
-    "Current project peer messages read; only a bounded technical summary is handed back."
+    "Current project peer messages read; only a bounded technical summary is handed back.",
+    "Viewer rework: initial VS Code encoding mismatch corrected by opening project resources in ADS with existing GBK preference. PID comment at line 141 visually verified. Improvement: check source encoding and intended IDE before opening; no matched efficiency baseline."
   ],
   "metrics": [
     {
@@ -54,6 +56,12 @@
       "value": null,
       "unit": "seconds",
       "basis": "未单独连续计时"
+    },
+    {
+      "name": "源码展示补充耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未连续计时，不能并入前述核对窗口；GUI验证及归档开销未独立测量"
     }
   ]
 }
