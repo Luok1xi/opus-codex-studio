@@ -1,0 +1,37 @@
+{
+  "round_id": "2026-10-19-ningxia-integration",
+  "core_checks": 322,
+  "safety_checks": 38,
+  "cascade_checks": 237,
+  "cascade_fail_before": 16,
+  "cascade_fail_after": 0,
+  "input_boundaries": "passed under undefined-behavior checking",
+  "port_scenarios": 18,
+  "simulation": {
+    "scenes_per_mode": 9,
+    "modes": [
+      "direct",
+      "cascade"
+    ],
+    "baseline_pass": [
+      9,
+      9
+    ],
+    "candidate_pass": [
+      9,
+      9
+    ],
+    "maximum_deviation_regression": false,
+    "hardware": false
+  },
+  "ads": {
+    "errors": 0,
+    "warnings": 0,
+    "build_ms": 2377,
+    "source_hashes_match": 25,
+    "rom_bytes": 79656,
+    "ram_bytes": 116584
+  },
+  "installed_changed_files": 12,
+  "flashed": false
+}
