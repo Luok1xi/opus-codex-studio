@@ -1,0 +1,84 @@
+# 2026-10-19-original-source-optimization 工作流复盘
+
+纠正将参考方案重写为自有框架的偏差，核对原码差异，直接在原队源码上制作两个最小等价精简补丁，并建立原样目标工程。
+
+**结论：证据不足：没有合格的同条件基线，不能判断净提效。**
+
+未建立；单轮观察或单次配对不能证明普遍因果收益。
+
+- 工作流：TeamHub original-source baseline + scoped native audits + original/candidate equivalence + Opus review
+- 验收状态：partial
+- 开始：2026-10-19T08:19:58.047Z
+- 测量截止：2026-10-19T08:47:36.347Z
+- 墙钟秒数：1658.3
+- 合格配对耗时变化（%）：None
+
+## 实测数据
+
+| 指标 | 值 | 单位 | 口径 |
+|---|---:|---|---|
+| 原生子任务 | 3 | agents | PID原码审查、视觉原码审查、ADS基线构建；非三个Opus会话 |
+| 本轮生产算法源码新增行 | 0 | lines | 宁夏pid.h删除2行，海大maze.c删除4行，构建配置另计 |
+| 本轮生产算法源码删除行 | 6 | lines | 两个独立补丁，相对各自原码 |
+| PID有效域等价观察 | 28000 | observations | 原始pid.c直接编译；完整控制trace字节一致 |
+| PID主机对象节省 | 8120 | bytes | 五个对象20500到12380；不是整车或CPU加速 |
+| 视觉主机代码节省 | 32 | bytes | GCC9.2 -O2无插桩无LTO maze.o text6960到6928；不是TC264实测 |
+| 架构方向返工 | 1 | corrections | 用户明确要求原码主体，前一版参考后重写需降为试验台 |
+| 全部失败工具调用 | 未知 | calls | 存在WSL名猜测、CLI子命令猜测、git所有权、CRLF解析及ADS headless问题，未做全树同口径聚合 |
+| 协调等待 | 未知 | seconds | 与编译和审查交叠，未独立连续计时 |
+| 实际模型用量 | 未知 | tokens | 未收到完整提供方usage |
+| 实际费用 | 未知 | currency | 无账单 |
+| 复核归档阶段耗时 | 417.22 | seconds | 自进入报告准备阶段至截止墙钟，含并行等待目标构建；不是纯活跃复核耗时，后续上传另计 |
+| TC264实际RAM节省 | 8120 | bytes | 同配置完整ADS链接MAP/elfsize；PID五实例各减少1624B |
+| 目标ROM变化 | 0 | bytes | 两次实际输出均61022B |
+| 完整目标构建 | 2 | builds | 原始Debug配置，各166单元；3.018s与2.670s只是构建日志，不能推断程序或工作流加速 |
+
+## 验收条件
+
+- 指出上一版真实变化，不把重写称为原码微调
+- 固定两队原始文件和来源，候选补丁可逐行追溯
+- 保留PID公式、参数、时序；原版与候选同输入结果一致
+- 与真实Opus分工，公开未经目标硬件验证的边界
+
+## 已完成
+
+- 逐函数核对PID公式、时序、单位和差速变化，确认上一版属于重写
+- 宁夏候选只删pid.h两条未用声明，原pid.c未改变；引用扫描覆盖595份源文件
+- 28000条状态/输出及4项原行为探针一致，主机PID对象节省8120B
+- 海大候选44份code文件只改maze.c删除4行无用读取；28组1600帧及12002单行用例字节一致
+- 独立复跑两套等价检查通过；无插桩主机视觉对象代码缩小32B
+- 收到真实Opus交接27并确认分工，两个补丁经数据库29交其复核
+- ADS原版/候选各166单元全量构建均0错误0警告；目标RAM51549→43429B，ROM均61022B；新工程仅pid.h两行变化，ADS显示名称变化单列
+
+## 未完成
+
+- 新补丁Opus独立验收尚待回执
+- 完整视觉链路、硬件适配和已知原码缺陷修复尚未完成，未烧录或实车测量
+
+## 收益与损耗观察
+
+- 本轮提供局部质量和资源收益证据；没有匹配任务/环境/验收的工作流对照，不声明净提效。
+- 上一版将参考后重写与直接原码优化混淆，造成真实方向返工。新的基线hash与6行删除使改动可审计。
+- 复用原码和现成测试输入，避免另写一套算法来验证自己；同时标出局部视觉harness不含原始自适应阈值链路。
+- 主机调用次数减少不等于MCU执行时间减少；额外无插桩对象检查只支持特定主机编译配置下的代码缩小。
+- 新任务接到真实Opus回复；本地工作者不冒充Opus，完整视觉主体由Opus维护，Codex提交小补丁供其审阅。
+- 已有GUI构建证据未立即复用，headless环境试探增加开销；父代理也猜错WSL发行名和数据库子命令，需保存并复用确切入口。
+
+## 修改建议及下一轮验收
+
+- **WF-SOURCE-BASELINE-20261019 [adopted]** 凡用户要求基于某队源码改，先记录原码提交/hash和原行为；每个候选必须有相对原码的补丁，参考后重写不能标为移植。；负责人：codex；下次检查：下一轮核对每个修改能否回溯到原函数，公式或单位变化须显式分离
+- **WF-RESOURCE-CLAIMS-20261019 [adopted]** 将源码精简、对象RAM/ROM、目标CPU周期和实车圈速分别记录，不跨指标宣称加速。；负责人：codex；下次检查：下一轮目标map/计时与host数据分别列出，未知值保持null
+- **WF-VERIFIED-ENTRY-20261019 [proposed]** 构建及复跑优先使用已成功的工具入口、发行版和CLI schema，遇到Workbench缺失不重复试headless。；负责人：codex；下次检查：核对下一轮入口类失败次数和额外环境排查耗时
+
+## 证据
+
+- Local immutable snapshots, patch files and complete equivalent output traces retained in the authorized project.
+- Project database handoffs 26/28/29 sent to Opus; actual reply 27 read and acknowledged.
+- Only sanitized aggregate workflow evidence is archived; no private source, chats, firmware or live database.
+- Target artifact b171221833a90b4cc2537798bd161878ec3b0d55388c95c442b8a5981e5b92d0; project handoff30 carries target results.
+
+## 限制
+
+- 没有实车数据，不证明可以直接高速运行，也没有圈速提升结论。
+- 原码已知越界和硬件引脚冲突未被小精简补丁自动解决。
+- 目标全工程与原码局部host验证是不同验收门槛。
