@@ -1,0 +1,19 @@
+{
+  "round_id": "2026-10-19-optimization-headroom",
+  "production_changes": 0,
+  "new_target_builds": 0,
+  "new_hardware_tests": 0,
+  "new_replays": 0,
+  "private_source_or_chats_uploaded": false,
+  "actual_opus_messages": 2,
+  "actual_peer_csv_scenes": 7,
+  "actual_peer_csv_frames_per_set": 400,
+  "peer_reported_frames_unconfirmed": 806,
+  "csv_files_byte_equal": true,
+  "hash_fingerprint_not_full_output_bytes": true,
+  "pid_smaller_ki_candidate_bytes": 4000,
+  "pid_unused_table_payload_bytes": 10400,
+  "candidates_implemented": false,
+  "target_runtime_or_race_speedup": null,
+  "workflow_baseline": null
+}
