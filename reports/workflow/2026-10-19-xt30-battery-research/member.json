@@ -1,0 +1,108 @@
+{
+  "round_id": "2026-10-19-xt30-battery-research",
+  "summary": "核对逐飞缩微车加有刷负压后的XT30电池：通用备选检索后按用户纠正收窄为原厂配套。",
+  "completed": [
+    "整理14个普通2S XT30型号候选及7个暂缓型号",
+    "分别记录精确型号、长宽高、标称重量和原始规格页",
+    "比较主选550mAh与450mAh长条的容量重量差，并核对旧模型电池占位",
+    "国内搜索取得淘宝落地线索但明确未核原始item与配送",
+    "按用户纠正定向查逐飞，发现3S300mAh11.4V XT30商品线索；取消只按2S搜索与原主选的定版状态。",
+    "读取逐飞演示文章正文和已有机械BOM证据，未把搜索索引视为已确认整车适配。"
+  ],
+  "remaining": [
+    "逐飞3S商品原始item、店铺身份、重量倍率、北京配送未核实；淘宝详情遇到滑块。",
+    "3S是否适合已购130有刷风机及当前整套供电仍需规格证据。",
+    "实际整车电流、压降、温升、重量和装配留到样车测试；用户无需现在量未安装的电池槽。"
+  ],
+  "metrics": [
+    {
+      "name": "原生研究子任务",
+      "value": 2,
+      "unit": "agents",
+      "basis": "厂家规格与国内入口分工"
+    },
+    {
+      "name": "外部模型新调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "本轮未调用Opus或DeepSeek；数据库交接不等于验收"
+    },
+    {
+      "name": "普通2S候选",
+      "value": 14,
+      "unit": "models",
+      "basis": "结构化本地候选数据，不代表实车适配通过"
+    },
+    {
+      "name": "暂缓型号",
+      "value": 7,
+      "unit": "models",
+      "basis": "高压版本或规格矛盾分列"
+    },
+    {
+      "name": "厂家规格代理墙钟",
+      "value": 42,
+      "unit": "seconds",
+      "basis": "代理记录05:00:41至05:01:23UTC；非节省时间"
+    },
+    {
+      "name": "国内入口代理墙钟",
+      "value": 156,
+      "unit": "seconds",
+      "basis": "代理记录05:01:03至05:03:39UTC；非节省时间"
+    },
+    {
+      "name": "收件箱命令返工",
+      "value": 1,
+      "unit": "attempt",
+      "basis": "不支持summary参数，去掉后读取成功"
+    },
+    {
+      "name": "主回复前已验收国内完整购买链接",
+      "value": 0,
+      "unit": "links",
+      "basis": "淘宝落地页不算原始item或配送验收"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整提供方usage"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "复核活跃耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未独立计时；归档墙钟另记"
+    },
+    {
+      "name": "用户纠正研究范围",
+      "value": 1,
+      "unit": "rework",
+      "basis": "从通用FPV与未装车尺寸问题收窄至逐飞疯狂电路配套；原2S前提漏掉3S商品线索"
+    },
+    {
+      "name": "定向子任务墙钟",
+      "value": 124,
+      "unit": "seconds",
+      "basis": "05:08:35至05:10:39UTC；不能折算节省"
+    },
+    {
+      "name": "本轮测量截止墙钟",
+      "value": 1066.642,
+      "unit": "seconds",
+      "basis": "含网页等待、用户 steering 与返工，归档回读另计"
+    }
+  ],
+  "evidence": [
+    "Structured candidate inventory validated locally; only aggregate research metrics archived.",
+    "Project handoff marker XT30-BATTERIES-20261019",
+    "Manufacturer product pages directly inspected; no private order screenshots uploaded."
+  ]
+}
