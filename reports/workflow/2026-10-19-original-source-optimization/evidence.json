@@ -53,6 +53,13 @@
       30
     ]
   },
-  "workflow_speedup": null
+  "workflow_speedup": null,
+  "same_board_correction": {
+    "at": "2026-10-19T08:56:59.111Z",
+    "reason": "用户纠正同芯片同主板；重读原始私聊后撤回由源码引脚差异推定必须迁移的结论。",
+    "verified": "原control.h与新工程完全相同；暂定接线约定不代表实物。",
+    "action": "修正文档、交接31告知Opus；未改固件、引脚或硬件。",
+    "timing_seconds": 234.283
+  }
 }
 
