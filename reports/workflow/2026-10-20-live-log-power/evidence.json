@@ -1,0 +1,24 @@
+{
+  "round_id": "2026-10-20-live-log-power",
+  "complete_rows": 36,
+  "serial_read_sessions": 3,
+  "serial_bytes_written": 0,
+  "time_regressions_observed": 0,
+  "source_changed": false,
+  "root_cause_confirmed": false,
+  "project_handoff": 91,
+  "coordination_handoff": 88,
+  "owner_power_state_captured": true,
+  "private_archive_verification": "Recorded separately after readback",
+  "blinking_resolved_owner_confirmed": true,
+  "frame_acquisition_restored": true,
+  "replacement_battery_voltage_mv_range": [
+    11674,
+    11683
+  ],
+  "replacement_battery_fps_range": [
+    49,
+    50
+  ],
+  "prior_handoff": 90
+}
