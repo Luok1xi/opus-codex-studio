@@ -1,0 +1,69 @@
+{
+  "round_id": "2026-10-20-camera-only",
+  "summary": "实际修改并调试暗图；Owner随后要求替换为仅看画面的纯摄像头程序。",
+  "completed": [
+    "独立候选中加入曝光读回，实测发现原厂驱动按帧时序限幅；60和120请求均读回相同实际值。",
+    "全量编译和三次实际烧录均成功，最终按Owner新指令替换为纯摄像头采集及串口传图应用。",
+    "最终映像不包含运行中的速度PID、IMU初始化和蓝牙处理；保留原工程与候选改前文件。",
+    "沿用Owner现有网站，确认CAMERA-ONLY启动标记、新帧及实际曝光450和900读回；未把预览工具初始值当作实测。"
+  ],
+  "remaining": [
+    "暗图尚未证明解决；未完成清晰可用画面的最终视觉验收。",
+    "网页出现过一次不完整图像；纯摄像头版不采集控制和电压字段，现有页面这些字段显示缺省异常。",
+    "最后发现与Opus发生并发烧录覆盖；已停止Codex硬件操作并在项目库交还执行权，尚未收到回执。"
+  ],
+  "metrics": [
+    {
+      "name": "开始至测量截止",
+      "value": 2931.018854,
+      "unit": "seconds",
+      "basis": "实际开始至最终核对截止，包含等待、返工、目标收窄与冲突发现；不能归因于有效工作时间。"
+    },
+    {
+      "name": "成功烧录并校验",
+      "value": 3,
+      "unit": "operations",
+      "basis": "Flasher三份Pass日志，分别1784、1564、1168ms。"
+    },
+    {
+      "name": "原生子代理",
+      "value": 2,
+      "unit": "workers",
+      "basis": "复用独立构建和代码审核者；不冒充Opus。"
+    },
+    {
+      "name": "最终构建",
+      "value": 2.824,
+      "unit": "seconds",
+      "basis": "实际ADS全量编译日志；0 errors，11条既有warnings。"
+    },
+    {
+      "name": "最终ROM",
+      "value": 33530,
+      "unit": "bytes",
+      "basis": "camera-only MAP汇总。"
+    },
+    {
+      "name": "最终RAM",
+      "value": 48666,
+      "unit": "bytes",
+      "basis": "camera-only MAP汇总。"
+    },
+    {
+      "name": "提供方token和费用",
+      "value": null,
+      "unit": "unknown",
+      "basis": "无同口径账单或usage；不得用工具输出token估算。"
+    },
+    {
+      "name": "协调、返工及复盘单独耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "没有全程分离计时；不得填0。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "provenance": "Codex coordinator; native build/review replies; Opus official-example handoff inspected late; hardware handback not acknowledged."
+}
