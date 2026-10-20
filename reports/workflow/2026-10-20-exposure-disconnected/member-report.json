@@ -1,0 +1,61 @@
+{
+  "round_id": "2026-10-20-exposure-disconnected",
+  "summary": "核查实际曝光是否已调整并尝试实车接入；Owner确认尚未重新连接，实测被设备缺席阻断。",
+  "completed": [
+    "确认最近上车旧版本没有运行时曝光命令；磁盘新版本不能冒充车上版本。",
+    "一次COM6连接返回设备不存在，Owner明确确认未接回。",
+    "独立审核给出最小曝光及读回适配范围，发现停车保护缺口；未擅自混入其他相机配置。"
+  ],
+  "remaining": [
+    "尚未调整曝光，黑图未解决。",
+    "等待硬件重新接回；之后绑定可调曝光固件并完成前后图像和寄存器验证。"
+  ],
+  "metrics": [
+    {
+      "name": "开始至截止",
+      "value": 252.445,
+      "unit": "seconds",
+      "basis": "实际时钟，含Owner答复等待。"
+    },
+    {
+      "name": "实车连接尝试",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "COM6不存在，未重试。"
+    },
+    {
+      "name": "实车曝光写入",
+      "value": 0,
+      "unit": "operations",
+      "basis": "未建立串口连接。"
+    },
+    {
+      "name": "固件修改或烧录",
+      "value": 0,
+      "unit": "operations",
+      "basis": "本轮只检查候选和准备最小适配建议。"
+    },
+    {
+      "name": "原生独立审核",
+      "value": 1,
+      "unit": "workers",
+      "basis": "复用现有审核者，无递归派发。"
+    },
+    {
+      "name": "模型用量及费用",
+      "value": null,
+      "unit": "unknown",
+      "basis": "无提供方账单或同口径usage。"
+    },
+    {
+      "name": "协调及复盘开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未分离测量。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "provenance": "Codex report; bounded native review actually received; Opus current firmware handoff inspected."
+}
