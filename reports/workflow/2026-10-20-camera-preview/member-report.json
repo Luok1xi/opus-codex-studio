@@ -1,0 +1,91 @@
+{
+  "round_id": "2026-10-20-camera-preview",
+  "summary": "检查摄像头异常；按用户纠正后的需求接通电脑连续监看窗口。",
+  "completed": [
+    "读取同伴新供电状态和白纸测试记录。",
+    "复用已存在抓图工具，第一次成功收到完整188x120灰度图，原始像素与PNG同时保留。",
+    "本次RAW与同伴白纸测试RAW的SHA256相同；独立显示核验确为规则灰度图样。",
+    "处理约49–50帧/秒与115200串口传输约1.96秒/幅的瓶颈分开解释。",
+    "找到并直接启动已有cam_view工具，COM6连续监看窗口已置前；两次真实窗口截图帧号70→439，图像内容变化，约2.0秒/幅。",
+    "现有PNG编码、统计、Tk显示与放大自检在真实桌面环境通过。",
+    "独立审核确认梯度来自原串口，之后同伴完整重启后的新图变黑；不将过时图样当当前图。",
+    "项目handoff92已登记连续监看占用COM6；同伴实际在此期间烧回较旧固件，已核对最新现场说明。"
+  ],
+  "remaining": [
+    "黑图原因仍未确定；2秒/幅连续监看不等于流畅视频，需后续固件和传输端共同提速。",
+    "现有工具显示的曝光/增益初始值不是实车读回值；当前旧固件也未实现调整命令。",
+    "同伴handoff92回执未到；今后任何其他串口采集需先关闭本窗口。"
+  ],
+  "metrics": [
+    {
+      "name": "观察区间",
+      "value": 948.931,
+      "unit": "seconds",
+      "basis": "实际开始至此截止，包括上下文压缩与用户中途要求直接看图。"
+    },
+    {
+      "name": "实际抓图",
+      "value": 1,
+      "unit": "frames",
+      "basis": "现成工具首次成功，22560字节；串口序号68613。"
+    },
+    {
+      "name": "抓图工具耗时",
+      "value": 2.4141,
+      "unit": "seconds",
+      "basis": "exec实际wall_time，包括进程及文件写入，不等于纯链路时长。"
+    },
+    {
+      "name": "生产文件修改或烧录",
+      "value": 0,
+      "unit": "operations",
+      "basis": "仅采集原图和诊断交接。"
+    },
+    {
+      "name": "已观察工具失败",
+      "value": 3,
+      "unit": "calls",
+      "basis": "不存在的DB列查询；tool_search入口不支持后用ALL_TOOLS发现；显示自检沙箱缺Tcl路径，在实际桌面权限环境复测通过。"
+    },
+    {
+      "name": "原生审核者",
+      "value": 1,
+      "unit": "workers",
+      "basis": "复用已有独立审查者，限定原图来源和测试图样寄存器。"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无同口径提供方usage。"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "协调等待和重复工作",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独测量，外部Opus已有同类检查，通过共享文件复用。"
+    },
+    {
+      "name": "复盘归档开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "归档完成后在回执记录。"
+    },
+    {
+      "name": "确认连续显示",
+      "value": 2,
+      "unit": "window snapshots",
+      "basis": "真实运行窗口序号70→439、景物变化；同伴烧录重启发生在此前，不能把序号与早期采集跨固件直接比较。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "provenance": "Codex coordinator report; native reviewer supplied actual reply, Opus latest saved handoff read, no reply impersonated."
+}
