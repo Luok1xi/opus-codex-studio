@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-20-current-integration-review",
+  "task_summary": "接续 Opus 最新工程，独立复核控制/回放并交付最小四文件补丁，保持既有 PID 和视觉权重；等待 Opus 自行复核合并。",
+  "workflow_version": "ai-studio + per-project TeamHub; local workflow tool sha256 afe97f6d491815e0dfc552e713a1b489b20ee63b0fd8ddb951762aab69dbea95",
+  "started_at": "2026-10-20T06:47:32.858000+00:00",
+  "measurement_cutoff_at": "2026-10-20T07:07:31.694000+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "使用最新生产基线，明确唯一文件所有者，不覆盖并行工作。",
+      "候选通过实际源码回归、仿真结果比较与 ADS 全量构建。",
+      "将证据和补丁完整交接给 Opus，独立接受状态如实记录。"
+    ],
+    "completed": [
+      "678 个生产文件未修改；四文件补丁 +45/-13 行，已打包核对。",
+      "控制 272514 例、400 帧处理、30 次仿真、六组轨迹对照及网页66项指标通过。",
+      "旧相机故障复现，补丁通过针对性回归；独立补丁复核无阻塞问题。",
+      "ADS 第三次全量构建通过，173 个单元、0 错误/11 警告；前两次元数据失败保留。",
+      "TeamHub #66 全文回读一致，六份已审交接由 Codex 本人回执。"
+    ],
+    "remaining": [
+      "Opus 对本轮补丁的本人复核/合并回执尚未收到；未冒充共同接受。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "观察窗口",
+      "value": 1198.836,
+      "unit": "seconds",
+      "basis": "首次记录时钟至交接回读；含设置、测试、协调和部分复核，不含最初几秒、昨夜和随后归档。"
+    },
+    {
+      "name": "原生独立工作者",
+      "value": 3,
+      "unit": "workers",
+      "basis": "构建、控制复核、仿真复现三个限定范围；控制工作者另复核最终补丁。"
+    },
+    {
+      "name": "新增外部模型派发",
+      "value": 0,
+      "unit": "calls",
+      "basis": "消费已有真实 Opus 交接，通过项目数据库发回复核；没有重复派付费模型。"
+    },
+    {
+      "name": "ADS构建尝试",
+      "value": 3,
+      "unit": "attempts",
+      "basis": "两次 Project Booster 配置失败，第三次全量成功。"
+    },
+    {
+      "name": "成功构建",
+      "value": 16.556,
+      "unit": "seconds",
+      "basis": "IDE 实测构建时间，不当成整轮耗时。"
+    },
+    {
+      "name": "独立补丁复核观察窗口",
+      "value": 110.439,
+      "unit": "seconds",
+      "basis": "工作者首次采样至证据截止，不含派发和报告书写。"
+    },
+    {
+      "name": "纯工作耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未分离工具等待、协作等待和操作时间。"
+    },
+    {
+      "name": "总复核开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "只有子阶段窗口，不能相加冒充总成本。"
+    },
+    {
+      "name": "本报告归档开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "截止后继续记录在归档回执；此处不提前填写。"
+    },
+    {
+      "name": "真实token",
+      "value": null,
+      "unit": "tokens",
+      "basis": "没有同口径提供方usage。"
+    },
+    {
+      "name": "实际费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "没有账单数据。"
+    }
+  ],
+  "observations": [
+    "局部质量收益有直接证据：读取最新交接避免回退权重；实际源码测试发现/验证边界修复；现有正常轨迹保持逐字节一致。",
+    "并行不等于提效。缺少同输入、同质量、同环境的工作流基线，不能计算节省比例。",
+    "两次可避免的 ADS 配置返工；删除 builder 不持久，工作区 buildBoostEnabled=false 才有效。",
+    "部分工具输出过大，源文件编码/目录枚举出现重读；只读 Git 所有权拒绝用单命令 safe.directory 解决，未修改全局配置。",
+    "三个候选文件换行由 LF 变 CRLF，无语义变化但增加审阅负担；交付差异排除换行，并要求合并保留生产格式。",
+    "这是对真实 Opus 成果的复核和数据库交接；本轮 Opus 新补丁回执仍缺失，原生工作者不是 Opus。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-20261020-ADS-BOOSTER",
+      "action": "隔离 ADS 审查工作区首次导入前关闭已证实会裁剪必要依赖的 Project Booster；仍校验生成路径和源码哈希。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一次同类隔离工程首次完整构建不再因 Asclin 被剪裁失败。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-20261020-FREEZE",
+      "action": "构建由单一所有者负责，源码每次冻结后通知构建者；只有对同一哈希的证据才合并。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一轮构建前后清单一致，避免一边改源码一边统计旧构建。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-20261020-BOUNDED-IO",
+      "action": "读取/修改 GB18030 文件时逐文件保留换行；数据库回执先解析只输出编号和状态，不打印完整正文。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "下一轮无纯换行改动，无因回执全文造成的截断和重复读取。"
+    }
+  ],
+  "evidence": [
+    "evidence.json：脱敏结果、证据文件哈希和真实交接编号；原始源码及日志仅保留本机。"
+  ],
+  "comparison": null,
+  "limits": [
+    "No flashing, serial, physical direction, real DMA or track performance validation.",
+    "Simulation equality does not test debug UART or camera DMA.",
+    "Existing 3252-case golden result was inspected, not rerun by this coordinator.",
+    "No browser visual acceptance this round.",
+    "未收到 Opus 本轮接受报告；真实用量、费用和完整等待拆分未知。"
+  ]
+}
