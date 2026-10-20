@@ -1,0 +1,39 @@
+{
+  "round_id": "2026-10-20-site-start",
+  "summary": "恢复已有本地网站并打开工作室页面。",
+  "completed": [
+    "按主工程启动入口恢复原服务；迁移计划为空，两个现有数据库已先备份。",
+    "构建通过（1.56秒），目标工作室页面HTTP 200、标题正确；已调用系统浏览器打开。"
+  ],
+  "remaining": [],
+  "metrics": [
+    {
+      "name": "记录开始至页面打开后截止",
+      "value": 314.118,
+      "unit": "seconds",
+      "basis": "工具墙钟；初次并行检查前约10秒未计入，不作为完整用户等待时间。"
+    },
+    {
+      "name": "额外模型委派",
+      "value": 0,
+      "unit": "calls",
+      "basis": "本轮确定性启动，无模型协作。"
+    },
+    {
+      "name": "provider usage/cost",
+      "value": null,
+      "unit": "unknown",
+      "basis": "无计费用量记录。"
+    },
+    {
+      "name": "复盘归档开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "归档在截止点之后，未完成单独计时。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "provenance": "Codex direct tool observations; no peer response claimed."
+}

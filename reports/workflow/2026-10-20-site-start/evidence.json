@@ -1,0 +1,15 @@
+{
+  "http_status": 200,
+  "title": "AI 工作室 · Luokixi",
+  "html_bytes": 20409,
+  "build_seconds": 1.56,
+  "database_backup_count": 2,
+  "pending_migrations": 0,
+  "local_service_ports": [
+    17860,
+    17861,
+    17862
+  ],
+  "browser_launch_dispatched": true,
+  "full_functional_testing": false
+}
