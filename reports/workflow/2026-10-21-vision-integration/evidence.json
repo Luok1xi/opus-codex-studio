@@ -1,0 +1,53 @@
+{
+  "full_map": {
+    "seconds": 25.728,
+    "distance_m": 26.15,
+    "completed_actions": 41,
+    "total_actions": 41,
+    "max_lateral_mm": 48.4,
+    "landmarks_within_75mm": 29,
+    "landmarks_within_40mm": 23,
+    "symbol_classification": false,
+    "real_vehicle": false
+  },
+  "fault_test": {
+    "original_running_after_ms": 1500,
+    "fixed_stopped_after_ms": 103
+  },
+  "calibration_errors": {
+    "minus10": "out at 0/41",
+    "minus5": "lap 41/41",
+    "zero": "lap 41/41",
+    "plus5": "lost line at 15/41",
+    "plus10": "lost line at 4/41"
+  },
+  "target": {
+    "errors": 0,
+    "warnings": 11,
+    "preset_checks": 12,
+    "route_enabled": false,
+    "flashed": false
+  },
+  "website": {
+    "cases": 18,
+    "runs": 29,
+    "widths": [
+      1440,
+      390
+    ],
+    "console_errors": 0
+  },
+  "collaboration": {
+    "real_prior_opus_candidate_used": true,
+    "new_opus_acceptance": false,
+    "native_dispatches": 5
+  },
+  "source_evidence": [
+    "hardware-audit.md",
+    "source-audit.md",
+    "hold-check/result.json",
+    "calibration-check/calibration-check.json",
+    "target-build-evidence.json",
+    "out/browser-check.json"
+  ]
+}
