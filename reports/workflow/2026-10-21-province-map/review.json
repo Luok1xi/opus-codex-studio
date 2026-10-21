@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-21-province-map",
+  "task_summary": "将用户给出的2025赛道地图导入既有网站，运行当前小车代码的仿真并可视化回放。",
+  "workflow_version": "Current TeamHub handoff + two bounded native tasks + existing C replay pipeline + real-site browser verification",
+  "started_at": "2026-10-21T01:41:02.052Z",
+  "measurement_cutoff_at": "2026-10-21T01:59:05.633Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "原图与按尺寸重建的地图出现在原网站。",
+      "真实控制/视觉代码在图上运行，停车/出线如实展示。",
+      "回放播放、时间轴、数据一致性通过，旧案例保留。"
+    ],
+    "completed": [
+      "在原网站接入用户地图与四组真实C算法仿真回放，保留15个既有案例。",
+      "将道路判定与视觉路肩/元件分离；网页画面、时间轴与CLI统计一致。",
+      "修复导出距离二次舍入；完成17案例27记录及两种页面宽度的验收。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "记录开始至功能验收与交接",
+      "value": 1083.581,
+      "unit": "seconds",
+      "basis": "本轮工具墙钟，包含探索、两原生子任务、编译、返工和页面验证。"
+    },
+    {
+      "name": "原生子任务",
+      "value": 2,
+      "unit": "tasks",
+      "basis": "地图几何与仿真渲染器分工；渲染器另有一次同任务修复跟进。"
+    },
+    {
+      "name": "本轮真实Opus或DeepSeek调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "读取既有Opus交接并向数据库交接；未将原生子代理冒充Opus，也未收到本轮验收回执。"
+    },
+    {
+      "name": "首轮完整回放统计验收失败项",
+      "value": 1,
+      "unit": "checks",
+      "basis": "新地图暴露距离导出精度的二次舍入；修复后全通过。"
+    },
+    {
+      "name": "模型tokens与费用",
+      "value": null,
+      "unit": "unknown",
+      "basis": "未提供可靠的提供方计费/usage数据。"
+    },
+    {
+      "name": "复盘归档总开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "报告截止时远端上传尚未完成，另在归档回执记录。"
+    }
+  ],
+  "observations": [
+    "本轮有任务分工和复用既有导出器的局部收益证据，但无匹配基线，不能声称净提效。",
+    "先明确paint为完整视觉层、tape为合法线路，避免路肩被误算为合法道路。",
+    "统计检查发现2位小数导出再四舍五入的缺陷，改为9位小数后同参数物理结果不变。",
+    "发生过WSL发行版名称误用、受限环境数据库读取失败；修正入口或使用授权权限后继续。",
+    "部分初期工具读取输出过长；后续改为聚合结果，仍有一次提交元数据包含diff的过量输出。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-MAP-LAYERS-20261021",
+      "action": "赛道导入先确定合法路、可见笔画、参考路线三者契约；复用已有真实代码导出，并将图形近似和实车校准边界显示给用户。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一张地图检查路肩不能获通过分、未走的支路元件不会被投影获分。"
+    },
+    {
+      "id": "WORKFLOW-BOUNDED-OUTPUT-20261021",
+      "action": "大JSON和Git提交只输出所需字段，禁止整对象打印；数据库权限或WSL入口已知后直接复用，减少无效探测。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "下一轮核对截断输出和重复环境探测次数。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "元件形状/颜色映射和物理参数是近似，未做本车实测标定。",
+    "本轮是11.6m外圈基线；未生成全元件比赛最优路径，未跑通全程，未写入真实车。",
+    "真实Opus候选未合入或收到其本轮验收；已发数据库交接。"
+  ]
+}
