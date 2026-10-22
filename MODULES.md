@@ -12,7 +12,7 @@
 | 手动派单（legacy） | `tools/studio/codex_dispatch.ps1` | 人工 DryRun 派工；不参与自动调度 | 人工 PowerShell |
 | TeamHub | `tools/teamdb.py`、`tools/teamhub_partition.py`；数据层 `F:\TeamHub` | 每项目独立库、actor/key/revision 幂等、分区迁移 | CLI |
 | 工作流记录 | `tools/workflow_db.py`、`tools/workflow_review.py`；权威库 `F:\TeamHub\projects\WORKFLOW-STUDIO\teamhub.db` | 报告/复盘/建议/回执入库；GitHub 仅脱敏归档 | CLI |
-| 报告与索引 | `reports/workflow/`（入库）、外部 `Luok1xi/workflow-reviews`（归档+索引） | 每轮报告、IMPROVEMENTS、README | 文件/外部命令 |
+| 报告与索引 | `reports/workflow/`（入库）、`tools/review_index.py`（索引生成，与 `Luok1xi/workflow-reviews` 同源同哈希）、外部 `Luok1xi/workflow-reviews`（脱敏归档） | 每轮报告、IMPROVEMENTS、README、索引 | 文件/命令 |
 | 项目登记/工作区 | `projects/beikuang/`（登记/交接/board）、`projects/beikuang-chat/`（Harness 聊天工作区） | 项目接入；北矿娘代码/接口权威在 BEIKUANG 项目 | JSON/Markdown |
 | 归档/冻结 | `archive/node-autopilot-20261013/`、`archive/snapshot-20261013/`、`archive/merge-20261022/` | 历史与合并证据；不参与运行 | 只读 |
 | 模板/技能/测试 | `templates/`、`skills/ai-studio/`、`schemas/`、`tests/`（97 项）、`tools/studio_check.py` | 契约模板、全局技能、schema、验收 | `python -m unittest discover -s tests -q` |

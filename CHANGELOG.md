@@ -1,12 +1,21 @@
 # 变更记录（CHANGELOG）
 
+## 0.2.1 — 2026-10-22 — 合并后修正 + 工作流索引工具 + 行尾归一
+
+- 冲突口径修正：100 个两边改过文件中 51 个逐字节相同、49 个实际冲突；裁决 = 45 取本地（43 个仅 CRLF 等价 + `.gitignore` + `CLAUDE.md`）+ 1 手工合并（`AGENTS.md`，保留本地完整版并加边界横幅）+ 3 取 origin/main（`reports/workflow/IMPROVEMENTS.md`、`reports/workflow/README.md`、`ningxia-integration/provenance-clarification.md`）；远端侧 49 份已归档。
+- 迁移残留修正：`projects/beikuang-chat/AGENTS.md`、`projects/beikuang/INTEGRATION-REPORT.md` 内 3 处旧快照路径改指本仓库新路径；`STATUS.json` 的 `git.head` 修正为实际 HEAD。
+- 新增 `tools/review_index.py`（与 `Luok1xi/workflow-reviews` 仓库 `tools/review_index.py` 同 sha256 `B18365F6…` 引入；工作流报告索引的唯一实现，来源为 TeamHub annex `ready-to-commit/tools/` 与 workflow-reviews 仓库同一文件）。
+- 行尾归一：按 `.gitattributes`（`* text=auto`、`*.ps1 eol=crlf`、`*.py eol=lf`、vendor/archive `-text`）执行 `git add --renormalize .`，消除未来与 CRLF 历史合并产生的“假冲突”；远端历史归一需 Owner 批准（改写历史）后再做。
+- 验证：`python -m unittest discover -s tests -q` 97 OK；`python tools/studio_check.py` PASS。
+
 ## 0.2.0 — 2026-10-22 — 合并为唯一权威工作室
 
 ### 合并
 
-- **origin/main 脱敏归档线（30 个提交，至 2026-10-19 `0378b91`）并入本地**：merge commit `e50e1d3`；49 个冲突文件按规则解决：
-  - 内容仅 CRLF/LF 差异的 46 个文件取本地（内容等价）；
-  - `reports/workflow/IMPROVEMENTS.md`、`reports/workflow/README.md`、`.../ningxia-integration/provenance-clarification.md` 3 个有实质差异，取 origin/main（更完整/更新）；
+- **origin/main 脱敏归档线（30 个提交，至 2026-10-19 `0378b91`）并入本地**：merge commit `e50e1d3`；两边共改 100 个文件（51 个逐字节相同、49 个实际冲突），裁决：
+  - 45 取本地（43 个仅 CRLF/LF 等价 + `.gitignore` + `CLAUDE.md` 本地实质差异）；
+  - 1 手工合并（`AGENTS.md`：保留本地完整版并加边界横幅）；
+  - 3 取 origin/main 实质差异（`reports/workflow/IMPROVEMENTS.md`、`reports/workflow/README.md`、`.../ningxia-integration/provenance-clarification.md`）；
   - origin/main 侧 49 份冲突文件全文留档于 `archive/merge-20261022/origin-main-side/`。
 - **本地工作快照**（commit `b23cdcb`，合并前 HEAD `707284e`）：Python bridge/`studio_runtime`（contracts/engine/routing/store/adapters/context/consult/teamhub）、`deepseek_task.py`、TeamHub CLI（`teamdb.py`/`teamhub_partition.py`）、工作流入库/复盘（`workflow_db.py`/`workflow_review.py`）、schemas/templates/skills/tests/文档（10-13~10-21 工作）全部入库。
 

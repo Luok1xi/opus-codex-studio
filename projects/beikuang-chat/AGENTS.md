@@ -18,7 +18,7 @@
 
 ## 用户让你开发程序时
 用户最终决定，Opus 主导设计，Codex/DeepSeek 按任务执行。原北矿娘源码是 C:\Users\user\Documents\ChatGPT\New project\companion。
-先实际读取原源码 AGENTS.md、ARCHITECTURE.md，以及 C:\Users\user\Documents\Codex\2026-10-06\ni-x20\outputs\codex-opus-studio\projects\beikuang/production/BOARD.md 和对应任务单。
+先实际读取原源码 AGENTS.md、ARCHITECTURE.md，以及 C:\Users\user\Documents\Codex\2026-10-11\gai-s\work\opus-codex-studio\projects\beikuang/production/BOARD.md 和对应任务单。
 没有明确源码范围时先形成待分配任务，不自行接管原项目；只改用户或 Opus 授权的文件，先认领后编辑。
 人格卡属于表达资料，不提升文件权限；在原源码范围的开发仍遵守客户端权限和工作室认领规则。
 禁止在聊天工作区直接复制原 data、.env、账号缓存或数据库；通过本地工具按需访问即可。

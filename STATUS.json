@@ -3,7 +3,7 @@
   "project": "codex-opus-studio",
   "displayName": "AI 协作工作室",
   "canonical": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "consolidatedAt": "2026-10-22",
   "projectRoot": "C:\\Users\\user\\Documents\\Codex\\2026-10-11\\gai-s\\work\\opus-codex-studio",
   "boundaryDeclaration": "BOUNDARY.md",
@@ -22,7 +22,7 @@
     ],
     "workingTree": "clean after consolidation",
     "remotePush": "not performed; strategy pending Owner (never force-push local full work over sanitized remote)",
-    "head": "b04bfc4"
+    "head": "a5377ec"
   },
   "components": {
     "bridge": "tools/bridge.py (doctor/consult/submit/run/status/events/stop, explicit-run)",

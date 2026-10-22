@@ -3,7 +3,7 @@
 一、实际完成
 - 北矿娘已登记为通用工作室正式项目。原源码 C:\Users\user\Documents\ChatGPT\New project\companion 已新增 AGENTS.md、CLAUDE.md、STUDIO-INTEGRATION.md，并逐文件校验复制散列。
 - 专属派单、回报和任务板位于工作室 projects/beikuang/production。用户最终决定，Opus 主导，Codex / DeepSeek 执行。
-- 聊天工作区 C:\Users\user\Documents\Codex\2026-10-06\ni-x20\outputs\codex-opus-studio\projects\beikuang-chat 已提供专属入口，按需读原角色卡，使用原程序的记忆、任务、关系与聊天。
+- 聊天工作区 C:\Users\user\Documents\Codex\2026-10-11\gai-s\work\opus-codex-studio\projects\beikuang-chat 已提供专属入口，按需读原角色卡，使用原程序的记忆、任务、关系与聊天。
 - 独立 MCP 连接工具已注册到 Harness desktop profile，原模型、账号和其他插件设置保留。
 - Harness 已热加载并真实初始化 MCP：2026-10-10 11:57:17.936（北京时间），client=dsh-mcp-client，桥接 PID=34612，父进程 PID=59996，已核对父进程为 DeepSeek Harness.exe。
 - 四个真实 MCP 工具：beikuang_status、beikuang_identity、beikuang_context、beikuang_chat。
@@ -24,6 +24,6 @@
 - 初次选择聊天工作区仍需用户在 Harness 中完成；原工作室接入自检 DS-ONBOARD-001 已收到 DeepSeek 11:38 的真实回报。
 
 四、现在怎么用
-在 Harness 新建会话并选择 C:\Users\user\Documents\Codex\2026-10-06\ni-x20\outputs\codex-opus-studio\projects\beikuang-chat。
+在 Harness 新建会话并选择 C:\Users\user\Documents\Codex\2026-10-11\gai-s\work\opus-codex-studio\projects\beikuang-chat。
 首次发送：先检查北矿娘连接，只调用状态、身份和关系读取工具，不发送聊天、不修改数据；告诉我实际连通结果。
 检查通过后正常与她聊天。开发程序时，选择原源码 C:\Users\user\Documents\ChatGPT\New project\companion 并按专属任务单工作。

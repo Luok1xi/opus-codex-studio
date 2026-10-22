@@ -9,7 +9,7 @@
 
 自本声明起，AI 协作工作室（协调器、派单、路由、TeamHub CLI、工作流记录工具、报告、模板、技能、测试、配置）只在本目录维护与更新。
 
-- 旧快照 `C:\Users\user\Documents\Codex\2026-10-06\ni-x20\outputs\codex-opus-studio`：**冻结**（`FROZEN_SNAPSHOT.md`），只读；其独有内容已归档/迁移到本项目（`archive/node-autopilot-20261013/`、`projects/`）。
+- 旧快照 `C:\Users\user\Documents\Codex\2026-10-06\ni-x20\outputs\codex-opus-studio`：**冻结**（`FROZEN_SNAPSHOT.md`），只读。其主要资产已迁移/归档到本项目（`projects/beikuang*` 迁入；Node autopilot 归档 `archive/node-autopilot-20261013/`；旧独有文档归档 `archive/snapshot-20261013/`）；部分 legacy 脚本（autopilot 包装/旧 dispatch/旧 harness/旧 tests）**仅保留在冻结快照**，权威替代实现见第 3 节，不在本项目复活旧脚本。
 - GitHub `origin`（`Luok1xi/opus-codex-studio`）是**发布用脱敏归档线**，不是第二条开发线：开发只在本目录进行；需要发布时由这里生成脱敏版本再推送（推送策略待 Owner 批准）。其 30 个 10-19 提交已合并进本目录（merge commit 见 `CHANGELOG.md`）。
 - 网站 `campus/vendor/opus-codex-studio` 只是 3 份模板的只读快照（`PROVENANCE.json`），不得扩写为运行实现。
 
