@@ -3,7 +3,7 @@
   "project": "codex-opus-studio",
   "displayName": "AI 协作工作室",
   "canonical": true,
-  "version": "0.2.2",
+  "version": "0.2.3",
   "consolidatedAt": "2026-10-22",
   "projectRoot": "C:\\Users\\user\\Documents\\Codex\\2026-10-11\\gai-s\\work\\opus-codex-studio",
   "boundaryDeclaration": "BOUNDARY.md",
@@ -21,9 +21,10 @@
       "local-work-20261022 (tag)"
     ],
     "workingTree": "clean after consolidation",
-    "remotePush": "pushed main + tags v0.2.0/v0.2.1/v0.2.2",
-    "head": "v0.2.2",
-    "headNote": "exact commit: git rev-parse HEAD (tag v0.2.1 points at this commit)"
+    "remotePush": "main 594fad2 + tags v0.2.0/v0.2.1/v0.2.2 pushed 2026-10-22; v0.2.3 adds UPGRADE.md",
+    "head": "v0.2.3",
+    "headNote": "exact commit: git rev-parse HEAD (tag v0.2.1 points at this commit)",
+    "remote": "https://github.com/Luok1xi/opus-codex-studio.git"
   },
   "components": {
     "bridge": "tools/bridge.py (doctor/consult/submit/run/status/events/stop, explicit-run)",

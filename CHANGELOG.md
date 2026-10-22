@@ -51,3 +51,8 @@
 - 冲突 7 个（6 个仅 CRLF 等价、1 个仅末尾空行差异），全部保留本地已归一化内容；origin/main 侧 7 份归档 `archive/merge-20261022b/origin-main-side/`。
 - 本地已归一化的报告行尾保持不变；远端历史 CRLF 归一仍需 Owner 批准改写历史。
 - 未改动运行代码/接口；`unittest`、`studio_check` 复核通过后推送 GitHub。
+## 0.2.3 — 2026-10-22 — 发布到 GitHub + 其他 AI 升级入口
+
+- 新增 `UPGRADE.md`：给其他 AI 的标准升级流程（读 BOUNDARY/MODULES/CHANGELOG/STATUS → ff-only 拉取 → 97 测试 + studio_check → 只在本目录开发）。
+- `BOUNDARY.md` 更新远端发布规则：`origin/main` 已 fast-forward 同步（tags `v0.2.0`~`v0.2.3`）；禁止 force push / 历史改写需 Owner 批准。
+- 本次只加管理文档，不改运行代码与接口。

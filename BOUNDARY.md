@@ -10,7 +10,7 @@
 自本声明起，AI 协作工作室（协调器、派单、路由、TeamHub CLI、工作流记录工具、报告、模板、技能、测试、配置）只在本目录维护与更新。
 
 - 旧快照 `C:\Users\user\Documents\Codex\2026-10-06\ni-x20\outputs\codex-opus-studio`：**冻结**（`FROZEN_SNAPSHOT.md`），只读。其主要资产已迁移/归档到本项目（`projects/beikuang*` 迁入；Node autopilot 归档 `archive/node-autopilot-20261013/`；旧独有文档归档 `archive/snapshot-20261013/`）；部分 legacy 脚本（autopilot 包装/旧 dispatch/旧 harness/旧 tests）**仅保留在冻结快照**，权威替代实现见第 3 节，不在本项目复活旧脚本。
-- GitHub `origin`（`Luok1xi/opus-codex-studio`）是**发布用脱敏归档线**，不是第二条开发线：开发只在本目录进行；需要发布时由这里生成脱敏版本再推送（推送策略待 Owner 批准）。其 30 个 10-19 提交已合并进本目录（merge commit 见 `CHANGELOG.md`）。
+- GitHub `origin`（`Luok1xi/opus-codex-studio`）是**发布/归档线**，不是第二条开发线：开发只在本目录进行。2026-10-22 已把本地合并结果（含历史 30+13 个远端提交的合并）**fast-forward 推送**到 `origin/main` 并推送 tags `v0.2.0`~`v0.2.3`。发布规则：本目录 `main` + tag 推送；**禁止 force push**，禁止用本地工作区覆盖远端脱敏历史；远端历史改写需 Owner 批准。
 - 网站 `campus/vendor/opus-codex-studio` 只是 3 份模板的只读快照（`PROVENANCE.json`），不得扩写为运行实现。
 
 ## 2. 只通过接口调用（Call, don't copy）
@@ -52,7 +52,7 @@
 3. 每次发布必须：`python -m unittest discover -s tests -q` 全通过（基线 97）+ `python tools/studio_check.py` PASS + 更新 `VERSION`/`CHANGELOG.md`/`STATUS.json`。
 4. 工作流记录变更：先备份 `F:\TeamHub\projects\WORKFLOW-STUDIO\teamhub.db`，再做迁移；迁移前后逐表行数核对。
 5. 回滚：`git reset --hard <tag>` 或还原备份分支；数据回滚用备份库；不删除历史 backup。
-6. 远端发布：只从本目录生成脱敏副本再推送；**禁止**把本地完整工作区 force push 覆盖脱敏线（待 Owner 定策略）。
+6. 远端发布：本目录 `main` + tag 直接推送（2026-10-22 起已同步）；**禁止** force push；远端历史改写需 Owner 批准。
 
 ## 6. 冻结 / 归档清单
 
