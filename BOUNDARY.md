@@ -2,7 +2,7 @@
 
 - 生效日期：2026-10-22
 - 权威目录：`C:\Users\user\Documents\Codex\2026-10-11\gai-s\work\opus-codex-studio`
-- 版本：见 `VERSION` / `CHANGELOG.md`（当前 **0.2.0**）
+- 版本：见 `VERSION` / `CHANGELOG.md`（当前 **0.2.1**）
 - 依据：`.integration-20261022/studio-merge-plan.md`、`studio-management-audit.md`、`management-architecture-v1.md`
 
 ## 1. 唯一权威项目
