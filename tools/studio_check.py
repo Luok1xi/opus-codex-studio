@@ -16,8 +16,18 @@ def validate(root=ROOT):
     failures.extend('missing: ' + rel for rel in required if not (root/rel).is_file())
     try:
         cfg = json.loads((root/'studio.config.json').read_text('utf-8'))
-        if cfg.get('lead') != 'claude-opus' or cfg.get('codex_role') != 'on-request-support':
+        role = 'bridge-and-fallback-lead' if cfg.get('schema_version') == 3 else 'on-request-support'
+        if cfg.get('lead') != 'claude-opus' or cfg.get('codex_role') != role:
             failures.append('invalid current roles')
+        if cfg.get('schema_version') == 3:
+            bridge = cfg.get('bridge', {})
+            if (cfg.get('mode') != 'manual-and-explicit-bridge' or bridge.get('activation') != 'explicit-run'
+                    or bridge.get('entry') != 'tools/bridge.py'
+                    or bridge.get('configuration_template') != 'bridge.example.json'):
+                failures.append('invalid bridge activation')
+            for rel in ('tools/bridge.py', 'bridge.example.json', 'tools/studio_runtime/engine.py'):
+                if not (root/rel).is_file():
+                    failures.append('missing: ' + rel)
         for flag in ['automatic_model_calls', 'hooks_enabled', 'github_actions_enabled', 'auto_merge']:
             if cfg.get(flag) is not False:
                 failures.append('unexpected automation: ' + flag)

@@ -1,0 +1,62 @@
+{
+  "round_id": "2026-10-19-vision-interface-choice",
+  "summary": "完成接口兼容性解释和现有性能证据核对。",
+  "completed": [
+    "核对视觉误差消费者与海大角度生成代码",
+    "独立复核现有400帧PC回放的范围",
+    "给出保留海大视觉与宁夏控制框架、统一接口并标定外环的建议",
+    "同目标追问澄清：作者视觉赋值为可选参考，不阻塞自定义角度接口与外环重标定；已交接此依赖边界。"
+  ],
+  "remaining": [
+    "实机性能、真实帧识别质量与方向外环标定待后续工程阶段。"
+  ],
+  "evidence": [
+    "Local PID input consumer and reference vision angle producer checked.",
+    "Existing PC replay README and result files reviewed by independent worker and coordinator.",
+    "No opponent vision implementation, no target timing measurements."
+  ],
+  "metrics": [
+    {
+      "name": "证据核对窗口",
+      "value": 242.106,
+      "unit": "seconds",
+      "basis": "本轮开始读取至结论整理，包含一份原生子任务复核"
+    },
+    {
+      "name": "原生辅助复核",
+      "value": 1,
+      "unit": "agents",
+      "basis": "只读已有性能结果，未调用Opus或DeepSeek新咨询"
+    },
+    {
+      "name": "新增基准运行",
+      "value": 0,
+      "unit": "runs",
+      "basis": "现有材料足以回答，未为凑证据重跑"
+    },
+    {
+      "name": "生产源码变更",
+      "value": 0,
+      "unit": "files",
+      "basis": "问答核对，无实施"
+    },
+    {
+      "name": "模型真实用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无统一供应方usage"
+    },
+    {
+      "name": "纯归档耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "结束回读后另记凭据"
+    },
+    {
+      "name": "接口询问必要性补充窗口",
+      "value": 43.117,
+      "unit": "seconds",
+      "basis": "独立补充读取至结论准备；不并入前轮初始时间，不含随后数据库/归档"
+    }
+  ]
+}

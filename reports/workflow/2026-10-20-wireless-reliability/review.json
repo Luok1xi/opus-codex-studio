@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-20-wireless-reliability",
+  "task_summary": "协助现有实车操作者排查无线收发问题，交付经离线验证、保持当前功能的最小候选补丁。",
+  "workflow_version": "Per-project TeamHub; Opus owns hardware; Codex owns offline candidates; two bounded native reviewers.",
+  "started_at": "2026-10-20T08:32:53.404Z",
+  "measurement_cutoff_at": "2026-10-20T08:52:08.839Z",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "区分接收工具、固件协议和摄像头采集问题，不混淆源码风险与实车根因。",
+      "候选与最新生产版本兼容，保留同伴新增功能，不占用其硬件。",
+      "提供失败复现、最小修复、遗留风险和可执行交接。"
+    ],
+    "completed": [
+      "电脑接收候选完成17项测试，包括碎片输入、非法头、截断日志、文件保留和新增曝光/增益入口。",
+      "固件最小候选8项定向测试通过，原件同输入4项失败；两套原有协议回归通过，协调者独立复跑。",
+      "重现状态字符串越界；修复候选扩大缓冲区并在执行排队指令时再次检查停车状态。",
+      "独立复核发现日志结束标志缺少行边界检查，已补修并加入测试。",
+      "工作期间生产版本更新一次；候选重基并保留曝光/增益功能，生产文件保持不变。",
+      "实验协议改动在两个丢字节测试失败后被拒绝用于生产；交接区分推荐补丁与历史实验。",
+      "实际Opus报告已核对；最终补丁和验收步骤正文写入项目共享库。"
+    ],
+    "remaining": [
+      "未完成目标编译器构建、实车收发和刷机验证；未收到Opus本轮新补丁回执。",
+      "停车时二进制负载可能触发ASCII指令、丢字节重同步、接收FIFO丢弃和无CRC问题仍未解决。",
+      "摄像头后供电无帧的单一根因没有受控实车对照；不据推测更改中断初始化。"
+    ]
+  },
+  "metrics": [
+    {"name":"观察窗口","value":1155.435,"unit":"seconds","basis":"任务起点至最终交接完成后的测量截止，包含分析、并行评审、重基和部分归档准备。"},
+    {"name":"原生子任务","value":2,"unit":"workers","basis":"固件接收逻辑审核及摄像头初始化审核；不是实际Opus会话。"},
+    {"name":"新增外部模型调用","value":0,"unit":"calls","basis":"通过现有共享库交接并阅读Opus实际报告，未另启付费模型会话。"},
+    {"name":"硬件操作","value":0,"unit":"operations","basis":"无串口打开、复位、刷机；离线测试使用替身接口。"},
+    {"name":"生产文件改动","value":0,"unit":"files","basis":"只写隔离候选，结尾核验两处生产基线指纹。"},
+    {"name":"电脑端最终测试","value":17,"unit":"passed_cases","basis":"当前版本候选离线测试结果。"},
+    {"name":"固件定向测试","value":8,"unit":"passed_cases","basis":"ASan/UBSan真实源文件加硬件替身；原版同输入4项失败。"},
+    {"name":"固件原有回归","value":2,"unit":"passed_suites","basis":"摄像头命令和ValuePack回归，套件不等同单项用例。"},
+    {"name":"实验协议已知失败","value":2,"unit":"cases","basis":"丢包头及丢负载故障注入仍失败；实验版本不推荐上线。"},
+    {"name":"已观测基线重基","value":1,"unit":"events","basis":"同伴将生产更新后保留其新命令重基候选。"},
+    {"name":"独立评审追加修复","value":1,"unit":"issues","basis":"结束标记行边界缺失，复核指出后补测试并修复。"},
+    {"name":"工具失败总数","value":null,"unit":"calls","basis":"未全量计数；观察到一次分类参数名错误及不必要大输出。"},
+    {"name":"协调净等待","value":null,"unit":"seconds","basis":"协调与本地实现交错，未可靠分离。"},
+    {"name":"归档净开销","value":null,"unit":"seconds","basis":"部分准备与分析交错；独立收尾区间另在归档回执记录。"},
+    {"name":"实际模型用量","value":null,"unit":"tokens","basis":"没有提供方一致口径usage。"},
+    {"name":"实际费用","value":null,"unit":"currency","basis":"无账单。"}
+  ],
+  "observations": [
+    "仅有局部质量收益证据：独立复核找出遗漏；匹配质量的单人耗时基线缺失，不能声称提速。",
+    "一个操作者独占硬件避免抢端口；角色边界已遵守，但减少故障的实际效果尚未量化。",
+    "实时指纹检查捕获并行版本推进，避免旧候选覆盖新增功能；重基也产生了明确返工。",
+    "故障注入阻止未达标解析器上线，不能把正常输入通过数作为完整可靠性结论。",
+    "共享库分类上下文返回旧任务而非最新交接，重复大输出与错误参数造成开销；应定向读取交接表。"
+  ],
+  "recommendations": [
+    {"id":"WIRELESS-20261020-BASELINE","action":"每次交接包含生产指纹，应用前再次核验，版本推进则先重基并测试新增入口。","owner":"codex","status":"adopted","next_check":"后续补丁无同伴功能回退；记录重基次数及耗时。"},
+    {"id":"WIRELESS-20261020-PROTOCOL","action":"单独冻结收发协议契约，必须覆盖合法二进制载荷碰撞、分片、丢字节和重同步，再推荐合并。","owner":"opus","status":"proposed","next_check":"现有两个已知失败和停车时碰撞测试通过，随后再实车验收。"},
+    {"id":"WIRELESS-20261020-HARDWARE","action":"同一时间只由一名代理持有硬件；按状态、图片、日志逐项记录有线与无线对照。","owner":"opus","status":"proposed","next_check":"收到设备操作者回执及独立项目测试记录。"},
+    {"id":"WIRELESS-20261020-READ","action":"读取共享库先用已知表和记录ID，收件箱仅提取最新标记，再按需取全文。","owner":"codex","status":"proposed","next_check":"下一轮不再把历史任务全文当最新交接重复输出。"}
+  ],
+  "evidence": ["evidence.json contains sanitized aggregate test and handoff results only."],
+  "comparison": null,
+  "limits": [
+    "Offline validation only; no target build or hardware acceptance.",
+    "Actual Opus updates were read, but new handoff acknowledgement remains pending.",
+    "Candidate protocol limitations are still open.",
+    "No source files, raw logs, sessions, live databases or device identities uploaded."
+  ]
+}

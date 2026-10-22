@@ -1,0 +1,65 @@
+{
+  "round_id": "2026-10-19-original-source-optimization",
+  "verification": {
+    "pid": {
+      "same_source_c": true,
+      "deleted_declarations": 2,
+      "trace_observations": 28000,
+      "bit_exact": true,
+      "behavior_probes": 4,
+      "trace_sha256": "262f9f670c58b8b026bfc88f8fea3a43ac90ac59838885d06dd86eefdfb327be"
+    },
+    "vision": {
+      "source_commit": "0de6a8b7465bec140b3256d2d21fda60232aae75",
+      "changed_files": 1,
+      "deleted_lines": 4,
+      "replay_groups": 28,
+      "frame_executions_per_variant": 1600,
+      "edge_cases": 12002,
+      "bit_exact": true,
+      "host_O2_no_LTO_text_bytes": [
+        6960,
+        6928
+      ],
+      "scope": "Partial original algorithm harness; fixed threshold, not full camera/state pipeline."
+    },
+    "target": {
+      "builds": 2,
+      "compile_units_each": 166,
+      "errors_each": 0,
+      "warnings_each": 0,
+      "ram_bytes": [
+        51549,
+        43429
+      ],
+      "rom_bytes": [
+        61022,
+        61022
+      ],
+      "source_changes": "Two unused PID declarations removed; all original C files unchanged.",
+      "artifact_sha256": "b171221833a90b4cc2537798bd161878ec3b0d55388c95c442b8a5981e5b92d0",
+      "flashed": false,
+      "hardware_tested": false,
+      "cpu_cycles_measured": false
+    }
+  },
+  "collaboration": {
+    "native_workers": 3,
+    "actual_opus_reply": 27,
+    "acknowledged_by": "codex",
+    "new_patch_acceptance": "pending",
+    "delivery_handoffs": [
+      29,
+      30
+    ]
+  },
+  "workflow_speedup": null,
+  "same_board_correction": {
+    "at": "2026-10-19T08:56:59.111Z",
+    "reason": "用户纠正同芯片同主板；重读原始私聊后撤回由源码引脚差异推定必须迁移的结论。",
+    "verified": "原control.h与新工程完全相同；暂定接线约定不代表实物。",
+    "action": "修正文档、交接31告知Opus；未改固件、引脚或硬件。",
+    "timing_seconds": 234.283
+  }
+}
+

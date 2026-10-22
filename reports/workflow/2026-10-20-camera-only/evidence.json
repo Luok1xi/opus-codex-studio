@@ -1,0 +1,48 @@
+{
+  "firmware_sha256": "778173cf31390e04b91e5dc6fdf63663f74c28a9ff349c33eadc2b220c4aca1a",
+  "build": {
+    "errors": 0,
+    "warnings": 11,
+    "rom_bytes": 33530,
+    "ram_bytes": 48666
+  },
+  "flash": {
+    "verified": true,
+    "milliseconds": 1168,
+    "boot_marker_seen_in_existing_webpage": true
+  },
+  "exposure": {
+    "first_limit_observed": 121,
+    "manual_60_readback": [
+      60,
+      60
+    ],
+    "manual_120_readback": [
+      120,
+      120
+    ],
+    "camera_only_450_readback": [
+      450,
+      450
+    ],
+    "camera_only_900_readback": [
+      900,
+      900
+    ],
+    "current_limit": 1061
+  },
+  "picture_quality_accepted": false,
+  "coordination": {
+    "concurrent_flash_overwrite_observed": true,
+    "coordinator_stopped_hardware_writes": true,
+    "handoff_acceptance_received": false
+  },
+  "archive_exclusions": [
+    "raw sessions",
+    "private chat",
+    "credentials",
+    "live database",
+    "project source",
+    "raw images"
+  ]
+}

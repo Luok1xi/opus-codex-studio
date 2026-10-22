@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-18-schoolcar-debug",
+  "task_summary": "与Opus协作调试TC264校赛车；修复适配层、官方编译并复核核心异常路径。",
+  "workflow_version": "TeamHub project isolation + file ownership + native independent checks + official ADS GUI",
+  "started_at": "2026-10-18T13:40:42.089Z",
+  "measurement_cutoff_at": "2026-10-18T14:31:50.555846+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "复现并修复硬件适配缺陷",
+      "真实ADS编译和地址核对",
+      "正常与故障场景分别验证",
+      "共享库交接、私人仓库复盘"
+    ],
+    "completed": [
+      "按文件划分：Codex仅修改port，保留Opus实时核心改动；保留修改前快照。",
+      "修复断流保护、非有限输出拦截、Flash旧合法页误报、陀螺模式错误与校准SPI抢占，电池通道/参考电压由原理图确认。",
+      "17个端口故障测试、287项现有核心自检、7个正常仿真通过；正常仿真与故障测试分别记账。",
+      "官方IDE构建0错误0警告，完整保留参数和校准API后链接成功，核对静态内存及双核共享地址。",
+      "复核出核心3个故障用例仍失败；最小候选补丁另行测试，保持生产文件分工。",
+      "核心候选补丁测试结果见evidence.json；候选与当前共享生产代码严格区分。"
+    ],
+    "remaining": [
+      "Opus对本轮调试marker的确认、核心候选合并与独立验收。",
+      "电机/编码器极性、轮距、ADC标定、真实2ms执行时间和双核压力实测；本轮未烧录。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "端口故障场景通过",
+      "value": 17,
+      "unit": "cases",
+      "basis": "最终源文件上的UBSan/float-cast-overflow回归，安装到工程后入口再验"
+    },
+    {
+      "name": "现有核心自检通过",
+      "value": 287,
+      "unit": "checks",
+      "basis": "逐文件hash一致的主机快照make check"
+    },
+    {
+      "name": "正常闭环仿真通过",
+      "value": 7,
+      "unit": "cases",
+      "basis": "独立复跑Opus第80次报告的make sim；参数是假设"
+    },
+    {
+      "name": "修补前核心故障用例失败",
+      "value": 3,
+      "unit": "cases",
+      "basis": "最新同一快照下轨迹耗尽、旧帧交回、NaN输入"
+    },
+    {
+      "name": "原生独立子代理",
+      "value": 2,
+      "unit": "agents",
+      "basis": "核心故障/硬件接口复核；无递归派工，不冒充Opus"
+    },
+    {
+      "name": "最终IDE单次构建耗时",
+      "value": 1.007,
+      "unit": "seconds",
+      "basis": "ADS报告增量构建耗时，非整轮耗时、非全量冷编译耗时"
+    },
+    {
+      "name": "全轮模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整提供方usage"
+    },
+    {
+      "name": "全轮模型费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单数据"
+    },
+    {
+      "name": "复核与归档独立活跃耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "与测试和等待交错，未单独计量；墙钟包含协调等待"
+    },
+    {
+      "name": "用户手工传递本轮交接",
+      "value": 0,
+      "unit": "messages",
+      "basis": "直接写项目库和过渡发现文件，未请求用户转述"
+    }
+  ],
+  "observations": [
+    "本轮有局部质量收益证据：独立检查找到mock未覆盖的真实IMU枚举错误与SPI重入；修后增加针对性回归。无匹配基线，不证明净提速。",
+    "首次12场景通过不能代表驱动配置已正确；原mock忽略初始化参数，后按真实常量和接口契约修正。",
+    "独立官方构建发现uint32和uint32_t基础类型不同；逐值转换解决，未以指针强转掩盖。",
+    "最初未被调用的校准/参数API被链接器回收；额外保留引用后重新验证内存，避免以不完整ELF宣称全模块可链接。",
+    "直接TASKING调用受IDE授权限制；第一次headless路径格式错误，改URI后遇CDT Workbench初始化失败；转官方GUI成功，未绕过授权。",
+    "隔离harness初次编译有clock_init参数及ISR声明错误，修正后通过；生产控制算法未被该返工覆盖。",
+    "普通执行环境refresh失败后使用已批准限定路径的提升执行；另有一次工具脚本语法错误、一次子代理PowerShell参数解析错误。",
+    "Opus第80次真实文件报告已收到且7场景独立复核；它尚未对本轮故障marker回执，不能宣称双方已签最终版本。",
+    "协议迁移期间数据库收件箱为空，现有文件入口仍有实际活动；只做一次受控回退并把新交接写回数据库。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-SCHOOLCAR-20261018-DRIVER",
+      "action": "硬件mock必须保留真实枚举/宏语义，并对初始化模式做断言；编译成功之外检查驱动实际读取分支。位置：端口测试；本轮已采用。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下次驱动模式变更应先被契约测试发现，并记录漏检与返工次数"
+    },
+    {
+      "id": "WF-SCHOOLCAR-20261018-LINK",
+      "action": "固定独立ADS工程，保留待验全部API后检查MAP与共享内存地址；已知headless插件失败使用官方GUI，不重复探测许可。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "同类型编译能否一次导入并覆盖全部API；仍保留真实错误和warning限制"
+    },
+    {
+      "id": "WF-SCHOOLCAR-20261018-ACK",
+      "action": "Opus在领取数据库任务时写入本人回执并声明文件范围，结束附版本hash；未收到确认不签定稿。",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "下一轮能否仅靠共享库找到当前任务和真实回执，不依赖历史交接文件"
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "项目库CRAZY-CIRCUIT本轮调试handoff",
+    "端口测试result.json与final-results.txt",
+    "ADS final-result.json、最终MAP和构建日志",
+    "核心独立复核sim-results.txt与fault-results.txt"
+  ],
+  "comparison": null,
+  "limits": [
+    "起点为首次显式计时，之前入口准备未计入。",
+    "未知量保留null；并行时间不等于节省时间。",
+    "没有实车验收，没有将假设仿真称为国赛可用。",
+    "Opus核心候选补丁是否合并以其本人回执和生产hash为准。",
+    "归档只含脱敏工作流报告，不包含项目源码、固件、原始会话或数据库。"
+  ]
+}

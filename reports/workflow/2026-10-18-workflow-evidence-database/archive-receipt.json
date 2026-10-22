@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "repository": "Luok1xi/opus-codex-studio",
+  "visibility": "private",
+  "verified_commit": "82b288d49583ee1b0064508cad4b7b3064787067",
+  "verified_at_utc": "2026-10-18 09:58:33 UTC",
+  "files": [
+    {
+      "path": "tools/workflow_db.py",
+      "ok": true,
+      "blob_sha": "9c504ec29c746776cb716a92647148c07d448f8b"
+    },
+    {
+      "path": "tools/workflow_review.py",
+      "ok": true,
+      "blob_sha": "399e649368425627c37fbf76ea1d8a663e7c7a97"
+    },
+    {
+      "path": "tests/test_workflow_db.py",
+      "ok": true,
+      "blob_sha": "ae8a49ef8c184a6d5d0b753e816b68c3a6021b63"
+    },
+    {
+      "path": "templates/workflow-work-report.json",
+      "ok": true,
+      "blob_sha": "1b57bad5be0e814cdfaf02dd13d57aa9a88d8c5e"
+    },
+    {
+      "path": "docs/WORKFLOW_DATABASE.md",
+      "ok": true,
+      "blob_sha": "576d78a2c67ce48b19120a8fe995c28b32868c80"
+    },
+    {
+      "path": "docs/WORKFLOW_REVIEW.md",
+      "ok": true,
+      "blob_sha": "17cf38e44d17c77e6d854891ae58caf928cbedd8"
+    },
+    {
+      "path": "docs/TEAMHUB.md",
+      "ok": true,
+      "blob_sha": "fc5855a64b1475a3b5a3a79126e2dd519fbf639a"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-workflow-evidence-database/review.json",
+      "ok": true,
+      "blob_sha": "092638f681090fb09d540a70520b657eab712863"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-workflow-evidence-database/review.md",
+      "ok": true,
+      "blob_sha": "70390006387955668f7828034f767db23161a05a"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-workflow-evidence-database/evidence.json",
+      "ok": true,
+      "blob_sha": "f7c0105aa9db013cbcc80537658b7619afe46873"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-workflow-evidence-database/member-codex.json",
+      "ok": true,
+      "blob_sha": "d837f30668d757dc7733e2d4e1f03929c9104d28"
+    },
+    {
+      "path": "AGENTS.md",
+      "ok": true,
+      "blob_sha": "5427ff100c26b54e1cd23cc2bcaa5ea3a0f99aa3"
+    },
+    {
+      "path": "CLAUDE.md",
+      "ok": true,
+      "blob_sha": "ae0bc6302a5d6203c227e5fbbffe654874119ac8"
+    },
+    {
+      "path": "reports/workflow/README.md",
+      "ok": true,
+      "blob_sha": "b28bb7fd0eaf4773e02f5d7110ade006d0582683"
+    },
+    {
+      "path": "reports/workflow/IMPROVEMENTS.md",
+      "ok": true,
+      "blob_sha": "bcd147cb1e0d2414138667dcc79697dedbc82682"
+    }
+  ],
+  "verification": "All 15 allowlisted files read back exactly; main head matched; only workflow source and sanitized reports published.",
+  "measurement_cutoff": "2026-10-18T09:56:18.711749+00:00",
+  "post_cutoff_to_verification_seconds": 134.289,
+  "database": {
+    "project": "WORKFLOW-STUDIO",
+    "reports_saved_at_verification": 5,
+    "improvement_statements": 14,
+    "full_report_and_evidence_readback": true
+  },
+  "remaining_limits": [
+    "No background watcher",
+    "No new real Opus or DeepSeek report/ack this round; prior provider write restriction unchanged"
+  ],
+  "exclusions": [
+    "live databases",
+    "raw sessions and reasoning",
+    "credentials",
+    "unrelated project source"
+  ]
+}

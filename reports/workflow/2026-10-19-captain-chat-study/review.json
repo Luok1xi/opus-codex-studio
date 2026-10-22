@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-19-captain-chat-study",
+  "task_summary": "恢复既有本机私聊查看入口，研究授权技术对话并对照控制源码，落实用户追加的硬件要求。",
+  "workflow_version": "Project-specific TeamHub; bounded private evidence reads; independent native audit; local-only viewer",
+  "started_at": "2026-10-18T16:27:51.749Z",
+  "measurement_cutoff_at": "2026-10-18T17:05:30Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": ["读取指定联系人而非批量无关会话", "交叉核对文字、技术图片及实际源码", "提供可直接查看的本机成果并保存最新需求"],
+    "completed": ["复用既有鉴权读取工具，修正本机查看入口路由", "逐条阅读263条返回消息，查看14张技术图片", "区分作者交付范围、代码事实、经验条件及未验证推断", "本机查看页搜索、清除、锚点恢复及14张图片解码通过浏览器检查", "最新需求、完整技术正文及独立评审交接已写入项目库，逐字段回读一致"],
+    "remaining": []
+  },
+  "metrics": [
+    {"name":"返回唯一消息", "value":263, "unit":"records", "basis":"指定会话分页、去重，本机保存；不等于全部服务器历史"},
+    {"name":"分页读取", "value":4, "unit":"pages", "basis":"游标不再前移后停止"},
+    {"name":"技术图片检查", "value":14, "unit":"images", "basis":"只选择任务相关图片，不含其他媒体"},
+    {"name":"原生子代理", "value":2, "unit":"agents", "basis":"一位定位及独立技术复核；一位完成本机查看页，职责分开"},
+    {"name":"外部Opus或DeepSeek调用", "value":0, "unit":"calls", "basis":"只有项目库交接，未收到外部评审回执"},
+    {"name":"数据库逐字段回读", "value":3, "unit":"records", "basis":"decision、document、handoff，全文字段相等"},
+    {"name":"生产固件改动和刷写", "value":0, "unit":"operations", "basis":"本轮仅研究、查看工具和需求登记"},
+    {"name":"模型用量", "value":null, "unit":"tokens", "basis":"缺少完整同口径usage"},
+    {"name":"实际费用", "value":null, "unit":"currency", "basis":"无提供方账单"},
+    {"name":"活跃复核耗时", "value":null, "unit":"seconds", "basis":"墙钟含阅读、协调、登录等待及整理，未分离活跃时间"},
+    {"name":"归档耗时", "value":null, "unit":"seconds", "basis":"截止点之后的归档在回读回执单独记录"}
+  ],
+  "observations": [
+    "只有局部质量收益证据：回复上下文和代码交叉核对，纠正了节选包缺视觉、引脚限制及原采购图主板存在性的误读。",
+    "复用现有本机读取工具和已有浏览器依赖，未新增聊天服务或安装附件软件。",
+    "明显返工：恢复界面时两次路由假设错误导致用户重试；最终核对实际应用路径后修复。联系人备注连字符差异导致一次精确匹配失败，后用有限候选名核对。",
+    "其他开销：一次命令引用错误、部分输出过长、一次错误分类读取、默认自动化浏览器缺失后改用已安装浏览器。",
+    "原生子代理与协调者的独立复核不是外部Opus评审；对方未回执的任务保持待评审。",
+    "用户的新硬件要求作为本轮修订处理，覆盖旧决定，不另建重复研究轮次。",
+    "没有同输入同质量基线，无法证明净提速；本轮约38分钟墙钟不应包装成高效率证据。"
+  ],
+  "recommendations": [
+    {"id":"WF-CHAT-ROUTE-20261019", "action":"登录交接前核对实际路由、重定向和参数读取代码；优先验证完整入口再让用户操作。旧启动脚本路由已修正。", "owner":"codex", "status":"adopted", "next_check":"下一次启动是否无需用户重复尝试；凭据不得进入日志或报告"},
+    {"id":"WF-CHAT-EVIDENCE-20261019", "action":"技术对话按有限范围分页读取，保留回复引用和图片证据，再对照源码；数据库保存有适用条件的结论及实际版本。", "owner":"codex", "status":"adopted", "next_check":"下一次技术研究能否减少由断章取义、变量名和订单图片误读引起的返工"},
+    {"id":"WF-CHAT-COST-20261019", "action":"将身份确认、媒体读取和正式分析分阶段；优先输出决定与最小实验，再整理长报告，继续限制重复发现与过量输出。", "owner":"codex", "status":"proposed", "next_check":"后续同类任务记录阶段时间与相同验收门槛后再评估时间收益"}
+  ],
+  "evidence": ["evidence.json", "local research/viewer validation", "project database exact-readback receipt"],
+  "comparison": null,
+  "limits": [
+    "未做实车测试，未运行附件应用程序；研究验收不代表控制替换或硬件设计验收。",
+    "原始聊天、图片、账号路径、认证数据、数据库和车辆源码均不进入本归档。",
+    "子任务用量和单独活跃时间未知；归档截止之后另记回执。"
+  ]
+}

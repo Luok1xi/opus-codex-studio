@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-19-control-package-scope",
+  "task_summary": "核对分享范围与已有源码，区分文件缺失、明确排除的模块和实车版本待核；准备最小补充询问。",
+  "workflow_version": "Bounded primary-message check + original-file reference check + shared project handoff",
+  "started_at": "2026-10-19T10:29:46.956Z",
+  "measurement_cutoff_at": "2026-10-19T10:31:42.033Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "以原始说明判断分享范围",
+      "核对文件是否存在与接口是否实现",
+      "不擅自联系外部人员、不改变固件"
+    ],
+    "completed": [
+      "核对明确的控制模块分享范围与原始工程占位接口",
+      "确认引脚文件已存在，实际配置版本仍须提供者确认",
+      "为用户准备仅涉及配置和输入语义的询问措辞"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "核对窗口",
+      "value": 115.077,
+      "unit": "seconds",
+      "basis": "自首批资料读取结束至报告截止，含协调；后续归档另计"
+    },
+    {
+      "name": "原生辅助只读审查",
+      "value": 1,
+      "unit": "agents",
+      "basis": "源文件存在性和符号引用核对；父代理核原沟通"
+    },
+    {
+      "name": "生产文件变更",
+      "value": 0,
+      "unit": "files",
+      "basis": "本轮只读解释"
+    },
+    {
+      "name": "对外消息发送",
+      "value": 0,
+      "unit": "messages",
+      "basis": "只准备草稿，未联系提供者"
+    },
+    {
+      "name": "实际模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方usage"
+    },
+    {
+      "name": "实际费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "纯协调和归档耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独连续计时"
+    }
+  ],
+  "observations": [
+    "原始分享范围与文件检查一致；无证据把限定范围称为遗漏。",
+    "同伴主板分析不等于得知作者实际工程版本；先请求最小接口信息。",
+    "无同任务同质量基线，不能判断净提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-PACKAGE-SCOPE-20261019",
+      "action": "发现接口缺失时先核对作者约定的分享范围，再区分刻意留给接入者的接口与版本不一致，避免误称漏发。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续补充材料标明版本及用途，不重复索要已存在文件"
+    }
+  ],
+  "evidence": [
+    "Original supplied package checked locally for pin header, input symbol declaration, consumers and empty camera branch.",
+    "Sharing-scope statements checked locally; no private dialogue or source uploaded.",
+    "Current project peer messages read; only a bounded technical summary is handed back."
+  ],
+  "comparison": null,
+  "limits": [
+    "尚未拿到提供者当前实车文件，不能确定旧版、整理版或改线的具体原因。",
+    "未新增运行测试或烧录；未对外发送询问。",
+    "本轮归档只有脱敏工作流结论，没有私人聊天内容。"
+  ]
+}

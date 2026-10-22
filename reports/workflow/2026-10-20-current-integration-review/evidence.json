@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-20-current-integration-review",
+  "sanitized": true,
+  "scope": "Aggregate evidence only; private project sources, chats, local absolute paths, databases and binaries excluded.",
+  "local_evidence_index": [
+    {
+      "relative_name": "snapshot.json",
+      "sha256": "bf16cfcbde3f5b1c938eae81e0acd93a5d3ed3c45ebe11f0723f4ec641bc44b8"
+    },
+    {
+      "relative_name": "patch-manifest.json",
+      "sha256": "4691024beebf90f85eacbfc4ed6c1e1ac70fd94a7c7a7b6a20aa5a85a814852a"
+    },
+    {
+      "relative_name": "firmware-changes.diff",
+      "sha256": "1d141293ac852460fcb0584baa570318f8a88665e79635db3953ec2ade8450d0"
+    },
+    {
+      "relative_name": "tests/review-results.log",
+      "sha256": "196b7e0730fee8a285513fda69b9c9f5b889ec64b4c91a4f87b404350ef3012d"
+    },
+    {
+      "relative_name": "tests/review-build/camera-before.log",
+      "sha256": "46a2b897439959b739b709ab43bd8244211eb523ea61c624a5f1fbcfff2f3ea8"
+    },
+    {
+      "relative_name": "tests/review-build/camera-final.log",
+      "sha256": "260beffe911be873bd1d19e15f515aca93ff04bb6e5c056cb0ebbb3fc56915c1"
+    },
+    {
+      "relative_name": "tests/camera-sources.json",
+      "sha256": "a7930ca7f0ac15edc343eef095ae0d5b0c28b309e4ca2c250cd669b50cc234da"
+    },
+    {
+      "relative_name": "control-review.txt",
+      "sha256": "086f9a6f56b1b311cc44f4335863d2f1bedf5150e0fc88b11971caee9ad9b7fd"
+    },
+    {
+      "relative_name": "patch-independent-review.txt",
+      "sha256": "e95d700c7af1b84928189c2ea80b8f32cdbfd3f1df821770a39acdc4600ca9a3"
+    },
+    {
+      "relative_name": "speed-target-test.txt",
+      "sha256": "e98279eec778458f6013bace44366574c8b6bdebb6b2c476ef211be9c23f1aef"
+    },
+    {
+      "relative_name": "sim-check/REPORT.txt",
+      "sha256": "89b57926fae3980c0cd95dd5a6cc22fe58ed65d6d50c01ea87075192623ba131"
+    },
+    {
+      "relative_name": "sim-check/trajectory-verification.json",
+      "sha256": "6383a5d0f6ea626512d9edffdc56d0392ea52e0f8f7902f7a3074fc4b3c498ae"
+    },
+    {
+      "relative_name": "ads-evidence/build-C-result.json",
+      "sha256": "f70d9687819f5749d799eecacebb3c76c90d36c70b959e86a643d8108aea994d"
+    },
+    {
+      "relative_name": "ads-evidence/worker-report.json",
+      "sha256": "398b8ce2fce33239401b0e4ac8947e59a35e3d37fd8118bbf732db0aafd83d7b"
+    }
+  ],
+  "baseline": {
+    "unchanged_source_files": 678,
+    "revision": "current production snapshot; obsolete candidate excluded"
+  },
+  "patch": {
+    "firmware_files": 4,
+    "semantic_added_lines": 45,
+    "semantic_removed_lines": 13,
+    "archive_sha256": "f9883c04b77a17f52698d37124807968e4ee62b21c7a5d7bb98939f64600767b"
+  },
+  "validation": {
+    "control_boundary_cases_passed": 272514,
+    "synthetic_frames_processed": 400,
+    "all_synthetic_frames_recognized": null,
+    "simulator_runs_passed": 30,
+    "identical_trace_pairs": 6,
+    "trace_rows_per_build": 7356,
+    "web_metric_comparisons_passed": 66,
+    "camera_before": "overlap assertion reproduced failure",
+    "camera_after": "ownership, duplicate, error, timeout and wrap fixture passed",
+    "full_regression": "actual-source controller, bridge, OUC and packet parser passed",
+    "independent_patch_review": "no confirmed blocking defect; physical timing excluded"
+  },
+  "build": {
+    "ide_elapsed_seconds": 16.556,
+    "errors": 0,
+    "warnings": 11,
+    "rom_bytes": 88074,
+    "ram_data_bss_bytes": 129790,
+    "input_combined_sha256": "87340e98fa41d3bd8668bd3fb7fd6a71c2890c0dd0620eb3162132a967ce07d0",
+    "input_file_count": 678,
+    "c_translation_unit_count": 173,
+    "files_changed_during_build": [],
+    "foreign_source_paths": [],
+    "artifacts": {
+      "elf": {
+        "file": "schoolcar_review_20261020.elf",
+        "bytes": 10610932,
+        "sha256": "b78fc77037d1c6db5f9c033a9fcfba52a48bc9f16f6e34136c3b34e7ae0bafec"
+      },
+      "hex": {
+        "file": "schoolcar_review_20261020.hex",
+        "bytes": 212273,
+        "sha256": "571bb411099e91da831cf477151e1aa908949d976e72f98262de5f119d60d0cc"
+      },
+      "map": {
+        "file": "schoolcar_review_20261020.map",
+        "bytes": 2127081,
+        "sha256": "77ceb9a216c737476bbda7a3117e5b69c7e3ccfdbecac6e9941ab431a56c131d"
+      }
+    }
+  },
+  "build_attempts": {
+    "total": 3,
+    "failed": 2,
+    "cause": "IDE booster pruned required include/source configuration"
+  },
+  "coordination": {
+    "native_workers": 3,
+    "external_model_dispatches": 0,
+    "existing_opus_handoffs_reviewed": [
+      54,
+      56,
+      58,
+      59,
+      61,
+      63,
+      64
+    ],
+    "codex_receipts": [
+      54,
+      56,
+      58,
+      59,
+      61,
+      63
+    ],
+    "new_handoff": 66,
+    "handoff_body_readback_verified": true,
+    "opus_patch_acceptance": "pending; no response observed",
+    "deepseek_this_round": "not dispatched"
+  },
+  "limits": [
+    "No flashing, serial, physical direction, real DMA or track performance validation.",
+    "Simulation equality does not test debug UART or camera DMA.",
+    "Existing 3252-case golden result was inspected, not rerun by this coordinator.",
+    "No browser visual acceptance this round."
+  ]
+}

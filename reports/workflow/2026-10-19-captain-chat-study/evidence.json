@@ -1,0 +1,10 @@
+{
+  "round_id":"2026-10-19-captain-chat-study",
+  "scope":"Sanitized aggregate evidence only; private source content retained locally",
+  "collection":{"selected_conversations":1,"unique_messages":263,"pages":4,"technical_images_reviewed":14,"complete_server_history":false},
+  "reader_self_check":{"selection":true,"pagination":true,"deduplication":true,"attribution":true,"offline":true},
+  "viewer":{"message_anchors":263,"local_images":14,"escaped_untrusted_text":true,"search":true,"clear":true,"anchor_reveal":true,"image_decode":true,"browser_page_errors":0,"remote_scripts":0},
+  "database":{"project":"CRAZY-CIRCUIT","decision_id":7,"document_id":88,"handoff_id":13,"exact_readback":true,"external_review_acknowledged":false},
+  "deployment":{"local_browser_open_requested":true,"public_upload":false,"vehicle_firmware_changes":0,"device_flashes":0},
+  "source_provenance":"Local source and research links are retained in project database; omitted here to avoid exporting private conversation content."
+}

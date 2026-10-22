@@ -1,0 +1,81 @@
+{
+  "round_id": "2026-10-18-schoolcar-debug",
+  "summary": "Codex实现硬件适配与独立验证；Opus当前核心保持其所有权，发现异常路径另交候选补丁。",
+  "completed": [
+    "按文件划分：Codex仅修改port，保留Opus实时核心改动；保留修改前快照。",
+    "修复断流保护、非有限输出拦截、Flash旧合法页误报、陀螺模式错误与校准SPI抢占，电池通道/参考电压由原理图确认。",
+    "17个端口故障测试、287项现有核心自检、7个正常仿真通过；正常仿真与故障测试分别记账。",
+    "官方IDE构建0错误0警告，完整保留参数和校准API后链接成功，核对静态内存及双核共享地址。",
+    "复核出核心3个故障用例仍失败；最小候选补丁另行测试，保持生产文件分工。",
+    "核心候选补丁测试结果见evidence.json；候选与当前共享生产代码严格区分。"
+  ],
+  "remaining": [
+    "Opus对本轮调试marker的确认、核心候选合并与独立验收。",
+    "电机/编码器极性、轮距、ADC标定、真实2ms执行时间和双核压力实测；本轮未烧录。"
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "metrics": [
+    {
+      "name": "端口故障场景通过",
+      "value": 17,
+      "unit": "cases",
+      "basis": "最终源文件上的UBSan/float-cast-overflow回归，安装到工程后入口再验"
+    },
+    {
+      "name": "现有核心自检通过",
+      "value": 287,
+      "unit": "checks",
+      "basis": "逐文件hash一致的主机快照make check"
+    },
+    {
+      "name": "正常闭环仿真通过",
+      "value": 7,
+      "unit": "cases",
+      "basis": "独立复跑Opus第80次报告的make sim；参数是假设"
+    },
+    {
+      "name": "修补前核心故障用例失败",
+      "value": 3,
+      "unit": "cases",
+      "basis": "最新同一快照下轨迹耗尽、旧帧交回、NaN输入"
+    },
+    {
+      "name": "原生独立子代理",
+      "value": 2,
+      "unit": "agents",
+      "basis": "核心故障/硬件接口复核；无递归派工，不冒充Opus"
+    },
+    {
+      "name": "最终IDE单次构建耗时",
+      "value": 1.007,
+      "unit": "seconds",
+      "basis": "ADS报告增量构建耗时，非整轮耗时、非全量冷编译耗时"
+    },
+    {
+      "name": "全轮模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整提供方usage"
+    },
+    {
+      "name": "全轮模型费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单数据"
+    },
+    {
+      "name": "复核与归档独立活跃耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "与测试和等待交错，未单独计量；墙钟包含协调等待"
+    },
+    {
+      "name": "用户手工传递本轮交接",
+      "value": 0,
+      "unit": "messages",
+      "basis": "直接写项目库和过渡发现文件，未请求用户转述"
+    }
+  ]
+}

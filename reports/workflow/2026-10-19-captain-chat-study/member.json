@@ -1,0 +1,87 @@
+{
+  "round_id": "2026-10-19-captain-chat-study",
+  "summary": "恢复既有本机私聊查看入口，研究授权技术对话并对照控制源码，落实用户追加的硬件要求。",
+  "completed": [
+    "复用既有鉴权读取工具，修正本机查看入口路由",
+    "逐条阅读263条返回消息，查看14张技术图片",
+    "区分作者交付范围、代码事实、经验条件及未验证推断",
+    "本机查看页搜索、清除、锚点恢复及14张图片解码通过浏览器检查",
+    "最新需求、完整技术正文及独立评审交接已写入项目库，逐字段回读一致"
+  ],
+  "remaining": [
+    "外部评审及实车验证待后续阶段，不冒充本轮已完成"
+  ],
+  "evidence": [
+    "evidence.json",
+    "local research/viewer validation",
+    "project database exact-readback receipt"
+  ],
+  "metrics": [
+    {
+      "name": "返回唯一消息",
+      "value": 263,
+      "unit": "records",
+      "basis": "指定会话分页、去重，本机保存；不等于全部服务器历史"
+    },
+    {
+      "name": "分页读取",
+      "value": 4,
+      "unit": "pages",
+      "basis": "游标不再前移后停止"
+    },
+    {
+      "name": "技术图片检查",
+      "value": 14,
+      "unit": "images",
+      "basis": "只选择任务相关图片，不含其他媒体"
+    },
+    {
+      "name": "原生子代理",
+      "value": 2,
+      "unit": "agents",
+      "basis": "一位定位及独立技术复核；一位完成本机查看页，职责分开"
+    },
+    {
+      "name": "外部Opus或DeepSeek调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "只有项目库交接，未收到外部评审回执"
+    },
+    {
+      "name": "数据库逐字段回读",
+      "value": 3,
+      "unit": "records",
+      "basis": "decision、document、handoff，全文字段相等"
+    },
+    {
+      "name": "生产固件改动和刷写",
+      "value": 0,
+      "unit": "operations",
+      "basis": "本轮仅研究、查看工具和需求登记"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "缺少完整同口径usage"
+    },
+    {
+      "name": "实际费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无提供方账单"
+    },
+    {
+      "name": "活跃复核耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "墙钟含阅读、协调、登录等待及整理，未分离活跃时间"
+    },
+    {
+      "name": "归档耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "截止点之后的归档在回读回执单独记录"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "lead_order": ["opus", "codex-lead"],
+  "worker_order": ["codex-worker", "opus", "codex-lead"],
+  "routing_rules": [
+    {"role": "lead", "capabilities": ["plan"], "order": ["opus", "codex-lead"]},
+    {"role": "lead", "capabilities": ["review"], "order": ["codex-lead", "opus"]},
+    {"role": "worker", "capabilities": ["code"], "order": ["codex-worker", "opus", "codex-lead"]}
+  ],
+  "agents": {
+    "opus": {"provider": "claude", "model": "opus", "capabilities": ["plan", "review", "research", "write", "code"]},
+    "codex-lead": {"provider": "codex", "reasoning_effort": "high", "quota_group": "codex-default", "capabilities": ["plan", "review", "research", "write", "code"]},
+    "codex-worker": {"provider": "codex", "reasoning_effort": "medium", "quota_group": "codex-default", "capabilities": ["research", "write", "code"]}
+  },
+  "limits": {"max_parallel": 2, "max_calls": 16, "max_repairs": 1, "timeout_seconds": 900,
+    "quota_ttl_seconds": 60, "reserve_percent": 5, "context_chars": 16000, "max_tasks": 12, "max_recoveries": 2},
+  "checks": {}
+}

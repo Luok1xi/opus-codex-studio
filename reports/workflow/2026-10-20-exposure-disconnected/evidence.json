@@ -1,0 +1,14 @@
+{
+  "serial_attempt": {
+    "port": "COM6",
+    "error": "FileNotFoundError(2): device not found",
+    "commands_sent": 0
+  },
+  "owner_confirmation": "not reconnected",
+  "peer_review": {
+    "received": true,
+    "scope": "exposure/readback candidate and stopped-only guards",
+    "hardware_actions": 0
+  },
+  "privacy": "No raw logs, images, sessions or live databases."
+}

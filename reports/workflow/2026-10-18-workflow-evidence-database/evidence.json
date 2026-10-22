@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "verification_at": "2026-10-18T09:56:18.711749+00:00",
+  "new_project": "WORKFLOW-STUDIO",
+  "original_project_databases_preserved": 7,
+  "imported_historical_analyses": 3,
+  "historical_improvement_statements": 12,
+  "tests": {
+    "new_database_tests": 7,
+    "existing_validator_tests": 4,
+    "combined_passed": 11,
+    "combined_seconds": 1.49,
+    "first_worker_run_seconds": 2.263
+  },
+  "concurrency": "12 identical requests produce one stored report",
+  "atomicity": "injected failure after report/decision/classification writes rolls back all five affected tables; original request retry succeeds",
+  "authorship": "original author and actual submitting agent retained separately",
+  "workflow_source_sha256": {
+    "tools/workflow_db.py": "241fcd7ea889446abb4755b03e1efffa1290c1302c4ebc9a04cda2ebc498ac20",
+    "tools/workflow_review.py": "afe97f6d491815e0dfc552e713a1b489b20ee63b0fd8ddb951762aab69dbea95",
+    "tests/test_workflow_db.py": "2e3bc7101aeaa1c1916b8ecd3b1467d000c837413b1a1cbd5635f8a84dd9d5ae"
+  },
+  "coordination": {
+    "native_codex_workers": 1,
+    "worker_interval": [
+      "2026-10-18T09:51:59Z",
+      "2026-10-18T09:53:22Z"
+    ],
+    "worker_reported_seconds": 83,
+    "deepseek_calls_this_round": 0,
+    "opus_calls_this_round": 0
+  },
+  "limits": [
+    "Tests of three labels do not prove live Opus/DeepSeek write permissions",
+    "No raw provider sessions or personal data included",
+    "No matched baseline or billed token/cost evidence"
+  ]
+}

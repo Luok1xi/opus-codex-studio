@@ -1,0 +1,104 @@
+{
+  "round_id": "2026-10-20-live-log-power",
+  "summary": "实际接收车辆日志，对比关电源、原电池上电闪灯、换电池后三种状态；确认当前运行恢复。",
+  "completed": [
+    "读取实际同伴日志并确认抓图成功可能只是重复缓存。",
+    "两次各12秒被动接收；OFF和ON闪灯状态各12条完整记录，均没有时间回退，摄像头没有新帧。",
+    "结合Owner确认的开关状态，区分电池实际端电压与开关后电源ADC估计。",
+    "对照原图和ADC代码，未发现明显换算倍数错误；保留测量链误差可能。",
+    "结果正文已入项目库handoff90；采集前通知88已被同伴确认，串口已释放。",
+    "换电池后又被动接收12秒：电源估计约11.68V、49～50fps、帧号增长；Owner确认灯已稳定。",
+    "三个状态各自保留固定名称原始记录，避免通用文件名指向新采样引起误读。"
+  ],
+  "remaining": [
+    "具体属于原电池电量、内阻、保护或接头接触，尚无直接测量区分。",
+    "仅完成静态短时观察，未做带电机/风机负载验收；整体就绪标记仍未成立。",
+    "新结果handoff91待Opus回执；独立接口问题未在本轮修改。"
+  ],
+  "metrics": [
+    {
+      "name": "观察区间",
+      "value": 1049.593,
+      "unit": "seconds",
+      "basis": "开始至完成OFF/ON诊断及交接，包含Owner中途改变供电状态。"
+    },
+    {
+      "name": "被动串口采集",
+      "value": 3,
+      "unit": "sessions",
+      "basis": "每次12秒，结束即关闭；有实际开始结束记录。"
+    },
+    {
+      "name": "完整状态行",
+      "value": 36,
+      "unit": "rows",
+      "basis": "三段各12完整行，分别保存OFF、原电池ON、换电池；未完整尾行排除。"
+    },
+    {
+      "name": "串口写入",
+      "value": 0,
+      "unit": "bytes",
+      "basis": "采集脚本无write调用。"
+    },
+    {
+      "name": "烧录及主动复位",
+      "value": 0,
+      "unit": "operations",
+      "basis": "本轮未执行。"
+    },
+    {
+      "name": "生产文件修改",
+      "value": 0,
+      "unit": "files",
+      "basis": "仅本地采集和审核材料。"
+    },
+    {
+      "name": "原生独立审核者",
+      "value": 1,
+      "unit": "workers",
+      "basis": "复用同一审核者，先读旧日志，后追加新状态与ADC复核。"
+    },
+    {
+      "name": "新增外部模型调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "使用已有Opus共享数据库交接。"
+    },
+    {
+      "name": "已记录工具失败",
+      "value": 1,
+      "unit": "calls",
+      "basis": "普通进程查询权限拒绝，获授权只读查询后成功。"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无一致提供方usage。"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "协调等待和重复工作",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未分离计算；反复更新结论由供电状态变化触发。"
+    },
+    {
+      "name": "归档开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "完成后记入归档回执。"
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "Project handoffs 88,90,91",
+    "Three fixed-name raw captures and owner confirmation"
+  ],
+  "provenance": "Coordinator updated final evidence after Owner battery replacement; exact component failure remains unconfirmed."
+}

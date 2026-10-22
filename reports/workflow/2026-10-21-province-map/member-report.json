@@ -1,0 +1,52 @@
+{
+  "round_id": "2026-10-21-province-map",
+  "summary": "将用户给出的2025赛道地图导入既有网站，运行当前小车代码的仿真并可视化回放。",
+  "completed": [
+    "在原网站接入用户地图与四组真实C算法仿真回放，保留15个既有案例。",
+    "将道路判定与视觉路肩/元件分离；网页画面、时间轴与CLI统计一致。",
+    "修复导出距离二次舍入；完成17案例27记录及两种页面宽度的验收。"
+  ],
+  "remaining": [],
+  "metrics": [
+    {
+      "name": "记录开始至功能验收与交接",
+      "value": 1083.581,
+      "unit": "seconds",
+      "basis": "本轮工具墙钟，包含探索、两原生子任务、编译、返工和页面验证。"
+    },
+    {
+      "name": "原生子任务",
+      "value": 2,
+      "unit": "tasks",
+      "basis": "地图几何与仿真渲染器分工；渲染器另有一次同任务修复跟进。"
+    },
+    {
+      "name": "本轮真实Opus或DeepSeek调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "读取既有Opus交接并向数据库交接；未将原生子代理冒充Opus，也未收到本轮验收回执。"
+    },
+    {
+      "name": "首轮完整回放统计验收失败项",
+      "value": 1,
+      "unit": "checks",
+      "basis": "新地图暴露距离导出精度的二次舍入；修复后全通过。"
+    },
+    {
+      "name": "模型tokens与费用",
+      "value": null,
+      "unit": "unknown",
+      "basis": "未提供可靠的提供方计费/usage数据。"
+    },
+    {
+      "name": "复盘归档总开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "报告截止时远端上传尚未完成，另在归档回执记录。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "provenance": "Codex coordinator tool results plus two actual native-agent reports; Opus handoff only, no claimed Opus acceptance."
+}

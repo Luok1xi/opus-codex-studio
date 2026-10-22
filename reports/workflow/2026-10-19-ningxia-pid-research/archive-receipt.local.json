@@ -1,0 +1,28 @@
+{
+  "round_id": "2026-10-19-ningxia-pid-research",
+  "report_id": 19,
+  "member_id": 18,
+  "handoff": {
+    "project": "CRAZY-CIRCUIT",
+    "id": 12,
+    "status": "pending",
+    "body_readback": true
+  },
+  "repository": "Luok1xi/opus-codex-studio",
+  "visibility": "private",
+  "commit": "3dded0c53d2eb5224026fe8d2f02ad73002b9bdd",
+  "remote_files_verified": [
+    "review.json",
+    "review.md",
+    "evidence.json",
+    "member.json"
+  ],
+  "all_verified": true,
+  "archive_elapsed_seconds": 188.305,
+  "archive_timing_basis": "wall clock includes local archive registration retries and remote verification; not active work time",
+  "archive_rework": [
+    "local ZIP rejected by HTTP-only source schema; stored as artifact",
+    "one invalid report-update patch corrected",
+    "one readback comparison used dict repr and was corrected to exact body field equality"
+  ]
+}

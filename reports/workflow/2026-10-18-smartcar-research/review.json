@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-18-smartcar-research",
+  "task_summary": "检查Opus智能车工程进展、协作复核强队源码并补充参考工程。",
+  "workflow_version": "现有文件交接＋Codex协调者＋两个Codex原生子代理；无本轮Opus实时答复",
+  "started_at": "2026-10-18T08:26:18.892Z",
+  "measurement_cutoff_at": "2026-10-18T08:42:14.878Z",
+  "quality": {
+    "status": "partial",
+    "acceptance": ["核对真实工程状态", "复核关键源码结论并留证据", "寻找与本队匹配的新增工程", "把结果交回Opus并区分移交与答复"],
+    "completed": ["核对v015安装记录与过期v006交接的冲突", "核实SoberUp反转链、baolooong真实控制周期等问题", "补到两个同赛项候选，保存湖北工程10文件并逐个校验hash", "读取本校25页技术报告", "安装器原模拟测试与两项故障注入通过", "写入共享交接并回读验证"],
+    "remaining": ["未收到Opus本轮回执，不能称双方联合验收完成"]
+  },
+  "metrics": [
+    {"name":"用户消息至最终回复","value":951.904,"unit":"秒","basis":"日志用户消息记录至final完成；平台任务墙钟另为955.986秒"},
+    {"name":"新派子代理","value":2,"unit":"次","basis":"父会话spawn_agent调用；均为Codex，不是Opus"},
+    {"name":"追加子任务","value":4,"unit":"次","basis":"父会话followup_task调用；含追加源码核查、快照保存和测试留档"},
+    {"name":"两个子代理运行重叠","value":193.414,"unit":"秒","basis":"有起止事件的运行区间求交，不是节省时间或有效劳动量"},
+    {"name":"顶层工具调用","value":76,"unit":"次","basis":"三个会话的顶层调用；不能与嵌套工具事件相加"},
+    {"name":"嵌套工具事件","value":93,"unit":"项","basis":"独立于顶层调用口径；其中77项有明确状态"},
+    {"name":"明确失败事件","value":5,"unit":"项","basis":"77项有状态事件中的failed/declined或非零退出；不覆盖所有语义失败"},
+    {"name":"模型响应usage记录","value":84,"unit":"条","basis":"thread+response去重，每turn与累计usage交叉一致；不是独立派工数"},
+    {"name":"累计输入tokens","value":14408140,"unit":"tokens","basis":"根与两个子代理真实逐响应usage；包含缓存，不是独立文本长度"},
+    {"name":"其中缓存输入","value":13730048,"unit":"tokens","basis":"输入子集，不能再加到总输入或直接当作节省金额"},
+    {"name":"未缓存输入","value":678092,"unit":"tokens","basis":"总输入减缓存输入"},
+    {"name":"输出tokens","value":46307,"unit":"tokens","basis":"已含reasoning_output，不能重复相加"},
+    {"name":"控制代理首次输入","value":109218,"unit":"tokens","basis":"第一条真实响应usage；继承上下文产生的实际处理量"},
+    {"name":"研究代理首次输入","value":109258,"unit":"tokens","basis":"第一条真实响应usage；继承上下文产生的实际处理量"},
+    {"name":"Opus本轮新答复","value":0,"unit":"次","basis":"本轮只有读取其文件、写交接，无新的已核验答复"},
+    {"name":"Opus同期用量","value":null,"unit":"tokens","basis":"没有其运行usage，不把CLI不可用当成桌面没有工作"},
+    {"name":"实际计费金额","value":null,"unit":"currency","basis":"无账单证据，订阅/缓存计费方式未计入"},
+    {"name":"串行对照耗时","value":null,"unit":"秒","basis":"未运行同题同质量串行基线"},
+    {"name":"重复工作耗时","value":null,"unit":"秒","basis":"发现定位和留档开销，但未逐段测量，不能填0"},
+    {"name":"原始轮次内复盘耗时","value":null,"unit":"秒","basis":"当时尚无统一复盘流程；本报告为下一轮补建"}
+  ],
+  "observations": [
+    "质量收益有具体证据：方向引脚核查推翻反转归因，调度链核查纠正编码器周期，双备份故障注入补足保护证据。这些问题已发现，不能一律计为对方源码/手册已经修复。",
+    "分工为控制审查、强队来源、主协调者工程/PDF/移交；保留原有工程，避免重新造前端。存在并行，但无法从日志估计单人完成相同验收需要多久。",
+    "损耗包括旧交接导致一次过期状态汇报、手册目录误判、已有PDF依赖发现较晚，以及追加任务补存测试脚本；这些都应优化，未伪造各自耗时。",
+    "2名子代理首响应均超过10.9万输入tokens，完整历史对狭窄代码核查可能过多。缓存输入占比高也不能证明低费用或相对节省。",
+    "Opus的真实近期工作只通过文件核验；CLI登录失败与桌面会话工作分开。当前只是移交完成，协作闭环尚未完成。",
+    "结论：工作流具有可见的质量控制价值；净时间/费用收益没有足够的因果对照证据。"
+  ],
+  "recommendations": [
+    {"id":"WF-01","action":"尝试短任务卡＋必要文件替代全量历史继承","owner":"Codex","status":"proposed","next_check":"比较同类审查的首轮输入、遗漏、返工；不跨题计算提效"},
+    {"id":"WF-02","action":"维护唯一当前版本、路径、证据时间和状态摘要","owner":"Codex＋Opus","status":"proposed","next_check":"首次状态汇报是否准确、错误路径尝试次数"},
+    {"id":"WF-03","action":"分开记录CLI、桌面和文件交接渠道；收到回执才闭环","owner":"Codex","status":"adopted","next_check":"重复探测次数、交接到回复延迟"},
+    {"id":"WF-04","action":"子任务首次派发即要求保存可复跑证据","owner":"Codex","status":"proposed","next_check":"仅为补留档的追加派工次数"},
+    {"id":"WF-05","action":"持续积累逐轮质量、资源、损耗及复盘自身开销","owner":"协调者","status":"adopted","next_check":"每轮报告与私人仓库回读记录齐全"}
+  ],
+  "evidence": ["同目录evidence.json：只含聚合数据、日志区间定位与SHA256，无原始聊天或推理", "本地技术复核包：strong-team-review-20261018/研究复核与移交.txt（项目证据不随本次上传）", "技术成果摘要、文件hash和模拟测试结论已由上一轮核验；本次未重复操作硬件"],
+  "comparison": null,
+  "limits": ["本次遥测覆盖Codex协调者与两个指定子代理，不含其他线程或Opus同期工作", "缺串行基线、完整费用、人工有效工作/重复工作耗时；不计算净提效百分比", "并行重叠不是节省时间；token累计包含缓存；文件数不是质量评分", "发现错误不等于已经接入修复；未证明整车实测性能因此提高"]
+}

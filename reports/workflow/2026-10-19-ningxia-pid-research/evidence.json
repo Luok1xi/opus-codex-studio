@@ -1,0 +1,25 @@
+{
+  "unchanged_extracted_files": 667,
+  "research_sha256": "cc7bef33cdfd06c08463971c5dc30549c550c846d202c213fb2bc487c23361e0",
+  "source_sha256": {
+    "code/pid.c": "c7519d861626596aed8e7c7467bf0635e23571fc2c7851c69b08f5ee9dc9366f",
+    "code/control.c": "b9ce97f005a9b160f5deca8bc3d84c96ab851b15fdd2987fdadbc8c4f4c58a45",
+    "code/imu.c": "28a7bc14b3b7876a547dec121d6abd955eec8ddf8511a271ea248f7776c43810",
+    "user/isr.c": "090548749d8f2bec9b40f8eb717cbfe2d6d24fa370a83ca50fece774eb16d631"
+  },
+  "comparison_sha256": {
+    "src/sc_steer.c": "99d356ccfae1667441e2dfc8664387a20549221d03ed15aae27b96bb621cc317",
+    "src/sc_wheel.c": "2aa4c80eb30d3033fbbca8a3cac4f6814dc9e3da5c6feac49ddf7d44747bd2db",
+    "src/sc_car.c": "6909ed25165bac1775a38b6ed0c966ebb92b8e3a21f0691e4eab6072c6e82eb4",
+    "src/sc_odom.c": "2fe958afc8fea256ae85b6072399241a0e435b74ac72371e79c87baad3d96f20"
+  },
+  "original_archive_sha256": "51ed5790872c701ae5d162b08d33f9aa41152c2252eb2ec1b6cb26a02ebb5ddc",
+  "behavior_cases": 4,
+  "boundary_faults_reproduced": 3,
+  "compiler": "GCC 13.3.0, UBSan + float-cast-overflow",
+  "production_edits": 0,
+  "firmware_flashes": 0,
+  "native_reviewers": 1,
+  "external_model_calls": 0,
+  "baseline": null
+}

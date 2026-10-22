@@ -1,0 +1,17 @@
+{
+  "source_project": "CRAZY-CIRCUIT",
+  "round_id": "2026-10-20-flash-log-diagnosis",
+  "log_summary": {
+    "failed_initialization_attempts": 5,
+    "verified_success_attempts": 1,
+    "success_duration_ms": 2299,
+    "verified_difference_bytes": 0
+  },
+  "observed_change_confounded": true,
+  "new_hardware_operations_by_codex": 0,
+  "project_handoff_id": 73,
+  "native_reviewers": 1,
+  "peer_acknowledgement_received": false,
+  "matched_baseline": false,
+  "privacy": "Aggregated observations only; raw device logs, personal paths and identifiers omitted."
+}

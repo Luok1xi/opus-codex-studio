@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "lead_order": ["opus", "codex"],
+  "worker_order": ["codex", "opus", "deepseek"],
+  "agents": {
+    "opus": {"provider": "claude", "model": "opus", "capabilities": ["plan", "review", "research", "write", "code"]},
+    "codex": {"provider": "codex", "capabilities": ["plan", "review", "research", "write", "code"]},
+    "deepseek": {"provider": "deepseek", "enabled": false, "capabilities": ["research", "write", "code"]}
+  },
+  "limits": {"max_parallel": 3, "max_calls": 16, "max_repairs": 1, "timeout_seconds": 900,
+    "quota_ttl_seconds": 60, "reserve_percent": 5, "context_chars": 16000, "max_tasks": 12, "max_recoveries": 2},
+  "checks": {}
+}

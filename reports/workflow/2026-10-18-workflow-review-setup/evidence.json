@@ -1,0 +1,23 @@
+{
+  "measurement_cutoff_at": "2026-10-18T08:56:33.094424+00:00",
+  "scope": "coordinator only, recorded completed responses; child usage unavailable in this setup snapshot",
+  "source_basename": "rollout-2026-10-13T14-19-09-01a133ea-34c8-7c71-9cf4-fa026cee2533.jsonl",
+  "line_start": 9928,
+  "line_end": 10123,
+  "bounded_records_sha256": "cab66252bd6ce84491d377840686a15804ff0d7ce244ffc6e38f508b62f0f9d4",
+  "usage_records": 21,
+  "usage": {
+    "input_tokens": 3457757,
+    "cached_input_tokens": 3282944,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 25802,
+    "reasoning_output_tokens": 4221,
+    "total_tokens": 3483559
+  },
+  "usage_crosscheck": "matched last cumulative turn usage",
+  "exclusions": [
+    "raw log contents",
+    "child-agent usage",
+    "publication and later verification after cutoff"
+  ]
+}

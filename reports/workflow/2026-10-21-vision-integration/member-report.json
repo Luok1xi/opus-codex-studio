@@ -1,0 +1,69 @@
+{
+  "round_id": "2026-10-21-vision-integration",
+  "summary": "Integrate and independently validate full-circuit visual routing on an existing vehicle project and simulation site.",
+  "completed": [
+    "Reused current collaborator route candidate and audited hardware pins, signs and units.",
+    "Fixed and fault-tested indefinite gyro hold after camera freeze.",
+    "Added full-map real-C replay and 29 landmark inspection links to the existing website; browser and all replay checks passed.",
+    "Added default-disabled target route preset; actual ADS compiler/linker succeeded; calibration gate tests passed."
+  ],
+  "remaining": [
+    "Real camera and odometry calibration, physical direction checks and autonomous finish stopping remain required.",
+    "Full-map symbol-name classification is not implemented; current objective tested is planned traversal.",
+    "Independent Opus acceptance of this round corrections remains pending."
+  ],
+  "metrics": [
+    {
+      "name": "Wall time through functional delivery",
+      "value": 1271.246,
+      "unit": "seconds",
+      "basis": "Recorded round start and current cutoff; includes one interruption, recovery, independent checks and rework."
+    },
+    {
+      "name": "Native task dispatches",
+      "value": 5,
+      "unit": "tasks",
+      "basis": "Hardware/source/target reviewers, one interrupted target continuation and calibration sensitivity task; not Opus calls."
+    },
+    {
+      "name": "New Opus or DeepSeek model calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Reused real Opus handoff and candidate; database messages pending, no fabricated response."
+    },
+    {
+      "name": "Target build errors",
+      "value": 0,
+      "unit": "errors",
+      "basis": "ADS GUI target build log."
+    },
+    {
+      "name": "Target build warnings",
+      "value": 11,
+      "unit": "warnings",
+      "basis": "Inherited OUC/driver diagnostic locations."
+    },
+    {
+      "name": "Model usage and cost",
+      "value": null,
+      "unit": "unknown",
+      "basis": "Provider usage/billing not available."
+    },
+    {
+      "name": "Coordination and review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlapping activities and interruption not individually instrumented."
+    },
+    {
+      "name": "Review archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive not finished at measurement cutoff; receipt will record verification."
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "provenance": "Codex coordinator actual tool checks plus native reviewers; real prior Opus candidate and handoff, no claimed new Opus acceptance."
+}

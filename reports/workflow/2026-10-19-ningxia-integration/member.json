@@ -1,0 +1,109 @@
+{
+  "round_id": "2026-10-19-ningxia-integration",
+  "summary": "与Opus确定串级控制框架，修复可复现缺陷、保留并发改动，完成隔离测试与TC264构建。",
+  "completed": [
+    "完整读取并回执Opus交接14/24，框架达成一致",
+    "修复四处已复现缺陷并补停车参数入口",
+    "保留Opus重构、仿真默认值和fan_ready重命名",
+    "322+38+237检查、独立边界测试及18主板场景通过",
+    "直接律/串级基线与候选各9场景均通过，已测最大偏离未增大",
+    "ADS一次0错误0警告，25份源文件哈希一致，相关API实际进入链接产物",
+    "12个改动文件写回共享主工程且哈希回读一致，完整结果写入项目数据库交接25"
+  ],
+  "remaining": [
+    "Opus对本轮新修复最终验收待回执",
+    "实车轮距/编码器/增益/负压振动未测，未烧录",
+    "完整地图、比赛路线、串口收包/发车应用与风机PWM集成未完成"
+  ],
+  "metrics": [
+    {
+      "name": "原生子代理",
+      "value": 3,
+      "unit": "agents",
+      "basis": "控制审查/修复、视觉与里程边界、ADS编译；未递归派工"
+    },
+    {
+      "name": "本轮新发起外部推理",
+      "value": 0,
+      "unit": "calls",
+      "basis": "CLI探测未登录；通过现有数据库收到真实Opus交接24"
+    },
+    {
+      "name": "确定缺陷修复",
+      "value": 4,
+      "unit": "defects",
+      "basis": "先失败后通过的控制及输入边界回归"
+    },
+    {
+      "name": "核心检查",
+      "value": 322,
+      "unit": "checks",
+      "basis": "候选全通过"
+    },
+    {
+      "name": "安全检查",
+      "value": 38,
+      "unit": "checks",
+      "basis": "候选全通过"
+    },
+    {
+      "name": "串级回归检查",
+      "value": 237,
+      "unit": "checks",
+      "basis": "旧实现16失败，修复后0失败"
+    },
+    {
+      "name": "主板接口场景",
+      "value": 18,
+      "unit": "scenarios",
+      "basis": "含停车调参与Flash往返；全部通过"
+    },
+    {
+      "name": "ADS构建耗时",
+      "value": 2.377,
+      "unit": "seconds",
+      "basis": "IDE日志，一次0错误0警告；不是整轮时间"
+    },
+    {
+      "name": "并发更新保留",
+      "value": 7,
+      "unit": "files",
+      "basis": "检测共享源码变化后重建基线并保留Opus更新"
+    },
+    {
+      "name": "协调等待活跃耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未连续独立计时；已包含在整轮墙钟"
+    },
+    {
+      "name": "全部失败工具调用数",
+      "value": null,
+      "unit": "calls",
+      "basis": "存在CLI参数、脚本语法、沙箱访问和返回量问题；未完整聚合，不能写0"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整提供方usage"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无提供方账单"
+    },
+    {
+      "name": "复核归档窗口已用时",
+      "value": 141.633,
+      "unit": "seconds",
+      "basis": "从进入报告/归档阶段至本次截止；含其间交接，远端回读另计"
+    }
+  ],
+  "evidence": [
+    "Aggregated checks in evidence.json; detailed code/logs retained locally.",
+    "Project handoffs 14 and 24 acknowledged by codex; handoff 25 awaits recipient acceptance.",
+    "ADS artifact hash 6aad0c4c2ec0f95be69419cc7834c6e731fc88cce79c91cc11215deb8a463f2a; source hash reconciliation passed."
+  ]
+}

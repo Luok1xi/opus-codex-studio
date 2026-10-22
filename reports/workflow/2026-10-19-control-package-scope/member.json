@@ -1,0 +1,67 @@
+{
+  "round_id": "2026-10-19-control-package-scope",
+  "summary": "Codex核对分享范围与原始文件，提供边界清楚的后续询问。",
+  "completed": [
+    "核对明确的控制模块分享范围与原始工程占位接口",
+    "确认引脚文件已存在，实际配置版本仍须提供者确认",
+    "为用户准备仅涉及配置和输入语义的询问措辞",
+    "同目标源码展示补充：改用ADS打开工程，GBK中文注释经屏幕核对正常；未改源文件、未烧录。"
+  ],
+  "remaining": [],
+  "evidence": [
+    "Original supplied package checked locally for pin header, input symbol declaration, consumers and empty camera branch.",
+    "Sharing-scope statements checked locally; no private dialogue or source uploaded.",
+    "Current project peer messages read; only a bounded technical summary is handed back.",
+    "Viewer rework: initial VS Code encoding mismatch corrected by opening project resources in ADS with existing GBK preference. PID comment at line 141 visually verified. Improvement: check source encoding and intended IDE before opening; no matched efficiency baseline."
+  ],
+  "metrics": [
+    {
+      "name": "核对窗口",
+      "value": 115.077,
+      "unit": "seconds",
+      "basis": "自首批资料读取结束至报告截止，含协调；后续归档另计"
+    },
+    {
+      "name": "原生辅助只读审查",
+      "value": 1,
+      "unit": "agents",
+      "basis": "源文件存在性和符号引用核对；父代理核原沟通"
+    },
+    {
+      "name": "生产文件变更",
+      "value": 0,
+      "unit": "files",
+      "basis": "本轮只读解释"
+    },
+    {
+      "name": "对外消息发送",
+      "value": 0,
+      "unit": "messages",
+      "basis": "只准备草稿，未联系提供者"
+    },
+    {
+      "name": "实际模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方usage"
+    },
+    {
+      "name": "实际费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "纯协调和归档耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独连续计时"
+    },
+    {
+      "name": "源码展示补充耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未连续计时，不能并入前述核对窗口；GUI验证及归档开销未独立测量"
+    }
+  ]
+}

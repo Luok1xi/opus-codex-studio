@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-20-camera-only",
+  "task_summary": "实际修改并调试暗图；Owner随后要求替换为仅看画面的纯摄像头程序。",
+  "workflow_version": "Isolated ADS build; independent code review; one hardware coordinator; existing webpage reused.",
+  "started_at": "2026-10-20T10:56:09.763Z",
+  "measurement_cutoff_at": "2026-10-20T11:45:00.781854+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "最终纯摄像头应用烧录并在原网站收到真实新帧。",
+      "画面清晰度和亮度仍需真实视觉验收。"
+    ],
+    "completed": [
+      "独立候选中加入曝光读回，实测发现原厂驱动按帧时序限幅；60和120请求均读回相同实际值。",
+      "全量编译和三次实际烧录均成功，最终按Owner新指令替换为纯摄像头采集及串口传图应用。",
+      "最终映像不包含运行中的速度PID、IMU初始化和蓝牙处理；保留原工程与候选改前文件。",
+      "沿用Owner现有网站，确认CAMERA-ONLY启动标记、新帧及实际曝光450和900读回；未把预览工具初始值当作实测。"
+    ],
+    "remaining": [
+      "暗图尚未证明解决；未完成清晰可用画面的最终视觉验收。",
+      "网页出现过一次不完整图像；纯摄像头版不采集控制和电压字段，现有页面这些字段显示缺省异常。",
+      "最后发现与Opus发生并发烧录覆盖；已停止Codex硬件操作并在项目库交还执行权，尚未收到回执。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "开始至测量截止",
+      "value": 2931.018854,
+      "unit": "seconds",
+      "basis": "实际开始至最终核对截止，包含等待、返工、目标收窄与冲突发现；不能归因于有效工作时间。"
+    },
+    {
+      "name": "成功烧录并校验",
+      "value": 3,
+      "unit": "operations",
+      "basis": "Flasher三份Pass日志，分别1784、1564、1168ms。"
+    },
+    {
+      "name": "原生子代理",
+      "value": 2,
+      "unit": "workers",
+      "basis": "复用独立构建和代码审核者；不冒充Opus。"
+    },
+    {
+      "name": "最终构建",
+      "value": 2.824,
+      "unit": "seconds",
+      "basis": "实际ADS全量编译日志；0 errors，11条既有warnings。"
+    },
+    {
+      "name": "最终ROM",
+      "value": 33530,
+      "unit": "bytes",
+      "basis": "camera-only MAP汇总。"
+    },
+    {
+      "name": "最终RAM",
+      "value": 48666,
+      "unit": "bytes",
+      "basis": "camera-only MAP汇总。"
+    },
+    {
+      "name": "提供方token和费用",
+      "value": null,
+      "unit": "unknown",
+      "basis": "无同口径账单或usage；不得用工具输出token估算。"
+    },
+    {
+      "name": "协调、返工及复盘单独耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "没有全程分离计时；不得填0。"
+    }
+  ],
+  "observations": [
+    "本轮没有证据证明工作流提效；Owner明确投诉耗时和额度，过程存在明显返工与多余工具准备。",
+    "有价值的独立核查发现ADS增量编译未重新编译相机宏，汇编表仍旧；改Clean全构建后才烧录。",
+    "首次补丁按CRLF假设未命中LF文件，修复后执行；复制工程包含旧Debug绝对路径与.metadata，额外构建清理耗时。",
+    "第一次将读回必须等于请求值作为成功条件不完整，实际库限幅121；根据反汇编与真实寄存器吻合后改成请求/实际/上限分开报告。",
+    "网站已持有串口，另开预览程序失败且用户不需要；停止使用新工具，改用当前网页。",
+    "网页自动化先误选曝光文字标签而非数值框；改成名称加控件类型后，实际900写入读回成功。",
+    "最终刷新交接才发现另一执行者已先烧官方例程，协调者随后覆盖成精简应用。口头/数据库提醒没有构成排他锁，最后烧录前未重读交接是明确失误。协调者已停止硬件写入并交还唯一执行权。"
+  ],
+  "recommendations": [
+    {
+      "id": "CAMERA-MINIMAL-FIRST",
+      "action": "外设持续失败时先隔离为最小官方驱动应用和现有显示入口；不先扩展调试工具。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一轮先确认纯相机原始画面，再决定是否恢复控制模块。"
+    },
+    {
+      "id": "ADS-MACRO-CLEAN",
+      "action": "本工程改相机配置宏后必须Clean并核对生成配置表；编译零错误本身不证明宏已进入映像。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下次宏变更保存源码、汇编表、HEX和上车标记四项对应证据。"
+    },
+    {
+      "id": "BOUND-REWORK",
+      "action": "减少并行调查与汇报；设备异常连续两次不改善就提出明确的最小隔离试验，避免无期限加诊断。",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "由Opus回执；比较同类任务的返工、等待和最终质量，暂无提效基线。"
+    },
+    {
+      "id": "HARDWARE-EXCLUSIVE-OWNER",
+      "action": "每次烧录前重新读取共享状态并取得明确执行者回执；冲突时停止写入，校验板上标记并由单一执行者继续。未实现数据库强制租约，不宣称提醒能防止并发。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "下轮硬件操作前必须有双方明确回执及唯一操作者；并行人员只读审核。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "No matched-quality baseline or causal efficiency claim.",
+    "Dark-image root cause and final picture usability remain unverified.",
+    "Only sanitized aggregate workflow evidence is archived."
+  ]
+}

@@ -1,14 +1,15 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "project": "codex-opus-studio",
   "timezone": "Asia/Shanghai",
-  "mode": "manual-file-handoff",
+  "mode": "manual-and-explicit-bridge",
   "lead": "claude-opus",
-  "codex_role": "on-request-support",
+  "codex_role": "bridge-and-fallback-lead",
   "roles": [
     "creative-owner",
     "claude-opus",
-    "codex"
+    "codex",
+    "deepseek"
   ],
   "automatic_model_calls": false,
   "hooks_enabled": false,
@@ -16,5 +17,11 @@
   "auto_merge": false,
   "assignment_file": "production/OPUS_TO_CODEX.md",
   "report_file": "production/CODEX_TO_OPUS.md",
-  "board_file": "production/BOARD.md"
+  "board_file": "production/BOARD.md",
+  "bridge": {
+    "entry": "tools/bridge.py",
+    "configuration_template": "bridge.example.json",
+    "activation": "explicit-run",
+    "scope": "general-local-workspaces"
+  }
 }

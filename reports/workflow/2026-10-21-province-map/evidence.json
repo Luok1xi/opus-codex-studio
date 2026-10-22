@@ -1,0 +1,25 @@
+{
+  "new_simulation_runs": 4,
+  "preserved_cases": 15,
+  "total_cases": 17,
+  "total_replays": 27,
+  "cli_ui_consistency": "passed",
+  "browser_widths": [
+    1440,
+    390
+  ],
+  "browser_page_errors": 0,
+  "play_and_seek": "passed",
+  "map_roads": 19,
+  "visible_segments": 580,
+  "landmarks_unscored": 29,
+  "old_sim_regression_cases": 3,
+  "invalid_map_cases_rejected": 10,
+  "paint_excluded_from_legal_road": true,
+  "export_precision_bug_fixed": true,
+  "full_course_pass": false,
+  "firmware_writes": 0,
+  "flashes": 0,
+  "build_seconds": 0.995,
+  "calibrated_with_this_car": false
+}

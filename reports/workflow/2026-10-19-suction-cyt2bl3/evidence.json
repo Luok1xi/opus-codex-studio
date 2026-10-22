@@ -1,0 +1,24 @@
+{
+  "round_id": "2026-10-19-suction-cyt2bl3",
+  "image_count": 1,
+  "sku_identity_confirmed": true,
+  "fan_in_selected_option": false,
+  "other_model_voltage_rule_not_transferred": true,
+  "exact_2s_support_verified": false,
+  "official_urls": [
+    "https://gitee.com/seekfree/CYT2BL3_Brushless_Driver_Project/blob/master/README.md",
+    "https://gitee.com/seekfree/CYT2BL3_Brushless_Driver_Project/blob/master/version.txt"
+  ],
+  "native_review": {
+    "agents": 1,
+    "external_model_calls": 0,
+    "tool_failures_reported": 4
+  },
+  "handoff": {
+    "id": 17,
+    "to": "opus",
+    "acceptance_received": false
+  },
+  "purchases": 0,
+  "firmware_changes": 0
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-21-vision-integration",
+  "task_summary": "Integrate and independently validate full-circuit visual routing on an existing vehicle project and simulation site.",
+  "workflow_version": "TeamHub evidence reuse, bounded native reviews, existing C replay pipeline and target IDE validation",
+  "started_at": "2026-10-21T04:16:39.635000+00:00",
+  "measurement_cutoff_at": "2026-10-21T04:37:50.881032+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Full-map route comparison and inspectable visual evidence on the original website.",
+      "Compatible target-source integration with honest hardware/calibration boundaries.",
+      "Fault protection and source/CLI/browser consistency validated."
+    ],
+    "completed": [
+      "Reused current collaborator route candidate and audited hardware pins, signs and units.",
+      "Fixed and fault-tested indefinite gyro hold after camera freeze.",
+      "Added full-map real-C replay and 29 landmark inspection links to the existing website; browser and all replay checks passed.",
+      "Added default-disabled target route preset; actual ADS compiler/linker succeeded; calibration gate tests passed."
+    ],
+    "remaining": [
+      "Real camera and odometry calibration, physical direction checks and autonomous finish stopping remain required.",
+      "Full-map symbol-name classification is not implemented; current objective tested is planned traversal.",
+      "Independent Opus acceptance of this round corrections remains pending."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Wall time through functional delivery",
+      "value": 1271.246,
+      "unit": "seconds",
+      "basis": "Recorded round start and current cutoff; includes one interruption, recovery, independent checks and rework."
+    },
+    {
+      "name": "Native task dispatches",
+      "value": 5,
+      "unit": "tasks",
+      "basis": "Hardware/source/target reviewers, one interrupted target continuation and calibration sensitivity task; not Opus calls."
+    },
+    {
+      "name": "New Opus or DeepSeek model calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Reused real Opus handoff and candidate; database messages pending, no fabricated response."
+    },
+    {
+      "name": "Target build errors",
+      "value": 0,
+      "unit": "errors",
+      "basis": "ADS GUI target build log."
+    },
+    {
+      "name": "Target build warnings",
+      "value": 11,
+      "unit": "warnings",
+      "basis": "Inherited OUC/driver diagnostic locations."
+    },
+    {
+      "name": "Model usage and cost",
+      "value": null,
+      "unit": "unknown",
+      "basis": "Provider usage/billing not available."
+    },
+    {
+      "name": "Coordination and review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlapping activities and interruption not individually instrumented."
+    },
+    {
+      "name": "Review archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive not finished at measurement cutoff; receipt will record verification."
+    }
+  ],
+  "observations": [
+    "Reusing the collaborator candidate avoided another controller implementation; no matched workflow baseline supports a speedup percentage.",
+    "Independent review found stale-camera bypass, host-only route provisioning, evaluation-only lap ending and calibration sensitivity.",
+    "Browser validation caught null-HEX rendering failure that source-data tests missed; corrected and rechecked both screen widths.",
+    "Initial server absent after interruption; original start entry restored after database backup and migration plan check.",
+    "Repeated oversized reads and one accidental invalid WSL invocation added overhead; no data loss. Standalone compiler/headless IDE failures required the supported GUI build path."
+  ],
+  "recommendations": [
+    {
+      "id": "VISION-TARGET-BOUNDARY-20261021",
+      "action": "Require a target route initialization check and a sensor-dropout test whenever simulated full-lap success is proposed for hardware.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next route revision reproduces frozen-frame stop and target preset gates before promotion."
+    },
+    {
+      "id": "VISION-CALIBRATION-PERTURBATION-20261021",
+      "action": "Separate plant truth from controller calibration in validation; include odometry and camera errors before any real-car reliability claim.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "After measured calibration, rerun at least +/-5 percent odometry and measured camera-height/pitch uncertainty."
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "Real camera and odometry calibration, physical direction checks and autonomous finish stopping remain required.",
+    "Full-map symbol-name classification is not implemented; current objective tested is planned traversal.",
+    "Independent Opus acceptance of this round corrections remains pending."
+  ]
+}

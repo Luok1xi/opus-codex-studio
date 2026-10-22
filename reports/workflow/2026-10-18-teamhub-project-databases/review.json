@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-18-teamhub-project-databases",
+  "task_summary": "把既有分类资料库接入工作流源码，按用户新要求拆为独立项目数据库、统一入口和明确三方分工；验证真实调用并保留未打通的写回边界。",
+  "workflow_version": "teamhub-v2 / project catalog / stdlib sqlite / existing official DeepSeek consult",
+  "started_at": "2026-10-18T09:13:16+00:00",
+  "measurement_cutoff_at": "2026-10-18T09:43:55.405142+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "保留既有数据并按项目物理分库",
+      "分类检索、限量上下文、完整记录回查",
+      "三方分工与直接数据库交接",
+      "并发冲突、只读查询、备份迁移可验证",
+      "维护源码和脱敏报告进私人仓库",
+      "真实协作写回按本人回执确认"
+    ],
+    "completed": [
+      "7个项目库逐表核对1628条记录、完整性检查通过；原总库冻结且在线备份保留",
+      "分类及角色入口已安装；每次仅选当前项目，索引与摘要预算生效",
+      "DeepSeek实际提供设计审查并通过CLI完整读到新库交接；建议经本地测试筛选",
+      "并发旧写入纳入快照，冻结后拒绝；任务CAS、幂等、接收者确认测试通过",
+      "21项最终干净源码测试通过；早期整套87项通过",
+      "源码白名单就绪，未改动既有Git暂存区和其他桥接工作"
+    ],
+    "remaining": [
+      "DeepSeek自动ack被Windows嵌套沙箱写入/ACL限制阻止，仍为pending",
+      "Opus已写入收件箱与全局发现规则，未收到本人实际回执",
+      "测量截止时私人仓库提交和回读未完成，见后续archive-receipt"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "既有项目物理分库",
+      "value": 7,
+      "unit": "个",
+      "basis": "每个文件完整性检查通过，目录拒绝同文件复用"
+    },
+    {
+      "name": "迁移项目记录",
+      "value": 1628,
+      "unit": "条",
+      "basis": "从锁定后在线备份与七库逐表核对，含项目元数据；新增交接不计入"
+    },
+    {
+      "name": "最终独立源码验收",
+      "value": 21,
+      "unit": "项",
+      "basis": "干净目录运行，仅发布白名单文件，不依赖未发布桥接代码"
+    },
+    {
+      "name": "最终源码验收耗时",
+      "value": 12.402,
+      "unit": "秒",
+      "basis": "unittest记录；不与先前热缓存测试比较速度"
+    },
+    {
+      "name": "单分类读取中位数",
+      "value": 2.1022000000812113,
+      "unit": "毫秒",
+      "basis": "10次本地进程内测量，不含启动和模型耗时"
+    },
+    {
+      "name": "单分类上下文",
+      "value": 8580,
+      "unit": "字符",
+      "basis": "本次类别03的实际JSON，不是token；完整记录另取"
+    },
+    {
+      "name": "真实DeepSeek已答调用",
+      "value": 3,
+      "unit": "次",
+      "basis": "一次设计审查、两次真实接入验收；不是三次都成功验收"
+    },
+    {
+      "name": "DeepSeek调用等待合计",
+      "value": 69.483,
+      "unit": "秒",
+      "basis": "CLI回执model_ms累计，包含其工具工作，不是纯推理时间"
+    },
+    {
+      "name": "DeepSeek请求前失败",
+      "value": 1,
+      "unit": "次",
+      "basis": "配置启动EPERM，确认未发模型请求后重试"
+    },
+    {
+      "name": "原生Codex子代理",
+      "value": 1,
+      "unit": "个",
+      "basis": "短任务卡，负责CLI文档测试及独立审查；不是Opus"
+    },
+    {
+      "name": "本轮真实Opus调用",
+      "value": 0,
+      "unit": "次",
+      "basis": "仅数据库交接和入口规则，仍待本人回执"
+    },
+    {
+      "name": "正式入口切换失败",
+      "value": 2,
+      "unit": "次",
+      "basis": "同一Windows拒绝replace原因，未重做迁移"
+    },
+    {
+      "name": "全轮token",
+      "value": null,
+      "unit": "tokens",
+      "basis": "缺少跨压缩及各提供方同口径usage；不估算"
+    },
+    {
+      "name": "实际费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "阻塞等待和有效工时",
+      "value": null,
+      "unit": "秒",
+      "basis": "墙钟不能精确分离工具/协调/人工"
+    },
+    {
+      "name": "复盘独立工时",
+      "value": null,
+      "unit": "秒",
+      "basis": "与权限诊断、验收交错，未连续单独计时"
+    },
+    {
+      "name": "截止后归档耗时",
+      "value": null,
+      "unit": "秒",
+      "basis": "提交回读后另附回执"
+    },
+    {
+      "name": "同条件基线",
+      "value": null,
+      "unit": "秒",
+      "basis": "没有匹配输入、质量门槛、环境和协议的基线"
+    }
+  ],
+  "observations": [
+    "局部质量收益有证据：独立审查发现目录仍可能指向同一或混合库、迁移分类可能歧义；均已修复并补测试。",
+    "用户补充要求改变了架构：从同库按project过滤变为七个物理文件；这是范围澄清，不把全部调整算作缺陷返工。",
+    "实际端到端验收暴露只读和ACL问题，说明模拟多角色测试不能替代真实提供方写回；停止重复付费重试，不替其他AI确认。",
+    "正式迁移中断后按备份/冻结/分库状态核对才恢复入口，没有从头重导或覆盖项目数据。",
+    "短任务卡和批量读写已采用，但没有可比任务的成本/质量基线，不能宣称净提效。",
+    "工具输出仍出现一次大提交对象和一次截断；WF-06尚未稳定执行。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-01",
+      "action": "继续用短任务卡、明确文件范围和验收证据派发原生成员",
+      "owner": "Codex",
+      "status": "adopted",
+      "next_check": "统计首轮输入和遗漏；同类配对后才比较收益"
+    },
+    {
+      "id": "WF-07",
+      "action": "以项目独立库、统一目录、分类context和接收者回执代替日常文件粘贴",
+      "owner": "Codex + dsh + Opus",
+      "status": "adopted",
+      "next_check": "日常漏读/重复采集、跨项目混入、交接延迟和回执率；Opus仍待回执"
+    },
+    {
+      "id": "WF-08",
+      "action": "提供方接入先做受限读写小样验收，记录Windows实际身份和沙箱写目录；失败不自动扩大权限",
+      "owner": "Codex",
+      "status": "proposed",
+      "next_check": "在用户正常DeepSeek/Opus环境确认本人写回，减少重复模型调用"
+    },
+    {
+      "id": "WF-09",
+      "action": "将文件替换权限纳入部署前检查，保留分阶段恢复说明",
+      "owner": "Codex",
+      "status": "adopted",
+      "next_check": "下一次迁移入口替换能否首轮成功、恢复步骤是否可复核"
+    }
+  ],
+  "evidence": [
+    "evidence.json：脱敏聚合数据、源码散列、真实调用边界",
+    "tools/studio_runtime/teamhub.py 与 tools/teamhub_partition.py",
+    "tests/test_teamhub.py、test_teamdb_cli.py、test_teamhub_partition.py",
+    "本地保留在线备份、迁移/入口回执、测试日志和真实DeepSeek回答，未上传原文"
+  ],
+  "comparison": null,
+  "limits": [
+    "从首个记录时钟至截止统计墙钟，含澄清、工具、测试和诊断，不是有效编码时间",
+    "DeepSeek读取成功不等于能写回，Opus发现入口不等于本人已验收",
+    "角色标签是协作约定，不是强制鉴权；物理隔离不取代OS权限",
+    "目录最后激活但不提供全文件原子切换；中断时拒绝自动重导，需要核对恢复",
+    "未建立后台唤醒/跨电脑同步服务；新项目须显式建新库并登记",
+    "效率与费用均不能从一次测试或输出字符数推断"
+  ]
+}

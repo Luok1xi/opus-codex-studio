@@ -1,0 +1,16 @@
+{
+  "round_id": "2026-10-20-interface-power-review",
+  "confirmed_configuration_mismatches": 2,
+  "connector_document_discrepancies": 1,
+  "shared_handoff_id": 87,
+  "peer_reply_acknowledged": 86,
+  "independent_native_reviews": 1,
+  "hardware_operations": 0,
+  "production_changes": 0,
+  "physical_root_cause_confirmed": false,
+  "remote_archive_verified": false,
+  "notes": [
+    "Archive verification recorded separately after readback.",
+    "Static audit results do not imply same cause for blinking."
+  ]
+}

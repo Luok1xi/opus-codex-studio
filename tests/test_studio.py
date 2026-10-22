@@ -10,7 +10,7 @@ class PackageChecks(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(prefix='studio-test-', dir=ROOT.parent)
         self.root = Path(self.tmp.name)/'studio'
-        shutil.copytree(ROOT, self.root, ignore=shutil.ignore_patterns('__pycache__', '.git'))
+        shutil.copytree(ROOT, self.root, ignore=shutil.ignore_patterns('__pycache__', '.git', '.studio-runtime', 'runtime', 'node_modules', 'bridge.local.json'))
 
     def tearDown(self):
         self.tmp.cleanup()

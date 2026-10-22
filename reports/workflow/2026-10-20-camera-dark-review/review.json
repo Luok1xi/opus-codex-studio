@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-20-camera-dark-review",
+  "task_summary": "协助实车操作者排查摄像头近全黑，核对真实配置语义，提供最小只读诊断和受控验收步骤。",
+  "workflow_version": "Per-project TeamHub; existing Opus owns hardware; Codex coordinates two bounded native offline reviewers.",
+  "started_at": "2026-10-20T08:55:30.244Z",
+  "measurement_cutoff_at": "2026-10-20T09:16:36.432Z",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "依据原始数据区分显示、算法、采集及配置问题。",
+      "明确实际成功信号与接口返回值的差别。",
+      "提供可执行诊断，不覆盖同伴实时修改。"
+    ],
+    "completed": [
+      "10张真实RAW经过当前视觉源码回放均保持逐字一致。",
+      "10张PNG解码与RAW一致；完整报文解析保留像素。",
+      "反汇编和厂家资料共同确认：增益写缺少解锁；setter无条件返回成功，未读回。",
+      "只读寄存器助手4组主机测试通过；标明ACK被底层丢弃，不能伪造物理读成功。",
+      "独立核查DMA低字节采样、帧完成握手及手电图灰度，避免把降低帧率误认成变暗。",
+      "捕获同伴新增屏幕版本，及时指出屏幕显示请求值不是寄存器实际值；三条交接正文入项目库。"
+    ],
+    "remaining": [
+      "近全黑的最终物理/配置根因未确定；缺少实际寄存器快照。",
+      "助手未整合到目标固件，未做目标编译或硬件验证。",
+      "Opus最新报告已读，本轮结果回执尚未收到。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "观察窗口",
+      "value": 1266.188,
+      "unit": "seconds",
+      "basis": "开始至最终交接和复盘测量点，含并行核查及同伴版本更新的追加审查。"
+    },
+    {
+      "name": "原生子任务",
+      "value": 2,
+      "unit": "workers",
+      "basis": "配置寄存器与采集/DMA分别核查；不称为实际Opus。"
+    },
+    {
+      "name": "新增外部模型调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "读取实际Opus报告和项目共享库交接，未启动新外部模型会话。"
+    },
+    {
+      "name": "硬件操作",
+      "value": 0,
+      "unit": "operations",
+      "basis": "未打开串口、复位、刷机或调摄像头。"
+    },
+    {
+      "name": "生产文件改动",
+      "value": 0,
+      "unit": "files",
+      "basis": "诊断片段和测试均在隔离工作区。"
+    },
+    {
+      "name": "真实图像回放通过",
+      "value": 10,
+      "unit": "frames",
+      "basis": "实际视觉源码及输入/输出灰度逐字比较，主机运行时检查开启。"
+    },
+    {
+      "name": "PNG及解析一致性",
+      "value": 10,
+      "unit": "frames",
+      "basis": "PNG无损解码与保存RAW及完整构造报文解析对比；不代表现场链路校验。"
+    },
+    {
+      "name": "寄存器读取助手测试",
+      "value": 4,
+      "unit": "cases",
+      "basis": "字节顺序、寄存器顺序和对象保留；总线为替身。"
+    },
+    {
+      "name": "发现并处理生产版本推进",
+      "value": 1,
+      "unit": "events",
+      "basis": "对最新屏幕功能追加请求值/实测值说明，没有覆盖。"
+    },
+    {
+      "name": "工具失败总数",
+      "value": null,
+      "unit": "calls",
+      "basis": "未全量计数；一次Windows glob路径用法失败，部分宽输出被缩窄。"
+    },
+    {
+      "name": "评审及归档净开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "与分析交错；收尾区间另记回执。"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无一致提供方usage。"
+    },
+    {
+      "name": "实际费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    }
+  ],
+  "observations": [
+    "只有局部质量收益证据：配置核查揭示假的成功信号；独立采集核查否定了缺少证据的取错字节猜测。",
+    "没有相同质量门槛的单人时间基线，不能宣称净提效。",
+    "同伴在排故期间新增屏幕，记录基线变化避免继续解释过期界面。",
+    "同伴新记录多为发给自己的交接，当前收件箱不会自动呈现；按最新交接表定向检索才获得最新进展。",
+    "长时间给出详细报告但未获实际操作者回执，会增加交接积压；应优先确保关键诊断被读到。"
+  ],
+  "recommendations": [
+    {
+      "id": "CAMERA-20261020-READBACK",
+      "action": "将配置请求、驱动返回、实际读回分别标识；界面未验证值显示请求值。",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "寄存器快照前后对照及屏幕实际字段来源可验证。"
+    },
+    {
+      "id": "CAMERA-20261020-CONTROLLED",
+      "action": "固定光照和姿态，先读回参数，再每次只改变一个参数，至少等待两帧。",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "提供带版本、读回值和图像的单变量对照。"
+    },
+    {
+      "id": "CAMERA-20261020-ONEOWNER",
+      "action": "继续由现有操作者独占硬件，其他代理仅离线复现和明确候选。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续无抢端口，未把主机测试描述为实车成功。"
+    },
+    {
+      "id": "CAMERA-20261020-HANDOFF",
+      "action": "需要另一代理验收的记录定向发送给对方，并由其本人确认；明确当前未读关键交接。",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "首轮实际快照和诊断补丁获得独立回执。"
+    }
+  ],
+  "evidence": [
+    "evidence.json contains sanitized aggregates only; no images, raw logs or project source."
+  ],
+  "comparison": null,
+  "limits": [
+    "No definitive black-image root cause yet.",
+    "No target integration, build or hardware operation.",
+    "Opus report read; new acknowledgement pending.",
+    "No project source, personal data, live database, binary archive or raw sessions uploaded."
+  ]
+}

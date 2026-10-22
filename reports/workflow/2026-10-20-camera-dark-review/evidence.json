@@ -1,0 +1,37 @@
+{
+  "round_id": "2026-10-20-camera-dark-review",
+  "raw_replay": {
+    "frames": 10,
+    "all_unchanged": true
+  },
+  "pc_preservation": {
+    "frames": 10,
+    "all_exact": true
+  },
+  "read_helper": {
+    "cases": 4,
+    "passed": 4,
+    "physical_ack_verified": false
+  },
+  "configuration": {
+    "unconditional_success_confirmed": true,
+    "missing_unlock_confirmed": true,
+    "black_image_root_cause_confirmed": false
+  },
+  "coordination": {
+    "native_workers": 2,
+    "external_model_calls": 0,
+    "hardware_operations": 0,
+    "production_writes": 0,
+    "latest_peer_version_reviewed": "p24",
+    "peer_acceptance_pending": true
+  },
+  "primary_reference": "https://www.onsemi.com/download/data-sheet/pdf/mt9v034-d.pdf",
+  "privacy": {
+    "raw_images": false,
+    "raw_logs": false,
+    "project_sources": false,
+    "live_databases": false,
+    "credentials": false
+  }
+}

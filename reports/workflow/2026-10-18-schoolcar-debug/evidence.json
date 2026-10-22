@@ -1,0 +1,86 @@
+{
+  "round_id": "2026-10-18-schoolcar-debug",
+  "host_port": {
+    "cases_passed": 17,
+    "sanitizers": [
+      "undefined",
+      "float-cast-overflow"
+    ],
+    "production_script_invoked": true
+  },
+  "core_baseline": {
+    "checks": 287,
+    "failed": 0
+  },
+  "normal_simulation": {
+    "cases_passed": 7,
+    "assumed_parameters": true,
+    "hardware_result": false
+  },
+  "core_faults_before_candidate": {
+    "cases_failed": 3,
+    "cases": [
+      "track-exhausted",
+      "stale-handback",
+      "nonfinite-error"
+    ]
+  },
+  "ads": {
+    "errors": 0,
+    "warnings": 0,
+    "build_ms": 1007,
+    "rom_bytes": 77503,
+    "ram_bytes": 116556,
+    "all_port_apis_retained": true,
+    "all_warning_classes_enabled": false,
+    "target_flash_performed": false,
+    "artifacts": [
+      {
+        "name": "final.elf",
+        "sha256": "8813fa4d61aba474e3540440e165e807092646a2b000fdad04970832b0912abe"
+      },
+      {
+        "name": "final.map",
+        "sha256": "51754ccfc562917d4c4f68f96ac302110888b7534ce2ad915c7fca6baed320da"
+      },
+      {
+        "name": "final.hex",
+        "sha256": "48be069739d748ff1911bc16f0e3e81f1902936b82038839b349f777f669a8a8"
+      },
+      {
+        "name": "final-sc_port.src",
+        "sha256": "ffb100b4dd9d224c128b286140583c81180fa3900b4f652ef88be3cc1e317ea0"
+      },
+      {
+        "name": "build-final.log",
+        "sha256": "e3d3752b70294c81542a15193d0f1a2f6138d98b4586b2053aea84012883a45d"
+      }
+    ]
+  },
+  "coordination": {
+    "native_children": 2,
+    "recursive_dispatches": 0,
+    "opus_report_read": "handoff-80",
+    "current_debug_marker_ack_received": false,
+    "opus_cli_calls": 0,
+    "deepseek_calls": 0
+  },
+  "limits": [
+    "Mock不是实物总线",
+    "真实双核时序未测",
+    "缺少同质量条件的提效基线"
+  ],
+  "core_candidate": {
+    "status": "tested_not_merged",
+    "baseline_checks_passed": 287,
+    "new_safety_checks_passed": 38,
+    "normal_simulation_passed": 7,
+    "fault_injections_passed": 3,
+    "production_core_unchanged": true,
+    "candidate_ADS_build_verified": false,
+    "default_check_runs_new_safety_tests": true,
+    "patch_sha256": "c636694ee46d75e932b4835754b41f40ca3e448f2b0b47918753082828492e73",
+    "source_manifest_sha256": "5f44cadb76b4658361f573476e18e946250f276c08be17b14d7a2378ad9aca18",
+    "notes": "无新帧绝不交回；计数表示连续收到的好帧，核心无独立相机年龄阈值，TC264端口100ms断流保护保留。"
+  }
+}

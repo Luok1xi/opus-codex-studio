@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "repository": "Luok1xi/opus-codex-studio",
+  "visibility": "private",
+  "commit": "ba784c7eb8780bbe149d2f9bd2d7f709ac8658fa",
+  "verified_at_utc": "2026-10-18 08:58:12 UTC",
+  "verification": "All 15 allowlisted remote files exactly equal prepared UTF-8 content; main head matches commit; repository private.",
+  "tests": {
+    "workflow_review": 4,
+    "passed": 4
+  },
+  "files": [
+    {
+      "path": "docs/WORKFLOW_REVIEW.md",
+      "ok": true,
+      "sha256": "c32f8eb86513329d0063544b49f9b4ba3395a26fec55c3ddaba99581a1526846",
+      "blob_sha": "73287bdf41ba94c968314ea940ad983fdfca8ef2"
+    },
+    {
+      "path": "templates/workflow-review.json",
+      "ok": true,
+      "sha256": "80af41a7d16ea14037f428a86e81e25f7396f94e58f1789d3a3985a878d67fbc",
+      "blob_sha": "46a4857ccb9b2936c795132793d832cad078ec68"
+    },
+    {
+      "path": "tools/workflow_review.py",
+      "ok": true,
+      "sha256": "6cba9d6065d89b135f78619d2c6bdf89939b092cfcec9b6f7134281098ebc72d",
+      "blob_sha": "552f1c513c2f9627711d3aff10ef3886beefd30c"
+    },
+    {
+      "path": "tests/test_workflow_review.py",
+      "ok": true,
+      "sha256": "923c2a7ec16d73eeb6e3ba46bcd2b6dc72a187bf409b48d4aed5ee88ac9407b8",
+      "blob_sha": "480dff6b5274a7ec4475fcae98f1f26de9530f31"
+    },
+    {
+      "path": "reports/workflow/README.md",
+      "ok": true,
+      "sha256": "59b8fdb82a03aafa3eef857487eeede17e8d235c99dee9fadbe9852bd5093e7f",
+      "blob_sha": "1def9fea9ad6a7bca5ed88458c38345912170472"
+    },
+    {
+      "path": "reports/workflow/IMPROVEMENTS.md",
+      "ok": true,
+      "sha256": "61ecfd2529346c049dc764887ac02ce78ebf5856e91b265e54dbde7a2e575aa2",
+      "blob_sha": "de3a6b7e35e36b15c67e973fe9260cb279cc656c"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-smartcar-research/review.json",
+      "ok": true,
+      "sha256": "1dbd3138355a1763f0a390475b1e160533821afc15bbc539b94d169020e723af",
+      "blob_sha": "9be196ce2ad650e6545cd5f8d439610aa171c235"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-smartcar-research/review.md",
+      "ok": true,
+      "sha256": "5a29609ad979eb35c9741c03349e8cc619aaca9a4d187b61dedddd131618250f",
+      "blob_sha": "d7e951aefc13aed54a88bf119ebb96920950e7df"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-smartcar-research/evidence.json",
+      "ok": true,
+      "sha256": "4ee8c82964eec29f6cf4e804de39156daa566c4b0cc52fc450946f007ef55fe4",
+      "blob_sha": "cb3327fbc3f45b4ac4c85ae3c7e22f2e7b2b3674"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-smartcar-research/method.txt",
+      "ok": true,
+      "sha256": "9775bf81eadba23ca0feae9606f9b8008d2a53cfe47eab28bcf822d97d201f60",
+      "blob_sha": "29b54f24d1c559ccc1967cd82d1ce5a8d83635fa"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-workflow-review-setup/review.json",
+      "ok": true,
+      "sha256": "92decac8caeb126a1eaf5ba0665eeeaad536a9d4d3ca7fd1798b39c47b0a0ec1",
+      "blob_sha": "75113720b09e01278b14b33f1d6d313e73ae868f"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-workflow-review-setup/review.md",
+      "ok": true,
+      "sha256": "57ea74c20bf67fe1bf5110b720faf0b4a76c915c7394b3f3e1da0e1a8fe5d28f",
+      "blob_sha": "da9c986a34b15930dab7e19bf54627e7bd6712e7"
+    },
+    {
+      "path": "reports/workflow/2026-10-18-workflow-review-setup/evidence.json",
+      "ok": true,
+      "sha256": "12da9a85789bc54e55678fecc24839d6622344509e3c658fa38cf7ac73a01130",
+      "blob_sha": "db22e721f4f1757c9b57da09d520507899d32dd5"
+    },
+    {
+      "path": "AGENTS.md",
+      "ok": true,
+      "sha256": null,
+      "blob_sha": "19786137df39407510714624e05ef830ef220e01"
+    },
+    {
+      "path": "CLAUDE.md",
+      "ok": true,
+      "sha256": null,
+      "blob_sha": "910cd00e0bfb51146fed5293ea1b8987eb503a06"
+    }
+  ],
+  "exclusions": [
+    "raw sessions or reasoning",
+    "credentials",
+    "unrelated uncommitted bridge code",
+    "personal chat screenshots"
+  ],
+  "setup_measurement_cutoff": "2026-10-18T08:56:33.094424+00:00",
+  "post_cutoff_to_verification_seconds": 98.906
+}

@@ -1,0 +1,10 @@
+{
+  "round_id": "2026-10-20-wireless-reliability",
+  "pc_candidate": {"tests_passed":17,"production_modified":false,"new_camera_controls_preserved":true,"crc_available":false},
+  "firmware_minimum_candidate": {"targeted_passed":8,"original_same_cases_passed":4,"legacy_suites_passed":2,"coordinator_rerun_passed":true,"target_compiler_checked":false,"hardware_checked":false},
+  "experimental_parser": {"known_fault_cases_failed":2,"recommended_for_production":false},
+  "camera_review": {"single_root_cause_proven":false,"source_change_applied":false},
+  "collaboration": {"actual_peer_reports_read":true,"final_handoff_persisted":true,"new_peer_acceptance_received":false,"native_workers":2,"external_model_calls":0,"hardware_operations":0},
+  "review_effect": {"missing_line_boundary_found_and_fixed":true,"baseline_version_changes_detected":1,"speedup_measurement":null},
+  "privacy": {"raw_logs":false,"project_sources":false,"live_databases":false,"credentials":false,"raw_sessions":false}
+}
