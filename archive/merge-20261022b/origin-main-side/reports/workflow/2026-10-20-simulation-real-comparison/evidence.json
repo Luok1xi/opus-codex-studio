@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-20-simulation-real-comparison",
+  "sanitized": true,
+  "scope": "Only aggregate tests, public references and evidence hashes. No user logs, local paths, source code or databases uploaded.",
+  "local_evidence": [
+    {
+      "name": "site-integration.json",
+      "sha256": "f8159e2305586b0ce954ec578748d26d21e719b61bb2c9d9a4473dc783c5246e"
+    },
+    {
+      "name": "physics-integration.json",
+      "sha256": "ea151208e32fd94217ebd9cd3db23cc84b1a19bbe3e179c6a4b991c15bd8ecd7"
+    },
+    {
+      "name": "ui-audit.txt",
+      "sha256": "69c513a847d3529747b3c6d64441b2520f3e2ea7888e67d28b1b0f86c07fc525"
+    },
+    {
+      "name": "backend-audit.txt",
+      "sha256": "56dfe6cea7f05681f0958fc7b1e007abc3e0a3a3c26f6a7b3929ad6659b0626b"
+    },
+    {
+      "name": "physics-research.txt",
+      "sha256": "4c1a6ce24f8812ddc26f9a793bcc6ce81ea6dbd35c9f788f4b7e0d904fb0bda9"
+    },
+    {
+      "name": "real-log-browser-results.json",
+      "sha256": "00f5235b9501aaeb929b83a733b3ddd325dfafbfac352ca3e11aed1b47eae662"
+    },
+    {
+      "name": "real-log-blur-click-bug.json",
+      "sha256": "3a63673daeec723bc5a64f4679475743c64f2979ba487cce872112c1fef7493d"
+    },
+    {
+      "name": "site-build.log",
+      "sha256": "08ef2fa75e6c98d727c8d9f8e4065163d42bcd0cf0561c4c99b4d6f7e7d3cdc3"
+    },
+    {
+      "name": "physics-candidate/manifest.json",
+      "sha256": "39287a9d96d44104868426718897c2601c70f95f4ffa351aac5b01c92283c0ce"
+    },
+    {
+      "name": "physics-candidate/build/capture-before.log",
+      "sha256": "99065f9067b340d82b1e4bacea39a4b68c879797b87f39d296d417f108e0c803"
+    },
+    {
+      "name": "physics-candidate/build/capture-after.log",
+      "sha256": "600c642993b10f8a7595e24416f64735c670091858947c18b29a77d8e83d54ef"
+    },
+    {
+      "name": "physics-candidate/ident-test-results.json",
+      "sha256": "2657c8b66d0081a82c55118cd95a4f6ddc7b08ac814c085d50285318e7e5f9f6"
+    },
+    {
+      "name": "physics-candidate/cli-test-results.json",
+      "sha256": "06a5f73966675a83ba88c610bfa34bb1e801b739e0dd2a7d5e0e0cccac5657c5"
+    },
+    {
+      "name": "physics-candidate/plant-build/plant-results.txt",
+      "sha256": "da99548473793eb14ed2561760ad53e21a3cf52260cbd4e23a9ad14774ec74da"
+    },
+    {
+      "name": "real-log-candidate/compatibility-results.json",
+      "sha256": "99d433bafe0d24deb55f0792e71b0e1428f73843a2d669540cf4b336b82f3e56"
+    }
+  ],
+  "validation": {
+    "parser_and_comparison_tests": 12,
+    "existing_replay_metric_checks": 66,
+    "replay_runs": 6,
+    "browser_cases_passed": 11,
+    "browser_unhandled_errors": 0,
+    "intentional_http_503_failures": 2,
+    "mobile_width": 390,
+    "degenerate_fit_and_regression_cases": 20,
+    "camera_cli_before_after_runs": 16,
+    "plant_invariant_cases": 9,
+    "plant_finite_configurations": 50,
+    "discrete_model_max_error_mps": 6.661338147750939e-16,
+    "camera_age_before": "Four assertions fail in original; all pass after capture-clock fix.",
+    "normal_camera_delay": "3 ms metrics unchanged for both camera modes.",
+    "lint": "Targeted files passed",
+    "build": "Passed; existing >500 kB chunk advisory remains."
+  },
+  "coordination": {
+    "native_workers": 3,
+    "actual_external_model_calls": 0,
+    "opus_existing_handoff_reviewed": 57,
+    "opus_handoff_ack_by_codex": true,
+    "new_project_handoffs": {
+      "web_initial": 2,
+      "car_initial": 67,
+      "car_progress": 69
+    },
+    "opus_new_acceptance": "Not received; database delivery only.",
+    "deepseek": "Not dispatched."
+  },
+  "public_references": [
+    "https://github.com/wpilibsuite/allwpilib/tree/v2026.2.2",
+    "https://github.com/google-deepmind/mujoco/tree/3.5.0"
+  ],
+  "limits": [
+    "Synthetic format fixtures are not physical measurements.",
+    "No real dynamic S log, trajectory, voltage or suction calibration was available.",
+    "Production firmware, serial ports and flashing were not touched.",
+    "Offline simulator sources updated; existing default binary and historical web replay data not overwritten.",
+    "No public website deployment or project-source upload."
+  ]
+}
