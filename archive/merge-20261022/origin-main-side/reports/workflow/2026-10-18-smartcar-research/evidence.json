@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "round_label": "2026-10-18 smart-car source research and review",
+  "measurement_type": "observational telemetry, no serial-control baseline",
+  "round": {
+    "platform_start_utc": "2026-10-18T08:26:18.892Z",
+    "platform_end_utc": "2026-10-18T08:42:14.878Z",
+    "platform_wall_seconds": 955.986,
+    "user_message_recorded_utc": "2026-10-18T08:26:22.432Z",
+    "final_message_completed_utc": "2026-10-18T08:42:14.336Z",
+    "user_message_to_final_seconds": 951.904,
+    "platform_start_local": "2026-10-18T16:26:18.892+08:00",
+    "platform_end_local": "2026-10-18T16:42:14.878+08:00",
+    "boundary_evidence": {
+      "source_id": "coordinator",
+      "task_start_line": 9626,
+      "user_message_line": 9636,
+      "final_item_line": 9923,
+      "task_complete_line": 9927
+    }
+  },
+  "agents": [
+    {
+      "agent": "coordinator",
+      "source_evidence": {
+        "source_id": "coordinator",
+        "session_locator": "rollout-2026-10-13T14-19-09-01a133ea-34c8-7c71-9cf4-fa026cee2533.jsonl",
+        "line_start": 9626,
+        "line_end": 9927,
+        "bounded_records_sha256": "6be5789e8554be2e749bdcfa7034facb38700d91c228973f4288208caba603a6",
+        "hash_scope": "Raw UTF-8 bytes of inclusive line range, including original line endings; no log content exported."
+      },
+      "intervals": [
+        {
+          "start_utc": "2026-10-18T08:26:18.892Z",
+          "end_utc": "2026-10-18T08:42:14.878Z",
+          "wall_seconds": 955.986,
+          "platform_duration_ms": 955986,
+          "evidence_lines": [
+            9626,
+            9927
+          ]
+        }
+      ],
+      "summed_run_interval_seconds": 955.986,
+      "model_usage": {
+        "input_tokens": 5248101,
+        "cached_input_tokens": 4894080,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 25717,
+        "reasoning_output_tokens": 4031,
+        "total_tokens": 5273818
+      },
+      "usage_records": 32,
+      "usage_evidence_line_range": [
+        9641,
+        9925
+      ],
+      "usage_turn_totals_crosscheck": "matched all per-turn cumulative usage records",
+      "first_response_input_tokens": 166389,
+      "top_level_calls": {
+        "exec": 21,
+        "spawn_agent": 2,
+        "wait": 1,
+        "followup_task": 4,
+        "list_agents": 1,
+        "send_message": 1
+      },
+      "nested_tool_items": {
+        "CommandExecution": 39,
+        "Extension": 5,
+        "ImageView": 2,
+        "FileChange": 2
+      },
+      "nested_items_with_explicit_status": 41,
+      "explicit_failure_items": [
+        {
+          "source_id": "coordinator",
+          "line": 9695,
+          "kind": "CommandExecution",
+          "status": "failed",
+          "exit_code": 1
+        },
+        {
+          "source_id": "coordinator",
+          "line": 9760,
+          "kind": "CommandExecution",
+          "status": "failed",
+          "exit_code": 1
+        },
+        {
+          "source_id": "coordinator",
+          "line": 9779,
+          "kind": "CommandExecution",
+          "status": "failed",
+          "exit_code": 1
+        },
+        {
+          "source_id": "coordinator",
+          "line": 9787,
+          "kind": "CommandExecution",
+          "status": "failed",
+          "exit_code": 1
+        }
+      ]
+    },
+    {
+      "agent": "control_source_audit",
+      "source_evidence": {
+        "source_id": "control_source_audit",
+        "session_locator": "rollout-2026-10-18T16-27-37-01a14e1f-9e50-7360-bad4-18bc6a3ab493.jsonl",
+        "line_start": 33,
+        "line_end": 206,
+        "bounded_records_sha256": "451fe66b3865f412b200176fe50339ae0104e9e0bc0db8cf73b625e9e5422b9e",
+        "hash_scope": "Raw UTF-8 bytes of inclusive line range, including original line endings; no log content exported."
+      },
+      "intervals": [
+        {
+          "start_utc": "2026-10-18T08:27:37.622Z",
+          "end_utc": "2026-10-18T08:30:13.180Z",
+          "wall_seconds": 155.558,
+          "platform_duration_ms": 155558,
+          "evidence_lines": [
+            33,
+            102
+          ]
+        },
+        {
+          "start_utc": "2026-10-18T08:34:45.561Z",
+          "end_utc": "2026-10-18T08:35:55.939Z",
+          "wall_seconds": 70.378,
+          "platform_duration_ms": 70378,
+          "evidence_lines": [
+            103,
+            132
+          ]
+        },
+        {
+          "start_utc": "2026-10-18T08:36:50.164Z",
+          "end_utc": "2026-10-18T08:38:50.485Z",
+          "wall_seconds": 120.321,
+          "platform_duration_ms": 120321,
+          "evidence_lines": [
+            133,
+            181
+          ]
+        },
+        {
+          "start_utc": "2026-10-18T08:39:16.176Z",
+          "end_utc": "2026-10-18T08:40:22.374Z",
+          "wall_seconds": 66.198,
+          "platform_duration_ms": 66198,
+          "evidence_lines": [
+            182,
+            206
+          ]
+        }
+      ],
+      "summed_run_interval_seconds": 412.455,
+      "model_usage": {
+        "input_tokens": 3758041,
+        "cached_input_tokens": 3570688,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 12239,
+        "reasoning_output_tokens": 2764,
+        "total_tokens": 3770280
+      },
+      "usage_records": 24,
+      "usage_evidence_line_range": [
+        41,
+        204
+      ],
+      "usage_turn_totals_crosscheck": "matched all per-turn cumulative usage records",
+      "first_response_input_tokens": 109218,
+      "top_level_calls": {
+        "exec": 17,
+        "send_message": 3
+      },
+      "nested_tool_items": {
+        "CommandExecution": 16,
+        "McpToolCall": 1,
+        "FileChange": 1
+      },
+      "nested_items_with_explicit_status": 18,
+      "explicit_failure_items": []
+    },
+    {
+      "agent": "champion_sources",
+      "source_evidence": {
+        "source_id": "champion_sources",
+        "session_locator": "rollout-2026-10-18T16-27-46-01a14e1f-c14d-7d01-abe0-d4d27d5299c0.jsonl",
+        "line_start": 34,
+        "line_end": 226,
+        "bounded_records_sha256": "7d51114d8126c0ecbcd19d0b0af15c40965e4a77008c6fbe4be6a851f93315c6",
+        "hash_scope": "Raw UTF-8 bytes of inclusive line range, including original line endings; no log content exported."
+      },
+      "intervals": [
+        {
+          "start_utc": "2026-10-18T08:27:46.613Z",
+          "end_utc": "2026-10-18T08:32:16.069Z",
+          "wall_seconds": 269.456,
+          "platform_duration_ms": 269456,
+          "evidence_lines": [
+            34,
+            190
+          ]
+        },
+        {
+          "start_utc": "2026-10-18T08:36:15.072Z",
+          "end_utc": "2026-10-18T08:37:37.011Z",
+          "wall_seconds": 81.939,
+          "platform_duration_ms": 81939,
+          "evidence_lines": [
+            191,
+            226
+          ]
+        }
+      ],
+      "summed_run_interval_seconds": 351.395,
+      "model_usage": {
+        "input_tokens": 5401998,
+        "cached_input_tokens": 5265280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8351,
+        "reasoning_output_tokens": 1144,
+        "total_tokens": 5410349
+      },
+      "usage_records": 28,
+      "usage_evidence_line_range": [
+        42,
+        224
+      ],
+      "usage_turn_totals_crosscheck": "matched all per-turn cumulative usage records",
+      "first_response_input_tokens": 109258,
+      "top_level_calls": {
+        "exec": 23,
+        "send_message": 3
+      },
+      "nested_tool_items": {
+        "CommandExecution": 4,
+        "Extension": 9,
+        "McpToolCall": 13,
+        "FileChange": 1
+      },
+      "nested_items_with_explicit_status": 18,
+      "explicit_failure_items": [
+        {
+          "source_id": "champion_sources",
+          "line": 131,
+          "kind": "McpToolCall",
+          "status": "failed",
+          "exit_code": null
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "agent_count": 3,
+    "model_usage_records": 84,
+    "model_usage": {
+      "input_tokens": 14408140,
+      "cached_input_tokens": 13730048,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 46307,
+      "reasoning_output_tokens": 7939,
+      "total_tokens": 14454447
+    },
+    "uncached_input_tokens": 678092,
+    "cached_input_fraction": 0.952937,
+    "top_level_call_count": 76,
+    "top_level_calls": {
+      "exec": 61,
+      "spawn_agent": 2,
+      "wait": 1,
+      "followup_task": 4,
+      "list_agents": 1,
+      "send_message": 7
+    },
+    "nested_tool_item_count": 93,
+    "nested_tool_items": {
+      "CommandExecution": 59,
+      "Extension": 14,
+      "ImageView": 2,
+      "FileChange": 4,
+      "McpToolCall": 14
+    },
+    "nested_items_with_explicit_status": 77,
+    "explicit_failure_count": 5,
+    "explicit_failures": [
+      {
+        "source_id": "coordinator",
+        "line": 9695,
+        "kind": "CommandExecution",
+        "status": "failed",
+        "exit_code": 1
+      },
+      {
+        "source_id": "coordinator",
+        "line": 9760,
+        "kind": "CommandExecution",
+        "status": "failed",
+        "exit_code": 1
+      },
+      {
+        "source_id": "coordinator",
+        "line": 9779,
+        "kind": "CommandExecution",
+        "status": "failed",
+        "exit_code": 1
+      },
+      {
+        "source_id": "coordinator",
+        "line": 9787,
+        "kind": "CommandExecution",
+        "status": "failed",
+        "exit_code": 1
+      },
+      {
+        "source_id": "champion_sources",
+        "line": 131,
+        "kind": "McpToolCall",
+        "status": "failed",
+        "exit_code": null
+      }
+    ],
+    "summed_agent_run_interval_seconds": 1719.836,
+    "child_union_run_interval_seconds": 570.436,
+    "both_children_overlap_seconds": 193.414,
+    "root_and_at_least_one_child_overlap_seconds": 570.436,
+    "wall_seconds_by_running_agent_count": {
+      "1": 385.55,
+      "2": 377.022,
+      "3": 193.414
+    },
+    "pairwise_run_interval_overlap": [
+      {
+        "agents": [
+          "coordinator",
+          "control_source_audit"
+        ],
+        "overlap_seconds": 412.455
+      },
+      {
+        "agents": [
+          "coordinator",
+          "champion_sources"
+        ],
+        "overlap_seconds": 351.395
+      },
+      {
+        "agents": [
+          "control_source_audit",
+          "champion_sources"
+        ],
+        "overlap_seconds": 193.414
+      }
+    ]
+  },
+  "limits": {
+    "proven_wall_time_saved_seconds": null,
+    "efficiency_improvement_percent": null,
+    "serial_baseline_seconds": null,
+    "effective_work_seconds": null,
+    "duplicate_work_seconds": null,
+    "billed_cost": null,
+    "opus_live_usage": null,
+    "guardian_usage": "excluded by scope; no guardian content read",
+    "token_scope": "Only token_usage_record.usage for the coordinator and two named workers in this root round. Deduplicate thread_id + response_id. Do not sum legacy token_count or thread cumulative totals. Cached input is a subset of input; reasoning output is a subset of output. Agent inherited history records are excluded, but inherited prompt tokens actually processed by a child remain legitimate billed-work telemetry.",
+    "tool_scope": "Top-level model tool calls and nested completed tool event items are separate layers; never add them together. Explicit failures count failed/declined status or nonzero exit code only. Shell stderr/non-terminating PowerShell errors or semantically wrong successful results may be missing. Extension/ImageView events have no standardized success status.",
+    "time_scope": "task_started to matching task_complete is an observed run interval including model/tool/wait time; idle gaps between child turns excluded. Overlap is concurrency evidence, not saved time or effective labour.",
+    "causal_conclusion": "The workflow produced parallel execution and review deliverables. Without an equivalent serial baseline and matched quality, these logs do not prove a speedup."
+  }
+}

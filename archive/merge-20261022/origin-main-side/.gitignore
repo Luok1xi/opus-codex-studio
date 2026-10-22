@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.env
+.env.*
+production/codex_runs/
+production/snapshots/
+.studio-runtime/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+db-export/
+teamhub.local.json

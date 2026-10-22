@@ -1,0 +1,55 @@
+{
+  "round_id": "2026-10-19-pin-adaptation",
+  "summary": "解释同芯片主板下的控制包适配边界，修正从默认接口不符推断实车源码不真实的过强结论。",
+  "completed": [
+    "核对PWM合法性、输出接口和反馈单位",
+    "独立核对风机控制类型差异",
+    "给出接线与单位标定的分阶段验证路径",
+    "启动引脚说明补充：用原厂AP32202、TC26x数据手册及BC勘误区分启动/电源配置、输入专用和型号差异；原包电机/编码器不在警告名单，无线串口有宏定义但未见业务初始化，不把模板或枚举算作启用。"
+  ],
+  "remaining": [],
+  "evidence": [
+    "Read-only inspection of supplied PWM driver map, motor output, encoder acquisition and fan initialization.",
+    "One independent source review returned matching interface boundaries.",
+    "Existing local schematic page used as board routing reference; physical wiring remains unverified.",
+    "Infineon AP32202 table 2; TC26x BC datasheet P20.2 and P21.6 footnote; BC errata PADS_TC.H003; supplied application configuration and initialization call sites."
+  ],
+  "metrics": [
+    {
+      "name": "资料核对窗口",
+      "value": 232.321,
+      "unit": "seconds",
+      "basis": "从开始并行读取至结论整理，包含辅助审查；不含最初规则读取与后续归档"
+    },
+    {
+      "name": "只读辅助审查",
+      "value": 1,
+      "unit": "agents",
+      "basis": "原生代理检查控制调用链，非Opus会话"
+    },
+    {
+      "name": "固件变更",
+      "value": 0,
+      "unit": "files",
+      "basis": "只读分析"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无供应方usage"
+    },
+    {
+      "name": "归档与复盘耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未独立连续计时"
+    },
+    {
+      "name": "启动引脚解释补充窗口",
+      "value": 162.522,
+      "unit": "seconds",
+      "basis": "单独补充核对窗口，含原厂资料和1次只读辅助审查；不含后续归档，不并入初始窗口"
+    }
+  ]
+}

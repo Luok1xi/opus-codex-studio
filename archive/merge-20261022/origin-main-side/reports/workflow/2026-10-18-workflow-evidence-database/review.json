@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-18-workflow-evidence-database",
+  "task_summary": "把三方工作报告、效率分析和改进依据集中存入独立WORKFLOW-STUDIO库，保留来源、完整正文及历史，并接入每轮收尾。",
+  "workflow_version": "TeamHub v2 / workflow_db v1 / existing review validator",
+  "started_at": "2026-10-18T09:48:06+00:00",
+  "measurement_cutoff_at": "2026-10-18T09:56:18.711749+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "工作流独立库及分类",
+      "完整报告、证据、作者/入库者可回查",
+      "去重、修订历史和原子性通过测试",
+      "已有复盘导入并验证",
+      "持续入口规则及私人仓库脱敏归档"
+    ],
+    "completed": [
+      "独立工作流库及01-05分类已建立；其他7库保留",
+      "3份历史复盘与聚合证据回读一致；12条建议状态保留",
+      "新增7项数据库测试与4项既有校验测试均通过",
+      "Codex/Opus工作室入口、共享TeamHub说明和已安装技能已更新"
+    ],
+    "remaining": [
+      "截至测量截止，私人仓库提交和回读待完成；另存archive-receipt确认"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "新数据库测试通过",
+      "value": 7,
+      "unit": "项",
+      "basis": "作者分离、全量回读、12并发去重、历史链、异常回滚、非法输入、幂等初始化"
+    },
+    {
+      "name": "相关测试总通过",
+      "value": 11,
+      "unit": "项",
+      "basis": "含4项既有效率校验测试，运行1.490秒"
+    },
+    {
+      "name": "导入历史复盘",
+      "value": 3,
+      "unit": "份",
+      "basis": "逐份比较完整报告和evidence_payload"
+    },
+    {
+      "name": "原生子代理",
+      "value": 1,
+      "unit": "个",
+      "basis": "短任务卡只读设计审查，随后限定单个测试文件；未递归派工"
+    },
+    {
+      "name": "子代理报告区间",
+      "value": 83,
+      "unit": "秒",
+      "basis": "09:51:59Z至09:53:22Z，不代表有效工时或节省时间"
+    },
+    {
+      "name": "真实DeepSeek/Opus调用",
+      "value": 0,
+      "unit": "次",
+      "basis": "本轮未重试已知权限阻塞渠道，未伪造双方报告或回执"
+    },
+    {
+      "name": "全轮token",
+      "value": null,
+      "unit": "tokens",
+      "basis": "没有同口径完整usage"
+    },
+    {
+      "name": "实际费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单证据"
+    },
+    {
+      "name": "复盘单独工时",
+      "value": null,
+      "unit": "秒",
+      "basis": "与收尾实施交错，未分离计时"
+    },
+    {
+      "name": "同条件基线",
+      "value": null,
+      "unit": "秒",
+      "basis": "无匹配任务、质量门槛与环境的配对"
+    }
+  ],
+  "observations": [
+    "复用既有reviews/decisions表及原子事务，未引入新数据库服务或模型委员会。",
+    "独立审查指出作者与入库者可能混淆、组合写入可能半完成、建议ID可能冲突；实现和测试覆盖前两项，文档明确建议ID全局唯一。",
+    "未把Codex总结当作Opus/DeepSeek个人报告；实际缺失的成员报告仍缺失。",
+    "测试证明保存与核对机制可用，不能证明总体效率已经提高。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-10",
+      "action": "每轮成员报告和效率分析完整入工作流库，改规则前核对历史证据；私人仓库保留脱敏副本",
+      "owner": "本轮协调者",
+      "status": "adopted",
+      "next_check": "后续轮次报告缺失率、正文回查率、待入库条数"
+    },
+    {
+      "id": "WF-11",
+      "action": "保留原作者和提交者、更正新增版本、建议采用全局唯一ID并追加状态历史",
+      "owner": "三方成员",
+      "status": "adopted",
+      "next_check": "检查代导入署名、重复建议ID、旧版证据是否能准确回查"
+    }
+  ],
+  "evidence": [
+    "同目录evidence.json与member-codex.json",
+    "tools/workflow_db.py、tools/workflow_review.py、tests/test_workflow_db.py",
+    "工作流库中历史报告reviews 1至3；完整JSON及证据已回读"
+  ],
+  "comparison": null,
+  "limits": [
+    "计时从首个时钟读数开始，之前短暂入口读取未计入",
+    "无后台抓取所有聊天；依靠入口规则和明确命令入库",
+    "旧的DeepSeek自动写回权限限制和Opus本人回执缺失仍然存在，本轮未扩大权限或重新派模型",
+    "角色标签与报告者声明不等于真实鉴权或独立验收",
+    "截至测量点的归档状态见后续回执"
+  ]
+}

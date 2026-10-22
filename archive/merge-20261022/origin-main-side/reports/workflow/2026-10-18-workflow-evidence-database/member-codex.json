@@ -1,0 +1,32 @@
+{
+  "round_id": "2026-10-18-workflow-evidence-database",
+  "summary": "建立工作流自身的独立报告数据库，将完整工作报告、效率分析、证据和建议历史接入收尾入口。",
+  "completed": [
+    "新增WORKFLOW-STUDIO及五类数据，保留其他七库",
+    "导入三份历史效率报告并逐份回读正文和证据一致",
+    "作者与入库者分离，更正追加版本，报告及建议同事务保存",
+    "维护入口规则和三方共享说明，11项相关测试通过"
+  ],
+  "remaining": [
+    "私人仓库发布与回读待本轮收尾完成；结果另记归档回执"
+  ],
+  "evidence": [
+    "tools/workflow_db.py",
+    "tests/test_workflow_db.py",
+    "同轮evidence.json"
+  ],
+  "metrics": [
+    {
+      "name": "相关测试通过",
+      "value": 11,
+      "unit": "项",
+      "basis": "协调者实跑7个新库测试和4个既有校验器测试"
+    },
+    {
+      "name": "真实用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "未取得本轮跨提供方同口径usage"
+    }
+  ]
+}

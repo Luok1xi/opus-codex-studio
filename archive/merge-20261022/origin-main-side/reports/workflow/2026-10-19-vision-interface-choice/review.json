@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-19-vision-interface-choice",
+  "task_summary": "说明海大视觉与宁夏控制可组合，核实效率判断的现有证据边界。",
+  "workflow_version": "Bounded local source reading and one read-only performance-evidence check",
+  "started_at": "2026-10-19T11:51:27.979Z",
+  "measurement_cutoff_at": "2026-10-19T11:55:30.085Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "直接解释视觉算法不与PID来源绑定",
+      "区分开发便利、运算速度、赛道表现",
+      "不将PC对照当作实机或跨团队优势"
+    ],
+    "completed": [
+      "核对视觉误差消费者与海大角度生成代码",
+      "独立复核现有400帧PC回放的范围",
+      "给出保留海大视觉与宁夏控制框架、统一接口并标定外环的建议",
+      "同目标追问澄清：作者视觉赋值为可选参考，不阻塞自定义角度接口与外环重标定；已交接此依赖边界。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "证据核对窗口",
+      "value": 242.106,
+      "unit": "seconds",
+      "basis": "本轮开始读取至结论整理，包含一份原生子任务复核"
+    },
+    {
+      "name": "原生辅助复核",
+      "value": 1,
+      "unit": "agents",
+      "basis": "只读已有性能结果，未调用Opus或DeepSeek新咨询"
+    },
+    {
+      "name": "新增基准运行",
+      "value": 0,
+      "unit": "runs",
+      "basis": "现有材料足以回答，未为凑证据重跑"
+    },
+    {
+      "name": "生产源码变更",
+      "value": 0,
+      "unit": "files",
+      "basis": "问答核对，无实施"
+    },
+    {
+      "name": "模型真实用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无统一供应方usage"
+    },
+    {
+      "name": "纯归档耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "结束回读后另记凭据"
+    },
+    {
+      "name": "接口询问必要性补充窗口",
+      "value": 43.117,
+      "unit": "seconds",
+      "basis": "独立补充读取至结论准备；不并入前轮初始时间，不含随后数据库/归档"
+    }
+  ],
+  "observations": [
+    "现有性能对照是同一视觉实现的参考版与优化版，不能推论另一个未提供算法的速度。",
+    "独立复核与主审接口读取分工；没有匹配工作流基线，不能宣称净提效。",
+    "本轮不追加跨模型讨论或新基准，避免简单接口解释升级成重复研究。",
+    "保留现有源证据回答补充问题，无新子任务、无重新测评；复用同轮报告追加历史。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-COMPARE-DIMENSIONS-20261019",
+      "action": "性能结论同时标明输入集、基线实现、运行平台与质量结果；缺其中一项就收窄结论。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续TC264同帧测试记录平均/最差耗时、资源占用及检测质量"
+    },
+    {
+      "id": "WF-OPTIONAL-DEPENDENCY-20261019",
+      "action": "把复用旧参数所需参考与接入新模块所需合同分开，避免把可选咨询设成工程阻塞。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "核对后续任务不以等待作者片段作为所有适配工作的前置条件"
+    }
+  ],
+  "evidence": [
+    "Local PID input consumer and reference vision angle producer checked.",
+    "Existing PC replay README and result files reviewed by independent worker and coordinator.",
+    "No opponent vision implementation, no target timing measurements."
+  ],
+  "comparison": null,
+  "limits": [
+    "没有宁夏完整视觉，无法做两套视觉性能比较。",
+    "现有电脑合成回放不能证明目标芯片速度、真实赛道可靠性或完赛圈速。",
+    "只上传脱敏流程结论，不上传项目源码或数据库。"
+  ]
+}
