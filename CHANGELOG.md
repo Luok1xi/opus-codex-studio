@@ -44,3 +44,10 @@
 - DSH 的 `projects/beikuang-chat` 工作区切换到本项目新路径（旧路径仍只读可用）。
 - StudioOps 注册表同步（已更新 `WORKFLOW-STUDIO` 版本与路径说明）。
 - 旧快照是否在 P3 删除；网站 `campus/vendor` 模板是否保留。
+
+## 0.2.2 — 2026-10-22 — 同步 origin/main 最新工作流记录（10-20）
+
+- 合并远端 13 个提交（`0378b91..0259120`，10-20 相机/曝光/固件/功率/仿真等工作流复盘记录，52 个文件）。
+- 冲突 7 个（6 个仅 CRLF 等价、1 个仅末尾空行差异），全部保留本地已归一化内容；origin/main 侧 7 份归档 `archive/merge-20261022b/origin-main-side/`。
+- 本地已归一化的报告行尾保持不变；远端历史 CRLF 归一仍需 Owner 批准改写历史。
+- 未改动运行代码/接口；`unittest`、`studio_check` 复核通过后推送 GitHub。

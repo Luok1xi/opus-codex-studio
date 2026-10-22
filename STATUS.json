@@ -3,7 +3,7 @@
   "project": "codex-opus-studio",
   "displayName": "AI 协作工作室",
   "canonical": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "consolidatedAt": "2026-10-22",
   "projectRoot": "C:\\Users\\user\\Documents\\Codex\\2026-10-11\\gai-s\\work\\opus-codex-studio",
   "boundaryDeclaration": "BOUNDARY.md",
@@ -14,15 +14,15 @@
     "previousHead": "707284e (2026-10-08 baseline)",
     "localWorkCommit": "b23cdcb",
     "mergeCommit": "e50e1d3",
-    "mergedRemote": "origin/main 0378b91 (30 commits, 2026-10-19, desensitized archive line)",
+    "mergedRemote": "origin/main 0259120 (13 commits, 2026-10-20 workflow records)",
     "backupRefs": [
       "pre-consolidation-20261022 (tag)",
       "backup/pre-consolidation-20261022 (branch)",
       "local-work-20261022 (tag)"
     ],
     "workingTree": "clean after consolidation",
-    "remotePush": "not performed; strategy pending Owner (never force-push local full work over sanitized remote)",
-    "head": "v0.2.1",
+    "remotePush": "pushed main + tags v0.2.0/v0.2.1/v0.2.2",
+    "head": "v0.2.2",
     "headNote": "exact commit: git rev-parse HEAD (tag v0.2.1 points at this commit)"
   },
   "components": {
