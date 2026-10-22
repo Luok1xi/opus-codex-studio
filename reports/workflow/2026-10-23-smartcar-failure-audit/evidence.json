@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "source_project": "CRAZY-CIRCUIT",
+  "audit": {
+    "saved_configurations": 4,
+    "samples_per_configuration": 24,
+    "reported_samples_per_configuration": 48,
+    "fresh_failure_reruns": 4,
+    "fresh_reruns_matching_all_saved_metrics": 4,
+    "added_high_speed_traces": 2
+  },
+  "coordination": {
+    "native_subagents": 1,
+    "opus_live_inference": 0,
+    "incoming_opus_handoff": 134,
+    "codex_ack": true,
+    "outgoing_handoff": 136,
+    "opus_ack": false
+  },
+  "boundary": {
+    "production_changed": false,
+    "hardware_accessed": false,
+    "holdout_run": false
+  },
+  "archive": "Only sanitized workflow aggregate data; no source, traces or database."
+}
