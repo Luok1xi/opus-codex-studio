@@ -22,7 +22,8 @@
     ],
     "workingTree": "clean after consolidation",
     "remotePush": "not performed; strategy pending Owner (never force-push local full work over sanitized remote)",
-    "head": "d234f33"
+    "head": "v0.2.1",
+    "headNote": "exact commit: git rev-parse HEAD (tag v0.2.1 points at this commit)"
   },
   "components": {
     "bridge": "tools/bridge.py (doctor/consult/submit/run/status/events/stop, explicit-run)",
