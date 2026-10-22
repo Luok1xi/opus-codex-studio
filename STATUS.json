@@ -22,7 +22,7 @@
     ],
     "workingTree": "clean after consolidation",
     "remotePush": "not performed; strategy pending Owner (never force-push local full work over sanitized remote)",
-    "head": "a5377ec"
+    "head": "d234f33"
   },
   "components": {
     "bridge": "tools/bridge.py (doctor/consult/submit/run/status/events/stop, explicit-run)",
