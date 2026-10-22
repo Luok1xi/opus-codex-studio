@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "project": "codex-opus-studio",
+  "displayName": "AI 协作工作室",
+  "canonical": true,
+  "version": "0.2.0",
+  "consolidatedAt": "2026-10-22",
+  "projectRoot": "C:\\Users\\user\\Documents\\Codex\\2026-10-11\\gai-s\\work\\opus-codex-studio",
+  "boundaryDeclaration": "BOUNDARY.md",
+  "modules": "MODULES.md",
+  "changelog": "CHANGELOG.md",
+  "git": {
+    "branch": "main",
+    "previousHead": "707284e (2026-10-08 baseline)",
+    "localWorkCommit": "b23cdcb",
+    "mergeCommit": "e50e1d3",
+    "mergedRemote": "origin/main 0378b91 (30 commits, 2026-10-19, desensitized archive line)",
+    "backupRefs": [
+      "pre-consolidation-20261022 (tag)",
+      "backup/pre-consolidation-20261022 (branch)",
+      "local-work-20261022 (tag)"
+    ],
+    "workingTree": "clean after consolidation",
+    "remotePush": "not performed; strategy pending Owner (never force-push local full work over sanitized remote)",
+    "head": "b04bfc4"
+  },
+  "components": {
+    "bridge": "tools/bridge.py (doctor/consult/submit/run/status/events/stop, explicit-run)",
+    "routing": "tools/studio_runtime/{routing,engine,contracts,store,adapters,context}.py",
+    "dsConsult": "tools/deepseek_task.py (consult-only; no usage回传 yet)",
+    "teamhubCli": "tools/teamdb.py + tools/teamhub_partition.py",
+    "workflowDb": "tools/workflow_db.py + tools/workflow_review.py",
+    "dispatchLegacy": "tools/studio/codex_dispatch.ps1 (manual DryRun only)",
+    "projects": "projects/beikuang, projects/beikuang-chat (registration/workspace; code owner = BEIKUANG canonical project)"
+  },
+  "data": {
+    "teamhubRoot": "F:\\TeamHub",
+    "workflowDatabase": "F:\\TeamHub\\projects\\WORKFLOW-STUDIO\\teamhub.db (authoritative records)",
+    "runtimeDir": ".studio-runtime/ (ignored; studio.sqlite3, bridge.local.json, deepseek-connection.json)",
+    "credentials": "never committed; bridge.local.json/structure only"
+  },
+  "frozen": [
+    "C:\\Users\\user\\Documents\\Codex\\2026-10-06\\ni-x20\\outputs\\codex-opus-studio (FROZEN_SNAPSHOT.md)",
+    "archive/node-autopilot-20261013 (superseded Node autopilot)",
+    "archive/merge-20261022/origin-main-side (merge evidence)",
+    "C:\\Users\\user\\Documents\\GitHub\\luokixi\\campus\\vendor\\opus-codex-studio (templates only, PROVENANCE)"
+  ],
+  "verification": {
+    "unittest": "97 tests OK",
+    "studioCheck": "PASS (21 vendor hashes)",
+    "command": "python -m unittest discover -s tests -q ; python tools/studio_check.py"
+  },
+  "pendingOwner": [
+    "GitHub remote push strategy (sanitized archive line; force-push forbidden)",
+    "DSH 北矿娘聊天工作区切换本项目 projects/beikuang-chat 新路径",
+    "旧快照是否在 P3 删除",
+    "StudioOps 注册表正式启用并替换 TeamHub catalog 为镜像"
+  ]
+}

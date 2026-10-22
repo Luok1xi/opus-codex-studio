@@ -1,0 +1,11 @@
+{
+  "id": "beikuang",
+  "name": "北矿娘·小煤渣",
+  "source_root": "C:\\Users\\user\\Documents\\ChatGPT\\New project\\companion",
+  "project_root": "C:\\Users\\user\\Documents\\Codex\\2026-10-11\\gai-s\\work\\opus-codex-studio\\projects\\beikuang",
+  "chat_workspace": "C:\\Users\\user\\Documents\\Codex\\2026-10-11\\gai-s\\work\\opus-codex-studio\\projects\\beikuang-chat",
+  "runtime_url": "http://127.0.0.1:17839",
+  "data_owner": "BEIKUANG canonical project (P1); website instance until P2",
+  "credentials_location": "original application settings; never exported",
+  "connector": "C:\\Users\\user\\Documents\\ChatGPT\\New project\\companion\\tools\\beikuang-harness\\server.mjs"
+}

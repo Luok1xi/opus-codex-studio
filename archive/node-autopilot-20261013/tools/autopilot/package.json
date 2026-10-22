@@ -1,0 +1,7 @@
+{
+  "name": "local-studio-autopilot",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test test-*.mjs" },
+  "dependencies": { "@backnotprop/orchestrator-core": "0.1.0" }
+}

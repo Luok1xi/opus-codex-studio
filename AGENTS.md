@@ -1,3 +1,5 @@
+> 工作室边界（2026-10-22，v0.2.0）：本仓库是唯一权威工作室，规则见 BOUNDARY.md。旧快照已冻结；其他项目只通过 tools/bridge.py / TeamHub CLI / 工作流 CLI / consult 调用，不复制实现。
+
 # Codex 工作入口
 每轮用户任务交付前，执行 docs/WORKFLOW_REVIEW.md：记录真实质量、耗时、用量、协作收益/损耗与改进建议，归档到已授权私人仓库 Luok1xi/opus-codex-studio。无可比基线不报提效百分比；不上传原始会话或凭据。收尾本身不递归生成新轮次。
 新会话发现入口：skills/ai-studio/SKILL.md；本机已通过 tools/install_codex_skill.py 安装全局技能和简短 AGENTS 指针。工作流集成、按能力选人和下一步效率方案见 docs/WORKFLOW_INTEGRATION.md。

@@ -23,5 +23,19 @@
     "configuration_template": "bridge.example.json",
     "activation": "explicit-run",
     "scope": "general-local-workspaces"
+  },
+  "boundary": {
+    "declaration": "BOUNDARY.md",
+    "version": "0.2.0",
+    "authoritative": true
+  },
+  "projects": {
+    "beikuang": {
+      "registry_file": "projects/beikuang/project.local.json",
+      "handoff_root": "projects/beikuang/production",
+      "chat_workspace": "projects/beikuang-chat",
+      "connector": "canonical-北矿娘项目 tools/beikuang-harness (stdio MCP)",
+      "runtime_data_owner": "BEIKUANG canonical project (P1); website instance until P2"
+    }
   }
 }

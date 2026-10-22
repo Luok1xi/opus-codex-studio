@@ -1,0 +1,634 @@
+{
+  "date": "2026-10-08",
+  "source_root": "E:/Lv/game",
+  "scope": "studio framework and tools only",
+  "files": [
+    {
+      "source": "local studio framework",
+      "packaged": ".gitattributes",
+      "sha256": "bb2367e62f3349ad62da73d239282ad3087e155a91ef4e77a7adb21348e75b67",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": ".gitignore",
+      "sha256": "31b7bf0c478aea5b1fd816b331fb4c29056742bb7b4e834785a766bbf86f08b0",
+      "mode": "adapted",
+      "packaged_sha256": "8232733b7301e60c9aaa8ae6a0e54e5e0a7fdcc2c15aa279106a1f42e2ae7cd0",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "AGENTS.md",
+      "sha256": "708c170c9bade326e9233ee1a91e12b0c9c012d3e3360e71eb21f1171c502af0",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "CLAUDE.md",
+      "sha256": "0dae0866957e843af4dc6ec334703a527281ac1443c8c3a0a3fe24c3b11ff787",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "DEEPSEEK.md",
+      "sha256": "24d7dd92a32a789e59a1dccb6c2da8094386ff3b55aa087a689d56574e94a278",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "PROJECTS.md",
+      "sha256": "6d0c62b0d80f2d70e9cee3f88409b43e064ce21f7817fc08ca4f7b0b2ebcc685",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "PROJECT_CONTEXT.md",
+      "sha256": "47c2e94d51b50907721447c76bb8d3818744d8ec0bdeb9698375e96d7ac3dac4",
+      "mode": "adapted",
+      "packaged_sha256": "266f8854931cf449c4852cbb73d8613699fac70212f1594120b3f406b5e2860c",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "README.md",
+      "sha256": "95bc4b8cac2a51ae058f0cc86f8924a04cf600456adc00b1a5b55de24e86a8ee",
+      "mode": "adapted",
+      "packaged_sha256": "1ae411bf994df980bcf71627454b6aa93b0473e25ccbc160d2613f8b3d6e3cb6",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "STUDIO.md",
+      "sha256": "186a24a21eb27acd0da81e18f9fa091ba4b0b49bfaeb8642499bec3410be2042",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "THIRD_PARTY_NOTICES.md",
+      "sha256": "7a3de55a20faf210bd448d961ebb4b6020c88ecbce3399c7ccf48e6d824a3c89",
+      "mode": "adapted",
+      "packaged_sha256": "70213c82c4f24add17b45645e8d131d69f0b3aed1f132707a4769a27a6ee7d06",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "VERIFICATION.json",
+      "sha256": "2dd3f533442b588ef15feb04e4e00cd1801990610c56b54da518e3777ea64f26",
+      "mode": "adapted",
+      "packaged_sha256": "b4af6fdde845c899fa8a5b74f58ca8479674250e3848d59cb78589a799472e48",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "archive/github-initial-README.md",
+      "sha256": "aace8abcf0525b561d0f1d1db7d36cc2138d1905a2221c10c991e249cc630a2b",
+      "mode": "generated"
+    },
+    {
+      "source": ".github/ISSUE_TEMPLATE/bug.md",
+      "packaged": "archive/legacy/.github/ISSUE_TEMPLATE/bug.md",
+      "sha256": "b6f3bde8c4b3b007643fc4edadfda8ec66cd503dbab8a4db657d9c6d41f5e544",
+      "mode": "original"
+    },
+    {
+      "source": ".github/ISSUE_TEMPLATE/config.yml",
+      "packaged": "archive/legacy/.github/ISSUE_TEMPLATE/config.yml",
+      "sha256": "13064e7bea658e01e718b414fbb7b3b244f36411fe25ee2055c151f7b534547a",
+      "mode": "original"
+    },
+    {
+      "source": ".github/ISSUE_TEMPLATE/feature.md",
+      "packaged": "archive/legacy/.github/ISSUE_TEMPLATE/feature.md",
+      "sha256": "37ebaf92d6679a8d06090a2ddcba93bf60d5c4e5b5137c122528791ce4312f24",
+      "mode": "original"
+    },
+    {
+      "source": ".github/ISSUE_TEMPLATE/narrative-review.md",
+      "packaged": "archive/legacy/.github/ISSUE_TEMPLATE/narrative-review.md",
+      "sha256": "bc614b5f06e871c7bf8cf831f60d8e4cf7a5a3d5d1a5cec9bf8b9937d4be298c",
+      "mode": "original"
+    },
+    {
+      "source": ".github/ISSUE_TEMPLATE/scene.md",
+      "packaged": "archive/legacy/.github/ISSUE_TEMPLATE/scene.md",
+      "sha256": "2587fe7f00940cd5e79740e3601b6255255589c3905d2d6d3594d1b113afcc16",
+      "mode": "original"
+    },
+    {
+      "source": ".github/PULL_REQUEST_TEMPLATE.md",
+      "packaged": "archive/legacy/.github/PULL_REQUEST_TEMPLATE.md",
+      "sha256": "1df7a9c79250910a40ff5c45ab85bff1cc1c99eda6e1c8cf797a74980833f454",
+      "mode": "original"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "archive/legacy/README.md",
+      "sha256": "75ca5aaabb85ce48546a09854af6dc7959180de4785fdd7d3473b01a6ed7efbe",
+      "mode": "generated"
+    },
+    {
+      "source": "studio/ROUTING.md",
+      "packaged": "archive/legacy/studio/ROUTING.md",
+      "sha256": "7862ac70b75b5637c7f622b17ddcc2edd773f455f74e3c5ab5fad889f3a4444b",
+      "mode": "original"
+    },
+    {
+      "source": "studio/workflows/HANDOFF.md",
+      "packaged": "archive/legacy/studio/workflows/HANDOFF.md",
+      "sha256": "f471ead8adfbb9aaa28915c508d51be256742355c6e3f158a8cf6477eddc63a9",
+      "mode": "original"
+    },
+    {
+      "source": "templates/MYSTERY_BOARD.md",
+      "packaged": "archive/legacy/templates/MYSTERY_BOARD.md",
+      "sha256": "23ac1a011e417f76ce03d40ea73bd30545e3a6f720dd60c50c3a14147684ad96",
+      "mode": "original"
+    },
+    {
+      "source": "templates/NARRATIVE_REVIEW.md",
+      "packaged": "archive/legacy/templates/NARRATIVE_REVIEW.md",
+      "sha256": "f6753ff1a97b46dcc8988d5f392148aa8ebc799ca7088f9d0924c53903981af2",
+      "mode": "original"
+    },
+    {
+      "source": "templates/RELATIONSHIP_MATERIAL_CARD.md",
+      "packaged": "archive/legacy/templates/RELATIONSHIP_MATERIAL_CARD.md",
+      "sha256": "0e02351b17b27764c158370761593a5ace172ab56cebb1f4fca441a27c30c3ad",
+      "mode": "original"
+    },
+    {
+      "source": "templates/SCENE_CARD.md",
+      "packaged": "archive/legacy/templates/SCENE_CARD.md",
+      "sha256": "084bf4381a1b90d4fe10b9e87229ad28bc71964a49223102b584ea91984b9dc1",
+      "mode": "original"
+    },
+    {
+      "source": "templates/SCENE_REPORT.md",
+      "packaged": "archive/legacy/templates/SCENE_REPORT.md",
+      "sha256": "ad8d730c0bdf82a2fdd1f16c85057c1135e1ae88733100743d830c799a3b80e8",
+      "mode": "original"
+    },
+    {
+      "source": "tests/test_studio.py",
+      "packaged": "archive/legacy/tests/test_studio.py",
+      "sha256": "5d0468c1bb8db781518df1e394c6fd8d5b32a706799ccdfb2fffe4413d863af0",
+      "mode": "original"
+    },
+    {
+      "source": "tools/snapshot.py",
+      "packaged": "archive/legacy/tools/snapshot.py",
+      "sha256": "282a3ca2df3f539803690b42ab7e2f45e1a9efcaa2b609e8f714a1944ba0377a",
+      "mode": "original"
+    },
+    {
+      "source": "tools/studio/codex_dispatch.ps1",
+      "packaged": "archive/legacy/tools/studio/codex_dispatch.ps1",
+      "sha256": "28e3d710fa2396708872ecea7da4fc562e6ceb5b99743922c2890843b3eb9de1",
+      "mode": "original"
+    },
+    {
+      "source": "tools/studio_check.py",
+      "packaged": "archive/legacy/tools/studio_check.py",
+      "sha256": "23a310d1bdae7bb351d7c753369364a4bf48b91a0b68459c3f22c862e52e5009",
+      "mode": "original"
+    },
+    {
+      "source": "tools/studio_smoke.py",
+      "packaged": "archive/legacy/tools/studio_smoke.py",
+      "sha256": "162c104b16b2f15af09ea70a3e78caed0bdf000f61d57dd5119904e0b31da006",
+      "mode": "original"
+    },
+    {
+      "source": "tools/task_route.py",
+      "packaged": "archive/legacy/tools/task_route.py",
+      "sha256": "9478132826594de3b146ea6abe76bedeb9d73bac7e7591c2b4c8636fa1c51a63",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/LICENSE",
+      "packaged": "archive/original-line-endings/studio/vendor/gamedev-skills/LICENSE",
+      "sha256": "7b6e4f65e5e1d0918447c4b5a371f01b49432098fee25a9ed0832c646e74cd90",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/NOTICE",
+      "packaged": "archive/original-line-endings/studio/vendor/gamedev-skills/NOTICE",
+      "sha256": "18ffe13bb86fbd1f9ec3a4e0987cccc34fdc129b8dc88e2e06c125aad8ac982f",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/agents/openai.yaml",
+      "packaged": "archive/original-line-endings/studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/agents/openai.yaml",
+      "sha256": "9b7c01fff69daa7ac15afd75bd1b2227f7ceceafd4619a0eb0e3e1d8014615df",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/scripts/requirements.txt",
+      "packaged": "archive/original-line-endings/studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/scripts/requirements.txt",
+      "sha256": "2f027fd5ee7782529bb126ddfa6ac6b6f8dc070f8d8dfd594a66b5fc56d5bbe4",
+      "mode": "original"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "production/BOARD.md",
+      "sha256": "8039cef1012ea2be1e067ddf51b6f5e740b42bdc32708685edd8069605b25d45",
+      "mode": "adapted",
+      "packaged_sha256": "1797143fdc9166ba2a12cc23faabbeba4181dc19f87bd5dbf136a31de3fd49b8",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "production/CODEX_TO_OPUS.md",
+      "sha256": "af9dceb4f042f3b084cff85255d1bab2e42593eaf88c082b2d7c19f34b3bdbd8",
+      "mode": "adapted",
+      "packaged_sha256": "84f2ad4587376da0970622fcc5d4a1ad3b0cbfb20317ee64a09b2bed78bfece8",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "production/DEEPSEEK_TO_OPUS.md",
+      "sha256": "fd6d2bc9fafbc604bb669c9f1f40db7f39114a52b5a33bfb0bbc590e1bd068ef",
+      "mode": "adapted",
+      "packaged_sha256": "2f960b8e30435b33fbeb53a2fd4a14a49a551aee36f7a0ac48ef72e62598873f",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "production/HANDOFF_OPUS.md",
+      "sha256": "7dbd022569379142fe5a3260a305c6e1547facf8a32e5ed782443ed4b2845a21",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "production/OPUS_TO_CODEX.md",
+      "sha256": "90b61e5d6b2a40fb75b07e41a42ef384b66df39a691d70630d2bfc004bbe01f3",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "production/OPUS_TO_DEEPSEEK.md",
+      "sha256": "d3cd6af321eb4bdf0425e3c4ca95937a0a1df37a8121dfa78d65fc0c4763a9a9",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang-chat/AGENTS.md",
+      "sha256": "699527d8e54e13b04b29ca8246a53d6178909e5491a69ebffc6fc880603be09d",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang-chat/README.md",
+      "sha256": "467829cf394b1b256ff5c37aa0a65c9e89d83744b718152e541f061c467f1f27",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang/INTEGRATION-REPORT.md",
+      "sha256": "aa4e6812a0a776528c0ff17bf7d694888b7ad4318f01b91431f39fb1a8088f07",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang/PROJECT.md",
+      "sha256": "7d664bf6cb7674142d1057b2f4ca0dd768e4704f749d7b1dccb06697e045d113",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang/production/BOARD.md",
+      "sha256": "0afdabe7ca0eada61b259552d727ca17e17e712ae0396ef0adb4291aa7143070",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang/production/CODEX_TO_OPUS.md",
+      "sha256": "c7ed193a509457c40d2151637258ba6ce5a6250baaf8713cf0327327e8b3dc9f",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang/production/DEEPSEEK_TO_OPUS.md",
+      "sha256": "3cb935e0c35925e412f16cf7f39b77b89d77ba9ea1fa980d123a78fd3ed8abcc",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang/production/HANDOFF_OPUS.md",
+      "sha256": "d7bd14046cf841ff5ac994f2eb516ba70e3d671bc79c6e4f27b1e45174903f7e",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang/production/OPUS_TO_CODEX.md",
+      "sha256": "e51edac0898759770024638bb5af7c795426e54d32d4c4c0e5596524c565a221",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "projects/beikuang/production/OPUS_TO_DEEPSEEK.md",
+      "sha256": "fe625d6c4c90047a610c5d2a5abd58545d6954d2c467bf85f1de05667eb0fd9d",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "studio.config.json",
+      "sha256": "59cd97380f88347d3d0ac5f937cb1d332abdb67ef62c89164fe37eb4fab5c77e",
+      "mode": "adapted",
+      "packaged_sha256": "2a3199c56978643f5af35290874f060b88ddb640afef982094f2cfb70c87738a",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "studio/DEEPSEEK_SETUP.md",
+      "sha256": "c51034c3d2a62c3846812f8d39389c60b03ad02a14fbf91ea95f31f30ea80f50",
+      "mode": "generated"
+    },
+    {
+      "source": "studio/ROUTING.md",
+      "packaged": "studio/ROUTING.md",
+      "sha256": "7862ac70b75b5637c7f622b17ddcc2edd773f455f74e3c5ab5fad889f3a4444b",
+      "mode": "adapted",
+      "packaged_sha256": "36c05634ab0a7e1434ab92ce3488b72b7a0712c3a11462a943384fe31bf30488",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "studio/game-art-workflows.lock.json",
+      "packaged": "studio/game-art-workflows.lock.json",
+      "sha256": "0bd2810680089629908321bcf606313d45eb92c1fe39e29799173846cf313813",
+      "mode": "original"
+    },
+    {
+      "source": "studio/upstream.lock.json",
+      "packaged": "studio/upstream.lock.json",
+      "sha256": "ea1dd3194012fafc6d4c96ca690ddfee00780d65c5360b49394469333b4fcfde",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/README.md",
+      "packaged": "studio/vendor/README.md",
+      "sha256": "96a1bceeb74a5b3150b27a836e8707dc6418529b8f66f7e7fbc7b3953e8cece3",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/ccgs/LICENSE",
+      "packaged": "studio/vendor/ccgs/LICENSE",
+      "sha256": "6ecc068715c0edffc4bc21e5dca450803e0a45af145f72221da23d14e7588359",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/ccgs/milestone-definition.md",
+      "packaged": "studio/vendor/ccgs/milestone-definition.md",
+      "sha256": "ecdef4e53c02ea9ee954ae0124291fcd9bd3627ef6a444a4fc7878587a101251",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/ccgs/narrative-character-sheet.md",
+      "packaged": "studio/vendor/ccgs/narrative-character-sheet.md",
+      "sha256": "b40bb1cb386727a9c506cbbd76f037990e4461315554e0f78f896f0195cc79e2",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/ccgs/test-plan.md",
+      "packaged": "studio/vendor/ccgs/test-plan.md",
+      "sha256": "56e330553c0d7d32f807d9174947ad55ee174eb3f1fabc2d7d5529f1bfdc4377",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/LICENSE",
+      "packaged": "studio/vendor/gamedev-skills/LICENSE",
+      "sha256": "7b6e4f65e5e1d0918447c4b5a371f01b49432098fee25a9ed0832c646e74cd90",
+      "mode": "adapted",
+      "packaged_sha256": "6f82dcfeb95a1c0a0452180a3b16f21bf82111780018fed59d95a052b5b75f6c"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/NOTICE",
+      "packaged": "studio/vendor/gamedev-skills/NOTICE",
+      "sha256": "18ffe13bb86fbd1f9ec3a4e0987cccc34fdc129b8dc88e2e06c125aad8ac982f",
+      "mode": "adapted",
+      "packaged_sha256": "2dcb65b1c5be24e5ba11e937f3996100f4e980d8cf8ac5b30ba1d70dae6c40f8"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/SKILL.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/SKILL.md",
+      "sha256": "c178cde20316f7d326f2a853a76522b375b325346b5b8797ef52aa98740aff18",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/agents/openai.yaml",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/agents/openai.yaml",
+      "sha256": "9b7c01fff69daa7ac15afd75bd1b2227f7ceceafd4619a0eb0e3e1d8014615df",
+      "mode": "adapted",
+      "packaged_sha256": "b5ff9e75ab8a845324d28745aa97af0a3cd4fccc56067a6494947e12e40f1990"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/assets/art-direction-brief.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/assets/art-direction-brief.md",
+      "sha256": "6d5dc4f9f5fcb24300bab9ce7dbd56d5c948ba41da3cca2d3b3d235fee5fb72c",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/assets/asset-manifest.json",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/assets/asset-manifest.json",
+      "sha256": "6cce05638c11b80eb5c8f776cf187f479a2579f1a1729b0970b1cc8e5fab4c8e",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/references/art-direction.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/references/art-direction.md",
+      "sha256": "19b2ccb827eae0c6c4cd3648ab7febb82e44706bef8515f2e8912de23dec0a5c",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/references/provenance.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/references/provenance.md",
+      "sha256": "2c2b30c69dec5c006c91ecbf506fce2ae3f857b5cc82bda9a10ddb5b769c7586",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/references/raster-pipeline.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/references/raster-pipeline.md",
+      "sha256": "834ecaeb35e61fc50ed5fbd518942f767f0717d1ab641822234a1f9cbe5eeb6f",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/references/three-d-pipeline.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/references/three-d-pipeline.md",
+      "sha256": "8278baa203b7cd560d9fc5688c33489a9c478275c1795def119b7e024b27d03e",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/scripts/asset_report.py",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/scripts/asset_report.py",
+      "sha256": "93e364f095261b44f6fd0345f7132019af1af93e81ebd84d91fe2a5049918203",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/scripts/build_preview_sheet.py",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/scripts/build_preview_sheet.py",
+      "sha256": "002a550a7b5fac6d8815078a72afc249dd828c40d975b2323223fc770118c64b",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/scripts/requirements.txt",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/scripts/requirements.txt",
+      "sha256": "2f027fd5ee7782529bb126ddfa6ac6b6f8dc070f8d8dfd594a66b5fc56d5bbe4",
+      "mode": "adapted",
+      "packaged_sha256": "1954ca940740c612a12e7abf0a307b7394715964d66dc8037d503fdd5c1b6424"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/game-ui-ux/SKILL.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/game-ui-ux/SKILL.md",
+      "sha256": "8a094c84a377503aa8f4c40df676d1c6b6fc07d36ff95554ce06467f1614397e",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/disciplines/game-ui-ux/references/layout-and-flow.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/disciplines/game-ui-ux/references/layout-and-flow.md",
+      "sha256": "000d944db77155ebf97fde035a3d4fbe69ef0ae348e9dbcaff48c5ea134d7d69",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/genres/visual-novel/SKILL.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/genres/visual-novel/SKILL.md",
+      "sha256": "081f25d30ca70219e54496a4b19f3d8568488e3e32d51af6b743ca4d67a6cf03",
+      "mode": "original"
+    },
+    {
+      "source": "studio/vendor/gamedev-skills/skills/genres/visual-novel/references/script-and-flow.md",
+      "packaged": "studio/vendor/gamedev-skills/skills/genres/visual-novel/references/script-and-flow.md",
+      "sha256": "0b30fcf3f047363194cb95facf668ae3dd6f330124e2f1cd960d9f48605a5df1",
+      "mode": "original"
+    },
+    {
+      "source": "studio/workflows/HANDOFF.md",
+      "packaged": "studio/workflows/HANDOFF.md",
+      "sha256": "f471ead8adfbb9aaa28915c508d51be256742355c6e3f158a8cf6477eddc63a9",
+      "mode": "adapted",
+      "packaged_sha256": "10952c59c3806de80711ef806c174ee46c8810d8050854b8981343599dec23da",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "templates/REPORT.md",
+      "sha256": "809aaa7cc1201e73643b6a0806d73de7d6a24af7f17d0cb54bc2e5d6dfc36cd6",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "templates/TASK.md",
+      "sha256": "9179af4fb5cd04c781148b3423ac43b82c7463dd8f77dd52e56427aa68b12b00",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "tests/test_deepseek.py",
+      "sha256": "07d280dd06b36815f547847846d6fa551e02ca188339c7ed9147da383125b760",
+      "mode": "adapted",
+      "packaged_sha256": "caf7911d37375b10754aa804a403bbc42bbc4a3ef40991a0d3256f5826f28071",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "tests/test_studio.py",
+      "sha256": "14d4ef7582395620afc2bccad2fb4cabb88c556dfc486eac0c25904fa20a65e3",
+      "mode": "adapted",
+      "packaged_sha256": "7b971920e82d7443e7ebe54569b22809ef358d068bffd4b9199442021b452caa",
+      "last_adapted": "2026-10-10"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "tools/beikuang-harness/README.md",
+      "sha256": "ac9f2e9833776ed8522d2c1afdee1daec0e36d60b2112c651acfec08ab25254d",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "tools/beikuang-harness/client.mjs",
+      "sha256": "6bda89431333d2e15d7a9a1e022a13d30a4c47659884a59cb81be0d317a559da",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "tools/beikuang-harness/doctor.mjs",
+      "sha256": "7d09a22026acf08cebf80b2a7082c84c03ae4b3089f28e93f714088238fa2a13",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "tools/beikuang-harness/install-profile.mjs",
+      "sha256": "6b74689287238c28a2d77b7197bcfa65a99254bf4631e3dab96b5532d9133b50",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "tools/beikuang-harness/live-mcp-check.mjs",
+      "sha256": "b033ce441a3a85fd8dce00cffd9910c10e295f54c3cf2a0b4c1df0149982d7b3",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "tools/beikuang-harness/package-lock.json",
+      "sha256": "a8f6879803c3a8c67943d105ea79ccfb6f2d5c6860dd6c49debc3f12868f1f58",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "tools/beikuang-harness/package.json",
+      "sha256": "454aeacafa2ddc42bd4e9d07a4084f812616380c49fc829e24e0dda5190ec0af",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "tools/beikuang-harness/server.mjs",
+      "sha256": "5e444e29eb342bb3ea8cd40ac61f24a3d48943782af0c9d1dd66c3d102457f3c",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio integration",
+      "packaged": "tools/beikuang-harness/test/bridge.test.mjs",
+      "sha256": "864f75a1906fdf6e0249f202871681e630bb90aedfede39f697474fa5c6a87e4",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "tools/deepseek_prepare.py",
+      "sha256": "fe8b6e2f08d57067d713ef3254bf77aa91e13078922f16caccdaa9d9daf73a1b",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "tools/studio/codex_dispatch.ps1",
+      "sha256": "0cdfb3559400274d4b4ecb91806e16f821f586f38a867943bd404526807b5000",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "tools/studio/deepseek_dispatch.ps1",
+      "sha256": "39b249d30e52f252258f7494a4101ba0bd69527698b990299b4832a38d52532b",
+      "mode": "generated"
+    },
+    {
+      "source": "local studio framework",
+      "packaged": "tools/studio_check.py",
+      "sha256": "df77cdd51da573cca0e99e01e99502b8d65a719c8176b3bf668e29a74c402252",
+      "mode": "generated"
+    }
+  ],
+  "line_ending_normalizations": [
+    "studio/vendor/gamedev-skills/LICENSE",
+    "studio/vendor/gamedev-skills/NOTICE",
+    "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/agents/openai.yaml",
+    "studio/vendor/gamedev-skills/skills/disciplines/create-game-assets/scripts/requirements.txt"
+  ],
+  "updated_at": "2026-10-10",
+  "integration": "DeepSeek studio member and Beikuang development/chat bridge",
+  "excluded_runtime_data": [
+    "node_modules",
+    "project.local.json",
+    "HARNESS-REGISTRATION.json",
+    "projects/**/runtime",
+    "original companion data and credentials"
+  ]
+}

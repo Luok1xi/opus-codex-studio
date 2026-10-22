@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-10",
+  "scope": "generic studio framework and tools only",
+  "framework_check": {
+    "scope": "STUDIO_PACKAGE_ONLY",
+    "status": "PASS",
+    "vendor_files_checked": 21,
+    "failures": []
+  },
+  "unit_tests": {
+    "passed": 12,
+    "failed": 0
+  },
+  "powershell_parse": "PASS",
+  "powershell_7_dispatch_dry_runs": "PASS",
+  "windows_powershell_5_script_execution": "BLOCKED_BY_EXISTING_POLICY; use Python entry",
+  "deepseek_prompt_generation": "PASS",
+  "model_task_executed": false,
+  "harness_workspace_selected": false,
+  "harness_login_performed": false,
+  "remote_uploaded": false,
+  "game_modified": false,
+  "deepseek_studio_onboarding": {
+    "status": "REAL_REPORT_RECEIVED",
+    "at": "2026-10-10T11:38:00+08:00",
+    "workspace_caveat": "default workspace; file access authorized separately"
+  },
+  "beikuang": {
+    "project_registered": true,
+    "original_entries_installed": true,
+    "mcp_bridge_tests": {
+      "passed": 7,
+      "failed": 0
+    },
+    "live_mcp_read_only": "PASS",
+    "harness_initialized": true,
+    "harness_initialization_utc": "2026-10-10T03:57:17.936Z",
+    "harness_parent_process_verified": true,
+    "total_tests_passed": 19,
+    "live_chat_model_tested": false,
+    "original_database_copied": false,
+    "social_messages_sent": false
+  }
+}

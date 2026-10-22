@@ -1,0 +1,71 @@
+{
+  "schema_version": 3,
+  "project": "codex-opus-studio",
+  "timezone": "Asia/Shanghai",
+  "mode": "manual-file-handoff",
+  "lead": "claude-opus",
+  "codex_role": "on-request-support",
+  "roles": [
+    "creative-owner",
+    "claude-opus",
+    "codex",
+    "deepseek"
+  ],
+  "automatic_model_calls": false,
+  "hooks_enabled": false,
+  "github_actions_enabled": false,
+  "auto_merge": false,
+  "assignment_file": "production/OPUS_TO_CODEX.md",
+  "report_file": "production/CODEX_TO_OPUS.md",
+  "board_file": "production/BOARD.md",
+  "deepseek_role": "on-request-support",
+  "agents": {
+    "codex": {
+      "entry_file": "AGENTS.md",
+      "assignment_file": "production/OPUS_TO_CODEX.md",
+      "report_file": "production/CODEX_TO_OPUS.md",
+      "dispatch": "tools/studio/codex_dispatch.ps1"
+    },
+    "deepseek": {
+      "client": "deepseek-harness",
+      "entry_file": "DEEPSEEK.md",
+      "assignment_file": "production/OPUS_TO_DEEPSEEK.md",
+      "report_file": "production/DEEPSEEK_TO_OPUS.md",
+      "dispatch": "tools/studio/deepseek_dispatch.ps1",
+      "dispatch_mode": "prepare-prompt-only"
+    }
+  },
+  "file_ownership": "manual-board-claim-one-writer-per-file",
+  "autopilot": {
+    "enabled": false,
+    "authorization": "owner-local-development-2026-10-13",
+    "entry": "tools/autopilot/cli.mjs",
+    "priority": ["claude", "codex", "deepseek"],
+    "reservePercent": 5,
+    "quotaMaxAgeMs": 300000,
+    "taskTimeoutMs": 1200000,
+    "testTimeoutMs": 600000,
+    "maxCallsPerJob": 12,
+    "maxRepairRounds": 1,
+    "projects": {
+      "luokixi": {
+        "path": "C:/Users/user/Documents/Codex/2026-10-11/gai-s/work/luokixi-maintenance",
+        "allowedRoot": "C:/Users/user/Documents/Codex/2026-10-11/gai-s/work/luokixi-maintenance",
+        "verify": [
+          {"name": "lint", "executable": "D:/Program Files/nodejs/node.exe", "args": ["D:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js", "run", "lint"]},
+          {"name": "unit", "executable": "D:/Program Files/nodejs/node.exe", "args": ["D:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js", "test"]},
+          {"name": "build", "executable": "D:/Program Files/nodejs/node.exe", "args": ["D:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js", "run", "build"]}
+        ]
+      }
+    }
+  },
+  "projects": {
+    "beikuang": {
+      "registry_file": "projects/beikuang/project.local.json",
+      "handoff_root": "projects/beikuang/production",
+      "chat_workspace": "projects/beikuang-chat",
+      "connector": "tools/beikuang-harness/server.mjs",
+      "runtime_data_owner": "original-companion-service"
+    }
+  }
+}
