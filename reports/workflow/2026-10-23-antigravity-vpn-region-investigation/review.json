@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-antigravity-vpn-region-investigation",
+  "task_summary": "Investigate a location rejection despite a US VPN and user-confirmed supported Google account region; provide a concrete supported troubleshooting path.",
+  "workflow_version": "WORKFLOW_REVIEW.md; read-only owner-context routing and egress verification",
+  "started_at": "2026-10-23T06:16:04.670Z",
+  "measurement_cutoff_at": "2026-10-23T06:19:57.723Z",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Classify actual network path and independent egress location.",
+      "Check current official guidance and primary first-hand issue reports.",
+      "Give a bounded next test without claiming a server-side fix."
+    ],
+    "completed": [
+      "Three independent public diagnostic services agreed on US IPv4 egress; existing model-server HTTPS connections selected VPN split routes.",
+      "Current API DNS results were IPv4 only; no configured endpoint/proxy environment overrides in the diagnostic context.",
+      "Owner corrected their earlier country-page reading and confirmed a supported account country. Synchronization failure was retained as unproven.",
+      "Created a local support summary without credentials, raw chats or public IPs.",
+      "No region bypass, firewall, DNS, endpoint, billing or account changes were applied."
+    ],
+    "remaining": [
+      "Successful Gemini invocation not restored or tested on a second egress.",
+      "Google's exact server-side geolocation/eligibility decision and region-change approval timing not independently verified."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Billing unavailable."
+    },
+    {
+      "name": "Delegated agents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No delegation."
+    },
+    {
+      "name": "Egress diagnostic services",
+      "value": 3,
+      "unit": "services",
+      "basis": "IPinfo, Cloudflare trace and IP.sb."
+    },
+    {
+      "name": "Observed model-server HTTPS connections routed through VPN",
+      "value": 4,
+      "unit": "connections",
+      "basis": "Socket destination route lookup snapshot."
+    },
+    {
+      "name": "Additional model requests initiated",
+      "value": 0,
+      "unit": "requests",
+      "basis": "Used existing error evidence."
+    },
+    {
+      "name": "Account/network/firewall mutations",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Inspection only."
+    },
+    {
+      "name": "Coordination waiting time",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Owner clarifications arrived during ongoing independent work; active versus waiting not separated."
+    },
+    {
+      "name": "Review and archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Final category-05 archive receipt measures through verified remote content."
+    },
+    {
+      "name": "Total tool failure count",
+      "value": null,
+      "unit": "calls",
+      "basis": "Some documentation fetches required login or timed out; no complete comparable count."
+    }
+  ],
+  "observations": [
+    "A VPN /1 split route is more specific than the physical adapter /0 default route. Inspecting only the default route would misrepresent the actual path.",
+    "Network geolocation services do not establish Google's own eligibility verdict. A data-center ASN is a hypothesis signal, not proof of an IP block.",
+    "Account-country interpretation changed after owner clarification. The proposed correction path was withdrawn once a supported country was confirmed.",
+    "No authoritative synchronization SLA was found. Unverified forum claims of 48-72 hours were not presented as Google guarantees.",
+    "Earlier consideration of a firewall guard was not implemented because actual model-server route checks already selected the VPN and the owner prioritized root-cause investigation.",
+    "A same-account, same-model comparison using one different egress is the smallest next test; if still rejected, official support must inspect service-side eligibility.",
+    "No matched quality baseline exists; no speedup claim."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-AG20261023-ROUTE-COUNTRY",
+      "action": "Before attributing location errors to a proxy leak or country-sync failure, verify longest-prefix routes for actual model-server sockets and explicitly distinguish owner-confirmed account state from an independently inspected approval.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next regional rejection: retain exact server error, current route snapshot, verified-versus-reported country status, and a bounded comparison plan before suggesting mutations."
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "https://antigravity.google/docs/faq",
+    "https://policies.google.com/faq?hl=zh-CN",
+    "https://discuss.ai.google.dev/t/antigravity-2-24-0-http-400-location-error-persists-with-verified-jp-us-egress-while-gemini-web-works/190459"
+  ],
+  "comparison": null,
+  "limits": [
+    "No server-side region check was disabled.",
+    "No unsupported-country or synchronization conclusion can be made from the corrected account report.",
+    "Local support artifact remains local; no credentials, public IPs, raw logs, messages or databases are archived."
+  ]
+}
