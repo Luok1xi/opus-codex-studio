@@ -1,0 +1,22 @@
+{
+  "scope": "sanitized workflow aggregates only",
+  "physics_runs": 58,
+  "candidates": 3,
+  "rejected_candidates": 2,
+  "final_conditions": 22,
+  "baseline_pass": 20,
+  "candidate_pass": 22,
+  "recovered_failures": 2,
+  "new_failures": 0,
+  "ordinary_conditions_identical": 16,
+  "host_call_conditions": 13,
+  "independent_review": true,
+  "native_workers": 2,
+  "external_model_calls": 0,
+  "hardware_actions": 0,
+  "production_changes": 0,
+  "raw_source_or_sessions_uploaded": false,
+  "usage": null,
+  "cost": null,
+  "matched_workflow_baseline": null
+}
