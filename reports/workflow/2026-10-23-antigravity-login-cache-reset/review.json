@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-antigravity-login-cache-reset",
+  "task_summary": "Reset local Antigravity sign-in state so the owner can sign in again.",
+  "workflow_version": "WORKFLOW_REVIEW.md and WORKFLOW_DATABASE.md, read this round",
+  "started_at": "2026-10-23T05:55:25.914Z",
+  "measurement_cutoff_at": "2026-10-23T05:59:09.305Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Remove only Antigravity's exact Windows credential.",
+      "Back up relevant app caches locally and preserve conversations and settings.",
+      "Verify the credential is absent and reopen the app for owner-controlled login."
+    ],
+    "completed": [
+      "Deleted only gemini:antigravity and independently checked its absence before relaunch.",
+      "Moved six cache directories to a local sibling backup; source absence and destination presence verified.",
+      "Protected configuration hashes and conversation/brain file metadata unchanged through reset.",
+      "Relaunched the application and observed a main window."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Provider token usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage receipt available."
+    },
+    {
+      "name": "Provider cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing receipt."
+    },
+    {
+      "name": "Delegated agents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "All operations performed by coordinator; no delegation."
+    },
+    {
+      "name": "External model consultations",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No Opus or DeepSeek calls."
+    },
+    {
+      "name": "Cache directories moved",
+      "value": 6,
+      "unit": "directories",
+      "basis": "Verified targeted local move receipt."
+    },
+    {
+      "name": "Credential targets removed",
+      "value": 1,
+      "unit": "targets",
+      "basis": "Exact product credential deletion followed by independent target enumeration."
+    },
+    {
+      "name": "Review preparation elapsed before report generation",
+      "value": 26.921,
+      "unit": "seconds",
+      "basis": "Wall time since verified relaunch; excludes subsequent validation, database and remote archive."
+    },
+    {
+      "name": "Total review and archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not yet complete at report cutoff; final archive receipt records measured duration."
+    },
+    {
+      "name": "Diagnostic failed or cancelled attempts",
+      "value": 4,
+      "unit": "attempts",
+      "basis": "One cancelled broad binary regex; one inline-script NameError; one transient missing binary during updater; one unavailable CIM query."
+    }
+  ],
+  "observations": [
+    "A downloaded application update completed independently during inspection (2.23.1 to 2.25.0); no update was initiated by coordinator.",
+    "A broad binary search and two script retries added avoidable diagnostic work. Exact credential target metadata under owner context resolved the authentication store.",
+    "Normal sandbox context did not expose owner credential metadata. Authorized owner-context enumeration inspected target names only; credential values were never printed or exported.",
+    "Cache reset passed on first execution. Successful account sign-in remains owner-controlled and untested.",
+    "Review, database and remote archive overhead are reported separately from task operation time. No matched baseline exists."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-AGLOGIN-20261023-TARGETS",
+      "action": "For future local sign-in reset requests, establish app version and exact credential target metadata before reading compiled symbols; use narrow reversible cache moves and explicit protected-data checks.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "On the next comparable request, record diagnostic retries, reset quality and review overhead; compare only against a matched acceptance baseline."
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "Local reset and verification tool receipts retained locally; no raw sessions or credential data uploaded."
+  ],
+  "comparison": null,
+  "limits": [
+    "Account sign-in, browser callback and service connectivity were not tested.",
+    "Conversation preservation was checked by file names, sizes and modification times; configuration files by SHA-256.",
+    "No credentials, auth URLs, local cache contents, raw sessions, account identities, project source or databases are included.",
+    "Timing begins at the first recorded start after initial instruction loading; earlier preparation is excluded."
+  ]
+}
