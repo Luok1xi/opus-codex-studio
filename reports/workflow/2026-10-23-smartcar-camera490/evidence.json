@@ -1,0 +1,74 @@
+{
+  "scope": "sanitized aggregate workflow evidence; no source, raw sessions, databases or private paths",
+  "build": {
+    "attempts": 1,
+    "errors": 0,
+    "warnings": 11,
+    "process_exit_code": null,
+    "source_files": 4,
+    "ram_delta_bytes": 5,
+    "rom_delta_bytes": 362,
+    "source_test_build_hashes_equal": true,
+    "source_archive_members": 679,
+    "all_archive_members_verified": true
+  },
+  "tests": {
+    "expected_baseline_failures": 2,
+    "final_host_result": "pass",
+    "timestamp_test_corrections": 1,
+    "sanitizer": "undefined,bounds",
+    "actual_dma_registers_modeled": false,
+    "discrete_event_model_is_measurement": false
+  },
+  "o3_review": {
+    "matrix_result_files": 12,
+    "metric_records": 1056,
+    "unique_parameter_engine_combinations": 972,
+    "duplicate_extra_records": 84,
+    "statistical_independence_proven": false,
+    "completed_and_le55": 1054,
+    "completed_over55": 0,
+    "strict_55_failures": 2,
+    "observed_review_seconds": 297.605,
+    "full_review_seconds": null,
+    "model_usage": null,
+    "source_hashes_unchanged": true,
+    "completion_failures": 2,
+    "default_explicit_identity_pairs": 2,
+    "args_provenance": "Historical result metadata predates fix; effective args reconstructed from launcher overrides.",
+    "inspection_only": true,
+    "simulations_rerun": 0,
+    "observed_acceptance_risks": [
+      "result-file mapping mixes conditions or misses files",
+      "identity mismatch does not fail",
+      "valid metrics may hide nonzero child exit",
+      "quality threshold not enforced by original ok"
+    ]
+  },
+  "coordination": {
+    "native_agents": 3,
+    "actual_opus_incoming": [
+      152,
+      154,
+      159
+    ],
+    "codex_outgoing": [
+      157,
+      158,
+      161,
+      162,
+      163,
+      164
+    ],
+    "final_opus_acceptance_received": false,
+    "source_project": "CRAZY-CIRCUIT"
+  },
+  "boundaries": {
+    "production_changed": false,
+    "hardware_actions": 0,
+    "matched_efficiency_baseline": null,
+    "model_usage": null,
+    "costs": null,
+    "timing_model_performance_claim": false
+  }
+}

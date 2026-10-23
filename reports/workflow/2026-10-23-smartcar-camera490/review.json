@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-smartcar-camera490",
+  "task_summary": "按Owner最佳490实测条件纠正诊断，完成相机缓冲最小候选与桌面验证，独立复核Opus新基线。",
+  "workflow_version": "WORKFLOW_REVIEW.md + TEAMHUB.md; existing isolated ADS build and project DB handoff",
+  "started_at": "2026-10-23T01:35:29.183Z",
+  "measurement_cutoff_at": "2026-10-23T02:05:12.454474+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "实测口径纠正",
+      "生产副本最小改动",
+      "真实函数回归与ADS构建",
+      "完整交接与独立复核"
+    ],
+    "completed": [
+      "纠正以旧测量否定Owner新490实测的判断；从串口工具字段追溯到处理计数，保留实际版本绑定待补的边界",
+      "生产副本最小化复用已有图像缓冲，复制后释放；保存快照对应帧号与时间，不清除后续READY",
+      "发现历史相机所有权修复尚未合入；仅补相机保护，未混入其他旧补丁",
+      "实际函数主机回归复现旧缺陷并通过候选检查，独立源码审查、ADS构建和打包哈希核验通过",
+      "只读独立复核实际Opus新到490矩阵，核对生效参数、失败与质量门槛；将结果与验收脚本风险分开回传"
+    ],
+    "remaining": [
+      "C5等待Opus独立验收；未合并原生产，候选保留基线相机配置",
+      "未烧录、未开串口、未动车；实际490工况性能收益未知；桌面事件模型不等于MCU测量",
+      "O3脚本与结论的待修问题归Opus处理，Codex只读审查不能算对方已经修复"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "真实用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无同口径提供方usage"
+    },
+    {
+      "name": "实际费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单证据"
+    },
+    {
+      "name": "原生子代理",
+      "value": 3,
+      "unit": "agents",
+      "basis": "复用三名工作者；两名随后复核新到490仿真交接"
+    },
+    {
+      "name": "另启Opus CLI推理",
+      "value": 0,
+      "unit": "calls",
+      "basis": "已有实际本机Opus通过项目数据库协作"
+    },
+    {
+      "name": "ADS构建",
+      "value": 5.536,
+      "unit": "seconds",
+      "basis": "实际构建日志，不是整个任务耗时"
+    },
+    {
+      "name": "ADS尝试",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "复用已验证入口，0失败"
+    },
+    {
+      "name": "主机测试运行",
+      "value": 2,
+      "unit": "runs",
+      "basis": "首次期望误将DMA完成时间写为VSYNC起始时间；修正测试，源码不变"
+    },
+    {
+      "name": "测试期望返工",
+      "value": 1,
+      "unit": "iterations",
+      "basis": "20ms改为真实DMA完成21ms；两次运行均留日志"
+    },
+    {
+      "name": "全量工具失败",
+      "value": null,
+      "unit": "calls",
+      "basis": "没有全量统计；已观察类别参数、只读权限、缺失路径、错误数据库列名/子命令和WSL探测失败；O3两名审查者各记录2次读取失败"
+    },
+    {
+      "name": "O3代码审查区间",
+      "value": 353,
+      "unit": "seconds",
+      "basis": "子代理实际起止；与另一路结果复核并行，不能相加当总耗时"
+    },
+    {
+      "name": "O3结果审查观察区间",
+      "value": 297.605,
+      "unit": "seconds",
+      "basis": "首次采样至结果截止；更早时段未知，非完整活动时间"
+    },
+    {
+      "name": "人工介入",
+      "value": null,
+      "unit": "count",
+      "basis": "未获得人工时间统计；Owner补充测量来源"
+    },
+    {
+      "name": "协调纯等待",
+      "value": null,
+      "unit": "seconds",
+      "basis": "与独立工作交错，不能从墙钟推算"
+    },
+    {
+      "name": "复盘纯活动时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "01:50:59.534Z开始准备期间继续接收O3工作，区间不是纯复盘时间"
+    }
+  ],
+  "observations": [
+    "质量局部收益明确：修正过时前提，发现未合入保护，核验并发帧所有权及模拟验收入口。无匹配同条件基线，净提效证据不足。",
+    "已有双缓冲存储可以复用；未新增整帧数组，未把仿真490成功作为实际吞吐提升。",
+    "复用已验证ADS入口一次成功；仍有命令猜测、过大输出和重复参数错误，增加协调成本。",
+    "实际Opus通过共享数据库交接，原生子代理分别负责字段、代码和构建；没有把子代理冒充Opus。",
+    "成员完整用量和纯活动时间缺失；实际Opus/DSH本轮成员工作流报告未收到，不代编。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-CAMERA490-20261023-MEASUREMENT",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "先追溯Owner测量字段、版本和时间窗口，再判断旧记录适用性；本轮已纠正不成立的帧率上限推断。位置：本轮帧率证据报告。",
+      "next_check": "下一次测量把固件/工具版本和窗口长度随结果保存；收益仍待验证"
+    },
+    {
+      "id": "WF-CAMERA490-20261023-ACCEPT",
+      "owner": "opus",
+      "status": "proposed",
+      "action": "让490验收入口选择唯一条件文件，缺失、参数不符或恒等比较不同即非零退出；分开报告完赛与偏差质量。位置：evalset、accept_T和identity脚本。",
+      "next_check": "最小只读自检能拒绝旧条件文件和不等结果，再接受新矩阵"
+    },
+    {
+      "id": "WF-CAMERA490-20261023-RECEIPT",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "待验收交接不得当成已合入；比对目标源代码，并使测试/构建/源码包共用同一哈希清单。位置：C5来源与打包凭据。",
+      "next_check": "Opus集成时逐文件验明来源，另记实际验收与硬件结果"
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "项目库完整C5和O3交接正文",
+    "本地真实函数回归、独立审查、ADS日志与哈希凭据；只上传聚合信息"
+  ],
+  "comparison": null,
+  "limits": [
+    "真实用量、费用、复盘纯活动时间未知。",
+    "GUI构建进程退出码未知。",
+    "归档成功以之后独立远端回读凭据为准。"
+  ]
+}
