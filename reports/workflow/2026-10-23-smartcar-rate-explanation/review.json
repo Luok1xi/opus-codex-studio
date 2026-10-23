@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-smartcar-rate-explanation",
+  "task_summary": "用通俗语言解释当前频率配置和瓶颈证据边界。",
+  "workflow_version": "WORKFLOW_REVIEW.md; bounded current-source explanation",
+  "started_at": "2026-10-23T02:13:01Z",
+  "measurement_cutoff_at": "2026-10-23T02:15:47.493543+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "解释有当前源码依据",
+      "计算正确且不冒充硬件测量",
+      "不把节拍限制当失效因果"
+    ],
+    "completed": [
+      "回读当前源，区分490实测、100磁盘设置、200方向控制与500内环",
+      "解释复制后释放减少串行等待，区分图像新鲜度与逐帧确认",
+      "纠正把旧单帧3.2ms代入本轮目标的推论，复核已有状态字段并回传"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "模型真实用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无同口径usage"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "复用原生审查者",
+      "value": 1,
+      "unit": "agents",
+      "basis": "有界核对控制节拍解释，不重跑模型矩阵"
+    },
+    {
+      "name": "功能改动",
+      "value": 0,
+      "unit": "files",
+      "basis": "本轮只解释和记录；冻结候选未动"
+    },
+    {
+      "name": "硬件操作",
+      "value": 0,
+      "unit": "actions",
+      "basis": "未接串口或烧录"
+    },
+    {
+      "name": "纯复盘活动时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计时，归档区间另记"
+    }
+  ],
+  "observations": [
+    "确定性源码核对足以解释本题；只复用一名审查者做短核对。",
+    "历史耗时被再次代入新目标，需在协作交接保留条件前提。",
+    "无匹配效率基线，不能宣布净提效；归档成本单独记录。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-RATE-EXPLAIN-20261023-CONDITIONAL",
+      "owner": "dsh",
+      "status": "proposed",
+      "action": "条件公式与现机结论分开写，先核当前字段是否已有再提插桩。位置：后续频率交接。",
+      "next_check": "下一份报告引用同工况测量，或明确仅是假设算例"
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "项目库完整口径补充与当前源码只读核对"
+  ],
+  "comparison": null,
+  "limits": [
+    "现机同工况分段耗时未测；本轮解释不宣称整车主瓶颈已定位",
+    "未知usage/费用/纯活动时间保持null；远端成功以后续回读为准。"
+  ]
+}

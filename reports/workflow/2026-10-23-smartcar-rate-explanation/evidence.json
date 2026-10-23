@@ -1,0 +1,13 @@
+{
+  "scope": "sanitized workflow aggregates only",
+  "source_rechecked": true,
+  "native_review_agents": 1,
+  "hardware_actions": 0,
+  "implementation_changes": 0,
+  "new_paid_external_dispatches": 0,
+  "source_project": "CRAZY-CIRCUIT",
+  "incoming_handoff": 166,
+  "outgoing_handoff": 168,
+  "handoff_body_verified": true,
+  "measurement_and_configuration_separated": true
+}
