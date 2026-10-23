@@ -1,0 +1,55 @@
+{
+  "scope": "sanitized aggregate workflow evidence only; project source, route data, sessions and databases excluded",
+  "builds": {
+    "c2_errors": 0,
+    "c2_warnings": 11,
+    "c3_errors": 0,
+    "c3_warnings": 11,
+    "c2_matches_historical_baseline": true,
+    "gui_build_exit_codes": null
+  },
+  "tests": {
+    "route_python_passed": 10,
+    "route_python_failed": 0,
+    "route_c_exit_code": 0,
+    "packaged_key_c_exit_code": 0,
+    "zip_members_and_hashes_verified": true
+  },
+  "independent_review": {
+    "key_defects_fixed": 1,
+    "untested_mechanism_issues": 2,
+    "untested_default_enabled_risk": true,
+    "identity_comparisons": 4,
+    "identity_cases_per_comparison": 42,
+    "low_fps_failures_per_speed": [
+      7,
+      9
+    ]
+  },
+  "coordination": {
+    "native_agents": 3,
+    "actual_opus_incoming_handoffs": [
+      140,
+      145,
+      147
+    ],
+    "actual_dsh_incoming_handoffs": [
+      144
+    ],
+    "codex_outgoing_handoffs": [
+      142,
+      149,
+      150,
+      151
+    ],
+    "opus_final_acceptance_received": false,
+    "source_project": "CRAZY-CIRCUIT"
+  },
+  "boundaries": {
+    "production_source_changed": false,
+    "hardware_actions": 0,
+    "simulations_rerun_by_codex_this_round": 0,
+    "route_integration_complete": false,
+    "matched_efficiency_baseline": null
+  }
+}
