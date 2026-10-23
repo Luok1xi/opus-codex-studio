@@ -1,0 +1,23 @@
+{
+  "scope": "sanitized workflow aggregates only",
+  "physics_runs": 40,
+  "regression_conditions": 16,
+  "baseline_passes": 14,
+  "candidate_passes": 14,
+  "new_regressions": 0,
+  "old_failures": 2,
+  "duplicate_runs": 4,
+  "off_identity_both_engines": true,
+  "ineffective_factor_stopped": true,
+  "native_workers": 3,
+  "external_model_calls": 0,
+  "hardware_actions": 0,
+  "site_writes": 0,
+  "raw_source_or_sessions_uploaded": false,
+  "independent_review_complete": false,
+  "simulation_finished_at": "2026-10-23T07:28:01.573307+00:00",
+  "net_active_seconds": null,
+  "usage": null,
+  "cost": null,
+  "matched_workflow_baseline": null
+}

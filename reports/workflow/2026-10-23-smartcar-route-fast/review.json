@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-smartcar-route-fast",
+  "task_summary": "实际尝试路线执行优化，冻结一个有效候选并完成有限配对回归。",
+  "workflow_version": "WORKFLOW_REVIEW.md; isolated trials and paired regression",
+  "started_at": "2026-10-23T07:04:16Z",
+  "measurement_cutoff_at": "2026-10-23T14:37:32.719768+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "同条件比用时",
+      "质量门不放宽",
+      "失败完整保留",
+      "交付可复现"
+    ],
+    "completed": [
+      "同条件运行两个隔离因素，无效因素停止。",
+      "有效因素固定原转弯几何，关闭开关与基线恒等。",
+      "唯一候选完成有限配对回归，原通过条件无新增失败。",
+      "源码、二进制、轨迹绑定并完整项目交接回读。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "真实提供方usage未知"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "原生子任务",
+      "value": 3,
+      "unit": "agents",
+      "basis": "两个隔离因素和不同实现者审核"
+    },
+    {
+      "name": "仿真进程",
+      "value": 40,
+      "unit": "runs",
+      "basis": "包括32次回归和4次不必要重复"
+    },
+    {
+      "name": "回归条件",
+      "value": 16,
+      "unit": "conditions",
+      "basis": "每条件两臂，两物理分列"
+    },
+    {
+      "name": "原版通过",
+      "value": 14,
+      "unit": "conditions",
+      "basis": "保留2旧失败"
+    },
+    {
+      "name": "候选通过",
+      "value": 14,
+      "unit": "conditions",
+      "basis": "新增退化0，不能称全通过"
+    },
+    {
+      "name": "新增回归",
+      "value": 0,
+      "unit": "conditions",
+      "basis": "仅限本轮预选范围"
+    },
+    {
+      "name": "复核轨迹行",
+      "value": 215745,
+      "unit": "rows",
+      "basis": "root实际重算"
+    },
+    {
+      "name": "仿真进程墙钟累计",
+      "value": 364.322801481,
+      "unit": "seconds",
+      "basis": "并行累计不等于总耗时"
+    },
+    {
+      "name": "净活动时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "容量中断和会话等待无法精确拆分"
+    },
+    {
+      "name": "完整失败调用",
+      "value": null,
+      "unit": "calls",
+      "basis": "路径读取/汇总语法/模型容量中断，完整计数未知"
+    },
+    {
+      "name": "复盘净活动",
+      "value": null,
+      "unit": "seconds",
+      "basis": "截止后归档墙钟另记"
+    },
+    {
+      "name": "硬件或网站变更",
+      "value": 0,
+      "unit": "actions",
+      "basis": "均未操作"
+    }
+  ],
+  "observations": [
+    "第一有效设置达到门槛即停止可选参数网格，集中检查一个候选。",
+    "独立审核发现runner摩擦映射和无地图课程判据问题，相关回归前已修。",
+    "case ID后缀匹配错误多跑4次全图，计入实际成本。",
+    "多次模型容量中断，root据落盘证据接手；未收到审核报告不代编。",
+    "汇总首次PowerShell管道语法错误后修正。",
+    "观测墙钟含长间隔，不能当净工作时间，也不能据车的仿真收益证明工作流提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-ROUTEFAST-20261023-REUSE",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "复用已有运行时同时核实际参数和二进制身份，不仅匹配短case ID；保存每阶段产物便于容量中断后继续。",
+      "next_check": "下轮运行前核对选择清单与已跑条件，缺失独立接受仍标缺失。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "有限仿真回归，不是实车或全部T/H4验收；两个原失败未修。",
+    "窄审回复和差异证据已到，完整独立报告未收到。",
+    "总墙钟含长容量/会话间隔，净活动未知；没有匹配工作流基线。"
+  ]
+}
