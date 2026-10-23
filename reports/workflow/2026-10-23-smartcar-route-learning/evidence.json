@@ -1,0 +1,47 @@
+{
+  "scope": "sanitized aggregate workflow data only",
+  "install": {
+    "version": "1.7.1",
+    "prerelease": true,
+    "release_sha_verified": true,
+    "official_runtime": "0.2.1-rc.2",
+    "custom_profile_registered": true,
+    "original_desktop_restored": true,
+    "desktop_ui_repaired": false,
+    "real_minimal_host_passed": true,
+    "tools_registered": 13,
+    "guide_status_passed": true,
+    "media_environment_ready": true
+  },
+  "research": {
+    "primary_candidates": 5,
+    "anonymous_metadata_reads": 3,
+    "transcript_segments": 0,
+    "video_sample_frames": 5,
+    "frames_visually_read": 5,
+    "intermediate_video_removed": true,
+    "plugin_requests": 8,
+    "route_experiment_plans": 4,
+    "route_experiments_run": 0
+  },
+  "boundaries": {
+    "account_credentials_read": false,
+    "platform_writes": 0,
+    "background_fetching_enabled": false,
+    "personality_learning_enabled": false,
+    "asr_model_downloaded": false,
+    "raw_chat_source_or_images_uploaded": false,
+    "hardware_actions": 0
+  },
+  "coordination": {
+    "native_workers": 3,
+    "external_inference_calls": 0,
+    "full_project_handoffs": [
+      175,
+      184
+    ],
+    "handoff_body_readback": true,
+    "opus_acceptance_pending": true
+  },
+  "matched_quality_efficiency_baseline": null
+}

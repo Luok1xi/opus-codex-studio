@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-smartcar-route-learning",
+  "task_summary": "安装指定公开学习插件，核验实际材料覆盖并形成与当前路线和设计审查者衔接的实验计划。",
+  "workflow_version": "WORKFLOW_REVIEW.md + TEAMHUB.md; release integrity, real host probe, bounded source research",
+  "started_at": "2026-10-23T03:33:41Z",
+  "measurement_cutoff_at": "2026-10-23T03:58:07.211916+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "实际安装与宿主加载可查",
+      "实际读取范围与学习结论分开",
+      "外部方法有一手来源和迁移边界",
+      "本车计划可验证回退并完整交接"
+    ],
+    "completed": [
+      "用户指定插件固定Release及校验和验证完成；兼容官方运行时与专用研究profile安装完成。",
+      "原桌面入口缺失且独立CLI拒绝管理其专属profile，转为官方支持的自定义profile；本轮对旧配置的准备改动完整撤回并字节核对。",
+      "真实最小宿主加载13工具、guide/status通过；独立抽帧依赖与合成检查通过，真实视频5帧逐张检查，中间视频已清理。",
+      "公开一手文字/代码与比赛元信息分别核实，明确字幕未取得及抽样边界；外部方法映射为本车四项可证伪的实验卡。",
+      "与实际Opus项目库完成启动及全文结果交接，核对其新遥测草案并回传语义/整数范围/事件与元数据建议；回读完整正文。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "真实用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "没有父子统一提供方usage"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "原生子任务",
+      "value": 3,
+      "unit": "agents",
+      "basis": "公开资料、本车计划、安装审查与实际宿主probe"
+    },
+    {
+      "name": "额外外部模型调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "安装/读取/宿主工具验证均无额外模型推理"
+    },
+    {
+      "name": "真实宿主注册工具",
+      "value": 13,
+      "unit": "tools",
+      "basis": "官方boot及ToolRuntime；guide/status直接执行，无模型会话"
+    },
+    {
+      "name": "匿名视频读取",
+      "value": 3,
+      "unit": "videos",
+      "basis": "只取得元信息，全部0段字幕"
+    },
+    {
+      "name": "实际抽帧并看图",
+      "value": 5,
+      "unit": "frames",
+      "basis": "同一68秒视频；非完整观看"
+    },
+    {
+      "name": "插件平台读取请求",
+      "value": 8,
+      "unit": "requests",
+      "basis": "三次文字读取6次加一次画面2次；不含网页检索"
+    },
+    {
+      "name": "一手研究候选",
+      "value": 5,
+      "unit": "sources",
+      "basis": "作者自述、官方成绩与未核身份分别标注；并非五名已核国手"
+    },
+    {
+      "name": "单因素实验卡",
+      "value": 4,
+      "unit": "plans",
+      "basis": "有改点/机制检查/质量门/失败与回退，均未执行"
+    },
+    {
+      "name": "平台写入",
+      "value": 0,
+      "unit": "actions",
+      "basis": "未操作账号互动"
+    },
+    {
+      "name": "固件/硬件操作",
+      "value": 0,
+      "unit": "actions",
+      "basis": "未改固件或烧录"
+    },
+    {
+      "name": "完整工具失败总数",
+      "value": null,
+      "unit": "calls",
+      "basis": "保留局部恢复记录，完整父子计数未知"
+    },
+    {
+      "name": "协调纯等待时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "并行期间继续安装研究，未独立计时"
+    },
+    {
+      "name": "复盘纯活动时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未独立计时，截止后入库上传区间另记"
+    }
+  ],
+  "observations": [
+    "三子任务互补且不递归派发，协调者安装、实际读图、串联现有遥测协商并统一归档；没有重复调用外部模型。",
+    "latest Release接口404因为只有预览版，改读完整Release列表成功。桌面快捷方式目标缺失，经有界核实后使用独立运行时；未反复尝试已知不兼容CLI。",
+    "官方CLI拒绝desktop profile后没有改保护或直接伪造依赖清单，改走自定义profile并回撤自己的旧profile准备修改。",
+    "本轮有猜测文件名、路径不可用、编码与初次probe断言错误；子任务记录6项恢复，父子总失败口径未知。读取前先列文件与导出API仍需更严格执行。",
+    "匿名字幕为空后未假称看过视频；使用已有作者原文/源码继续研究，另以有限真实抽帧验证图片能力。",
+    "发现现仿真入口含新版本参数，保留主线和失败，实验卡复用原开关并限制单因素；不将论文/外队不同底盘参数直接写入生产。",
+    "已完成可核查质量验收，但无相同任务/质量/环境基线，不能据并行或文档量判断提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-ROUTE-LEARN-20261023-INSTALL",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "区分源代码下载、包安装、实际宿主注册、真实内容读取四级验收；预览版先查完整Release列表。",
+      "next_check": "下一插件安装保留固定版本和每级回执，不能以注册成功冒充已学正文。"
+    },
+    {
+      "id": "WF-ROUTE-LEARN-20261023-EVIDENCE",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "将作者自述、官方成绩、代码正文、视频元信息、字幕和抽样画面分别记覆盖。",
+      "next_check": "后续学习每条技术结论必须对应实际已读材料，不借名次填补算法细节。"
+    },
+    {
+      "id": "WF-ROUTE-LEARN-20261023-PLAN",
+      "owner": "opus",
+      "status": "proposed",
+      "action": "先冻结测量语义与实际输入，再选一个确实触发的路线时机因素诊断；保留旧失败和未使用留出集。",
+      "next_check": "独立确认计划后回传完整案例、版本/有效参数和目标事件轨迹；原过现不过则不采用。"
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "Project handoffs 175 and 184; source review 176 acknowledged by its recipient"
+  ],
+  "comparison": null,
+  "limits": [
+    "专用研究profile可用不等于桌面程序/快捷方式恢复；原桌面插件保留旧版本。",
+    "三条视频匿名字幕为0；一条视频仅5张抽样画面；ASR未安装，未声称完整理解视频。",
+    "路线实验、目标固件构建和实车验证未执行；Opus收到全文但独立确认待回执。",
+    "没有匹配质量效率基线；未知用量/费用/纯活动与完整失败数为null。"
+  ]
+}
