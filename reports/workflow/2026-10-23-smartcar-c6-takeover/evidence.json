@@ -1,0 +1,53 @@
+{
+  "scope": "sanitized aggregate workflow evidence only",
+  "quality": {
+    "target_build_errors": 0,
+    "target_build_existing_warnings": 11,
+    "source_files_bound": 688,
+    "host_actual_source_passed": true,
+    "pc_unit_tests": 34,
+    "pc_cli_checks": 14,
+    "independent_pc_probes": 17,
+    "c_to_pc_groups": 7,
+    "independent_uart_counterexample_passed": true,
+    "old_failure_reproduced": true,
+    "production_unchanged": true,
+    "route_experiments": 4,
+    "route_identity_checks": 2,
+    "route_mechanism_changes": 0,
+    "route_expansion_stopped": true
+  },
+  "timing": {
+    "firmware_observed_seconds": 1836.821,
+    "pc_observed_seconds": 1167.904,
+    "route_observed_seconds": 522.638029,
+    "pc_review_window_seconds": 580,
+    "uart_review_window_seconds": 414.348535,
+    "intervals_overlap": true,
+    "do_not_sum_as_round_time": true,
+    "usage": null,
+    "cost": null,
+    "pure_review_activity_seconds": null
+  },
+  "coordination": {
+    "native_workers": 3,
+    "recursive_delegations": 0,
+    "external_inference_calls": 0,
+    "project_handoffs": [
+      187,
+      188,
+      189
+    ],
+    "full_body_verified": true,
+    "opus_acceptance": false,
+    "gemini_acceptance": false
+  },
+  "boundaries": {
+    "hardware_actions": 0,
+    "source_uploaded": false,
+    "chat_uploaded": false,
+    "live_database_uploaded": false,
+    "raw_sessions_uploaded": false
+  },
+  "matched_quality_efficiency_baseline": null
+}
