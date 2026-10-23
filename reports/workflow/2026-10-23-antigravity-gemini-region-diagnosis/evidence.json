@@ -1,0 +1,20 @@
+{
+  "scope": "sanitized diagnostic aggregates only",
+  "owner_reports_google_ai_pro": true,
+  "model_call_error_status": "FAILED_PRECONDITION",
+  "model_call_error_http_status": 400,
+  "model_call_error_message": "User location is not supported for the API use.",
+  "observed_agent_errors": 7,
+  "observed_region_errors": 7,
+  "latest_observed_error_local_time": "2026-10-23 14:09:35 Asia/Shanghai",
+  "system_proxy_enabled": false,
+  "vpn_adapter_active": true,
+  "actual_application_egress_verified": false,
+  "account_entitlement_verified": false,
+  "model_invocation_retested": false,
+  "account_network_or_cache_changes": 0,
+  "raw_logs_uploaded": false,
+  "credentials_uploaded": false,
+  "model_usage": null,
+  "cost": null
+}
