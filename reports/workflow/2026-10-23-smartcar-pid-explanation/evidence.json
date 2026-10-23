@@ -1,0 +1,12 @@
+{
+  "scope": "sanitized workflow aggregates only",
+  "source_read": true,
+  "independent_native_check": true,
+  "control_structure_checked": true,
+  "gain_provenance_checked": true,
+  "hardware_actions": 0,
+  "source_changes": 0,
+  "pid_excluded": false,
+  "pid_proven_root_cause": false,
+  "matched_efficiency_baseline": null
+}

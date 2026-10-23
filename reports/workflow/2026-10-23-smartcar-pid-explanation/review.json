@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-smartcar-pid-explanation",
+  "task_summary": "澄清当前证据不能排除PID问题。",
+  "workflow_version": "WORKFLOW_REVIEW.md; bounded source clarification",
+  "started_at": "2026-10-23T02:25:42Z",
+  "measurement_cutoff_at": "2026-10-23T02:27:32.666897+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "明确回答PID未被排除",
+      "参数来源有源码依据",
+      "不假称实车因果验证"
+    ],
+    "completed": [
+      "回读当前控制公式与参数来源，确认更新频率不能证明调参正确",
+      "纠正可能使Owner误以为PID已被排除的表达；将视觉延迟、控制响应和执行能力作为待区分环节"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "真实用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方usage"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "复用原生审查者",
+      "value": 1,
+      "unit": "agents",
+      "basis": "限定核对控制公式与参数来源"
+    },
+    {
+      "name": "源码修改",
+      "value": 0,
+      "unit": "files",
+      "basis": "本轮只读解释"
+    },
+    {
+      "name": "硬件动作",
+      "value": 0,
+      "unit": "actions",
+      "basis": "未烧录或测车"
+    },
+    {
+      "name": "复盘纯活动时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未独立计时，截止后归档区间另记"
+    }
+  ],
+  "observations": [
+    "已确认方向PD与内环PI及仿真预设来源；结构正确不等于实车参数合适。",
+    "一名原生审查者短核对，无额外Opus模型调用或大矩阵。",
+    "无同条件效率基线，不能判断净提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-PID-EXPLAIN-20261023-CAUSE",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "区分更新节拍、参数整定与实车因果诊断，未测证据不得用于排除其他故障源。",
+      "next_check": "后续响应记录需同时含输入时间、目标、实际反馈及限幅，才能判断失效环节"
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "当前控制源代码只读核对及原生审查者三项回执"
+  ],
+  "comparison": null,
+  "limits": [
+    "未进行实车响应测量或PID调参；主因仍未确定。",
+    "未知用量/费用/纯活动时间保持null。"
+  ]
+}
