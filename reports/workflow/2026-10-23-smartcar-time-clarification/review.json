@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-smartcar-time-clarification",
+  "task_summary": "解释仿真用时看似变长，核对档位、帧率、发布数据与诊断基线并更正汇报口径。",
+  "workflow_version": "WORKFLOW_REVIEW.md; bounded existing-result comparison",
+  "started_at": "2026-10-23T05:22:19Z",
+  "measurement_cutoff_at": "2026-10-23T05:26:06.572265+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "同图同版本分档比较",
+      "读取真实已发布数据与基线输出",
+      "未知机制不编造",
+      "不把诊断时间当最快成绩"
+    ],
+    "completed": [
+      "查明主要比较混用了不同速度档；本轮诊断与原同档同帧率用时相同。",
+      "网站旧帧率与新基线的较小时间差保留为未解释。",
+      "确认观测候选未参与本次路线仿真，未凭猜测归咎遥测或PID。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "使用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "未获得真实提供方usage"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "原生复核子任务",
+      "value": 1,
+      "unit": "agents",
+      "basis": "复用上一阶段路线作者只读核对历史条件"
+    },
+    {
+      "name": "重新运行仿真",
+      "value": 0,
+      "unit": "runs",
+      "basis": "只读现有报告和输出，避免为解释数字重跑矩阵"
+    },
+    {
+      "name": "硬件动作",
+      "value": 0,
+      "unit": "actions",
+      "basis": "未串口/烧录/发车"
+    },
+    {
+      "name": "完整失败调用",
+      "value": null,
+      "unit": "calls",
+      "basis": "局部有搜索未命中和一个猜测文件路径，未完整计数"
+    },
+    {
+      "name": "任务实际开始",
+      "value": null,
+      "unit": "timestamp",
+      "basis": "测量起点为首次时钟，更早准备未计"
+    },
+    {
+      "name": "复盘纯活动",
+      "value": null,
+      "unit": "seconds",
+      "basis": "截止后墙钟另记，未分活动/等待"
+    }
+  ],
+  "observations": [
+    "上一答遗漏档位及发布/诊断区别，引起错误退步印象，需要主动更正。",
+    "旧JSON参数标签未保存覆盖，使用运行脚本与恒等输出交叉核对，未只信文件名或args。",
+    "读现有结果足够回答，没有重复大矩阵；仍无同条件工作流基线证明提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-TIME-20261023-IDENTITY",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "每次成绩汇报同时写地图、速度档、帧率、版本、来源及是否已经发布；最新一次诊断与最好已验结果分开。",
+      "next_check": "下一次成绩报告必须先给同条件基线及差值，口径变化另列。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "小幅帧率条件差异的实际原因未定位；没有实车验证。",
+    "用量、费用、纯等待和净提效未知。"
+  ]
+}

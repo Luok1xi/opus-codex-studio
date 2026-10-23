@@ -1,0 +1,13 @@
+{
+  "scope": "sanitized workflow aggregates only",
+  "different_speed_detected": true,
+  "matched_diagnostic_time_change_seconds": 0,
+  "published_frame_setting_differs": true,
+  "smaller_change_mechanism_unknown": true,
+  "simulation_runs": 0,
+  "hardware_actions": 0,
+  "native_workers": 1,
+  "external_model_calls": 0,
+  "source_or_session_uploaded": false,
+  "matched_workflow_baseline": null
+}
