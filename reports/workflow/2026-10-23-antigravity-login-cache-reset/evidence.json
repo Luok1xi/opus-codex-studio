@@ -1,0 +1,17 @@
+{
+  "scope": "Sanitized aggregate workflow evidence only",
+  "credential_values_printed_or_exported": false,
+  "credential_targets_removed": 1,
+  "independent_absence_check": true,
+  "cache_directories_backed_up": 6,
+  "protected_data_unchanged": true,
+  "application_window_observed": true,
+  "application_updated_independently": true,
+  "login_verified": false,
+  "delegated_agents": 0,
+  "diagnostic_failed_or_cancelled_attempts": 4,
+  "matched_quality_baseline": null,
+  "raw_sessions_uploaded": false,
+  "database_uploaded": false,
+  "local_auth_data_uploaded": false
+}
