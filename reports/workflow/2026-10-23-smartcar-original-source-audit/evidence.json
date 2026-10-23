@@ -1,0 +1,52 @@
+{
+  "scope": "sanitized aggregates only; no private sources, conversations, images or databases",
+  "source_identity": {
+    "original_selected_files": 600,
+    "current_selected_files": 615,
+    "unchanged": 576,
+    "code_changed": 19,
+    "lexically_equal_changes": 3,
+    "config_changes": 2,
+    "added": 15,
+    "removed_whole_files": 0,
+    "end_hash_checks": 1215
+  },
+  "audit": {
+    "control_findings": 22,
+    "visual_findings": 19,
+    "defined_input_arithmetic_assertions_passed": true,
+    "existing_regression_pairs": 7,
+    "existing_regression_frames": 400,
+    "new_simulation_matrix_runs": 0
+  },
+  "private_evidence": {
+    "archived_messages_read": 263,
+    "technical_images_reviewed": 14,
+    "live_latest_history_read": false,
+    "credentials_read": false,
+    "external_messages_sent": 0
+  },
+  "coordination": {
+    "native_workers": 3,
+    "external_model_dispatches": 0,
+    "project_handoffs": [
+      169,
+      170
+    ],
+    "full_bodies_verified": true,
+    "opus_acknowledged_at_handoff": false
+  },
+  "worker_observed_intervals_seconds": [
+    1363.6,
+    799.613,
+    840.953
+  ],
+  "worker_timing_note": "Observed intervals have different starts and overlap; not additive or billable usage.",
+  "boundaries": {
+    "firmware_changed": false,
+    "hardware_accessed": false,
+    "vehicle_causality_proven": false,
+    "raw_material_uploaded": false
+  },
+  "matched_workflow_baseline": null
+}
