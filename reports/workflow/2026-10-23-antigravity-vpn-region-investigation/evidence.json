@@ -1,0 +1,23 @@
+{
+  "scope": "sanitized workflow aggregates only",
+  "independent_egress_checks": 3,
+  "egress_checks_agree_on_supported_country": true,
+  "model_server_https_connections_observed": 4,
+  "all_observed_connections_selected_vpn": true,
+  "api_dns_families_observed": [
+    "IPv4"
+  ],
+  "region_error_http_status": 400,
+  "region_error_status": "FAILED_PRECONDITION",
+  "user_confirms_supported_account_country": true,
+  "account_approval_independently_verified": false,
+  "synchronization_failure_confirmed": false,
+  "google_internal_geolocation_verified": false,
+  "alternative_egress_model_test_performed": false,
+  "local_support_summary_created": true,
+  "network_account_firewall_changes": 0,
+  "model_requests_initiated": 0,
+  "raw_sessions_uploaded": false,
+  "credentials_uploaded": false,
+  "public_ips_uploaded": false
+}
