@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-antigravity-current-egress-check",
+  "task_summary": "Check the owner's current VPN egress after switching lines.",
+  "workflow_version": "WORKFLOW_REVIEW.md; bounded read-only probe",
+  "started_at": "2026-10-23T14:28:11+08:00",
+  "measurement_cutoff_at": "2026-10-23T06:29:10.700Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Check current country and provider using independent services.",
+      "Distinguish a current network probe from a verified model invocation."
+    ],
+    "completed": [
+      "IPinfo, Cloudflare trace and IP.sb agreed on GB/London, Amazon AS16509.",
+      "No current model-server process was running; no model-call routing or success claim was made.",
+      "Updated the owner-local support summary."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Independent geolocation services",
+      "value": 3,
+      "unit": "services",
+      "basis": "Three live owner-context probes."
+    },
+    {
+      "name": "Running model-server processes",
+      "value": 0,
+      "unit": "processes",
+      "basis": "Owner-context process inspection."
+    },
+    {
+      "name": "Model requests initiated",
+      "value": 0,
+      "unit": "requests",
+      "basis": "Network probes only."
+    },
+    {
+      "name": "Delegated agents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No delegation."
+    },
+    {
+      "name": "Provider usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Usage unavailable."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Billing unavailable."
+    },
+    {
+      "name": "Rework",
+      "value": 0,
+      "unit": "probe_runs",
+      "basis": "One probe run returned all three results."
+    },
+    {
+      "name": "Review archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive receipt records measured wall time through remote verification."
+    }
+  ],
+  "observations": [
+    "Current egress changed from the earlier US snapshot to GB. Node labels alone should not be treated as current geolocation.",
+    "No matched baseline; no speedup claim.",
+    "No network, account, firewall or cache changes."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Three live network-service country/provider results and owner-context process count, summarized above; no raw IP retained in archive."
+  ],
+  "comparison": null,
+  "limits": [
+    "Google's internal classification was not checked.",
+    "No model invocation was tested.",
+    "Timing starts at the observed network-probe timestamp; earlier preparation excluded."
+  ]
+}
