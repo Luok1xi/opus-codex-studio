@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-23-antigravity-gemini-region-diagnosis",
+  "task_summary": "Diagnose why Gemini model calls fail in Antigravity after the owner successfully signed in with Google AI Pro.",
+  "workflow_version": "WORKFLOW_REVIEW.md; read-only diagnostics; no delegated agents",
+  "started_at": "2026-10-23T06:10:37.808Z",
+  "measurement_cutoff_at": "2026-10-23T06:12:19.089Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Identify the actual model-call error from recent local logs.",
+      "Distinguish the observed rejection from subscription/quota assumptions.",
+      "Inspect network configuration without changing it or accessing credential values."
+    ],
+    "completed": [
+      "All seven observed agent executor errors were HTTP 400 FAILED_PRECONDITION location rejections; latest at 14:09:35 local time.",
+      "Owner confirmed Google AI Pro. No quota or authentication error appeared among these seven executor errors.",
+      "System proxy disabled; VPN adapter active. Default IPv4 route uses WLAN; application-specific egress not established.",
+      "No account, subscription, proxy, routing or cache changes were made."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Provider usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No usage receipt."
+    },
+    {
+      "name": "Provider cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing receipt."
+    },
+    {
+      "name": "Delegated agents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Coordinator only."
+    },
+    {
+      "name": "Observed agent errors",
+      "value": 7,
+      "unit": "errors",
+      "basis": "Exact agent executor error line filter."
+    },
+    {
+      "name": "Observed location rejections",
+      "value": 7,
+      "unit": "errors",
+      "basis": "All seven agent executor errors matched the location rejection text."
+    },
+    {
+      "name": "Account or network mutations",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only inspection only."
+    },
+    {
+      "name": "Model test requests",
+      "value": 0,
+      "unit": "requests",
+      "basis": "Existing errors supplied sufficient evidence; no extra quota consumed by test requests."
+    },
+    {
+      "name": "Archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Measured through remote verification in final database receipt."
+    },
+    {
+      "name": "Diagnostic rework",
+      "value": null,
+      "unit": "actions",
+      "basis": "Initial sandbox log view was stale relative to owner context; owner-context inspection resolved it. No exhaustive action count."
+    }
+  ],
+  "observations": [
+    "Owner-context log inspection was necessary because the sandbox context showed stale logs and no active app processes.",
+    "Existing local errors identify the server's rejection reason; they do not reveal whether account eligibility or outbound IP classification triggered it.",
+    "An active VPN adapter plus a WLAN default route cannot establish the language server's actual egress; no proxy-leak or IP-block claim was made.",
+    "Official Google One documentation describes Pro as higher Antigravity usage limits; subscription alone does not establish regional eligibility.",
+    "No matched baseline exists; no workflow speedup claim. Credential and network changes would not be justified by this diagnostic request."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-AGREGION-20261023-OWNERLOG",
+      "action": "For local model failures, start with bounded owner-context error classification before cache resets or broad configuration changes; separate server error from unverified network cause.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next comparable failure: verify the exact error and preserve a null cause when account region versus IP classification cannot be resolved."
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "https://support.google.com/googleone/answer/14534406"
+  ],
+  "comparison": null,
+  "limits": [
+    "Successful model invocation has not been restored or tested.",
+    "Google account billing status and server-side regional classification were not independently inspected.",
+    "No public IP, proxy secrets, credentials, chat bodies, raw logs or databases are archived."
+  ]
+}
