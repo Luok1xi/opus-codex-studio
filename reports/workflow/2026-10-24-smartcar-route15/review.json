@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-24-smartcar-route15",
+  "task_summary": "维护路线交接并探索15秒，发布可切换且可复核的本机网页回放。",
+  "workflow_version": "fixed-quality staged experiments, isolated patches, exact replay capture, independent audit",
+  "started_at": "2026-10-24T02:01:31+00:00",
+  "measurement_cutoff_at": "2026-10-24T02:36:38.468343+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "双物理全图与既有55mm门不变",
+      "尝试15秒与压力核验",
+      "网站实际可用",
+      "真实证据与交接"
+    ],
+    "completed": [
+      "两物理标准条件均观察到15秒以内完整跑完，10项压力失败完整保留并明确仅实验展示。",
+      "交付原8项条件和额外8项里程误差均通过的新默认；与旧同配置6/8逐项比较，未新增失败。",
+      "修复信号过滤顺序导致的路口交接延迟；高速合并回归被发现，按预设冻结不同源码，没有全局覆盖。",
+      "既有本机网站新增两套真实像素回放，保留历史记录、构建与桌面手机实际浏览器验收通过。",
+      "协调实际Opus/DSH回执，完成独立轨迹审查与本轮证据回库。"
+    ],
+    "remaining": [
+      "稳健15秒未达到；低抓地仍失败，里程偏差与延迟/低抓地组合未全覆盖。",
+      "未做实车、硬件标定或真实比赛图验收；无公网发布。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "标量物理执行",
+      "value": 162,
+      "unit": "runs",
+      "basis": "逐条完成invocation，包含失败和2项里程恒等，不含像素重录"
+    },
+    {
+      "name": "标量质量通过",
+      "value": 97,
+      "unit": "runs",
+      "basis": "原55mm/完整路线/连续有限轨迹门；不是独立统计样本"
+    },
+    {
+      "name": "轨迹哈希核验",
+      "value": 2092488,
+      "unit": "rows",
+      "basis": "所有已汇总CSV重新哈希与运行记录匹配"
+    },
+    {
+      "name": "物理累计墙钟",
+      "value": 1799.8849773900004,
+      "unit": "seconds",
+      "basis": "并行进程累加，不能当整轮墙钟"
+    },
+    {
+      "name": "同配置旧版通过",
+      "value": 6,
+      "unit": "conditions",
+      "basis": "4背景×2模型"
+    },
+    {
+      "name": "同配置新版通过",
+      "value": 8,
+      "unit": "conditions",
+      "basis": "恢复两项延迟失败、原6项未新增失败"
+    },
+    {
+      "name": "里程误差通过",
+      "value": 8,
+      "unit": "conditions",
+      "basis": "标准背景下±1%与±2%×双模型，先有2项恒等"
+    },
+    {
+      "name": "冲刺压力通过",
+      "value": 0,
+      "unit": "conditions",
+      "basis": "10项延迟/低抓地均失败，只接受标准展示"
+    },
+    {
+      "name": "冲刺压力总数",
+      "value": 10,
+      "unit": "conditions",
+      "basis": "保留全部失败"
+    },
+    {
+      "name": "最终像素重录",
+      "value": 4,
+      "unit": "runs",
+      "basis": "两方案×双模型，全部逐字节匹配参考"
+    },
+    {
+      "name": "在途方案更换的额外像素重录",
+      "value": 4,
+      "unit": "runs",
+      "basis": "先前请求已开跑，结束后仅保留本地未上架"
+    },
+    {
+      "name": "原生子代理",
+      "value": 3,
+      "unit": "agents",
+      "basis": "诊断/配置试验/网站，分域写入"
+    },
+    {
+      "name": "实际读取外部交接",
+      "value": 3,
+      "unit": "handoffs",
+      "basis": "Opus两份、DSH一份，实际作者不替代"
+    },
+    {
+      "name": "本轮外部模型CLI派发",
+      "value": 0,
+      "unit": "calls",
+      "basis": "通过项目库接收既有协作者回复，非新CLI调用"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整provider usage"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "完整工具失败数",
+      "value": null,
+      "unit": "calls",
+      "basis": "父子未共享完整调用计数；成员保留已知失败"
+    },
+    {
+      "name": "root已知路径失败",
+      "value": 2,
+      "unit": "calls",
+      "basis": "不存在的子目录探测与简写路径猜测"
+    },
+    {
+      "name": "人工介入计数",
+      "value": null,
+      "unit": "events",
+      "basis": "没有完整跨协作者事件口径"
+    },
+    {
+      "name": "协调净等待",
+      "value": null,
+      "unit": "seconds",
+      "basis": "实际经过时间包含并行工作，无法分离"
+    },
+    {
+      "name": "复盘净活动",
+      "value": null,
+      "unit": "seconds",
+      "basis": "不能把经过时间当净活动；截止后归档墙钟另存"
+    },
+    {
+      "name": "硬件操作",
+      "value": 0,
+      "unit": "actions",
+      "basis": "未烧录、串口、电机"
+    },
+    {
+      "name": "公网部署",
+      "value": 0,
+      "unit": "deployments",
+      "basis": "仅现有本机网站原端口，原工程构建"
+    }
+  ],
+  "observations": [
+    "实际信号诊断发现过滤顺序问题，30项源函数断言与同输入物理对照支持局部修复。",
+    "同一修补在温和档恢复两项失败，却在三个高速组合引入PB回归；小补丁不能代替各档集成验收。",
+    "原8项测试之外增加低抓地发现边界，里程独立注入先验证默认恒等后再测试偏差，没有改评分物理。",
+    "复杂分段速度试验仅3/8，因此默认采用较小已验证配置，复杂代码保留隔离研究。",
+    "动态更新发布候选导致4次在途像素重录未上架；这是协调返工，不隐去或算效率收益。",
+    "独立审查发现时间简报精度差异，最终以CLI和首末1ms区间一致的原始值发布。",
+    "真实外部回复通过项目库保存，外部调用用量未知；没有匹配工作流基线，车速收益不等于AI提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-ROUTE15-FREEZE-BEFORE-PIXELS",
+      "owner": "codex",
+      "status": "proposed",
+      "action": "下一轮先冻结发布候选与身份，再派发昂贵像素捕获；准备工作可并行。",
+      "next_check": "统计因候选变更作废的捕获数和质量；本轮4次作为损耗基线。"
+    },
+    {
+      "id": "WF-ROUTE15-PRESET-IDENTITY",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "每个速度预设独立绑定源码和二进制，所有源码合并须先做标准双模，再做敏感条件。",
+      "next_check": "后续任何修复在所有将发布预设下逐项验收，不继承另档通过标签。"
+    },
+    {
+      "id": "WF-ROUTE15-RETURN-EXACT-PATHS",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "成员报告提供完整相对路径，汇总器直接读取，避免按简称猜测目录。",
+      "next_check": "下一轮检查交接路径失败是否减少，仍不宣称净效率因果收益。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "稳健15秒未达到；低抓地仍失败，里程偏差与延迟/低抓地组合未全覆盖。",
+    "未做实车、硬件标定或真实比赛图验收；无公网发布。",
+    "缺少匹配工作流基线；只有局部质量收益证据，不能判断净提效。"
+  ]
+}
