@@ -1,0 +1,22 @@
+{
+  "scope": "sanitized workflow aggregates only",
+  "physics_runs": 143,
+  "physics_pass": 75,
+  "verified_trace_rows": 1933903,
+  "stable_conditions": 8,
+  "baseline_pass": 8,
+  "stable_pass": 8,
+  "experimental_conditions": 8,
+  "experimental_pass": 3,
+  "nominal_target_met": true,
+  "stable_target_met": false,
+  "native_workers": 3,
+  "external_model_calls": 0,
+  "independent_review": true,
+  "hardware_actions": 0,
+  "production_changes": 0,
+  "raw_source_or_sessions_uploaded": false,
+  "usage": null,
+  "cost": null,
+  "matched_workflow_baseline": null
+}

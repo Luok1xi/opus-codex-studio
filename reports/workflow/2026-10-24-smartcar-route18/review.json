@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-24-smartcar-route18",
+  "task_summary": "探索完整路线18秒，保留标准冲刺证据和通过扰动的稳健提速配置。",
+  "workflow_version": "WORKFLOW_REVIEW.md; fixed quality gates, staged tuning, independent final profile audit",
+  "started_at": "2026-10-24T01:31:42+00:00",
+  "measurement_cutoff_at": "2026-10-24T01:56:44.119618+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "完整路线和55mm质量门保持",
+      "标准两物理18秒以内",
+      "延迟和低抓地配对稳定性",
+      "可复现与交接"
+    ],
+    "completed": [
+      "标准条件两套物理均观察到18秒以内完整跑完，扰动失败保留且未晋级。",
+      "另交付8/8全图条件通过的快档，相对旧档各快约1.4秒。",
+      "路线拓扑、初始轮里程偏差、16米处路口交接分别有机械证据与有限干预。",
+      "独立检查真实源、二进制、模型与地图、原始轨迹，保留完整复现配置和数据库交接。"
+    ],
+    "remaining": [
+      "18秒冲刺档在延迟/低抓地不稳定，稳定18秒目标未达到。",
+      "只覆盖指定全图8条件，未做全地图/六边形新档矩阵或实车。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "实际物理运行",
+      "value": 143,
+      "unit": "runs",
+      "basis": "所有保存的invocation完成记录含失败"
+    },
+    {
+      "name": "物理质量通过",
+      "value": 75,
+      "unit": "runs",
+      "basis": "各自原55mm完整路线门"
+    },
+    {
+      "name": "保留快档配对",
+      "value": 8,
+      "unit": "conditions",
+      "basis": "同图同物理同扰动，配置速度改变"
+    },
+    {
+      "name": "基线通过",
+      "value": 8,
+      "unit": "conditions",
+      "basis": "保存基线复用"
+    },
+    {
+      "name": "保留快档通过",
+      "value": 8,
+      "unit": "conditions",
+      "basis": "零新增失败"
+    },
+    {
+      "name": "冲刺档质量通过",
+      "value": 3,
+      "unit": "conditions",
+      "basis": "8项里标准两项和低抓地C通过"
+    },
+    {
+      "name": "冲刺档质量总数",
+      "value": 8,
+      "unit": "conditions",
+      "basis": "相同全图门，未晋级稳定版本"
+    },
+    {
+      "name": "独立拓扑物理运行",
+      "value": 4,
+      "unit": "runs",
+      "basis": "两条路线各双物理，均失败"
+    },
+    {
+      "name": "斜坡候选物理运行",
+      "value": 12,
+      "unit": "runs",
+      "basis": "起步和巡航加速度两变体，均未晋级"
+    },
+    {
+      "name": "原始轨迹核验",
+      "value": 1933903,
+      "unit": "rows",
+      "basis": "root逐文件重算hash并检查数值及schema"
+    },
+    {
+      "name": "提前减速边界调用",
+      "value": 16,
+      "unit": "calls",
+      "basis": "真实编译函数的转向/边界/末项/无表，比赛仍失败"
+    },
+    {
+      "name": "物理进程累计墙钟",
+      "value": 1127.5563121720002,
+      "unit": "seconds",
+      "basis": "并行累计，不是整轮耗时"
+    },
+    {
+      "name": "原生子代理",
+      "value": 3,
+      "unit": "agents",
+      "basis": "诊断/拓扑/独立验收"
+    },
+    {
+      "name": "外部模型调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "仅留项目交接，非Opus/Gemini实际回复"
+    },
+    {
+      "name": "root已知失败",
+      "value": 6,
+      "unit": "calls",
+      "basis": "错路径1、配置生成语法及后续缺文件2、未存在报告读取1、LF匹配断言1、Windows glob读取1"
+    },
+    {
+      "name": "完整工具失败数",
+      "value": null,
+      "unit": "calls",
+      "basis": "未从所有底层调用总计"
+    },
+    {
+      "name": "模型用量",
+      "value": null,
+      "unit": "tokens",
+      "basis": "真实provider usage不可用"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单"
+    },
+    {
+      "name": "净活动时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "包括等待的经过时间不能代替净活动"
+    },
+    {
+      "name": "复核净活动",
+      "value": null,
+      "unit": "seconds",
+      "basis": "worker经过含等待"
+    },
+    {
+      "name": "复盘净活动",
+      "value": null,
+      "unit": "seconds",
+      "basis": "归档截止后墙钟单独存"
+    },
+    {
+      "name": "硬件操作",
+      "value": 0,
+      "unit": "actions",
+      "basis": "未接串口/烧录/行车"
+    },
+    {
+      "name": "生产与网站修改",
+      "value": 0,
+      "unit": "actions",
+      "basis": "隔离配置和候选源"
+    }
+  ],
+  "observations": [
+    "标准工况下18秒以内不代表扰动通过。先保留已通过的较慢配置，再保存失败快档，避免把好看的单次时间当接受。",
+    "C预筛避免对12个延迟失败组合追加PB，但早期只看C也产生大量PB不通过结果；双物理敏感条件应更早并行筛。",
+    "首角的视觉候选被里程窗过滤有编码重建证据，起步放缓使首角恢复但后续失败；局部改善不能被推成整圈修复。",
+    "两条替代拓扑静态覆盖合规但仿真失败，停止无依据扩大搜索。下一转弯预减速在较温和档恢复延迟通过，低抓地仍失败，没有合入。",
+    "准备失败时有一次后续任务仍启动并因缺文件失败，随后改为每步检查退出码；第二次换行断言失败正确阻断构建。",
+    "独立短报告把两位小数补零成三位，root按原始记录查出并要求改为真实毫秒精度；机器轨迹本身正确。",
+    "报告只存汇总，成员报告留实际作者；车速收益不当作AI工作流效率提升。"
+  ],
+  "recommendations": [
+    {
+      "id": "WF-ROUTE18-SENSITIVE-FIRST",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "下一轮新控制候选先跑已知敏感的PB低抓地和16米延迟条件，再扩展扫描。",
+      "next_check": "记录被预筛拒绝的候选与节省的实际进程数，净效率仍需同质量配对。"
+    },
+    {
+      "id": "WF-ROUTE18-INTERNAL-EVIDENCE",
+      "owner": "codex",
+      "status": "proposed",
+      "action": "后续诊断在隔离构建记录原始角点方向、里程窗残差和直行释放原因，减少由外部位置推断内部状态。",
+      "next_check": "用同一失败轨迹验证字段能直接定位首次失配，并检查诊断关闭时输出恒等。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "18秒冲刺档在延迟/低抓地不稳定，稳定18秒目标未达到。",
+    "只覆盖指定全图8条件，未做全地图/六边形新档矩阵或实车。",
+    "没有匹配工作流基线，不能证明多代理提高净效率。"
+  ]
+}
