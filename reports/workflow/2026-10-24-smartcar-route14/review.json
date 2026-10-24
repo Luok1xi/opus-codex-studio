@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-24-smartcar-route14",
+  "task_summary": "修复S路口提前完成，保持旧稳定档验收范围，检验方向增益隔离假说并发布本机回放；12秒目标继续。",
+  "workflow_version": "744df7b0d767ec424bf0875c4cb58e095b6acbf6; TeamHub per-project and native workers",
+  "started_at": "2026-10-24T06:24:33Z",
+  "measurement_cutoff_at": "2026-10-24T06:58:14.868025+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "诊断不改变旧轨迹，OFF构建恒等；最小S完成门保留合法交接。",
+      "默认推广前匹配旧18项稳定条件；固定55mm质量门、60mm出线、490Hz输入，不修改物理模型。",
+      "独立核查PD单项干预是否实际生效，负结果不合入。",
+      "冻结后仅2次像素捕获，55案例保留旧54，构建/回放/桌面与手机浏览器/HTTP一致。",
+      "持续优化向12秒；未取得合格结果不能宣称达标。"
+    ],
+    "completed": [
+      "S完成门稳定18/18；标准C17.685/PB17.966，比旧默认慢3/24ms，属于正确性维护。",
+      "修正向下路线标准双模通过19.054/19.315；其RA80/320/95不同于标准路线100/400/85，不作跨参数提速比较。",
+      "PD隔离真实改变增益和输出；C13.891→13.913，PB两版均2.850秒停止失败，候选拒绝。",
+      "本机默认route14-stable-sguard-20261024已发布，55案例/旧54保留、2像素录制与原数据恒等、1440/390通过。",
+      "实际Opus与DSH交接已读取；原生实施和独立复核身份分开记录。"
+    ],
+    "remaining": [
+      "12秒尚未达到；实车未验证；当前仅本机网站。",
+      "Opus新的移植与假路口反例请求单列下一阶段route16，不混入本阶段结果。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "新标量仿真",
+      "value": 30,
+      "unit": "runs",
+      "basis": "逐条invocation与CSV哈希核查；25通过/5失败含刻意复现旧失败，不是新默认稳定率。"
+    },
+    {
+      "name": "新标量质量通过",
+      "value": 25,
+      "unit": "runs",
+      "basis": "quality.pass，不以进程returncode=0冒充质量通过。"
+    },
+    {
+      "name": "标量运行墙钟累计",
+      "value": 422.503590737,
+      "unit": "seconds",
+      "basis": "30次wall_seconds相加，存在并行，不是整轮时间。"
+    },
+    {
+      "name": "像素录制",
+      "value": 2,
+      "unit": "runs",
+      "basis": "独立列出，不计入30次标量。"
+    },
+    {
+      "name": "像素录制累计",
+      "value": 38.84992601,
+      "unit": "seconds",
+      "basis": "两次捕获进程记录。"
+    },
+    {
+      "name": "原生参与worker",
+      "value": 3,
+      "unit": "agents",
+      "basis": "三名原生Codex子代理复用执行多个职责，不是三次外部模型调用。"
+    },
+    {
+      "name": "实际成员子任务报告",
+      "value": 10,
+      "unit": "reports",
+      "basis": "十个实际阶段worker-evidence，不编造Opus/DSH工作量。"
+    },
+    {
+      "name": "成员计时区间累计",
+      "value": 4292.955106,
+      "unit": "seconds",
+      "basis": "有重叠与等待，不是省下的时间。"
+    },
+    {
+      "name": "显式等待下界",
+      "value": 240,
+      "unit": "seconds",
+      "basis": "PD独立审查者记录；其余协调等待未完整测量。"
+    },
+    {
+      "name": "真实tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无同提供方完整usage。"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "协调与归档活跃时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "与下一阶段接单重叠，未单独计时，不按墙钟推断活跃时间。"
+    },
+    {
+      "name": "根发起额外外部模型调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "本阶段使用原生工作者和已有实际Opus/DSH交接；不包含前一Antigravity接入轮次。"
+    }
+  ],
+  "observations": [
+    "运行前发现向下路线省略RA参数会继承80/320/95，纠正根的同参数假设，避免无效比较。",
+    "先诊断行为恒等再改完成门；诊断复现末S提前约210mm，非声称的所有S都提前400mm。",
+    "默认推广最初仅有8项，根要求补齐旧10项；最终18/18后发布，没有以更少条件替代原稳定性。",
+    "返工：PD日志漏声明导致一次构建失败并修复；冻结文件在最后编辑后刷新；S测试旧断言与报告聚合修正；网站文案一次修正后二次构建验收。",
+    "网站6次工具失败、其他成员具体失败/等待逐项保留在evidence；总数有口径重叠，未知不填零。",
+    "独立审查与真实DSH核查支持边界；没有同条件工作流对照，净提效证据不足。",
+    "本阶段结束后Opus请求移植候选已收取，另建route16隔离目录并先做反例门；不将尚未完成的工作算成果。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-R14-EFFECTIVE-PARAMS",
+      "action": "冻结实际生效参数含缺省值及完整旧验收集合后再派运行。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一阶段逐条件比较OFF/ON参数与模型指纹，复用数据也须同指纹。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-R14-FREEZE-LAST",
+      "action": "最后一次源码修正后重算冻结清单，独立回读再用于发布。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一阶段源码与binary/manifest保持对应，禁止过时freeze充作实际版本。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-R14-NEGATIVE-GATE",
+      "action": "干预实际生效却不修复时记录负结果，停止叠参，先读下一项根因证据。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "route16先反例门，失败模式不得以通过进程或单圈更快绕过。"
+    }
+  ],
+  "evidence": [
+    "evidence.json contains 30 invocation indices and verified CSV hashes, 10 real worker report indices, and frozen publication references.",
+    "outputs/route14-s-guard/source-tests.json; outputs/route14-s-validation/publication-freeze.json",
+    "outputs/route14-pd-isolation/report.md; outputs/route14-pd-review/review.md",
+    "outputs/route14-web/publication-receipt.json SHA256 3474763b671da8e971cd10bf2ecd56cee7984273570af0fe43ef23df517a413d",
+    "CRAZY-CIRCUIT handoffs 239,249,250,255,258,261,264,266,268,269; LUOKIXI-WEB task6 revision2."
+  ],
+  "comparison": null,
+  "limits": [
+    "18项只覆盖声明的仿真条件，未覆盖任意工况或实车；odo为固定标定倍率并影响E4，不是随机漂移。",
+    "下行路线仅标准2/2，横偏PB53.0015mm接近55mm门，不扩展到更差条件。",
+    "PD未修好不等于PID整体没问题；停止时间不是圈速。",
+    "本机发布不是公网发布；本轮不烧录、不读取凭据、不上传原始会话或项目源码。",
+    "review/archive本身不递归新建复盘；归档开销与下一阶段交叠，活跃时间未知。"
+  ]
+}
