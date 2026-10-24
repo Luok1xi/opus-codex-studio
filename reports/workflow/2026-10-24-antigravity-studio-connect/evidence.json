@@ -1,0 +1,55 @@
+{
+  "round_id": "2026-10-24-antigravity-studio-connect",
+  "measured_from": "2026-10-24T06:00:53+00:00",
+  "cutoff": "2026-10-24T06:21:28.936377+00:00",
+  "shared_rules_verified": true,
+  "cli_version": "1.4.7",
+  "desktop_version": "2.26.0",
+  "model_requested": "claude-opus-5-5-medium",
+  "actual_text_reply_verified": true,
+  "actual_file_write_verified": true,
+  "reply_sha256": "e31a3c6dcfce3497460dfeeebeafa9da36f078d3d451335aabfeb7a3f2d3b0f4",
+  "rule_sha256": "e1cbd62d29275765c3fff1b7a806c0864d818893a8fe9a46c18ca287150e7169",
+  "teamhub_ack_verified": true,
+  "ack_origin": "separate Antigravity member entry; not the final CLI call and not acknowledged by Codex",
+  "cli_quota_limited": true,
+  "reset_delay_reported": "4h9m30s at about 2026-10-24 14:18 Asia/Shanghai",
+  "formal_teamhub_reply_received": false,
+  "automatic_queue_adapter_enabled": false,
+  "usage_scope": "cumulative same official CLI conversation, latest returned counters; do not sum turns",
+  "usage": {
+    "input_tokens": 20219,
+    "output_tokens": 4044,
+    "thinking_tokens": 0,
+    "cache_read_tokens": 60294,
+    "total_tokens": 24263
+  },
+  "cli_attempts": 4,
+  "inference_calls_blocked_before_execution": 1,
+  "cost": null,
+  "native_codex_usage": null,
+  "credential_reads": 0,
+  "permission_bypass_flags_used": 0,
+  "source_or_website_changes_for_connection": 0,
+  "teamhub_ack": {
+    "status": "acked",
+    "revision": 2,
+    "origin": "separate member; not root impersonation"
+  },
+  "sanitized": true,
+  "worker_report": {
+    "role": "native Codex independent reviewer",
+    "wall_seconds": 131,
+    "provider_usage": null
+  },
+  "archive_status_at_cutoff": "pending verification; subsequent receipt is authoritative",
+  "error_accounting": {
+    "observed_empty_success": 1,
+    "confirmed_client_file_permission_denial": 1,
+    "confirmed_cli_quota_error": 1,
+    "root_metadata_probe_unavailable": 1,
+    "root_handoff_marker_collision": 1,
+    "auto_review_rejection_then_owner_specific_authorization": 1,
+    "total_tool_failures": null
+  }
+}

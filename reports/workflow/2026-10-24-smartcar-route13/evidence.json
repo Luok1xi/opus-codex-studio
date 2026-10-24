@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-24-smartcar-route13",
+  "sanitized": true,
+  "prepared_by": "codex",
+  "publication_status": "pending_root_archive",
+  "measurement_start": "2026-10-24T04:47:01+00:00",
+  "measurement_cutoff": "2026-10-24T06:09:15.753291+00:00",
+  "new_simulations": {
+    "count": 10,
+    "passed": 8,
+    "failed": 2,
+    "rows": 138189,
+    "counts_independently_recomputed": true,
+    "records": [
+      {
+        "group": "first-window",
+        "source": "work/route13-initial/runs/off-mu12/stable-mu12/pybullet",
+        "engine": "pybullet",
+        "passed": false,
+        "duration_s": 2.965,
+        "lap_completed": false,
+        "max_lateral_mm": 3009.2774,
+        "route_k": 0.0,
+        "turns": 0.0,
+        "row_count": 2966,
+        "started_at": "2026-10-24T05:00:24.860636+00:00",
+        "finished_at": "2026-10-24T05:00:33.782314+00:00",
+        "simulation_wall_seconds": 9.546023638000179,
+        "binary_sha256": "f948c8f6fb9c0d027a9eed34db95c127c92f665f08513683adc8524c02cabfbb",
+        "csv_sha256": "1659258a52550e6359c6819de374242f1f57ac67ca1ef7c0727908b7fbd9d1ff",
+        "invocation_sha256": "eded2ff5aee8f3a74297b5353d0a7d6fca1445100eb9fe85d5e80758f312b8be"
+      },
+      {
+        "group": "first-window",
+        "source": "work/route13-initial/runs/on-fast/fast/csim",
+        "engine": "csim",
+        "passed": true,
+        "duration_s": 13.956,
+        "lap_completed": true,
+        "max_lateral_mm": 53.9469,
+        "route_k": 41.0,
+        "turns": 22.0,
+        "row_count": 13957,
+        "started_at": "2026-10-24T05:00:24.601302+00:00",
+        "finished_at": "2026-10-24T05:00:26.881378+00:00",
+        "simulation_wall_seconds": 2.273666376999927,
+        "binary_sha256": "7f49162c818d6b6123e60a01920e1859a1157448a574b16aacfd4d4e7b4759a0",
+        "csv_sha256": "e37edc663e223cbf0346d7736713a3ed7b79e055cc96b31bde017cb070441df6",
+        "invocation_sha256": "d1f5151b7abe671389b9f0d889f98e5cd4e7396ec8d95fc10e002453b5e73e05"
+      },
+      {
+        "group": "first-window",
+        "source": "work/route13-initial/runs/on-fast/fast/pybullet",
+        "engine": "pybullet",
+        "passed": true,
+        "duration_s": 14.471,
+        "lap_completed": true,
+        "max_lateral_mm": 49.4437,
+        "route_k": 41.0,
+        "turns": 22.0,
+        "row_count": 14472,
+        "started_at": "2026-10-24T05:00:24.601563+00:00",
+        "finished_at": "2026-10-24T05:00:51.655501+00:00",
+        "simulation_wall_seconds": 27.047811178000075,
+        "binary_sha256": "c95b24d0c35128e7150c390497e2a1908efc348e4e0feb54e3f6d710c65192de",
+        "csv_sha256": "6eb415d16ab8c516dec9e369f00e7067d3bbf602211373351aaac1747b45a29a",
+        "invocation_sha256": "015cc6e81caecfc4dc71328c42614aef811766fe5c8eb95869e7a92f8b3858e8"
+      },
+      {
+        "group": "first-window",
+        "source": "work/route13-initial/runs/on-mu12/stable-mu12/pybullet",
+        "engine": "pybullet",
+        "passed": true,
+        "duration_s": 18.08,
+        "lap_completed": true,
+        "max_lateral_mm": 38.6469,
+        "route_k": 41.0,
+        "turns": 22.0,
+        "row_count": 18081,
+        "started_at": "2026-10-24T05:01:27.631050+00:00",
+        "finished_at": "2026-10-24T05:01:57.684485+00:00",
+        "simulation_wall_seconds": 30.04771273700021,
+        "binary_sha256": "c95b24d0c35128e7150c390497e2a1908efc348e4e0feb54e3f6d710c65192de",
+        "csv_sha256": "ee232d0a0bbd32b7d053d5cb44ec1c2f14e6d020340c33598145094b9b020acf",
+        "invocation_sha256": "1a1766a72b22a2950a3513839096f730e1cf3c4cd5e18f6ca016067cf04fbb8d"
+      },
+      {
+        "group": "stable-combined-control",
+        "source": "work/route13-validation/stable-d6mu13/baseline/csim",
+        "engine": "csim",
+        "passed": true,
+        "duration_s": 17.824,
+        "lap_completed": true,
+        "max_lateral_mm": 45.7386,
+        "route_k": 41.0,
+        "turns": 22.0,
+        "row_count": 17825,
+        "started_at": "2026-10-24T05:01:13.158609+00:00",
+        "finished_at": "2026-10-24T05:01:15.942627+00:00",
+        "simulation_wall_seconds": 2.778353129000152,
+        "binary_sha256": "5b571c0bcf7e5ad29e6b7c99d6f67f5966b66f2d8dd55337fae486eef6c7edbc",
+        "csv_sha256": "4ec6bfef18522fcad6d4ec105b54afeb9e532a801a6dd933776c4da316c89a58",
+        "invocation_sha256": "fa55720a4e2e9fbefbba8dccc7a497464a4b20ff9924a27b6d9f799814b15697"
+      },
+      {
+        "group": "stable-combined-control",
+        "source": "work/route13-validation/stable-d6mu13/baseline/pybullet",
+        "engine": "pybullet",
+        "passed": true,
+        "duration_s": 18.066,
+        "lap_completed": true,
+        "max_lateral_mm": 35.2346,
+        "route_k": 41.0,
+        "turns": 22.0,
+        "row_count": 18067,
+        "started_at": "2026-10-24T05:01:13.158881+00:00",
+        "finished_at": "2026-10-24T05:01:30.426077+00:00",
+        "simulation_wall_seconds": 17.261737347999997,
+        "binary_sha256": "d30baa2de7da74a3f559c10b014218174b6b4f4e8f208918769feb89c4b196cc",
+        "csv_sha256": "ecaa4dcf984e343d55ac2d110e93f908bfcc443059a741776e068471a84cbb1e",
+        "invocation_sha256": "18797661a552ec287911a13370bfcc35d8e79ff0f9752a0111f310b23a49de53"
+      },
+      {
+        "group": "M-window-integration",
+        "source": "work/route13-m-initial/runs/d6mu13/csim",
+        "engine": "csim",
+        "passed": true,
+        "duration_s": 16.675,
+        "lap_completed": true,
+        "max_lateral_mm": 41.6017,
+        "route_k": 41.0,
+        "turns": 22.0,
+        "row_count": 16676,
+        "started_at": "2026-10-24T06:03:25.110606+00:00",
+        "finished_at": "2026-10-24T06:03:27.497069+00:00",
+        "simulation_wall_seconds": 2.3744854169999954,
+        "binary_sha256": "7f49162c818d6b6123e60a01920e1859a1157448a574b16aacfd4d4e7b4759a0",
+        "csv_sha256": "a706b529557c50971398861db69b1ea324882850776a6b829a567ae7657cdc15",
+        "invocation_sha256": "6e4978a674eceaef5b75d968e41b7bb0d081762fbc99d51c56746fbd1848eb66"
+      },
+      {
+        "group": "M-window-integration",
+        "source": "work/route13-m-initial/runs/d6mu13/pybullet",
+        "engine": "pybullet",
+        "passed": false,
+        "duration_s": 3.03,
+        "lap_completed": false,
+        "max_lateral_mm": 738.1931,
+        "route_k": 2.0,
+        "turns": 2.0,
+        "row_count": 3031,
+        "started_at": "2026-10-24T06:03:25.110523+00:00",
+        "finished_at": "2026-10-24T06:03:30.440606+00:00",
+        "simulation_wall_seconds": 5.318112263000003,
+        "binary_sha256": "c95b24d0c35128e7150c390497e2a1908efc348e4e0feb54e3f6d710c65192de",
+        "csv_sha256": "6ee389494d06b0e979ef07950c6c879b3ba4c9e3f1623b567bf2012db80f13e8",
+        "invocation_sha256": "d93aef6468d4982e5fc1c4f55a966a3ffaef2c5d230a75f51387fbb1124c002a"
+      },
+      {
+        "group": "M-window-integration",
+        "source": "work/route13-m-initial/runs/nominal/csim",
+        "engine": "csim",
+        "passed": true,
+        "duration_s": 16.463,
+        "lap_completed": true,
+        "max_lateral_mm": 48.1726,
+        "route_k": 41.0,
+        "turns": 22.0,
+        "row_count": 16464,
+        "started_at": "2026-10-24T06:03:25.109786+00:00",
+        "finished_at": "2026-10-24T06:03:27.784208+00:00",
+        "simulation_wall_seconds": 2.661678866999999,
+        "binary_sha256": "7f49162c818d6b6123e60a01920e1859a1157448a574b16aacfd4d4e7b4759a0",
+        "csv_sha256": "90710f9c9677221618e6e45cb979d3daaf300c86eb20eb8fc82d0218e577d4cf",
+        "invocation_sha256": "22340b008da1519f14424d782ea8dae356982bf800ee10c4ac1d5a6bc764ffff"
+      },
+      {
+        "group": "M-window-integration",
+        "source": "work/route13-m-initial/runs/nominal/pybullet",
+        "engine": "pybullet",
+        "passed": true,
+        "duration_s": 16.649,
+        "lap_completed": true,
+        "max_lateral_mm": 42.6318,
+        "route_k": 41.0,
+        "turns": 22.0,
+        "row_count": 16650,
+        "started_at": "2026-10-24T06:03:25.111147+00:00",
+        "finished_at": "2026-10-24T06:03:57.238823+00:00",
+        "simulation_wall_seconds": 32.11623576,
+        "binary_sha256": "c95b24d0c35128e7150c390497e2a1908efc348e4e0feb54e3f6d710c65192de",
+        "csv_sha256": "51d21654a7688d987bef83f21a156ff3831160ba8a6c0b448cc0b59df872484d",
+        "invocation_sha256": "f272fb8387926d75f74d9bdb5b1c8c27cdf4c434f4d581fcace852821457d603"
+      }
+    ]
+  },
+  "preexisting_DSH_M_audit": {
+    "new_runs_in_this_count": 0,
+    "release_primary_passed": 10,
+    "release_primary_total": 10,
+    "release_all_passed": 11,
+    "release_all_total": 16,
+    "hold_guard_passed": 8,
+    "hold_guard_total": 8,
+    "hold_guard_missing_condition": "delay6 seed1",
+    "reviewed_records_including_old_matched_pairs": 32,
+    "source": "outputs/route13-m-review/summary.json",
+    "sha256": "0ea367ea6af705862b5daea6a9f3ae1e298ff1305aa15a407550ca8ea8827886"
+  },
+  "code_validation": {
+    "vision_sha256": "4bcb49988996ecb88814306a8dacf4d7d32d0074fe204c94daee6b19eeacfa08",
+    "default_flag": "OFF",
+    "source_function_assertions": [
+      60,
+      60,
+      98
+    ],
+    "assertions_reexecuted_by_independent_worker": true,
+    "off_binaries_equal_SC_baseline": true,
+    "production_source_edits": 0,
+    "website_changes": 0,
+    "hardware_actions": 0,
+    "source_compile_invocation": "outputs/route13-initial/build.invocation.json",
+    "build_returncode": 0
+  },
+  "existing_worker_report_segments": [
+    {
+      "path": "outputs/route13-design/worker-evidence-odometry.json",
+      "sha256": "c32e643118a5b848322445898e387236f52b8e70b3913adb877dd601932a8090"
+    },
+    {
+      "path": "outputs/route13-design/worker-evidence-learning.json",
+      "sha256": "db560e5f8bcbef272a517d06f03c9cfb4213d0396218965511552162257a3b7d"
+    },
+    {
+      "path": "outputs/route13-design/worker-evidence-braking.json",
+      "sha256": "c5f2b2dbdf6d06835b6dd8af2df7e3adf0e7acffa12f2a270d84cdf0c7c0f4a0"
+    },
+    {
+      "path": "outputs/route13-m-review/worker-evidence.json",
+      "sha256": "38b3d7acafdf1017e2f58e7be34910979eff7abac2c385d157aa4897399ef6fb"
+    },
+    {
+      "path": "outputs/route13-m-initial/worker-evidence.json",
+      "sha256": "654fe46fd3beca30d9e8b39c6ec2c904c6cfc3753a82898baedfffded0c8e70a"
+    }
+  ],
+  "missing_reports": [
+    "First-window implementation worker final work report was not present; build, tests, source freeze and four invocation artifacts are present.",
+    "Original source-learning worker implementation review file was not present; route13_finish supplied an independent implementation review."
+  ],
+  "actual_external_handoffs": [
+    {
+      "id": 222,
+      "author": "opus",
+      "kind": "design reply",
+      "provenance": "Referenced by existing odometry/learning worker reports and root full-read record"
+    },
+    {
+      "id": 230,
+      "author": "opus",
+      "kind": "acceptance correction",
+      "provenance": "Root reports full read and ack; this consolidator did not reread database",
+      "summary": "Withdraws wrong-endpoint down route and global-optimum claim; agrees to three stages and roles"
+    },
+    {
+      "id": 223,
+      "author": "dsh",
+      "kind": "M results",
+      "provenance": "Root full-read record and independent local evidence audit"
+    },
+    {
+      "id": 228,
+      "author": "dsh",
+      "kind": "followup reply",
+      "provenance": "Root reports full read and ack; detailed body not reconstructed here"
+    }
+  ],
+  "workflow_metrics": {
+    "wall_seconds": 4934.753291,
+    "wall_includes_interruption_until_approximately_0600Z": true,
+    "active_seconds": null,
+    "coordination_wait_seconds": null,
+    "known_worker_read_or_script_failures_lower_bound": 8,
+    "full_round_tool_failures": null,
+    "actual_model_calls": null,
+    "tokens": null,
+    "cost": null,
+    "review_and_archive_total_seconds": null,
+    "archive_verified": false,
+    "matched_workflow_baseline": null
+  },
+  "conclusion": "Partial technical progress; first-window candidate retained as experimental. M combined PB remains failed. 12 seconds not achieved. No net workflow speedup established."
+}
