@@ -1,0 +1,41 @@
+{
+  "scope": "sanitized aggregate workflow evidence only",
+  "scalar_runs": 94,
+  "scalar_pass": 49,
+  "csv_rows_hashed": 1032602,
+  "nominal_times": [
+    13.956,
+    14.501
+  ],
+  "prior_nominal_times": [
+    14.407,
+    14.903
+  ],
+  "stress_pass": 2,
+  "stress_total": 10,
+  "target_12_achieved": false,
+  "fixed_model": true,
+  "gate_mm": 55,
+  "stable_regression_pass": 8,
+  "stable_regression_total": 8,
+  "native_agents": 3,
+  "external_cli_calls": 0,
+  "fresh_opus_reply": true,
+  "late_external_reports_read": 2,
+  "straight_corner_regression_pass": 4,
+  "corrected_endpoint_runs": 2,
+  "endpoint_missing_mm": 220,
+  "prior_database_review_records": [
+    213,
+    214
+  ],
+  "final_pixel_captures": 2,
+  "superseded_pixel_captures": 0,
+  "local_site_verified": true,
+  "public_deployment": false,
+  "hardware_actions": 0,
+  "matched_workflow_baseline": null,
+  "usage": null,
+  "cost": null,
+  "raw_source_sessions_or_databases_uploaded": false
+}
