@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-25-novelai-onboarding",
+  "task_summary": "核实公开参考视频、NovelAI图片元数据解析网站及出图学习方法，并按用户新增授权尝试真实Opus协作。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; local studio HEAD 5b5fc366dbb197783077a992e314db2668f650b4; native Codex coordination + official Antigravity Opus CLI",
+  "started_at": "2026-10-25T15:32:43Z",
+  "measurement_cutoff_at": "2026-10-25T15:47:03Z",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "用公开证据解释解析网站与图片元数据，区分作者已公布信息和未公开画师串。",
+      "提供达到参考整体质量的学习与测试方向，明确原图、提示词和出图实测边界。",
+      "按用户授权实际尝试Opus协作，按真实返回报告结果。"
+    ],
+    "completed": [
+      "核实参考视频及同作者说明；视频没有提供完整提示词，作者说明保留画师串。",
+      "动态读取解析网站，确认其接收本地图片读取PNG info；官方项目和文档确认生成参数可嵌入图片。",
+      "原生Codex子代理独立核对官方模型/权重/UC/固定seed资料。",
+      "真实调用官方Antigravity CLI的Opus模型；模型列表查询成功，文本咨询因Individual quota reached无答复。",
+      "交付本地UTF-8首轮实验说明，含元数据解释、官网参数基线、两组未实测候选与固定seed对照方法；文件通过可读、非空及边界声明检查。"
+    ],
+    "remaining": [
+      "用户只有视频和解析网站，没有作者原始生成PNG；无法提取原作者画师串和完整prompt。",
+      "没有新生成或对比图片；参考同档质量与自拟测试方向未实测。",
+      "Opus没有返回任何意见，合作评审待额度恢复。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "原生Codex子代理",
+      "value": 2,
+      "unit": "agents",
+      "basis": "一个官方资料核查子代理和一个机械归档子代理；不是Opus/DeepSeek。"
+    },
+    {
+      "name": "真实Opus文本咨询",
+      "value": 1,
+      "unit": "calls",
+      "basis": "官方CLI一次--print返回RESOURCE_EXHAUSTED，响应为空；未重试或绕限。"
+    },
+    {
+      "name": "业务范围纠正",
+      "value": 1,
+      "unit": "events",
+      "basis": "用户澄清目标为整体质量后停止逐帧研究；不等同模型质量返工。"
+    },
+    {
+      "name": "新生成图片",
+      "value": 0,
+      "unit": "images",
+      "basis": "没有登录NovelAI或执行出图。"
+    },
+    {
+      "name": "实际tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "整轮父子模型没有同口径usage；不能用失败咨询单次服务端0 usage代替。"
+    },
+    {
+      "name": "实际费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "没有整轮账单；失败咨询的单次服务端用量与总费用分开。"
+    },
+    {
+      "name": "首次通过",
+      "value": null,
+      "unit": "runs",
+      "basis": "未通过完整质量验收，未计入通过分母。"
+    },
+    {
+      "name": "工具失败总数",
+      "value": null,
+      "unit": "calls",
+      "basis": "未完整计数；已知多类访问/依赖/响应异常，不能填0。"
+    },
+    {
+      "name": "复核与归档活跃时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未独立计纯活跃时间；归档墙钟区间和暂停另入05回执。"
+    },
+    {
+      "name": "独立资料核查子任务",
+      "value": 86,
+      "unit": "seconds",
+      "basis": "实际子任务区间15:33:25至15:34:51 UTC；7次functions.exec、8次内部工具，非耗时收益。"
+    }
+  ],
+  "observations": [
+    "用户新增真实Opus协作要求后暂停了初稿收尾，继续同一轮；未先上传旧cutoff报告。",
+    "原生子代理实际完成独立核查；真实Opus调用没有回复，二者明确分开，不冒称其他模型已审阅。",
+    "公开站点空正文后动态读取有效；B站直接读取、首次视频预览、默认网络权限、缺少PIL及Git目录所有权曾造成绕路，后续采用授权环境或已有平台能力。",
+    "本归档子代理查询工具元数据与分类摘要也有展开过多及截断；后续改为必要字段。",
+    "没有匹配质量基线，无法判断净提效；计入协调、等待和归档开销。"
+  ],
+  "recommendations": [
+    {
+      "id": "NOVELAI-RESEARCH-REF-SCOPE-20261025",
+      "action": "参考研究开始先区分整体质量学习与具体画面复刻，再决定是否逐帧取图；问题证据为本轮一次范围纠正，修改位置为研究入口。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "下一轮先记录参考目标，并核对是否避免无关逐帧工作。"
+    },
+    {
+      "id": "NOVELAI-RESEARCH-DYNAMIC-PAGE-20261025",
+      "action": "动态工具页返回空正文时只做一次浏览器渲染验证；问题证据为解析网站普通读取无有效正文，修改位置为网页核查步骤。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "下一轮记录首次正文读取和一次动态核查结果，不把空正文当无功能。"
+    },
+    {
+      "id": "NOVELAI-RESEARCH-BOUNDED-OUTPUT-20261025",
+      "action": "结构化API与分类上下文只提取需要字段；问题证据为多次大响应截断，修改位置为工具调用输出。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "下一轮检查必要证据是否完整且无需因截断重复读取。"
+    }
+  ],
+  "evidence": [
+    "公开解析工具：https://spell.novelai.dev/",
+    "官方元数据项目：https://github.com/NovelAI/novelai-image-metadata",
+    "公开参考视频：https://www.bilibili.com/video/BV1rYHx6AEKU/",
+    "本JSON的aggregate_evidence为协调者汇总的脱敏测量与核查结论；不包含原始聊天、请求、响应、图片、凭据或个人路径。",
+    "协调者核验本地交付：NovelAI-首轮实验.txt，6511 bytes，SHA-256 129fa40fc7c2d256e4991924f91a0ac471d20b35c84ac0cba140397891fcf8a0；只归档名称/哈希及验收项，不上传正文、提示词或路径。"
+  ],
+  "comparison": null,
+  "limits": [
+    "业务开始时间为首次记录的时钟观测；纯活跃时间、精确工具总数和费用未知。",
+    "参考视频画面不能提供被删除或未公开的原始生成参数；没有原始PNG不尝试假称提取。",
+    "Opus调用失败不代表已经获得Opus意见；CLI首次受限上下文状态也不代表真实账户未登录。",
+    "仅上传本轮脱敏报告；没有改工作流源码，没有上传原始业务提示词、预览、会话或数据库。",
+    "归档回读在测量截止之后另入05回执，本报告不预称已上传。"
+  ],
+  "aggregate_evidence": {
+    "source_project": "NOVELAI-RESEARCH",
+    "authorship": {
+      "coordinator": "codex",
+      "native_workers": [
+        "novelai_docs",
+        "workflow_archive"
+      ],
+      "opus_response_received": false,
+      "deepseek_dispatched": false
+    },
+    "docs_worker": {
+      "started_at": "2026-10-25T15:33:25Z",
+      "ended_at": "2026-10-25T15:34:51Z",
+      "wall_seconds": 86,
+      "functions_exec_calls": 7,
+      "internal_tool_calls": 8,
+      "internal_tool_breakdown": {
+        "web": 5,
+        "exec_command": 1,
+        "clock": 2
+      },
+      "coordination_messages": 1,
+      "tool_errors": 0,
+      "tokens": null,
+      "cost": null
+    },
+    "opus_attempt": {
+      "provider": "Antigravity official CLI",
+      "model": "claude-opus-5-5-medium",
+      "model_list_verified": true,
+      "existing_login_available": true,
+      "text_attempts": 1,
+      "exit_code": 3,
+      "status": "ERROR",
+      "error": "RESOURCE_EXHAUSTED: Individual quota reached",
+      "response_empty": true,
+      "request_usage_all_zero": true,
+      "total_round_usage": null,
+      "retried": false,
+      "changed_model_or_entry_to_bypass": false
+    },
+    "checks": {
+      "reference_metadata_verified": true,
+      "parser_dynamic_behavior_verified": true,
+      "original_generation_png_available": false,
+      "artist_string_extracted": false,
+      "full_author_prompt_extracted": false,
+      "generated_images": 0,
+      "novelai_login_performed": false,
+      "novelai_generation_credits_spent": 0,
+      "opus_review_received": false
+    },
+    "known_overhead": [
+      "Initial interpretation focused on a specific video frame; corrected to overall quality.",
+      "Direct Bilibili page read failed; first video-shot retrieval returned403.",
+      "Two default-permission download attempts were rejected, followed by successful approved escalation.",
+      "PIL unavailable; existing System.Drawing used.",
+      "Git dubious ownership encountered; no global safe.directory change.",
+      "Several oversized tool responses truncated; later calls filtered fields.",
+      "Opus model query initially had restricted local context; approved existing-user context revealed login and model availability."
+    ],
+    "deliverable": {
+      "filename": "NovelAI-首轮实验.txt",
+      "bytes": 6511,
+      "sha256": "129fa40fc7c2d256e4991924f91a0ac471d20b35c84ac0cba140397891fcf8a0",
+      "verification_source": "root coordinator actual local check",
+      "checks": {
+        "utf8_readable": true,
+        "nonempty": true,
+        "opus_limit_disclosed": true,
+        "unverified_generation_disclosed": true
+      },
+      "content_uploaded": false
+    },
+    "measurement": {
+      "started_at": "2026-10-25T15:32:43Z",
+      "cutoff_at": "2026-10-25T15:47:03Z",
+      "wall_seconds": 860,
+      "scope": "Includes rule reading, research, scope clarification, collaboration preparation and report coordination; not pure research time."
+    },
+    "archive_preparation": {
+      "first_clock_at": "2026-10-25T15:39:33Z",
+      "finalization_resumed_at": "2026-10-25T15:47:48Z",
+      "paused_while_business_work_continued": true,
+      "pure_active_seconds": null
+    }
+  }
+}
