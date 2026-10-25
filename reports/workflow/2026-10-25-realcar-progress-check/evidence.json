@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-25-realcar-progress-check",
+  "source_project": "CRAZY-CIRCUIT",
+  "scope": "Read-only progress reconciliation against saved hardware artifacts; no raw data exported.",
+  "sources": [
+    {
+      "name": "hwtest.hex",
+      "sha256": "90f1d2edec1dd54f64c1e92d06f71b30282defcc138c2eb71088bab96ca02c3d"
+    },
+    {
+      "name": "hwtest-com6-imu.bin",
+      "sha256": "f92ffdca8fbace0ca47294fef8737b4e349c0e3430e39a6f1522112535f76c81"
+    },
+    {
+      "name": "hwtest-tests-log.txt",
+      "sha256": "a790189c644dd5da3420a72dd9275b18889eb9ba7951ae626532819980dd116b"
+    }
+  ],
+  "checks": {
+    "artifact_hashes_match": true,
+    "current_handoff_full_body_verified": true,
+    "handoff_id": 345,
+    "recipient_acknowledged": false,
+    "hardware_log_status_rows_reviewed": 1583,
+    "latest_initialization_success_observed": true,
+    "recalibration_transition_observed": true,
+    "stale_diagnostic_value_explained_from_source": true,
+    "actual_lap_verified": false
+  },
+  "execution": {
+    "new_simulations": 0,
+    "hardware_commands": 0,
+    "firmware_source_edits": 0,
+    "native_subagents": 0,
+    "external_model_calls": 0,
+    "tokens": null,
+    "cost": null
+  },
+  "exclusions": [
+    "Raw serial logs",
+    "Project source",
+    "Personal paths",
+    "Credentials",
+    "Original conversations",
+    "Live databases"
+  ]
+}

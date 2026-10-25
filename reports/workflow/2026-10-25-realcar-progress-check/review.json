@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-25-realcar-progress-check",
+  "task_summary": "核对用户与 Opus 开始实车调试后的最新进度，纠正旧摘要与新硬件日志的状态差异。",
+  "workflow_version": "WORKFLOW_REVIEW + per-project TeamHub; read-only coordinator",
+  "started_at": "2026-10-25T14:30:03Z",
+  "measurement_cutoff_at": "2026-10-25T14:43:46.614704+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "核对最新交接、参数卡及实际保存日志；区分仿真、硬件单项与整车验收。",
+      "不干扰正在进行的串口、烧录和电机调试；以本人身份写回可回读交接。"
+    ],
+    "completed": [
+      "核对冻结仿真档及硬件测试固件的保存构建/烧录记录。",
+      "识别最新初始化与重新校零成功记录，结合源码解释旧失败字段为何残留。",
+      "标注一米标定、角度比例、无线和供电状态的证据缺口；交接 #345 全文回读一致。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "日志状态记录",
+      "value": 1583,
+      "unit": "records",
+      "basis": "已保存文件的状态行；不是新采集或实时板端读回。"
+    },
+    {
+      "name": "新仿真和硬件操作",
+      "value": 0,
+      "unit": "runs",
+      "basis": "本轮仅只读现存资料。"
+    },
+    {
+      "name": "原生子代理",
+      "value": 0,
+      "unit": "agents",
+      "basis": "未派发。"
+    },
+    {
+      "name": "外部模型调用",
+      "value": 0,
+      "unit": "calls",
+      "basis": "仅数据库交接；未假称对方已响应。"
+    },
+    {
+      "name": "实际 tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整同提供方 usage。"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "复核与归档活跃时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计时；首次时间观测至截止的墙钟包含读取、上下文压缩和报告准备，非纯工作时间。"
+    },
+    {
+      "name": "工具失败总数",
+      "value": null,
+      "unit": "calls",
+      "basis": "未做完整逐调用计数；已知一次宽搜索遇旧临时目录访问拒绝，无关任务不重试。"
+    },
+    {
+      "name": "源码返工",
+      "value": 0,
+      "unit": "changes",
+      "basis": "本轮未修改项目源代码。"
+    }
+  ],
+  "observations": [
+    "已有摘要日期较新不代表每段状态更新；最终结论采用更晚日志并核对字段赋值。",
+    "大搜索与一次提交响应展开过多，增加无效上下文；后续仅取必要字段。",
+    "协作仅为实际读 Opus/DSH 既有报告并写入自己的交接，未收到本轮新回复。",
+    "没有匹配质量基线，无法判断净提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-HW25-LATEST-EVIDENCE",
+      "action": "状态核对同时记录证据时间与字段有效性，发现旧摘要冲突写入当前交接。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一轮先查最新日志与前次交接，确认旧字段不再被当作当前故障。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-HW25-ACTION-LABELS",
+      "action": "实车标定日志增加动作与供电状态标签，诊断字段区分当前值和历史失败值。",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "由实际调车者提供对应校准动作的完整记录并确认；本轮不代改代码。"
+    }
+  ],
+  "evidence": [
+    "evidence.json: sanitized artifact hashes, aggregate checks and scope.",
+    "CRAZY-CIRCUIT handoff 345; existing handoffs 313 and 342."
+  ],
+  "comparison": null,
+  "limits": [
+    "开始时间为第一次已记录的时钟观测，此前短暂准备未计入。",
+    "没有占用串口或读回板端；没有重跑既有仿真或完整审核 Opus 最新路线功能。",
+    "硬件标定与实车跑圈仍由正在调车的用户及 Opus 继续，不能把本次状态核对通过当作整车通过。",
+    "归档回读在截止点之后单独登记；本报告本身不预称已上传。"
+  ]
+}
