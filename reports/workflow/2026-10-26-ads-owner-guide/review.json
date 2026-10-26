@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-26-ads-owner-guide",
+  "task_summary": "为 Owner 制作基于实际工程的监工、模块阅读、参数位置、ADS 构建调试、烧录与无线串口实操教程。",
+  "workflow_version": "WORKFLOW_REVIEW + per-project TeamHub; single coordinator",
+  "started_at": "2026-10-26T11:15:45Z",
+  "measurement_cutoff_at": "2026-10-26T11:36:13.149679+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "教程对应当前源码，明确基础工程、诊断程序与仿真候选区别。",
+      "串口、在线调参、参数持久化、烧录和断点调试分开说明；纠正旧手册配置冲突。",
+      "交付可离线打开的手册，校验代码节选、目录锚点和桌面/手机布局；不操作用户正在调试的硬件。"
+    ],
+    "completed": [
+      "生成 11 节中文实操手册，含模块地图、5 处原文代码、参数映射、操作流程、试验记录模板。",
+      "核对 21 份本地证据，发现旧端口速率、版本说明、候选默认参数和驱动引脚映射不能混用。",
+      "实际浏览器检查 1440/390 两个宽度，无页面异常和整页横溢出；锚点与代码节选校验通过。",
+      "本人交接 #347 完整回读一致；对方是否采用仍待其本人回复。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "本地证据指纹",
+      "value": 21,
+      "unit": "files",
+      "basis": "当前读取文件的 SHA256 记录在本地产物，未上传项目源文件。"
+    },
+    {
+      "name": "实际源码节选",
+      "value": 5,
+      "unit": "snippets",
+      "basis": "由相应文件行区间提取并转义，非伪造示例。"
+    },
+    {
+      "name": "浏览器视口检查",
+      "value": 2,
+      "unit": "viewports",
+      "basis": "1440x1000 与 390x844；同一次浏览器进程。"
+    },
+    {
+      "name": "新固件修改/烧录/串口访问",
+      "value": 0,
+      "unit": "actions",
+      "basis": "仅文档和现存资料核查。"
+    },
+    {
+      "name": "原生子代理/外部模型派发",
+      "value": 0,
+      "unit": "calls",
+      "basis": "本轮未派发。"
+    },
+    {
+      "name": "真实 tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整同提供方 usage。"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "协调/复核/归档活跃时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计时；墙钟包含资料核对、写作和渲染。"
+    },
+    {
+      "name": "工具失败总数",
+      "value": null,
+      "unit": "calls",
+      "basis": "未完整计数；路径过期和 Windows 通配符误用已通过精确路径检索纠正。"
+    }
+  ],
+  "observations": [
+    "新版摘要与老手册均需落到实际函数体；存在函数概览提及尚未集成的路线逻辑。",
+    "从车内固件与协议身份开始教学，比单独罗列 IDE 按钮更能解释本项目实际故障。",
+    "初期组合读取输出过长，部分被截断；后续收窄到文件和行区间。",
+    "没有同条件质量基线，不声称协作或本轮工具选择带来净提速。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-ADS26-VERSION-FIRST",
+      "action": "用户教程把程序身份、端口/协议、活动构建配置放在操作步骤前，并以函数体核对过时注释。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一轮调车资料更新时同时核源码、构建配置和串口协议，不以文件夹名字确认板上程序。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-ADS26-INTEGRATION-CHECK",
+      "action": "实车集成前由当前操作者裁决实际驱动引脚与标定，并核对参数保存和命令应用行为。",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "在匹配硬件和程序的下一轮实测记录中确认；本轮不代改正在调试的工程。"
+    }
+  ],
+  "evidence": [
+    "evidence.json: aggregate source checks, artifact hash, browser results and verified handoff."
+  ],
+  "comparison": null,
+  "limits": [
+    "教程本轮未逐按钮操作 ADS，也未新编译、烧录或访问硬件。",
+    "已保存的现场读屏结果来自 Opus 记录，不是本轮独立实测。",
+    "只做阅读范围核对，未完成整个控制系统的独立审查。",
+    "私人归档在报告截止后另记回读凭据，不上传教程中的项目代码和本地数据。"
+  ]
+}

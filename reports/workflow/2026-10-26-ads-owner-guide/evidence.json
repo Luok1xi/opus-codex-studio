@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-26-ads-owner-guide",
+  "artifact_sha256": "a76ae16a4eed967dbbc2d4214f2388bfb27ff0a0cf6454b869b92ee1c37668ec",
+  "checks": {
+    "source_excerpts": 5,
+    "sources_hashed": 21,
+    "unique_ids": 11,
+    "local_anchor_links_valid": true,
+    "offline_no_scripts": true,
+    "firmware_edited": false,
+    "hardware_accessed": false,
+    "ads_build_or_flash": false
+  },
+  "browser": {
+    "desktop": {
+      "width": 1440,
+      "scroll": 1440,
+      "sections": 11,
+      "codeSnippets": 6
+    },
+    "mobile": {
+      "width": 390,
+      "scroll": 390
+    },
+    "errors": [],
+    "passed": true
+  },
+  "handoff": {
+    "project": "CRAZY-CIRCUIT",
+    "id": 347,
+    "full_body_verified": true,
+    "recipient_acknowledged": false
+  },
+  "public_primary_sources": [
+    "https://www.infineon.com/assets/row/public/documents/10/68/infineon-aurix-getting-started-with-aurix-development-studio-gettingstarted-en.pdf?fileId=8ac78c8c8afe5bd0018b47ee9e7101e1",
+    "https://community.infineon.com/t5/Knowledge-Base-Articles/AURIX-MCU-Free-tools-for-evaluation-boards/ta-p/356490",
+    "https://www.pls-mc.com/downloads/datasheets/UDE_Memtool_Manual.pdf"
+  ],
+  "privacy": "Only aggregate workflow checks and artifact hash; tutorial, source excerpts, raw hardware logs, databases and personal paths stay local."
+}
