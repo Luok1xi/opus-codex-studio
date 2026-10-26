@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-10-25-novelai-onboarding",
-  "task_summary": "NovelAI同轮v10简报：用户要求在指定平台局部换人，协调者误用内置生图预览，造成平台不符的返工；返回NovelAI后未完成新生成。用户随后接管操作，交付范围收窄为未实测的局部重绘提示词，所有GUI操作已停止。",
-  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 10",
+  "task_summary": "NovelAI同轮v11简报：只读核查公开工具的底图导入、元数据读取和画师串卡片整理能力。公开说明与关键代码已交叉核对；可保存调用配方，不代表可从任意图片恢复原配方或自动优化组合。本地版本及账号API权限未验证，没有上传图片或生成消费。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 11",
   "started_at": "2026-10-25T15:32:43Z",
-  "measurement_cutoff_at": "2026-10-26T10:29:56Z",
+  "measurement_cutoff_at": "2026-10-26T15:12:18Z",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -44,9 +44,11 @@
       "原生子代理复核了两个单槽替换方向，保留原权重和其余原文参数；本阶段没有新的现有桌面Opus回复，草稿未动。",
       "已交付原始元数据、原样基线和2份完整修改稿；核验逆替换后全部生成参数与原文一致，两处prompt字段同步，UC与角色栏保留，原签名不复用。两份修改稿均明确标记未生成。",
       "v9：底图被用户否定后，基线和2份改稿统一标记撤回，未改来源元数据；两项原生子任务核对4个风格锚点，其中3个在既有V5例图库命中且协调者查看样例，另1个仅有公开作者映射。新搜结果未满足视觉与完整配方双重门槛，强候选记0；无GUI、无生成、无新Opus回复。",
-      "v10：记录并纠正平台误解，用户拒绝内置生图替代后回到NovelAI，核对剩余免费次数26/30；未生成新图。一次上传控件调用结果丢失，选择框状态未确认。用户要求自行操作后已停止GUI，当前仅交付未实测局部重绘提示词。"
+      "v10：记录并纠正平台误解，用户拒绝内置生图替代后回到NovelAI，核对剩余免费次数26/30；未生成新图。一次上传控件调用结果丢失，选择框状态未确认。用户要求自行操作后已停止GUI，当前仅交付未实测局部重绘提示词。",
+      "v11：协调者核对用户指定公开仓库说明与NovelAI官方图生图说明，1项原生子任务独立核对关键代码；确认底图导入、现有元数据解析，以及画师串文本卡片保存、封面上传和通配符调用能力。随机画师插件公开说明已核对；本阶段未启动本地工具、上传图片、操作窗口或执行生成。"
     ],
     "remaining": [
+      "v11公开代码能力核查已完成；本地下载版本与账号API权限未验证。缺失元数据不能还原原配方，卡片保存调用不等于自动验证标签、优化权重或找出最优画师组合。",
       "指定平台的局部换人未完成，不能把其他平台预览或提示词交付称为NovelAI编辑成功。",
       "一次图生图上传控件调用输出丢失，选择框是否打开未确认；未盲目重复操作，用户已接管GUI。",
       "局部重绘提示词未在NovelAI实测，用户审美仍未验收；此前已撤回底图和改稿保持撤回。",
@@ -280,7 +282,8 @@
     "用户转向完整公开配方研究后，先辨别文生图与图生图请求类型，再保留角色提示词、UC和参数；只换一个画师槽位以限制变量。",
     "本阶段独立复核来自原生子代理，不能冒称已有Opus审核；继续保留其草稿和停止GUI的用户边界。",
     "v9纠偏：先让底图达到视觉门槛，再制作成套修改稿。文档和参数一致性检查不代表画质验收，目录例图仅作标签证据；一件完整参数页的图片被否定，未计强候选，未为凑数降低标准。",
-    "v10：用户指定的生图平台属于任务要求，内置生图预览不能替代指定平台结果；该误解导致返工。上传控件调用结果未知时不宣称完成，用户接管后停止GUI。当前只交付未实测提示词，时间、费用和用量缺少完整计量，继续记null。"
+    "v10：用户指定的生图平台属于任务要求，内置生图预览不能替代指定平台结果；该误解导致返工。上传控件调用结果未知时不宣称完成，用户接管后停止GUI。当前只交付未实测提示词，时间、费用和用量缺少完整计量，继续记null。",
+    "v11只读答疑将公开实现能力与本地可用状态分开：元数据解析依赖图片保留信息，标签反推不等于恢复原画师串；文本保存、卡片和随机画师插件适合整理与对照试验，不能证明最优组合。原生代码复核不是新的Opus咨询。"
   ],
   "recommendations": [
     {
@@ -332,7 +335,8 @@
     "以下aggregate_evidence由Codex根据真实文件与运行结果汇总；没有上传原始素材。",
     "本阶段证据索引：首次生成完成页、用户质量否定、现有标签目录核对、初筛与修正版原作研究、保留Opus草稿的用户边界；原文件均仅留本地。",
     "本书目阶段证据索引：出版社及作者公开书目、原生子代理8位核查回执和协调者20位候选整理。具体名单与业务内容仅留本地。",
-    "v8本地证据索引：两个画师映射子任务回执、一次免费成图与用户否定、公开配方请求类型核查、单槽替换独立复核。截图、名单、原图和提示词原文均不上传。"
+    "v8本地证据索引：两个画师映射子任务回执、一次免费成图与用户否定、公开配方请求类型核查、单槽替换独立复核。截图、名单、原图和提示词原文均不上传。",
+    "v11公开能力证据：https://github.com/zhulinyv/Auto-NovelAI-Refactor 的说明及元数据/通配符关键代码，https://github.com/zhulinyv/anr_plugin_random_artists 的插件说明；协调者另核对NovelAI官方图生图说明。仅记录聚合结论。"
   ],
   "comparison": null,
   "limits": [
@@ -350,7 +354,7 @@
     "source_project": "NOVELAI-RESEARCH",
     "coordinator": "codex",
     "same_round_continuation": true,
-    "previous_archive_commit": "e1906ec3448513c87684792d321e4059671c7ca1",
+    "previous_archive_commit": "5f5f96872fad9cefd9f30820cfe2fe12d4112dce",
     "opus": {
       "actual_desktop_notes_received": true,
       "existing_assets_reused": true,
@@ -469,8 +473,8 @@
     ],
     "measurement": {
       "started_at": "2026-10-25T15:32:43Z",
-      "cutoff_at": "2026-10-26T10:29:56Z",
-      "wall_seconds": 68233,
+      "cutoff_at": "2026-10-26T15:12:18Z",
+      "wall_seconds": 85175,
       "active_seconds": null,
       "embedding_seconds": null,
       "note": "Same round includes overnight pause, quota wait, user communication and archive intervals. Wall time is not active work time; active duration and total usage unavailable."
@@ -541,7 +545,7 @@
       "native_archive_agents": 1,
       "business_work_continues": true,
       "cutoff_excludes_this_archive_activity": true,
-      "current_pass": 10,
+      "current_pass": 11,
       "scope_note": "Same archive worker; no recursive review round."
     },
     "artbook_continuation": {
@@ -613,6 +617,31 @@
       "novelai_replacement_completed": false,
       "actual_opus_consultation": false,
       "actual_active_seconds": null,
+      "actual_cost": null
+    },
+    "tool_capability_continuation": {
+      "started_at": "2026-10-26T15:07:30Z",
+      "read_only_public_source_review_completed": true,
+      "native_code_review_subtasks": 1,
+      "official_image_to_image_documentation_checked": true,
+      "base_image_import_supported_in_documented_tools": true,
+      "metadata_container_reading_code_checked": true,
+      "missing_metadata_original_recipe_recovery_supported": false,
+      "verbatim_prompt_card_save_and_reference_code_checked": true,
+      "card_cover_upload_code_checked": true,
+      "random_artist_plugin_documentation_checked": true,
+      "automatic_tag_validation_or_optimal_mix_claimed": false,
+      "local_downloaded_version_verified": false,
+      "account_api_access_verified": false,
+      "local_tool_started_or_modified": false,
+      "credentials_read": false,
+      "user_images_uploaded": 0,
+      "gui_operations": 0,
+      "new_generations": 0,
+      "generation_credits_spent": 0,
+      "new_opus_reply_received": false,
+      "actual_active_seconds": null,
+      "actual_usage": null,
       "actual_cost": null
     }
   }
