@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-10-25-novelai-onboarding",
-  "task_summary": "NovelAI同轮v11简报：只读核查公开工具的底图导入、元数据读取和画师串卡片整理能力。公开说明与关键代码已交叉核对；可保存调用配方，不代表可从任意图片恢复原配方或自动优化组合。本地版本及账号API权限未验证，没有上传图片或生成消费。 v12补记：用户指出只讲功能而漏交画师串后，已直接补交其选定四位画师的等权测试组合与放置方法；未实测，不作为原图元数据或优化结果。 v13补记：用户指出种子、镜头与叙事光影不完整后，补充任意固定测试种子及近景互动与光照描述；区分局部换人与镜头重构，尚未实测。 v14补记：核对用户所问画师简称与单标签拼写，区分画师标签和发布者混合配方；当前模型效果未实测。",
-  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 14",
+  "task_summary": "NovelAI同轮v11简报：只读核查公开工具的底图导入、元数据读取和画师串卡片整理能力。公开说明与关键代码已交叉核对；可保存调用配方，不代表可从任意图片恢复原配方或自动优化组合。本地版本及账号API权限未验证，没有上传图片或生成消费。 v12补记：用户指出只讲功能而漏交画师串后，已直接补交其选定四位画师的等权测试组合与放置方法；未实测，不作为原图元数据或优化结果。 v13补记：用户指出种子、镜头与叙事光影不完整后，补充任意固定测试种子及近景互动与光照描述；区分局部换人与镜头重构，尚未实测。 v14补记：核对用户所问画师简称与单标签拼写，区分画师标签和发布者混合配方；当前模型效果未实测。 v15新增可验收成果：复用用户已下载的整合包，以隐藏控制台完成本地启动；HTTP与浏览器可见状态均通过，账号/API和生图未验证。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 15",
   "started_at": "2026-10-25T15:32:43Z",
-  "measurement_cutoff_at": "2026-10-26T15:37:16Z",
+  "measurement_cutoff_at": "2026-10-26T15:46:47Z",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -48,9 +48,11 @@
       "v11：协调者核对用户指定公开仓库说明与NovelAI官方图生图说明，1项原生子任务独立核对关键代码；确认底图导入、现有元数据解析，以及画师串文本卡片保存、封面上传和通配符调用能力。随机画师插件公开说明已核对；本阶段未启动本地工具、上传图片、操作窗口或执行生成。",
       "v12遗漏补正：核对既有四位画师标签记录及官方权重语法后，补交等权测试串，说明置于正向提示词前部并接原有场景词。该组合由用户选定，尚未生成验证，不冒称原图配方或已优化权重；本阶段未操作窗口。",
       "v13遗漏补正：承认旧稿仅含基础侧光与整理领结动作，核对官方种子原则后，补充任意固定测试种子、双人近景、视线与暂停动作，以及暖主光、弱冷补光和暗背景的设计说明。明确该种子并非原图种子，局部换人沿用底图镜头，镜头重构需裁切或整图重绘；1项原生子任务检查构图矛盾，无Opus咨询、生成、上传或窗口操作，未实测且不保证画质。",
-      "v14术语答疑：公开核对作者本人中文名、教程原配方及公开画师列表，交付对应单标签；明确混合串依具体发布配方，不存在由本次证据证明的唯一固定组合，当前模型效果未实测。一次网页调用在派发前中止后重试成功，两个直接来源不可访问，未绕过或反复重试；无窗口操作、生成或用户图片上传。"
+      "v14术语答疑：公开核对作者本人中文名、教程原配方及公开画师列表，交付对应单标签；明确混合串依具体发布配方，不存在由本次证据证明的唯一固定组合，当前模型效果未实测。一次网页调用在派发前中止后重试成功，两个直接来源不可访问，未绕过或反复重试；无窗口操作、生成或用户图片上传。",
+      "v15本地启动：核对已解压整合包2.2.0-beta.5的入口、内置解释器、仅本机监听及默认关闭共享后，以隐藏控制台启动既有入口，无源码修改。HTTP 200和页面标题匹配，独立只读桌面核查确认浏览器可见，随机画风插件预热完成；可选自动打码模型缺失未额外下载。本地启动目标完成，未读取密钥、操作Opus或生图；账号/API仍未测。固定共同种子进行画师对照的建议尚未执行，不能挑某画师最优种子后称公平，也不能以抽卡或局部修复证明稳定质量。"
     ],
     "remaining": [
+      "v15本地启动已完成；账号/API权限、实际生图和稳定质量未验证，抽卡流程尚未执行。",
       "v11公开代码能力核查已完成；本地下载版本与账号API权限未验证。缺失元数据不能还原原配方，卡片保存调用不等于自动验证标签、优化权重或找出最优画师组合。",
       "指定平台的局部换人未完成，不能把其他平台预览或提示词交付称为NovelAI编辑成功。",
       "一次图生图上传控件调用输出丢失，选择框是否打开未确认；未盲目重复操作，用户已接管GUI。",
@@ -359,7 +361,7 @@
     "source_project": "NOVELAI-RESEARCH",
     "coordinator": "codex",
     "same_round_continuation": true,
-    "previous_archive_commit": "758f620937e9d75499d41e5b80930af388442a02",
+    "previous_archive_commit": "35df8f1ca993cd8540322a751443e6f438f5aec7",
     "opus": {
       "actual_desktop_notes_received": true,
       "existing_assets_reused": true,
@@ -478,8 +480,8 @@
     ],
     "measurement": {
       "started_at": "2026-10-25T15:32:43Z",
-      "cutoff_at": "2026-10-26T15:37:16Z",
-      "wall_seconds": 86673.0,
+      "cutoff_at": "2026-10-26T15:46:47Z",
+      "wall_seconds": 87244.0,
       "active_seconds": null,
       "embedding_seconds": null,
       "note": "Same round includes overnight pause, quota wait, user communication and archive intervals. Wall time is not active work time; active duration and total usage unavailable."
@@ -550,7 +552,7 @@
       "native_archive_agents": 1,
       "business_work_continues": true,
       "cutoff_excludes_this_archive_activity": true,
-      "current_pass": 14,
+      "current_pass": 15,
       "scope_note": "Same archive worker; no recursive review round."
     },
     "artbook_continuation": {
@@ -675,6 +677,33 @@
       "new_generations": 0,
       "user_images_uploaded": 0,
       "gui_operations": 0,
+      "actual_usage": null,
+      "actual_cost": null,
+      "actual_active_seconds": null
+    },
+    "local_tool_launch_continuation": {
+      "existing_download_reused": true,
+      "local_version_verified": "2.2.0-beta.5",
+      "entrypoint_and_bundled_interpreter_checked": true,
+      "loopback_only_listening": true,
+      "share_default_false": true,
+      "settings_or_dotenv_present_before_start": false,
+      "existing_launcher_started_with_hidden_console": true,
+      "source_code_modified": false,
+      "http_status": 200,
+      "page_title_matches": true,
+      "independent_read_only_desktop_visibility_check_passed": true,
+      "random_artist_plugin_warmup_completed": true,
+      "optional_masking_model_missing": true,
+      "optional_model_downloaded": false,
+      "local_launch_goal_completed": true,
+      "credentials_read": false,
+      "opus_window_operated": false,
+      "account_api_access_verified": false,
+      "generation_tested": false,
+      "new_generations": 0,
+      "paired_seed_comparison_plan_executed": false,
+      "stable_quality_claimed": false,
       "actual_usage": null,
       "actual_cost": null,
       "actual_active_seconds": null
