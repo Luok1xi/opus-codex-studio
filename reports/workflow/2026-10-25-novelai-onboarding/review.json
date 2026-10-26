@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-10-25-novelai-onboarding",
-  "task_summary": "NovelAI同轮v11简报：只读核查公开工具的底图导入、元数据读取和画师串卡片整理能力。公开说明与关键代码已交叉核对；可保存调用配方，不代表可从任意图片恢复原配方或自动优化组合。本地版本及账号API权限未验证，没有上传图片或生成消费。 v12补记：用户指出只讲功能而漏交画师串后，已直接补交其选定四位画师的等权测试组合与放置方法；未实测，不作为原图元数据或优化结果。",
-  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 12",
+  "task_summary": "NovelAI同轮v11简报：只读核查公开工具的底图导入、元数据读取和画师串卡片整理能力。公开说明与关键代码已交叉核对；可保存调用配方，不代表可从任意图片恢复原配方或自动优化组合。本地版本及账号API权限未验证，没有上传图片或生成消费。 v12补记：用户指出只讲功能而漏交画师串后，已直接补交其选定四位画师的等权测试组合与放置方法；未实测，不作为原图元数据或优化结果。 v13补记：用户指出种子、镜头与叙事光影不完整后，补充任意固定测试种子及近景互动与光照描述；区分局部换人与镜头重构，尚未实测。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 13",
   "started_at": "2026-10-25T15:32:43Z",
-  "measurement_cutoff_at": "2026-10-26T15:22:56Z",
+  "measurement_cutoff_at": "2026-10-26T15:30:42Z",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -46,7 +46,8 @@
       "v9：底图被用户否定后，基线和2份改稿统一标记撤回，未改来源元数据；两项原生子任务核对4个风格锚点，其中3个在既有V5例图库命中且协调者查看样例，另1个仅有公开作者映射。新搜结果未满足视觉与完整配方双重门槛，强候选记0；无GUI、无生成、无新Opus回复。",
       "v10：记录并纠正平台误解，用户拒绝内置生图替代后回到NovelAI，核对剩余免费次数26/30；未生成新图。一次上传控件调用结果丢失，选择框状态未确认。用户要求自行操作后已停止GUI，当前仅交付未实测局部重绘提示词。",
       "v11：协调者核对用户指定公开仓库说明与NovelAI官方图生图说明，1项原生子任务独立核对关键代码；确认底图导入、现有元数据解析，以及画师串文本卡片保存、封面上传和通配符调用能力。随机画师插件公开说明已核对；本阶段未启动本地工具、上传图片、操作窗口或执行生成。",
-      "v12遗漏补正：核对既有四位画师标签记录及官方权重语法后，补交等权测试串，说明置于正向提示词前部并接原有场景词。该组合由用户选定，尚未生成验证，不冒称原图配方或已优化权重；本阶段未操作窗口。"
+      "v12遗漏补正：核对既有四位画师标签记录及官方权重语法后，补交等权测试串，说明置于正向提示词前部并接原有场景词。该组合由用户选定，尚未生成验证，不冒称原图配方或已优化权重；本阶段未操作窗口。",
+      "v13遗漏补正：承认旧稿仅含基础侧光与整理领结动作，核对官方种子原则后，补充任意固定测试种子、双人近景、视线与暂停动作，以及暖主光、弱冷补光和暗背景的设计说明。明确该种子并非原图种子，局部换人沿用底图镜头，镜头重构需裁切或整图重绘；1项原生子任务检查构图矛盾，无Opus咨询、生成、上传或窗口操作，未实测且不保证画质。"
     ],
     "remaining": [
       "v11公开代码能力核查已完成；本地下载版本与账号API权限未验证。缺失元数据不能还原原配方，卡片保存调用不等于自动验证标签、优化权重或找出最优画师组合。",
@@ -337,7 +338,8 @@
     "本阶段证据索引：首次生成完成页、用户质量否定、现有标签目录核对、初筛与修正版原作研究、保留Opus草稿的用户边界；原文件均仅留本地。",
     "本书目阶段证据索引：出版社及作者公开书目、原生子代理8位核查回执和协调者20位候选整理。具体名单与业务内容仅留本地。",
     "v8本地证据索引：两个画师映射子任务回执、一次免费成图与用户否定、公开配方请求类型核查、单槽替换独立复核。截图、名单、原图和提示词原文均不上传。",
-    "v11公开能力证据：https://github.com/zhulinyv/Auto-NovelAI-Refactor 的说明及元数据/通配符关键代码，https://github.com/zhulinyv/anr_plugin_random_artists 的插件说明；协调者另核对NovelAI官方图生图说明。仅记录聚合结论。"
+    "v11公开能力证据：https://github.com/zhulinyv/Auto-NovelAI-Refactor 的说明及元数据/通配符关键代码，https://github.com/zhulinyv/anr_plugin_random_artists 的插件说明；协调者另核对NovelAI官方图生图说明。仅记录聚合结论。",
+    "v13种子原则核查：https://docs.novelai.net/en/image/seed/ ；仅归档设计补正与验证边界，不上传完整提示词。"
   ],
   "comparison": null,
   "limits": [
@@ -355,7 +357,7 @@
     "source_project": "NOVELAI-RESEARCH",
     "coordinator": "codex",
     "same_round_continuation": true,
-    "previous_archive_commit": "3af0dd632452081e75b95d333c261370c0a88954",
+    "previous_archive_commit": "278e6b54f18febdc3bd91ccbf53acff12f5e26c3",
     "opus": {
       "actual_desktop_notes_received": true,
       "existing_assets_reused": true,
@@ -474,8 +476,8 @@
     ],
     "measurement": {
       "started_at": "2026-10-25T15:32:43Z",
-      "cutoff_at": "2026-10-26T15:22:56Z",
-      "wall_seconds": 85813.0,
+      "cutoff_at": "2026-10-26T15:30:42Z",
+      "wall_seconds": 86279.0,
       "active_seconds": null,
       "embedding_seconds": null,
       "note": "Same round includes overnight pause, quota wait, user communication and archive intervals. Wall time is not active work time; active duration and total usage unavailable."
@@ -546,7 +548,7 @@
       "native_archive_agents": 1,
       "business_work_continues": true,
       "cutoff_excludes_this_archive_activity": true,
-      "current_pass": 12,
+      "current_pass": 13,
       "scope_note": "Same archive worker; no recursive review round."
     },
     "artbook_continuation": {
@@ -646,6 +648,21 @@
       "actual_cost": null,
       "omitted_prompt_delivered": true,
       "user_selected_equal_weight_mix_tested": false
+    },
+    "composition_completion_continuation": {
+      "official_seed_guidance_checked": true,
+      "arbitrary_test_seed_distinguished_from_source_seed": true,
+      "camera_gaze_action_and_lighting_description_completed": true,
+      "local_replacement_and_camera_reconstruction_distinguished": true,
+      "native_composition_review_subtasks": 1,
+      "tested": false,
+      "new_opus_reply_received": false,
+      "new_generations": 0,
+      "user_images_uploaded": 0,
+      "gui_operations": 0,
+      "actual_usage": null,
+      "actual_cost": null,
+      "actual_active_seconds": null
     }
   }
 }
