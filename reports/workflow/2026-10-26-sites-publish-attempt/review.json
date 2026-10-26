@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-26-sites-publish-attempt",
+  "task_summary": "Publish an existing selected Site; blocked before deployment because no saved version exists and source preparation failed.",
+  "workflow_version": "Sites 1.1.2; WORKFLOW_REVIEW and WORKFLOW_DATABASE",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-10-26T19:21:19+08:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Deployment succeeds with returned production URL"
+    ],
+    "completed": [
+      "Verified selected Site identity and public audience",
+      "Confirmed saved-version list empty",
+      "Diagnosed local child-process permission and directory ownership errors"
+    ],
+    "remaining": [
+      "Recover original source",
+      "Package, save and deploy Site"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "wall_time",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No exact start timestamp recorded"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Billing unavailable"
+    },
+    {
+      "name": "source_helper_failures",
+      "value": 4,
+      "unit": "attempts",
+      "basis": "Four observed helper exits with code 1"
+    },
+    {
+      "name": "delegated_agents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No delegation"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Review and task diagnostics interleaved; no isolated timer"
+    }
+  ],
+  "observations": [
+    "Initial discovery returned excessive metadata; use exact tool-name filters.",
+    "Two local setup defects diagnosed; after process-scoped repair official helper still returned a generic failure.",
+    "No application edits or deployment writes; no speedup claim."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Sites get_site: latest_version_number=0 and current_live_url=null.",
+    "Sites list_site_versions: items empty.",
+    "Official site-workflow helper: source preparation failed; local checkout has no source files.",
+    "Node child spawn probe: EPERM; elevated Git probe: directory ownership mismatch."
+  ],
+  "comparison": null,
+  "limits": [
+    "Remote source absence not proven; helper failure has generic diagnostics.",
+    "Browser and application functionality untested.",
+    "Database and archive receipts tracked separately."
+  ]
+}
