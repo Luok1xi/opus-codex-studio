@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-26-ads-empty-workspace",
+  "checks": {
+    "running_ads_data_points_to_source_directory": true,
+    "wrong_workspace_registered_projects": 0,
+    "correct_workspace_registered_projects": 1,
+    "project_location_matches_existing_source": true,
+    "source_entry_exists": true
+  },
+  "hardware_actions": 0,
+  "source_changes": 0,
+  "ui_actions": 0,
+  "scope": "Read-only diagnosis; workspace switch not executed or observed.",
+  "raw_process_data_uploaded": false
+}

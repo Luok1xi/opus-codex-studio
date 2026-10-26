@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-26-ads-empty-workspace",
+  "task_summary": "解释 ADS 工作区空白并给出准确切换路径。",
+  "workflow_version": "WORKFLOW_REVIEW + TeamHub; bounded local diagnosis",
+  "started_at": "2026-10-26T11:49:41Z",
+  "measurement_cutoff_at": "2026-10-26T11:51:44.491107+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "用实际启动参数和工程登记区分选错工作区与源码丢失。"
+    ],
+    "completed": [
+      "确认 ADS 把源码目录作为工作区；该目录没有登记工程。",
+      "正确工作区已登记目标工程，工程位置指向现存源码；给出切换步骤。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "工作区对照",
+      "value": 2,
+      "unit": "directories",
+      "basis": "实际检查错误与正确工作区的工程登记。"
+    },
+    {
+      "name": "首次进程读取被拒",
+      "value": 1,
+      "unit": "calls",
+      "basis": "普通进程查询权限不足；一次获准只读查询后取得启动参数。"
+    },
+    {
+      "name": "硬件/源码/界面操作",
+      "value": 0,
+      "unit": "actions",
+      "basis": "只读诊断，无变更。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整 usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "复核与归档活跃时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计时。"
+    }
+  ],
+  "observations": [
+    "工作区目录与工程源码目录容易混淆；已有正确工程无需重新导入。",
+    "无同条件基线，不宣称提效；不需要模型协作或新工具。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-ADS26-WORKSPACE-PATH",
+      "action": "说明 ADS 入口时同时标注工作区和源码目录，并先核进程 -data 参数。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一次空工作区问题优先对照启动目录与已登记工程。"
+    }
+  ],
+  "evidence": [
+    "evidence.json: sanitized process/path classification and workspace counts."
+  ],
+  "comparison": null,
+  "limits": [
+    "未代用户切换工作区，未观察切换后的界面。",
+    "未修改或删除误建工作区元数据；源代码仍在。"
+  ]
+}
