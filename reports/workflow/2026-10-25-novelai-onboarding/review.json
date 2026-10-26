@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-10-25-novelai-onboarding",
-  "task_summary": "NovelAI整体画质与提示词研究；同一目标续作接上用户现有桌面Opus，复用其资料完成本地画风检索、候选与初学者对照方案。",
-  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus handoff, Codex local computation; supersedes earlier CLI-only status",
+  "task_summary": "NovelAI同目标续作：与用户指定桌面Opus完成视觉复核，核实公开成图元数据和画师片段，交付原图与可复制对照；新生成尚待实际登录会话定位。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 3",
   "started_at": "2026-10-25T15:32:43Z",
-  "measurement_cutoff_at": "2026-10-25T16:56:11Z",
+  "measurement_cutoff_at": "2026-10-26T05:42:54Z",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -18,12 +18,17 @@
       "64个图包与模型SHA256通过，复用已有下载；预处理与torchvision对照及模型数值检查通过。",
       "跑完25张目标和12779张例图特征，完成12703个标签的排序、146查询自检及裁剪敏感性分析。",
       "人工查看候选例图，交付两个未实测组合、完整提示词、固定参数对照步骤和原始分析JSON。",
-      "对方原稿中两个标签被误作拼写替换、参考图使用被过度推断等问题已反馈；Codex结果已写入共享交接。"
+      "对方原稿中两个标签被误作拼写替换、参考图使用被过度推断等问题已反馈；Codex结果已写入共享交接。",
+      "收到Opus恢复后的研究和两次有限续问回复；其视觉复核撤掉背景相似但人物风格不合适的候选。",
+      "从五件公开作品的六张PNG读取隐藏元数据，对prompt/seed/steps/scale/sampler/v4_prompt逐项核对；部分仅网页空白压缩差异。",
+      "交付两张公开实例的字节一致副本、原样画师片段及单独标注的整理版、四组两种子的完整可复制对照。",
+      "官网High/Medium现行规则已核实；对方浏览器访客状态与用户已登录声明分开记录，不用访客价格冒充账户价格。",
+      "确认当前评分脚本已经修复横图裁剪；撤回基于旧副本作出的错误警告。步数配对检查发现只有13名画师两种步数都有且种子不同，不能隔离步数效应。"
     ],
     "remaining": [
-      "没有作者含完整参数的原文件，未提取真实原串。",
-      "没有NovelAI新出图或Anlas消耗，候选混合效果及参考质量目标尚未实测。",
-      "桌面Opus后续触发独立的5小时限额；界面显示自动恢复且反馈仍排队，新排名未获其最终复核。"
+      "没有视频作者带完整参数的原文件；交付的公开配方来源于其他作者，不声称还原秘密串。",
+      "用户已确认能生图，但实际登录浏览器/设备尚未定位；没有新生成、没有Anlas消耗，混合效果及参考质量目标仍待实测。",
+      "公开PNG像素尺寸与记录的生成尺寸存在二倍差；没有数字签名验证，不能保证未放大或后期。"
     ]
   },
   "metrics": [
@@ -41,9 +46,9 @@
     },
     {
       "name": "已读取真实Opus研究交接",
-      "value": 2,
+      "value": 4,
       "unit": "files",
-      "basis": "现有桌面任务写回两份笔记；不是新调用返回。"
+      "basis": "四份不同交接文件已实际读取，包含最新实验与证据复核；不等于四次模型调用。"
     },
     {
       "name": "已校验例图包",
@@ -104,6 +109,24 @@
       "value": null,
       "unit": "seconds",
       "basis": "与业务计算交叠，归档结束另记回执，不伪造纯活跃值。"
+    },
+    {
+      "name": "已核对公开PNG",
+      "value": 6,
+      "unit": "images",
+      "basis": "五件公开作品，六张PNG的六类生成字段通过原图/公开记录比对。"
+    },
+    {
+      "name": "本次明确桌面续问",
+      "value": 2,
+      "unit": "messages",
+      "basis": "窗口输入后核对发送结果，均收到文件回复；此前历史总调用数未知。"
+    },
+    {
+      "name": "已准备生成对照",
+      "value": 8,
+      "unit": "images",
+      "basis": "四组乘两个种子，仅方案，实际生成数仍0。"
     }
   ],
   "observations": [
@@ -111,7 +134,11 @@
     "真实桌面Opus文件回执与下载成果已验证，构成实际协作；Codex新反馈排队不等于Opus已阅读或认可新排名。",
     "工作目录与解释器未在最初交接中列明，造成进程/目录查找与UI读取开销；从当前任务工具记录找到实际路径后复用了所有大文件。",
     "原始相似度与中心化均测试，146查询Top10分别约37.0%/38.4%；只能筛候选。风格和内容得分高度相关，已限制结论。",
-    "没有匹配质量基线，不宣称协作提速。旧轮次继续更新为同一round_id，不为进度追问另开一轮。"
+    "没有匹配质量基线，不宣称协作提速。旧轮次继续更新为同一round_id，不为进度追问另开一轮。",
+    "新增续作复用了原库，先找真实公开混合串与原图；与单画师检索相比得到更直接的可追溯配方证据，但尚无新生成效果对照。",
+    "Codex误把旧副本的横图裁剪行为归到已更新执行脚本；Opus指出后通过读取实际代码纠正，未重复全库计算。",
+    "Opus追加核对时仍重复了六图小规模评分；属于有限重复开销，不声称完全没有重复。",
+    "最新Opus已完成回复，旧的限额/待恢复说明已从当前交付更正；历史状态仍保留在旧记录。"
   ],
   "recommendations": [
     {
@@ -134,6 +161,13 @@
       "owner": "codex",
       "status": "adopted",
       "next_check": "用实际生图对照检验候选，保留失败结果；不以检索相似度代替生成质量验收。"
+    },
+    {
+      "id": "NOVELAI-RESEARCH-EXECUTED-VERSION-20261026",
+      "action": "批评裁剪或参数行为前读取实际执行路径及当前版本，避免把旧副本逻辑套到新版。当前已核对两份代码并在交接纠正；后续处理横图使用已修复版本。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一轮评价前核对执行路径和输入形状；检索分数只作辅助，以实际同场景出图验收。"
     }
   ],
   "evidence": [
@@ -143,7 +177,7 @@
   ],
   "comparison": null,
   "limits": [
-    "整个目标墙钟区间含用户沟通、查找、计算、协作和等待；不是纯活跃时间。",
+    "整轮墙钟含隔夜暂停、额度等待、用户等待、研究、协调和前次归档；不能当作连续活跃研究时间。",
     "未收到对方正式工作流报告，不代编其tokens、耗时或费用。",
     "本地自检仅70个多例图标签，仍受固定内容生成库限制，不能外推作者真实提示词识别率。",
     "只上传脱敏聚合工作流报告，不上传桌面截图、原始会话、图片、业务提示词、研究脚本或数据库。",
@@ -153,16 +187,19 @@
     "source_project": "NOVELAI-RESEARCH",
     "coordinator": "codex",
     "same_round_continuation": true,
-    "previous_archive_commit": "8b06f3a810b9bf3760d25be2883d9f50737dfc7a",
+    "previous_archive_commit": "d63bfaaf1496b3e1e86a796fb55a3fc30ae4cd1a",
     "opus": {
       "actual_desktop_notes_received": true,
       "existing_assets_reused": true,
-      "final_ranking_review_received": false,
-      "latest_feedback_queued": true,
+      "final_ranking_review_received": true,
+      "latest_feedback_queued": false,
       "quota_observed_in_actual_window": true,
       "automatic_resume_shown": true,
       "usage": null,
-      "formal_workflow_report_received": false
+      "formal_workflow_report_received": false,
+      "latest_experiment_review_received": true,
+      "public_recipe_review_received": true,
+      "latest_quota_block_active": false
     },
     "validation": {
       "inputs": {
@@ -214,7 +251,15 @@
       "whole_frame_vs_crop_top20_mean_overlap": 13.92,
       "author_prompt_extracted": false,
       "new_generations": 0,
-      "paid_generation_credits_spent": 0
+      "paid_generation_credits_spent": 0,
+      "public_pngs_checked": 6,
+      "public_works_checked": 5,
+      "metadata_checked_fields": 6,
+      "png_signature_verified": false,
+      "source_image_dimensions_differ_from_generation": true,
+      "paired_step_artists": 13,
+      "current_landscape_crop_verified": true,
+      "generation_plan_prompts_verified": true
     },
     "deliverables": [
       {
@@ -223,23 +268,38 @@
         "sha256": "d547e0f2baf85c4558398673cde187653b6031db0814c9ae31f37cbd5ec5aeff"
       },
       {
+        "filename": "NovelAI-已核实画师串与对照.txt",
+        "bytes": 9012,
+        "sha256": "d3ada08d2e2a1f19e8eb94d412fab957e2cacfa3ed1a3c7811464475584613aa"
+      },
+      {
         "filename": "NovelAI-检索与自检结果.json",
         "bytes": 408505,
         "sha256": "b7d1660593c91f7d4c6c8e79687e44b12afef7ff7c75463c1b398eaaa00a50c8"
       },
       {
         "filename": "NovelAI-首轮实验.txt",
-        "bytes": 7599,
-        "sha256": "1b0080e2df14ab62458a77bcb5da7b9d29c100802a896336cf6f0f5aad0c3c42"
+        "bytes": 7883,
+        "sha256": "744b85714318d84768b5fddf91113e53c3e54f98239ed37b79e6aa78bb5f6e71"
+      },
+      {
+        "filename": "公开实例-夕照-150342829-p0.png",
+        "bytes": 6666645,
+        "sha256": "7bd6ddf9f17921ee7b40a2687220514b39757192f36c9dac8b8d58385a27b242"
+      },
+      {
+        "filename": "公开实例-雨夜-150342829-p1.png",
+        "bytes": 7180002,
+        "sha256": "dec8f28b41a74899e4441a9efbbcd093c9ddbc2f0b5856854664980ed245492d"
       }
     ],
     "measurement": {
       "started_at": "2026-10-25T15:32:43Z",
-      "cutoff_at": "2026-10-25T16:56:11Z",
-      "wall_seconds": 5008,
+      "cutoff_at": "2026-10-26T05:42:54Z",
+      "wall_seconds": 51011,
       "active_seconds": null,
       "embedding_seconds": null,
-      "note": "Feature extraction observed active by16:46:25Z and confirmed finished16:50:54Z; no exact launch-to-exit duration claimed."
+      "note": "Same round includes overnight pause, quota wait, user communication and archive intervals. Wall time is not active work time; active duration and total usage unavailable."
     },
     "improvement_evidence": {
       "download_reused": true,
