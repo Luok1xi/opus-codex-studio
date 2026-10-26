@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-10-25-novelai-onboarding",
-  "task_summary": "NovelAI画集研究阶段续作：在用户允许恢复窗口后完成首次免费生图；用户否定生成质量和第一组画师方向，按新指令转向东方同人作品筛选。研究继续，质量未通过。",
-  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 6",
+  "task_summary": "NovelAI研究同轮续作：用户将候选扩展到整个动漫插画领域并要求有画集；完成公开书目核对和20位候选整理。书目核验不等于审美或模型效果通过，整体研究继续。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 7",
   "started_at": "2026-10-25T15:32:43Z",
-  "measurement_cutoff_at": "2026-10-26T08:18:37Z",
+  "measurement_cutoff_at": "2026-10-26T08:45:56Z",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -33,13 +33,17 @@
       "真实界面确认V5 Full与High切换成功，免费生成按钮可用；首次自动请求被reCAPTCHA拒绝，用户手动操作后来成功，显示1张结果，剩余次数29降至28。",
       "用户明确否定首张生成质量和第一组3位画师原作方向；已撤回该推荐，不把生成成功当作质量通过。",
       "原生研究子代理完成两次方向筛选并返回文件；后续先实际查看目标参考，再按东方同人方向核对具体原作，形成1位较强但未生成验证的新候选。",
-      "当前修正与用户反馈已写入本地协作交接；没有在现有Opus窗口发送新请求，没有改动其草稿，不声称其已复核本阶段。"
+      "当前修正与用户反馈已写入本地协作交接；没有在现有Opus窗口发送新请求，没有改动其草稿，不声称其已复核本阶段。",
+      "用户将画师寻找范围扩展至整个动漫插画领域，要求优秀且有画集；协调者核对出版社或作者公开书目，整理20位候选。",
+      "本阶段新增1名原生子代理，独立核实其中8位；区分作者自选画集和包含其作品的官方游戏美术集，不把不同书籍类型混为个人画集。",
+      "本书目阶段没有操作GUI或执行新生成，没有新的Opus回复；只完成书目证据和候选组织。"
     ],
     "remaining": [
       "目标JPEG未发现可读画师串和生成参数，作者保留配方仍无法确认。",
-      "首张真实生成被用户否定，目标质量尚未达成；旧八张对照计划未执行完，新东方候选尚未实测，不将原作参考当作NovelAI效果。",
-      "首张生成当前只有页面证据，原始PNG下载未确认完成；现有Opus对本阶段修正的独立回执未收到。",
-      "研究仍在继续；本报告只截至本阶段测量点，不表示用户整体目标已完成。"
+      "首张真实生成被用户否定；v6截止后另有一次生成进度出现而预览随后消失，结果未确定，不能计入成功图片。",
+      "新书目候选没有完成用户审美验收，未验证其NovelAI画师标签或组合效果；书籍出版与模型适配是不同判断。",
+      "首张生成原始PNG下载仍无确认凭据；现有Opus对本阶段修正的独立回执未收到。",
+      "研究仍在继续；本报告仅截至测量点，不表示用户整体目标已完成。"
     ]
   },
   "metrics": [
@@ -186,6 +190,30 @@
       "value": 0,
       "unit": "verified_files",
       "basis": "保存按钮定位和下载确认未完成；只有页面截图，不能声称下载成功。"
+    },
+    {
+      "name": "本书目阶段新增原生研究子代理",
+      "value": 1,
+      "unit": "agents",
+      "basis": "实际收到1名子代理对8位书目候选的核实结果；不是Opus回复。"
+    },
+    {
+      "name": "本阶段整理的画集候选",
+      "value": 20,
+      "unit": "artists",
+      "basis": "协调者整理20位，使用出版社或作者公开书目；不等于20位风格均获用户认可。"
+    },
+    {
+      "name": "本阶段子代理核实书目候选",
+      "value": 8,
+      "unit": "artists",
+      "basis": "子代理独立核实8位，包含不同出版物类型；不是模型标签测试。"
+    },
+    {
+      "name": "本书目阶段实际生图",
+      "value": 0,
+      "unit": "images",
+      "basis": "本书目研究阶段未操作GUI或生成；此前一次进度不明的请求单列unknown，未增加成功数。"
     }
   ],
   "observations": [
@@ -205,7 +233,11 @@
     "首轮把偏写实过度理解成暗调厚涂与CG面部，导致原作推荐和生成同时偏离用户审美。只验证标签存在、只看名气或环境相似均不足以确认适配。",
     "生图状态从加载转为reCAPTCHA失败，随后由用户手动成功；先等待结果再称成功，并将自动拒绝和后来人工成功分别记录。",
     "首次三位候选被否定后，研究子代理重新实际查看目标图，再定位东方具体原作；有纠偏证据，但新组未生成，不能声称已修复生成质量。",
-    "已知一次PowerShell管道语法错误修正；保存控件定位与下载确认未成功，保留部分结果边界。没有完整事件计数，不虚构失败或返工总数。"
+    "已知一次PowerShell管道语法错误修正；保存控件定位与下载确认未成功，保留部分结果边界。没有完整事件计数，不虚构失败或返工总数。",
+    "用户进一步扩大范围至动漫插画领域；本阶段以公开书目作为可核验入口，区分个人画集、作者自选集与包含其作品的官方游戏美术集。",
+    "书目真实性已核对，但用户审美接受度与NovelAI标签响应仍未验证；不以知名度、出版记录或候选数量证明生成质量。",
+    "v6截止后一次生成出现进度但随后无确定成图结果；本轮成功计数仍只保留此前1张，另记outcome_unknown，不伪造成功。",
+    "本书目阶段未产生新的现有桌面Opus回复，也没有GUI操作或生图；原生子代理核实与Opus协作分别记账。"
   ],
   "recommendations": [
     {
@@ -255,7 +287,8 @@
     "公开例图库：https://github.com/MayRain-Meow/NAI-Pocket/releases/tag/artist-v5-examples-2026-10-22",
     "方法：https://github.com/learn2phoenix/CSD",
     "以下aggregate_evidence由Codex根据真实文件与运行结果汇总；没有上传原始素材。",
-    "本阶段证据索引：首次生成完成页、用户质量否定、现有标签目录核对、初筛与修正版原作研究、保留Opus草稿的用户边界；原文件均仅留本地。"
+    "本阶段证据索引：首次生成完成页、用户质量否定、现有标签目录核对、初筛与修正版原作研究、保留Opus草稿的用户边界；原文件均仅留本地。",
+    "本书目阶段证据索引：出版社及作者公开书目、原生子代理8位核查回执和协调者20位候选整理。具体名单与业务内容仅留本地。"
   ],
   "comparison": null,
   "limits": [
@@ -265,13 +298,14 @@
     "只上传脱敏聚合工作流报告，不上传桌面截图、原始会话、图片、业务提示词、研究脚本或数据库。",
     "归档回读在截止点之后另存05回执；此处不预称已上传。",
     "原生研究子代理与现有桌面Opus分别记账；本阶段未收到新的Opus审核，未编造其用量。",
-    "本报告的新生成数只计截至测量点的真实页面结果；人工质量判断不等于模型可复现性验证。"
+    "本报告的新生成数只计截至测量点的真实页面结果；人工质量判断不等于模型可复现性验证。",
+    "本阶段书目核查不涉及NovelAI训练覆盖、标签有效性或生成质量；未知的后续生成结果保持unknown。"
   ],
   "aggregate_evidence": {
     "source_project": "NOVELAI-RESEARCH",
     "coordinator": "codex",
     "same_round_continuation": true,
-    "previous_archive_commit": "e7f33124ffeb75cf252adad5376ccf5f7cab6aae",
+    "previous_archive_commit": "a2b4e4dc9e61885d98783f0c10f4e9f0d9d430e3",
     "opus": {
       "actual_desktop_notes_received": true,
       "existing_assets_reused": true,
@@ -348,7 +382,8 @@
       "current_landscape_crop_verified": true,
       "generation_plan_prompts_verified": true,
       "user_accepted_new_generations": 0,
-      "generated_original_pngs_verified": 0
+      "generated_original_pngs_verified": 0,
+      "generation_outcome_unknown": 1
     },
     "deliverables": [
       {
@@ -389,8 +424,8 @@
     ],
     "measurement": {
       "started_at": "2026-10-25T15:32:43Z",
-      "cutoff_at": "2026-10-26T08:18:37Z",
-      "wall_seconds": 60354,
+      "cutoff_at": "2026-10-26T08:45:56Z",
+      "wall_seconds": 61993,
       "active_seconds": null,
       "embedding_seconds": null,
       "note": "Same round includes overnight pause, quota wait, user communication and archive intervals. Wall time is not active work time; active duration and total usage unavailable."
@@ -403,7 +438,6 @@
     },
     "browser_continuation": {
       "account_session_located": true,
-      "free_trial_remaining_observed": 28,
       "displayed_model": "V5 Full",
       "full_switch_confirmed": true,
       "new_generations": 1,
@@ -414,7 +448,9 @@
       "first_automatic_generation_recaptcha_failed": true,
       "later_manual_generation_succeeded": true,
       "user_rejected_first_result": true,
-      "download_original_verified": false
+      "download_original_verified": false,
+      "free_trial_remaining_observed_at_v6": 28,
+      "later_generation_outcome": "unknown"
     },
     "original_collection": {
       "download_actor": "user",
@@ -443,16 +479,32 @@
       "native_research_agents": 1,
       "completed_research_passes": 2,
       "initial_artist_recommendations_rejected": 3,
-      "current_scope": "Touhou fan artists matched to supplied reference",
-      "new_candidate_generated": false,
+      "current_scope": "Anime illustration artists with published artbooks",
+      "new_candidate_generated": null,
       "visual_quality_passed": false,
       "x_direct_access_limited": true,
-      "source_cross_check_used": true
+      "source_cross_check_used": true,
+      "previous_scope": "Touhou fan artists matched to supplied reference",
+      "new_candidate_generation_outcome": "unknown"
     },
     "archive_continuation": {
       "native_archive_agents": 1,
       "business_work_continues": true,
-      "cutoff_excludes_this_archive_activity": true
+      "cutoff_excludes_this_archive_activity": true,
+      "current_pass": 7,
+      "scope_note": "Same archive worker; no recursive review round."
+    },
+    "artbook_continuation": {
+      "native_research_agents": 1,
+      "candidates_organized": 20,
+      "independently_checked_by_child": 8,
+      "public_publisher_or_author_bibliography_checked": true,
+      "author_selected_and_game_artbooks_distinguished": true,
+      "user_visual_acceptance": false,
+      "novelai_tag_effect_verified": false,
+      "gui_operations": 0,
+      "new_generations": 0,
+      "new_opus_reply_received": false
     }
   }
 }
