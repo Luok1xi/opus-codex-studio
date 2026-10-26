@@ -1,0 +1,67 @@
+{
+  "source_project": "LUOKIXI-WEB",
+  "scope": "Serial model, protocol fixtures and independent regression for the current website owner task.",
+  "tests": {
+    "passed": 21,
+    "failed": 0,
+    "skipped": 0,
+    "basis": "Actual node --test output after final model edit; 11 legacy/live plus 10 new telemetry cases."
+  },
+  "lint": {
+    "passed": true,
+    "files": [
+      "src/js/robot-live-model.js",
+      "scripts/test-robot-live.mjs",
+      "scripts/test-robot-telemetry.mjs"
+    ]
+  },
+  "source_sha256": {
+    "src/js/robot-live-model.js": "05eca007d491561c655685ee2272ba0b333ede27f4444e5cc5a916d83c9214fc",
+    "scripts/test-robot-live.mjs": "4ed41c73b78cc3f909e721698cbf0c634a78cb6feb468030bfdcbf3c846a3606",
+    "scripts/test-robot-telemetry.mjs": "8c5f033ccdd0d3730ddb8ce1d52391f541a94924553229a1f27639bbd1a98938"
+  },
+  "build": {
+    "passed": true,
+    "source_stable": true,
+    "started_at": "2026-10-26T12:41:14.045Z",
+    "completed_at": "2026-10-26T12:41:15.043Z",
+    "configuration": "Existing project Vite configuration; staged build only."
+  },
+  "browser": [
+    {
+      "width": 1440,
+      "page_errors": 0,
+      "asset_failures": 0,
+      "horizontal_overflow": false,
+      "synthetic_voltage_verified": true,
+      "pixel_verified": true
+    },
+    {
+      "width": 390,
+      "page_errors": 0,
+      "asset_failures": 0,
+      "horizontal_overflow": false,
+      "synthetic_voltage_verified": true,
+      "pixel_verified": true
+    }
+  ],
+  "coordination": {
+    "opus_reply_received": true,
+    "scope_reply_id": 21,
+    "codex_result_handoff_id": 23,
+    "final_opus_acceptance": null
+  },
+  "publication": {
+    "published": false,
+    "stale_build_guard_triggered": true,
+    "business_page_replacements": 0,
+    "reason": "Parallel Opus protocol edit detected before any publication; final UI integration and publication left with Opus."
+  },
+  "hardware": {
+    "serial_connections": 0,
+    "commands_sent": 0,
+    "flashes": 0,
+    "live_car_validation": false
+  },
+  "fixtures": "C-generated protocol fixtures are synthetic; separate saved real capture tests do not establish new physical validation."
+}
