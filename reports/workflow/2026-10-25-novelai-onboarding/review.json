@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-10-25-novelai-onboarding",
-  "task_summary": "NovelAI同轮研究续作：按用户认可的画师截图核对标签并纠正一处别名映射；新增一次免费生图被用户否定。随后遵循用户指令停止GUI，复用公开完整配方，仅研究单个画师槽位的替换。",
-  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 8",
+  "task_summary": "NovelAI同轮v9简报：用户否定公开底图，原样基线及2份改稿已撤回，来源元数据保留。按4个新风格锚点完成两项标签与公开配方核查，但未找到同时满足可靠视觉筛选及完整配方的强候选。本阶段未操作GUI、未生成或消耗免费次数；整体仍partial。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 9",
   "started_at": "2026-10-25T15:32:43Z",
-  "measurement_cutoff_at": "2026-10-26T09:35:06Z",
+  "measurement_cutoff_at": "2026-10-26T09:51:24Z",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -42,13 +42,14 @@
       "随后用户要求研究此前公开成图的完整提示词并仅改画师串，协调者已停止GUI和生成。",
       "复用已有公开配方时，识别一件属于Img2ImgRequest且strength为0.8，排除其作为纯文生图基底；选择保留独立角色提示词及完整UC的另一件作为研究基底。",
       "原生子代理复核了两个单槽替换方向，保留原权重和其余原文参数；本阶段没有新的现有桌面Opus回复，草稿未动。",
-      "已交付原始元数据、原样基线和2份完整修改稿；核验逆替换后全部生成参数与原文一致，两处prompt字段同步，UC与角色栏保留，原签名不复用。两份修改稿均明确标记未生成。"
+      "已交付原始元数据、原样基线和2份完整修改稿；核验逆替换后全部生成参数与原文一致，两处prompt字段同步，UC与角色栏保留，原签名不复用。两份修改稿均明确标记未生成。",
+      "v9：底图被用户否定后，基线和2份改稿统一标记撤回，未改来源元数据；两项原生子任务核对4个风格锚点，其中3个在既有V5例图库命中且协调者查看样例，另1个仅有公开作者映射。新搜结果未满足视觉与完整配方双重门槛，强候选记0；无GUI、无生成、无新Opus回复。"
     ],
     "remaining": [
-      "用户审美和目标画风尚未达成：累计2张确认成图均被否定，另1次历史生成结果未知；不以生成完成代替质量通过。",
-      "当前交付为原样公开配方基线和2份仅改画师的研究稿，均未生成，不能承诺效果提升或标签有效性。",
-      "确认成图的原始PNG保存尚无成功凭据；作者保留的原始画师配方仍无法从目标JPEG直接取得。",
-      "本阶段未收到新的现有桌面Opus回复，只有原生子任务复核和本地交接；整体仍为partial。"
+      "用户审美未验收；此前底图及2份改稿已撤回，不再作为当前推荐或可用实验基线。",
+      "当前4个锚点中，3个仅有目录及样例证据，另1个未证实当前模型响应；目录命中不能替代实际效果验证。",
+      "本阶段未找到同时满足可靠视觉筛选和完整配方要求的公开强候选；不得以完整参数页或文件验证冒充画质合格。",
+      "累计2张确认生成均被否定，另1次历史生成结果未知；原始PNG保存尚无成功凭据，现有Opus本阶段没有新回复。"
     ]
   },
   "metrics": [
@@ -276,7 +277,8 @@
     "用户截图认可的画师仍需核对账号到规范标签的映射，不能只按相似名称替换；两个原生子任务发现并纠正了1处映射错误。",
     "实际生图成功再次未通过审美验收，成功计数与质量通过计数保持分离，下载也未冒称完成。",
     "用户转向完整公开配方研究后，先辨别文生图与图生图请求类型，再保留角色提示词、UC和参数；只换一个画师槽位以限制变量。",
-    "本阶段独立复核来自原生子代理，不能冒称已有Opus审核；继续保留其草稿和停止GUI的用户边界。"
+    "本阶段独立复核来自原生子代理，不能冒称已有Opus审核；继续保留其草稿和停止GUI的用户边界。",
+    "v9纠偏：先让底图达到视觉门槛，再制作成套修改稿。文档和参数一致性检查不代表画质验收，目录例图仅作标签证据；一件完整参数页的图片被否定，未计强候选，未为凑数降低标准。"
   ],
   "recommendations": [
     {
@@ -309,10 +311,10 @@
     },
     {
       "id": "NOVELAI-RESEARCH-VISUAL-GATE-20261026",
-      "action": "推荐画师前对照用户实际参考，把动漫脸与线条、材质、环境光和配色分别核对，并给具体原作证据；不能以半写实大类或名气替代审美。证据为首图及三位初选全部被否定；本阶段已重新看图并按东方方向筛选。",
+      "action": "在制作成套修改稿前先验证底图视觉质量；分别核对脸、线条、材质、环境光与配色，目录例图仅作标签证据。证据为首图、初筛和后续公开底图均被用户否定；最新不合格基线及改稿已撤回，强候选记0。",
       "owner": "codex",
       "status": "adopted",
-      "next_check": "新组必须实际生图并接受用户质量评价；候选原作接近不能计作生成效果通过。"
+      "next_check": "下一份底稿必须先通过视觉筛选，再检查完整配方及制作修改稿；记录用户审美是否接受，不把字段检查通过计作画质通过。"
     },
     {
       "id": "NOVELAI-RESEARCH-RESULT-BOUNDARY-20261026",
@@ -346,7 +348,7 @@
     "source_project": "NOVELAI-RESEARCH",
     "coordinator": "codex",
     "same_round_continuation": true,
-    "previous_archive_commit": "eb3f03327d57ec6c3449fc721a7fbd3ccaef90c9",
+    "previous_archive_commit": "b9f4d92074111908143ce8b48a1c7e2f7633d7e2",
     "opus": {
       "actual_desktop_notes_received": true,
       "existing_assets_reused": true,
@@ -465,8 +467,8 @@
     ],
     "measurement": {
       "started_at": "2026-10-25T15:32:43Z",
-      "cutoff_at": "2026-10-26T09:35:06Z",
-      "wall_seconds": 64943,
+      "cutoff_at": "2026-10-26T09:51:24Z",
+      "wall_seconds": 65921,
       "active_seconds": null,
       "embedding_seconds": null,
       "note": "Same round includes overnight pause, quota wait, user communication and archive intervals. Wall time is not active work time; active duration and total usage unavailable."
@@ -523,19 +525,19 @@
       "native_research_agents": 1,
       "completed_research_passes": 2,
       "initial_artist_recommendations_rejected": 3,
-      "current_scope": "Research previously public full generation recipe with artist-only substitution",
+      "current_scope": "Find visually acceptable full-recipe baseline for user-selected style anchors",
       "new_candidate_generated": null,
       "visual_quality_passed": false,
       "x_direct_access_limited": true,
       "source_cross_check_used": true,
-      "previous_scope": "Anime illustration artists with published artbooks",
+      "previous_scope": "Research previously public full generation recipe with artist-only substitution",
       "new_candidate_generation_outcome": "unknown"
     },
     "archive_continuation": {
       "native_archive_agents": 1,
       "business_work_continues": true,
       "cutoff_excludes_this_archive_activity": true,
-      "current_pass": 8,
+      "current_pass": 9,
       "scope_note": "Same archive worker; no recursive review round."
     },
     "artbook_continuation": {
@@ -574,7 +576,23 @@
       "prompt_fields_synchronized": true,
       "negative_and_character_prompts_preserved": true,
       "original_signature_not_reused": true,
-      "drafts_status": "draft_not_generated"
+      "drafts_status": "withdrawn_base_image_rejected",
+      "baseline_status": "withdrawn_base_image_rejected",
+      "original_source_metadata_unchanged": true
+    },
+    "anchor_continuation": {
+      "native_subtasks": 2,
+      "user_style_anchors": 4,
+      "catalog_hits_and_samples_viewed": 3,
+      "public_identity_only_model_response_unverified": 1,
+      "strong_candidates_meeting_visual_and_recipe_gates": 0,
+      "complete_recipe_image_rejected": 1,
+      "gui_operations": 0,
+      "new_generations": 0,
+      "free_trial_uses": 0,
+      "new_opus_reply_received": false,
+      "user_visual_acceptance": false,
+      "project_contents_uploaded": false
     }
   }
 }
