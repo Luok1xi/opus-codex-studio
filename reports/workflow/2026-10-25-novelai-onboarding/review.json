@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-10-25-novelai-onboarding",
-  "task_summary": "NovelAI同轮v11简报：只读核查公开工具的底图导入、元数据读取和画师串卡片整理能力。公开说明与关键代码已交叉核对；可保存调用配方，不代表可从任意图片恢复原配方或自动优化组合。本地版本及账号API权限未验证，没有上传图片或生成消费。 v12补记：用户指出只讲功能而漏交画师串后，已直接补交其选定四位画师的等权测试组合与放置方法；未实测，不作为原图元数据或优化结果。 v13补记：用户指出种子、镜头与叙事光影不完整后，补充任意固定测试种子及近景互动与光照描述；区分局部换人与镜头重构，尚未实测。 v14补记：核对用户所问画师简称与单标签拼写，区分画师标签和发布者混合配方；当前模型效果未实测。 v15新增可验收成果：复用用户已下载的整合包，以隐藏控制台完成本地启动；HTTP与浏览器可见状态均通过，账号/API和生图未验证。",
-  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 15",
+  "task_summary": "NovelAI研究同轮v16：在既有工具与画师研究基础上，按用户指定仓库取得PromptCard Studio官方Windows便携版及官方兼容补丁，验证发布资产哈希与ZIP完整性，完成解压和启动入口检查。下载交付通过；新工具未启动、补丁未应用、账号与生图未测试，整体图像质量目标仍未验收。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 16",
   "started_at": "2026-10-25T15:32:43Z",
-  "measurement_cutoff_at": "2026-10-26T15:46:47Z",
+  "measurement_cutoff_at": "2026-10-26T16:00:44.516413Z",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -49,7 +49,8 @@
       "v12遗漏补正：核对既有四位画师标签记录及官方权重语法后，补交等权测试串，说明置于正向提示词前部并接原有场景词。该组合由用户选定，尚未生成验证，不冒称原图配方或已优化权重；本阶段未操作窗口。",
       "v13遗漏补正：承认旧稿仅含基础侧光与整理领结动作，核对官方种子原则后，补充任意固定测试种子、双人近景、视线与暂停动作，以及暖主光、弱冷补光和暗背景的设计说明。明确该种子并非原图种子，局部换人沿用底图镜头，镜头重构需裁切或整图重绘；1项原生子任务检查构图矛盾，无Opus咨询、生成、上传或窗口操作，未实测且不保证画质。",
       "v14术语答疑：公开核对作者本人中文名、教程原配方及公开画师列表，交付对应单标签；明确混合串依具体发布配方，不存在由本次证据证明的唯一固定组合，当前模型效果未实测。一次网页调用在派发前中止后重试成功，两个直接来源不可访问，未绕过或反复重试；无窗口操作、生成或用户图片上传。",
-      "v15本地启动：核对已解压整合包2.2.0-beta.5的入口、内置解释器、仅本机监听及默认关闭共享后，以隐藏控制台启动既有入口，无源码修改。HTTP 200和页面标题匹配，独立只读桌面核查确认浏览器可见，随机画风插件预热完成；可选自动打码模型缺失未额外下载。本地启动目标完成，未读取密钥、操作Opus或生图；账号/API仍未测。固定共同种子进行画师对照的建议尚未执行，不能挑某画师最优种子后称公平，也不能以抽卡或局部修复证明稳定质量。"
+      "v15本地启动：核对已解压整合包2.2.0-beta.5的入口、内置解释器、仅本机监听及默认关闭共享后，以隐藏控制台启动既有入口，无源码修改。HTTP 200和页面标题匹配，独立只读桌面核查确认浏览器可见，随机画风插件预热完成；可选自动打码模型缺失未额外下载。本地启动目标完成，未读取密钥、操作Opus或生图；账号/API仍未测。固定共同种子进行画师对照的建议尚未执行，不能挑某画师最优种子后称公平，也不能以抽卡或局部修复证明稳定质量。",
+      "v16：从指定仓库最新正式Release取得v1.2.4 Windows便携版和同页兼容补丁；2个资产大小及SHA256与官方一致，2个ZIP完整性检查通过，解压后3444个主包文件大小及启动入口与压缩包一致，并确认内置解释器存在。本阶段未启动新工具、读取账号凭据或生图。"
     ],
     "remaining": [
       "v15本地启动已完成；账号/API权限、实际生图和稳定质量未验证，抽卡流程尚未执行。",
@@ -258,6 +259,24 @@
       "value": 3,
       "unit": "configurations",
       "basis": "1份原样基线与2份修改稿均通过字段一致性检查；这是配置核验，不是3张生成图。"
+    },
+    {
+      "name": "v16已核验官方下载资产",
+      "value": 2,
+      "unit": "files",
+      "basis": "便携主包和同页兼容补丁的字节数与官方SHA256逐项一致。"
+    },
+    {
+      "name": "v16已核验主包解压文件",
+      "value": 3444,
+      "unit": "files",
+      "basis": "逐文件存在性和长度核对，启动脚本另做字节一致性核对。"
+    },
+    {
+      "name": "v16来源核实到交付核验墙钟",
+      "value": 437.5,
+      "unit": "seconds",
+      "basis": "从来源查询时记录的UTC时间至本次核验截止；包含下载等待及前段报告准备，不代表纯活跃耗时，不含后续归档。"
     }
   ],
   "observations": [
@@ -288,7 +307,8 @@
     "本阶段独立复核来自原生子代理，不能冒称已有Opus审核；继续保留其草稿和停止GUI的用户边界。",
     "v9纠偏：先让底图达到视觉门槛，再制作成套修改稿。文档和参数一致性检查不代表画质验收，目录例图仅作标签证据；一件完整参数页的图片被否定，未计强候选，未为凑数降低标准。",
     "v10：用户指定的生图平台属于任务要求，内置生图预览不能替代指定平台结果；该误解导致返工。上传控件调用结果未知时不宣称完成，用户接管后停止GUI。当前只交付未实测提示词，时间、费用和用量缺少完整计量，继续记null。",
-    "v11只读答疑将公开实现能力与本地可用状态分开：元数据解析依赖图片保留信息，标签反推不等于恢复原画师串；文本保存、卡片和随机画师插件适合整理与对照试验，不能证明最优组合。原生代码复核不是新的Opus咨询。"
+    "v11只读答疑将公开实现能力与本地可用状态分开：元数据解析依赖图片保留信息，标签反推不等于恢复原画师串；文本保存、卡片和随机画师插件适合整理与对照试验，不能证明最优组合。原生代码复核不是新的Opus咨询。",
+    "v16：下载前先区分正式便携资产和源码；初始GET传输迟滞，原请求最终完成，没有重复覆盖或修改网络设置。固定官方哈希、ZIP完整性及解压文件检查提供直接交付证据；未将文件检查冒充启动成功。"
   ],
   "recommendations": [
     {
@@ -343,7 +363,8 @@
     "v8本地证据索引：两个画师映射子任务回执、一次免费成图与用户否定、公开配方请求类型核查、单槽替换独立复核。截图、名单、原图和提示词原文均不上传。",
     "v11公开能力证据：https://github.com/zhulinyv/Auto-NovelAI-Refactor 的说明及元数据/通配符关键代码，https://github.com/zhulinyv/anr_plugin_random_artists 的插件说明；协调者另核对NovelAI官方图生图说明。仅记录聚合结论。",
     "v13种子原则核查：https://docs.novelai.net/en/image/seed/ ；仅归档设计补正与验证边界，不上传完整提示词。",
-    "v14公开术语证据：https://www.bilibili.com/opus/761038020029710376 与 https://www.bilibili.com/video/BV17Z421W7xF/ ；本归档不复制标签或配方原文。"
+    "v14公开术语证据：https://www.bilibili.com/opus/761038020029710376 与 https://www.bilibili.com/video/BV17Z421W7xF/ ；本归档不复制标签或配方原文。",
+    "v16公开来源：https://github.com/monineko/PromptCard-Studio/releases/tag/v1.2.4 ；正式Release提供资产名称、大小、SHA256及便携包/兼容补丁说明。"
   ],
   "comparison": null,
   "limits": [
@@ -355,13 +376,14 @@
     "原生研究子代理与现有桌面Opus分别记账；本阶段未收到新的Opus审核，未编造其用量。",
     "本报告的新生成数只计截至测量点的真实页面结果；人工质量判断不等于模型可复现性验证。",
     "本阶段书目核查不涉及NovelAI训练覆盖、标签有效性或生成质量；未知的后续生成结果保持unknown。",
-    "字段一致性核验只证明修改范围，不证明新画师标签的生成效果；没有用本阶段配置检查替代实际出图验收。"
+    "字段一致性核验只证明修改范围，不证明新画师标签的生成效果；没有用本阶段配置检查替代实际出图验收。",
+    "v16：PromptCard Studio仅完成下载、解压及完整性验证；未启动、未应用可选点数补丁、未验证账号或生成。"
   ],
   "aggregate_evidence": {
     "source_project": "NOVELAI-RESEARCH",
     "coordinator": "codex",
     "same_round_continuation": true,
-    "previous_archive_commit": "35df8f1ca993cd8540322a751443e6f438f5aec7",
+    "previous_archive_commit": "a7e8d46ac034e9e1985a137732afcf3b207d94fb",
     "opus": {
       "actual_desktop_notes_received": true,
       "existing_assets_reused": true,
@@ -707,6 +729,33 @@
       "actual_usage": null,
       "actual_cost": null,
       "actual_active_seconds": null
+    },
+    "promptcard_download_continuation": {
+      "version": "v1.2.4",
+      "source": "https://github.com/monineko/PromptCard-Studio/releases/tag/v1.2.4",
+      "assets": [
+        {
+          "name": "PromptCard-Studio-1.2.4-Portable-win64.zip",
+          "bytes": 86689623,
+          "sha256": "833e743c88c321ccadfe3dade8c95b71a35dca120450670c900bffcefdb567eb"
+        },
+        {
+          "name": "PromptCard-Studio-Anlas-Compatibility-Patch-20260923.zip",
+          "bytes": 4277,
+          "sha256": "463b20ae24eb2c3f9ba48d84d7345500dc805dd308ba81d2d4c9db421ed2bdd1"
+        }
+      ],
+      "zip_crc_passed": 2,
+      "main_extracted_files_verified": 3444,
+      "launcher_bytes_match": true,
+      "bundled_interpreter_present": true,
+      "launched": false,
+      "patch_applied": false,
+      "generated_images": 0,
+      "new_delegated_tasks": 0,
+      "actual_tokens": null,
+      "actual_cost": null,
+      "separate_active_review_seconds": null
     }
   }
 }
