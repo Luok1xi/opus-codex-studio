@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-10-25-novelai-onboarding",
-  "task_summary": "NovelAI同目标续作：与用户指定桌面Opus完成视觉复核，核实公开成图元数据和画师片段，交付原图与可复制对照；新生成尚待实际登录会话定位。",
-  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 3",
+  "task_summary": "指定NovelAI画集研究续作：遵循最新目标范围，用户完成25张客户端下载后，Codex核对并解析原文件；未发现生成参数，完成本地交接。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 5",
   "started_at": "2026-10-25T15:32:43Z",
-  "measurement_cutoff_at": "2026-10-26T05:42:54Z",
+  "measurement_cutoff_at": "2026-10-26T07:44:01Z",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -23,12 +23,16 @@
       "从五件公开作品的六张PNG读取隐藏元数据，对prompt/seed/steps/scale/sampler/v4_prompt逐项核对；部分仅网页空白压缩差异。",
       "交付两张公开实例的字节一致副本、原样画师片段及单独标注的整理版、四组两种子的完整可复制对照。",
       "官网High/Medium现行规则已核实；对方浏览器访客状态与用户已登录声明分开记录，不用访客价格冒充账户价格。",
-      "确认当前评分脚本已经修复横图裁剪；撤回基于旧副本作出的错误警告。步数配对检查发现只有13名画师两种步数都有且种子不同，不能隔离步数效应。"
+      "确认当前评分脚本已经修复横图裁剪；撤回基于旧副本作出的错误警告。步数配对检查发现只有13名画师两种步数都有且种子不同，不能隔离步数效应。",
+      "用户确认本机Edge；实际页面加载成功并显示免费试用29/30、当前V5 Curated和Free生成按钮。模型菜单有Full但选择未确认生效；未点击生成。",
+      "读取Opus新增下载交接与用户仅限指定画集风格的要求；其他作者配方撤出当前候选。",
+      "用户完成客户端下载，Codex按清单定位25张文件，25/25字节数一致，总计7741490字节；本地研究副本逐一SHA256一致。",
+      "执行Opus既有元数据解析脚本，并独立遍历全部JPEG标记流；25张均无常见生成参数容器或文件尾附加数据。",
+      "逐文件结果写回既有Opus交接路径；这是文件交接，未声称Opus已阅读或独立接受。"
     ],
     "remaining": [
-      "没有视频作者带完整参数的原文件；交付的公开配方来源于其他作者，不声称还原秘密串。",
-      "用户已确认能生图，但实际登录浏览器/设备尚未定位；没有新生成、没有Anlas消耗，混合效果及参考质量目标仍待实测。",
-      "公开PNG像素尺寸与记录的生成尺寸存在二倍差；没有数字签名验证，不能保证未放大或后期。"
+      "这批目标JPEG未发现可读的画师串和生成参数，不能据此还原作者保留配方；也不能证明作者未另存带参数PNG。",
+      "目标画集G0/G1/G2/G3对照尚未生成，用户暂不操作NovelAI窗口的要求保持有效；不擅自恢复GUI或消费额度。"
     ]
   },
   "metrics": [
@@ -127,6 +131,24 @@
       "value": 8,
       "unit": "images",
       "basis": "四组乘两个种子，仅方案，实际生成数仍0。"
+    },
+    {
+      "name": "目标画集已核对文件",
+      "value": 25,
+      "unit": "images",
+      "basis": "用户完成客户端下载，Codex按已有清单逐文件比对，25/25字节数一致。"
+    },
+    {
+      "name": "目标画集找到参数文件",
+      "value": 0,
+      "unit": "images",
+      "basis": "既有解析脚本和独立全JPEG标记检查结果一致；不是任意隐写的全称排除。"
+    },
+    {
+      "name": "本次明确自动审批拒绝",
+      "value": 1,
+      "unit": "actions",
+      "basis": "用户表示下载完成后，尚未执行的窗口切换被拒；未重试，转为只读本地核对及授权目录复制。"
     }
   ],
   "observations": [
@@ -138,7 +160,11 @@
     "新增续作复用了原库，先找真实公开混合串与原图；与单画师检索相比得到更直接的可追溯配方证据，但尚无新生成效果对照。",
     "Codex误把旧副本的横图裁剪行为归到已更新执行脚本；Opus指出后通过读取实际代码纠正，未重复全库计算。",
     "Opus追加核对时仍重复了六图小规模评分；属于有限重复开销，不声称完全没有重复。",
-    "最新Opus已完成回复，旧的限额/待恢复说明已从当前交付更正；历史状态仍保留在旧记录。"
+    "最新Opus已完成回复，旧的限额/待恢复说明已从当前交付更正；历史状态仍保留在旧记录。",
+    "界面前台保护多次拒绝操作，未向错误前台输入。可访问性控件读取成功；用户正在用电脑，按其明确指令停止所有GUI操作。尚无生成验收结果。",
+    "接收方最初提供的摘要未含完整公开分享链接；后从作者公开评论核实。今后交接应直接给公开入口与校验清单，减少窗口往返。",
+    "下载弹窗出现后状态变化，先查结果而非直接重复发起。用户随后确认已下载，定位本地既有文件完成验收。",
+    "用户最新目标限制只保留指定画集；已撤下此前其他作者混合串的当前推荐标记。"
   ],
   "recommendations": [
     {
@@ -187,7 +213,7 @@
     "source_project": "NOVELAI-RESEARCH",
     "coordinator": "codex",
     "same_round_continuation": true,
-    "previous_archive_commit": "d63bfaaf1496b3e1e86a796fb55a3fc30ae4cd1a",
+    "previous_archive_commit": "6b0fdaf4446d0ae6c3db9020243b5a7a0d4a94c7",
     "opus": {
       "actual_desktop_notes_received": true,
       "existing_assets_reused": true,
@@ -269,8 +295,8 @@
       },
       {
         "filename": "NovelAI-已核实画师串与对照.txt",
-        "bytes": 9012,
-        "sha256": "d3ada08d2e2a1f19e8eb94d412fab957e2cacfa3ed1a3c7811464475584613aa"
+        "bytes": 9315,
+        "sha256": "813091bd23822d1435a75abf8dd7e8d5f2ded1c75430353c29dd3369293a5e90"
       },
       {
         "filename": "NovelAI-检索与自检结果.json",
@@ -291,12 +317,17 @@
         "filename": "公开实例-雨夜-150342829-p1.png",
         "bytes": 7180002,
         "sha256": "dec8f28b41a74899e4441a9efbbcd093c9ddbc2f0b5856854664980ed245492d"
+      },
+      {
+        "filename": "原图下载与元数据核查.txt",
+        "bytes": 852,
+        "sha256": "6891a8480eae799c5fb40e2a04137ce19f75dbacd7774832655c75a7b1599e76"
       }
     ],
     "measurement": {
       "started_at": "2026-10-25T15:32:43Z",
-      "cutoff_at": "2026-10-26T05:42:54Z",
-      "wall_seconds": 51011,
+      "cutoff_at": "2026-10-26T07:44:01Z",
+      "wall_seconds": 58278,
       "active_seconds": null,
       "embedding_seconds": null,
       "note": "Same round includes overnight pause, quota wait, user communication and archive intervals. Wall time is not active work time; active duration and total usage unavailable."
@@ -306,6 +337,35 @@
       "parent_and_child_usage_not_invented": true,
       "matched_quality_baseline": false,
       "speedup_claim": false
+    },
+    "browser_continuation": {
+      "account_session_located": true,
+      "free_trial_remaining_observed": 29,
+      "displayed_model": "V5 Curated",
+      "full_switch_confirmed": false,
+      "new_generations": 0,
+      "gui_stopped_at_user_request": true,
+      "credentials_read": false
+    },
+    "original_collection": {
+      "download_actor": "user",
+      "verification_actor": "codex",
+      "files": 25,
+      "size_matches": 25,
+      "total_bytes": 7741490,
+      "local_copy_sha256_matches": 25,
+      "jpeg_files": 25,
+      "nai_parameter_files": 0,
+      "metadata_segment_files": 0,
+      "trailer_files": 0,
+      "independent_full_marker_check": true,
+      "opus_result_file_written": true,
+      "opus_result_receipt_confirmed": false
+    },
+    "user_boundary": {
+      "no_further_download_gui": true,
+      "novelai_gui_pause_retained": true,
+      "rejected_window_action_retried": false
     }
   }
 }
