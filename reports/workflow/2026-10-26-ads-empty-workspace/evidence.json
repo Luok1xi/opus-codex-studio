@@ -6,11 +6,15 @@
     "wrong_workspace_registered_projects": 0,
     "correct_workspace_registered_projects": 1,
     "project_location_matches_existing_source": true,
-    "source_entry_exists": true
+    "source_entry_exists": true,
+    "user_switched_to_correct_workspace_verified": true,
+    "active_file_utf8_decode": false,
+    "active_file_gbk_decode": true,
+    "project_default_utf8": true
   },
   "hardware_actions": 0,
   "source_changes": 0,
   "ui_actions": 0,
-  "scope": "Read-only diagnosis; workspace switch not executed or observed.",
+  "scope": "Read-only workspace and encoding diagnosis; user switched workspace; per-file encoding change not performed.",
   "raw_process_data_uploaded": false
 }
