@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-26-ads-beginner-lesson",
+  "scope": "Beginner teaching using already verified project evidence; no new implementation.",
+  "current_checks": {
+    "source_entry_exists": true,
+    "registered_project_location_exists": true
+  },
+  "teaching_sequence": [
+    "physical parts and feedback",
+    "source code and named functions",
+    "workspace and project",
+    "build, firmware, flash and run",
+    "temporary tuning versus persistent program",
+    "guided first source-file reading"
+  ],
+  "hardware_actions": 0,
+  "firmware_edits": 0,
+  "delegations": 0,
+  "learner_understanding_verified": false
+}

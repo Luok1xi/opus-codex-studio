@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-26-ads-beginner-lesson",
+  "task_summary": "按用户明确要求改为零基础教学，从部件、程序和运行过程解释 ADS，再引导读第一个真实源文件。",
+  "workflow_version": "WORKFLOW_REVIEW; single coordinator",
+  "started_at": "2026-10-26T12:03:59Z",
+  "measurement_cutoff_at": "2026-10-26T12:05:47.385800+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "先解释概念再使用术语，围绕一个完整例子贯通硬件到程序。",
+      "区分编辑、编译、烧录、运行和无线调参，提供可执行的只读学习动作。"
+    ],
+    "completed": [
+      "准备分步入门讲解，使用本项目真实入口和已经核对的代码结构。",
+      "当前再次确认源文件与已登记工程位置仍存在；不重复进行硬件或编译测试。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "硬件/源码操作",
+      "value": 0,
+      "unit": "actions",
+      "basis": "本轮只教学与路径核对。"
+    },
+    {
+      "name": "模型派发",
+      "value": 0,
+      "unit": "calls",
+      "basis": "无需协作。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无完整 usage。"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "复核归档活跃时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计时。"
+    }
+  ],
+  "observations": [
+    "上一轮信息密度超过用户希望的入门层级；本轮按实际部件和操作顺序解释，减少一次引入的术语。",
+    "教学材料交付不等于用户已理解；需要后续实际阅读反馈，不能计作学习效果提升。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-ADS26-BEGINNER-PACING",
+      "action": "后续教学先说明这个模块解决什么问题，再解释输入、输出和少量真实代码，每步给一个可见结果。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "依据用户下一次实际定位函数或解释数据流的反馈调整速度，不预先声称已学会。"
+    }
+  ],
+  "evidence": [
+    "evidence.json: scope, current path checks and teaching sequence."
+  ],
+  "comparison": null,
+  "limits": [
+    "未操作 ADS 界面、编译、烧录或动车。",
+    "本轮未独立测量学习效果；没有同条件效率对照。"
+  ]
+}
