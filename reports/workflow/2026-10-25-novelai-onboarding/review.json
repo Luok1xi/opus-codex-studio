@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-10-25-novelai-onboarding",
-  "task_summary": "NovelAI同轮v9简报：用户否定公开底图，原样基线及2份改稿已撤回，来源元数据保留。按4个新风格锚点完成两项标签与公开配方核查，但未找到同时满足可靠视觉筛选及完整配方的强候选。本阶段未操作GUI、未生成或消耗免费次数；整体仍partial。",
-  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 9",
+  "task_summary": "NovelAI同轮v10简报：用户要求在指定平台局部换人，协调者误用内置生图预览，造成平台不符的返工；返回NovelAI后未完成新生成。用户随后接管操作，交付范围收窄为未实测的局部重绘提示词，所有GUI操作已停止。",
+  "workflow_version": "WORKFLOW_REVIEW + WORKFLOW_DATABASE; existing desktop Opus; continuation version 10",
   "started_at": "2026-10-25T15:32:43Z",
-  "measurement_cutoff_at": "2026-10-26T09:51:24Z",
+  "measurement_cutoff_at": "2026-10-26T10:29:56Z",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -43,13 +43,14 @@
       "复用已有公开配方时，识别一件属于Img2ImgRequest且strength为0.8，排除其作为纯文生图基底；选择保留独立角色提示词及完整UC的另一件作为研究基底。",
       "原生子代理复核了两个单槽替换方向，保留原权重和其余原文参数；本阶段没有新的现有桌面Opus回复，草稿未动。",
       "已交付原始元数据、原样基线和2份完整修改稿；核验逆替换后全部生成参数与原文一致，两处prompt字段同步，UC与角色栏保留，原签名不复用。两份修改稿均明确标记未生成。",
-      "v9：底图被用户否定后，基线和2份改稿统一标记撤回，未改来源元数据；两项原生子任务核对4个风格锚点，其中3个在既有V5例图库命中且协调者查看样例，另1个仅有公开作者映射。新搜结果未满足视觉与完整配方双重门槛，强候选记0；无GUI、无生成、无新Opus回复。"
+      "v9：底图被用户否定后，基线和2份改稿统一标记撤回，未改来源元数据；两项原生子任务核对4个风格锚点，其中3个在既有V5例图库命中且协调者查看样例，另1个仅有公开作者映射。新搜结果未满足视觉与完整配方双重门槛，强候选记0；无GUI、无生成、无新Opus回复。",
+      "v10：记录并纠正平台误解，用户拒绝内置生图替代后回到NovelAI，核对剩余免费次数26/30；未生成新图。一次上传控件调用结果丢失，选择框状态未确认。用户要求自行操作后已停止GUI，当前仅交付未实测局部重绘提示词。"
     ],
     "remaining": [
-      "用户审美未验收；此前底图及2份改稿已撤回，不再作为当前推荐或可用实验基线。",
-      "当前4个锚点中，3个仅有目录及样例证据，另1个未证实当前模型响应；目录命中不能替代实际效果验证。",
-      "本阶段未找到同时满足可靠视觉筛选和完整配方要求的公开强候选；不得以完整参数页或文件验证冒充画质合格。",
-      "累计2张确认生成均被否定，另1次历史生成结果未知；原始PNG保存尚无成功凭据，现有Opus本阶段没有新回复。"
+      "指定平台的局部换人未完成，不能把其他平台预览或提示词交付称为NovelAI编辑成功。",
+      "一次图生图上传控件调用输出丢失，选择框是否打开未确认；未盲目重复操作，用户已接管GUI。",
+      "局部重绘提示词未在NovelAI实测，用户审美仍未验收；此前已撤回底图和改稿保持撤回。",
+      "累计已确认NovelAI成图仍为2张，均被用户否定，另1次历史结果未知；本阶段没有实际Opus咨询。"
     ]
   },
   "metrics": [
@@ -278,7 +279,8 @@
     "实际生图成功再次未通过审美验收，成功计数与质量通过计数保持分离，下载也未冒称完成。",
     "用户转向完整公开配方研究后，先辨别文生图与图生图请求类型，再保留角色提示词、UC和参数；只换一个画师槽位以限制变量。",
     "本阶段独立复核来自原生子代理，不能冒称已有Opus审核；继续保留其草稿和停止GUI的用户边界。",
-    "v9纠偏：先让底图达到视觉门槛，再制作成套修改稿。文档和参数一致性检查不代表画质验收，目录例图仅作标签证据；一件完整参数页的图片被否定，未计强候选，未为凑数降低标准。"
+    "v9纠偏：先让底图达到视觉门槛，再制作成套修改稿。文档和参数一致性检查不代表画质验收，目录例图仅作标签证据；一件完整参数页的图片被否定，未计强候选，未为凑数降低标准。",
+    "v10：用户指定的生图平台属于任务要求，内置生图预览不能替代指定平台结果；该误解导致返工。上传控件调用结果未知时不宣称完成，用户接管后停止GUI。当前只交付未实测提示词，时间、费用和用量缺少完整计量，继续记null。"
   ],
   "recommendations": [
     {
@@ -348,7 +350,7 @@
     "source_project": "NOVELAI-RESEARCH",
     "coordinator": "codex",
     "same_round_continuation": true,
-    "previous_archive_commit": "b9f4d92074111908143ce8b48a1c7e2f7633d7e2",
+    "previous_archive_commit": "e1906ec3448513c87684792d321e4059671c7ca1",
     "opus": {
       "actual_desktop_notes_received": true,
       "existing_assets_reused": true,
@@ -467,8 +469,8 @@
     ],
     "measurement": {
       "started_at": "2026-10-25T15:32:43Z",
-      "cutoff_at": "2026-10-26T09:51:24Z",
-      "wall_seconds": 65921,
+      "cutoff_at": "2026-10-26T10:29:56Z",
+      "wall_seconds": 68233,
       "active_seconds": null,
       "embedding_seconds": null,
       "note": "Same round includes overnight pause, quota wait, user communication and archive intervals. Wall time is not active work time; active duration and total usage unavailable."
@@ -519,25 +521,27 @@
       "novelai_free_trial_authorized": true,
       "opus_draft_preserved": true,
       "no_further_baidu_download_gui": true,
-      "current_gui_and_generation_stopped": true
+      "current_gui_and_generation_stopped": true,
+      "user_now_operates_gui": true,
+      "current_gui_authorized": false
     },
     "research_continuation": {
       "native_research_agents": 1,
       "completed_research_passes": 2,
       "initial_artist_recommendations_rejected": 3,
-      "current_scope": "Find visually acceptable full-recipe baseline for user-selected style anchors",
+      "current_scope": "Prompt-only guidance for user-operated NovelAI local inpainting",
       "new_candidate_generated": null,
       "visual_quality_passed": false,
       "x_direct_access_limited": true,
       "source_cross_check_used": true,
-      "previous_scope": "Research previously public full generation recipe with artist-only substitution",
+      "previous_scope": "Find visually acceptable full-recipe baseline for user-selected style anchors",
       "new_candidate_generation_outcome": "unknown"
     },
     "archive_continuation": {
       "native_archive_agents": 1,
       "business_work_continues": true,
       "cutoff_excludes_this_archive_activity": true,
-      "current_pass": 9,
+      "current_pass": 10,
       "scope_note": "Same archive worker; no recursive review round."
     },
     "artbook_continuation": {
@@ -593,6 +597,23 @@
       "new_opus_reply_received": false,
       "user_visual_acceptance": false,
       "project_contents_uploaded": false
+    },
+    "platform_correction_continuation": {
+      "requested_platform": "NovelAI",
+      "wrong_platform_preview_used": true,
+      "user_rejected_platform_substitution": true,
+      "returned_to_requested_platform": true,
+      "free_trial_remaining_observed": 26,
+      "new_novelai_generations": 0,
+      "upload_control_outcome": "unknown",
+      "file_picker_open_confirmed": false,
+      "user_took_over_gui": true,
+      "gui_operations_stopped": true,
+      "delivery": "untested_local_inpainting_prompt",
+      "novelai_replacement_completed": false,
+      "actual_opus_consultation": false,
+      "actual_active_seconds": null,
+      "actual_cost": null
     }
   }
 }
