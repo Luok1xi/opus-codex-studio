@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-26-embedded-lesson1",
+  "task_summary": "按用户要求以真实 TC264 代码系统教学：建立课程顺序，解释程序框架和首批函数，给出第一课小测。",
+  "workflow_version": "WORKFLOW_REVIEW; one coordinator; read-only native cross-check",
+  "started_at": "2026-10-26T13:15:49Z",
+  "measurement_cutoff_at": "2026-10-26T13:20:52.171558+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "用当前源代码说明模块和执行顺序，区分硬件检测程序与完整控制程序。",
+      "第一课解释函数输入、返回值和作用，并以题目检验；不预判用户已掌握。"
+    ],
+    "completed": [
+      "已核对入口、主循环、定时中断及初始化的实际实现。",
+      "收到独立只读核查，确认硬件测试 dt、编码器增量和初始化容易误讲之处。",
+      "准备分课路线和第一课四题，不在本轮公开答案。"
+    ],
+    "remaining": [
+      "等待用户答题后纠错，再推进后续函数和算法；学习效果尚未测得。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "原生独立核查",
+      "value": 1,
+      "unit": "tasks",
+      "basis": "实际收到一份硬件测试源码只读核查；不是 Opus 回复。"
+    },
+    {
+      "name": "硬件操作",
+      "value": 0,
+      "unit": "actions",
+      "basis": "只读源文件；未接串口、烧录或动车。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方完整用量。"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "复核归档主动时间",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计时；墙钟包含工具和核查。"
+    }
+  ],
+  "observations": [
+    "函数名称和注释可能比实现旧；本轮 clock_init 与定时调度解释以函数体和调用处为准。",
+    "一次分类上下文输出偏大；后续只取当前软件架构相关记录，避免把历史标定状态当作当前硬件事实。",
+    "完整教学要分轮验证理解，首课覆盖框架不等于全部函数课程已完成。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-LESSON26-READ-EXPLAIN-QUIZ",
+      "action": "每课按真实调用链说明用途、输入、输出、执行时机和单位，再用少量题目检验；依据答题决定是否下钻下一层。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "用户对第一课四题的回答。"
+    }
+  ],
+  "evidence": [
+    "evidence.json: source hashes, verified scheduling, received native review and teaching scope."
+  ],
+  "comparison": null,
+  "limits": [
+    "源码阅读不证明车上正在运行同一份固件。",
+    "未测量用户掌握程度；无同条件教学效率基线。",
+    "本轮未编译、烧录或进行实时硬件测试。"
+  ]
+}

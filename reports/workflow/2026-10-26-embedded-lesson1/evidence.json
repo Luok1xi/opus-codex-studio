@@ -1,0 +1,36 @@
+{
+  "source_project": "CRAZY-CIRCUIT",
+  "scope": "Read-only introductory embedded lesson using actual application source; no code edits or device actions.",
+  "source_sha256": {
+    "user/cpu0_main.c": "478518ee42098731f717fe1d0b488d160a2c01c023a2503e8210dfaea8d87813",
+    "user/isr.c": "4c9b92ac9134ee30e8fbb939b931a1a048edd067914df336942cf5d4e37c62e6",
+    "user/cpu1_main.c": "403720f96d7abec99b06c3165ebe55d2c278aa550f4528f6c8248a7a11e0da08",
+    "code/vision_link.c": "f42031871f15f8d9d3b48a4ffc88f9e14bd3bcbbf46167a014b59918774d0236",
+    "code/control.c": "b1876528f9e4aa195d53109db49fe22f2856029127e9315bd16e7398cb144b7f",
+    "code/pid.c": "a43c63b03d1fd34d071f17d848c8ec768f937f04a3819138bd6ca68b0918bb72",
+    "code/imu.c": "f49a663724d9399b3f82c222360e23ed7d9e79b041a06874486689959d8354c7",
+    "libraries/zf_common/zf_common_clock.c": "eaae043e03bba45a4fcaf106daaa5ab3f5af4b2ebb1d32f7feeb5f4a64364a51",
+    "libraries/zf_common/zf_common_debug.c": "5917fd41455701d08c2e566d8667ad301c1621987537455a1e8aab8d12d35043"
+  },
+  "verified": [
+    "Application entry is core0_main; initialization precedes the forever foreground loop.",
+    "Foreground calls vision_process_pending, vision_debug_poll and vision_screen_poll; it also handles launch keys/state and wireless.",
+    "Timer CCU60_CH0 requests 5 ms direction-loop scheduling; CCU60_CH1 requests 2 ms angle/speed scheduling.",
+    "clock_init implementation obtains current clocks, initializes delays and configures interrupt/watchdog state; it is not described as raising CPU frequency.",
+    "Separate hardware-test source uses actual elapsed time rather than a guaranteed exact 10 ms tick."
+  ],
+  "native_review": {
+    "received": true,
+    "scope": "Read-only hardware-test function inventory and beginner pitfalls",
+    "functions_checked": 6,
+    "provider_usage": null
+  },
+  "learner_assessment": {
+    "questions_planned": 4,
+    "answers_received": false,
+    "mastery": null
+  },
+  "hardware_actions": 0,
+  "firmware_changes": 0,
+  "compiled_or_flashed": false
+}
