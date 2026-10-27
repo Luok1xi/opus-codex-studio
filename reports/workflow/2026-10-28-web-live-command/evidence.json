@@ -1,0 +1,61 @@
+{
+  "source_changes": 4,
+  "source_hashes": {
+    "src/js/robot-live-model.js": {
+      "before": "05eca007d491561c655685ee2272ba0b333ede27f4444e5cc5a916d83c9214fc",
+      "after": "eece5a2a2ad74876883929a4bed1ffca57b28aa5338b06feaeee718b65d59c9e"
+    },
+    "src/js/robot-live-view.js": {
+      "before": "f2ebda114caaaa59d79ed266da3dc46b56e6ff5a1eefa98a14b20ccc6e662561",
+      "after": "5186add4cbd36308a21aa55f4b933152d88312837e8305de1bcc042003ce3464"
+    },
+    "src/styles/robot-live.css": {
+      "before": "e56c9b26bbb811c9c1cfb12147c3d691cc8543b1db4740ad70631e413efbe41f",
+      "after": "3c585bcaefc9aed6d7a67550e173c06a3492b066520411ab70cabdd89e2a5883"
+    },
+    "scripts/test-robot-live.mjs": {
+      "before": "4ed41c73b78cc3f909e721698cbf0c634a78cb6feb468030bfdcbf3c846a3606",
+      "after": "40f6b9cc4c363e77789c1c75e18d4bb6f15861ead51b89cd4c7a283b5f974c4b"
+    }
+  },
+  "unit_tests": {
+    "passed": 30,
+    "failed": 0,
+    "duration_ms": 2083.8225
+  },
+  "eslint_exit": 0,
+  "build": {
+    "exit": 0,
+    "vite_seconds": 1.2,
+    "warning": "Existing large chunks remain."
+  },
+  "browser": {
+    "passed": 22,
+    "page_errors": 0,
+    "widths": [
+      390,
+      1440
+    ],
+    "serial": "mock only",
+    "latest_seconds": 5.31,
+    "executions": 2,
+    "reason_for_repeat": "Additional close-up screenshots; same 22 checks, not 44 unique checks."
+  },
+  "publication": {
+    "commit_sha": "573cd33af1266b9fc6cf28e339e22cdb92963ec0",
+    "archive_sha256": "ba7f460aa76dec71735f0702250b0e92063af2f8b9a167ee99663d5a4667b95f",
+    "expanded_bytes": 231196519,
+    "status": "succeeded",
+    "url": "https://luokixi-web.cozy-whale-9871.chatgpt.site"
+  },
+  "coordination": {
+    "native_agents": 2,
+    "external_opus_dispatches": 0,
+    "opus_acceptance": "not received"
+  },
+  "hardware": {
+    "serial_connections": 0,
+    "flashes": 0,
+    "motor_commands": 0
+  }
+}

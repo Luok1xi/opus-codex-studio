@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-28-web-live-command",
+  "task_summary": "Add sending and device replies to the existing real-car website using its current serial connection.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-10-27T16:07:32Z",
+  "measurement_cutoff_at": "2026-10-27T16:32:14+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Visible command controls in existing page, exact newline encoding, valid bounds, visible replies/errors, no automatic command, local build and public deployment."
+    ],
+    "completed": [
+      "Added bounded hwtest commands and independent device-reply view.",
+      "30 unit tests, ESLint, build and 22 mock browser checks passed.",
+      "Published to the existing public site; preserved replay data and prior audience."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Native subagents",
+      "value": 2,
+      "unit": "agents",
+      "basis": "Protocol/browser review and publication preparation, bounded separate scopes."
+    },
+    {
+      "name": "External Opus calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Only project database handoff; no current Opus response."
+    },
+    {
+      "name": "Raw model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable."
+    },
+    {
+      "name": "Model cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing record."
+    },
+    {
+      "name": "Coordination wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlapped work, not instrumented."
+    },
+    {
+      "name": "Review and archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive receipt will record its actual subsequent interval; reading workflow rules and preparing review interleaved with task."
+    },
+    {
+      "name": "Source correction passes",
+      "value": 1,
+      "unit": "passes",
+      "basis": "Self-review strengthened own-property validation before tests; no test failure."
+    },
+    {
+      "name": "Observed infrastructure failures",
+      "value": 3,
+      "unit": "operations",
+      "basis": "Canonical Git read denied; localhost socket denied; first publish helper TLS handshake failed. Retried with scoped authorization / certificate-validating OpenSSL."
+    }
+  ],
+  "observations": [
+    "Reused existing writer and parser; no dependencies, firmware changes or extra serial connection.",
+    "Subagent protocol review identified hidden/paused-log risk; independent reply panel addresses it.",
+    "Publishing helper initially failed Windows TLS handshake; process-local OpenSSL preserved certificate verification and succeeded.",
+    "Browser checks repeated once for close-up screenshots, an avoidable verification overhead.",
+    "No matched workflow baseline; no speedup claim.",
+    "Review schema rejected placing out-of-scope physical follow-up under unmet acceptance; moved it to existing limits. No acceptance criterion was removed."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-WEB-SERIAL-SEND-20261028",
+      "action": "Combine serial writer assertions, viewport coverage and close-up screenshots in one browser run.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next serial UI change should collect all evidence in one run unless a failure requires a repeat."
+    }
+  ],
+  "evidence": [
+    "evidence.json; local source manifest, mock browser results, build log, package and deployment receipts."
+  ],
+  "comparison": null,
+  "limits": [
+    "No physical serial, flashing or motor actions.",
+    "Fresh status gating is a UI precaution, not a hardware interlock.",
+    "No Opus response or acceptance claimed."
+  ]
+}
