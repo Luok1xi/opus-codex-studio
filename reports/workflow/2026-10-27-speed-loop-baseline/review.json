@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-27-speed-loop-baseline",
+  "task_summary": "Prepare real-car low-speed-loop baseline, independently assess saved evidence, and prevent incomplete captures from misleading tuning.",
+  "workflow_version": "WORKFLOW_REVIEW.md and WORKFLOW_DATABASE.md read 2026-10-27",
+  "started_at": "2026-10-27T14:19:25Z",
+  "measurement_cutoff_at": "2026-10-27T14:29:44Z",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Identify the currently flashed tuning firmware and owner readiness.",
+      "Prepare baseline commands and validate measurement interpretation.",
+      "Acquire repeated baseline tests before choosing a parameter change."
+    ],
+    "completed": [
+      "Current tuning firmware flash receipt and boot parameters checked.",
+      "Owner reports hardware not ready; all work remained offline.",
+      "Independent source review reproduced a missing-sample timing error in the existing reporting path.",
+      "Added a local validation layer reusing existing metric calculation; ten tests passed.",
+      "Recomputed previous sparse logs and identified incomplete run boundaries.",
+      "Initial and completed preparation handoffs355/356 sent to the project reviewer."
+    ],
+    "remaining": [
+      "Owner setup and repeated real-device baseline captures.",
+      "Choose and verify one gain adjustment against a matched baseline.",
+      "Opus coordination acknowledgement and serial operator confirmation."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Native reviewers",
+      "value": 1,
+      "unit": "agents",
+      "basis": "One existing native reviewer completed a bounded source and synthetic-data check."
+    },
+    {
+      "name": "External model invocations",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Project handoffs only; no paid model dispatch."
+    },
+    {
+      "name": "Validator tests passed",
+      "value": 10,
+      "unit": "tests",
+      "basis": "Unit tests plus integration with existing metrics."
+    },
+    {
+      "name": "New real-device tuning runs",
+      "value": 0,
+      "unit": "runs",
+      "basis": "Owner not ready; no hardware action issued."
+    },
+    {
+      "name": "Firmware modifications",
+      "value": 0,
+      "unit": "files",
+      "basis": "Local analysis wrapper only; current Opus firmware/tool preserved."
+    },
+    {
+      "name": "Observed historical test fragments",
+      "value": 6,
+      "unit": "fragments",
+      "basis": "Three normal endings, two manual stops, one trailing truncation; first normal ending lacks start marker."
+    },
+    {
+      "name": "Analysis corrections",
+      "value": 1,
+      "unit": "events",
+      "basis": "Boundary assertion revealed an initial fragment and final unfinished test; summary corrected rather than discarded."
+    },
+    {
+      "name": "Read-only query errors",
+      "value": 1,
+      "unit": "events",
+      "basis": "Task query used a nonexistent schema column; task was resolved from verified handoffs instead."
+    },
+    {
+      "name": "Raw usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable."
+    },
+    {
+      "name": "Actual cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Review/archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Review overlapped preparation; archive interval separately recorded in receipt."
+    }
+  ],
+  "observations": [
+    "Measured source/build status differs from physical readiness; owner response prevented interpreting preparation as an executed test.",
+    "Dropping sample indices can reward damaged records with falsely short response time. Rejecting incomplete records is needed before parameter comparisons.",
+    "A reused metrics implementation plus a narrow integrity gate avoided changing the live firmware during parallel hardware work.",
+    "No matched workflow quality/timing baseline exists; net efficiency improvement remains unproven."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-CRAZY-SPEED-20261027-INTEGRITY",
+      "action": "Require complete ordered sample indices and normal completion before scoring tuning captures.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next real capture is validated before any gain recommendation."
+    },
+    {
+      "id": "WF-CRAZY-SPEED-20261027-METADATA",
+      "action": "Freeze acquisition parameters in firmware capture metadata, or retain automatic dump before any subsequent parameter change.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "Re-exporting an old capture cannot label it with newer settings."
+    }
+  ],
+  "evidence": [
+    "Saved flash/boot evidence; current source and original analysis tool were read only.",
+    "Local checked_step_report.py and ten passing tests; synthetic timing-error reproduction.",
+    "Project handoffs354 read,355/356 created; older baseline summary remains local."
+  ],
+  "comparison": null,
+  "limits": [
+    "No real-device tuning improvement was demonstrated.",
+    "Saved status telemetry is sparse and averaged; it does not establish high-rate oscillation or ISR timing.",
+    "New capture windows cover only the first0.4s of each step and use conditioned feedback.",
+    "The wrapper cannot prove firmware metadata provenance after a later parameter change; automatic dump workflow is still required.",
+    "Raw logs, source and project tools are not uploaded in the workflow archive."
+  ]
+}

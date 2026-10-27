@@ -1,0 +1,21 @@
+{
+  "round_id": "2026-10-27-speed-loop-baseline",
+  "tuning_image_sha256": "74946a64682a66d90e537cada47c40da8ca9b24314bb6563a8cd82f311be8f26",
+  "tuning_source_sha256": "edf13fbb0a664b3ea7ac56fc347b043c2414001c9b780ec6e975470a3f635888",
+  "validation": {
+    "tests_passed": 10,
+    "complete_profiles_accepted": 3,
+    "missing_duplicate_malformed_truncated_or_aborted_rejected": true,
+    "boot_only_capture_not_scored": true
+  },
+  "historical_capture_fragments": {
+    "normal_endings": 3,
+    "manual_stops": 2,
+    "trailing_truncated": 1,
+    "first_start_marker_missing": true
+  },
+  "hardware_actions": 0,
+  "owner_ready": false,
+  "external_review_ack": false,
+  "raw_material_uploaded": false
+}
