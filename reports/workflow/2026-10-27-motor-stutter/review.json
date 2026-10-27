@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-27-motor-stutter",
+  "task_summary": "Diagnose synchronous motor stutter from current firmware and saved device evidence; coordinate independent review without controlling hardware.",
+  "workflow_version": "WORKFLOW_REVIEW.md and WORKFLOW_DATABASE.md read 2026-10-27",
+  "started_at": "2026-10-27T13:18:31Z",
+  "measurement_cutoff_at": "2026-10-27T13:26:09Z",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Identify active test firmware and distinguish source/build/saved hardware evidence.",
+      "Trace saved stopping reason and provide a bounded next diagnostic step.",
+      "Retain project handoff and sanitized workflow review."
+    ],
+    "completed": [
+      "Saved earlier capture stops in wiring detection before speed-loop RUN.",
+      "Source and independently reviewed state transitions agree on STOP_WIRING semantics.",
+      "Detected concurrent source/build/flash change and verified newer saved capture contains idle only.",
+      "Acknowledged existing Opus handoff and delivered findings as project handoff 350."
+    ],
+    "remaining": [
+      "Root cause of insufficient encoder motion and whether the latest firmware resolves the reported symptom require post-probe hardware evidence.",
+      "Actual Opus acknowledgement of new handoff is pending."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Native child agents",
+      "value": 1,
+      "unit": "agents",
+      "basis": "One bounded read-only control audit returned findings."
+    },
+    {
+      "name": "External model invocations by this round",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Existing Opus work inspected through local evidence; no new external model dispatch."
+    },
+    {
+      "name": "Raw model token usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider-level comparable usage unavailable."
+    },
+    {
+      "name": "Actual cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Hardware writes by this round",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial connection, flash or motor command was issued."
+    },
+    {
+      "name": "Initial diagnostic lookup corrections",
+      "value": 2,
+      "unit": "events",
+      "basis": "Old hwtest source was replaced with hwtest-speed scope; query using missing created_at column corrected."
+    },
+    {
+      "name": "Firmware rework by this round",
+      "value": 0,
+      "unit": "changes",
+      "basis": "Read-only firmware diagnosis; concurrent collaborator files preserved."
+    },
+    {
+      "name": "Coordination waiting time",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Native review overlapped main work; no separately measured blocking interval."
+    },
+    {
+      "name": "Review and archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlapped technical work; final archive duration will be measured in receipt."
+    }
+  ],
+  "observations": [
+    "A second source reader confirmed that the recorded failure precedes PI execution, reducing risk of tuning unrelated parameters.",
+    "Concurrent artifact replacement required checking timestamps, hashes and the later flash receipt; old handoff text alone was stale.",
+    "No matched quality-controlled baseline exists; net speedup is unproven.",
+    "Opus communication is a database handoff, not a verified reply to this round."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-CRAZY-MOTOR-20261027-VERSION",
+      "action": "Attach firmware identity to each captured test result and preserve earlier build identity when replacing the test HEX.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "Next probe log is traceable to its exact flashed image and source snapshot."
+    },
+    {
+      "id": "WF-CRAZY-MOTOR-20261027-PHASE",
+      "action": "Classify the device state and stop reason before adjusting controller gains.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "A subsequent motor diagnosis separates probe failure from RUN instability."
+    }
+  ],
+  "evidence": [
+    "Existing project handoff349 read and acknowledged; new handoff350 created.",
+    "One native worker returned static audit; root checked saved device captures and flash receipt.",
+    "Sanitized evidence.json retains artifact hashes and categorical results; raw source and serial data remain local."
+  ],
+  "comparison": null,
+  "limits": [
+    "No live-device observation was performed by this round.",
+    "Post-probe data for the new flash and transient voltage under load were not available.",
+    "Physical pin mapping, mechanical drag, driver behavior and encoder integrity remain unverified.",
+    "Archive and database receipts are recorded separately; pending upload is not reported as complete."
+  ]
+}

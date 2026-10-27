@@ -1,0 +1,28 @@
+{
+  "round_id": "2026-10-27-motor-stutter",
+  "source_review": {
+    "kind": "static",
+    "sha256": "c9b2314d4293abe5e4dae37143ef6c09e03018f1ad099b5f22748e6894b91f9a",
+    "concurrent_edit_detected": true
+  },
+  "captures": [
+    {
+      "label": "earlier_saved_device_capture",
+      "sha256": "8a8b3fdcbcb63491ef58dfcc142268ba3186eea0beae81fb449a784d4012c899",
+      "classification": "wiring detection failed; no RUN state captured"
+    },
+    {
+      "label": "later_saved_device_capture",
+      "sha256": "20242c62fc992f629d7e77ff630cd958a409154328200def663b4dc88f88a3f4",
+      "classification": "boot and idle only"
+    }
+  ],
+  "latest_image_sha256": "5380d4de8c74d18711ddda3ba2464791e9346115910f3e2022dbdf4715cc58ff",
+  "latest_flash_receipt": "program and verify pass",
+  "coordination": {
+    "native_worker_returned": true,
+    "opus_handoff_created": true,
+    "opus_reply_received": false
+  },
+  "raw_material_uploaded": false
+}
