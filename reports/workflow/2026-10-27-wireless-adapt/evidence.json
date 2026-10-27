@@ -1,0 +1,31 @@
+{
+  "round_id": "2026-10-27-wireless-adapt",
+  "baseline_source_sha256": "7453bbfebf0f14ce14172db9fbd8fb9f83ff436d5ff2eb641edf66c2e929513d",
+  "candidate_source_sha256": "fbe2332d6b8557572855412a16e97ebd516d686c94bc5f47eaaca599aab44891",
+  "candidate_hex_sha256": "d444ed8d4c90c6ed97b24a509ac183494127525b427343e363c2ff91eb114f37",
+  "build": {
+    "errors": 0,
+    "warnings": 0,
+    "source_files_checked": 649,
+    "rom_bytes": 80657,
+    "ram_bytes": 66488
+  },
+  "tests": {
+    "c_groups": 7,
+    "c_checks": 736,
+    "baseline_negative_control_failed_as_expected": true,
+    "capture_tests": 16,
+    "saved_complete_runs": 5,
+    "saved_samples": 8600
+  },
+  "offline_example": {
+    "records": 2000,
+    "ascii_data_bytes": 51251,
+    "proposed_binary_data_frame_bytes": 21750,
+    "numeric_roundtrip_exact": true,
+    "metadata_requests_retries_excluded": true
+  },
+  "hardware_actions": 0,
+  "recipient_acknowledgement": false,
+  "raw_material_uploaded": false
+}
