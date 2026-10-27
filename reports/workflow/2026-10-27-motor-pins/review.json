@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-27-motor-pins",
+  "task_summary": "Integrate measured motor pin mapping and polarity into production firmware; verify software outputs and isolated full build; hand off for review.",
+  "workflow_version": "WORKFLOW_REVIEW.md and WORKFLOW_DATABASE.md read 2026-10-27",
+  "started_at": "2026-10-27T13:36:58Z",
+  "measurement_cutoff_at": "2026-10-27T13:47:26Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Verify latest task and repeated raw wiring evidence before editing.",
+      "Apply only the measured configuration correction and preserve unrelated work.",
+      "Run meaningful output regression and full firmware build.",
+      "Commit the scoped change and provide exact artifacts to the reviewer."
+    ],
+    "completed": [
+      "Two saved wiring results independently matched the chosen mapping and encoder-relative polarity.",
+      "Six macros and corresponding pin comments changed in one header; reverse polarity corrected together with forward.",
+      "Original configuration failed measured-pin software contract; corrected initialization and seven output cases passed.",
+      "Isolated full build completed with zero errors and eleven warnings identical to historical baseline.",
+      "679 source hashes stable during build; installation preserved the other 678 tracked files and matched the compiled snapshot.",
+      "Local scoped commit created; existing unrelated uncommitted files retained; review handoff353 created."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Native child agents",
+      "value": 2,
+      "unit": "agents",
+      "basis": "Independent evidence/control review and isolated build worker returned results."
+    },
+    {
+      "name": "External model dispatches",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No new external-model invocation; existing Opus task was consumed through project database."
+    },
+    {
+      "name": "Firmware files changed",
+      "value": 1,
+      "unit": "files",
+      "basis": "Scoped local commit contains one header."
+    },
+    {
+      "name": "Changed configuration definitions",
+      "value": 6,
+      "unit": "macros",
+      "basis": "Two pin assignments and four forward/reverse definitions."
+    },
+    {
+      "name": "Output checks passed",
+      "value": 8,
+      "unit": "cases",
+      "basis": "Initialization plus seven real-function cases with GPIO/PWM stubs."
+    },
+    {
+      "name": "Build errors",
+      "value": 0,
+      "unit": "errors",
+      "basis": "Fresh ADS full-build log."
+    },
+    {
+      "name": "Build warnings",
+      "value": 11,
+      "unit": "warnings",
+      "basis": "Fresh full-build log; warning lines equal historical baseline."
+    },
+    {
+      "name": "IDE reported compilation duration",
+      "value": 3.94,
+      "unit": "seconds",
+      "basis": "IDE build log; excludes import and validation."
+    },
+    {
+      "name": "Build worker wall interval",
+      "value": 288,
+      "unit": "seconds",
+      "basis": "Worker reported 21:40:35 to21:45:23 +08:00; includes initial import restriction and cleanup."
+    },
+    {
+      "name": "Execution permission obstacles",
+      "value": 2,
+      "unit": "events",
+      "basis": "Snapshot helper could not launch git under restriction; isolated import stalled. Narrow permission retries succeeded."
+    },
+    {
+      "name": "Raw model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable; no token estimate substituted."
+    },
+    {
+      "name": "Actual cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Billing evidence unavailable."
+    },
+    {
+      "name": "Human clarification required",
+      "value": 0,
+      "unit": "requests",
+      "basis": "Current project handoff supplied concrete task."
+    },
+    {
+      "name": "Hardware operations by this round",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial, flash or motion commands."
+    },
+    {
+      "name": "Review/archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Review overlapped implementation; final archive interval recorded in receipt."
+    }
+  ],
+  "observations": [
+    "Independent review caught the need to change reverse polarity alongside forward polarity.",
+    "Using an isolated IDE preserved the existing working tree and active collaborator window.",
+    "A per-file source manifest captures unrelated existing working-tree content included in the binary; commit identity alone would be insufficient.",
+    "The initial failed host assertion is the intended old-configuration baseline, not a failure of the fix.",
+    "There is no matched workflow timing baseline, so net efficiency improvement is unproven."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-CRAZY-PINS-20261027-POLARITY",
+      "action": "Verify both positive and negative output paths whenever motor polarity is changed.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next wiring adjustment includes both-direction regression."
+    },
+    {
+      "id": "WF-CRAZY-PINS-20261027-ARTIFACT",
+      "action": "Attach compiled source manifest and exact artifact hash when a build includes pre-existing uncommitted files.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Reviewer can distinguish the validated binary from an older production output."
+    }
+  ],
+  "evidence": [
+    "Project task352 read and acknowledged; completion handoff353 created.",
+    "Local commit c6d6973b043d3107ec92c86905fef4a4555c5922; sanitized evidence.json hashes.",
+    "Native independent review and build result; saved host and build receipts remain local."
+  ],
+  "comparison": null,
+  "limits": [
+    "Host tests check software dispatch, not physical electrical signals.",
+    "This revised production firmware was not flashed or driven.",
+    "Encoder-relative positive rotation does not independently prove physical chassis-forward direction.",
+    "External Opus acceptance of completion handoff is pending.",
+    "Private archive includes only sanitized workflow reports, not firmware source, binaries or raw device logs."
+  ]
+}

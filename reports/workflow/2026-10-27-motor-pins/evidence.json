@@ -1,0 +1,30 @@
+{
+  "round_id": "2026-10-27-motor-pins",
+  "local_commit": "c6d6973b043d3107ec92c86905fef4a4555c5922",
+  "header_sha256": "965ea14ae0b8ca7e0dca50b0601907b5f4d691467a716a454d45ede6aac88fb0",
+  "hex_sha256": "df14cfb0080836184e4ceb67791b93be0c41f0d5f243e2a9ac7b0432825e12bf",
+  "build_log_sha256": "125fc85c8bd8eeb0735d4ec14f614fc2c906b4ff2a3c7c3b80fd69ebb589df8a",
+  "source_files_checked": 679,
+  "unrelated_files_preserved": 678,
+  "build": {
+    "errors": 0,
+    "warnings": 11,
+    "warnings_match_previous": true,
+    "rom_bytes": 95733,
+    "ram_bytes": 135525
+  },
+  "host_regression": {
+    "old_configuration_rejected": true,
+    "new_configuration_passed": true,
+    "cases": 8
+  },
+  "coordination": {
+    "native_review_returned": true,
+    "native_build_returned": true,
+    "external_task_received": true,
+    "completion_handoff": 353,
+    "external_acceptance_received": false
+  },
+  "hardware_operations": 0,
+  "raw_material_uploaded": false
+}
