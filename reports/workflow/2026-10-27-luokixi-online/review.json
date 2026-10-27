@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-27-luokixi-online",
+  "task_summary": "Package latest Luokixi static website for online publication; deployment blocked by upload-service failures.",
+  "workflow_version": "WORKFLOW_REVIEW 2026-10-18; Sites 1.1.2",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-10-27T07:08:13Z",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Latest canonical source build succeeds",
+      "Private static site deployment succeeds with a verified URL",
+      "Private local exams and review artwork excluded"
+    ],
+    "completed": [
+      "Canonical build: 589 modules; content validation passed",
+      "18 targeted tests passed; 65 replay cases checked",
+      "35 HTML entry asset checks passed; sanitized archive verified",
+      "Complete static archive retained; user explicitly deferred backend deployment"
+    ],
+    "remaining": [
+      "Online deployment not completed: full upload rejected by size limit, 40 MiB and 10 MiB pushes reset after credential refresh"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage available"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Interleaved with publication; not separately measured"
+    },
+    {
+      "name": "delegated_agents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No delegation used"
+    },
+    {
+      "name": "rework",
+      "value": 1,
+      "unit": "packaging corrections",
+      "basis": "Robocopy exclusions did not apply; removed excluded staging directories and amended unpushed root commit; archive and tree checked"
+    }
+  ],
+  "observations": [
+    "Local canonical source includes uncommitted changes; used current build rather than stale remote.",
+    "Initial restricted network failed DNS; elevated retry could resolve service.",
+    "Read-only reconciliation found no remote branch after interrupted attempt.",
+    "No matched baseline; no speedup claim.",
+    "Full push rejected: receive-pack request exceeds maximum size.",
+    "Smaller 40 MiB and 10 MiB pushes failed with curl 55 connection reset; fresh credential did not resolve.",
+    "No saved site version or successful production deployment receipt obtained."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "LUOKIXI-WEB task 8",
+    "Build and content check exited 0; targeted test summary 18 passed",
+    "Package assertion: 35 HTML pages, no missing script/style entry assets, excluded directories absent",
+    "Sanitized archive SHA256 58f2e592313d441a1914461e2904051a62b4adb83713ffeeb12c438f6133c09a"
+  ],
+  "comparison": null,
+  "limits": [
+    "No live hardware validation",
+    "No browser QA of hosted site yet",
+    "Backend login/upload/forum/arena compute require separate hosting",
+    "Round start and exact token/cost metrics unknown",
+    "No working online URL delivered; expected URL is not deployment proof."
+  ]
+}
