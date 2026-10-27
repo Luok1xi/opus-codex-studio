@@ -1,15 +1,15 @@
 # 2026-10-27-luokixi-online 工作流复盘
 
-Package latest Luokixi static website for online publication; deployment blocked by upload-service failures.
+Latest Luokixi static site successfully published with Sites; backend explicitly deferred by owner.
 
 **结论：证据不足：没有合格的同条件基线，不能判断净提效。**
 
 未建立；单轮观察或单次配对不能证明普遍因果收益。
 
 - 工作流：WORKFLOW_REVIEW 2026-10-18; Sites 1.1.2
-- 验收状态：partial
+- 验收状态：passed
 - 开始：None
-- 测量截止：2026-10-27T07:08:13Z
+- 测量截止：2026-10-27T08:11:14Z
 - 墙钟秒数：None
 - 合格配对耗时变化（%）：None
 
@@ -17,53 +17,61 @@ Package latest Luokixi static website for online publication; deployment blocked
 
 | 指标 | 值 | 单位 | 口径 |
 |---|---:|---|---|
-| tokens | 未知 | tokens | No provider usage available |
-| cost | 未知 | currency | No billing evidence |
-| review_overhead | 未知 | seconds | Interleaved with publication; not separately measured |
-| delegated_agents | 0 | agents | No delegation used |
-| rework | 1 | packaging corrections | Robocopy exclusions did not apply; removed excluded staging directories and amended unpushed root commit; archive and tree checked |
+| tokens | 未知 | tokens | Provider usage not available |
+| cost | 未知 | currency | Billing not available |
+| observed_resume_to_deployment | 1832.747 | seconds | First recorded resume command time to platform deployment success; includes waiting and retries; not entire round |
+| review_overhead | 未知 | seconds | Interleaved with work; not separately measured |
+| delegated_agents | 0 | agents | No delegated work |
+| tests_passed | 394 | tests | npm run check final summary |
+| initial_verified_upload_batches | 38 | batches | Each push followed by matching remote ref verification |
+| compressed_asset_update_batches | 3 | batches | After reader/index update |
 
 ## 验收条件
 
-- Latest canonical source build succeeds
-- Private static site deployment succeeds with a verified URL
-- Private local exams and review artwork excluded
+- Publish latest canonical frontend through the existing Sites project
+- Preserve all indexed replay cases without changing data
+- Exclude local exams and designated review artwork
+- Confirm successful deployment and URL
 
 ## 已完成
 
-- Canonical build: 589 modules; content validation passed
-- 18 targeted tests passed; 65 replay cases checked
-- 35 HTML entry asset checks passed; sanitized archive verified
-- Complete static archive retained; user explicitly deferred backend deployment
+- Sites deployment succeeded: https://luokixi-web.cozy-whale-9871.chatgpt.site
+- 55 unique indexed cases and 110 run records retained; gzip round-trips byte-for-byte
+- Expanded static assets: 231189074 bytes, below 256 MiB limit
+- npm run check passed: lint, unused checks, 394 tests, content validation and build
+- Browser: profile, home and blueprint pages load without script errors; compressed replay camera renders; 390px home has no horizontal overflow
+- Archive SHA256: 1983c5758f8a12025eb7161c05faf055e42042d21d331f91d93a9c6ad77ac7cd
 
 ## 未完成
 
-- Online deployment not completed: full upload rejected by size limit, 40 MiB and 10 MiB pushes reset after credential refresh
+- 无记录
 
 ## 收益与损耗观察
 
-- Local canonical source includes uncommitted changes; used current build rather than stale remote.
-- Initial restricted network failed DNS; elevated retry could resolve service.
-- Read-only reconciliation found no remote branch after interrupted attempt.
-- No matched baseline; no speedup claim.
-- Full push rejected: receive-pack request exceeds maximum size.
-- Smaller 40 MiB and 10 MiB pushes failed with curl 55 connection reset; fresh credential did not resolve.
-- No saved site version or successful production deployment receipt obtained.
+- Initial full source push exceeded receive-pack size; small incremental uploads plus remote reconciliation recovered from intermittent resets.
+- Private staging exclusion failure was corrected before a successful source push; original unpushed root was amended.
+- Deployment archive has a separate 256 MiB expanded limit; discovered after upload. Lossless gzip reduced static assets to about 220.5 MiB.
+- A browser test initially counted an empty alert placeholder as failure; replaced with a nonempty-message check and actual camera canvas verification.
+- Earlier report said 65 replay cases based on summed category membership; corrected unique index count is 55. No cases were removed.
+- No matched quality baseline; no speedup claim.
 
 ## 修改建议及下一轮验收
 
+- **LUOKIXI-WEB-SITES-SIZE-20261027 [adopted]** Check expanded asset size before source upload; reuse lossless replay packaging and byte-equality checks.；负责人：codex；下次检查：Next publication must preflight below 256 MiB and verify every indexed replay before uploading.
 
 ## 证据
 
 - LUOKIXI-WEB task 8
-- Build and content check exited 0; targeted test summary 18 passed
-- Package assertion: 35 HTML pages, no missing script/style entry assets, excluded directories absent
-- Sanitized archive SHA256 58f2e592313d441a1914461e2904051a62b4adb83713ffeeb12c438f6133c09a
+- Source commit 7f14d37a7fea3f6e5ccf4f99289cc6a826e0fd05
+- Deployment appgdep_6ae05c14b5188191b5c1ec0ec9051ca1; status succeeded at 2026-10-27T08:09:38.891975+00:00
+- Version appgprj_6ae04b0c9d948191bd2a2cee521682f6~appgver_47af0c3fc1b48191b8551c942aead107
+- outputs/compression-verification.json; outputs/static-browser-check.json
+- Final project-check log: 394 pass, 0 fail
 
 ## 限制
 
+- Python backend not deployed, as requested
+- Owner-only Sites access retained
 - No live hardware validation
-- No browser QA of hosted site yet
-- Backend login/upload/forum/arena compute require separate hosting
-- Round start and exact token/cost metrics unknown
-- No working online URL delivered; expected URL is not deployment proof.
+- Browser verification used the exact static package; no signed-in hosted browser retest
+- Whole-round start time and exact usage/cost unknown
