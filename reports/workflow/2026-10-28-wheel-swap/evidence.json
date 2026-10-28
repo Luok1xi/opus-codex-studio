@@ -1,0 +1,45 @@
+{
+  "round_id": "2026-10-28-wheel-swap",
+  "complete_speed_captures": 3,
+  "rows_each": 500,
+  "race_complete_logs": 0,
+  "race_missing_legal_indices": 244,
+  "race_duplicate_rows": 271,
+  "race_index_reversals": 20,
+  "real_camera_frames": 2,
+  "vision_real_frame_results": [
+    {
+      "valid": 1,
+      "px": -11,
+      "corner": 0
+    },
+    {
+      "valid": 1,
+      "px": -11,
+      "corner": 0
+    }
+  ],
+  "live_camera_processed_per_interval": 50,
+  "screen_max_fps": 5,
+  "limit_candidate_host_assertions": 2665,
+  "valuepack_host_assertions": 837,
+  "webcompat_host_assertions": 30589,
+  "build_errors": 0,
+  "build_warnings": 11,
+  "limit_candidate_installed": false,
+  "flashed_by_coordinator": false,
+  "race_target275_physically_verified": false,
+  "old_binary_zero_command_rejected": true,
+  "no_gain_ascii_cleanup_sent": false,
+  "new_external_inference_calls": 0,
+  "opus_handoffs_read": [
+    377,
+    378,
+    379,
+    380,
+    381,
+    382
+  ],
+  "coordinator_handoff": 383,
+  "current_serial_owner": "opus"
+}
