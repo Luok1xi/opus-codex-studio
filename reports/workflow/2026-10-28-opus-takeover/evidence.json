@@ -1,0 +1,38 @@
+{
+  "round_id": "2026-10-28-opus-takeover",
+  "capture_sha256": "38667f645814c04057d2668bf5fa314b8c22d030cf35ebfb5c54f5a30faad540",
+  "rows": 500,
+  "sample_ticks": 999,
+  "stride": 2,
+  "dt_ms": 2,
+  "mode": "both_wheel_speed",
+  "target_counts_per_2ms": 40,
+  "steady_from_ms": 500,
+  "steady_mean": [
+    39.967914438502675,
+    40.18181818181818
+  ],
+  "steady_std": [
+    5.705709443124818,
+    8.325213999535697
+  ],
+  "startup_overshoot_pct": [
+    67.5,
+    75.0
+  ],
+  "backend_assertions": 9708,
+  "control_checks": 41,
+  "software_check_failures": 0,
+  "production_source_modified_by_coordinator": false,
+  "flashed_by_coordinator": false,
+  "serial_configured_and_captured": true,
+  "remotely_started": false,
+  "physical_runs_started_by_owner": 1,
+  "experimental_gain_candidate_applied": false,
+  "website_patch_installed": false,
+  "mechanical_cause_confirmed": false,
+  "speed_loop_accepted": false,
+  "handoffs": [
+    376
+  ]
+}
