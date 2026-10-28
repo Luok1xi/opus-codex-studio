@@ -1,0 +1,23 @@
+{
+  "round_id": "2026-10-28-screen-serial",
+  "local_commit": "23efa35defdf89c15d3f95a5f3dc75c8c133e3c3",
+  "display_build_errors": 0,
+  "legacy_warnings": 11,
+  "source_inputs": 682,
+  "display_host_assertions": 501,
+  "static_checks": 16,
+  "web_default_checks": 14,
+  "saved_capture_chunk_modes": 4,
+  "status_samples_per_mode": 217,
+  "owner_reported_serial_connection_restored": true,
+  "serial_owner_identified": false,
+  "display_installed": true,
+  "concurrent_wireless_preserved": true,
+  "hardware_verified": false,
+  "handoffs": [
+    368,
+    369,
+    370
+  ],
+  "opus_reply_this_round": false
+}

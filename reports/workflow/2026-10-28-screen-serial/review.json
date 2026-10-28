@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-28-screen-serial",
+  "task_summary": "Diagnose black display and serial/IMU status confusion; integrate display repair and coordinate the concurrent wireless fix.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-10-28T08:36:43Z",
+  "measurement_cutoff_at": "2026-10-28T09:26:31.781459+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Identify current source and physical-evidence boundaries; repair production display without overwriting concurrent work; verify source/build; hand off wireless evidence."
+    ],
+    "completed": [
+      "Found disabled display initialization; enabled early SPI landscape startup and bounded S5/state text; preserved motion-time full-image guard.",
+      "Reused the established board-specific P15.4 input restoration after display initialization.",
+      "501 source-derived host assertions and 16 static checks passed; final full ADS build had zero errors and eleven unchanged-code warnings.",
+      "Installed three display files with hash checks and a scoped local commit; preserved Opus wireless changes.",
+      "Owner confirmed COM6 connection resumed after closing duplicate connections; no particular occupying process was proved.",
+      "Fourteen default-status checks and four chunk modes of a saved real capture proved the existing website can ingest production voltage/status.",
+      "Independent audit identified wrong wireless RTS pin; observed Opus correcting it and delivered initialization failure-path findings in handoffs 369/370."
+    ],
+    "remaining": [
+      "Physical screen illumination, IMU state and current wireless reception require final integrated firmware and hardware acceptance by Opus/Owner.",
+      "Opus final acknowledgement of this round is pending."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Native workers",
+      "value": 2,
+      "unit": "agents",
+      "basis": "Independent display/control and website/serial audits."
+    },
+    {
+      "name": "External Opus calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Database handoffs and direct source observations; no inference call claimed."
+    },
+    {
+      "name": "Display host assertions",
+      "value": 501,
+      "unit": "checks",
+      "basis": "Strict compiler and ASan/UBSan passed."
+    },
+    {
+      "name": "Static checks",
+      "value": 16,
+      "unit": "checks",
+      "basis": "Includes shared-pin release and unchanged control path."
+    },
+    {
+      "name": "Default website checks",
+      "value": 14,
+      "unit": "checks",
+      "basis": "Existing canonical parser/model; no source patch needed."
+    },
+    {
+      "name": "Saved capture chunk modes",
+      "value": 4,
+      "unit": "modes",
+      "basis": "Each recovered 217 status and voltage samples."
+    },
+    {
+      "name": "ADS final compile",
+      "value": 4.291,
+      "unit": "seconds",
+      "basis": "Final isolated full build only."
+    },
+    {
+      "name": "Provider usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "Review and coordination overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Interleaved; archive interval begins at measurement cutoff."
+    }
+  ],
+  "observations": [
+    "Initial software-only pin review missed a physical shared-pin constraint; reading the previously validated board adaptation corrected this before installation.",
+    "Disabled screen initialization does not by itself explain no backlight on a board with direct backlight power; explicitly corrected that inference.",
+    "Repeated bounded handle scans timed out without identifying an owner; device enumeration was not presented as proof of occupancy or disconnection.",
+    "A strict host compile detected potential display-format truncation; shortened padding then reran all relevant checks.",
+    "Deleting isolated generated build files exposed an ADS resource-cache failure; refresh was insufficient and a fresh isolated workspace restored a verified build.",
+    "Staging the contextual patch failed because S5 was an existing unstaged change; a scoped zero-context patch committed only this round changes.",
+    "Several broad reads produced unnecessary output and wildcard-path mistakes; routine diagnosis should begin with exact paths and bounded records.",
+    "Concurrent wireless source changes made the isolated display HEX unsuitable for deployment; only source was integrated and Opus retains the final combined build/flash responsibility.",
+    "No matched quality baseline exists; elapsed time and multiple workers do not establish efficiency."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-BOARD-ADAPTATION-FIRST-20261028",
+      "action": "Compare board-level pin macros and established hardware adaptations before integrating a driver-dependent feature.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Trace each enabled GPIO to the actual board mapping, including pins unused by software interrupt configuration."
+    },
+    {
+      "id": "WF-ARTIFACT-CURRENT-TREE-20261028",
+      "action": "Final hardware coordinator rebuilds from the combined current working tree and records the artifact identity before flashing.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "Recipient acknowledgement and current combined source/build/hardware evidence."
+    }
+  ],
+  "evidence": [
+    "evidence.json; local source hashes, test reports, build logs, installation receipt and project handoffs."
+  ],
+  "comparison": null,
+  "limits": [
+    "This round did not open serial ports, flash firmware or move motors.",
+    "No raw capture, project source, live database, process dump, credentials or conversations are uploaded.",
+    "The isolated display HEX excludes concurrent wireless changes and must not be flashed.",
+    "Current live voltage/IMU state was not observed by Codex."
+  ]
+}
