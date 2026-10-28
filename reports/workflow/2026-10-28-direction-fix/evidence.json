@@ -1,0 +1,21 @@
+{
+  "verified_at": "2026-10-28T07:15:25.371578+00:00",
+  "source_sha256": "577865845739eb5b663a60171984f2561d6352542f40b11172f6b62fa239b4bf",
+  "hex_sha256": "24a927db8ccd8356040acc3fc08db42fbaa07515b56a9ef7bf8098ac2a152c5f",
+  "hex_bytes": 194533,
+  "errors": 0,
+  "warnings": 0,
+  "unchanged_build_inputs": 649,
+  "host_checks": 224,
+  "candidate_failures": 0,
+  "baseline_failures": 11,
+  "flashed": false,
+  "round_id": "2026-10-28-direction-fix",
+  "handoffs": [
+    362,
+    363
+  ],
+  "installation_verified": true,
+  "production_firmware_changed": false,
+  "opus_reply_received": false
+}
