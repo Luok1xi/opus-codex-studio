@@ -1,0 +1,124 @@
+{
+  "source_files": {
+    "src/js/robot-live-view.js": {
+      "before": "5186add4cbd36308a21aa55f4b933152d88312837e8305de1bcc042003ce3464",
+      "after": "e289296333cef0b7306f9dd813ced734c3b73ff996ca04f2005a1813a3add551"
+    },
+    "src/js/robot-live-data.js": {
+      "before": "b8097db86091ca0300936b6d5723dff650a0c7639e87b5059e8670d5509924e3",
+      "after": "cd95457e18410dea28c8eb6c74e72b38fec5a6d38ead01cfc0febf76502d95b9"
+    },
+    "src/js/robot-live-charts.js": {
+      "before": "5b02efffe0827f05e5366374b699e79efee97f802f1477bcc7c7361980caa767",
+      "after": "cd03511e3fbb062a375cae4fca7e53f120bcb8e8a8d3a3ca49c72479f1444bfa"
+    },
+    "src/styles/robot-live.css": {
+      "before": "3c585bcaefc9aed6d7a67550e173c06a3492b066520411ab70cabdd89e2a5883",
+      "after": "bfee660f1215e2566817bd045e6cb3dc135fc04d70523037b084237f8e451014"
+    },
+    "scripts/test-robot-live-data.mjs": {
+      "before": null,
+      "after": "6fdd57dff99d987d78907996f33d43ab83f42baf1fd81c3050229ec375bdc52d"
+    },
+    "scripts/test-robot-live-charts.mjs": {
+      "before": null,
+      "after": "e2c564a957c65198d2684b4695ad1b04104644ed598ee1cc1f2aa2c3d115d3b6"
+    }
+  },
+  "unit_tests": {
+    "passed": 38,
+    "failed": 0,
+    "duration_ms": 2177.4287
+  },
+  "lint": "passed",
+  "build": "passed",
+  "browser_interactions": {
+    "passed": 34,
+    "errors": [],
+    "checks": [
+      "default speed view, stopped controls and no automatic commands",
+      "double connect opens only one mock port and locks baud",
+      "fragmented parameter reply fills real gains without changing camera gain",
+      "dirty gain draft survives a different asynchronous readback",
+      "gain form converts decimal units once and confirms matching readback",
+      "profile selection is a draft until apply, then uses stopped gate",
+      "native numeric validation rejects invalid gain without sending",
+      "running and unknown state block all parameter form writes",
+      "manual command validation rejects unsafe and malformed input",
+      "focus switches preserve samples and never send commands",
+      "camera gain remains separate and its command reads the camera field",
+      "paused all-time view freezes while receive and raw recording continue",
+      "CSV export retains every received row",
+      "log search finds cached reply and rendering stays bounded",
+      "paused or filtered log does not hide the separate device reply",
+      "responsive controls and parameter panel remain in the viewport",
+      "write error appears and disconnect disables all parameter inputs",
+      "default speed view, stopped controls and no automatic commands",
+      "double connect opens only one mock port and locks baud",
+      "fragmented parameter reply fills real gains without changing camera gain",
+      "dirty gain draft survives a different asynchronous readback",
+      "gain form converts decimal units once and confirms matching readback",
+      "profile selection is a draft until apply, then uses stopped gate",
+      "native numeric validation rejects invalid gain without sending",
+      "running and unknown state block all parameter form writes",
+      "manual command validation rejects unsafe and malformed input",
+      "focus switches preserve samples and never send commands",
+      "camera gain remains separate and its command reads the camera field",
+      "paused all-time view freezes while receive and raw recording continue",
+      "CSV export retains every received row",
+      "log search finds cached reply and rendering stays bounded",
+      "paused or filtered log does not hide the separate device reply",
+      "responsive controls and parameter panel remain in the viewport",
+      "write error appears and disconnect disables all parameter inputs"
+    ]
+  },
+  "browser_comparison": [
+    {
+      "width": 1440,
+      "before_long_tasks": 9,
+      "after_long_tasks": 0,
+      "before_raf_p95_ms": 54.29999999999927,
+      "after_raf_p95_ms": 4.299999999999272,
+      "before_rows": 21000,
+      "after_rows": 21000,
+      "before_page_height": 3394,
+      "after_page_height": 2530
+    },
+    {
+      "width": 390,
+      "before_long_tasks": 25,
+      "after_long_tasks": 0,
+      "before_raf_p95_ms": 62.400000000001455,
+      "after_raf_p95_ms": 4.299999999999272,
+      "before_rows": 21000,
+      "after_rows": 21000,
+      "before_page_height": 6007,
+      "after_page_height": 4141
+    }
+  ],
+  "conditions": {
+    "browser": "156.0.4314.42",
+    "widths": [
+      1440,
+      390
+    ],
+    "synthetic_hz": 500,
+    "rows_per_run": 21000,
+    "watching_curves_duration_seconds": 6,
+    "same_input_script": true,
+    "navigation_comparable": false,
+    "paired_runs": 1
+  },
+  "publication": {
+    "status": "succeeded",
+    "url": "https://luokixi-web.cozy-whale-9871.chatgpt.site",
+    "commit": "aebe286092b021666b0bf1e7983434648f993a19",
+    "archive_sha256": "c226abd5fe9218db0943f4bb9b4f213e06c58e71124a255e243048c6958df2a1"
+  },
+  "limits": [
+    "One machine and one matched rendering pair; no generalized performance claim.",
+    "No physical serial throughput measurement, flashing or motor action.",
+    "No cloud-browser or chart-library dependency added.",
+    "Local database backups remain local and excluded from publication/archive."
+  ]
+}

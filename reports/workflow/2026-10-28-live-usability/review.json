@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-28-live-usability",
+  "task_summary": "Improve the real-car tuning interface, preserve received data, and measure browser rendering under matched synthetic input.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-10-28T06:09:39Z",
+  "measurement_cutoff_at": "2026-10-28T06:48:13+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Practical task-focused controls, correctly scaled parameter forms, no automatic hardware commands, complete recorded/exported data, responsive layout, measured browser comparison and existing-site publication."
+    ],
+    "completed": [
+      "Added speed/vision/all views, named gain inputs, draft-safe readback, freeze-with-reception and log search.",
+      "Removed offscreen/background visual work, bounded battery SVG output, cached chart preparation and reduced repeated log formatting.",
+      "38 unit tests and 34 mock browser checks passed; same 21000 records retained at both widths.",
+      "Published original site with unchanged public audience and preserved replay data."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Native workers",
+      "value": 4,
+      "unit": "agents",
+      "basis": "Performance, official-source research/review, baseline/browser preparation, and browser continuation after interruption."
+    },
+    {
+      "name": "External Opus calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Project database handoff only; no acceptance reply claimed."
+    },
+    {
+      "name": "Provider usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Not exposed by runtime."
+    },
+    {
+      "name": "Model cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing record."
+    },
+    {
+      "name": "Interruption duration",
+      "value": null,
+      "unit": "seconds",
+      "basis": "A user-side interruption stopped workers/services; total wall interval includes it."
+    },
+    {
+      "name": "Review/coordination overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Interleaved with tests/publication; archive receipt records subsequent archive interval."
+    },
+    {
+      "name": "After browser performance run",
+      "value": 32.069,
+      "unit": "seconds",
+      "basis": "Browser report timestamps; same two viewport workloads."
+    },
+    {
+      "name": "Final browser interactions",
+      "value": 7.425,
+      "unit": "seconds",
+      "basis": "34 checks, after two test-only timing/locator corrections."
+    },
+    {
+      "name": "Interaction executions",
+      "value": 3,
+      "unit": "runs",
+      "basis": "Two failing test assertions were corrected; no product code changed between these runs."
+    }
+  ],
+  "observations": [
+    "Official Serial Studio and PlotJuggler workflows informed task-focused controls; installed Playwright and native browser observers sufficed. Plugin discovery found no specific missing capability worth adding.",
+    "Independent review caught camera/PID selector collision and draft-status inconsistency; both fixed and covered in browser checks before publication.",
+    "Full synthetic browser comparison while watching curves: desktop long tasks 9 to 0, narrow viewport 25 to 0; same input and record totals. These are product measurements, not a matched multi-agent workflow baseline.",
+    "Chart microbenchmark improved static hover/statistics but slightly slowed changing-window preparation (0.598 to 0.656ms); do not claim a universal speedup.",
+    "Initial browser baseline was extended to include actually watching curves; first top-only result retained separately.",
+    "Connection-refused runs produced no valid samples. Existing service was restored using the project launcher, local backups and migration plan.",
+    "Interaction reruns corrected test timing/locator assumptions for throttled offscreen logs, not product defects.",
+    "No matched single-agent workflow baseline or provider usage; net coordination efficiency is unknown."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-WEB-PERF-20261028",
+      "action": "Collect top-of-page and visible-chart workloads plus recording/export integrity in the initial browser plan; use condition waits for throttled UI.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next dashboard change reuses fixed synthetic inputs and verifies equal retained data before reporting rendering improvement."
+    }
+  ],
+  "evidence": [
+    "evidence.json; source hashes, local browser reports/screenshots, unit logs, build and publication receipts."
+  ],
+  "comparison": null,
+  "limits": [
+    "One machine and one matched rendering pair; no generalized performance claim.",
+    "No physical serial throughput measurement, flashing or motor action.",
+    "No cloud-browser or chart-library dependency added.",
+    "Local database backups remain local and excluded from publication/archive."
+  ]
+}
