@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-28-real-tune-direction",
+  "task_summary": "Participate in physical-car tuning by auditing saved evidence and coordinating reverse-motion and drift diagnosis.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-10-28T06:52:01Z",
+  "measurement_cutoff_at": "2026-10-28T07:02:35.620640+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Resolve direction mapping before gain changes; verify current real evidence and coordinate edits with the active operator."
+    ],
+    "completed": [
+      "Read the latest saved floor captures and current firmware call paths; independently reproduced step metrics.",
+      "Distinguished the corrected gyro bias in the latest run from the earlier contaminated calibration.",
+      "Owner confirmed camera-facing end is forward; positive test targets currently move physically backward.",
+      "Sent source-specific coupled drive/encoder mapping advice and validation order through two project database handoffs."
+    ],
+    "remaining": [
+      "Opus acknowledgement and agreement on edit ownership are pending.",
+      "Physical wheel/channel and manual gyro sign checks, firmware integration and real-car acceptance remain pending."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Native audit workers",
+      "value": 1,
+      "unit": "agents",
+      "basis": "One read-only source/capture reviewer."
+    },
+    {
+      "name": "External Opus inference calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "CLI doctor reported login required; used project DB handoff instead."
+    },
+    {
+      "name": "Project handoffs",
+      "value": 2,
+      "unit": "records",
+      "basis": "Records 360 and 361; no recipient acknowledgement at cutoff."
+    },
+    {
+      "name": "Provider usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "Model cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing data."
+    },
+    {
+      "name": "Coordination and review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Interleaved; archive timing recorded separately in receipt."
+    },
+    {
+      "name": "Firmware edits by this round",
+      "value": 0,
+      "unit": "files",
+      "basis": "Preserved actively shared firmware pending physical mapping."
+    },
+    {
+      "name": "Test rework",
+      "value": null,
+      "unit": "runs",
+      "basis": "No new firmware implementation or acceptance run."
+    }
+  ],
+  "observations": [
+    "A fresh capture superseded the earlier bad gyro calibration during this round; current and previous conditions were kept separate.",
+    "Positive encoder feedback does not prove physical forward motion; owner observation was necessary.",
+    "One directory listing and context output were too broad/truncated; later reads used bounded fields. A broad file search hit unrelated denied directories and yielded no useful test harness.",
+    "Initial non-elevated GitHub read failed due to restricted network, then the authorized scoped read succeeded.",
+    "Native independent audit is separate from actual Opus; current Opus findings were read but no response to these handoffs was received.",
+    "No matched workflow baseline; net efficiency is unproven."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-REAL-MAPPING-20261028",
+      "action": "Record physical front, wheel/channel identity, encoder sign and gyro sign before accepting a speed-loop trace.",
+      "owner": "codex+opus",
+      "status": "proposed",
+      "next_check": "Next real run must attach verified mapping, stopped calibration, selected profile and firmware identity."
+    }
+  ],
+  "evidence": [
+    "evidence.json; local audit and project handoffs 360/361."
+  ],
+  "comparison": null,
+  "limits": [
+    "Saved capture analysis only; no direct serial access, flashing or motor start by this round.",
+    "No raw captures, sessions, firmware or project database uploaded.",
+    "Gain candidates and physical forward mapping have not been accepted on the car."
+  ]
+}
