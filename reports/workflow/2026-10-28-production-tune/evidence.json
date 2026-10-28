@@ -1,0 +1,31 @@
+{
+  "round_id": "2026-10-28-production-tune",
+  "firmware_local_commit": "1dda34fbbf55bbc2145b6cd134ecca4086ed1f22",
+  "hex_sha256": "b467d33aaf3095f120b8a8327fc17d8cdb5ed5782612f194136c681921bd70d3",
+  "source_inputs": 681,
+  "compile_errors": 0,
+  "compile_warnings": 11,
+  "warnings_in_unchanged_files": true,
+  "rom_bytes": 101057,
+  "ram_bytes": 136698,
+  "control_checks": 41,
+  "backend_assertions": 9691,
+  "call_wiring_checks": 7,
+  "canonical_web_tests": 46,
+  "mock_browser_checks": 12,
+  "c_to_js_chunk_modes": 5,
+  "fixture_sha256": "878c6e93ffc9016421acc8b2fd8e7c431d4f87e7bd36f0cf076d86821aa600e1",
+  "installation_hashes_verified": true,
+  "opus_changes_preserved": true,
+  "opus_reply_received": false,
+  "old_debug_hex_preserved": true,
+  "flashed": false,
+  "serial_opened": false,
+  "motors_started": false,
+  "public_deployed": false,
+  "local_http_status": 200,
+  "handoffs": {
+    "CRAZY-CIRCUIT": 366,
+    "LUOKIXI-WEB": 31
+  }
+}
