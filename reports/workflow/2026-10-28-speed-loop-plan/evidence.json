@@ -1,0 +1,27 @@
+{
+  "round_id": "2026-10-28-speed-loop-plan",
+  "captures": 4,
+  "rows_each": 500,
+  "steady_window_starts_ms": 500,
+  "target40_baseline_std": [
+    6.2681,
+    9.6197
+  ],
+  "target80_baseline_std": [
+    2.6712,
+    3.056
+  ],
+  "target80_overshoot_pct": [
+    38.75,
+    18.75
+  ],
+  "peer_review_received": true,
+  "proposed_candidate_applied": false,
+  "source_modified": false,
+  "hardware_actions": 0,
+  "handoffs": [
+    371,
+    373,
+    375
+  ]
+}
