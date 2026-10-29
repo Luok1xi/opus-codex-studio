@@ -1,0 +1,48 @@
+{
+  "round_id": "2026-10-29-prelim-car-port",
+  "low_speed_assertions": 614,
+  "prelim_assertions": 25827,
+  "build_errors": 0,
+  "full_build_warnings": 13,
+  "route_entries": 24,
+  "default_speed": 40,
+  "sim_speed": 275,
+  "robust_sim_seconds": [
+    8.641,
+    8.867
+  ],
+  "robust_sim_passes": 20,
+  "sprint_sim_seconds": [
+    8.49,
+    8.742
+  ],
+  "sprint_sim_passes": 15,
+  "sim_cases": 20,
+  "final_exit_stop_mm": 350,
+  "final_exit_stop_seconds": 2,
+  "whole_run_limit_seconds": 120,
+  "flashes": 0,
+  "serial_opens": 0,
+  "motor_starts": 0,
+  "physical_lap_verified": false,
+  "current_download_device_present": false,
+  "measured_mmpc": 0.01948,
+  "physical_yaw_pi": [
+    0.083,
+    0.008
+  ],
+  "physical_direction_pd_at40": [
+    3.0,
+    0.0
+  ],
+  "opus_reviews": [
+    388,
+    390
+  ],
+  "opus_reported_real_T_snapshots_with_fork": 2,
+  "opus_reported_current_parked_processing_fps": [
+    49,
+    50
+  ],
+  "low_speed_50fps_full_route_verified": false
+}
