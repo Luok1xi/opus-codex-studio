@@ -1,6 +1,6 @@
 # 2026-10-29-prelim-exit-camera-fix 工作流复盘
 
-Diagnose and repair current-source200fps route exits; provide a separate camera-only candidate for the owner-prioritized physical frame-rate check.
+Repair nominal simulated route exits, then prioritize the owner-reported physical camera half-rate problem with isolated comparison and screen diagnostics candidates.
 
 **结论：证据不足：没有合格的同条件基线，不能判断净提效。**
 
@@ -9,8 +9,8 @@ Diagnose and repair current-source200fps route exits; provide a separate camera-
 - 工作流：WORKFLOW_REVIEW.md
 - 验收状态：partial
 - 开始：2026-10-29T04:34:59Z
-- 测量截止：2026-10-29T05:16:11.778288+00:00
-- 墙钟秒数：2472.778288
+- 测量截止：2026-10-29T05:39:48.825003+00:00
+- 墙钟秒数：3889.825003
 - 合格配对耗时变化（%）：None
 
 ## 实测数据
@@ -33,7 +33,11 @@ Diagnose and repair current-source200fps route exits; provide a separate camera-
 | Active work duration | 未知 | seconds | Only observed round wall-clock start/cutoff recorded. |
 | Coordination and review overhead | 未知 | seconds | Interleaved; not separately measured. |
 | Matched workflow speedup | 未知 | percent | No same-input same-quality workflow baseline. |
-| Camera meter worker observed duration | 439 | seconds | Worker-reported interval for counter patch,checks andthreebuilds; not additive walltime. |
+| Screen diagnostic candidate checks | 52 | checks | 18 driver, 26 statistics/display, 8 DMA-init checks pass. The unchanged baseline has 4 expected failed assertions in 8 checks. Stubs do not prove physical timing. |
+| Additional frozen camera builds | 2 | builds | A 400 configuration-only comparison and separate 200 screen diagnostics. Both 0 errors / 13 existing warnings. |
+| Screen worker observed duration | 570 | seconds | Worker reported 05:28:04 to 05:37:34 UTC; includes source, checks and build. Overlaps other work and is not additive wall time. |
+| 400 ADS compiler duration | 4.713 | seconds | Saved ADS Build Finished duration; excludes setup and review. |
+| Screen ADS compiler duration | 4.527 | seconds | Saved ADS Build Finished duration; excludes setup and review. |
 
 ## 验收条件
 
@@ -48,14 +52,19 @@ Diagnose and repair current-source200fps route exits; provide a separate camera-
 - Camera snapshot concurrency fix passed33 actual-C assertions and4 OUC image-equivalence cases under sanitizers. Independent source review found no new blocking race, image-consumer issue or interference with standalone wheel/yaw test modes.
 - ADS compiled the race candidate with0errors13existingwarnings; sourcefreeze684files is stable. At the owner camera-first steering relayed in Opus405, built a separate two-file camera-only candidate that retains the existing control gains/ramp for stationary measurement.
 - Kept Opus as exclusive hardware operator, sent direct project handoffs and preserved active firmware paths. No Codex serial, flash or motion action occurred.
-- Delivered separate100/150/200 instrumented cameraHEX variants withVSYNC-total andbuffer-owned-skip counters;11 additional sanitized checks and independent review pass. Original control settings retained. Opus accepted the snapshot source and reports the earliercamera-only build flashed; realHz is still awaited.
+- Delivered separate 100/150/200 instrumented camera HEX variants with VSYNC-total and buffer-owned-skip counters; 11 additional sanitized checks and independent review pass. Original control settings retained. Physical results subsequently showed about 50 processed fps at 100 configured and about 95 at 200 configured; the earlier buffering hypothesis did not explain the result by itself.
+- Built the owner-requested 400 configuration-only comparison. All 684 source files remain frozen; exactly one macro differs from the delivered 200 baseline. Actual 400-configuration performance is not inferred from compilation.
+- Opus reports flashing the 400 comparison (handoff 423); the saved log independently ends with content-verification PASS. Its measured frame rate has not yet been reported at this cutoff. Codex did not read serial or operate the hardware.
+- Built a separate 200 diagnostic candidate with the corrected DMA initialization handle, per-second VSYNC/skip/capture/error/IRQ screen counters and elapsed-time-normalized processing FPS. Control parameters and capture architecture remain unchanged; physical acceptance is pending.
 
 ## 未完成
 
-- No full race release: lower-grip robustness failed. Candidate200fps is a simulation assumption; camera remains configured100 and post-fix physical fps is awaiting measurement by Opus.
+- No full race release: lower-grip robustness failed. The simulation assumes 200 fps; the owner reports about 95 processed fps with the 200 configuration. The earlier 100 configuration still processed about 50 fps after the snapshot patch. The physical half-rate problem remains unresolved.
 - Physical yaw response and the11.314percent raw encoder speed-unit difference are not yet aligned. The reviewed normalization design was not mixed into this root-cause patch.
-- Opus accepted the camera source and reports flashing the first camera-only build; saved flasher log ends with content verificationPASS. Physical frame-rate measurements remain pending. Boot target40 is a bring-up default, not a newly validated40-speed full-map profile.
+- Opus flashed the camera-only 100 and instrumented 200 candidates; saved flasher logs end in verification PASS. Subsequent observation is screen-only at the owner request. Boot target 40 is a bring-up default, not a newly validated full-map profile.
 - One rejected map-brake experiment reached entry24 but terminal stop26 preceded the simulator lap endpoint; this is retained as a separate end-distance observation, not hidden by modifying the validator.
+- The first diagnostic window can include startup counts; interpret the second complete window onward. Screen diagnostics localize symptoms but do not yet prove the sensor clock, VSYNC edge reliability or physical DMA timing.
+- The five additional LCD text rows incur display overhead whose effect on processed FPS has not been measured. They do not add serial traffic. The diagnostic build is an observation aid, not a claimed performance release.
 
 ## 收益与损耗观察
 
@@ -68,16 +77,23 @@ Diagnose and repair current-source200fps route exits; provide a separate camera-
 - Opus411 reports the firstcamera-only build flashed; the savedflashlog contains verificationPASS. He also reported that absent-wireless busy gating suppresses visual status and that gyro bias needs checking. Those live issues were not silently folded into the frozen camera variants.
 - The camera-only ADS window was initially not ready for menu discovery; the worker retried once and completed. Its observed follow-up interval was138seconds, excluding later instrumented builds.
 - No paired workflow baseline exists, so improved technical test outcomes do not establish net workflow speedup.
-- Camera meter preparation required one newline-match correction in its helper script; preserved delivered source/artifact paths. All final native ADS processes exited.
+- Do not equate a configured camera rate with sensor output. Without VSYNC, completed-frame and error counts, half-rate processing can arise from either acquisition loss or sensor timing. The sensor-clock hypothesis is unmeasured, and the historical owner measurement is not disproved.
+- The original status sender busy guard returns only from the sender; it does not suppress the outer processed-frame counter update. Moving sampling earlier and normalizing elapsed time improves reporting, but is not evidence that the old busy guard caused the half-rate result.
+- Independent source review confirmed that DMA initialization cleared a service request using an uninitialized channel object instead of the initialized local handle. Its contribution to the measured half-rate remains unproven.
+- Owner steering via Opus 418 requested a configuration-only 400 comparison. The later diagnostic candidate remains separately named at 200; no ISR-copy or CPU1 architecture rewrite was attempted without acquisition measurements.
+- A proposed diagnostic row below the display was corrected before delivery after checking the actual 320 by 240 landscape initialization. The existing 188 by 120 image leaves space on its right for counters without covering S5 instructions.
+- Two isolated ADS windows were serialized for build-menu actions to avoid shared-focus interference. The 400 import needed one bounded permission recovery; no source rework was needed for that comparison.
+- The screen worker corrected two auxiliary-command issues (function-pattern spacing and PowerShell/Python quoting) before evidence collection; the source compiled once successfully. Independent review confirmed the first-window caveat and no new blocking source defect.
 
 ## 修改建议及下一轮验收
 
 - **WF-FAILED-TRACE-BEFORE-MATRIX-20261029 [adopted]** Compare the failed and passing trace around the preceding state transition, then run a bounded perturbation set before declaring a gain successful.；负责人：codex；下次检查：Next tuning handoff includes the onset of divergence and failed perturbations, not only the final exit location.
 - **WF-ONE-PHYSICAL-FACTOR-20261029 [adopted]** Package the acquisition fix separately when the immediate physical question is frame rate, preserving unrelated control settings for that measurement.；负责人：codex；下次检查：Opus reports before/after physical acquisition and processed rates with the camera-only build identity.
+- **WF-CAMERA-COUNTS-BEFORE-ARCHITECTURE-20261029 [adopted]** Show sensor-event, capture-completion, deliberate-skip and DMA-error counts together before choosing a buffering or sensor-timing fix.；负责人：codex；下次检查：Compare screen counter rates and processed FPS under the same frozen firmware and scene.
 
 ## 证据
 
-- evidence.json; local68trialmatrices,camera33assertions/4images,meter11checks,twoindependentreviews,five source-frozenADSbuilds; TeamHub401-413 andsavedOpusflashverificationlog.
+- evidence.json; local paired-model results, actual-C checks, frozen ADS receipts, independent reviews and project handoffs 401 onward. Physical observations are attributed separately from local tests.
 
 ## 限制
 
