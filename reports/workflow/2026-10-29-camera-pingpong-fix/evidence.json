@@ -1,0 +1,40 @@
+{
+  "scope": "Sanitized aggregate workflow evidence only. No source, raw recording, messages, databases or credentials.",
+  "builds": [
+    {
+      "configured_fps": 200,
+      "hex_sha256": "e23336a4429124a9ec1b703a1f08eaab513432561e18096eabaab65fd05a9d06",
+      "source_frozen": true,
+      "source_file_count": 684,
+      "ads_errors": 0,
+      "ads_warnings": 13,
+      "ROM": 128459,
+      "RAM": 160094,
+      "intel_hex_checksums_valid": true,
+      "hardware_io": false
+    },
+    {
+      "configured_fps": 400,
+      "hex_sha256": "2447139cfb972069b9b7af7452808278ebdd8fdb311e732a571d369ecfae1cd5",
+      "source_frozen": true,
+      "source_file_count": 684,
+      "ads_errors": 0,
+      "ads_warnings": 13,
+      "ROM": 128459,
+      "RAM": 160094,
+      "intel_hex_checksums_valid": true,
+      "hardware_io": false
+    }
+  ],
+  "saved_recording_recheck": {
+    "complete_rows": 12,
+    "accepted_intervals": 11,
+    "hardware_io": false
+  },
+  "independent_reviews": {
+    "dma-design-review.txt": "268aa4aad1ccf31add5b128568f39c452c4af29062f8e79b126209f4f9fa4b6a",
+    "independent-review.txt": "174f150cb8fcf67e0b20cfa51a909de33d977d01ca01eafaf753c5e856758e42",
+    "core-partition-review.txt": "b0e3b4719783841f7f5622f11ff99cc31e747b9a81d5d3bdf298ff121933aad6"
+  },
+  "physical_acceptance": "Pending receiver review and separately authorized hardware verification."
+}
