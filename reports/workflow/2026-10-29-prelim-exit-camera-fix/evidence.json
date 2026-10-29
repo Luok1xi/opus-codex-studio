@@ -914,6 +914,13 @@
       "processed_fps": 95,
       "hex_prefix": "d88ecd8e",
       "measurement": "Owner read the physical display; no Codex serial access."
+    },
+    {
+      "source": "Owner current chat and Opus handoff 433",
+      "configured_fps": 400,
+      "processed_fps": 120,
+      "hex_prefix": "dab4c3e6",
+      "measurement": "Owner display observation after output resumed; not Codex serial capture."
     }
   ],
   "camera400_build": {
@@ -1056,12 +1063,13 @@
     }
   ],
   "physical_status_at_cutoff": {
-    "source": "Opus handoff 428 and independently read saved flasher initialization-error log",
+    "source": "Owner current report; Opus handoffs 428 and 433; saved successful and failed flasher logs",
     "last_successful_hex_prefix": "dab4c3e6",
     "last_successful_configured_fps": 400,
     "cable_candidate_written": false,
     "profile_candidates_written": false,
-    "new_measured_fps": null
+    "owner_reported_processed_fps": 120,
+    "full_counter_capture_pending": true
   },
   "profile_checks": {
     "new_actual_c": 44,
