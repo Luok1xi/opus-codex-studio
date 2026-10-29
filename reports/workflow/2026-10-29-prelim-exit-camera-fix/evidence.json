@@ -993,5 +993,196 @@
       }
     ]
   },
-  "camera_screen_review_sha256": "d25a1c3d0c639714e6bc8704a33fe630c8490c65b27b471b59ff8d46a4d0b49d"
+  "camera_screen_review_sha256": "d25a1c3d0c639714e6bc8704a33fe630c8490c65b27b471b59ff8d46a4d0b49d",
+  "camera_cable_build": {
+    "configured_fps": 200,
+    "hex_sha256": "0afacacf4ca06be6ec36a4d0dc494ded1b997b4fb8eb096f709424514d9a7e05",
+    "source_frozen": true,
+    "source_file_count": 684,
+    "changed_files": [
+      "code/vision_link.c"
+    ],
+    "ads_errors": 0,
+    "ads_warnings": 13,
+    "ROM": 123818,
+    "RAM": 137238,
+    "intel_hex_checksums_valid": true,
+    "hardware_io": false,
+    "serial_opens": 0,
+    "flashes": 0,
+    "motor_starts": 0
+  },
+  "camera_profile_builds": [
+    {
+      "configured_fps": 200,
+      "hex_sha256": "1a3a0150e9c5eeb56d84f63fc75135a5697c36aaae98c1d4e37574fbba06d0a0",
+      "source_frozen": true,
+      "source_file_count": 684,
+      "changed_files": [
+        "code/vision_link.c",
+        "code/vision_link.h",
+        "user/cpu0_main.c"
+      ],
+      "ads_errors": 0,
+      "ads_warnings": 13,
+      "ROM": 125713,
+      "RAM": 137454,
+      "intel_hex_checksums_valid": true,
+      "hardware_io": false,
+      "serial_opens": 0,
+      "flashes": 0,
+      "motor_starts": 0
+    },
+    {
+      "configured_fps": 400,
+      "hex_sha256": "819c779eb4570b75d96e70ef3f1063be44ba26b820ab46cda9b71d1d1cd6a5af",
+      "source_frozen": true,
+      "source_file_count": 684,
+      "changed_files": [
+        "code/vision_link.c",
+        "code/vision_link.h",
+        "libraries/zf_device/zf_device_mt9v03x.h",
+        "user/cpu0_main.c"
+      ],
+      "ads_errors": 0,
+      "ads_warnings": 13,
+      "ROM": 125713,
+      "RAM": 137454,
+      "intel_hex_checksums_valid": true,
+      "hardware_io": false,
+      "serial_opens": 0,
+      "flashes": 0,
+      "motor_starts": 0
+    }
+  ],
+  "physical_status_at_cutoff": {
+    "source": "Opus handoff 428 and independently read saved flasher initialization-error log",
+    "last_successful_hex_prefix": "dab4c3e6",
+    "last_successful_configured_fps": 400,
+    "cable_candidate_written": false,
+    "profile_candidates_written": false,
+    "new_measured_fps": null
+  },
+  "profile_checks": {
+    "new_actual_c": 44,
+    "repeated_cable_actual_c": 29,
+    "TIM_max_bytes": 201,
+    "TIM_buffer": 256,
+    "status_max_bytes": 281,
+    "status_buffer": 320,
+    "passed": true
+  },
+  "half_rate_conditional_reproduction": {
+    "exit_code": 0,
+    "cases": [
+      {
+        "mode": "end_edge_then_foreground",
+        "input_frames": 100,
+        "assumed_period_ms": 10,
+        "window_ms": 1000,
+        "VS": 100,
+        "SK": 50,
+        "CP": 50,
+        "ER": 0,
+        "IQ": 100,
+        "foreground_copies": 50
+      },
+      {
+        "mode": "start_edge_release_before_next",
+        "input_frames": 100,
+        "assumed_period_ms": 10,
+        "window_ms": 1000,
+        "VS": 100,
+        "SK": 0,
+        "CP": 100,
+        "ER": 0,
+        "IQ": 200,
+        "foreground_copies": 100
+      },
+      {
+        "mode": "end_edge_foreground_before_edge",
+        "input_frames": 100,
+        "assumed_period_ms": 10,
+        "window_ms": 1000,
+        "VS": 100,
+        "SK": 0,
+        "CP": 100,
+        "ER": 0,
+        "IQ": 200,
+        "foreground_copies": 100
+      },
+      {
+        "mode": "end_edge_then_foreground",
+        "input_frames": 200,
+        "assumed_period_ms": 5,
+        "window_ms": 1000,
+        "VS": 200,
+        "SK": 100,
+        "CP": 100,
+        "ER": 0,
+        "IQ": 200,
+        "foreground_copies": 100
+      },
+      {
+        "mode": "start_edge_release_before_next",
+        "input_frames": 200,
+        "assumed_period_ms": 5,
+        "window_ms": 1000,
+        "VS": 200,
+        "SK": 0,
+        "CP": 200,
+        "ER": 0,
+        "IQ": 400,
+        "foreground_copies": 200
+      },
+      {
+        "mode": "end_edge_foreground_before_edge",
+        "input_frames": 200,
+        "assumed_period_ms": 5,
+        "window_ms": 1000,
+        "VS": 200,
+        "SK": 0,
+        "CP": 200,
+        "ER": 0,
+        "IQ": 400,
+        "foreground_copies": 200
+      },
+      {
+        "mode": "end_edge_then_foreground",
+        "input_frames": 201,
+        "assumed_period_ms": 5,
+        "window_ms": 1005,
+        "VS": 201,
+        "SK": 101,
+        "CP": 101,
+        "ER": 0,
+        "IQ": 202,
+        "foreground_copies": 101
+      },
+      {
+        "mode": "start_edge_release_before_next",
+        "input_frames": 201,
+        "assumed_period_ms": 5,
+        "window_ms": 1005,
+        "VS": 201,
+        "SK": 0,
+        "CP": 201,
+        "ER": 0,
+        "IQ": 402,
+        "foreground_copies": 201
+      }
+    ],
+    "summary": {
+      "checks": 2144,
+      "failures": 0
+    },
+    "assumptions": [
+      "DMA 60 is serviced before pending VSYNC 40 in end-edge case.",
+      "Each acquired image supplies exactly two normal DMA block callbacks; no TRL or coalescing.",
+      "Foreground release is a zero-delay ownership model after the listed events, not measured copy duration.",
+      "Frame waveform and 5/10 ms periods are assumed; board phase and physical FPS are not measured."
+    ],
+    "conclusion": "The unmodified actual C handlers reproduce 2:1 capture only for the tested end-edge-before-foreground ordering; other tested orderings capture every frame.",
+    "hardware_io": false
+  }
 }
