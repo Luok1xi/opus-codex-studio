@@ -892,11 +892,106 @@
   "snapshot_equivalence_images": 4,
   "independent_review_sha256": "bac9b8e5fd288f0b514faf97d5136d16cdcabe3325566930955017ef80c02e3d",
   "boundaries": {
-    "real_fps_measured": false,
+    "real_fps_measured": true,
+    "configured200_achieved": false,
     "physical_yaw_validated": false,
     "physical_speed_units_aligned": false,
     "codex_serial_opens": 0,
     "codex_flashes": 0,
     "codex_motion_commands": 0
-  }
+  },
+  "physical_observations": [
+    {
+      "source": "Opus handoff 414",
+      "configured_fps": 100,
+      "processed_fps": 50,
+      "hex_prefix": "d3cbbd06",
+      "measurement": "Saved status rows, reported by Opus; not direct Codex hardware access."
+    },
+    {
+      "source": "Owner in current chat and Opus handoff 417",
+      "configured_fps": 200,
+      "processed_fps": 95,
+      "hex_prefix": "d88ecd8e",
+      "measurement": "Owner read the physical display; no Codex serial access."
+    }
+  ],
+  "camera400_build": {
+    "configured_fps": 400,
+    "hex_sha256": "dab4c3e6bdd1bea119e69852fed888ab55ad010d0848ffe4dd2361060e79a903",
+    "source_frozen": true,
+    "source_file_count": 684,
+    "changed_files": [
+      "libraries/zf_device/zf_device_mt9v03x.h"
+    ],
+    "only_change": "MT9V03X_FPS_DEF: 200 -> 400",
+    "ads_errors": 0,
+    "ads_warnings": 13,
+    "ROM": 122402,
+    "RAM": 137182,
+    "intel_hex_checksums_valid": true,
+    "hardware_io": false,
+    "serial_opens": 0,
+    "flashes": 0,
+    "motor_starts": 0,
+    "measured_fps": null,
+    "maximum_fps": null,
+    "warnings_identical_to_baseline": true
+  },
+  "camera_screen_build": {
+    "hex_sha256": "0a77ca6433f6f14920f012d8fa87297fab630849e8a3d4cce0facf016c5e3063",
+    "source_frozen": true,
+    "source_file_count": 684,
+    "changed_files": [
+      "code/vision_link.c",
+      "libraries/zf_device/zf_device_mt9v03x.c",
+      "libraries/zf_device/zf_device_mt9v03x.h",
+      "libraries/zf_driver/zf_driver_dma.c"
+    ],
+    "ads_errors": 0,
+    "ads_warnings": 13,
+    "ROM": 123655,
+    "RAM": 137238,
+    "intel_hex_checksums_valid": true,
+    "hardware_io": false,
+    "serial_opens": 0,
+    "flashes": 0,
+    "motor_starts": 0
+  },
+  "camera_screen_checks": {
+    "passed": true,
+    "hardware_io": false,
+    "scope": "Actual C functions with stubbed register/IRQ/LCD access. DMA baseline fails wrong channel expectation. No physical FPS or DMA timing proof.",
+    "tests": [
+      {
+        "name": "driver",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "checks": 18,
+        "failures": 0
+      },
+      {
+        "name": "stats-generated",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "checks": 26,
+        "failures": 0
+      },
+      {
+        "name": "dma-generated",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "checks": 8,
+        "failures": 0
+      },
+      {
+        "name": "dma-baseline",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "checks": 8,
+        "failures": 4
+      }
+    ]
+  },
+  "camera_screen_review_sha256": "d25a1c3d0c639714e6bc8704a33fe630c8490c65b27b471b59ff8d46a4d0b49d"
 }
