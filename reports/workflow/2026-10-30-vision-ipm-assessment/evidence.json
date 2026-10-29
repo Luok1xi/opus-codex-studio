@@ -1,0 +1,23 @@
+{
+  "round_id": "2026-10-30-vision-ipm-assessment",
+  "review_scope": "Assessment only; no active firmware edits or hardware operations.",
+  "source_snapshot_count": 612,
+  "source_changes_during_review": 0,
+  "saved_captures_checked": 7,
+  "complete_nonempty_record_blocks": 2,
+  "empty_latest_record_blocks": 1,
+  "parser_self_checks_passed": 3,
+  "native_reviewers_completed": 2,
+  "handoff_records": [
+    466,
+    467
+  ],
+  "opus_acceptance_received": false,
+  "artifact_hashes": {
+    "ASSESSMENT.md": "492660fe6af63030c5842e5797091217b478c111ae4e75c6c6670252b069ae7e",
+    "source-audit.md": "20ac9201a5cb0d82e9767cbb90affb782d9d2c5ef2ee074adec796395e398558",
+    "calibration-audit.md": "108b69d38b738967fb6f98e025f5372c4babef76a8233f0284279a33c5c9779b",
+    "saved-evidence.json": "e17b40966f7f1b428914c0274b6c8132947fe06efea04fe50bdccfa4e971f156"
+  },
+  "sanitization": "Only aggregate workflow metrics and local artifact hashes. No raw recordings, code, personal paths, conversations, or databases."
+}
