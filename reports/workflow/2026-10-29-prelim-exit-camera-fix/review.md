@@ -9,8 +9,8 @@ Repair nominal simulated route exits, then prioritize the owner-reported physica
 - 工作流：WORKFLOW_REVIEW.md
 - 验收状态：partial
 - 开始：2026-10-29T04:34:59Z
-- 测量截止：2026-10-29T05:39:48.825003+00:00
-- 墙钟秒数：3889.825003
+- 测量截止：2026-10-29T06:13:55.295060+00:00
+- 墙钟秒数：5936.29506
 - 合格配对耗时变化（%）：None
 
 ## 实测数据
@@ -38,6 +38,11 @@ Repair nominal simulated route exits, then prioritize the owner-reported physica
 | Screen worker observed duration | 570 | seconds | Worker reported 05:28:04 to 05:37:34 UTC; includes source, checks and build. Overlaps other work and is not additive wall time. |
 | 400 ADS compiler duration | 4.713 | seconds | Saved ADS Build Finished duration; excludes setup and review. |
 | Screen ADS compiler duration | 4.527 | seconds | Saved ADS Build Finished duration; excludes setup and review. |
+| Cable transport checks | 29 | checks | Actual functions extracted from final source, stubbed transport; no physical serial access. |
+| New profiling checks | 44 | checks | Actual source timing buckets, active denominators, wraparound, transmission gate and display bounds; plus 29 repeated cable regressions. |
+| Cable and profiling ADS builds | 3 | builds | Cable200 plus matched profile200/profile400. Configured rates are not measured sensor rates. |
+| Profiling worker observed interval | 未知 | seconds | Worker reports approximately 22 minutes including read-only clock audit, implementation and waiting for cable changes; not a separately measured active duration. |
+| Assumed phase-order reproduction scenarios | 8 | scenarios | 2144 repeated event assertions under actual C handlers and stubbed hardware; no physical waveform measured. |
 
 ## 验收条件
 
@@ -56,6 +61,10 @@ Repair nominal simulated route exits, then prioritize the owner-reported physica
 - Built the owner-requested 400 configuration-only comparison. All 684 source files remain frozen; exactly one macro differs from the delivered 200 baseline. Actual 400-configuration performance is not inferred from compilation.
 - Opus reports flashing the 400 comparison (handoff 423); the saved log independently ends with content-verification PASS. Its measured frame rate has not yet been reported at this cutoff. Codex did not read serial or operate the hardware.
 - Built a separate 200 diagnostic candidate with the corrected DMA initialization handle, per-second VSYNC/skip/capture/error/IRQ screen counters and elapsed-time-normalized processing FPS. Control parameters and capture architecture remain unchanged; physical acceptance is pending.
+- Fixed the demonstrated cross-port reporting gate in a separate 200 cable candidate: a stalled wireless queue no longer suppresses debugger camera status or commands. Added DMA lost/IRQ cumulative counters with bounded 320-byte status storage; 29 actual-C checks pass.
+- Built matched 200/400 profiling candidates with the cable fix. Five foreground timestamps expose complete visual-call, actual LCD-write, debug-call and complete-loop timings; active-frame and empty-loop statistics are separated. 44 profiling checks and 29 repeated cable regression checks pass; independent review found no blocking issue. Both ADS builds have 0 errors and 13 existing warnings.
+- Verified Seekfree system_getval normalizes its raw STM count to 10 ns using the configured clock frequency. The old microsecond conversion is valid; its comment was misleading and the old last-frame-only metric omitted display/debug/loop-tail work. The PIT setup and increment contain no source-level fixed factor-of-two error.
+- Reproduced a conditional 2:1 capture pattern with the unmodified actual C callbacks: eight assumed event-order cases, 2144 event assertions, zero failures. With 200 end-of-frame events after DMA completion but before foreground release, captures=100 and skips=100; with the other tested event orders, captures=200 and skips=0. This proves a code mechanism under stated timing assumptions, not the board waveform.
 
 ## 未完成
 
@@ -65,6 +74,9 @@ Repair nominal simulated route exits, then prioritize the owner-reported physica
 - One rejected map-brake experiment reached entry24 but terminal stop26 preceded the simulator lap endpoint; this is retained as a separate end-distance observation, not hidden by modifying the validator.
 - The first diagnostic window can include startup counts; interpret the second complete window onward. Screen diagnostics localize symptoms but do not yet prove the sensor clock, VSYNC edge reliability or physical DMA timing.
 - The five additional LCD text rows incur display overhead whose effect on processed FPS has not been measured. They do not add serial traffic. The diagnostic build is an observation aid, not a claimed performance release.
+- Opus could not flash the cable candidate: two reported connection failures and the saved flasher initialization error mean the new program was not written. Last successfully flashed firmware remains the old 400 configuration-only comparison; no new 400 physical rate is available.
+- Matched profiling 200/400 candidates remain unflashed. Instrumentation adds its own overhead; reported elapsed times include interrupts and synchronous I/O. Latest-window TIM reports can skip windows while the output is busy.
+- Latest captain conversation was not obtained: the historical export is stale and the current local client is at its login interface. Login stays with the owner; no old conversation is represented as current evidence.
 
 ## 收益与损耗观察
 
@@ -84,12 +96,20 @@ Repair nominal simulated route exits, then prioritize the owner-reported physica
 - A proposed diagnostic row below the display was corrected before delivery after checking the actual 320 by 240 landscape initialization. The existing 188 by 120 image leaves space on its right for counters without covering S5 instructions.
 - Two isolated ADS windows were serialized for build-menu actions to avoid shared-focus interference. The 400 import needed one bounded permission recovery; no source rework was needed for that comparison.
 - The screen worker corrected two auxiliary-command issues (function-pattern spacing and PowerShell/Python quoting) before evidence collection; the source compiled once successfully. Independent review confirmed the first-window caveat and no new blocking source defect.
+- The owner requested a whole-program timing investigation and a matched 400-rate assessment. Delivery was extended with a transport-only cable candidate first so Opus could acquire counters without waiting for profiling.
+- The owner later permitted Opus to read through the downloader; that superseded the earlier screen-only observation preference for Opus. Codex and its native workers still did not open a hardware serial port, flash or command motion.
+- Code evidence supports a conditional half-rate mechanism: DMA priority 60 can set the completed-buffer flag immediately before the falling-edge VSYNC priority 40 callback; the ownership guard then skips rearming. Older reference drivers lack that guard. The physical signal phase remains unmeasured, so this is a testable hypothesis rather than an established board fault.
+- The 400 request is not a CPU or motor-speed setting. At a measured 4.8 ms visual-call duration, a genuine 2.5 ms frame interval exceeds the current sequential processing budget. Sensor exposure/readout timing and image quality must also be assessed; no sensor maximum is inferred from the setting.
+- The current client was opened to access the owner-selected conversation; it exposed a login interface, so reading stopped at that boundary. No private chat text or account identifiers are included in this report.
+- Before profiling freeze, a screen-string width issue was corrected. Both profiling ADS builds passed on their first compile. The archival receipt update initially used an unsupported duplicate-target patch shape, then was corrected without changing report evidence.
+- The later phase review also identifies a pre-existing check/rearm interleaving possibility if higher-priority DMA completion preempts VSYNC after its flag check. It was not newly introduced or physically measured. Removing the guard or merely changing priorities is not accepted as a safe fix without preserving buffer ownership and frame boundaries.
 
 ## 修改建议及下一轮验收
 
 - **WF-FAILED-TRACE-BEFORE-MATRIX-20261029 [adopted]** Compare the failed and passing trace around the preceding state transition, then run a bounded perturbation set before declaring a gain successful.；负责人：codex；下次检查：Next tuning handoff includes the onset of divergence and failed perturbations, not only the final exit location.
 - **WF-ONE-PHYSICAL-FACTOR-20261029 [adopted]** Package the acquisition fix separately when the immediate physical question is frame rate, preserving unrelated control settings for that measurement.；负责人：codex；下次检查：Opus reports before/after physical acquisition and processed rates with the camera-only build identity.
 - **WF-CAMERA-COUNTS-BEFORE-ARCHITECTURE-20261029 [adopted]** Show sensor-event, capture-completion, deliberate-skip and DMA-error counts together before choosing a buffering or sensor-timing fix.；负责人：codex；下次检查：Compare screen counter rates and processed FPS under the same frozen firmware and scene.
+- **WF-PHASE-AND-WHOLE-LOOP-TIMING-20261029 [adopted]** Include frame-event phase, whole-loop latency peaks and transport isolation in acquisition diagnosis; avoid extrapolating throughput from the most recent visual function alone.；负责人：codex；下次检查：Once hardware connectivity returns, compare matched 200/400 captures, skipped-frame counts and timing windows with stable image quality.
 
 ## 证据
 
