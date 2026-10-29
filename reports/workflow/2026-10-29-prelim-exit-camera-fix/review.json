@@ -4,7 +4,7 @@
   "task_summary": "Repair nominal simulated route exits, then prioritize the owner-reported physical camera half-rate problem with isolated comparison and screen diagnostics candidates.",
   "workflow_version": "WORKFLOW_REVIEW.md",
   "started_at": "2026-10-29T04:34:59Z",
-  "measurement_cutoff_at": "2026-10-29T06:13:55.295060+00:00",
+  "measurement_cutoff_at": "2026-10-29T09:47:21.237155+00:00",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -20,7 +20,7 @@
       "Kept Opus as exclusive hardware operator, sent direct project handoffs and preserved active firmware paths. No Codex serial, flash or motion action occurred.",
       "Delivered separate 100/150/200 instrumented camera HEX variants with VSYNC-total and buffer-owned-skip counters; 11 additional sanitized checks and independent review pass. Original control settings retained. Physical results subsequently showed about 50 processed fps at 100 configured and about 95 at 200 configured; the earlier buffering hypothesis did not explain the result by itself.",
       "Built the owner-requested 400 configuration-only comparison. All 684 source files remain frozen; exactly one macro differs from the delivered 200 baseline. Actual 400-configuration performance is not inferred from compilation.",
-      "Opus reports flashing the 400 comparison (handoff 423); the saved log independently ends with content-verification PASS. Its measured frame rate has not yet been reported at this cutoff. Codex did not read serial or operate the hardware.",
+      "Opus reports flashing the 400 comparison (handoff 423); the saved log independently ends with content-verification PASS. The owner later reported 120 processed FPS after output resumed, corroborated by Opus 433. This result belongs to the old configuration-only build, not the later unflashed fixes. Codex did not read serial or operate the hardware.",
       "Built a separate 200 diagnostic candidate with the corrected DMA initialization handle, per-second VSYNC/skip/capture/error/IRQ screen counters and elapsed-time-normalized processing FPS. Control parameters and capture architecture remain unchanged; physical acceptance is pending.",
       "Fixed the demonstrated cross-port reporting gate in a separate 200 cable candidate: a stalled wireless queue no longer suppresses debugger camera status or commands. Added DMA lost/IRQ cumulative counters with bounded 320-byte status storage; 29 actual-C checks pass.",
       "Built matched 200/400 profiling candidates with the cable fix. Five foreground timestamps expose complete visual-call, actual LCD-write, debug-call and complete-loop timings; active-frame and empty-loop statistics are separated. 44 profiling checks and 29 repeated cable regression checks pass; independent review found no blocking issue. Both ADS builds have 0 errors and 13 existing warnings.",
@@ -34,7 +34,7 @@
       "One rejected map-brake experiment reached entry24 but terminal stop26 preceded the simulator lap endpoint; this is retained as a separate end-distance observation, not hidden by modifying the validator.",
       "The first diagnostic window can include startup counts; interpret the second complete window onward. Screen diagnostics localize symptoms but do not yet prove the sensor clock, VSYNC edge reliability or physical DMA timing.",
       "The five additional LCD text rows incur display overhead whose effect on processed FPS has not been measured. They do not add serial traffic. The diagnostic build is an observation aid, not a claimed performance release.",
-      "Opus could not flash the cable candidate: two reported connection failures and the saved flasher initialization error mean the new program was not written. Last successfully flashed firmware remains the old 400 configuration-only comparison; no new 400 physical rate is available.",
+      "Opus could not flash the cable candidate: two reported connection failures and the saved flasher initialization error mean the new program was not written. The owner subsequently reported resumed output and 120 processed FPS on the old 400 configuration-only comparison. The cable and profiling changes remain unflashed.",
       "Matched profiling 200/400 candidates remain unflashed. Instrumentation adds its own overhead; reported elapsed times include interrupts and synchronous I/O. Latest-window TIM reports can skip windows while the output is busy.",
       "Latest captain conversation was not obtained: the historical export is stale and the current local client is at its login interface. Login stays with the owner; no old conversation is represented as current evidence."
     ]
@@ -220,7 +220,10 @@
     "The 400 request is not a CPU or motor-speed setting. At a measured 4.8 ms visual-call duration, a genuine 2.5 ms frame interval exceeds the current sequential processing budget. Sensor exposure/readout timing and image quality must also be assessed; no sensor maximum is inferred from the setting.",
     "The current client was opened to access the owner-selected conversation; it exposed a login interface, so reading stopped at that boundary. No private chat text or account identifiers are included in this report.",
     "Before profiling freeze, a screen-string width issue was corrected. Both profiling ADS builds passed on their first compile. The archival receipt update initially used an unsupported duplicate-target patch shape, then was corrected without changing report evidence.",
-    "The later phase review also identifies a pre-existing check/rearm interleaving possibility if higher-priority DMA completion preempts VSYNC after its flag check. It was not newly introduced or physically measured. Removing the guard or merely changing priorities is not accepted as a safe fix without preserving buffer ownership and frame boundaries."
+    "The later phase review also identifies a pre-existing check/rearm interleaving possibility if higher-priority DMA completion preempts VSYNC after its flag check. It was not newly introduced or physically measured. Removing the guard or merely changing priorities is not accepted as a safe fix without preserving buffer ownership and frame boundaries.",
+    "A later no-output concern was narrowed with read-only USB enumeration and saved logs. Output resumed after the owner changed the supply/module connection. Resumed telemetry does not establish that every vehicle component is healthy, but it contradicts treating silence alone as proof of a destroyed controller.",
+    "The saved final voltage stream contained 24 board-ADC reports of 4547 to 4671 mV. These are not independent battery-terminal or individual-cell measurements. Earlier wireless data also contain truncated numeric tokens, so naive minimum extraction is invalid. This distinction and conservative manufacturer charging guidance were sent directly to Opus.",
+    "Current firmware identity was confirmed with Opus 433 and the latest flash log list. The new 120 FPS observation must not be attributed to the unflashed DMA, transport or profiling changes. Current-port ownership remains with the owner/Opus; Codex did not seize COM7."
   ],
   "recommendations": [
     {
