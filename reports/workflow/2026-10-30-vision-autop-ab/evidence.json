@@ -1,0 +1,185 @@
+{
+  "round_id": "2026-10-30-vision-autop-ab",
+  "scope": "Independent sparse AuTop-style point-geometry implementation, CPU1 shadow integration, paired fixed-input evaluation and target builds.",
+  "workers": 3,
+  "hardware_operations": 0,
+  "production_frozen_files_checked": 684,
+  "production_frozen_files_changed": 0,
+  "test_suites": {
+    "module_assertions": 190,
+    "legacy_projection_assertions": 114,
+    "independent_assertions": 75,
+    "reader_scenarios_per_variant": 6,
+    "actual_camera_copy_bytes": 22560,
+    "original_visual_comparisons": 120,
+    "input_nonmutation_checks": 644
+  },
+  "suite_overlap": "Counts represent different suites; they are not asserted to be mutually exclusive scenarios.",
+  "inputs": {
+    "images": 40,
+    "point_cases": 81,
+    "physical_images_without_metric_ground_truth": 8
+  },
+  "build_variants": [
+    "A_MODEL",
+    "B_MODEL",
+    "B_OFF"
+  ],
+  "build_errors": 0,
+  "preexisting_warnings_per_build": 11,
+  "resource_delta_B_minus_A": {
+    "cpu1_ram_bytes": 5356,
+    "rom_bytes": 2649
+  },
+  "B_cpu1_free_bytes": 3716,
+  "target_visible_cpu1_callchain_stack_estimate_bytes": {
+    "A": 248,
+    "B": 288
+  },
+  "full_worst_case_target_stack_verified": false,
+  "host_benchmark": {
+    "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "paired_batches_per_scope": 21,
+    "benchmark_started_at": "2026-10-30T02:53:16.889873+00:00",
+    "benchmark_completed_at": "2026-10-30T02:53:32.521346+00:00",
+    "scope_distributions": {
+      "pipeline": {
+        "A_us": {
+          "min": 16.289104472477064,
+          "median": 16.67917006880734,
+          "p95": 17.508253325688074,
+          "max": 17.59999002293578
+        },
+        "B_us": {
+          "min": 17.018646674311928,
+          "median": 17.25758405963303,
+          "p95": 17.883209174311926,
+          "max": 18.089135435779816
+        },
+        "B_minus_A_us": {
+          "min": -0.5581573394495436,
+          "median": 0.6377532110091764,
+          "p95": 0.9553940366972498,
+          "max": 0.999064449541283
+        },
+        "B_vs_A_percent": {
+          "min": -3.1713503173704582,
+          "median": 3.8290100370841795,
+          "p95": 5.744976604785501,
+          "max": 6.133329497820794
+        },
+        "A_batch_ms": {
+          "min": 142.04099100000002,
+          "median": 145.442363,
+          "p95": 152.67196900000002,
+          "max": 153.47191300000003
+        },
+        "B_batch_ms": {
+          "min": 148.402599,
+          "median": 150.48613300000002,
+          "p95": 155.941584,
+          "max": 157.737261
+        }
+      },
+      "geometry_only": {
+        "A_us": {
+          "min": 0.895268161209068,
+          "median": 0.8984741624685139,
+          "p95": 0.9059584256926951,
+          "max": 0.9065438035264484
+        },
+        "B_us": {
+          "min": 1.5769514042821158,
+          "median": 1.59012620906801,
+          "p95": 1.6096964483627205,
+          "max": 1.613481353904282
+        },
+        "B_minus_A_us": {
+          "min": 0.6809120403022669,
+          "median": 0.6913839294710329,
+          "p95": 0.7075229282115869,
+          "max": 0.7112222858942067
+        },
+        "B_vs_A_percent": {
+          "min": 75.62140307445178,
+          "median": 77.00599648247307,
+          "p95": 78.85438033104353,
+          "max": 79.15890245971661
+        },
+        "A_batch_ms": {
+          "min": 142.168584,
+          "median": 142.67769700000002,
+          "p95": 143.866198,
+          "max": 143.95915599999998
+        },
+        "B_batch_ms": {
+          "min": 250.41988299999997,
+          "median": 252.51204199999995,
+          "p95": 255.619796,
+          "max": 256.22083899999996
+        }
+      }
+    }
+  },
+  "current_physical_calibration_verified": false,
+  "board_latency_or_speed_improvement_verified": false,
+  "final_opus_acceptance_received": false,
+  "clean_rebuilds": {
+    "A": {
+      "verified_at": "2026-10-30T03:05:44.243197+00:00",
+      "variant": "A",
+      "hex_sha256": "daa040c79fe92874e9fba9aff3695292dae2660d81e2463d52154c002c8436a8",
+      "matches_prior_hex": true,
+      "source_manifest_matches": true,
+      "c_translation_units_compiled": 175,
+      "object_files_produced": 175,
+      "summary": "11:04:22 Build Finished. 0 errors, 11 warnings. (took 4s.333ms)",
+      "log_sha256": "1d8eebb3bce6bb1fce8cc60dec5458ac8134fd98029fd666f4bf370f16e6f79d"
+    },
+    "B": {
+      "verified_at": "2026-10-30T03:06:40.846726+00:00",
+      "variant": "B",
+      "hex_sha256": "afb99a583164062fe05f5c8b58f21d80c698efc6089fd6fbfc80e76d2b2143de",
+      "matches_prior_hex": true,
+      "source_manifest_matches": true,
+      "c_translation_units_compiled": 175,
+      "object_files_produced": 175,
+      "summary": "11:05:52 Build Finished. 0 errors, 11 warnings. (took 4s.431ms)",
+      "log_sha256": "5951e424e9137d448e0708d48c511b4e143057c16f1db2e1c7c862299c65ed2c"
+    },
+    "OFF": {
+      "verified_at": "2026-10-30T03:07:25.966969+00:00",
+      "variant": "OFF",
+      "hex_sha256": "d799fb50d436ae33d69a14412500b3c6030611ee80cab780ddf3d8316e050ef4",
+      "matches_prior_hex": true,
+      "source_manifest_matches": true,
+      "c_translation_units_compiled": 175,
+      "object_files_produced": 175,
+      "summary": "11:06:48 Build Finished. 0 errors, 11 warnings. (took 4s.160ms)",
+      "log_sha256": "5947396cc8c13c08ab89588b77ac9013ac7da52a2ccb168544f14afe08306f27"
+    }
+  },
+  "handoffs": [
+    474,
+    475,
+    476,
+    477,
+    478
+  ],
+  "artifact_sha256": {
+    "PORTING.md": "edbedf86ec33c1d70946f559b1652c190486c18bb3353466a096a09f78b38e8a",
+    "ab-report.md": "c1dbc8a82cf03b2abdc550925ef3667599f2344dc2fccb86001a0dd39c9df46a",
+    "ab-report.json": "00fd6c63a66e95058ff9f1e055bdba6c737a125615698ed0a457f87c71bd0e7f",
+    "candidate-from-previous.patch": "a774c45735dc35ae182937d439a3b695400997dd6f7bdc2b9e3cc59bf0aada2f",
+    "final-audit.json": "f9d586359f1a767abc870e9b714556e9e916b57249aff1e2b0373641fdca1c4b",
+    "module-test/evidence.json": "a6698590bd5fe11210575774e140c548980edfec3f892590fa9a9ac2c94085f6",
+    "review/review.md": "99f3ae76518c3208d17f8416aa05004755fecd36d5a941cc24ebccde8f218311",
+    "review/results.json": "a32d1059785456eccad93395ce8cb8c3259cc9d063a42fe9c6845cbb865ff7d2",
+    "review/target-artifacts.json": "9abb397b4409ad034822aa2d1a9c25a9cf4d29040c2a1ae937cee08dcc3771cb",
+    "evaluation/execution-notes.json": "7eb5c3a083d40d06efa9209bf892ae7086aa4f5a2362c8afe134bc118a128478",
+    "artifacts/A/clean-rebuild.json": "657a4c573e1912dbe8542bad45226b7c6bff6de47aa594b49826ef96a3783c36",
+    "artifacts/B/clean-rebuild.json": "e72c771a40ef6b7c999f2fc2a1c795e0fdfa4ca1b98c461fd3ccc4720d73a808",
+    "artifacts/OFF/clean-rebuild.json": "9df0276eba57aaadd54661fecedd438c5b1873eaf7957a5e9e40ed728a6c88d4"
+  },
+  "sanitization": "Aggregate workflow outcomes and hashes only. No source code, camera frames, raw sessions, private paths, credentials or databases."
+}
