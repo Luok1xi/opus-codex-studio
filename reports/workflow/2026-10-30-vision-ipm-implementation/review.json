@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-30-vision-ipm-implementation",
+  "task_summary": "Implement sparse inverse perspective geometry in an isolated vehicle firmware candidate, evaluate actual C correctness and cost, and hand off a reviewed shadow integration.",
+  "workflow_version": "WORKFLOW_REVIEW.md + TEAMHUB.md, read 2026-10-30",
+  "started_at": "2026-10-30T00:50:39Z",
+  "measurement_cutoff_at": "2026-10-30T01:18:30.659678+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Implement sparse ground geometry and CPU1 shadow integration",
+      "Run actual C correctness, unchanged-output replay and matched host timing checks",
+      "Build isolated ADS candidate and report RAM/limits",
+      "Deliver code and evidence to Opus without touching hardware"
+    ],
+    "completed": [
+      "Implemented sparse geometry, physical-point fitting with held-out validation, and CPU1 shadow integration on the newest frozen upstream version.",
+      "Ran actual C edge cases, same-frame output equivalence, malformed-geometry rejection, real camera-copy and reader regressions with failing old-version controls.",
+      "Built final OFF and MODEL target artifacts; verified exact source identity and a minimal byte-reproducible patch; live firmware source remained unchanged.",
+      "Delivered final implementation and measured limitations through the project handoff database."
+    ],
+    "remaining": [
+      "Current vehicle calibration, board timing, and same-conditions physical driving comparison remain unperformed; no real-car performance benefit is claimed.",
+      "The final Opus handoff has not yet received acceptance."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Observed wall time to delivery/review cutoff",
+      "value": 1671.66,
+      "unit": "seconds",
+      "basis": "UTC start and cutoff; includes development, three native worker scopes, rebase, build recovery and handoff. Remote archive follows."
+    },
+    {
+      "name": "Native workers with received artifacts",
+      "value": 3,
+      "unit": "agents",
+      "basis": "Distinct module, matched replay/performance, independent review scopes; coordinator consolidates."
+    },
+    {
+      "name": "Passed final target builds",
+      "value": 2,
+      "unit": "builds",
+      "basis": "OFF and MODEL complete target compile/link, independent source-to-receipt hash checks."
+    },
+    {
+      "name": "Earlier compiled builds rejected",
+      "value": 2,
+      "unit": "builds",
+      "basis": "A successful compile did not detect camera buffer macro aliasing; both outputs explicitly rejected and replaced."
+    },
+    {
+      "name": "Behavioral defects fixed",
+      "value": 4,
+      "unit": "defects",
+      "basis": "Named cases in evidence; one was inherited from the upstream version. Source declaration compile repair was part of header isolation."
+    },
+    {
+      "name": "Actual module test invocations",
+      "value": 4,
+      "unit": "runs",
+      "basis": "Module worker reported four passing invocations, with regressions added for two product fixes."
+    },
+    {
+      "name": "Actual matched replay evaluations",
+      "value": 3,
+      "unit": "runs",
+      "basis": "Initial implementation, pole validation repair, then public-header isolation; final result supersedes earlier timing."
+    },
+    {
+      "name": "Project-settings import recovery",
+      "value": 1,
+      "unit": "incidents",
+      "basis": "Initial isolated copy excluded required device settings; restored settings and retained them in copy helper."
+    },
+    {
+      "name": "Documented failed target source build",
+      "value": 1,
+      "unit": "observed logs",
+      "basis": "Captured final failed build had undeclared border arrays after header isolation; explicit declarations repaired. Not an exhaustive total build-attempt count."
+    },
+    {
+      "name": "Patch byte-equivalence harness corrections",
+      "value": 1,
+      "unit": "incidents",
+      "basis": "Global newline conversion changed applied bytes; isolated apply with autocrlf disabled reproduced all six final files exactly."
+    },
+    {
+      "name": "Module public-header edit precondition failures",
+      "value": 1,
+      "unit": "incidents",
+      "basis": "Worker reported a CRLF/LF precondition failure before any write; fixed matching without replacing other file bytes."
+    },
+    {
+      "name": "New physical hardware operations",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial, flashing or motor control in coordinator or worker scopes."
+    },
+    {
+      "name": "Total failed tool invocations",
+      "value": null,
+      "unit": "operations",
+      "basis": "Permissions, temporary-directory setup and CLI option correction also occurred; no reliable exhaustive instrumentation."
+    },
+    {
+      "name": "Exclusive review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Review and rework overlapped coordinator work; no complete exclusive attribution."
+    },
+    {
+      "name": "Exclusive coordination wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No separate wait accounting."
+    },
+    {
+      "name": "Provider token usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider-complete parent/child usage evidence."
+    },
+    {
+      "name": "Actual monetary cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive is subsequent to this cutoff; receipt records its completion separately."
+    }
+  ],
+  "observations": [
+    "Independent review found a projection singularity and inherited reader failure-path defect. Coordinator integration then found a macro leak missed by the first review.",
+    "Existing replay tests injected processing buffers directly, bypassing the camera producer/consumer boundary. Adding the real ISR copy regression reproduced the defect and its correction.",
+    "Target compile success alone was insufficient: two compiled artifacts were withdrawn before delivery. The final header has a compile guard against camera aliases.",
+    "Upstream advanced during development. A fresh frozen handoff was read, 684 files verified, and only the integration was rebased; no concurrent source was overwritten.",
+    "Final host timing shows added work with substantial scheduling noise; different percentages across runs are not an optimization claim.",
+    "Native parallel roles provided specific findings, but no matched workflow quality baseline exists to quantify net speedup."
+  ],
+  "recommendations": [
+    {
+      "id": "IPM-IMPLEMENTATION-BOUNDARY-20261030",
+      "action": "For new public headers, verify macro exports and test the real producer-to-consumer buffer copy, including an old-fault negative control.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Future camera candidates pass the same actual-copy test and compile guard."
+    },
+    {
+      "id": "IPM-IMPLEMENTATION-FREEZE-20261030",
+      "action": "Keep exact source manifests and target build receipts per configuration; retain required IDE device settings and verify minimal patch bytes.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next integration starts from the current accepted freeze and a settings-complete isolated tree."
+    },
+    {
+      "id": "IPM-IMPLEMENTATION-PHYSICAL-20261030",
+      "action": "Accept physical geometry only after same-domain held-out calibration, board timing and matched driving evidence; keep shadow quantities out of pixel-unit control gains meanwhile.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "Receive an actual acceptance and physical evidence through the project database."
+    }
+  ],
+  "evidence": [
+    "Local implementation, final actual-C evaluation, final independent review and build manifests, identified only by aggregate hashes here.",
+    "Project handoffs 468, 469, 470 and 471."
+  ],
+  "comparison": null,
+  "limits": [
+    "This is a complete offline/shadow delivery with partial physical acceptance, not a flashed or road-tested change.",
+    "Host performance measurements are not target frame rate or lap time.",
+    "Archive completion requires verified private remote readback."
+  ]
+}
