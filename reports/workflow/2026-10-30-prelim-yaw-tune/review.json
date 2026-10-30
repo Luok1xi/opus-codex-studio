@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-30-prelim-yaw-tune",
+  "task_summary": "Build and flash full yaw-tuning firmware, verify idle startup, and prepare the physical test without remote launch.",
+  "workflow_version": "WORKFLOW_REVIEW.md and TEAMHUB.md",
+  "started_at": "2026-10-30T10:11:51Z",
+  "measurement_cutoff_at": "2026-10-30T10:30:34.709913+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Build full existing firmware with reviewed tuning-state clamp only",
+      "Check startup and tuning gates",
+      "Flash only after current stopped/downloader-ready confirmation and successful target validation",
+      "Verify flash receipt and idle startup; no remote vehicle launch"
+    ],
+    "completed": [
+      "Verified source drift is limited to preserved comments, then built the reviewed two-line change in an isolated full-firmware workspace.",
+      "Independent startup, mode, timeout and export-gate review passed for this bounded test.",
+      "One target programming and verification succeeded; recovered the receipt after the wrapper remained waiting.",
+      "Read idle startup telemetry showing healthy IMU, battery and zero wheel output."
+    ],
+    "remaining": [
+      "Owner disconnected downloader to switch to wireless, then deferred hardware work until the battery is charged; tuning mode has not been acknowledged.",
+      "Physical step test and stability improvement remain unverified.",
+      "A new black-display report has only a source-level pin-mapping review; actual cause is unknown."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Wall time to verified flash and idle check",
+      "value": 1123.709913,
+      "unit": "seconds",
+      "basis": "Includes source drift review, ADS setup, flash wrapper recovery and connection loss."
+    },
+    {
+      "name": "Target compiled C units",
+      "value": 173,
+      "unit": "units",
+      "basis": "Fresh isolated ADS workspace build log."
+    },
+    {
+      "name": "Build log elapsed",
+      "value": 5.168,
+      "unit": "seconds",
+      "basis": "Compiler-reported elapsed; excludes setup."
+    },
+    {
+      "name": "Target errors",
+      "value": 0,
+      "unit": "errors",
+      "basis": "Build log."
+    },
+    {
+      "name": "Existing warnings",
+      "value": 11,
+      "unit": "warnings",
+      "basis": "Same warning classes as base."
+    },
+    {
+      "name": "Flash executions",
+      "value": 1,
+      "unit": "executions",
+      "basis": "One programmer log, programming and verification pass."
+    },
+    {
+      "name": "Serial commands sent",
+      "value": 0,
+      "unit": "commands",
+      "basis": "First read-only capture; later setup failed before port open."
+    },
+    {
+      "name": "Remote vehicle starts",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No start command or physical S5 operation by agent."
+    },
+    {
+      "name": "Actual usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider accounting."
+    },
+    {
+      "name": "Actual cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Exclusive review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlapping review, no isolated measure."
+    }
+  ],
+  "comparison": null,
+  "observations": [
+    "Fresh source verification detected three preserved comment-only changes instead of silently overwriting parallel work.",
+    "The programmer completed while its wrapper remained waiting; independent log verification allowed receipt recovery without repeated flash.",
+    "Serial preparation refused to proceed after the port disappeared; owner later confirmed physically unplugging the downloader.",
+    "An unavailable optional Python serial dependency was avoided by using the installed .NET serial interface.",
+    "A local report helper needed one encoding-name correction; one inbox command needed argument correction.",
+    "One native reviewer independently audited startup/test gates and later the screen path. Opus received file/database handoffs; no new Opus review response was received.",
+    "Further device work and questions stopped at the owner request to wait for charging."
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-FLASH-WAIT-RECOVERY",
+      "action": "Review bounded programmer-process waiting and durable log-first receipt recovery in the shared burn wrapper.",
+      "owner": "dsh",
+      "status": "proposed",
+      "next_check": "Investigate a replayable process-wait test without reflashing hardware."
+    },
+    {
+      "id": "CRAZY-RATE-READBACK",
+      "action": "Require fresh stopped-mode readback after every reset or reconnect before the operator presses S5.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next physical run must have a matching current side/target/gain acknowledgement."
+    }
+  ],
+  "evidence": [
+    "Sanitized aggregate evidence and artifact hashes in evidence.json; source and raw telemetry remain local."
+  ],
+  "limits": [
+    "No new driving trial, no PI optimization or physical stability claim.",
+    "No matched workflow quality baseline; speedup not established.",
+    "Receipt recovery is disclosed and is not a second flash.",
+    "Display hardware mapping and the black-screen cause remain unverified."
+  ]
+}
