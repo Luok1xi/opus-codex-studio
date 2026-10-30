@@ -1,0 +1,53 @@
+{
+  "round_id": "2026-10-30-vision-ipm-implementation",
+  "native_workers": 3,
+  "external_opus_source_handoff": 469,
+  "coordinator_handoffs": [
+    468,
+    470,
+    471
+  ],
+  "opus_final_acceptance_received": false,
+  "source_files_baseline": 684,
+  "source_files_final": 688,
+  "modified_existing": 2,
+  "added_files": 4,
+  "production_source_hashes_unchanged": true,
+  "module_assertions_passed": 114,
+  "calibration_tests_passed": 7,
+  "same_input_output_comparisons_passed": 99,
+  "input_nonmutation_checks_passed": 99,
+  "synthetic_geometry_cases_passed": 25,
+  "synthetic_full_pipeline_cases_passed": 25,
+  "actual_reader_scenarios_passed": 6,
+  "actual_camera_copy_passed": true,
+  "negative_controls_reproduced_original_defects": true,
+  "accepted_final_target_builds": 2,
+  "final_build_errors_each": 0,
+  "final_existing_warnings_each": 11,
+  "rejected_earlier_builds": 2,
+  "additional_static_cpu1_ram_bytes": 52,
+  "board_timing_measured": false,
+  "physical_calibration_measured": false,
+  "physical_driving_improvement_measured": false,
+  "host_timing": {
+    "paired_increment_median_us": 1.3641,
+    "paired_increment_median_percent": 8.6725,
+    "limit": "Noisy host batch timing; not stable target cost and no computational speedup."
+  },
+  "behavioral_defects_fixed": [
+    "Projection pole crossing",
+    "Failure path overwriting accepted reader snapshot",
+    "Calibration output overwriting input path",
+    "Public header aliasing camera DMA buffer"
+  ],
+  "artifact_sha256": {
+    "implementation": "7c6e74c7782bb95582ea747caeecf098badfab96ebd9e280e8d02d08f4a8cf4f",
+    "evaluation": "8e169a4ac33097169c284a63be6b4bb1e702aa735d0f4f5089b65d15a6e7286a",
+    "evaluation_results": "d91a8d2b6d028a2a90ce5dd5ed0ccbd53e7759cb801d4ad13ef4d815164ce95f",
+    "independent_review": "e8c923cf322a07b2d4c693ac33021a8cc48396d40a07ba6a1acd4c70e4c99b01",
+    "module_tests": "586137013b3c9ba0833adf5e27c78de604b3d24c1e3121e9834dbe6c279c8377",
+    "change_manifest": "e41007802f472fdbadaa0d7c6a32576659f079b0f58169691a4172b569d9041a"
+  },
+  "sanitization": "Aggregate metrics and hashes only. No source code, camera frames, personal paths, conversation bodies, live databases, or credentials."
+}
