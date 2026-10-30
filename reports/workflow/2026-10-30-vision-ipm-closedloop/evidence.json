@@ -1,0 +1,83 @@
+{
+  "round_id": "2026-10-30-vision-ipm-closedloop",
+  "native_worker_scopes": 3,
+  "simulation_runs": 113,
+  "run_breakdown": {
+    "baseline": 4,
+    "development": 72,
+    "validation": 36,
+    "frame_capture_exact_replay": 1
+  },
+  "validation": {
+    "runs": 36,
+    "passes": 0,
+    "off_track": 35,
+    "protection_stops": 1,
+    "post_validation_tuning_runs": 0,
+    "elapsed_seconds": 53.907572
+  },
+  "geometry_holdout": {
+    "cases": 52,
+    "pair_passes": 41,
+    "noise_1pixel_passes": 32,
+    "noise_1pixel_cases": 32,
+    "noise_2pixel_passes": 5,
+    "noise_2pixel_cases": 16
+  },
+  "checks": {
+    "module": 100,
+    "independent": 173,
+    "independent_failures": 0,
+    "overlap": "Suites are not claimed as mutually exclusive scenarios."
+  },
+  "build": {
+    "compiled_c_sources": 177,
+    "errors": 0,
+    "preexisting_warnings": 11,
+    "hex_sha256": "2228d4fd725aaf724d20af51a799f7ba5ee33e3320b37eeb715852d3c4cebb8b",
+    "source_manifest_files": 695,
+    "cpu1_free_bytes": 7732,
+    "prior_B_cpu1_free_bytes": 3716
+  },
+  "stack": {
+    "cpu1_visible_chain_bytes": 368,
+    "prior_cpu1_visible_chain_bytes": 288,
+    "new_cpu0_geometry_chain_bytes": 272,
+    "direction_isr_visible_tree_bytes": 1504,
+    "prior_direction_isr_visible_tree_bytes": 1496,
+    "isr_stack_allocated_bytes": 1024,
+    "full_runtime_high_water_verified": false
+  },
+  "existing_frozen_tree_drift": {
+    "files": 3,
+    "noncomment_tokens_equal": 3,
+    "root_overwrites": 0
+  },
+  "hardware_operations": 0,
+  "real_car_improvement_verified": false,
+  "final_opus_acceptance_received": false,
+  "coordination": "Three native child scopes received and consolidated; Opus and evidence-maintainer database handoffs only, no invented external reply.",
+  "handoff_ids": [
+    486,
+    487
+  ],
+  "artifact_sha256": {
+    "final-audit.json": "9d3479d6eb152b9ada38833829f06a224fd53510f68adb07b0092105f2447eea",
+    "target-source-freeze.json": "a3d6aebc2a4d43b62e404f0631c7451a0ece4ac9b1e964d17eeebc140f3226c8",
+    "candidate-from-previous.patch": "511d1d30df606122f0f7eda8723c4484ee441fb083b68c4e74fe9abf377c3f46",
+    "geometry/evidence.json": "f6f0a14f456c99eff7b5d9790d16b7946182e9612597f5f1d3c9450cda7cd632",
+    "geometry/results.json": "e370aa54f8ec95c6d13d0e1487cffd82154a97c47a982f10b493a66ec5958461",
+    "geometry/exit-study/evidence.json": "1b5665eab2e4ad3ab2ce3e787bcdd16dcfe82401ac6bf4f494889da328f52c42",
+    "geometry/exit-study/autop-branches.evidence.json": "245099cd407cb26107d5968c3d3d1b12f107be4ebc51077737514d35bfa6f684",
+    "review/results.json": "04eb8044673e7a925642a2b9fb7ca87e37967308502ecb55345267725fb393bb",
+    "review/target-artifacts.json": "65b24323a18144e8217df0e69bd1e28d33ec428f4b3258d5b6e791507e70520a",
+    "review/c3-holdout-protocol.json": "3610fb0c078214c63275079da573dcee800df669ad475512a8d07457f8389c78",
+    "review/c3-holdout-results.json": "368249cbc2b15847927d344758173724a728d4655a044c0552e70d6b916e238f",
+    "review/branch-gate-review.md": "a6fd9bff046d988f577795396ca04b417b8c8082159023cfb14d3fd393cd9dfb",
+    "baseline/report/completion-evidence.json": "919ff4ca1ade102ff111760c9dc57166df88a00c0b44fc8b98604a02f464ce1e",
+    "baseline/validation/plan.json": "808ed04d23a3f5c2d3a8b9b02f7a1da5bdd0a81d07de6808eeafd94b284a5afd",
+    "baseline/validation/results.json": "23716818131207127af84699dfcd77dd9b68b3a6c64a94b2d23202b1cd1473c3",
+    "artifacts/default-off/receipt.json": "7736e649aeef8111ec83caba33f3747ed985c72ea1b7f31e61aa8d568d2353a9"
+  },
+  "sanitization": "Aggregates and hashes only; no source, images, raw sessions, credentials, personal paths or databases."
+}
