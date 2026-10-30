@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-30-vision-ipm-fusion",
+  "task_summary": "Preserve interrupted OUC/AuTop fusion research after owner redirects effort to vehicle control.",
+  "workflow_version": "WORKFLOW_REVIEW.md / TEAMHUB.md",
+  "started_at": "2026-10-30T07:28:05Z",
+  "measurement_cutoff_at": "2026-10-30T08:01:31.329356+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Develop bounded geometry and handover fusion with same-source comparison",
+      "Preserve all unfinished work when owner changes priority"
+    ],
+    "completed": [
+      "Geometry candidate retains target coordinates and improves anchor availability on nineteen previously seen frames; component checks saved.",
+      "Created standalone handover code and rejection diagnostics; integration remains incomplete.",
+      "Stopped workers and preserved source, artifacts and pause notes in a hash-verified checkpoint."
+    ],
+    "remaining": [
+      "No final handover integration, independent acceptance, unseen validation, closed-loop comparison or target timing.",
+      "Owner explicitly suspended further IPM development."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Wall time until preserved pause",
+      "value": 2006.329356,
+      "unit": "seconds",
+      "basis": "Start to checkpoint timestamp; includes interruption and preservation, not active model time."
+    },
+    {
+      "name": "Checkpoint files",
+      "value": 861,
+      "unit": "files",
+      "basis": "ZIP member hashes read back and matched the frozen manifest."
+    },
+    {
+      "name": "Analytic geometry assertions",
+      "value": 133,
+      "unit": "assertions",
+      "basis": "Geometry worker saved final sanitizer-backed results; independent execution not completed."
+    },
+    {
+      "name": "Legacy assertions per geometry branch",
+      "value": 108,
+      "unit": "assertions",
+      "basis": "Two branches; repeated setup is not independent scenarios."
+    },
+    {
+      "name": "Previously seen frames replayed",
+      "value": 19,
+      "unit": "frames",
+      "basis": "Development evidence only; no unseen validation."
+    },
+    {
+      "name": "New full-loop simulations",
+      "value": 0,
+      "unit": "runs",
+      "basis": "Simulation worker confirms preparation only."
+    },
+    {
+      "name": "New target builds",
+      "value": 0,
+      "unit": "builds",
+      "basis": "No target build launched this round."
+    },
+    {
+      "name": "Hardware actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No flash, serial or motion operations."
+    },
+    {
+      "name": "Actual model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No comparable provider usage evidence."
+    },
+    {
+      "name": "Actual cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Exclusive review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlaps other work; no isolated timing."
+    }
+  ],
+  "comparison": null,
+  "observations": [
+    "Owner changed priority before integration and validation; a checkpoint is not a validated firmware release.",
+    "Existing worker scopes were redirected without continuing canceled experiments.",
+    "No actual speedup claim is supported by component-only evidence."
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-IPM-PAUSE-CHECKPOINT",
+      "action": "Keep a hash-verified checkpoint and an explicit incomplete-work list when the owner redirects a running firmware task.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Resumption must start from the recorded files and repeat unfinished validation."
+    }
+  ],
+  "evidence": [
+    "Sanitized checkpoint digest and component counts in evidence.json; raw source remains local."
+  ],
+  "limits": [
+    "No target runtime or real-car benefit demonstrated.",
+    "No matched workflow quality baseline.",
+    "Original peer final acceptance was not received.",
+    "Archive readback occurs after measurement cutoff."
+  ]
+}
