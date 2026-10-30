@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-30-vision-ipm-research",
+  "task_summary": "Study suitable GitHub smart-car vision code, test inverse-perspective limitations, assess core placement and prepare an evidence-based ground-path fusion design.",
+  "workflow_version": "WORKFLOW_REVIEW.md + TEAMHUB.md, read 2026-10-30",
+  "started_at": "2026-10-30T01:53:43Z",
+  "measurement_cutoff_at": "2026-10-30T02:18:58.130624+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Read concrete GitHub smart-car source and distinguish verified techniques from unverified ranking claims",
+      "Assess CPU placement from current source and saved timing, not assumptions",
+      "Extend actual-C geometry/failure tests and compare useful implementation options",
+      "Deliver a source-linked fusion design and any evidence-supported isolated improvement, preserving live firmware"
+    ],
+    "completed": [
+      "Read pinned public source and licenses; separated same-track embedded systems, servo-car techniques and isolated table benchmarks.",
+      "Verified current production source identity and core ownership, memory, time-base limitations, historical timing and control units.",
+      "Ran actual unchanged C on curve/topology/gap/noise/calibration cases and rejected an external optimization comparison with unequal outputs.",
+      "Implemented and independently reviewed an isolated bounded multi-point geometry prototype after research; repaired a reproduced cusp defect.",
+      "Delivered detailed fusion design and evidence to Opus through the project database."
+    ],
+    "remaining": [
+      "Current-pose physical calibration, full board latency measurement, production integration and matched driving acceptance remain pending.",
+      "The final Opus handoff has not received acceptance; no vehicle performance improvement is claimed."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Wall time to research delivery cutoff",
+      "value": 1515.131,
+      "unit": "seconds",
+      "basis": "UTC start/cutoff; includes research, tests, independent review, prototype repair and handoff. Archive follows."
+    },
+    {
+      "name": "Received native worker scopes",
+      "value": 3,
+      "unit": "agents",
+      "basis": "Source study, unchanged-module stress tests, architecture and prototype review; coordinator consolidated."
+    },
+    {
+      "name": "Source study worker observed interval",
+      "value": 1106.782,
+      "unit": "seconds",
+      "basis": "Worker supplied same-clock start/end; overlaps coordinator and other workers, not additional elapsed time."
+    },
+    {
+      "name": "Actual C prototype assertions passed",
+      "value": 27,
+      "unit": "checks",
+      "basis": "Known circle, hidden bump, horizontal turn, duplicates, cusp, gap, nonfinite input and capacity cases; ASan/UBSan."
+    },
+    {
+      "name": "Prototype complete test invocations",
+      "value": 2,
+      "unit": "runs",
+      "basis": "Initial implementation, then reviewer-found cusp correction; separate narrow negative-control review also executed."
+    },
+    {
+      "name": "Prototype behavioral defects fixed",
+      "value": 1,
+      "unit": "defects",
+      "basis": "Independent real-C reproduction of backtrack summarized as straight; pre-sampling cusp rejection and focused retest."
+    },
+    {
+      "name": "External component semantic comparison modes",
+      "value": 3,
+      "unit": "modes",
+      "basis": "Original C executed with common input; outputs differed so performance comparison was rejected."
+    },
+    {
+      "name": "External component three-mode runs",
+      "value": 2,
+      "unit": "runs",
+      "basis": "Worker normalized extra terminal newline to match Git blob and repeated semantic regression; no throughput claim."
+    },
+    {
+      "name": "Projection stress execution rounds",
+      "value": 2,
+      "unit": "runs",
+      "basis": "Second run added forward-distance markers to expose a missed calibration sensitivity metric; unchanged tested module."
+    },
+    {
+      "name": "Source study product rework",
+      "value": 0,
+      "unit": "changes",
+      "basis": "Worker reported no product source edits; only local source normalization/harness compilation."
+    },
+    {
+      "name": "Hardware actions",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial, flashing or motor control; production manifest reverified unchanged."
+    },
+    {
+      "name": "Total tool failures",
+      "value": null,
+      "unit": "operations",
+      "basis": "Read-only Git permission failures, one GitHub transport failure, an encoding probe and premature report reads occurred; no complete counter."
+    },
+    {
+      "name": "Exclusive coordination wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No isolated wait attribution; work overlapped."
+    },
+    {
+      "name": "Exclusive review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately instrumented from research/prototype changes."
+    },
+    {
+      "name": "Provider token usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No complete parent/children provider usage evidence."
+    },
+    {
+      "name": "Actual cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Separate archive completion receipt records time after this cutoff."
+    }
+  ],
+  "observations": [
+    "Real source inspection showed mature projects connect geometry to spatial filtering, ordered paths, route selection and preview; a two-point projection alone omits internal curves.",
+    "A nominally optimized remap component produced different values for the same out-of-bounds query across modes; checking semantics prevented a misleading speedup transfer.",
+    "Forward-distance markers exposed calibration errors hidden by tests that measured only line heading and lateral deviation.",
+    "Independent architecture review prevented cross-core time origins and nominal encoder units from being confused with synchronized timestamps and measured vehicle speed.",
+    "Prototype review found a cusp case missed by initial tests; it was fixed before delivery, with memory claims limited to the actual buffers counted.",
+    "No matched workflow baseline exists; useful defect discoveries do not quantify net speedup."
+  ],
+  "recommendations": [
+    {
+      "id": "VISION-RESEARCH-EQUIVALENCE-20261030",
+      "action": "Before adopting an optimization benchmark, run equal inputs including invalid-domain cases and compare observable outputs.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Future remap or geometry changes retain the negative-control fixtures and do not compare mismatched semantics."
+    },
+    {
+      "id": "VISION-RESEARCH-GEOMETRY-20261030",
+      "action": "Keep calibration accuracy, route topology, local path shape, compute cost and closed-loop results as separate acceptance gates.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "The next production candidate reports each gate, retaining hidden-bump, cusp and mismatched-branch cases."
+    },
+    {
+      "id": "VISION-RESEARCH-BOARD-20261030",
+      "action": "Measure a common-timestamp vision-to-control chain under the actual suction working pose before accepting dynamic preview/control fusion.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "Receive real calibration and board timing plus independent integration acceptance."
+    }
+  ],
+  "evidence": [
+    "Pinned public-source report and actual original-C semantic regression.",
+    "Unchanged-module stress results, current-core audit, prototype C results and independent review.",
+    "Aggregate artifact hashes and project handoff IDs in evidence.json."
+  ],
+  "comparison": null,
+  "limits": [
+    "Offline prototype correctness does not establish real driving improvement.",
+    "Historical sampled timing does not bound the current version worst-case execution time.",
+    "Native parallel work has no measured causal workflow speedup.",
+    "Private remote archive completion is verified separately."
+  ]
+}
