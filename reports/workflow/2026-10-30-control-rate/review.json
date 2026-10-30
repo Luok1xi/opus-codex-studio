@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-30-control-rate",
+  "task_summary": "Preserve paused vision research, diagnose real archived yaw-rate overshoot and repair a separate tuning-state saturation defect.",
+  "workflow_version": "WORKFLOW_REVIEW.md / TEAMHUB.md",
+  "started_at": "2026-10-30T07:57:47Z",
+  "measurement_cutoff_at": "2026-10-30T08:15:53.384379+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Preserve interrupted IPM work",
+      "Analyze actual 2026-10-29 logs against matched source",
+      "Prepare bounded control fixes and useful tuning steps based on evidence"
+    ],
+    "completed": [
+      "Preserved interrupted work in a verified checkpoint.",
+      "Matched actual archived samples and cadence to reconstructed source, corrected reported peak values and separated command-transition effects.",
+      "Prepared a two-line tuning-only saturation fix with actual-C regression and sanitizer checks; preserved production files.",
+      "Prepared a bounded current-load test sequence using the existing full-firmware tuning entry."
+    ],
+    "remaining": [
+      "Full ADS build, hardware runs and independent external acceptance are pending.",
+      "Exact cause attribution among PI gains, feedback delay, wheel response and switching needs new measurements.",
+      "No claim that competition-loop stability is fixed."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Wall time to analysis delivery",
+      "value": 1086.384379,
+      "unit": "seconds",
+      "basis": "Includes checkpoint, coordination, analysis and patch; overlaps native workers."
+    },
+    {
+      "name": "Primary archived records",
+      "value": 2,
+      "unit": "captures",
+      "basis": "Two complete 1000-row diagnostic captures; cadence validated against versioned source."
+    },
+    {
+      "name": "Extracted-C assertions",
+      "value": 6523,
+      "unit": "assertions",
+      "basis": "Repeated per-tick assertions and setup; not distinct cases."
+    },
+    {
+      "name": "Candidate added lines",
+      "value": 2,
+      "unit": "lines",
+      "basis": "One guard/clamp plus one explanatory comment; tuning branch only."
+    },
+    {
+      "name": "Target builds",
+      "value": 0,
+      "unit": "builds",
+      "basis": "Target compilation is pending; host verification only."
+    },
+    {
+      "name": "Hardware operations",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No serial, flash or vehicle motion."
+    },
+    {
+      "name": "Actual model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage evidence."
+    },
+    {
+      "name": "Actual cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Exclusive coordination and review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlaps analysis; no exclusive measurement."
+    }
+  ],
+  "comparison": null,
+  "observations": [
+    "The initial file search and unfiltered database output were too broad; bounded saved JSON summaries were more usable.",
+    "The official source tree was older than the experimental tree used on the vehicle; version ledger and reconstructed-source hashes resolved the mismatch.",
+    "Raw capture cadence differed between diagnostic and whole-lap versions; assuming current cadence would corrupt timing estimates.",
+    "A real tuning-only state saturation issue is separate from race-mode overshoot.",
+    "One synthetic regression fixture initially did not reach its intended output range; stimulus was corrected without changing the production fix.",
+    "The two-line change affects no race-mode gain or formula; twelve test trajectories are injected feedback, not physical validation."
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-RATE-VERSION-CADENCE",
+      "action": "Bind every waveform to firmware version, sample interval and raw row index before comparing control responses.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next capture must retain target, feedback and versioned cadence."
+    },
+    {
+      "id": "CRAZY-RATE-LIMIT-STATE",
+      "action": "Match tuning-controller state to the downstream applied limit and independently verify normal-mode equivalence.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Target build and paired physical test remain necessary."
+    },
+    {
+      "id": "CRAZY-RATE-SEPARATE-SWITCH",
+      "action": "Tune fixed-target response before changing state-transition output handling.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "Compare signed step responses before changing the turn-exit command."
+    }
+  ],
+  "evidence": [
+    "Sanitized evidence.json retains capture and patch checksums; full records and source stay local."
+  ],
+  "limits": [
+    "No matched quality baseline establishes workflow speedup.",
+    "Model tests use injected feedback and do not establish physical stability.",
+    "Source/host, archived data and new physical testing are distinct evidence levels.",
+    "No new physical run or target binary was produced."
+  ]
+}
