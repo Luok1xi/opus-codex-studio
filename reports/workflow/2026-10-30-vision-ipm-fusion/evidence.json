@@ -1,0 +1,16 @@
+{
+  "round_id": "2026-10-30-vision-ipm-fusion",
+  "checkpoint_sha256": "0a765c79ec293070306e4ada1a5c3d99ea363d06738b2820add3cc41cf558ab5",
+  "checkpoint_files": 861,
+  "checkpoint_verified": true,
+  "new_closed_loop_runs": 0,
+  "target_builds": 0,
+  "hardware_actions": 0,
+  "geometry_analytic_assertions": 133,
+  "legacy_assertions_each_branch": 108,
+  "saved_development_frames": 19,
+  "geometry_merged_to_firmware": false,
+  "handover_integrated": false,
+  "owner_paused": true,
+  "matched_quality_baseline": null
+}
