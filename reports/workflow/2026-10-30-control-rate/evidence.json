@@ -1,0 +1,30 @@
+{
+  "round_id": "2026-10-30-control-rate",
+  "archived_records": [
+    {
+      "sha256": "d70213981d12558df7f69b76a7320d264c1b7f6b6011f2951b1de9b25d973484",
+      "rows": 1000,
+      "dt_ms": 4
+    },
+    {
+      "sha256": "3560a4d916ba4b74e9ce243cdda2f4cebd5f1ae5829b2e42c8734353d5b0f5a8",
+      "rows": 1000,
+      "dt_ms": 4
+    }
+  ],
+  "v2_target_dps": 250,
+  "v2_measured_peak_dps": 351.6,
+  "v2_peak_raw_index": 299,
+  "v2_turn_exit_command_dps": [
+    85,
+    236
+  ],
+  "host_assertions": 6523,
+  "host_status": "pass",
+  "candidate_sha256": "0dda6cb87354e9d5e409d68eaa5e97860c5898c9d765e49f5f397f976400f581",
+  "candidate_matches_tested_function": true,
+  "race_parameters_changed": false,
+  "hardware_operations": 0,
+  "target_builds": 0,
+  "matched_workflow_baseline": null
+}
