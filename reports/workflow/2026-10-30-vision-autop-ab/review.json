@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-30-vision-autop-ab",
+  "task_summary": "Implement an AuTop-style sparse inverse-perspective path pipeline on CPU1 and compare it fairly with the existing lightweight geometry.",
+  "workflow_version": "WORKFLOW_REVIEW.md + TEAMHUB.md read 2026-10-30",
+  "started_at": "2026-10-30T02:24:10Z",
+  "measurement_cutoff_at": "2026-10-30T03:07:30.108519+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Implement an AuTop-style sparse point IPM/filter/resampling/geometry B variant in an isolated TC264 candidate",
+      "Retain existing A two-section geometry for same-input comparisons",
+      "Compare correctness, useful path information, timing and memory with identical tests and expose failures",
+      "Build reviewable target artifacts and hand off to Opus without overwriting live work or touching hardware"
+    ],
+    "completed": [
+      "Implemented bounded sparse projection, smoothing, edge and centre arc resampling, normal offset and local geometry in an isolated candidate.",
+      "Integrated CPU1 shadow computation and CPU0 coherent diagnostic snapshots without changing existing pixel-based control parameters.",
+      "Passed module and regression suites, independent targeted review, real ISR copy and shared-frame-reader checks.",
+      "Retained both early and revised B results on fixed input; reported geometry benefits, quantization noise, rejected noisy samples and range truncation.",
+      "Built A_MODEL, B_MODEL and B_OFF with matching source/config/HEX records; inspected target memory and visible call-chain stack estimates.",
+      "Rechecked frozen live files and sent a concrete delivery to Opus through the project database."
+    ],
+    "remaining": [
+      "Current-car lens/pose/stripe calibration, route-confirmed branch selection, robust curvature and adequate forward coverage remain prerequisites for control integration.",
+      "Board latency, whole-runtime stack high-water, closed-loop driving benefit and final Opus acceptance remain unverified."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Wall time to implementation delivery cutoff",
+      "value": 2600.109,
+      "unit": "seconds",
+      "basis": "UTC start to cutoff; includes parallel module work, tests, evaluation, review, integration, target builds and handoff. Archive follows."
+    },
+    {
+      "name": "Native worker scopes completed",
+      "value": 3,
+      "unit": "agents",
+      "basis": "Module, fixed-input evaluation, independent review; coordinator integrated and consolidated."
+    },
+    {
+      "name": "Module elapsed time to ready",
+      "value": 1119,
+      "unit": "seconds",
+      "basis": "02:27:25 to 02:46:04 UTC supplied by worker; overlaps other work."
+    },
+    {
+      "name": "Module complete test script runs",
+      "value": 3,
+      "unit": "runs",
+      "basis": "Worker evidence; final 190 module and 114 legacy assertions passed."
+    },
+    {
+      "name": "Independent targeted assertions passed",
+      "value": 75,
+      "unit": "assertions",
+      "basis": "ASan/UBSan, signed normals, bad spans, endpoints, discontinuity, cusp and projection domain."
+    },
+    {
+      "name": "Original visual same-output comparisons",
+      "value": 120,
+      "unit": "comparisons",
+      "basis": "40 fixed images times 3; scalar fields, whole binary image and full boundary arrays matched."
+    },
+    {
+      "name": "Formal performance sessions",
+      "value": 1,
+      "unit": "sessions",
+      "basis": "After isolated ADS exited; 21 alternating pairs for each of two scopes. No favorable rerun."
+    },
+    {
+      "name": "Formal performance elapsed time",
+      "value": 15.631,
+      "unit": "seconds",
+      "basis": "Evaluator start/end includes the final functional and timing execution."
+    },
+    {
+      "name": "Successful target configurations",
+      "value": 3,
+      "unit": "configurations",
+      "basis": "Independent artifacts and source manifests for A, B and default OFF; all 0 errors."
+    },
+    {
+      "name": "Observed target build recovery events",
+      "value": 2,
+      "unit": "events",
+      "basis": "New file omitted before Eclipse refresh caused unresolved symbol; a later external-header change gave a no-op build. Both corrected before saving accepted artifacts."
+    },
+    {
+      "name": "Geometry design revisions recorded",
+      "value": 3,
+      "unit": "revisions",
+      "basis": "Normal estimation moved after edge sampling; added centre resampling; restored a bounded physical-distance window after observed quantization failure."
+    },
+    {
+      "name": "Test harness integration corrections",
+      "value": 3,
+      "unit": "events",
+      "basis": "ABI size guard caught evolving summary layout; full-struct equality initially compared unspecified padding; clean-build parser initially expected a banner absent from this builder. Corrected before claiming passes."
+    },
+    {
+      "name": "Clean target rebuilds matching prior HEX",
+      "value": 3,
+      "unit": "builds",
+      "basis": "New Opus evidence raised header-dependency concerns. All generated objects were removed inside the verified isolated Debug directory; 175 sources rebuilt per variant and all three HEX hashes matched."
+    },
+    {
+      "name": "Total tool failures",
+      "value": null,
+      "unit": "operations",
+      "basis": "Some metadata/path/CLI probes failed; no complete per-call inventory was maintained."
+    },
+    {
+      "name": "Exclusive coordination wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlapping work, no separate wait instrumentation."
+    },
+    {
+      "name": "Exclusive review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Independent review overlapped implementation, test and target build work."
+    },
+    {
+      "name": "Provider token usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No complete provider usage records for parent and children."
+    },
+    {
+      "name": "Actual cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Separate remote verification receipt records completion after this cutoff."
+    }
+  ],
+  "observations": [
+    "The first B version exposed quantized normals and false curvature; checking the reference call sites identified a missing physical-distance window. The correction was explicitly data-informed, not a blind validation win.",
+    "A six-case normal-width addendum was declared before B results because inherited horizontal-width fixtures did not match the centre-offset assumption.",
+    "More geometry information and stronger rejection rules do not imply universally higher quality: some noisy inputs and S-curve range cases remained worse or unavailable.",
+    "Eclipse cached external source/header edits. Forced refresh plus artifact freshness checks and different memory maps prevented a stale binary from being labeled as a new variant.",
+    "Host benchmarks were serialized after ADS exited. Different functionality and target architecture prevent interpreting the cost ratio as a general speedup or board FPS claim.",
+    "Visible target CPU1 stack estimates differ from host sanitizer frames; recursive global metadata prevents a full worst-case stack guarantee.",
+    "A small number of premature artifact/metadata probes were avoidable; future reads should use worker ready notices and known paths."
+  ],
+  "recommendations": [
+    {
+      "id": "AUTOP-API-20261030",
+      "action": "Freeze the C API layout before independent wrappers, and retain ABI assertions and full-field comparisons that exclude C padding.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Further summary changes update the versioned wrapper before any benchmark executes."
+    },
+    {
+      "id": "AUTOP-BUILD-20261030",
+      "action": "Refresh externally edited Eclipse resources before building, then bind HEX files to source/config manifests and linker-map differences.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Future variants fail delivery when the accepted artifact predates changed source."
+    },
+    {
+      "id": "AUTOP-QUALITY-20261030",
+      "action": "Separate shape recovery, calibrated accuracy, continuity/range, route trust and real board budget instead of declaring an overall winner from one metric.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Preserve all failed noise and S-range cases in the next declared revision."
+    },
+    {
+      "id": "AUTOP-HARDWARE-20261030",
+      "action": "Opus reviews the isolated delivery and obtains current calibration, matched board latency and route identity before using ground geometry in control.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "Receive explicit hardware evidence and final acceptance."
+    }
+  ],
+  "evidence": [
+    "Fixed-input actual-C report with original and revised B evidence, including all failures.",
+    "Module, independent review and target build records; aggregate hashes and handoff IDs in evidence.json."
+  ],
+  "comparison": null,
+  "limits": [
+    "No matched workflow-quality baseline exists; parallel work does not prove workflow acceleration.",
+    "Host CPU cost is not target runtime or measured camera FPS.",
+    "The physical-distance-window change used observed evaluation data and has no independent holdout.",
+    "Physical calibration, control integration and real driving improvement are not established.",
+    "Remote archive verification is recorded after this report cutoff."
+  ]
+}
