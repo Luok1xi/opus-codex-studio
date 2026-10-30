@@ -1,0 +1,19 @@
+{
+  "round_id": "2026-10-30-prelim-yaw-tune",
+  "source_files": 684,
+  "changed_code_lines": 2,
+  "compiled_c_units": 173,
+  "errors": 0,
+  "warnings": 11,
+  "hex_sha256": "e7a1898d2a11b59685da28de8b64775172b81c363c5b82765857b6b735378ed3",
+  "hex_bytes": 299421,
+  "flash_result": "PASS",
+  "flash_count": 1,
+  "flash_log_sha256": "cf8c13000b79e1e66babaea143a3bc9e38e7f6d5a3874a306b8ab803ee3da066",
+  "receipt_recovered": true,
+  "idle_sample_bytes": 4992,
+  "idle_imu_ready": true,
+  "idle_wheel_pwm_zero": true,
+  "test_configuration_acknowledged": false,
+  "remote_start_commands": 0
+}
