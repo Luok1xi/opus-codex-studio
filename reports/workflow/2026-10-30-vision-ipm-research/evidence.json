@@ -1,0 +1,46 @@
+{
+  "round_id": "2026-10-30-vision-ipm-research",
+  "scope": "Public-source research, unchanged actual-C stress tests, architecture audit, and isolated selected-path prototype.",
+  "studied_repositories": 5,
+  "verified_worker_public_source_files": 18,
+  "native_workers": 3,
+  "production_files_verified_unchanged": 684,
+  "prototype_assertions_passed": 27,
+  "prototype_sanitizers_passed": true,
+  "prototype_review_defect_fixed": "An abrupt reversing cusp could be summarized as zero curvature; rejection now covers duplicate-point variants.",
+  "original_projection_module_changed": false,
+  "external_source_modes": 3,
+  "external_source_mode_equality": false,
+  "external_source_negative_control_pixels": [
+    0,
+    1,
+    182
+  ],
+  "external_source_implemented_in_firmware": false,
+  "hardware_operations": 0,
+  "board_timing_current_version_verified": false,
+  "physical_calibration_current_pose_verified": false,
+  "physical_speed_improvement_verified": false,
+  "known_handoffs": [
+    469,
+    472,
+    473
+  ],
+  "final_opus_acceptance_received": false,
+  "artifact_sha256": {
+    "FUSION_PLAN.md": "0ef7313cace5ee2288c4cbd9ddcbc738b63aa67b20bc238d60b3e60c36a2003e",
+    "github-study.md": "4670865c532a44906b50392df407c1375fafa251cefb0de8fb5a736915f5d889",
+    "github-study.json": "717ca725874a67f07a89262f411ec7d0aa27d51ea67198b2b6a3be753081fe49",
+    "root-source-study.md": "aaf0e121d4e4f1bee4008805f42e0aee448ee0208654d873192779af6b54cf8b",
+    "core-audit.md": "6f94bd274d8987428dcc90bcdc79d12b058c0b2ad4a5f957e73151cc0a8a354e",
+    "core-audit.json": "6b5528a02906464e91ea736e8757403b05ff0f4ffc34324e95a379d0f12e9917",
+    "stress-report.md": "a943196a6f15ea3a78e1a240742774a3167c91a38f39e2da10dadc76f11752d4",
+    "stress-report.json": "ce1922a3e88dea40cbe907edbaa935bc123ba38abc534518df1389552005e84e",
+    "prototype-review.md": "69968ff6bf76846012687f36d6ecab31ab8b0bb4f79fa9016ef0c11c4c2791bd",
+    "prototype/results.json": "1fc04ed480f7f25f3dc433ff109d1f7df199bdc39f89658ccb40fa107a6d9248",
+    "prototype/polyline_geometry.c": "8771d59f787ad80cc0e2ccab3e25049bfd01ed3440815d6d1f6126513eb70d35",
+    "prototype/polyline_geometry.h": "f779193d40c800fdcd74584949e5bd8b26262c944fef07fe00db12f5fdf99056",
+    "maomao-regression/results.jsonl": "5261cc78e2f4377d1acb93f201c96ba6bd4f2c12f7faf3051ff2b4f8137ab376"
+  },
+  "sanitization": "Only aggregate workflow outcomes and hashes. No camera frames, source text, private paths, live databases, or conversation bodies."
+}
