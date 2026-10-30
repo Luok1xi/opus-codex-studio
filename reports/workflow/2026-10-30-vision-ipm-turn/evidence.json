@@ -1,0 +1,144 @@
+{
+  "round_id": "2026-10-30-vision-ipm-turn",
+  "simulation_runs": 65,
+  "run_breakdown": [
+    {
+      "name": "initial_D125",
+      "count": 6,
+      "results_sha256": "7814c3150271af8be8b8f6b0823218700e7b1da950f58fc90cd962be34afb432"
+    },
+    {
+      "name": "initial_D200_D275",
+      "count": 12,
+      "results_sha256": "af7d94c2d6e10ca110885bafc0bd0068bda9495ad49a20e72bd4cd964d11e2f1"
+    },
+    {
+      "name": "settle_speed_ablation",
+      "count": 2,
+      "results_sha256": "bc74950f4508f8d8d3715007f1fef811dc3d8d137d72d7a5d43f57335aa1f5c4"
+    },
+    {
+      "name": "diagnostic_replay",
+      "count": 1,
+      "results_sha256": "236144e48841648ae28348326a55725610bce26fa156b96471ad391472f39ede"
+    },
+    {
+      "name": "source_optimization_regression",
+      "count": 6,
+      "results_sha256": "429a74dd6c2c9a6406c290f5e47d928d0f0dc42adb27be5dca397c1bf42c9718"
+    },
+    {
+      "name": "mode3_development",
+      "count": 6,
+      "results_sha256": "2bba6fbfca7bb74e7769ec8620211fdf8a31837f2ede6509a2d0dac6058d34d0"
+    },
+    {
+      "name": "final_validation",
+      "count": 32,
+      "results_sha256": "9af495e953e09040fbe7171915a5e73a7224356bdec5201fb661491d2932f970"
+    }
+  ],
+  "validation": {
+    "runs": 32,
+    "primary_passes": 1,
+    "out60_failures": 31,
+    "stop_failures": 0,
+    "wrong_action_rows": 0,
+    "by_arm": {
+      "gyro": {
+        "runs": 8,
+        "primary_passes": 0,
+        "margin55_passes": 0,
+        "effective_control_cases": 0
+      },
+      "blend25": {
+        "runs": 8,
+        "primary_passes": 0,
+        "margin55_passes": 0,
+        "effective_control_cases": 4
+      },
+      "visual100": {
+        "runs": 8,
+        "primary_passes": 0,
+        "margin55_passes": 0,
+        "effective_control_cases": 4
+      },
+      "early_visual": {
+        "runs": 8,
+        "primary_passes": 1,
+        "margin55_passes": 0,
+        "effective_control_cases": 5
+      }
+    },
+    "stage2_cancellations": 0,
+    "fallback_material_sign_reversals": 0,
+    "actual_wall_seconds": 56.440244,
+    "started_at": "2026-10-30T05:31:54.096072+00:00",
+    "completed_at": "2026-10-30T05:32:50.536325+00:00",
+    "frozen_inputs_unchanged_before_after": true,
+    "original_H1_H4_runs": 0,
+    "final_cases": "H5-H8, four arms, both C and PyBullet",
+    "fallback_by_arm": {
+      "gyro": {
+        "events": 0,
+        "fresh_shadow_events": 0,
+        "max_fallback_shadow_rounding_error_deg_s": 0,
+        "max_abs_yaw_step_deg_s": 0,
+        "sign_reversals": 0
+      },
+      "blend25": {
+        "events": 30,
+        "fresh_shadow_events": 30,
+        "max_fallback_shadow_rounding_error_deg_s": 0.013821000000007189,
+        "max_abs_yaw_step_deg_s": 7.599999999999994,
+        "sign_reversals": 0
+      },
+      "visual100": {
+        "events": 30,
+        "fresh_shadow_events": 30,
+        "max_fallback_shadow_rounding_error_deg_s": 0.030495999999999412,
+        "max_abs_yaw_step_deg_s": 44.0,
+        "sign_reversals": 0
+      },
+      "early_visual": {
+        "events": 35,
+        "fresh_shadow_events": 35,
+        "max_fallback_shadow_rounding_error_deg_s": 0.04849500000000262,
+        "max_abs_yaw_step_deg_s": 209.6,
+        "sign_reversals": 0
+      }
+    }
+  },
+  "independent_assertions": {
+    "motion": 101,
+    "geometry": 132,
+    "control": 285,
+    "phase2": 132,
+    "pid": 52,
+    "all_passed": true,
+    "distinct_scenarios": false
+  },
+  "target": {
+    "compiled_c_units": 180,
+    "errors": 0,
+    "unchanged_warnings": 11,
+    "source_files": 701,
+    "hex_sha256": "968b5c46e9deef183cfc0fc1c33b9252ae3bb4d49bbf2330af90d3b06a1aeb44",
+    "flashed": false,
+    "default_control": "OFF",
+    "calibration": "OFF"
+  },
+  "workers": 3,
+  "hardware_operations": 0,
+  "source_changed_files": 3,
+  "source_added_files": 6,
+  "matched_workflow_quality_baseline": null,
+  "artifact_hashes": {
+    "final-audit.json": "d8248365ef537833405051897e012a5856572595b39ad230d4e3dfedd6ea152f",
+    "phase2-evidence.json": "c9c901de01f4f3a0ac8c088735d379f2b8a74a2c8f460c2fd473220b288d9856",
+    "validation-review.json": "f9fd418e22b6676a813a3615a5a8d6b119d139239c2229a407653d4a5ecfbfbe",
+    "target-artifacts.json": "275145a781a787a47ccc9bc6f0801460dcb9fc61b2784f84315d42399bb74064",
+    "completion-evidence.json": "0bb4133118870d6f8b4f9d78a5ee077df48affdd15d544cdf7769115947fa56a",
+    "candidate-from-previous.patch": "601b7f02811425dd282741568ce29759874a7401f681d70c64f4599279c34782"
+  }
+}
