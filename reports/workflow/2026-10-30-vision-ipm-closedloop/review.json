@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-10-30-vision-ipm-closedloop",
+  "task_summary": "Optimize sparse inverse perspective geometry and test whether fixed or velocity-scaled preview improves closed-loop smart-car tracking.",
+  "workflow_version": "WORKFLOW_REVIEW.md and TEAMHUB.md",
+  "started_at": "2026-10-30T03:12:47Z",
+  "measurement_cutoff_at": "2026-10-30T04:26:50.805176+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Integrate image-derived IPM geometry into a real closed-loop simulation controller",
+      "Use existing C and PyBullet plants with explicit camera, route and baseline provenance",
+      "Compare fixed conditions and report failures, coverage, stability, error and completion time",
+      "Deliver tested bounded C changes and artifacts to Opus, preserving live firmware and hardware boundaries"
+    ],
+    "completed": [
+      "Implemented bounded C3 geometry, coherent frame publication and guarded pure-pursuit integration in isolated source.",
+      "Fixed stale-frame admission and final-rate-clamp defects; reproduced and isolated a protection quantization issue.",
+      "Ran two physical models with real camera-to-CPU1-to-controller glue and retained all development and validation failures.",
+      "Independent geometry holdout and C review completed; target build and memory/visible stack inspected.",
+      "Delivered explicit negative whole-route result, local gains, source manifests and a concrete branch-binding proposal through the project database."
+    ],
+    "remaining": [
+      "No validated whole-route speed/stability gain; all36 held-out runs failed the complete-route criterion.",
+      "Online junction identity and complete2D branch control remain unimplemented and unvalidated.",
+      "Real camera calibration, board timing, interrupt-stack high-water and physical driving benefits remain unverified.",
+      "Final external Opus acceptance and artifact-ledger acknowledgement were not received."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Wall time to delivery cutoff",
+      "value": 4443.805,
+      "unit": "seconds",
+      "basis": "UTC start through delivery, review, target build and handoffs; archive follows. Parallel work overlaps."
+    },
+    {
+      "name": "Simulation executions",
+      "value": 113,
+      "unit": "runs",
+      "basis": "4 baseline +72 development +36 frozen validation +1 exact replay for frame capture."
+    },
+    {
+      "name": "Frozen validation elapsed",
+      "value": 53.907572,
+      "unit": "seconds",
+      "basis": "Observed runner start/end; not simulated lap time."
+    },
+    {
+      "name": "Frozen validation primary passes",
+      "value": 0,
+      "unit": "of 36",
+      "basis": "All failures retained:35 off-track and1 protection stop. No lap improvement established."
+    },
+    {
+      "name": "Independent geometry holdout passes",
+      "value": 41,
+      "unit": "of 52",
+      "basis": "All11 failures retained;2pixel noise remains limited."
+    },
+    {
+      "name": "Independent C checks passed",
+      "value": 173,
+      "unit": "checks",
+      "basis": "Geometry/controller/PID/protection suites; preserved negative controls reproduced3 prior failures."
+    },
+    {
+      "name": "Native worker scopes completed",
+      "value": 3,
+      "unit": "agents",
+      "basis": "Geometry, simulation, independent review. No recursive delegation."
+    },
+    {
+      "name": "Host build invocations",
+      "value": 10,
+      "unit": "builds",
+      "basis": "Simulation-worker evidence, two executables per invocation."
+    },
+    {
+      "name": "Clean target build configurations",
+      "value": 1,
+      "unit": "configurations",
+      "basis": "177 C units;0 errors and11 prior warnings; default control OFF."
+    },
+    {
+      "name": "Target compiler-reported build time",
+      "value": 4.345,
+      "unit": "seconds",
+      "basis": "Build-log elapsed only, excludes setup and verification."
+    },
+    {
+      "name": "Development revisions",
+      "value": 3,
+      "unit": "stages",
+      "basis": "Initial integration, strict timestamp gate, then final clamp and common guard experiment; all72 runs preserved."
+    },
+    {
+      "name": "Additional geometry revision",
+      "value": 1,
+      "unit": "revision",
+      "basis": "Independent review required full2D segment gap and minimum5-point support."
+    },
+    {
+      "name": "Hardware operations",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial, flash or movement."
+    },
+    {
+      "name": "Exclusive review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Review overlapped implementation and simulations."
+    },
+    {
+      "name": "Exclusive coordination wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately instrumented."
+    },
+    {
+      "name": "Complete tool-failure count",
+      "value": null,
+      "unit": "operations",
+      "basis": "Several path/schema/permission probes failed; no complete census."
+    },
+    {
+      "name": "Provider token usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No complete provider usage record across coordinator/children."
+    },
+    {
+      "name": "Actual cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Recorded separately after cutoff."
+    }
+  ],
+  "comparison": null,
+  "observations": [
+    "Correcting a stale simulator entry was essential: an earlier wrapper never executed the new CPU1 path. Event-to-controller glue and binary/source fingerprints were checked before comparison.",
+    "Ordinary-track local gains did not transfer to route completion; adaptive preview also increased arc peak error. A reference algorithm did not imply a universal win.",
+    "A proposed exit blend had zero eligible plain frames and was rejected before implementation. Full2D paths provide an observational basis, but no online branch-binding proof.",
+    "Review corrected an overstatement: the first selected frame had common near targets, not an already-wrong250mm target. Later branch divergence occurred after route state pointed right.",
+    "Target memory improved relative to priorB, but visible CPU1 stack increased. An existing abnormal ISR call path already exceeded allocated stack numerically; local fit size cannot prove whole-stack safety.",
+    "Existing frozen-tree drift was three comment translations, with matching noncomment tokens. It was preserved and reported rather than overwritten.",
+    "New connector probes repeated argument-schema errors; retaining verified invocation contracts would reduce avoidable coordination overhead."
+  ],
+  "recommendations": [
+    {
+      "id": "IPM-GLUE-20261030",
+      "action": "Bind simulator callbacks, actual active-controller counters and source/binary fingerprints before spending runs on algorithm comparison.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "A new integration must demonstrate CPU1 execution and controller use before performance claims."
+    },
+    {
+      "id": "IPM-VALIDATION-20261030",
+      "action": "Separate development corrections from a frozen independent validation and retain every failure and adverse peak.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Future optimization uses a new declared validation set; these36 results cannot be recycled as blind success."
+    },
+    {
+      "id": "IPM-BRANCH-20261030",
+      "action": "Review a frame-versioned junction/route binding before using full2D paths inside gyro turns.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "No simulator ground-truth branch choice; adjacent and same-direction junctions tested with explicit tokens."
+    },
+    {
+      "id": "IPM-BUDGET-20261030",
+      "action": "Measure per-core runtime and ISR stack high-water before enabling the new controller on the car.",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "Separate CPU1 projection cost, CPU0 fitting cost and existing abnormal call paths."
+    }
+  ],
+  "evidence": [
+    "Hashes and aggregate counts in evidence.json; full local outcomes and source-bound target receipts retained."
+  ],
+  "limits": [
+    "No matched workflow-quality baseline exists; no workflow speedup claimed.",
+    "Local tracking-error changes are development diagnostics, not complete-lap gains.",
+    "Model calibration and declared processing delay are not measured MCU performance.",
+    "Target construction defaults to disabled IPM control and uncalibrated/OFF projection.",
+    "Independent geometry holdout is synthetic point noise, not measured camera-image noise.",
+    "Archive verification completes after this cutoff."
+  ]
+}
