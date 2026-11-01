@@ -1,57 +1,73 @@
 {
   "schema_version": 1,
   "round_id": "2026-11-01-live-recording-start",
-  "task_summary": "Start a passive wireless recording while the owner manually tunes the car.",
+  "task_summary": "Record manual vehicle tuning and narrow startup and track-element failures using source, photographs and stopped-only log export.",
   "workflow_version": "WORKFLOW_REVIEW.md / TEAMHUB.md",
   "started_at": "2026-11-01T06:21:54.764339+00:00",
-  "measurement_cutoff_at": "2026-11-01T06:24:10.189007+00:00",
+  "measurement_cutoff_at": "2026-11-01T07:42:04.997670+00:00",
   "quality": {
     "status": "partial",
     "acceptance": [
-      "Open the expected wireless port without taking over another process.",
-      "Receive fresh bytes and persist them continuously.",
-      "Leave tuning and physical driving to the owner."
+      "Preserve received data and exclusive port ownership.",
+      "Separate source, synthetic experiments, sampled telemetry and physical validation.",
+      "Obtain evidence before changing motion parameters."
     ],
     "completed": [
-      "Started a bounded hidden receiver with durable raw capture, one-second flush, heartbeat and final receipt.",
-      "Verified fresh telemetry and increasing saved bytes.",
-      "No serial commands, parameter changes or flash performed."
+      "Three recording segments closed normally; a fourth is receiving fresh data.",
+      "Driver-disabled starts were separated from later tracking failures.",
+      "Nine direct-source geometry fixtures and six stopped-status guard cases were checked.",
+      "One stopped-only log-read command returned all 175 indexed rows without missing or malformed rows.",
+      "An independent reviewer checked state decoding; the owner located the manual sweep beyond the power symbol.",
+      "The collaborating reviewer supplied camera calibration references, checked against old raw images."
     ],
     "remaining": [
-      "Recording continues after this startup milestone; completed runs and final capture integrity require later review.",
-      "Current firmware identity is not proven by the older version ledger."
+      "Camera pose change and the exact source of missed turn detection remain unproven.",
+      "The log cannot distinguish absent visual detection from route-window rejection.",
+      "No production repair or successful new driven lap is claimed."
     ]
   },
   "metrics": [
     {
       "name": "Wall time from first recorded check",
-      "value": 135.424668,
+      "value": 4810.233,
       "unit": "seconds",
-      "basis": "First available local timestamp to verified active recording; not exact user arrival."
+      "basis": "Includes owner wait, capture, diagnosis and review preparation; not exclusive agent work."
     },
     {
-      "name": "Bytes saved at verification",
-      "value": 73775,
-      "unit": "bytes",
-      "basis": "Growing raw file and fresh status heartbeat."
+      "name": "Geometry fixture executions",
+      "value": 9,
+      "unit": "cases",
+      "basis": "Frozen vision sources with runtime undefined/bounds/float-conversion checks; synthetic only."
     },
     {
-      "name": "Recording limit",
-      "value": 30,
-      "unit": "minutes",
-      "basis": "Bounded hidden receiver process; still running at cutoff."
+      "name": "Stopped-status guard checks",
+      "value": 6,
+      "unit": "cases",
+      "basis": "One valid stopped input and five incomplete or non-stopped inputs."
     },
     {
-      "name": "Serial commands sent",
-      "value": 0,
+      "name": "Read-only serial commands",
+      "value": 1,
       "unit": "commands",
-      "basis": "Receiver has no write call."
+      "basis": "One log export after a fresh stopped and zero-output status."
+    },
+    {
+      "name": "Export rows expected and received",
+      "value": 175,
+      "unit": "rows",
+      "basis": "Contiguous zero-based indices; complete terminator; no missing or malformed rows."
     },
     {
       "name": "Firmware flashes",
       "value": 0,
       "unit": "flashes",
-      "basis": "No build or flash in this recording task."
+      "basis": "No production build or flash; host-only diagnostic compilation."
+    },
+    {
+      "name": "Motion parameter changes",
+      "value": 0,
+      "unit": "changes",
+      "basis": "No gains, camera settings, route thresholds or launch commands changed."
     },
     {
       "name": "Model usage",
@@ -69,32 +85,44 @@
       "name": "Exclusive review overhead",
       "value": null,
       "unit": "seconds",
-      "basis": "Not separately timed."
+      "basis": "Not timed separately."
     }
   ],
   "comparison": null,
   "observations": [
-    "Old calibration mode and firmware assumptions were not reused after a multi-day gap.",
-    "Initial unprivileged process enumeration was denied; opening the recording port then succeeded through normal approval.",
-    "An independent reviewer was assigned only to read prior wiring handoff and version context, without device access.",
-    "Report status needed one schema-label correction before coordinator database recording. Independent reviewer confirmed the last logged firmware differs from the older tuning candidate; today identity remains unverified."
+    "Same round and objective as startup; this report supersedes the startup snapshot and consolidates later evidence.",
+    "One native reviewer was reused for bounded independent checks; the real collaborating reviewer provided a separate project handoff, not a fabricated response.",
+    "Width rejection was a tentative hypothesis corrected by source inspection before a firmware edit.",
+    "The owner clarified that the manual sweep ended beyond the element near the later switch/corner; a latched stop code was not treated as a new stop.",
+    "A status-label correction was needed in the startup review. Two earlier approval timeouts blocked archive receipts; later normal approval succeeded and receipts were stored.",
+    "Capture rotations were exclusive but had documented gaps; no uninterrupted recording claim.",
+    "The bounded WSL check required normal approval after access denial; local parser diagnostics corrected one mistaken database column name.",
+    "The compact retained-run export succeeded over wireless; earlier full-image transport limitations were not generalized to all read-only diagnostics."
   ],
   "recommendations": [
     {
       "id": "CRAZY-PASSIVE-RECORD-DURABILITY",
-      "action": "Keep immediate raw capture and a fresh heartbeat separate from later response analysis.",
+      "action": "Preserve raw capture, heartbeat, closure receipts and explicit serial ownership through diagnostic handovers.",
       "owner": "codex",
       "status": "adopted",
-      "next_check": "At stop, reconcile the final byte count, closure state and complete run/export boundaries."
+      "next_check": "Continue reconciling closed-file counts and declared gaps."
+    },
+    {
+      "id": "CRAZY-STOPPED-LOG-BEFORE-RESET",
+      "action": "Read and validate the retained run before a new launch or power cycle when that evidence is relevant.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Verify complete row indices and use sampled-state limits in conclusions."
     }
   ],
   "evidence": [
-    "Growing local raw file verified at cutoff; no raw vehicle data or local paths uploaded.",
-    "Sanitized startup counters in evidence.json."
+    "Sanitized aggregate checks in evidence.json.",
+    "Raw photographs, serial data and firmware source remain local; shared project handoff retains their locations."
   ],
   "limits": [
-    "No completed recording or tuning success claim at startup.",
-    "No matched quality baseline, so net efficiency remains unproven.",
-    "Raw data remains local."
+    "No matched quality baseline; efficiency benefit is unproven.",
+    "Photographs are not original camera frames.",
+    "Retained-run association depends on continuity, because the legacy log has no run identifier.",
+    "Twenty-millisecond samples may miss brief preparatory states; absence of sustained turn activation does not identify the failed gate."
   ]
 }
