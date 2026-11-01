@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-01-live-recording-start",
+  "task_summary": "Start a passive wireless recording while the owner manually tunes the car.",
+  "workflow_version": "WORKFLOW_REVIEW.md / TEAMHUB.md",
+  "started_at": "2026-11-01T06:21:54.764339+00:00",
+  "measurement_cutoff_at": "2026-11-01T06:24:10.189007+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Open the expected wireless port without taking over another process.",
+      "Receive fresh bytes and persist them continuously.",
+      "Leave tuning and physical driving to the owner."
+    ],
+    "completed": [
+      "Started a bounded hidden receiver with durable raw capture, one-second flush, heartbeat and final receipt.",
+      "Verified fresh telemetry and increasing saved bytes.",
+      "No serial commands, parameter changes or flash performed."
+    ],
+    "remaining": [
+      "Recording continues after this startup milestone; completed runs and final capture integrity require later review.",
+      "Current firmware identity is not proven by the older version ledger."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Wall time from first recorded check",
+      "value": 135.424668,
+      "unit": "seconds",
+      "basis": "First available local timestamp to verified active recording; not exact user arrival."
+    },
+    {
+      "name": "Bytes saved at verification",
+      "value": 73775,
+      "unit": "bytes",
+      "basis": "Growing raw file and fresh status heartbeat."
+    },
+    {
+      "name": "Recording limit",
+      "value": 30,
+      "unit": "minutes",
+      "basis": "Bounded hidden receiver process; still running at cutoff."
+    },
+    {
+      "name": "Serial commands sent",
+      "value": 0,
+      "unit": "commands",
+      "basis": "Receiver has no write call."
+    },
+    {
+      "name": "Firmware flashes",
+      "value": 0,
+      "unit": "flashes",
+      "basis": "No build or flash in this recording task."
+    },
+    {
+      "name": "Model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider accounting."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing data."
+    },
+    {
+      "name": "Exclusive review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately timed."
+    }
+  ],
+  "comparison": null,
+  "observations": [
+    "Old calibration mode and firmware assumptions were not reused after a multi-day gap.",
+    "Initial unprivileged process enumeration was denied; opening the recording port then succeeded through normal approval.",
+    "An independent reviewer was assigned only to read prior wiring handoff and version context, without device access.",
+    "Report status needed one schema-label correction before coordinator database recording. Independent reviewer confirmed the last logged firmware differs from the older tuning candidate; today identity remains unverified."
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-PASSIVE-RECORD-DURABILITY",
+      "action": "Keep immediate raw capture and a fresh heartbeat separate from later response analysis.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "At stop, reconcile the final byte count, closure state and complete run/export boundaries."
+    }
+  ],
+  "evidence": [
+    "Growing local raw file verified at cutoff; no raw vehicle data or local paths uploaded.",
+    "Sanitized startup counters in evidence.json."
+  ],
+  "limits": [
+    "No completed recording or tuning success claim at startup.",
+    "No matched quality baseline, so net efficiency remains unproven.",
+    "Raw data remains local."
+  ]
+}
