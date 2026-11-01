@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "round_id": "2026-11-01-live-recording-start",
-  "task_summary": "Record manual vehicle tuning and narrow startup and track-element failures using source, photographs and stopped-only log export.",
+  "task_summary": "Consolidated manual-tuning diagnosis, including post-reboot telemetry, zero-offset inspection and a peer-acquired original camera frame.",
   "workflow_version": "WORKFLOW_REVIEW.md / TEAMHUB.md",
   "started_at": "2026-11-01T06:21:54.764339+00:00",
-  "measurement_cutoff_at": "2026-11-01T07:42:04.997670+00:00",
+  "measurement_cutoff_at": "2026-11-01T08:13:45.999672+00:00",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -13,23 +13,26 @@
       "Obtain evidence before changing motion parameters."
     ],
     "completed": [
-      "Three recording segments closed normally; a fourth is receiving fresh data.",
+      "Closed receiver segments and fresh resumed heartbeats were verified through bounded exclusive handovers.",
       "Driver-disabled starts were separated from later tracking failures.",
       "Nine direct-source geometry fixtures and six stopped-status guard cases were checked.",
       "One stopped-only log-read command returned all 175 indexed rows without missing or malformed rows.",
       "An independent reviewer checked state decoding; the owner located the manual sweep beyond the power symbol.",
-      "The collaborating reviewer supplied camera calibration references, checked against old raw images."
+      "The collaborating reviewer supplied camera calibration references, checked against old raw images.",
+      "Fresh uptime, mode and camera counters confirmed data after the owner rebooted.",
+      "A persistent stationary-rate discrepancy was separated from IMU communication readiness; source confirms boot calibration already occurs.",
+      "A real peer acquired a full original image; payload length, terminator and exported raw bytes matched independently."
     ],
     "remaining": [
-      "Camera pose change and the exact source of missed turn detection remain unproven.",
-      "The log cannot distinguish absent visual detection from route-window rejection.",
-      "No production repair or successful new driven lap is claimed."
+      "Physical camera calibration and a stationary reboot zero check remain pending at cutoff.",
+      "The exact cause of the earlier missed turn remains unproven; no new driven-lap acceptance.",
+      "Firmware identity is based on the ledger, not a chip readback."
     ]
   },
   "metrics": [
     {
       "name": "Wall time from first recorded check",
-      "value": 4810.233,
+      "value": 6711.235,
       "unit": "seconds",
       "basis": "Includes owner wait, capture, diagnosis and review preparation; not exclusive agent work."
     },
@@ -46,10 +49,10 @@
       "basis": "One valid stopped input and five incomplete or non-stopped inputs."
     },
     {
-      "name": "Read-only serial commands",
+      "name": "Coordinator read-only serial commands",
       "value": 1,
       "unit": "commands",
-      "basis": "One log export after a fresh stopped and zero-output status."
+      "basis": "One earlier stopped log export; zero new commands by the coordinator during this reboot check."
     },
     {
       "name": "Export rows expected and received",
@@ -86,6 +89,18 @@
       "value": null,
       "unit": "seconds",
       "basis": "Not timed separately."
+    },
+    {
+      "name": "Peer read-only requests in reboot check",
+      "value": 3,
+      "unit": "commands",
+      "basis": "Peer handoff reports one register query and two image requests; not coordinator commands."
+    },
+    {
+      "name": "Verified original image payload",
+      "value": 22560,
+      "unit": "bytes",
+      "basis": "188x120 dimensions, exact frame terminator and byte-for-byte saved raw match."
     }
   ],
   "comparison": null,
@@ -97,7 +112,12 @@
     "A status-label correction was needed in the startup review. Two earlier approval timeouts blocked archive receipts; later normal approval succeeded and receipts were stored.",
     "Capture rotations were exclusive but had documented gaps; no uninterrupted recording claim.",
     "The bounded WSL check required normal approval after access denial; local parser diagnostics corrected one mistaken database column name.",
-    "The compact retained-run export succeeded over wireless; earlier full-image transport limitations were not generalized to all read-only diagnostics."
+    "The compact retained-run export succeeded over wireless; earlier full-image transport limitations were not generalized to all read-only diagnostics.",
+    "Same ongoing tuning objective; this is a new evidence revision, not a recursively opened review round.",
+    "An incoming port-intent message overlapped a newly started receiver. The peer used graceful stop and resume; the coordinator subsequently read shared files without opening a competing port.",
+    "A failed image request lacked a header; a later request returned a complete frame. Prior wireless transport concerns must not be promoted into a categorical impossibility claim.",
+    "The source performs boot zero averaging without a stillness-quality gate. Prelaunch calibration has a variability gate but then launches the vehicle, so it was not offered as a harmless standalone calibration command.",
+    "The new image supports a camera-view mismatch; numerical pitch estimates still depend on camera-model assumptions."
   ],
   "recommendations": [
     {
@@ -113,6 +133,13 @@
       "owner": "codex",
       "status": "adopted",
       "next_check": "Verify complete row indices and use sampled-state limits in conclusions."
+    },
+    {
+      "id": "CRAZY-PORT-OWNERSHIP-REFRESH",
+      "action": "Refresh both shared receiver heartbeat and newest project intent before opening the port; preserve graceful handover and distinguish partial images from validated frames.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Confirm no overlapping open attempts on the next coordinated capture."
     }
   ],
   "evidence": [
