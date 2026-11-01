@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-01-simulation-studio-architecture",
+  "task_summary": "用户将重点从实车调参转为真实感更高、支持赛道文件和图片、发车编辑与运行中调参的统一仿真系统。本阶段完成源码盘点、模块边界、六步实施与验收规格、原型参数/接口草案，并与另一协作者的先做原型安排对齐；运行功能仍待实现。",
+  "workflow_version": "canonical-workspace-source-audit-architecture-first-prototype-contract",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-01T12:30:10.986406+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "基于真实现有能力规划，保持唯一工程与已有成果",
+      "两种导入、任意起点、热调参和物理校准有明确边界与验收",
+      "将静态原型、真实运行、物理标定分开说明"
+    ],
+    "completed": [
+      "已确认批量计算、记录回放和教学模型的差别",
+      "模块收敛到场景、会话、控制/物理、画面、记录/校准五职责",
+      "明确参数热改/重置/重编、命令生效回执和真实默认值来源",
+      "发车位姿与路线/里程/历史必须同步；地图图区分视觉层、道路和计划路线",
+      "保留完整既有规格，新增文档与链接，未覆盖并行代码",
+      "用户确认两种导入；已读取另一协作者的原型认领并回交规格"
+    ],
+    "remaining": [
+      "可暂停步进与热参的会话运行器尚未实现",
+      "地图/图片编辑、任意发车与新游戏式呈现尚未接入",
+      "物理真实性仍需观测链对齐和独立实测验证"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "原生独立核查任务",
+      "value": 2,
+      "unit": "项",
+      "basis": "一个核物理/观测链，一个核唯一网站/交互入口"
+    },
+    {
+      "name": "物理核查时窗",
+      "value": 341.598736,
+      "unit": "秒",
+      "basis": "worker实际起止，含报告准备"
+    },
+    {
+      "name": "网站核查时窗",
+      "value": 526.276834,
+      "unit": "秒",
+      "basis": "worker实际起止，含追加PID工具定位"
+    },
+    {
+      "name": "共同规格与索引文件",
+      "value": 3,
+      "unit": "份",
+      "basis": "架构文档、参数/会话草案、原规格新增索引；原文保留"
+    },
+    {
+      "name": "已核初始化参数默认值",
+      "value": 10,
+      "unit": "项",
+      "basis": "源码初始化及后续profile覆盖，不是实车读回；可写范围仍null"
+    },
+    {
+      "name": "本轮仿真/物理试跑",
+      "value": 0,
+      "unit": "次",
+      "basis": "架构与原型接口阶段，不以静态核查冒充测试"
+    },
+    {
+      "name": "硬件操作",
+      "value": 0,
+      "unit": "次",
+      "basis": "未串口、未烧录、未动车"
+    },
+    {
+      "name": "完整轮次墙钟",
+      "value": null,
+      "unit": "秒",
+      "basis": "首条任务开始未完整计时，不用子任务之和代替"
+    },
+    {
+      "name": "实际用量",
+      "value": null,
+      "unit": "token",
+      "basis": "未获提供方计量"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "货币",
+      "basis": "未获账单"
+    },
+    {
+      "name": "协调者复核与归档额外开销",
+      "value": null,
+      "unit": "秒",
+      "basis": "没有独立完整计时"
+    }
+  ],
+  "observations": [
+    "读取唯一工程规则后，沿用既有工程与服务，没有创建新的副本或服务器。",
+    "并行核查发现回放和批量计算都不等于运行中调参；另一同名后端模块是无关AI工坊，未误并。",
+    "首次沿用另一项目分类编号查询失败，读取当前项目分类后改正；只读git受限后使用授权只读核对。",
+    "两个核查任务原拟同名证据文件；worker检测占用后改为独立文件名，未覆盖证据。",
+    "架构已与真实协作者正在制作的静态原型对齐；未把文件交接当成其已接受全部架构。",
+    "参数默认值检查包含初始化后的覆盖，避免把中间默认值交给原型。"
+  ],
+  "recommendations": [
+    {
+      "id": "one-scene-contract",
+      "action": "数据文件与图片导入都转到统一场景，保留视觉、合法道路、计划路线三类语义。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "双输入导入与无损导出测试"
+    },
+    {
+      "id": "one-live-session",
+      "action": "复用已有逐步引擎，在现有后端补会话，数值调参由步边界回执确认。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "暂停时间、单步、重置、事件重放与范围验证"
+    },
+    {
+      "id": "source-before-defaults",
+      "action": "参数快照核对完整初始化调用链，并将未知范围保留为空。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "运行时setter接入前逐项读回并验证范围"
+    },
+    {
+      "id": "distinct-evidence-files",
+      "action": "派工时直接分配不同证据文件名，避免共享目录冲突。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "下一次并行任务无需临时更名"
+    }
+  ],
+  "evidence": [
+    "physics-audit.md sha256=9eae4a62fb889ca29c4b12039cdb1fab7e901caa86f87e4b81ad9ebd37e69b4b",
+    "web-audit.md sha256=14c86d46a97b8c8e37935b9ebaa8dc02f20ca4e71b9803658922a4cec431da23",
+    "evidence.json sha256=4de6ea2c992bb350630b350dea8a855d298b6348f4e880d4e1958e122344f2e0",
+    "web-evidence.json sha256=95e6656fa9e9b5a94e2d9eb7e9da581a34202d07b2d0677d77ceacfd66514b38",
+    "spec-registration.json sha256=29616c266740a5200299697637a72d399943f779eb812acbc41681b477581beb",
+    "prototype-contract.json sha256=387c0574c26c54e186a9d82113f80933f88d8a19d0a656fb160d09c062e8310f"
+  ],
+  "limits": [
+    "本归档只有脱敏流程摘要与聚合指标；不上传项目源码、完整项目规格、原始日志、图片或数据库。",
+    "本阶段只有文档与配置草案，不需重建站点或声称新增功能已上线。",
+    "没有合格的同质量工作流对照，不能宣称并行提效。",
+    "尚未唯一确认用户记忆中的另一PID练习工具；已保留其侧栏调参与曲线联动的交互意图。"
+  ],
+  "comparison": null
+}
