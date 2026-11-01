@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-01-owner-login-camera-preview",
+  "task_summary": "确认现有浏览器站主登录，并按随后反馈修复每次真实计算后相机小窗缺图。",
+  "workflow_version": "existing-session-check-and-sampled-real-camera-replay",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-01T14:43:34.715694+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "确认当前站主会话可用，不读取或修改凭据",
+      "新计算结果显示真实相机图像并按发布时间同步",
+      "保持控制数值与原始轨迹不变，失败与切换不显示错帧"
+    ],
+    "completed": [
+      "打开正常登录入口，随后浏览器权限接口显示authorized=true；未观察或代填凭据",
+      "真实C相机导出抽样预览，首帧覆盖发车时刻；109帧gzip125110字节",
+      "两次5633行轨迹与修复前逐字一致，重复gzip也一致",
+      "后端owner授权帧接口，旧无图结果保留并提示重算",
+      "前端像素核对、时间轴往返、失败重试、首帧前清屏、迟到帧切换保护通过",
+      "47项相关单测、lint、构建通过；现有Hub备份后重载",
+      "用现有真实站主浏览器按正常计算按钮完成一趟，页面显示已加载预览"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "相关单测",
+      "value": 47,
+      "unit": "项",
+      "basis": "adapter10+HTTP15+frontend22，全部通过"
+    },
+    {
+      "name": "相机预览帧",
+      "value": 109,
+      "unit": "帧",
+      "basis": "基准5.632秒出线，包含发车前4帧"
+    },
+    {
+      "name": "相机压缩大小",
+      "value": 125110,
+      "unit": "字节",
+      "basis": "gzip，真实帧原字节2899836"
+    },
+    {
+      "name": "数值等价轨迹",
+      "value": 5633,
+      "unit": "行",
+      "basis": "两次与修复前1ms数据完全一致"
+    },
+    {
+      "name": "适配worker实测时窗",
+      "value": 594.119425,
+      "unit": "秒",
+      "basis": "成员记录22:28:42.880575至22:38:37+08"
+    },
+    {
+      "name": "HTTPworker实测时窗",
+      "value": 283.823,
+      "unit": "秒",
+      "basis": "成员记录22:28:48.406至22:33:32.229+08"
+    },
+    {
+      "name": "真实用户计算",
+      "value": 9.468,
+      "unit": "秒",
+      "basis": "原站按钮实际提交后的引擎elapsed_s，非整轮耗时"
+    },
+    {
+      "name": "原生成员任务",
+      "value": 4,
+      "unit": "项",
+      "basis": "登录入口核查、相机导出、HTTP接口、只读前端复核；不是实际Opus模型调用"
+    },
+    {
+      "name": "全轮实际耗时",
+      "value": null,
+      "unit": "秒",
+      "basis": "未保存初始准确起点；首个可确认观测22:20:37+08"
+    },
+    {
+      "name": "token",
+      "value": null,
+      "unit": "token",
+      "basis": "无提供方计量"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "货币",
+      "basis": "无账单"
+    },
+    {
+      "name": "协调等待",
+      "value": null,
+      "unit": "秒",
+      "basis": "未单独计时"
+    },
+    {
+      "name": "复核归档开销",
+      "value": null,
+      "unit": "秒",
+      "basis": "报告与上传阶段尚未完整计时"
+    }
+  ],
+  "observations": [
+    "上轮轻量化漏掉用户需要的摄像头可视反馈，明确属于交付缺口，本轮修复而不宣称优化成功。",
+    "UI自动化先确认已有登录再读授权布尔值；没有生成登录会话或绕过认证。登录执行者未观察，不将已有会话归功于代填。",
+    "浏览器当前标签改变导致一次登录窗口匹配失败；一次内联检查脚本未运行成功，后续换多行脚本核对。",
+    "先前未等实际Opus美术完工。此次已读其范围声明并发两次窄接线交接；源文件静置后只做窄补丁，仍无最终回执，不冒称独立验收。",
+    "前端只读复核发现首帧前未来图残留和异步切换竞争，均修复并浏览器验证。",
+    "HTTP初版ETag无代理支持，取消无效缓存，不扩大代理改造。",
+    "首次lint暴露并行美术稿一行未使用函数，删除后通过；浏览器辅助脚本首次缺闭括号，修正后通过。",
+    "适配验证脚本字段路径一次返工，HTTP补丁边界一次返工；Git工作树检查两次失败未改Git设置。"
+  ],
+  "recommendations": [
+    {
+      "id": "preserve-visible-observability",
+      "action": "轻量化验收同时核对相机、轨迹和曲线的可见结果，不仅计算成功与文件体积。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续引擎迭代继续通过真实像素与轨迹不变检查"
+    },
+    {
+      "id": "actual-frame-timestamp",
+      "action": "相机仅采样导出，不改控制频率；使用原publish时刻并清除无已发布帧状态。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "调相机参数后复测首帧覆盖和时间轴往返"
+    },
+    {
+      "id": "peer-art-integration-ack",
+      "action": "完成并行美术稿独立验收，保留相机加载与异常处理。",
+      "owner": "opus",
+      "status": "proposed",
+      "next_check": "收到真实同事完成回执后核对布局重叠与交互"
+    }
+  ],
+  "evidence": [
+    "camera-verification.json sha256=a1f8c26e6ae6aa6b191cc6d2b8d9980b21b643d6b1a325980b2a60b844862c77",
+    "frames-http-real.json sha256=60d210c95e49d2dedcc766bfaf023ab6c7aa40e30d5a9d9d2d9b7e8f7dcecdb9",
+    "camera-browser-evidence.json sha256=8be4b498b543308f376a3272625b910cc907fe000d7084eadfe976110d3190b7",
+    "live-owner-camera.json sha256=d33a5a72f1f41fee9fead7bfd024965a3f06da1be422068ea4dc87197ec0f8f9",
+    "live-camera-caption.json sha256=236696e0700923c3a1d8b77ddb889bc42b820f5d0e4b911ca3aac68670095e0e"
+  ],
+  "limits": [
+    "只归档脱敏聚合报告，不上传账号、cookie、数据库、截图、源码或会话。",
+    "旧无图结果必须重算；约20Hz只是预览，基准视觉仍150Hz。",
+    "模型未实车标定；基准5.632秒为出线时间，不是圈速。未串口、烧录、动车。",
+    "无同任务匹配工作流基线，净提效未证实；相机增强不是速度提升实验。"
+  ],
+  "comparison": null
+}
