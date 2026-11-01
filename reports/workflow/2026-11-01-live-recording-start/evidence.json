@@ -1,10 +1,17 @@
 {
+  "schema_version": 1,
   "round_id": "2026-11-01-live-recording-start",
-  "state_at_cutoff": "recording",
-  "saved_bytes_at_cutoff": 73775,
-  "heartbeat_fresh": true,
-  "commands_sent": 0,
-  "recording_max_minutes": 30,
-  "firmware_identity_verified": false,
-  "raw_capture_uploaded": false
+  "geometry_cases": 9,
+  "guard_checks": 6,
+  "log_expected_rows": 175,
+  "log_received_rows": 175,
+  "log_missing_rows": 0,
+  "log_malformed_rows": 0,
+  "read_only_commands": 1,
+  "motion_commands": 0,
+  "firmware_flashes": 0,
+  "manual_sweep_running_values": [
+    0
+  ],
+  "matched_baseline": null
 }
