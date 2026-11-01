@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
   "round_id": "2026-11-01-live-recording-start",
-  "geometry_cases": 9,
-  "guard_checks": 6,
-  "log_expected_rows": 175,
-  "log_received_rows": 175,
-  "log_missing_rows": 0,
-  "log_malformed_rows": 0,
-  "read_only_commands": 1,
-  "motion_commands": 0,
-  "firmware_flashes": 0,
-  "manual_sweep_running_values": [
-    0
-  ],
+  "sensor_status_samples_in_initial_window": 196,
+  "initial_window_ms": 48750,
+  "camera_capture_rate_hz": 150,
+  "camera_valid_rate_hz": 150,
+  "stationary_rate_discrepancy_deg_s": -28.418,
+  "original_frame_bytes": 22560,
+  "original_frame_terminator_valid": true,
+  "saved_raw_matches_packet": true,
+  "new_coordinator_serial_commands": 0,
+  "new_firmware_flashes": 0,
+  "peer_read_only_requests_reported": 3,
+  "physical_correction_verified": false,
   "matched_baseline": null
 }
