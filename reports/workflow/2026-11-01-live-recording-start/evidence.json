@@ -1,0 +1,10 @@
+{
+  "round_id": "2026-11-01-live-recording-start",
+  "state_at_cutoff": "recording",
+  "saved_bytes_at_cutoff": 73775,
+  "heartbeat_fresh": true,
+  "commands_sent": 0,
+  "recording_max_minutes": 30,
+  "firmware_identity_verified": false,
+  "raw_capture_uploaded": false
+}
