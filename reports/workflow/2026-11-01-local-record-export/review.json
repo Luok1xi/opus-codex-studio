@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-01-local-record-export",
+  "task_summary": "Authorized local conversation export and reading; private content excluded from workflow archive.",
+  "workflow_version": "WORKFLOW_REVIEW.md + WORKFLOW_DATABASE.md as read 2026-11-01",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-01T23:12:02+08:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Locate the requested local conversation, save readable text and source response, and read available text with coverage limits stated."
+    ],
+    "completed": [
+      "Saved 4281 unique records from the local application API and a readable text export.",
+      "Read available text and quoted replies in bounded chunks; excluded attachments from comprehension claims.",
+      "Kept credentials in process memory and conversation exports local."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Observed task window",
+      "value": 239,
+      "unit": "seconds",
+      "basis": "First recorded clock 23:08:03 to 23:12:02 +08:00; excludes earlier setup, includes user authorization wait and interleaved review preparation."
+    },
+    {
+      "name": "Full round wall time",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Exact initial timestamp unavailable."
+    },
+    {
+      "name": "Provider usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage supplied."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Delegated agents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No workers dispatched."
+    },
+    {
+      "name": "Export revisions",
+      "value": 1,
+      "unit": "revisions",
+      "basis": "Initial cache export omitted structured quoted replies; corrected before final full export."
+    },
+    {
+      "name": "Review and archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Preparation interleaved with task; archive not complete at measurement cutoff."
+    },
+    {
+      "name": "Coordination wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "User authorization wait not separately timed."
+    }
+  ],
+  "observations": [
+    "Broad filename search produced avoidable noise; application shortcut and settings provided the useful entrypoints.",
+    "Initial endpoint guesses returned 404; documented API prefix resolved routing.",
+    "Initial permission restrictions prevented local API access; authorized elevated calls succeeded.",
+    "Asked user to configure a token before evaluating authorized current-user local credential use, creating avoidable interaction; proceeded after explicit instruction.",
+    "Large first reading response was truncated; reread omitted range with compact formatting and smaller batches.",
+    "No matched baseline; no speedup claim."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-LOCAL-EXPORT-20261101",
+      "action": "Start with application shortcut and documented API; preserve structured quote fields and bound reading chunks before exporting.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next local export: verify message count, quoted replies, no output truncation, and privacy boundary before delivery."
+    }
+  ],
+  "evidence": [
+    "Local API response count equals 4281 unique record identifiers; local exports and SHA-256 checked.",
+    "Readable export includes structured quoted content. No conversation content, contact identity, account identifiers, credentials, or local personal paths are included in this report."
+  ],
+  "comparison": null,
+  "limits": [
+    "Only records available to the local application were covered.",
+    "Images, stickers, merged-forward interiors and recalled original bodies were not interpreted.",
+    "Tool failure totals and first-pass acceptance rate were not fully measured.",
+    "Remote archival verification occurs after this report cutoff."
+  ]
+}
