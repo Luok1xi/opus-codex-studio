@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-02-fan-installation-order",
+  "task_summary": "Explain the current car suction-fan installation order using available evidence, without inventing model-specific assembly or wiring.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-02T17:58:02.278259+08:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Distinguish general assembly guidance from verified model-specific directions.",
+      "Use current source and manufacturer material; no hardware actions."
+    ],
+    "completed": [
+      "One native worker checked local fan and driver evidence.",
+      "Current source is configured for a brushed fan; old brushless comments conflict.",
+      "Located manufacturer's N-chassis assembly video; playback was not accessible.",
+      "Identified old purchase record for a different supplier, so it cannot identify the user's current kit."
+    ],
+    "remaining": [
+      "Exact current kit model, parts orientation and connector pinout await identification."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "observed_interval_seconds",
+      "value": 208.549,
+      "unit": "seconds",
+      "basis": "First observed local clock 17:54:33.729 to research cutoff 17:58:02.278; not full task duration."
+    },
+    {
+      "name": "native_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "fan_local_evidence returned read-only evidence."
+    },
+    {
+      "name": "worker_tool_calls",
+      "value": 6,
+      "unit": "calls",
+      "basis": "Worker self-report."
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No flashing, serial access or actuation."
+    },
+    {
+      "name": "model_tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage meter."
+    },
+    {
+      "name": "review_archive_overhead_seconds",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive still pending at cutoff."
+    }
+  ],
+  "observations": [
+    "Local and official web research ran independently; no actual Opus consultation.",
+    "Broad fan queries and unfiltered database results produced unrelated or truncated output; narrowed to source files and a specific decision.",
+    "Vendor support fetch timed out; video direct open returned 412. Search index verified title and author only.",
+    "Evidence does not identify the current hardware; general order must not be presented as manufacturer's exact part stack."
+  ],
+  "recommendations": [
+    {
+      "id": "fan-model-first",
+      "action": "For hardware assembly questions, identify the kit before expanding supplier-specific instructions; keep initial research to a bounded local read and primary-source search.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "Compare future hardware-answer quality and observed duration with equivalent acceptance criteria."
+    }
+  ],
+  "evidence": [
+    "Current local control.h and cpu0_main.c inspected read-only.",
+    "CRAZY-CIRCUIT decision 8 fetched in full; historic fan plan distinguished from present hardware.",
+    "https://www.bilibili.com/video/BV1GyDaBgE2H/"
+  ],
+  "limits": [
+    "No exact kit identification or live hardware verification.",
+    "No video transcript or frame review.",
+    "No comparable workflow baseline; no speedup claim."
+  ],
+  "comparison": null
+}
