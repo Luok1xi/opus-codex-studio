@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-fan-first-trial",
+  "task_summary": "Correct the same fan investigation after the owner clarified continuous humming or squealing, possible vibration, and no visible fan rotation.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-03T12:19:49+00:00",
+  "measurement_cutoff_at": "2026-11-03T12:21:56.720611+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Reconcile the latest symptom with the earlier interpretation without erasing evidence.",
+      "Do not treat sound as proof of rotor rotation or a specific fault.",
+      "Keep next inspection unpowered and preserve passive signal-measurement boundaries."
+    ],
+    "completed": [
+      "Latest observation recorded as sound with absent visible fan rotation; continuous rotor rotation is unverified.",
+      "Independent native review supported reopening the mechanical/electrical differential.",
+      "Prepared an unpowered clearance and connection inspection; no powered action taken."
+    ],
+    "remaining": [
+      "Exact mechanical or electrical cause remains unknown.",
+      "No new waveform, voltage, current or physical inspection result."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "hardware_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No serial, flash or actuator operation in this continuation."
+    },
+    {
+      "name": "native_review_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "One native worker returned a bounded review of the revised observation."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    }
+  ],
+  "observations": [
+    "A previous structured answer suggested independent motor rotation; the later clarification instead establishes sound without confirmed rotation.",
+    "Diagnostic confidence was reduced and the prior mechanical-decoupling priority was made conditional.",
+    "No serial session, firmware modification, programming or actuator command occurred."
+  ],
+  "recommendations": [
+    {
+      "id": "observable-motion-before-mechanism",
+      "action": "Keep audible sound, visible rotor motion, impeller motion and inferred cause as separate fields; reopen the differential when later observations conflict.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Use unpowered inspection or existing visual evidence before assigning a mechanical or electrical root cause."
+    }
+  ],
+  "evidence": [
+    "Owner sound-type clarification summarized without raw session data.",
+    "Independent native review received; no Opus reply claimed."
+  ],
+  "limits": [
+    "No independently observed rotor motion.",
+    "No root cause or repair verified.",
+    "No matched baseline; efficiency claims remain unsupported."
+  ],
+  "comparison": null
+}
