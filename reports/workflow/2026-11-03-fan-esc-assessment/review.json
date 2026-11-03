@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-fan-esc-assessment",
+  "task_summary": "Assess whether the newly installed suction system requires reflashing; owner confirmed a separate ESC.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-03T18:41:34.404037+08:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Trace the fan configuration and last documented flashed artifact.",
+      "Distinguish confirmed source behavior from unverified new hardware.",
+      "Do not flash or actuate hardware while answering the assessment question."
+    ],
+    "completed": [
+      "One native worker traced fan startup, stop and tuning gates, then checked the last-flashed snapshot.",
+      "Last flash record and current source both identify a brushed PWM path; separate ESC compatibility remains unestablished.",
+      "Owner was asked for exact ESC model and signal connector before any implementation choice."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_interval",
+      "value": 237.702,
+      "unit": "seconds",
+      "basis": "First retained TeamHub timestamp to assessment cutoff; earlier preparation excluded."
+    },
+    {
+      "name": "native_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "Read-only firmware check."
+    },
+    {
+      "name": "actual_opus_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Durable handoff only."
+    },
+    {
+      "name": "firmware_mutations",
+      "value": 0,
+      "unit": "changes",
+      "basis": "No source editing or flashing."
+    },
+    {
+      "name": "hardware_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No serial or actuation."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured; receipt measures post-cutoff archive interval."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    }
+  ],
+  "observations": [
+    "Live source directory and last-flashed snapshot differ outside the fan path; source alone is not a device-version receipt.",
+    "Two exploratory path searches referenced absent filenames; actual file discovery resolved them.",
+    "Large handoff outputs were narrowed to projected metadata before fetching relevant full evidence.",
+    "A native worker independently checked implementation; no Opus acceptance claimed."
+  ],
+  "recommendations": [
+    {
+      "id": "fan-verify-output-and-snapshot",
+      "action": "Verify hardware output type and known flashed snapshot before selecting a fan configuration or rebuilding.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Match ESC documentation and actual connector to the candidate before compiling."
+    }
+  ],
+  "evidence": [
+    "worker.json",
+    "last documented flash receipt",
+    "owner hardware-type clarification"
+  ],
+  "limits": [
+    "Current device contents were not read back in this round.",
+    "ESC model, protocol and actual wiring remain pending; no pin, pulse width or power recommendation made.",
+    "No matched quality baseline; no efficiency improvement claimed."
+  ],
+  "comparison": null
+}
