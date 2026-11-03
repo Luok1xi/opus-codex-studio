@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-fan-esc-assessment",
+  "task_summary": "Prepare and verify the complete vehicle firmware for the owner-confirmed Longqiu STC32G mini ESC and mainboard control header; flashing awaits explicit approval.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-03T11:06:31.685556+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Use the documented flashed snapshot, not a divergent working tree.",
+      "Implement bounded fan setting, query, startup and stop semantics without changing driving parameters.",
+      "Verify actual C behavior, full target build and independent review before presenting a concrete flash candidate."
+    ],
+    "completed": [
+      "Four source files changed; original snapshot preserved.",
+      "Manufacturer family interface and board header checked against official sources.",
+      "11 real-C test groups, 619 assertions and 9 separate static checks passed with sanitizers.",
+      "Official ADS build: zero errors and 11 unchanged warnings; ROM grew 452 bytes and RAM did not grow.",
+      "Independent software findings resolved; source, test and candidate hashes agree."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "implementation_observed_interval",
+      "value": 988.686,
+      "unit": "seconds",
+      "basis": "First clock of this continuation to cutoff, includes research and approval request; earlier assessments excluded."
+    },
+    {
+      "name": "native_workers",
+      "value": 3,
+      "unit": "workers",
+      "basis": "One hardware-source researcher, one independent software reviewer, one C test implementer."
+    },
+    {
+      "name": "host_test_groups",
+      "value": 11,
+      "unit": "groups",
+      "basis": "Exact candidate source functions and headers with hardware stubs."
+    },
+    {
+      "name": "host_assertions",
+      "value": 619,
+      "unit": "assertions",
+      "basis": "One accepted execution."
+    },
+    {
+      "name": "host_test_seconds",
+      "value": 3.957,
+      "unit": "seconds",
+      "basis": "Test report measured compile and run interval."
+    },
+    {
+      "name": "target_build_seconds",
+      "value": 4.989,
+      "unit": "seconds",
+      "basis": "ADS build log; excludes startup/import."
+    },
+    {
+      "name": "code_review_fixes",
+      "value": 1,
+      "unit": "fixes",
+      "basis": "Volatile qualification for shared launch flag."
+    },
+    {
+      "name": "timing_claim_corrections",
+      "value": 1,
+      "unit": "corrections",
+      "basis": "Separate 5ms software request from 50Hz register and mechanical response."
+    },
+    {
+      "name": "standalone_build_failures",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "IDE-only compiler license; official ADS build succeeded."
+    },
+    {
+      "name": "hardware_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No serial, flashing or actuation."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured; archive receipt records only post-cutoff interval."
+    }
+  ],
+  "observations": [
+    "Power and control wire terminology was resolved by owner clarification in the preceding continuation.",
+    "Manufacturer name supplied during work enabled direct official product-family documentation; the exact physical board revision remains unverified.",
+    "The first direct build repeated an existing IDE-only license limitation; the established official IDE workflow then completed.",
+    "No extra full-car simulation was needed for this bounded interface change; offline tests do not establish suction or track performance.",
+    "Flashing is a separate explicit owner decision under the project burn script; candidate preparation is complete."
+  ],
+  "recommendations": [
+    {
+      "id": "reuse-verified-ide-build",
+      "action": "Start with the last successful official IDE build recipe for this toolchain instead of retrying its unsupported standalone compiler mode.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next firmware candidate goes directly through the recorded IDE path."
+    },
+    {
+      "id": "separate-pwm-response-stages",
+      "action": "Document requested throttle, pulse width, register update boundary and measured mechanical response as separate quantities.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "First powered fan validation records actual signal and response separately."
+    }
+  ],
+  "evidence": [
+    "manifest.json",
+    "ads-build-results.json",
+    "test-results.json",
+    "reviewer.json",
+    "hardware-review-v2.json",
+    "https://blog.csdn.net/longqiu_LQ/article/details/160896921"
+  ],
+  "limits": [
+    "Not flashed or tested on the physical car.",
+    "No measured waveform, current, suction, rotation or ESC startup behavior.",
+    "30 percent is a trial throttle cap, not a measured electrical safety threshold.",
+    "No matched workflow baseline; no efficiency improvement claimed."
+  ],
+  "comparison": null
+}
