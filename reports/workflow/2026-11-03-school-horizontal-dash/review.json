@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-school-horizontal-dash",
+  "task_summary": "Correct the dashed track to the horizontal edge and extend it from the transistor lead to the right junction, retaining symbols and the confirmed hexagon.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-03T17:33:03.555127+08:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Correct orientation and extend the requested edge.",
+      "Preserve components, hexagon and old evidence.",
+      "Deliver updated local website and honest simulation status."
+    ],
+    "completed": [
+      "Final523mm model segment has11 white marks and10 gaps; original vertical edge restored.",
+      "Independent geometry review confirms symbols and route unchanged, with full route coverage over the extended segment.",
+      "Historical vertical options explicitly excluded; final map is first school configuration.",
+      "15 tests, build and6 rendered-browser checks passed; actual camera and live map digest verified."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_work_interval",
+      "value": 699.941,
+      "unit": "seconds",
+      "basis": "First clock through cutoff; includes the user extension during work."
+    },
+    {
+      "name": "actual_c_runs",
+      "value": 4,
+      "unit": "runs",
+      "basis": "Two whole-route exports at successive lengths and two superseded short local trials."
+    },
+    {
+      "name": "native_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "Independent geometry and bounded local experiment."
+    },
+    {
+      "name": "tests_passed",
+      "value": 15,
+      "unit": "tests",
+      "basis": "Final Node suites."
+    },
+    {
+      "name": "browser_checks",
+      "value": 6,
+      "unit": "checks",
+      "basis": "Final184-tape scene; desktop/mobile/camera/digest."
+    },
+    {
+      "name": "observed_rework",
+      "value": 2,
+      "unit": "retries",
+      "basis": "Optional map field handled in publisher; stale note expectation updated."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not isolated."
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Receipt records post-cutoff archival interval only."
+    }
+  ],
+  "observations": [
+    "The extension arrived during the task and superseded the intermediate300mm map and its local tests; these were retained and labeled.",
+    "Two purported fill conditions actually had identical active fill=2 due inherited route flags; comparison was rejected instead of claiming a gain.",
+    "No controller, host, firmware, serial, vehicle operation or server restart.",
+    "Final whole-course run fails before reaching the new segment; no traversal success claim."
+  ],
+  "recommendations": [
+    {
+      "id": "LUOKIXI-WEB-runtime-fill-truth",
+      "action": "Validate actual CSV fill flags before comparing processing modes; resolve inherited route-flag initialization in a dedicated host-engine change.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "Require observed distinct effective modes with matching remaining conditions."
+    },
+    {
+      "id": "LUOKIXI-WEB-map-supersession",
+      "action": "Mark intermediate geometry evidence superseded when in-turn position or length changes; never transfer old pass results to new geometry.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Retain exact hashes and final coverage checks for future changes."
+    }
+  ],
+  "evidence": [
+    "review/final-geometry.json",
+    "review/worker-evidence.json",
+    "review/SUPERSEDED.json",
+    "browser-evidence.json",
+    "baseline-result.json",
+    "tests.log"
+  ],
+  "limits": [
+    "Final long segment has not been traversed by the whole-course run; original short local test is superseded.",
+    "Model dimensions remain unmeasured on the physical track.",
+    "No matched workflow baseline; speedup unproven."
+  ],
+  "comparison": null
+}
