@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-school-transistor-label",
+  "task_summary": "Correct component identification: the specified dashed-segment endpoint is the right transistor; the left component is a diode.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-03T17:40:16.667341+08:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Correct the labels and retain both original components."
+    ],
+    "completed": [
+      "Corrected diagram, descriptive start endpoint and website text; rendered zoom and live static data checked.",
+      "Geometry hash and recorded route preserved; no duplicate component added."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_work_interval",
+      "value": 304.931,
+      "unit": "seconds",
+      "basis": "First clock to cutoff."
+    },
+    {
+      "name": "native_reviewers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "Read-only component-stroke preservation review."
+    },
+    {
+      "name": "actual_c_runs",
+      "value": 0,
+      "unit": "runs",
+      "basis": "Only labels changed."
+    },
+    {
+      "name": "rework",
+      "value": 1,
+      "unit": "corrections",
+      "basis": "Owner corrected root misidentification of the diode."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately timed."
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Post-cutoff interval recorded in receipt."
+    }
+  ],
+  "observations": [
+    "Root initially called both symbols transistors; owner correctly identified the left one as a diode. Independent reviewer had verified preservation, not endorsed that wrong identity.",
+    "No new performance evidence or simulation benefit claimed."
+  ],
+  "recommendations": [
+    {
+      "id": "LUOKIXI-WEB-component-identity",
+      "action": "Verify component identity before annotating; do not turn a preservation check into a semantic classification claim.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Keep corrected diode/transistor terminology in the next map edit."
+    }
+  ],
+  "evidence": [
+    "evidence.json",
+    "two-transistors.png",
+    "native reviewer response: right3 strokes and left9 strokes preserved"
+  ],
+  "limits": [
+    "Descriptive endpoint orientation only; vehicle start and route unchanged.",
+    "No matched workflow efficiency baseline."
+  ],
+  "comparison": null
+}
