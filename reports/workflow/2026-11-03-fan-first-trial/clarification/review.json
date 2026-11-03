@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-fan-first-trial",
+  "task_summary": "Clarify the owner-observed difference between motor rotation and impeller rotation, and update the same fan-diagnosis round without more powered trials.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-03T12:04:24+00:00",
+  "measurement_cutoff_at": "2026-11-03T12:07:51.037255+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Preserve original evidence and append the clarified physical observation.",
+      "Prioritize the mechanical interface while distinguishing stationary housing from the impeller.",
+      "Do not turn a user observation into proof of complete electrical health."
+    ],
+    "completed": [
+      "Owner distinguished continuous motor rotation from absent impeller following.",
+      "Manufacturer assembly instructions and independent native review support inspecting attachment and part identification first.",
+      "Updated project handoff without changing firmware, parameters or hardware state."
+    ],
+    "remaining": [
+      "Actual impeller attachment and component identification require power-off visual inspection."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "continuation_interval",
+      "value": 207.037,
+      "unit": "seconds",
+      "basis": "First measured clock to cutoff; includes owner clarification and source review."
+    },
+    {
+      "name": "native_review_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "One bounded interpretation review; no hardware access."
+    },
+    {
+      "name": "hardware_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No serial or programmer opened."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    }
+  ],
+  "observations": [
+    "The initial phrase was ambiguous between rotor shudder, independent motor/impeller rotation and sound-only observation. One concise clarification materially changed diagnostic priority.",
+    "Old powered-trial evidence was retained rather than rewritten as an established electrical fault."
+  ],
+  "recommendations": [
+    {
+      "id": "name-the-moving-part",
+      "action": "Record which physical part is moving before using rotation or nonrotation as a diagnostic observation.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next inspection distinguishes impeller, rotor and stationary enclosure."
+    }
+  ],
+  "evidence": [
+    "observation.json",
+    "independent-note.json",
+    "https://blog.csdn.net/longqiu_LQ/article/details/160896921"
+  ],
+  "limits": [
+    "No new electrical or physical measurement.",
+    "Exact installed motor and impeller attachment not visually verified.",
+    "No matched workflow baseline; efficiency improvement remains unproven."
+  ],
+  "comparison": null
+}
