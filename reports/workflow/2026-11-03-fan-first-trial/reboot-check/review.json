@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-fan-first-trial",
+  "task_summary": "Distinguish a zero fan target after reboot from the unresolved earlier audible startup failure.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-03T12:28:48+00:00",
+  "measurement_cutoff_at": "2026-11-03T12:32:21.612467+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Verify target initialization and S5 semantics against the flashed snapshot.",
+      "Separate expected software behavior from current device state.",
+      "Do not increase throttle or remotely start the vehicle."
+    ],
+    "completed": [
+      "Flashed snapshot initializes the target to zero and does not persist the earlier throttle; S5 changes launch state without setting a target.",
+      "Owner reported an impeller that can be turned unpowered and no fan response after reboot and S5.",
+      "A bounded query-only serial attempt completed with zero bytes and closed its port."
+    ],
+    "remaining": [
+      "Current target, output and launch state were not received.",
+      "The earlier audible startup failure remains unresolved."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "serial_query_commands",
+      "value": 5,
+      "unit": "commands",
+      "basis": "Local capture summary; only #F queries."
+    },
+    {
+      "name": "actuator_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No target-setting or launch commands."
+    },
+    {
+      "name": "received_bytes",
+      "value": 0,
+      "unit": "bytes",
+      "basis": "Ten-second query-only capture."
+    },
+    {
+      "name": "native_review_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "Received independent source review."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    }
+  ],
+  "observations": [
+    "Do not conflate a launch-enable button with a nonzero fan target.",
+    "A source-level zero default is not a measurement of current target or proof of healthy hardware.",
+    "Impeller hand rotation excludes only an obvious stationary jam, not every loaded mechanical or electrical fault.",
+    "Initial system port enumeration failed under restricted access; an authorized retry exposed one port. It opened but yielded no reply."
+  ],
+  "recommendations": [
+    {
+      "id": "show-reset-target-separately",
+      "action": "During future fan diagnostics explicitly distinguish configured target, run gate, requested output and observed rotation.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Use a successful status reply or stopped signal capture before diagnosing post-reset silence."
+    }
+  ],
+  "evidence": [
+    "Flashed snapshot control.c:24,142; cpu0_main.c:122,132; vision_link.c:194,218; wireless.c:102.",
+    "Bounded query capture aggregate: five queries, zero received bytes, serial closed.",
+    "Independent source review received; no Opus response claimed."
+  ],
+  "limits": [
+    "No current telemetry reply or measured PWM.",
+    "Prior startup fault not repaired.",
+    "No matched workflow baseline; no efficiency gain claimed."
+  ],
+  "comparison": null
+}
