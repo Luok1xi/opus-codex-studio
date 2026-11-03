@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-fan-first-trial",
+  "task_summary": "Obtain and verify the official Windows KingstVIS installer required for the ongoing fan waveform investigation.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-03T13:32:11+00:00",
+  "measurement_cutoff_at": "2026-11-03T13:37:07.919122+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Follow the official download link and verify the delivered installer.",
+      "Do not assume that downloading also installed the program or acquired a waveform."
+    ],
+    "completed": [
+      "Downloaded KingstVIS 3.6.6 from the manufacturer official Windows entry.",
+      "Checked 43158712-byte length against HTTP metadata, PE executable header, valid manufacturer Authenticode signature and local SHA256.",
+      "Delivered an identical copy to the user Downloads folder without replacing an unrelated existing file.",
+      "Independent review confirmed official source chain and LA1010 compatibility."
+    ],
+    "remaining": [
+      "Installation and LA1010 physical capture have not occurred; fan diagnosis remains open."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "download_and_validation",
+      "value": 61.6466136,
+      "unit": "seconds",
+      "basis": "Measured from download request through signature and file metadata verification."
+    },
+    {
+      "name": "download_bytes",
+      "value": 43158712,
+      "unit": "bytes",
+      "basis": "Actual delivered file size."
+    },
+    {
+      "name": "native_review_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "One independent source and compatibility review received."
+    },
+    {
+      "name": "hardware_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No serial, firmware, actuator or analyzer-output commands in this turn."
+    },
+    {
+      "name": "installer_executions",
+      "value": 0,
+      "unit": "executions",
+      "basis": "Installer was not run."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    }
+  ],
+  "observations": [
+    "An ambiguous readiness message was clarified before any capture or hardware action; the missing dependency was the analysis software.",
+    "No existing installation or installer was found in the bounded local checks.",
+    "Official HTML and redirected Windows binary were reachable from the local downloader, despite earlier browser fetch failures.",
+    "Local SHA256 identifies the file; no published vendor checksum was found.",
+    "Download complete does not mean drivers installed, device recognized or physical capture passed."
+  ],
+  "recommendations": [
+    {
+      "id": "verify-tool-readiness-once",
+      "action": "For instrument-guided diagnosis distinguish USB connection, installed software, recognized device, attached sampling leads and completed capture.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "After installation verify device-connected state before capturing the stopped pulse."
+    }
+  ],
+  "evidence": [
+    "https://www.qdkingst.com/cn/download",
+    "https://www.qdkingst.com/kfs/KingstVIS_v3.6.6.exe",
+    "SHA256 4499D56A064BA979A449A584FCB05241C421B82D424C6C80145F46B093923B28",
+    "Valid Authenticode signer: Qingdao Kingst Electronics; original signature receipt stays local."
+  ],
+  "limits": [
+    "Not installed or executed.",
+    "No current physical waveform.",
+    "No published vendor hash located; signature validation and content-length checks were performed.",
+    "No matched baseline; no efficiency gain claimed."
+  ],
+  "comparison": null
+}
