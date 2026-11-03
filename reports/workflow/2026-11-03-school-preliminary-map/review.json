@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-school-preliminary-map",
+  "task_summary": "Add a provisional school course with dashed track and a hexagonal roundabout to the existing preliminary-map simulation and local tuning bench.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-03T15:15:44.160402+08:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Keep original preliminary map unchanged.",
+      "Use identical new geometry in C camera, legal-course checks and web visualization.",
+      "Permit school selection, simulation and replay without misidentifying it as preliminary.",
+      "Record actual results and provisional placement without claiming a finished lap."
+    ],
+    "completed": [
+      "Registered a fixed school scenario with map digest, route validation and per-run map snapshot.",
+      "Preserved original elements; added six 30mm dash marks separated by 20mm gaps and a160mm-side hexagon, with32 route entries.",
+      "57 focused unit tests passed; production build passed.",
+      "Eight rendered-browser check groups passed at1440px and390px; camera pixels match exported C frames.",
+      "Rendered review found and fixed missed primary-button text, route action labels and flat-end rendering.",
+      "Real125-speed C baseline stopped with STOP3 after3.31s and3.43m; it is explicitly not a lap time.",
+      "Existing website and Hub ports reused; no firmware/serial/vehicle operation."
+    ],
+    "remaining": [
+      "Owner has not confirmed provisional element positions and dimensions.",
+      "Complete-lap and hexagon traversal performance remains unproven; dashed-section vision needs follow-up tuning."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "observed_work_interval",
+      "value": 1112.535,
+      "unit": "seconds",
+      "basis": "First recorded local clock14:57:11.626 to verification cutoff15:15:44.160; excludes pre-clock work and final archive."
+    },
+    {
+      "name": "frontend_tests_passed",
+      "value": 26,
+      "unit": "tests",
+      "basis": "Final Node test suite."
+    },
+    {
+      "name": "backend_tests_passed",
+      "value": 31,
+      "unit": "tests",
+      "basis": "Worker final Django suites,1.174s."
+    },
+    {
+      "name": "browser_check_groups",
+      "value": 8,
+      "unit": "groups",
+      "basis": "Final browser-evidence.json; no page errors."
+    },
+    {
+      "name": "actual_c_runs",
+      "value": 4,
+      "unit": "runs",
+      "basis": "One initial map baseline, one final-cap baseline, two UI request checks using realC."
+    },
+    {
+      "name": "native_workers",
+      "value": 2,
+      "unit": "workers",
+      "basis": "Exclusive backend and frontend file ownership; root geometry/integration."
+    },
+    {
+      "name": "actual_opus_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "TeamHub handoff only; no reply claimed."
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No serial, flash or motion calls."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage meter."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive not finished at measurement cutoff."
+    }
+  ],
+  "observations": [
+    "Backend/frontend work ran independently; root verified scene and browser boundary.",
+    "Map geometry check confirmed all nonstraight route actions,8 sixty-degree entries, legal route continuity and camera-invisible dash gaps.",
+    "Actual camera probes distinguish school dashes/hexagon from original straight segments; dash pose invalid while original straight pose valid.",
+    "Browser controlled-submit check used an authorization fixture with realC computation; anonymous live backend protection verified separately. No live owner login or credentials copied.",
+    "Discovery had oversized/truncated output and Git permission failures; read scope and execution permissions were then narrowed.",
+    "No plotting package was installed: after two missing-library probes, an existing browser rendered SVG geometry.",
+    "Rework included map segment-count assertion, flat boundary caps, browser label selector, missing primary-button label, route label formatting and a normalized-path guard before second Hub reload.",
+    "No public deployment or unrelated-source commit."
+  ],
+  "recommendations": [
+    {
+      "id": "school-rendered-boundary",
+      "action": "Keep the final screenshot review after catalog and backend integration; test the primary visible action and readable route labels in addition to API success.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Retain these assertions for future map variants."
+    },
+    {
+      "id": "school-bounded-discovery",
+      "action": "Read project categories before choosing one, bound data extraction, and use the installed browser for geometry preview instead of probing plotting packages.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "Measure comparable future map tasks before claiming less time or fewer retries."
+    }
+  ],
+  "evidence": [
+    "school-backend-geometry-check.json",
+    "school-route-label-check.json",
+    "engine-evidence.json",
+    "browser-evidence.json",
+    "school-backend-worker-evidence.json",
+    "school-bench-ui worker-report.json",
+    "map_sha256=e1422a2dd25b91e4a1f2318905faf8f7b211e6d093402dc36cb571855c06e112"
+  ],
+  "limits": [
+    "Positions are a visible provisional layout, not surveyed school-track dimensions.",
+    "No complete-lap success or real-car validation.",
+    "No matched quality baseline; workflow speedup unproven."
+  ],
+  "comparison": null
+}
