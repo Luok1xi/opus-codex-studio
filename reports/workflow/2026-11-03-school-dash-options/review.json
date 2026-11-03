@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-school-dash-options",
+  "task_summary": "Display three candidate dashed-track positions, integrate separate original/line-fill configurations, and begin controlled school-course simulation tuning.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-03T17:17:54.401446+08:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Preserve confirmed hexagon and original maps.",
+      "Show three candidate positions and keep strategies separately selectable.",
+      "Run actual controller experiments and retain unsuccessful results.",
+      "Verify rendered website, camera and selected-map requests."
+    ],
+    "completed": [
+      "Three candidate maps and six replay configurations delivered to existing local site.",
+      "All original configurations stop near dashes; existing image line-fill lets all three pass dashes and upper capacitor gap.",
+      "All final candidates fail at hexagon entrance; two parameter changes rejected as ineffective.",
+      "Fixed allowlist, independent route fingerprints,18 backend tests and5 final frontend tests passed;27 frontend tests had passed before adding fill IDs.",
+      "Both sets of browser checks passed at1440/390px; camera pixels match exported C frames."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_work_interval",
+      "value": 1006.947,
+      "unit": "seconds",
+      "basis": "First recorded clock through verification cutoff; excludes pre-clock work and later archive."
+    },
+    {
+      "name": "actual_c_runs",
+      "value": 14,
+      "unit": "runs",
+      "basis": "3 original baselines +8 isolated strategy/parameter trials +3 final API exports."
+    },
+    {
+      "name": "native_workers",
+      "value": 3,
+      "unit": "workers",
+      "basis": "Separate backend/frontend/offline experiment ownership."
+    },
+    {
+      "name": "actual_opus_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Project handoff only; no acceptance claimed."
+    },
+    {
+      "name": "final_backend_tests",
+      "value": 18,
+      "unit": "tests",
+      "basis": "Worker unittest evidence."
+    },
+    {
+      "name": "final_frontend_tests",
+      "value": 5,
+      "unit": "tests",
+      "basis": "Focused identity/parameter suite after fill IDs."
+    },
+    {
+      "name": "browser_groups",
+      "value": 10,
+      "unit": "groups",
+      "basis": "Two suites of5; includes checks repeated for distinct strategy set."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Billing unavailable."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately timed."
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Later receipt records post-cutoff archive time; initial preparation not isolated."
+    }
+  ],
+  "observations": [
+    "Worker reused all3 root baselines; final3 reruns were deliberate canonical API replay exports.",
+    "Review caught extra line-fill flags in proposed baseline before any C baseline ran; separated original and treatment strategies.",
+    "Browser script first targeted hidden index buttons; corrected to the user-visible configuration library.",
+    "Request-payload fixture used authentic saved C outputs; it did not claim an owner-authenticated live submission.",
+    "No controller source, firmware, out-of-line threshold, serial or vehicle operation changed."
+  ],
+  "recommendations": [
+    {
+      "id": "LUOKIXI-WEB-school-strategy-isolation",
+      "action": "Keep route/image-processing changes in separate map IDs and condition fingerprints; do not describe them as same-condition PID gains.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Retain for the next hexagon-entry experiment."
+    },
+    {
+      "id": "LUOKIXI-WEB-school-test-frontier",
+      "action": "Stop parameter sweeps when distinct settings fail at the same structural handoff; retain traces and target the handoff in the next controlled experiment.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Test ordinary-straight to60-degree handoff without removing route entries or relaxing bounds."
+    }
+  ],
+  "evidence": [
+    "backend-worker.json",
+    "frontend-worker.json",
+    "experiment/worker-evidence.json",
+    "experiment/camera-comparison.json",
+    "experiment/hex-entry-handoff.json",
+    "browser-evidence.json",
+    "browser-fill-evidence.json",
+    "baseline-summaries.json",
+    "fill-summaries.json"
+  ],
+  "limits": [
+    "User has confirmed ring position, but exact dash position is still optional input pending.",
+    "Outer-circle validation only, not full-element competition route or real-car validation.",
+    "No completed loop;6.85s is a failure termination time.",
+    "No matched workflow baseline; net speedup unproven."
+  ],
+  "comparison": null
+}
