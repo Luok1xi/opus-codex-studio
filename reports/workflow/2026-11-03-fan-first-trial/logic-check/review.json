@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-fan-first-trial",
+  "task_summary": "Provide model-specific Kingst LA1010 logic capture instructions for the same fan diagnosis, after identifying that the owner does not have an oscilloscope.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-03T12:10:55+00:00",
+  "measurement_cutoff_at": "2026-11-03T12:14:59.074845+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Identify actual instrument before giving final setup instructions.",
+      "Use flashed candidate evidence for expected pin and pulse timing.",
+      "Clearly separate digital timing from analog power and mechanical diagnosis."
+    ],
+    "completed": [
+      "Identified LA1010 as a USB logic analyzer and consulted the manufacturer manual.",
+      "Rechecked the flashed firmware snapshot and flash receipt; stop pulse expected 1 ms at 50 Hz on P21.5.",
+      "Prepared a passive CH0 capture procedure with the ESC isolated and no powered fan trial."
+    ],
+    "remaining": [
+      "Owner has not captured an actual waveform.",
+      "Mechanical attachment remains unverified."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "hardware_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No serial, flash or actuator operation in this continuation."
+    },
+    {
+      "name": "native_review_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "One worker reviewed the initial setup and received the corrected instrument identity."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    }
+  ],
+  "observations": [
+    "The owner instrument identity changed the correct procedure from analog oscilloscope setup to digital-only capture.",
+    "An older shared source tree still used a brushed fan configuration; flashed-artifact evidence prevented using that stale pin/frequency as current truth.",
+    "Manufacturer website fetches failed; the manufacturer-authored manual hosted by a component distributor was successfully read.",
+    "A 50 percent normalized throttle request corresponds to 1.5 ms at 50 Hz, or 7.5 percent waveform duty; it is not a request for another powered test."
+  ],
+  "recommendations": [
+    {
+      "id": "instrument-before-settings",
+      "action": "Ask instrument model before writing model-specific measurement settings and bind expected signals to the flashed artifact.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Verify the next supplied capture against the same artifact and actual instrument."
+    }
+  ],
+  "evidence": [
+    "Previously verified flashed artifact and reset acknowledgment; no raw logs included.",
+    "https://atta.szlcsc.com/upload/public/pdf/source/20230628/A58EB031F01E4F7ABDAC02BEC78239F3.pdf",
+    "https://blog.csdn.net/longqiu_LQ/article/details/160896921"
+  ],
+  "limits": [
+    "Instruction review only; no measured waveform or hardware acceptance.",
+    "LA1010 does not measure analog amplitude or supply ripple.",
+    "No matched workflow baseline; no efficiency gain claimed."
+  ],
+  "comparison": null
+}
