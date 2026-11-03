@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-school-dash-position",
+  "task_summary": "Move the provisional school-course dashed section to the adjacent segment above and refresh the local simulation bench.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-03T15:56:55.424308+08:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Move only the dashed segment; preserve hexagon, base course and controller.",
+      "Verify live website geometry and refreshed camera replay."
+    ],
+    "completed": [
+      "Six flat-ended dashes moved; original lower segment restored.",
+      "One independent geometry review confirms other tape geometry and route unchanged.",
+      "10 focused tests and production build passed;5 browser assertions passed with no page errors.",
+      "One actual C baseline and camera probes saved; historical evidence preserved."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_work_interval",
+      "value": 506.465,
+      "unit": "seconds",
+      "basis": "First local clock to cutoff; excludes pre-clock work and later archive."
+    },
+    {
+      "name": "focused_tests_passed",
+      "value": 10,
+      "unit": "tests",
+      "basis": "Node output."
+    },
+    {
+      "name": "browser_check_groups",
+      "value": 5,
+      "unit": "groups",
+      "basis": "Rendered position, old solid, map digest, displayed result and exact camera pixels."
+    },
+    {
+      "name": "actual_c_baseline_runs",
+      "value": 1,
+      "unit": "runs",
+      "basis": "Existing result reused on camera-check retry."
+    },
+    {
+      "name": "native_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "Read-only geometry and route-coverage review."
+    },
+    {
+      "name": "actual_opus_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Database handoff only."
+    },
+    {
+      "name": "observed_check_retries",
+      "value": 2,
+      "unit": "retries",
+      "basis": "Full-frame comparison replaced by relevant near-field comparison; stray browser-script parenthesis fixed."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately timed."
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Later receipt records archive interval; earlier report preparation not separately timed."
+    },
+    {
+      "name": "archive_approval_failures",
+      "value": 3,
+      "unit": "attempts",
+      "basis": "Two shared-database requests and one private GitHub upload rejected by review service at capacity; commands not executed."
+    },
+    {
+      "name": "report_validation_retries",
+      "value": 1,
+      "unit": "retries",
+      "basis": "Future performance limits moved out of unmet acceptance for this completed position correction."
+    }
+  ],
+  "observations": [
+    "New baseline ends out of bounds at5.642s and5.54m; not a lap time or evidence of improved control.",
+    "Camera at the new dash position is invalid while original solid-line comparator is valid.",
+    "Old-position full images differ because far rows see the moved upper segment; the restored near-field rows match exactly.",
+    "No serial, firmware, vehicle movement, public deployment, new server or dependency installation.",
+    "Independent review found zero route coverage over the moved section; limitation included in replay metadata."
+  ],
+  "recommendations": [
+    {
+      "id": "LUOKIXI-WEB-school-map-coverage",
+      "action": "Check route coverage explicitly after moving an element and avoid claiming a full-course run tested an unvisited element.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Retain coverage evidence for the next map change."
+    },
+    {
+      "id": "LUOKIXI-WEB-small-map-correction",
+      "action": "Reuse deterministic evidence and keep position-only tasks to a narrow geometry/browser check; constrain camera comparisons to the intended region.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "No speedup claim without a matched quality baseline."
+    }
+  ],
+  "evidence": [
+    "engine-evidence.json",
+    "browser-evidence.json",
+    "school-dash-move-worker-evidence.json",
+    "tests.log",
+    "build.log"
+  ],
+  "limits": [
+    "No matched baseline for workflow efficiency.",
+    "Local simulation evidence only; no actual race completion.",
+    "Reference route does not traverse the moved dashes; complete-lap and dashed-traversal performance unproven.",
+    "Dimensions remain provisional.",
+    "Shared-database registration and private-repository upload pending: automatic approval service returned model-at-capacity before execution; no writes were attempted through another route. Local review and worker evidence retained."
+  ],
+  "comparison": null
+}
