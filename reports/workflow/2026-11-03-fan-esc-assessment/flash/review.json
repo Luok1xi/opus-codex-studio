@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-03-fan-esc-assessment",
+  "task_summary": "Flash the explicitly authorized fan ESC firmware and verify parked startup telemetry without commanding movement or fan activation.",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-03T11:09:02+00:00",
+  "measurement_cutoff_at": "2026-11-03T11:18:28.326376+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Flash the exact approved artifact with official readback verification.",
+      "Read startup status without issuing throttle changes or vehicle start commands.",
+      "Preserve evidence and distinguish MCU telemetry from physical fan validation."
+    ],
+    "completed": [
+      "Exact approved artifact flashed once; readback PASS with zero differing bytes.",
+      "Parked query confirmed zero fan target/output and zero wheel PWM.",
+      "Initial camera failure and low ADC report occurred with owner-confirmed main power off; later powered capture shows camera at 150 fps with advancing sequence.",
+      "Independent native reviewer checked the original flash log and both raw captures."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_interval",
+      "value": 566.326,
+      "unit": "seconds",
+      "basis": "Flash-stage start to cutoff, including owner power-state clarification and independent review; candidate preparation excluded."
+    },
+    {
+      "name": "flash_attempts",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "Official programmer log."
+    },
+    {
+      "name": "flash_tool_duration",
+      "value": 1.847,
+      "unit": "seconds",
+      "basis": "Programmer log reports 1847 milliseconds; not total task time."
+    },
+    {
+      "name": "verified_differing_bytes",
+      "value": 0,
+      "unit": "bytes",
+      "basis": "Official memory readback result."
+    },
+    {
+      "name": "serial_captures",
+      "value": 2,
+      "unit": "captures",
+      "basis": "Two separately preserved 8-second captures, query only; both ports closed."
+    },
+    {
+      "name": "fan_setting_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "Only #F query was transmitted."
+    },
+    {
+      "name": "vehicle_start_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No launch command was sent."
+    },
+    {
+      "name": "native_review_workers",
+      "value": 1,
+      "unit": "workers",
+      "basis": "One independent reviewer, no hardware access."
+    },
+    {
+      "name": "opus_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Database handoff only; no Opus response claimed."
+    },
+    {
+      "name": "capture_setup_failures",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "Initial Python capture failed before opening port because pyserial was unavailable; switched to built-in .NET SerialPort."
+    },
+    {
+      "name": "firmware_rebuilds",
+      "value": 0,
+      "unit": "builds",
+      "basis": "Approved binary was unchanged."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured; archive receipt records only post-cutoff interval."
+    }
+  ],
+  "observations": [
+    "USB programmer enumeration did not prove that main board power was switched on.",
+    "Separate captures preserved the before/after power-state evidence instead of overwriting the initial record.",
+    "The aggregate hardware-ready telemetry value is only initialized at startup and is not refreshed after camera retry; live camera flag and frame progression established acquisition recovery. It is not used as a launch gate in this snapshot.",
+    "No repeat build or flash was needed when camera acquisition recovered under main power."
+  ],
+  "recommendations": [
+    {
+      "id": "capture-with-existing-runtime",
+      "action": "Use the available operating-system serial implementation for this bounded query rather than assuming an optional Python package is installed.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next capture starts without a dependency setup failure."
+    },
+    {
+      "id": "refresh-ready-telemetry",
+      "action": "Update the combined readiness telemetry after camera retry in the next reviewed firmware change, preserving current launch gates.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "A startup-failure then successful-retry test makes live cam, imu and combined status agree."
+    }
+  ],
+  "evidence": [
+    "flash-receipt.json",
+    "flash.log",
+    "post-flash-summary.json",
+    "power-check-summary.json",
+    "independent-review.json",
+    "manifest.json"
+  ],
+  "limits": [
+    "Waveform, ESC arming, physical fan direction, suction, current and response remain unmeasured.",
+    "Battery numbers are ADC-reported values, not a calibrated terminal measurement.",
+    "Camera activity and parked zero-output telemetry do not establish track-following readiness.",
+    "No matched workflow baseline; no efficiency improvement claimed."
+  ],
+  "comparison": null
+}
