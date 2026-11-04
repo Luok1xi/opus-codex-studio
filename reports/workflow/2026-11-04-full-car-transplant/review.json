@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-04-full-car-transplant",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-04T11:01:39+00:00",
+  "task_summary": "把既有完整比赛固件部署到同型号主板的新有刷底盘，验证写入及停车运行，并核对相机输入。",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "核对新目标和接口、明确回退来源并选对有刷完整镜像",
+      "官方烧录及零差异校验",
+      "用比赛版遥测核实新车运行和静态视觉"
+    ],
+    "completed": [
+      "车主确认同款TC264 BTB V1.1、轮驱/编码器/相机/IMU接口相同、有刷N30 Pro和有刷电机，架空且动力隔离，持有旧程序并指示直接覆盖。",
+      "核对原比赛镜像2bfb17ec的完整SHA与既有官方成功回执。新车烧前为T3 PID，105条停车记录的轮百分比全零。",
+      "唯一烧录入口一次成功。新底盘官方回执19:09:15，TC26x B step，0错误，Flash读回0字节差异。",
+      "串口已从T3的115200切换到比赛程序的3000000。8秒内32条停车状态，左右轮PWM和反馈均零，imu=1，8条相机状态cam=1/hw=1/fps=150。",
+      "停车读取完整188×120灰度帧，检查载荷长度和结束标记。22510个像素为1，50个为0。两次寄存器快照相同，芯片ID 0x1324，测试图使能位为0。",
+      "旧车同一镜像已有8条fps=150、valid=150、gray=85的状态。其现场光照与新车未配对。"
+    ],
+    "remaining": [
+      "新车首次整帧接近全黑，循迹和实车动力尚未验收。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "official_flash_attempts",
+      "value": 1,
+      "unit": "calls",
+      "basis": "一次官方烧录回执。"
+    },
+    {
+      "name": "verify_differences",
+      "value": 0,
+      "unit": "bytes",
+      "basis": "厂商目标芯片读回日志。"
+    },
+    {
+      "name": "remote_start_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "停车遥测、灰度查询和寄存器只读查询。"
+    },
+    {
+      "name": "native_review_workers",
+      "value": 2,
+      "unit": "workers",
+      "basis": "完整应用选型与旧程序恢复方案分别独立核对。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "未提供。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "未提供。"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量。"
+    }
+  ],
+  "observations": [
+    "烧前按新旧车的负压输出语义选择已有完整镜像。单纯复用旧车最新电调镜像会改变输出引脚和停车波形。",
+    "车主确认已有原程序后结束备份工具准备，按其要求直接覆盖。T3文本记录仅用于身份对照。",
+    "仅有fps与器件就绪信息时不能验收视觉。补取完整灰度帧显示近黑；首次寄存器请求没有回执，采用固件既有停车查询后成功两次读回。"
+  ],
+  "recommendations": [
+    {
+      "id": "chassis-specific-firmware",
+      "action": "在烧录记录中明确目标底盘、动力接口、固件指纹和恢复来源，保留旧底盘历史。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续使用新车名称和新的串口协议做实车记录。"
+    },
+    {
+      "id": "test-actual-pixels",
+      "action": "把帧内容和引导线有效性单列为新底盘视觉验收项。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "固定光照目标后复核灰度和有效线，再进行架空方向检查。"
+    }
+  ],
+  "evidence": [
+    "镜像SHA256 2bfb17ecb0d60f03f37bd59bb40490efae92d2fdaa78f5467cd4451d36727bbd；官方回执与日志均保存在本地。",
+    "第一帧原图SHA256 50e5850b2b0c2c7e2800c4037103db1feb9f122190deaa514bca5781a3adceac。"
+  ],
+  "limits": [
+    "有刷类型、接线及原程序可恢复由车主说明。未从新车读出T3镜像，也未测试其可恢复性。",
+    "接口相同仍须重新核对机械方向、编码器正负/比例及实际动力调校。",
+    "原始串口、图像、固件和现场数据保留本地，私有归档仅存脱敏复盘。无匹配质量基线。"
+  ],
+  "comparison": null,
+  "measurement_cutoff_at": "2026-11-04T11:16:48+00:00"
+}
