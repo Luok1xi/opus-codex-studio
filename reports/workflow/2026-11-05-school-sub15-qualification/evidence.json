@@ -1,0 +1,148 @@
+{
+  "scope": "offline closed loop, two plants, shared controller and camera rendering",
+  "course_m": 29.421,
+  "route_entries": 47,
+  "ordered_edges": 48,
+  "distinct_symbol_strokes": 28,
+  "max_lateral_mm": 55,
+  "model_order": [
+    "C",
+    "PyBullet"
+  ],
+  "original_275_nominal_s": [
+    18.35,
+    18.498
+  ],
+  "new_275_nominal_s": [
+    15.325,
+    15.824
+  ],
+  "stock_sprint_nominal_s": [
+    14.304,
+    14.739
+  ],
+  "tight_final_corner_nominal_s": [
+    14.286,
+    14.721
+  ],
+  "tight_final_corner_radius_mm": {
+    "before": [
+      171.95,
+      162.53
+    ],
+    "after": [
+      136.72,
+      155.61
+    ]
+  },
+  "tight_final_corner_onset_before_vertex_mm": {
+    "before": [
+      173.6,
+      181.05
+    ],
+    "after": [
+      166.83,
+      175.5
+    ]
+  },
+  "tight_corner_primary": {
+    "completed": 5,
+    "attempted": 8
+  },
+  "adaptive2": {
+    "standard_s": [
+      14.52,
+      14.995
+    ],
+    "weak_s": [
+      16.114,
+      16.655
+    ],
+    "training": {
+      "completed": 8,
+      "sub15": 6,
+      "attempted": 8
+    },
+    "old_weak_examples": {
+      "previous": 3,
+      "new": 6,
+      "attempted": 6
+    },
+    "unseen_single_variable": {
+      "previous": 5,
+      "new": 6,
+      "attempted": 6
+    },
+    "repeated_weak_1ms_hashes": 12
+  },
+  "parking_default_early8": {
+    "gate_s": [
+      14.53,
+      14.922
+    ],
+    "stable_onset_s": [
+      14.608,
+      15.021
+    ],
+    "stable_confirmed_s": [
+      14.808,
+      15.221
+    ],
+    "dwell_s": 0.2
+  },
+  "software_fan_base_pct": 50,
+  "software_fan_corner_pct": 70,
+  "hardware_flashes": 0,
+  "physical_laps": 0,
+  "hardware_calibration": false,
+  "final_combination": {
+    "condition_pairs": 10,
+    "engines": 2,
+    "strict_full": 20,
+    "sub15": 6,
+    "standard": [
+      14.491,
+      14.967
+    ],
+    "original_weak": [
+      16.082,
+      16.629
+    ],
+    "measured_last_corner": {
+      "paired_faster_later_tighter": 20,
+      "pairs": 20,
+      "radius_before_mm": [
+        169.2,
+        158.44
+      ],
+      "radius_after_mm": [
+        145.56,
+        155.52
+      ],
+      "speed_before_mps": [
+        1.2891,
+        1.263
+      ],
+      "speed_after_mps": [
+        1.3561,
+        1.3545
+      ],
+      "later_turn_mm": [
+        8.61,
+        9.85
+      ]
+    },
+    "worst_route_mm": 53.553,
+    "independent_real_course_runs": 0
+  },
+  "tight_final_corner_speed_mps": {
+    "before": [
+      1.278,
+      1.2878
+    ],
+    "after": [
+      1.3327,
+      1.3445
+    ]
+  }
+}
