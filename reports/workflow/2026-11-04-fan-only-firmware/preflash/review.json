@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-04-fan-only-firmware",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-04T05:27:34+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "交付独立风机测试入口并按用户要求烧录，核对读回及启动状态",
+      "上电停车脉宽，轮输出禁用，S5须手动边沿触发，单次动作自动截止"
+    ],
+    "completed": [
+      "查到上一正式镜像的官方校验回执，SHA前缀 b2fc907f，烧前被动串口收到比赛停车遥测。",
+      "独立编译新镜像 b9f2fcc5。ADS 编译0错误，11条警告与基线一致，四个业务入口文件与原版有差异。",
+      "主机行为测试通过开机长按、消抖、超时、提前取消、计时回绕和锁定。链接图确认无轮PID、赛道及视觉调用；双核同步和定时器入口存在。",
+      "协调者重算HEX指纹并验证Intel HEX记录校验和，独立复核员确认51,906个载入字节逐地址与ELF一致。"
+    ],
+    "remaining": [
+      "测试镜像尚未写入。车主已报告停车、轮驱关闭、风机电调断电、S1和下载器就绪；持续的主板电池ADC回读约1.38–1.60 V，与此前仅由下载器供电的记录相近。等待稳定供电来源明确。",
+      "芯片读回校验、专用待机心跳和实际风机转动情况尚未验收。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "native_workers",
+      "value": 2,
+      "unit": "workers",
+      "basis": "一名实现和编译，一名独立审阅。"
+    },
+    {
+      "name": "ads_build_time",
+      "value": 4.915,
+      "unit": "seconds",
+      "basis": "正式ADS构建摘要报告。"
+    },
+    {
+      "name": "introduced_compiler_warnings",
+      "value": 0,
+      "unit": "warnings",
+      "basis": "11条均与基线逐条一致。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "没有提供方用量。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "没有账单数据。"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "无法单独分离评审时间。"
+    },
+    {
+      "name": "flash_attempts_to_cutoff",
+      "value": 0,
+      "unit": "attempts",
+      "basis": "此检查点前未运行烧录器。"
+    }
+  ],
+  "observations": [
+    "上次的50%测试沿用了正式程序，曾记录非零车轮控制。本镜像将轮脚设为普通低电平GPIO，只保留风机输出。",
+    "烧前下载器识别、旧程序运行和轮输出归零均有记录。主板ADC曾读到约1.38–1.55 V，需区分主板供电来源。",
+    "最终5秒复查有20条停车遥测，ADC约1.57–1.60 V。ADC不能直接说明MCU供电轨电压，不能仅凭串口连通推断主板DCIN已接稳。"
+  ],
+  "recommendations": [
+    {
+      "id": "bound-fan-test-in-image",
+      "action": "将程序识别、上电停车、手动触发和有界截止作为专用镜像验收项。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "比较正式烧录回执与候选完整哈希，并被动读取专用待机标志。"
+    }
+  ],
+  "evidence": [
+    "镜像SHA256 b9f2fcc578c47c2043c4b47a23e11af154937e4b8dfc316b28961aa3a737c63d，文件125035字节。",
+    "旧镜像的官方校验通过回执和保留的回退文件。",
+    "本机构建清单含源文件指纹、链接检查、ADS记录与行为测试。"
+  ],
+  "limits": [
+    "0.8秒是正常5ms定时中断下的截止设定，停车比较值随后按PWM帧生效。",
+    "软件检查范围从GPIO初始化开始，未测量引脚复位瞬态。",
+    "未测风机实际转速、吸力和带载性能，不能据此诊断此前的硬件故障。",
+    "无匹配的效率比较基线。"
+  ],
+  "comparison": null,
+  "measurement_cutoff_at": "2026-11-04T05:40:46+00:00",
+  "task_summary": "构建独立风机单次测试镜像，并核对官方烧录前提。本次检查点为等待供电来源确认。"
+}
