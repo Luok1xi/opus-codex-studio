@@ -1,0 +1,10 @@
+{
+  "round_id": "2026-11-04-fan50-radio-field",
+  "source": "field operator observation after the run",
+  "earlier_turns": "operator observed faster cornering",
+  "final_turn": "manual contact or lift",
+  "classification": "exclude turn 12 from autonomous corner evaluation",
+  "observed_stop_code": 4,
+  "first_six_comparison_valid": true,
+  "full_lap_time_valid": false
+}
