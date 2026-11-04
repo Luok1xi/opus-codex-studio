@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-04-s4-brushed-fan",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-04T11:24:36+00:00",
+  "task_summary": "在现有整车比赛程序中增加停车时用实体按键单独分档测试有刷负压风机的功能，部署到新底盘并核实响应。",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "每次有效按键只提升一档，满档下次归零，停车测试不启动轮驱",
+      "保留全套比赛程序，烧录后核验停车初态",
+      "实车逐档记录并比对现场叶轮表现"
+    ],
+    "completed": [
+      "核对该版主板原理图，以及用户确认的风机接口和供电。两套控制使用独立目标，长按只计一次，归零后需重新操作发车。",
+      "最终构建零错误、11条既有警告；完整程序两个核心、原视觉与控制模块均链接。实际C函数回归与历史赛道样例通过，独立核对HEX和ELF的125194个数据字节。",
+      "独立复核发现按键未松开时发车提示可能误导；修正界面及遥测后重建，只将最终版本写入芯片。",
+      "官方烧录一次通过、读回零字节差异。上电停车遥测实际为风机目标和输出均零，左右轮亦零。",
+      "实车采集到0、20、40、60、80、100、0全部目标，软件输出依次记录到0、20、40、60、80，归零后确认放键解除本地发车锁。整个有效窗口有394条轮驱状态、103条风机状态，左右轮输出及发车状态为零。",
+      "满档目标驻留约0.48秒，两个板载供电样点约9.85和9.81伏，回零后约11.45至11.50伏。无法由此确定电流、吸力或压降来源。"
+    ],
+    "remaining": [
+      "叶轮实际起转档位和回零后的机械停转，等待现场观察反馈。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "native_workers",
+      "value": 2,
+      "unit": "workers",
+      "basis": "一名实现、一名独立复核；由协调者整合及操作实车。"
+    },
+    {
+      "name": "external_opus_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "本轮以本地交接方式供后续复核。"
+    },
+    {
+      "name": "ads_final_build_seconds",
+      "value": 4.375,
+      "unit": "seconds",
+      "basis": "最终编译器输出。"
+    },
+    {
+      "name": "first_ads_build_seconds",
+      "value": 5.027,
+      "unit": "seconds",
+      "basis": "初版编译器输出。"
+    },
+    {
+      "name": "preflash_ui_rework",
+      "value": 1,
+      "unit": "changes",
+      "basis": "初版屏幕在松键前的提示有误。"
+    },
+    {
+      "name": "official_flash_calls",
+      "value": 1,
+      "unit": "calls",
+      "basis": "最终构建有且仅有一次实车写入回执。"
+    },
+    {
+      "name": "flash_verify_difference",
+      "value": 0,
+      "unit": "bytes",
+      "basis": "厂商烧录工具读回报告。"
+    },
+    {
+      "name": "remote_start_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "所有风机档位由车主本地按键控制。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "没有统一提供方结算记录。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "费用不可获取。"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "复核、人工等待和归档用时未分别计量。"
+    },
+    {
+      "name": "target_100_hold",
+      "value": 0.48,
+      "unit": "seconds",
+      "basis": "同一采样时钟内满档目标至零档的记录差。"
+    }
+  ],
+  "observations": [
+    "同一停车互锁状态同时驱动屏幕和串口提示，复核发现的操作误导在刷写前解决。",
+    "回读校验可以确认写入，串口可以确认目标和软件输出；风机物理表现需现场另外观察。"
+  ],
+  "recommendations": [
+    {
+      "id": "crazy-s4-lock-display",
+      "action": "保持按键、无线启动与屏幕提示的互锁回归，覆盖归零后仍按住实体键的组合。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下次修改发车入口时重跑已有测试。"
+    }
+  ],
+  "evidence": [
+    "最终镜像标识 d344e06c；构建清单、测试输出、芯片回执和本地串口记录可核对。"
+  ],
+  "limits": [
+    "没有转速计或压差计，无法给出真实转速或吸力。原始日志和固件留在本地。没有同质量配对基线。",
+    "软件记录未采到输出正好100%的稳定样点，不把100%目标当作实测满输出。"
+  ],
+  "comparison": null,
+  "measurement_cutoff_at": "2026-11-04T11:44:12+00:00"
+}
