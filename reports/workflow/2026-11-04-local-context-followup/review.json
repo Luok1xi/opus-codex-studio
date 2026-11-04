@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-04-local-context-followup",
+  "task_summary": "Check a recent local text exchange against its prior context and report an evidence-bounded interpretation. No source content or identities in this report.",
+  "workflow_version": "WORKFLOW_REVIEW.md and WORKFLOW_DATABASE.md",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-04T15:19:33.571Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Retrieve the most recent available records and distinguish speakers, nested statements and subsequent replies."
+    ],
+    "completed": [
+      "Restored the local read-only source connection, checked the correct collection and compared it with the prior snapshot.",
+      "Read surrounding exchanges, the nested forwards and selected prior passages; refreshed the active exchange before reporting.",
+      "Saved a local readable increment and checked record uniqueness."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Observed interval",
+      "value": 384,
+      "unit": "seconds",
+      "basis": "First captured local clock to review cutoff; excludes archival."
+    },
+    {
+      "name": "Read-only reviewers",
+      "value": 1,
+      "unit": "agents",
+      "basis": "One independent attribution check returned while coordinator checked context."
+    },
+    {
+      "name": "Service recovery",
+      "value": 1,
+      "unit": "restarts",
+      "basis": "A refused local connection was restored by starting the configured desktop application."
+    },
+    {
+      "name": "Additional records checked after first snapshot",
+      "value": 18,
+      "unit": "records",
+      "basis": "Latest saved increment extended the initial cutoff."
+    },
+    {
+      "name": "Full round duration",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Exact start unmeasured."
+    },
+    {
+      "name": "Provider usage and cost",
+      "value": null,
+      "unit": "usage",
+      "basis": "No provider metering."
+    },
+    {
+      "name": "Review and archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Interleaved with analysis; archive follows cutoff."
+    }
+  ],
+  "observations": [
+    "Speaker attribution and message order changed which explanations were supported.",
+    "New direct statements appeared while the local source was being examined.",
+    "No matched baseline for efficiency comparison."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-LIVE-CUTOFF-20261104",
+      "action": "For active exchanges, check for a recent direct answer and state the actual source cutoff. Verify attribution before reasoning about cause.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Check the final answer against the latest saved statement and its speaker."
+    }
+  ],
+  "evidence": [
+    "Local full source refresh, incremental tail, formatted text counts and independent reading."
+  ],
+  "comparison": null,
+  "limits": [
+    "Offline events and unexpressed motives are unavailable.",
+    "Only sanitized workflow metadata is archived."
+  ]
+}
