@@ -1,0 +1,46 @@
+{
+  "stage": "photo-derived school circuit simulation",
+  "road_segments": 26,
+  "photographed_symbols": 28,
+  "camera_rate_fps": 150,
+  "source_mask_iou_in_engine": 0.99059,
+  "initial_best_valid_loop_s": null,
+  "shortest_closed_candidate_m": 29.41088,
+  "open_candidate_m": 28.107304,
+  "representative_return": {
+    "C": {
+      "seconds": 21.902,
+      "route_entries": [
+        54,
+        54
+      ],
+      "max_error_mm": 59.8,
+      "strict": false
+    },
+    "PyBullet": {
+      "seconds_until_exit": 2.962,
+      "route_entries": [
+        7,
+        54
+      ],
+      "strict": false
+    }
+  },
+  "locally_corrected_ring": {
+    "passed_nominal": 4,
+    "nominal_trials": 4,
+    "all_conditions_passed": 11,
+    "all_conditions_trials": 12
+  },
+  "same_route_first_2_5m": {
+    "before_s": [
+      1.593,
+      1.625
+    ],
+    "after_s": [
+      1.462,
+      1.472
+    ]
+  },
+  "receipt": "both replay pages opened locally, interacted with and compared across engines; identical manual repeat of both main trajectories"
+}
