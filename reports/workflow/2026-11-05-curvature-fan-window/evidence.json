@@ -1,0 +1,41 @@
+{
+  "scope": "offline only",
+  "course_m": 29.421,
+  "nominal_first_2_5m_s": {
+    "baseline": [
+      1.459,
+      1.471
+    ],
+    "combined_fixed_fan": [
+      1.403,
+      1.447
+    ],
+    "combined_window_fan": [
+      1.405,
+      1.409
+    ]
+  },
+  "first_arc_radius_mm": {
+    "baseline_matched_dynamic_plant": [
+      171.91,
+      195.22
+    ],
+    "combined_window": [
+      150.86,
+      159
+    ]
+  },
+  "near_constant_speed_test": {
+    "speed_target": 248,
+    "straight_target": 275,
+    "constant_high_percent": 75,
+    "first_55mm_limit_m": [
+      1.16,
+      1.13
+    ]
+  },
+  "hardware": false,
+  "physical_fan_calibration": false,
+  "browser_qa": "local both engines and all four fan modes, desktop/mobile; no third-party network",
+  "repeat_trace_matches": 4
+}
