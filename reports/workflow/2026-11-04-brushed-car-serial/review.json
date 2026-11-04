@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-04-brushed-car-serial",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-04T10:46:26+00:00",
+  "measurement_cutoff_at": "2026-11-04T10:52:43+00:00",
+  "task_summary": "响应更换有刷小车，停止旧车待烧流程，识别新车串口并检查静止遥测。",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "明确切换硬件，识别可用端口、波特率和有效记录",
+      "被动核对静止的左右轮与偏航字段，释放端口"
+    ],
+    "completed": [
+      "下载器COM6可打开，115200 8N1给出可解析的T3 PID/S1/S2文本。",
+      "首段有174条完整PID记录，约50条/秒；独立15秒复查有725条完整PID记录，约48.5条/秒。",
+      "两次左右三栏及err/st均为零。用户报告首段小车静止，yaw数值3.460秒增加36.1，复查段14.94秒增加153.5。后者有一段11.59秒连续562行gz=+10，yaw增加121.3。",
+      "只被动读取，DTR和RTS均关，采完关闭。旧车待烧任务因用户换车取消，未向新车写入任何固件或控制命令。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "devices_listed",
+      "value": 1,
+      "unit": "ports",
+      "basis": "实际可用COM端口数量。"
+    },
+    {
+      "name": "confirmed_baud",
+      "value": 115200,
+      "unit": "baud",
+      "basis": "持续完整文本。"
+    },
+    {
+      "name": "accepted_pid_rows",
+      "value": 899,
+      "unit": "rows",
+      "basis": "只统计两个115200窗口中完整匹配字段和行尾的PID行。"
+    },
+    {
+      "name": "vehicle_tx_bytes",
+      "value": 0,
+      "unit": "bytes",
+      "basis": "读取程序未调用发送接口。"
+    },
+    {
+      "name": "flashes",
+      "value": 0,
+      "unit": "writes",
+      "basis": "本阶段未调用烧录入口。"
+    },
+    {
+      "name": "native_workers",
+      "value": 2,
+      "unit": "workers",
+      "basis": "一名复核采样，一名寻找匹配的串口字段源码。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "没有单独计量。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "没有单独计量。"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "没有单独计量。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "没有单独计量。"
+    }
+  ],
+  "observations": [
+    "3 Mbaud有字节但无完整文本行，改115200后得到可重复解析的结构。确认物理转接器不能代替设备协议验证。",
+    "第一段完整文本独立复核为176行，第二段边界各有残片，仅统计完整记录。没有帧号，未推断丢帧率。",
+    "在相关工程、源码压缩包与团队资料的有界检索中未发现匹配打印模板。保留字段原义和单位的证据边界。"
+  ],
+  "recommendations": [
+    {
+      "id": "bind-serial-protocol-to-target",
+      "action": "设备更换时按实际帧内容验收波特率，实测能连续解析后再对照烧入工程定义字段。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "找到此有刷车对应打印代码后，再核实gz/yaw单位、零偏扣除和积分时基。"
+    }
+  ],
+  "evidence": [
+    "两次成功取样的原始日志仅本地保存。首段完整记录174 T3/1 S1/1 S2，复查段725 T3/7 S1/7 S2。",
+    "已用独立读数和原始文件指纹记录证据。"
+  ],
+  "limits": [
+    "约48–50条每秒为本机收到的PID文本频率；控制环频率及其他端口未测。",
+    "电机类型由车主说明。调试文本没有电机类型标签或物理单位，无法据此鉴定电机或判定IMU硬件损坏。",
+    "无匹配工作流效率基线。原始串口数据和设备硬件标识不上传。"
+  ],
+  "comparison": null
+}
