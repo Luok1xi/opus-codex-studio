@@ -1,0 +1,482 @@
+{
+  "scope": "last retained moved run only",
+  "build": "P15-CAM15-01",
+  "record_samples": 49,
+  "dt_ms": 20,
+  "stop": {
+    "code": 28,
+    "reason": 5,
+    "route_k": 0,
+    "gates": 63,
+    "sensor_age_ms": 8,
+    "frame_age_ms": 10,
+    "vision_age_ms": 102,
+    "interpretation": "Fresh frame and sensor, last accepted visual map match stale; no world-position trace in board record."
+  },
+  "first_turn": {
+    "confirmed_state1_sample": 29,
+    "state3_sample": 42,
+    "state3_not_unconfirmed": true,
+    "command_peak425_t_ms": 840,
+    "measured_peak449_8_t_ms": 880,
+    "peak_delay_ms_approx": 40,
+    "entry_window_ms": [
+      780,
+      960
+    ],
+    "command_heading_integral_deg": 53.160000000000004,
+    "measured_gyro_integral_deg": 39.253,
+    "speed_target_before": 200,
+    "speed_target_during": 133,
+    "command_speed_reduction_percent": 33.5,
+    "gyro_heading_total_deg_approx": 40.393,
+    "encoder_distance_total_m_approx": 1.413825,
+    "encoder_speed_peak_counts": 224.5,
+    "speed_peak_overshoot_vs200_percent": 12.25
+  },
+  "straight_comparison": {
+    "window_start_ms": 400,
+    "window_end_ms": 680,
+    "actual": {
+      "sample_count": 15,
+      "target": {
+        "mean": 200,
+        "min": 200,
+        "max": 200
+      },
+      "encoder_L": {
+        "mean": 198.53333333333333,
+        "min": 191,
+        "max": 204
+      },
+      "encoder_R": {
+        "mean": 199.13333333333333,
+        "min": 190,
+        "max": 210
+      },
+      "pwm_L": {
+        "mean": 1967.5333333333333,
+        "min": 1664,
+        "max": 2133
+      },
+      "pwm_R": {
+        "mean": 2011.6666666666667,
+        "min": 1871,
+        "max": 2231
+      },
+      "yaw_dps": {
+        "mean": 2.7533333333333334,
+        "min": -17.0,
+        "max": 26.6
+      }
+    },
+    "simulations": {
+      "csim": {
+        "sample_count": 15,
+        "target": {
+          "mean": 200.0,
+          "min": 200.0,
+          "max": 200.0
+        },
+        "encoder_L": {
+          "mean": 199.6,
+          "min": 199.0,
+          "max": 200.0
+        },
+        "encoder_R": {
+          "mean": 199.4,
+          "min": 199.0,
+          "max": 200.0
+        },
+        "pwm_L": {
+          "mean": 3752.5533333333333,
+          "min": 3724.4,
+          "max": 3776.6
+        },
+        "pwm_R": {
+          "mean": 3751.633333333333,
+          "min": 3727.7,
+          "max": 3778.1
+        },
+        "yaw_dps": {
+          "mean": -0.10600000000000001,
+          "min": -1.79,
+          "max": 1.76
+        },
+        "yaw_target": {
+          "mean": -0.2,
+          "min": -1.0,
+          "max": 0.0
+        }
+      },
+      "pybullet": {
+        "sample_count": 15,
+        "target": {
+          "mean": 200.0,
+          "min": 200.0,
+          "max": 200.0
+        },
+        "encoder_L": {
+          "mean": 199.93333333333334,
+          "min": 199.0,
+          "max": 201.0
+        },
+        "encoder_R": {
+          "mean": 199.2,
+          "min": 198.0,
+          "max": 200.0
+        },
+        "pwm_L": {
+          "mean": 3749.133333333333,
+          "min": 3649.1,
+          "max": 3799.6
+        },
+        "pwm_R": {
+          "mean": 3396.18,
+          "min": 3329.6,
+          "max": 3500.5
+        },
+        "yaw_dps": {
+          "mean": -0.8366666666666667,
+          "min": -4.19,
+          "max": 0.0
+        },
+        "yaw_target": {
+          "mean": 2.4,
+          "min": -2.0,
+          "max": 11.0
+        }
+      }
+    }
+  },
+  "command_onset_comparison": {
+    "scope": "One last recorded actual attempt versus existing nominal B_synced simulation; not new experiments or measured physical trajectory.",
+    "distance_assumption": "0.0175mm per normalized count; integrate recorded feedback at 20ms, unmeasured true ground distance.",
+    "actual": {
+      "100": {
+        "first_sample": {
+          "t": 800.0,
+          "odo_mm": 1214.8500000000001,
+          "yaw_cmd": 195,
+          "gyro_dps": 32.6,
+          "speed_cmd": 170
+        },
+        "linear_crossing": {
+          "t": 784.4262295081967,
+          "odo_mm": 1188.2431864754099,
+          "gyro_dps": 13.1327868852459,
+          "speed_cmd": 184.79508196721312
+        }
+      },
+      "200": {
+        "first_sample": {
+          "t": 820.0,
+          "odo_mm": 1248.0125,
+          "yaw_cmd": 325,
+          "gyro_dps": 98.1,
+          "speed_cmd": 156
+        },
+        "linear_crossing": {
+          "t": 800.7692307692307,
+          "odo_mm": 1216.125480769231,
+          "gyro_dps": 35.11923076923077,
+          "speed_cmd": 169.46153846153845
+        }
+      },
+      "300": {
+        "first_sample": {
+          "t": 820.0,
+          "odo_mm": 1248.0125,
+          "yaw_cmd": 325,
+          "gyro_dps": 98.1,
+          "speed_cmd": 156
+        },
+        "linear_crossing": {
+          "t": 816.1538461538462,
+          "odo_mm": 1241.6350961538462,
+          "gyro_dps": 85.50384615384615,
+          "speed_cmd": 158.69230769230768
+        }
+      }
+    },
+    "sim": {
+      "csim_1ms": {
+        "100": {
+          "first_sample": {
+            "t": 716.0,
+            "odo_mm": 1064.5818750000071,
+            "yaw_cmd": 112.0,
+            "gyro_dps": 8.3,
+            "speed_cmd": 183.0,
+            "estimated_s": 1066.18,
+            "x_mm": 0.44,
+            "y_mm": 248.11
+          },
+          "linear_crossing": {
+            "t": 715.8260869565217,
+            "odo_mm": 1064.2817119565289,
+            "gyro_dps": 8.01304347826087,
+            "speed_cmd": 183.0
+          }
+        },
+        "200": {
+          "first_sample": {
+            "t": 740.0,
+            "odo_mm": 1104.6218750000073,
+            "yaw_cmd": 231.0,
+            "gyro_dps": 58.6,
+            "speed_cmd": 163.0,
+            "estimated_s": 1102.12,
+            "x_mm": 0.91,
+            "y_mm": 208.37
+          },
+          "linear_crossing": {
+            "t": 739.2051282051282,
+            "odo_mm": 1103.343870192315,
+            "gyro_dps": 53.89435897435897,
+            "speed_cmd": 168.56410256410257
+          }
+        },
+        "300": {
+          "first_sample": {
+            "t": 756.0,
+            "odo_mm": 1129.4587500000073,
+            "yaw_cmd": 353.0,
+            "gyro_dps": 118.68,
+            "speed_cmd": 149.0,
+            "estimated_s": 1126.08,
+            "x_mm": 1.96,
+            "y_mm": 183.85
+          },
+          "linear_crossing": {
+            "t": 755.2933333333333,
+            "odo_mm": 1128.4014000000072,
+            "gyro_dps": 112.53200000000001,
+            "speed_cmd": 149.0
+          }
+        }
+      },
+      "csim_20ms": {
+        "100": {
+          "first_sample": {
+            "t": 720.0,
+            "odo_mm": 1072.3124999999998,
+            "yaw_cmd": 112.0,
+            "gyro_dps": 13.19,
+            "speed_cmd": 183.0,
+            "estimated_s": 1066.18,
+            "x_mm": 0.47,
+            "y_mm": 241.29
+          },
+          "linear_crossing": {
+            "t": 716.6197183098592,
+            "odo_mm": 1066.4783450704224,
+            "gyro_dps": 10.960704225352112,
+            "speed_cmd": 185.0281690140845
+          }
+        },
+        "200": {
+          "first_sample": {
+            "t": 740.0,
+            "odo_mm": 1105.3874999999998,
+            "yaw_cmd": 231.0,
+            "gyro_dps": 58.6,
+            "speed_cmd": 163.0,
+            "estimated_s": 1102.12,
+            "x_mm": 0.91,
+            "y_mm": 208.37
+          },
+          "linear_crossing": {
+            "t": 734.7899159663865,
+            "odo_mm": 1096.7713235294116,
+            "gyro_dps": 46.77050420168067,
+            "speed_cmd": 168.21008403361344
+          }
+        },
+        "300": {
+          "first_sample": {
+            "t": 760.0,
+            "odo_mm": 1135.9687499999998,
+            "yaw_cmd": 356.0,
+            "gyro_dps": 137.24,
+            "speed_cmd": 141.0,
+            "estimated_s": 1138.06,
+            "x_mm": 2.37,
+            "y_mm": 178.03
+          },
+          "linear_crossing": {
+            "t": 751.04,
+            "odo_mm": 1122.2683499999998,
+            "gyro_dps": 102.00928000000002,
+            "speed_cmd": 150.856
+          }
+        }
+      },
+      "pybullet_1ms": {
+        "100": {
+          "first_sample": {
+            "t": 716.0,
+            "odo_mm": 1066.6315625000072,
+            "yaw_cmd": 127.0,
+            "gyro_dps": 0.0,
+            "speed_cmd": 183.0,
+            "estimated_s": 1066.18,
+            "x_mm": -1.08,
+            "y_mm": 246.06
+          },
+          "linear_crossing": {
+            "t": 715.625,
+            "odo_mm": 1065.9843359375072,
+            "gyro_dps": 0.0,
+            "speed_cmd": 183.0
+          }
+        },
+        "200": {
+          "first_sample": {
+            "t": 736.0,
+            "odo_mm": 1100.325625000007,
+            "yaw_cmd": 204.0,
+            "gyro_dps": 73.58,
+            "speed_cmd": 170.0,
+            "estimated_s": 1090.14,
+            "x_mm": -1.28,
+            "y_mm": 212.6
+          },
+          "linear_crossing": {
+            "t": 735.8823529411765,
+            "odo_mm": 1100.1323529411834,
+            "gyro_dps": 72.12235294117647,
+            "speed_cmd": 170.0
+          }
+        },
+        "300": {
+          "first_sample": {
+            "t": 756.0,
+            "odo_mm": 1131.8212500000072,
+            "yaw_cmd": 327.0,
+            "gyro_dps": 178.09,
+            "speed_cmd": 149.0,
+            "estimated_s": 1126.08,
+            "x_mm": -0.54,
+            "y_mm": 181.38
+          },
+          "linear_crossing": {
+            "t": 755.6029411764706,
+            "odo_mm": 1131.2202022058896,
+            "gyro_dps": 174.77058823529413,
+            "speed_cmd": 149.0
+          }
+        }
+      },
+      "pybullet_20ms": {
+        "100": {
+          "first_sample": {
+            "t": 720.0,
+            "odo_mm": 1074.80625,
+            "yaw_cmd": 133.0,
+            "gyro_dps": 4.8,
+            "speed_cmd": 183.0,
+            "estimated_s": 1066.18,
+            "x_mm": -1.14,
+            "y_mm": 239.22
+          },
+          "linear_crossing": {
+            "t": 711.75,
+            "odo_mm": 1060.5311718750002,
+            "gyro_dps": 2.82,
+            "speed_cmd": 187.95
+          }
+        },
+        "200": {
+          "first_sample": {
+            "t": 740.0,
+            "odo_mm": 1108.05625,
+            "yaw_cmd": 228.0,
+            "gyro_dps": 98.0,
+            "speed_cmd": 163.0,
+            "estimated_s": 1102.12,
+            "x_mm": -1.24,
+            "y_mm": 206.14
+          },
+          "linear_crossing": {
+            "t": 734.1052631578947,
+            "odo_mm": 1098.2562500000001,
+            "gyro_dps": 70.53052631578947,
+            "speed_cmd": 168.89473684210526
+          }
+        },
+        "300": {
+          "first_sample": {
+            "t": 760.0,
+            "odo_mm": 1138.59375,
+            "yaw_cmd": 309.0,
+            "gyro_dps": 192.97,
+            "speed_cmd": 141.0,
+            "estimated_s": 1138.06,
+            "x_mm": -0.21,
+            "y_mm": 175.47
+          },
+          "linear_crossing": {
+            "t": 757.7777777777778,
+            "odo_mm": 1135.2006944444445,
+            "gyro_dps": 182.41777777777776,
+            "speed_cmd": 143.44444444444446
+          }
+        }
+      }
+    },
+    "delta_at_linear_crossing_mm": {
+      "csim": {
+        "100": 121.76484140498746,
+        "200": 119.35415723981941,
+        "300": 119.3667461538464
+      },
+      "pybullet": {
+        "100": 127.7120146004097,
+        "200": 117.86923076923085,
+        "300": 106.43440170940175
+      }
+    },
+    "interpretation": "Turn command itself is delayed by approximately 100-130 normalized-odometry mm versus nominal simulations; yaw inner-loop delay alone cannot account for that command-onset difference. Raw images, accepted match residual, point count, and estimated route position are absent in actual record, so initial pose/map/mmpc/camera projection differences remain indistinguishable.",
+    "excluded_threshold": "50deg/s not treated as turn onset because an actual straight-correction transient reaches56deg/s at240ms.",
+    "limitations": [
+      "50Hz record cannot reconstruct 2ms odometry or true travel exactly; same50Hz sampling used for simulation comparison.",
+      "Linear threshold crossing is interpolation, not an observed exact switching time.",
+      "Wheel diameter/count scale is inherited from older chassis; actual metric travel not measured here.",
+      "Only final attempt is available, no inference that every prior run failed identically."
+    ]
+  },
+  "sensitivity": {
+    "vmax_values": [
+      8,
+      10,
+      12
+    ],
+    "baseline_vmax": 5,
+    "all_first_turn_passed": true,
+    "all_later_failed_at_route_k": 10,
+    "vmax10_failure_seconds": 3.721,
+    "not_real_plant_identification": true,
+    "vmax10_first_node_max_lateral_mm": 48.28
+  },
+  "commands": {
+    "record_read": 1,
+    "remote_start": 0,
+    "configuration_write": 0
+  },
+  "firmware_modified": false,
+  "limits": [
+    "20ms samples alias fast dynamics; peak delay is approximate, not identified pure transport delay.",
+    "Estimated distance/speed use inherited0.0175mm/count and ignore wheel slip; not verified world-position or calibrated ground speed.",
+    "Cannot isolate trigger-position error from command-response lag without position/camera trace; owner observation of late outward turn supports symptom but not unique cause.",
+    "Single incomplete turn shows lag and reversal of tracking error, not proof of mathematical closed-loop instability.",
+    "PWM mismatch at same encoder count demonstrates plant mismatch, not an identified physical motor gain or diagnosed hardware failure.",
+    "Only last retained run is analyzed; no claims about every prior run."
+  ],
+  "sha256": {
+    "postrun.txt": "d06c922ea4690b1fb4aaad0e588f05e5641a65c5d48d5bf2c3195425fa43d8d4",
+    "board-record.txt": "ee959220f262b1ef1544d3d85b3e2475d6046998b9a2898f5909ab66aa16b792",
+    "control-review/analysis.json": "03aec891650dc79712acff7a9023fc0c23afd244dcffe1f02006212cf3095527",
+    "vision-review/command-onset-comparison.json": "393a899fd6e5f2f3bc8fe2b7457a2bdcad8ebae4bae6fa00daaae15f9ac4789e"
+  }
+}
