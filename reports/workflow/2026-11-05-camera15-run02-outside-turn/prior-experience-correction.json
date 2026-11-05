@@ -1,0 +1,8 @@
+{
+  "corrects_round": "2026-11-05-camera15-first-run-stop2",
+  "corrects_handoff": 609,
+  "incorrect": "R14-FREEZE-LAST attributed to preserving first-stop snapshots",
+  "actual_decision309": "Freeze publication source manifest after last source correction",
+  "action": "Withdraw that experience attribution only; raw STOP2 measurements and interpretation unchanged.",
+  "recorded_at": "2026-11-05T13:55:22.956585+08:00"
+}
