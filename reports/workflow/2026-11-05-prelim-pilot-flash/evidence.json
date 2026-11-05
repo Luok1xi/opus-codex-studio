@@ -1,0 +1,53 @@
+{
+  "round_id": "2026-11-05-prelim-pilot-flash",
+  "simulation": {
+    "total": 34,
+    "pass": 32,
+    "fail": 2,
+    "chosen_condition_pass": 10
+  },
+  "bridge_checks": 35,
+  "core_frames": 4218,
+  "flash_readback_pass": true,
+  "physical_track_runs": 0,
+  "serial_commands": 0,
+  "parked_telemetry": {
+    "firmware_sha256": "36635b417f773bee7e01961b26ad02437c197ccb984a83c8d5b0f50980ab5cfd",
+    "verified_flash": true,
+    "different_bytes": 0,
+    "telemetry_samples": 24,
+    "photo_samples": 6,
+    "battery_mv": [
+      12534,
+      12569
+    ],
+    "pilot_us": [
+      1324,
+      1375
+    ],
+    "all_processing_us": [
+      2933,
+      3804
+    ],
+    "capture_increment_per_status": [
+      150,
+      150,
+      150,
+      150,
+      150
+    ],
+    "parked_outputs_zero": true,
+    "imu_ready": true,
+    "car_runs": 0,
+    "serial_commands_sent": 0,
+    "initial_speed": 200,
+    "race_fan_percent": 50,
+    "ordinary_corner_reference": 156,
+    "limits": [
+      "Parking image timing is not worst-case corner timing.",
+      "Camera geometry on the replacement chassis remains uncalibrated.",
+      "Real track completion and corner speed have not been tested."
+    ]
+  },
+  "privacy": "sanitized aggregate only; no source, tracks, databases, credentials or raw sessions"
+}
