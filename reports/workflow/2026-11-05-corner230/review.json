@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-05-corner230",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-05T03:27:03.752575+00:00",
+  "measurement_cutoff_at": "2026-11-05T03:47:36.815979+00:00",
+  "task_summary": "大胆探索弯道实际速度230以上，保留原物理和判线，实验及经验共享。",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "参数生效、实际地速、完整路线分别验证；保留失败并比较控制与几何方案。",
+      "达标候选冻结后用新条件验证，并写共享经验、算法说明和可复验入口。"
+    ],
+    "completed": [
+      "直接普通紧弯230做48次对照，含真实100负压、转率限幅、前馈、短预瞄、抗饱和、回正后提速和速度上限。未达到全弯230，失败与降档完整保存。",
+      "外摆30mm和250mm圆弧在C2宽弯实际达到230。目标240时两模型全圈14.010/14.427秒，局部整个5至85度最低地速等效239.44/234.48；原156全圈14.107/14.578秒。",
+      "冻结后的新种子、处理延迟、起始偏置共六条保持实际230；再加标准两条共八条。镜头偏半度和风机响应更慢四条仍完圈但降档，不当230成功。所有十二条独立核路线、真实墨迹、虚线和六边形门、终点与55mm边界。",
+      "三弯扩展可更快但另两弯仍低于230，未冒充全弯成功。六次消融分离风机、几何和目标速度，固定风机单独仅9/45ms收益。",
+      "新用户入口真实重跑两模型，逐毫秒摘要与冻结候选相同。对照图由真值数据生成并实际查看。",
+      "8条经验完整正文回读，110条新逐趟记录追加既有账本；基线、候选、未生效设置和失败均能回查。"
+    ],
+    "remaining": [
+      "全部弯持续230没有实现；本轮已取得单个宽弯的离线证据，实车表现尚未认证。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "completed_execution_receipts",
+      "value": 116,
+      "unit": "executions",
+      "basis": "完整本轮执行回执，含失败、基线与复跑，不是合格候选分母。"
+    },
+    {
+      "name": "new_shared_runs",
+      "value": 110,
+      "unit": "records",
+      "basis": "既有调参账本追加及回读，旧记录保持。"
+    },
+    {
+      "name": "shared_findings",
+      "value": 8,
+      "unit": "findings",
+      "basis": "完整正文写入独立项目库并逐项回读。"
+    },
+    {
+      "name": "native_workers",
+      "value": 3,
+      "unit": "workers",
+      "basis": "控制、几何、独立真值审计三个工作者，真实报告保留本地。"
+    },
+    {
+      "name": "candidate_full_route_pass",
+      "value": 12,
+      "unit": "of twelve",
+      "basis": "标准两引擎加五组条件两引擎；不包括重复入口重跑。"
+    },
+    {
+      "name": "candidate_sustained_local230",
+      "value": 8,
+      "unit": "of twelve",
+      "basis": "C2转向5至85度区间10ms真值地速均大于230；其余四条降档。"
+    },
+    {
+      "name": "duplicate_peer_executions",
+      "value": 2,
+      "unit": "executions",
+      "basis": "fan-only对照在协调消息前被另一支启动，未计为节约。"
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "本轮离线实验。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "缺同口径计量，未知保留null。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "缺同口径计量，未知保留null。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "缺同口径计量，未知保留null。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "缺同口径计量，未知保留null。"
+    }
+  ],
+  "observations": [
+    "计时从最早实际时钟读取开始，初始预检前的时间未测。截止为本次材料生成；复盘归档收尾不在该测量窗口内。",
+    "三个原生工作者真实返回产物。Opus经共享库发送镜头敏感与抓地决策，已读取回执；他未重复本轮230探索，没有外部模型调用。",
+    "100请求被旧80上限退回50，先前候选分开留存，再放开独立PC上限并核PWM，防止不生效参数被当作策略成功。",
+    "根协调与几何支重复启动两次固定风机对照，收到消息后停止追加，精确摘要一致用于核查但重复成本仍计入。",
+    "根协调两次用缺numpy的解释器运行可选墨迹审计，读取实际模拟调用路径后改用既有物理环境成功；以后直接复用已记录解释器。",
+    "完整圈通过与持续局部230分开统计，自动降档不是提速成功；物理假设、转向半径和持续100负压代价单独列明。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-actual-speed-window",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "弯速验收必须固定转向角区间、真值地速及最低窗口，和完整路线通过分开统计。",
+      "next_check": "后续实车以标定后里程和惯导/视频验证，不以指令或空转轮速代替地速。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-shared-ablation-owner",
+      "owner": "codex",
+      "status": "proposed",
+      "action": "新增消融组先登记唯一执行者，再派发；分析者复用已生成回执。",
+      "next_check": "下一轮统计重复启动次数，未获得其他参与者确认前不称共同实施。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-recorded-interpreter",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "含numpy的独立审计复用模拟调用记录中的既有环境，避免临时解释器误配。",
+      "next_check": "后续首次审计是否直接完成。"
+    }
+  ],
+  "evidence": [
+    "业务任务71，项目经验188至195；本轮控制/几何/独立审计真实成员报告保留本地。",
+    "上传只含脱敏聚合工作流；地图、源码、逐毫秒轨迹、账本、数据库不上传。"
+  ],
+  "limits": [
+    "新车质量、吸力、相机和里程未校准；100%电流/热量/电池压降未建模。",
+    "C模型缺完整摩擦圆，PB单调vbat不代表真实压降。",
+    "只有一个宽弯稳定满足230；12条完整圈中4条退档。",
+    "没有同质量匹配工作流基线，不能声称多人协作节省时间。"
+  ],
+  "comparison": null
+}

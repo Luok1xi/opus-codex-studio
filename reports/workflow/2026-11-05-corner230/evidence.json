@@ -1,0 +1,41 @@
+{
+  "round_id": "2026-11-05-corner230",
+  "executions": 116,
+  "new_ledger_records": 110,
+  "knowledge_ids": [
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195
+  ],
+  "nominal": {
+    "baseline_s": [
+      14.107,
+      14.578
+    ],
+    "candidate_s": [
+      14.01,
+      14.427
+    ],
+    "lowest_ground_counts_local": [
+      239.44,
+      234.48
+    ]
+  },
+  "candidate_cases": {
+    "full_routes": 12,
+    "sustained_local230": 8,
+    "fallback": 4
+  },
+  "native_workers": 3,
+  "external_model_calls": 0,
+  "hardware_actions": 0,
+  "duplicates": 2,
+  "entry_rerun_exact_matches": 2,
+  "quality": "partial-local-success",
+  "privacy": "aggregate workflow only; no live databases, source, tracks or raw sessions"
+}
