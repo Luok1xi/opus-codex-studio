@@ -1,0 +1,41 @@
+{
+  "round_id": "2026-11-05-camera15-existing-data",
+  "firmware_sha256": "169bc9cbd6c53d1e8cef6ba29d50dbae5a826018fc5f7cd71dccfc0ce9e94777",
+  "flashed": false,
+  "live_log_rows": 0,
+  "simulations": {
+    "base_runs": 32,
+    "radius_runs": 4,
+    "total": 36,
+    "base_passes": 16,
+    "radius_passes": 2
+  },
+  "selected_radius_mm": 143,
+  "selected_top_speed": 200,
+  "nominal_new_projection": [
+    {
+      "engine": "csim",
+      "time_s": 10.179,
+      "pass": true,
+      "max_lateral_mm": 51.0074
+    },
+    {
+      "engine": "pybullet",
+      "time_s": 10.467,
+      "pass": true,
+      "max_lateral_mm": 45.8109
+    }
+  ],
+  "actual_C_geometry_checks": 53360,
+  "stop_snapshot_assertions": 56,
+  "snapshot_bytes": 36,
+  "target_build": {
+    "errors": 0,
+    "warnings": 11,
+    "rom_bytes": 339277,
+    "ram_bytes": 167791,
+    "log_sha256": "519f3facd63515d6e47408ef5f04761d98466541c9947d30c8d70fb6de406646"
+  },
+  "geometry": "Provisional h150/f163.506/pitch33.5116; ahead40 remains inherited.",
+  "privacy": "Only sanitized aggregate reports uploaded. No source, maps, raw images, raw serial, databases or credentials."
+}
