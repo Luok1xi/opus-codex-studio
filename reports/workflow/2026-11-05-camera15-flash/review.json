@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-05-camera15-flash",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-05T13:24:26+08:00",
+  "measurement_cutoff_at": "2026-11-05T13:27:28.840940+08:00",
+  "task_summary": "按用户授权烧入已有数据相机与停车诊断实验版，核对芯片读回及重启停车状态。",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "固件身份一致、下载器与稳定停车供电预检、官方烧录读回PASS、新构建停车输出回读。"
+    ],
+    "completed": [
+      "固件及清单全部源码hash一致；独立复核确认恢复手动S5、上电双轮及风机零输出。",
+      "用户确认接回下载器并停车架空、关闭轮驱和负压、按键松开后，14条实测停车状态及4条风机状态通过预检，电压11.381～11.399V。",
+      "官方烧录169bc9cb成功，芯片回读0字节差异。",
+      "重启5秒回读20条停车状态、5条新构建图像状态和5条风机状态；双轮/风机0、IMU正常，帧序号每次约一秒增长150。",
+      "已更新本地安装状态，未远程发车；实验版的既有仿真失败边界保留。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "official_flash_pass",
+      "value": 1,
+      "unit": "flash",
+      "basis": "官方PASS与0字节差异。"
+    },
+    {
+      "name": "postflash_status_rows",
+      "value": 20,
+      "unit": "rows",
+      "basis": "实际COM6接收记录。"
+    },
+    {
+      "name": "serial_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "本阶段只有被动收串口；芯片编程为明确授权动作。"
+    },
+    {
+      "name": "physical_drive_runs",
+      "value": 0,
+      "unit": "runs",
+      "basis": "没有发车。"
+    },
+    {
+      "name": "native_workers",
+      "value": 1,
+      "unit": "worker",
+      "basis": "复核固定artifact、默认输出及部署包装；未重复已有回归。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "未测。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "墙钟含用户接下载器，未分离。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量。"
+    }
+  ],
+  "observations": [
+    "开始时只有COM7无线，必须接回下载器；只问缺失的物理连接状态，没有重复请求已给出的烧录授权。",
+    "独立复核沿用已通过测试和源hash，不重跑无关仿真。",
+    "完整停车遥测通过，未使用静默隔离兜底。",
+    "停车处理耗时约2.55～2.65ms、全链4.79～5.34ms；不是同图A/B或运行最坏耗时，不声称性能提升。",
+    "仅完成烧录验收。此前误差工况未全过，未把此处passed解释成稳定跑圈验收。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-flash-scope-separate-drive",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "烧录完成必须同时更新本地安装清单并读取新构建停车状态，明确烧录验收与跑车验收边界。",
+      "next_check": "下一趟按真实photo-stop与行车记录核对，不沿用当前停车状态当跑圈证据。"
+    }
+  ],
+  "evidence": [
+    "固定169bc9cb完整SHA、官方receipt/flash.log、预检及5秒COM6回读、本地verification.json。"
+  ],
+  "limits": [
+    "没有发车或完成整圈实测；已有数据的相机模型仍属临时估计。",
+    "没有同条件工作流效率基线，真实用量未知。"
+  ],
+  "comparison": null
+}
