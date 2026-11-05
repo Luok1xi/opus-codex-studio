@@ -1,0 +1,63 @@
+{
+  "sha256": "51f9ff6c223c95e5dccb42e7e80a9d24dff9edb7e71e407e510c10f2eca701d7",
+  "build": "P15-FLOW-01",
+  "flash_verified": true,
+  "different_bytes": 0,
+  "parked_status_rows": 20,
+  "photo_rows": 5,
+  "fan_rows": 5,
+  "wheel_and_fan_output_zero": true,
+  "imu_ready": true,
+  "battery_mv": [
+    13101,
+    13119
+  ],
+  "frame_sequence": [
+    1234,
+    1384,
+    1534,
+    1684,
+    1834
+  ],
+  "reported_camera_fps": [
+    150
+  ],
+  "road_line_tracking_verified": false,
+  "physical_drive_runs": 0,
+  "serial_commands_sent": 0,
+  "preflash_checks": {
+    "result": "PASS",
+    "telemetry_available": true,
+    "parked_control_state_verified": true,
+    "supply_sample_verified": true,
+    "physical_isolation_relied_on": false,
+    "parked_rows": 14,
+    "fan_rows": 3,
+    "distinct_timestamps": 14,
+    "min_vbat_mv": 13110.0,
+    "max_vbat_mv": 13128.0
+  },
+  "initial_low_supply_precheck_blocked_before_erase": true,
+  "firmware_and_log_hashes": {
+    "hex": "51f9ff6c223c95e5dccb42e7e80a9d24dff9edb7e71e407e510c10f2eca701d7",
+    "flash_log": "b946512cf07ad106e5f56e4995ab7407e4d3d7f34e265bbacdb10977194f889f",
+    "postflash": "17561104bf39a84759d3c468438792611f99fdf82196e15c59c8f5c058dae42f"
+  },
+  "road_ready_claim": false,
+  "round_id": "2026-11-05-p15-flow-flash",
+  "classification": "flash_acceptance_only",
+  "physical_isolation_confirmed": true,
+  "low_supply_preflight": "blocked before erase",
+  "fixed_configuration": {
+    "top": 200,
+    "radius_mm": 155,
+    "corner_tables": [
+      156,
+      148
+    ],
+    "look": 83,
+    "fan_base_pct": 50,
+    "fan_turn_pct": 70,
+    "hold_ms": 120
+  }
+}
