@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-05-camera15-existing-data",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-05T12:51:42+08:00",
+  "measurement_cutoff_at": "2026-11-05T05:14:52.505436+00:00",
+  "task_summary": "按已有相机数据统一仿真与固件，排查弯前停车并保留停车瞬间原因；用户要求不再反复现场调镜头。",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "相机正逆投影同步、完整候选编译、实际源码诊断测试及匹配工况仿真；实车结论须有真实记录。"
+    ],
+    "completed": [
+      "实拍确认30厘米横线在39.5～39.7行，约半像素对齐；用户停止追加摆位后按已有数据继续。",
+      "使用h150mm、既有f163.506像素、新俯仰33.5116度统一正逆投影，地图/路径/速度表不变。",
+      "定位到未确认分支140mm内限85、15mm内停车的代码链；同时发现停车后详细原因被PARK覆盖。",
+      "增加36字节首个停车快照，停车后双串口每2秒最多一条；原LOG列、轮驱/风机及保护门不变。",
+      "实际候选C投影53360检查、停车快照56断言通过；ADS0错误、11个继承警告，未烧录。",
+      "36趟仿真全部保留。新投影名义两模型约10.179/10.467秒完成；宽扰动4/8、锚点约束7/8；175补测3/4，非单调更稳。",
+      "R130四趟未全部通过，独立研究分支被拒绝，没有移植；不通过放宽判线门或隐藏降速宣称改善。",
+      "用户要求以后先按仿真确认硬件调整目标，已登记项目决定51；Opus实际复核605已读并按新实测修正采用。"
+    ],
+    "remaining": [
+      "实际弯前停车原因没有留下记录；当前板载导出LOG0、停车码0，不能倒推该趟原因。",
+      "新模型只在名义工况双引擎通过；误差测试仍有失败，不承诺已消除现场停车或可稳定跑圈。",
+      "候选未烧录；镜头前移和完整新姿态标定仍未验证，当前硬件保持不动。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "simulation_runs",
+      "value": 36,
+      "unit": "runs",
+      "basis": "32投影/扰动/175对照，4个R130独立研究；逐趟回执保留。"
+    },
+    {
+      "name": "native_workers",
+      "value": 3,
+      "unit": "workers",
+      "basis": "几何、停车快照、双引擎回归实际返回。"
+    },
+    {
+      "name": "geometry_actual_C_checks",
+      "value": 53360,
+      "unit": "checks",
+      "basis": "实际头文件/正投影函数/逆投影表的host float32检查。"
+    },
+    {
+      "name": "stop_snapshot_assertions",
+      "value": 56,
+      "unit": "checks",
+      "basis": "实际bridge、PID guard、串口队列/门，非改写后的理想模型。"
+    },
+    {
+      "name": "target_build_errors",
+      "value": 0,
+      "unit": "errors",
+      "basis": "ADS完成日志；11个未改动库/ouc旧警告。"
+    },
+    {
+      "name": "target_build_warnings",
+      "value": 11,
+      "unit": "warnings",
+      "basis": "完整目标构建。"
+    },
+    {
+      "name": "flash_attempts",
+      "value": 0,
+      "unit": "attempts",
+      "basis": "本阶段未烧录。"
+    },
+    {
+      "name": "remote_motion_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "#I取图在用户停止摆位之前；之后仅被动接收和一次#S导出。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无可用提供方实际usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "未测。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量。"
+    },
+    {
+      "name": "tool_failures",
+      "value": null,
+      "unit": "calls",
+      "basis": "完整计数未知；已知无线缺包、受限串口访问、受限ADS导入、路径/CLI参数误用均有留痕。"
+    }
+  ],
+  "observations": [
+    "前一步先给参考行再补模型增加现场工作；用户纠正后固定当前硬件，停止追加测距。",
+    "旧固定亮度阈值使暗图提线失败，局部对比离线分析恢复，未改实际相机曝光或固件阈值。",
+    "无线残缺状态不等于车辆运动；采集脚本改为等待字段完整的停车状态，保留非零状态拒绝。",
+    "无法从LOG0或停车后的PARK恢复历史故障；只修后续可观测性，未编造现场因果。",
+    "新投影名义通过并不等于鲁棒；所有扰动、175和R130失败保留。",
+    "原生代理不是Opus；本轮读到Opus已存在复核605并真实确认，当前候选未获Opus本人验收。",
+    "没有匹配质量工作流基线，不声明效率提升。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-simulation-first-camera-setup",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "按项目决定51，先统一仿真、固件和实测坐标约定，验证可达目标后再给现场硬件调整步骤。",
+      "next_check": "下次现场指令必须引用相同相机配置、量距原点和对应投影图；不得以任意行号冒充原模型一致。",
+      "experience_refs": [
+        "CC-F#72",
+        "WS-D#640"
+      ],
+      "adoption": "改后"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-freeze-first-stop-cause",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "在失效处理清状态前冻结首个停车原因，支持停车无线重连读取；不靠放宽保护掩盖诊断缺口。",
+      "next_check": "获准烧录后读取真实photo-stop事件，核验保护类型、节点和年龄，与完整跑车记录对齐。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-anchored-camera-stress",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "同时保留独立宽扰动和符合实测锚点的相关扰动，不只展示名义成功；速度降低也重新验收。",
+      "next_check": "候选提升必须在同一条件指纹与完成门下比较，包括此次反例。"
+    }
+  ],
+  "evidence": [
+    "项目任务73、决定51、Opus交接605；本地相机原图/拟合、实际C测试、ADS日志、36趟轨迹和只读串口回执。"
+  ],
+  "limits": [
+    "实际弯前停车原因没有留下记录；当前板载导出LOG0、停车码0，不能倒推该趟原因。",
+    "新模型只在名义工况双引擎通过；误差测试仍有失败，不承诺已消除现场停车或可稳定跑圈。",
+    "候选未烧录；镜头前移和完整新姿态标定仍未验证，当前硬件保持不动。",
+    "没有合格的工作流效率对照。"
+  ],
+  "comparison": null
+}
