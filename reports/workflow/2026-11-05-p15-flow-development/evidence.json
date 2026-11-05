@@ -1,0 +1,338 @@
+{
+  "round_id": "2026-11-05-p15-flow-development",
+  "scope": "脱敏聚合证据；不包含原始运行、项目源码、固件或数据库。",
+  "target_candidate": {
+    "label": "P15-FLOW-01",
+    "sha256": "51f9ff6c223c95e5dccb42e7e80a9d24dff9edb7e71e407e510c10f2eca701d7",
+    "flashed": false,
+    "classification": "development_candidate_not_physical_acceptance",
+    "build": {
+      "errors": 0,
+      "warnings": 11,
+      "rom_bytes": 341239,
+      "ram_bytes": 168254,
+      "log_sha256": "bfaf358c7066bbc972f948d17f6796888d5927eae40483404fc8583208ce9312"
+    },
+    "configuration": {
+      "top_speed": 200,
+      "nominal_corner_radius_mm": 155,
+      "normal_corner_target": 156,
+      "calibration_corner_table": 148,
+      "grip_classifier_unchanged": true,
+      "fan_base_percent": 50,
+      "fan_high_percent": 70,
+      "fan_rise_50_to_70_ms": 250,
+      "fan_exit_hold_ms": 120,
+      "camera_changed": false,
+      "pid_changed": false,
+      "stale_guard_ms": 100
+    }
+  },
+  "development_screens": [
+    {
+      "case": "base-flow-v10",
+      "engine": "csim",
+      "old_host_strict_pass": false,
+      "elapsed_s": 3.852,
+      "is_valid_target_lap": null,
+      "max_lateral_mm": 60.3863
+    },
+    {
+      "case": "base-flow-v5",
+      "engine": "csim",
+      "old_host_strict_pass": false,
+      "elapsed_s": 4.097,
+      "is_valid_target_lap": null,
+      "max_lateral_mm": 60.3635
+    },
+    {
+      "case": "R155-flow-v10",
+      "engine": "csim",
+      "old_host_strict_pass": true,
+      "elapsed_s": 10.188,
+      "is_valid_target_lap": null,
+      "max_lateral_mm": 54.3565
+    },
+    {
+      "case": "R155-flow-v5",
+      "engine": "csim",
+      "old_host_strict_pass": true,
+      "elapsed_s": 10.187,
+      "is_valid_target_lap": null,
+      "max_lateral_mm": 54.0435
+    },
+    {
+      "case": "R155-flow-v8",
+      "engine": "csim",
+      "old_host_strict_pass": true,
+      "elapsed_s": 10.186,
+      "is_valid_target_lap": null,
+      "max_lateral_mm": 54.2201,
+      "margin_mm": 0.7798999999999978
+    },
+    {
+      "case": "R155-flow-v12",
+      "engine": "csim",
+      "old_host_strict_pass": true,
+      "elapsed_s": 10.19,
+      "is_valid_target_lap": null,
+      "max_lateral_mm": 54.9152,
+      "margin_mm": 0.08480000000000132
+    },
+    {
+      "case": "R155-flow-v5",
+      "engine": "pybullet",
+      "old_host_strict_pass": true,
+      "elapsed_s": 10.389,
+      "is_valid_target_lap": null,
+      "max_lateral_mm": 48.6292,
+      "margin_mm": 6.370800000000003
+    },
+    {
+      "case": "R155-flow-v10",
+      "engine": "pybullet",
+      "old_host_strict_pass": true,
+      "elapsed_s": 11.279,
+      "is_valid_target_lap": false,
+      "max_lateral_mm": 48.0767,
+      "margin_mm": 6.923299999999998
+    }
+  ],
+  "guard_parity_limitation": {
+    "recorded_at": "2026-11-05T06:27:00.489446+00:00",
+    "classification": "development_screen_only",
+    "supersedes_acceptance_interpretation_only": true,
+    "original_numbers_and_receipts_preserved": true,
+    "strict_pass_meaning": "Original strict_pass values only describe the old host development-screen gate. They are not target STOP28 acceptance.",
+    "old_host_semantics": "The old host waits for 65 failed direction-loop ticks before latching STOP3. Brief photo_ready loss zeros speed/output and resets PI, but can automatically resume before that threshold.",
+    "target_semantics": "After the initial100ms grace interval, the actual target2ms control guard latches STOP28 on a vision_control_ready/photo_ready failure; a later recovered image does not automatically resume the run.",
+    "pb_v10": "The14ms zero-target interruption at route_k8 (one-based entry9), elapsed3.650..3.663s, is therefore not a valid target full-lap pass: under the target guard it should latch STOP28 rather than resume.",
+    "status_at_original_correction": "Separate guard-parity host runs and independent review remain pending at this correction; physical validation is not performed."
+  },
+  "diagnostic_checks": {
+    "stop_snapshot": "PASS checks=70 snapshot_bytes=116 command_bytes=128 match_bytes=36 max_wire_bytes=346 hardware_actions=0 actual_bridge_pid_guard_and_tx_gates=1",
+    "match_core": "PASS checks=16 actual_core_diagnostic=1 hardware_actions=0",
+    "core_output_identity": {
+      "frames": 1408,
+      "byte_equal": true,
+      "sha256": "878a4d9ace62fea5521e7542ff4729e87964de892c42af339a94fe186b572297"
+    },
+    "wall_seconds": 2.3894632760000007,
+    "hardware_actions": 0
+  },
+  "source_reports": [
+    {
+      "author": "codex native plant/integration worker",
+      "report": "plant/analysis.json",
+      "cases": 7
+    },
+    {
+      "author": "codex native trajectory reviewer",
+      "report": "trajectory/summary.json",
+      "cases": 6
+    },
+    {
+      "author": "codex native trajectory reviewer",
+      "report": "trajectory/independent-review.json",
+      "new_simulations": 0
+    },
+    {
+      "author": "codex native diagnostics worker",
+      "report": "diagnostics/member-report.json"
+    },
+    {
+      "author": "codex native plant/integration worker",
+      "report": "integration/analysis.json",
+      "cases": 4
+    },
+    {
+      "author": "codex native plant/integration worker",
+      "report": "integration/validation.json",
+      "cases": 4
+    },
+    {
+      "author": "codex coordinator",
+      "report": "candidate/manifest.json"
+    },
+    {
+      "author": "codex native diagnostics worker",
+      "report": "diagnostics/guard-runs/*/*/guard-verified.json",
+      "cases": 4
+    }
+  ],
+  "physical_acceptance": false,
+  "tokens": null,
+  "cost": null,
+  "coordination_wait_seconds": null,
+  "sanitization": "Only aggregate facts, hashes and relative artifact indexes; no raw sessions, credentials, personal paths, raw telemetry or project source.",
+  "updated_at": "2026-11-05T06:28:14.297711+00:00",
+  "guard_parity_results": {
+    "recorded_at": "2026-11-05T06:28:14.297711+00:00",
+    "classification": "guard_semantics_aligned_host_results_not_physical_acceptance",
+    "results": [
+      {
+        "case": "R155-guard-v5",
+        "engine": "csim",
+        "strict_pass": true,
+        "time_s": 10.183,
+        "lap": 1.0,
+        "stop_reason": 0.0,
+        "route_k": 24.0,
+        "max_lateral_mm": 53.7342,
+        "all_24_entries_sequential": true,
+        "fan_request_max": 70.0,
+        "fan_pwm_max": 70.0,
+        "record_sha256": "4ddf2e14bba5e986a66c30ca1009f63af696d277cfaaa7117db70399db53d99d"
+      },
+      {
+        "case": "R155-guard-v5",
+        "engine": "pybullet",
+        "strict_pass": true,
+        "time_s": 10.378,
+        "lap": 1.0,
+        "stop_reason": 0.0,
+        "route_k": 24.0,
+        "max_lateral_mm": 47.0431,
+        "all_24_entries_sequential": true,
+        "fan_request_max": 70.0,
+        "fan_pwm_max": 70.0,
+        "record_sha256": "792250719af4d5a0fac0b97bba9720945c0d6c463aeb2a16eeffa72ac551644e"
+      },
+      {
+        "case": "R155-guard-v10",
+        "engine": "csim",
+        "strict_pass": false,
+        "time_s": 10.189,
+        "lap": 1.0,
+        "stop_reason": 0.0,
+        "route_k": 24.0,
+        "max_lateral_mm": 55.0676,
+        "all_24_entries_sequential": true,
+        "fan_request_max": 70.0,
+        "fan_pwm_max": 70.0,
+        "record_sha256": "e075dca0a66c7eea84962f61eae51dddcf2b6fbd6153edda086100f87e186ff3"
+      },
+      {
+        "case": "R155-guard-v10",
+        "engine": "pybullet",
+        "strict_pass": false,
+        "time_s": 3.616,
+        "lap": 0.0,
+        "stop_reason": 28.0,
+        "route_k": 8.0,
+        "max_lateral_mm": 47.8467,
+        "all_24_entries_sequential": false,
+        "fan_request_max": 70.0,
+        "fan_pwm_max": 70.0,
+        "record_sha256": "d95cd76e7a36933ead0581e90f7562327f00adb8fbb68e2e4b4a329146275545"
+      }
+    ],
+    "pb_v10_failure": {
+      "stop": 28,
+      "why": 5,
+      "route_k": 8,
+      "elapsed_s": 3.616,
+      "sensor_age_ms": 6,
+      "frame_age_ms": 10,
+      "accepted_match_age_ms": 102
+    },
+    "conclusion": "Old PBv10 automatic-recovery full lap is a false positive for target guard acceptance. The matched guard run stops at k8. C v10 also fails the unchanged55mm lateral limit. No four-condition accepted candidate yet."
+  },
+  "coordination_followup": {
+    "source": "Coordinator read full TeamHub handoff611, recorded own acknowledgement and reply612.",
+    "received_handoff": 611,
+    "reply_handoff": 612,
+    "disposition": "ack adopted with corrections",
+    "corrections": [
+      "Reuse existing diagnostic integration; do not duplicate.",
+      "The0.3g suggestion is not confirmed current-chassis measurement; exact source, longitudinal/lateral direction and sampling window are still needed."
+    ],
+    "used_as_physical_evidence": false
+  },
+  "measurement_cutoff_at": "2026-11-05T06:34:18.762632+00:00",
+  "terminal_freshness_validation": {
+    "actual_function_checks": 85,
+    "normal_C5_rows": 10184,
+    "normal_C5_byte_identical": true,
+    "terminal_coverage": "direct actual-function injection, not the early-ending full-lap harness"
+  },
+  "final_disposition": "retain51f9ff6c_as_unflashed_development_candidate; rejectlook75; physical_fast_lap_not_accepted",
+  "target_guard_correction": {
+    "critical_difference": "old host 65 consecutive 5ms invalid checks and auto recovery; target first invalid2ms tick after100ms run grace latches STOP28",
+    "candidate_results": [
+      {
+        "case": "R155-guard-v5",
+        "engine": "csim",
+        "strict_pass": true,
+        "time_s": 10.183,
+        "completed": true,
+        "max_deviation_mm": 53.7342,
+        "stop_reason": 0.0
+      },
+      {
+        "case": "R155-guard-v10",
+        "engine": "csim",
+        "strict_pass": false,
+        "time_s": 10.189,
+        "completed": true,
+        "max_deviation_mm": 55.0676,
+        "stop_reason": 0.0
+      },
+      {
+        "case": "R155-guard-v5",
+        "engine": "pybullet",
+        "strict_pass": true,
+        "time_s": 10.378,
+        "completed": true,
+        "max_deviation_mm": 47.0431,
+        "stop_reason": 0.0
+      },
+      {
+        "case": "R155-guard-v10",
+        "engine": "pybullet",
+        "strict_pass": false,
+        "time_s": 3.616,
+        "completed": false,
+        "max_deviation_mm": 47.8467,
+        "stop_reason": 28.0
+      }
+    ],
+    "terminal_fix_evidence_sha256": "9d40206e0909bdf6a67c8755e929c0089880779b6e1b91b82c3341b05b322367",
+    "sequential_adapter_not_physical_multicore_test": true
+  },
+  "matched_baseline_comparison": {
+    "csim_v5": {
+      "baseline_s": 10.172,
+      "candidate_s": 10.183,
+      "candidate_max_mm": 53.7342
+    },
+    "pybullet_v5": {
+      "baseline_s": 10.444,
+      "candidate_s": 10.378,
+      "candidate_max_mm": 47.0431
+    },
+    "claim": "mixed model outcomes, no universal speed improvement"
+  },
+  "look75": {
+    "adopted": false,
+    "new_runs": 3,
+    "wall_seconds": 7.934156271999999,
+    "outcomes": [
+      "C5 10.190s 53.4431mm",
+      "C10 10.194s 54.4496mm",
+      "PB10 k8 STOP28 after3.656s"
+    ],
+    "terminal_freshness_fix_not_rerun_on_rejected_branch": true
+  },
+  "local_evidence_hashes": {
+    "candidate/manifest.json": "96c2fa7119957b06c3c866837be2569b17fa5da8dd0948f634abb36fa4868fec",
+    "fan-tests/results.json": "16bc07e85beae4aa0b4d4d6e25a2e2bf0e01323172f0c09f2468a1924a833616",
+    "diagnostics/guard-results.json": "99c314c884848ad588a85152a0c8cbce0939de798431c3c3c5b3fcfdef0fa3fe",
+    "diagnostics/guard-injection-results.json": "c1fb61773a9462c5ca489587624cee5f3a05aa18a3f39efe5a44adf164fcff12",
+    "diagnostics/r155-identity-results.json": "00cb2a3963bbdc978f8df50c79f006637296e82e88fbe7802d56ed61cb63bae1",
+    "diagnostics/baseline-guard-results.json": "8b9f969c4cc28b9362542e1e9091923cac75bd9e80e3c907936b4a766985a7ab",
+    "diagnostics/terminal-freshness-results.json": "9d40206e0909bdf6a67c8755e929c0089880779b6e1b91b82c3341b05b322367",
+    "trajectory/look75-parity/results.json": "160611000eb00136ceb768c7213704875c2b3d97b6772f41da7fc5149f8d6946",
+    "trajectory/independent-review.json": "36817849f29cf92218df8c0197aaf8d856876d7ff3cce9c51e8195e4faf9928d"
+  }
+}
