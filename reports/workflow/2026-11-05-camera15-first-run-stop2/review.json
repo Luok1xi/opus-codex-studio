@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-05-camera15-first-run-stop2",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-05T13:31:38+08:00",
+  "measurement_cutoff_at": "2026-11-05T13:43:57.619219+08:00",
+  "task_summary": "记录相机同步版本首次短跑尝试，区分未起步停车与视觉过弯故障。",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "新鲜无线状态与完整板载记录；把停车码对应实际源码；不把未行驶记录认作弯道验收。"
+    ],
+    "completed": [
+      "沿用已实烧169bc9cb，未改相机/参数，也未重烧；被动无线采集发现停车电压持续下降，换电后回读稳定约12.68V。",
+      "用户手动S5尝试一次，报告风机运行而车未动；完整冻结photo-stop为STOP2/why0/gates127，单次#S取回101个连续板载样本及END。",
+      "实测左右编码器始终0，目标达200，94个样本双轮软件PWM命令8500；与速度误差计数保护源码对应。",
+      "独立子代理复核STOP2语义、记录周期、S4及视觉门和PWM驱动调用：没有将软件PWM镜像说成实测波形。",
+      "未远程发车、未放宽保护，串口已关闭；已向用户询问轮驱使能状态。"
+    ],
+    "remaining": [
+      "确认轮驱使能/供电/信号链的现场状态；根本原因尚未定位到具体硬件。",
+      "车辆实际未行驶，入弯与整圈效果尚未验证。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "manual_launch_attempts",
+      "value": 1,
+      "unit": "attempt",
+      "basis": "用户操作及无线running边沿。"
+    },
+    {
+      "name": "completed_driving_runs",
+      "value": 0,
+      "unit": "runs",
+      "basis": "用户报告车未动，双轮反馈全0。"
+    },
+    {
+      "name": "board_samples",
+      "value": 101,
+      "unit": "samples",
+      "basis": "LOG声明数、索引、END均一致。"
+    },
+    {
+      "name": "serial_config_writes",
+      "value": 0,
+      "unit": "commands",
+      "basis": "本阶段仅被动接收和一次#S。"
+    },
+    {
+      "name": "serial_record_reads",
+      "value": 1,
+      "unit": "commands",
+      "basis": "读取凭据与脚本。"
+    },
+    {
+      "name": "remote_launch_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "脚本不发送发车命令。"
+    },
+    {
+      "name": "native_review_workers",
+      "value": 1,
+      "unit": "worker",
+      "basis": "同一代理复核本次STOP2；此前烧录归档不计入当前任务结果。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "未知。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "包括换电及现场测试等待，未单独计量。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "将由归档回执记录已测部分。"
+    }
+  ],
+  "observations": [
+    "用户已授权由本人按S5试车，代理未重复询问烧录许可。",
+    "先换电，再记录；本次运行阶段主板回读12.206～12.525V，不等价于轮驱电源实测。",
+    "原始二进制用共享读取方式检查；首次普通ReadAllBytes因文件共享限制失败后改为FileShare.ReadWrite，未中断采集。",
+    "一次TeamHub get参数格式错误，改用位置参数后成功。",
+    "新冻结诊断保留首次停车，能够排除本次是视觉就绪失败触发STOP28；不据此宣布视觉路线已通过。",
+    "最小被动采集脚本沿用已有实现，串口移交后只发一次#S，没有并发抢口。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-freeze-reason-before-reboot",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "停车先保存首次诊断和板载记录，再决定改视觉、控制还是查执行链。",
+      "next_check": "下次有真实轮速的短跑使用同一顺序，保留失败记录。",
+      "experience_refs": [
+        "CRAZY-CIRCUIT-R14-FREEZE-LAST"
+      ],
+      "adoption": "改后"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-wheel-enable-before-first-run",
+      "owner": "codex",
+      "status": "proposed",
+      "action": "把烧录隔离到赛道试跑的轮驱使能状态在现场明确，不用主板供电或软件PWM替代驱动端证据。",
+      "next_check": "依据用户实际开关状态与下一次记录核对，不预判为未开开关。"
+    }
+  ],
+  "evidence": [
+    "camera15-drive-20261105/run-01/analysis.json与原始记录hash，仅聚合数据归档。",
+    "候选pid.c/control.c/vision_link.c/pilot_bridge.c对应调用路径与独立复核。"
+  ],
+  "limits": [
+    "未实测PWM引脚、驱动电源或电机电流；根本故障未定位。",
+    "未完成任何行驶或过弯验收。",
+    "未取得匹配质量基线，不能声称工作流提效；用量未知。"
+  ],
+  "comparison": null
+}
