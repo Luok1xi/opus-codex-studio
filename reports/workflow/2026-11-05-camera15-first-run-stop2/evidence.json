@@ -1,0 +1,44 @@
+{
+  "run_id": "camera15-drive-20261105-run01",
+  "build": "P15-CAM15-01",
+  "firmware_sha256": "169bc9cbd6c53d1e8cef6ba29d50dbae5a826018fc5f7cd71dccfc0ce9e94777",
+  "board_rows": 101,
+  "expected_rows": 101,
+  "contiguous_indices": true,
+  "end_received": true,
+  "sample_period_ms": 20,
+  "first_to_last_sample_ms": 2000,
+  "target_range": [
+    0,
+    200
+  ],
+  "encoders_all_zero": true,
+  "pwm_left_peak_command": 8500,
+  "pwm_right_peak_command": 8500,
+  "both_pwm8500_rows": 94,
+  "gyro_all_zero": true,
+  "photo_stop": [
+    "[photo-stop] build=P15-CAM15-01 t=134572 gen=2 cgen=2 seq=20211 stop=2 why=0 k=0/24 gates=127 ages=6/8/8"
+  ],
+  "active_status_rows": 22,
+  "nonzero_pwm_status_rows": 8,
+  "active_voltage_mv_range": [
+    12206,
+    12525
+  ],
+  "nonzero_pwm_voltage_mv_range": [
+    12206,
+    12250
+  ],
+  "stop_interpretation": "STOP2 is a wheel-speed error sign counter above 1000 at 2ms; equality retains the counter. In this run positive wheel targets with zero feedback persisted. PWM values are software commands, not measured pin voltage/current. Driver enable/power/signals remain unverified.",
+  "command_boundary": {
+    "remote_launch_commands": 0,
+    "configuration_writes": 0,
+    "board_export_commands": 1
+  },
+  "sha256": {
+    "passive_raw": "eb807e6175d61bb3f1a74db1eee3870efeb57dc5060433a9451af816b997e7d1",
+    "board_export": "6aa7760575de9225b50481f71edcd821df48036794e7f08f62ea932e92d5124f"
+  },
+  "conclusion": "No valid driving test; camera/turning performance not assessed."
+}
