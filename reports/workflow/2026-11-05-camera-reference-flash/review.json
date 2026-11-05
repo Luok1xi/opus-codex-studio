@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-05-camera-reference-flash",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-05T12:27:32.2648534+08:00",
+  "measurement_cutoff_at": "2026-11-05T04:46:51.054134+00:00",
+  "task_summary": "为新底盘镜头对齐添加屏幕绿色参考线并烧录，保留独立图像、停车与发车锁证据。",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "完整比赛程序添加不污染原图的参考线；目标构建、双发车入口锁和官方烧录读回通过。",
+      "实体显示、调整后几何及跑圈分开验收。"
+    ],
+    "completed": [
+      "读取三张完整188x120原始图，对应镜头垂足20/30/35厘米；所有抓图前核对停车，未发车。",
+      "实测安装高度150毫米与原模型180毫米不符；两点近似拟合并用30厘米独立点检验，残差约1.93像素，未将近似拟合写为完成标定。",
+      "在完整比赛程序中添加屏幕第40行绿线、中心刻度和30厘米提示；仅写LCD，不改原图。校准版锁住S5与无线发车。",
+      "独立复核发现并修复配置头缺失导致无线入口未锁、通用按键提示覆盖校准提示两处问题。",
+      "真实函数及真实配置头64组检查通过；删除配置头的反例按预期失败。部署预检22例和4个脚本语法检查通过。",
+      "最终增量编译0错误0警告；完整构建仍有11个既有警告。官方烧录e65d7aa3完成，回读零差异。",
+      "重启回读确认新构建标识、双轮与风机输出0、IMU正常及持续图像处理。"
+    ],
+    "remaining": [
+      "等待使用者确认实体屏幕绿线可见并完成支架对齐；调整后的投影、车体参考原点偏移及实车跑圈未验收。校准固件不能发车。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "complete_raw_frames",
+      "value": 3,
+      "unit": "frames",
+      "basis": "完整22560字节及帧尾；三次被动停车检查后单次取图。"
+    },
+    {
+      "name": "native_workers",
+      "value": 2,
+      "unit": "workers",
+      "basis": "port_review复核几何；flash_inventory复核入口、部署预检。均有真实返回。"
+    },
+    {
+      "name": "launch_gate_combinations_passed",
+      "value": 64,
+      "unit": "cases",
+      "basis": "真实C函数及实际配置头，未用编译参数强行定义校准开关。"
+    },
+    {
+      "name": "negative_witness_detected",
+      "value": 1,
+      "unit": "case",
+      "basis": "删除实际配置头后同一测试按预期失败。"
+    },
+    {
+      "name": "deployment_preflight_passed",
+      "value": 22,
+      "unit": "cases",
+      "basis": "离线预检输出。"
+    },
+    {
+      "name": "deployment_script_parse_passed",
+      "value": 4,
+      "unit": "scripts",
+      "basis": "PowerShell解析回执。"
+    },
+    {
+      "name": "preflash_defects_fixed",
+      "value": 2,
+      "unit": "defects",
+      "basis": "配置头可见性及LCD提示覆盖顺序。"
+    },
+    {
+      "name": "official_flash_pass",
+      "value": 1,
+      "unit": "flash",
+      "basis": "官方回执PASS和读回0差异。"
+    },
+    {
+      "name": "physical_track_runs",
+      "value": 0,
+      "unit": "runs",
+      "basis": "所有操作为停车取图、烧录及停车回读。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无同口径提供方usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量，墙钟含用户摆位和确认。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量；测量截止在归档之前。"
+    },
+    {
+      "name": "tool_failures",
+      "value": null,
+      "unit": "calls",
+      "basis": "未建立完整计数；已知包括context参数误用、两个错误脚本路径、CIM访问拒绝及审查代理一次受限WSL查询。"
+    }
+  ],
+  "observations": [
+    "一轮覆盖摆位、三张抓图、参考线实现及烧录；未按每条用户回复拆成复盘。",
+    "两名原生子代理给出实际复核，不冒充Opus；Opus仅收到项目库交接606，本轮未收到本人验收。",
+    "独立复核在烧录前发现缺失include造成的无线绕过，真实头链测试及反例证明检查能发现此缺陷；没有匹配工作流基线，不声称节省时间。",
+    "30厘米绿线位置是调整目标，不是新的物理标定结果；现有150毫米/20厘米/35厘米近似模型须在支架调整后重新测量。",
+    "s4fan中的s5_locked仅表示手动风机互锁，不能代替总发车许可；已按实际调用链核实。",
+    "收尾脚本路径两次猜错后使用限定目录rg定位；通用收件箱输出过大，后续按项目和最新记录限制。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-calibration-real-header-gates",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "校准发车锁测试必须读取真实翻译单元的配置头；加删除include反例，防止测试强制宏掩盖真实构建缺陷。",
+      "next_check": "后续解锁候选同时验证校准与比赛两种配置的实际头链。"
+    },
+    {
+      "id": "CRAZY-CIRCUIT-camera-lens-foot-holdout",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "相机摆位统一从镜头垂足量，并保留第三距离作为独立检验；支架调整后重采，不能沿用旧标定。",
+      "next_check": "对齐后采新图和多个距离，核对车体参考点偏移，再统一生成正逆投影。",
+      "experience_refs": [
+        "CC-F#72",
+        "CC-F#45"
+      ],
+      "adoption": "改后"
+    }
+  ],
+  "evidence": [
+    "项目任务73；相机原图、投影拟合、编译、64组合与反例、官方烧录和停车回读均本地保留。",
+    "仅上传聚合复盘与证据摘要，不上传图像、源码、数据库或原始串口会话。"
+  ],
+  "limits": [
+    "等待使用者确认实体屏幕绿线可见并完成支架对齐；调整后的投影、车体参考原点偏移及实车跑圈未验收。校准固件不能发车。",
+    "没有匹配质量门槛的工作流效率基线。"
+  ],
+  "comparison": null
+}
