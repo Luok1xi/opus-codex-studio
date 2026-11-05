@@ -1,0 +1,47 @@
+{
+  "scope": "offline",
+  "baseline_s": [
+    14.491,
+    14.967
+  ],
+  "selected_s": [
+    14.107,
+    14.578
+  ],
+  "fixed20_pass": {
+    "baseline": 20,
+    "candidate": 20
+  },
+  "reused8_pass": {
+    "baseline": 7,
+    "candidate": 7
+  },
+  "unseen6_pairs": {
+    "baseline": 6,
+    "candidate": 6,
+    "improved": 3,
+    "unchanged_sha": 3,
+    "input_sha256": "700f433686d82569f98d341c1bec1039ad7c43ce04805b43d36ed04a27e848db"
+  },
+  "new_source_lessons": 20,
+  "backfilled_runs": 478,
+  "ledger_total": 497,
+  "real_records": 7,
+  "negative_guard_pass": 6,
+  "owner_entry_full_hash_matches": 2,
+  "primary_nominal_corner_median_speed_gain_mps": [
+    0.0723,
+    0.0676
+  ],
+  "primary_nominal_corner_median_radius_delta_mm": [
+    0,
+    0.72
+  ],
+  "geometry_combo_reused8_pass": 6,
+  "reversal_regression_pass": 27,
+  "reversal_regression_trials": 28,
+  "physical_validation": false,
+  "gui_checked": true,
+  "public_site_changes": false,
+  "usage": null
+}
