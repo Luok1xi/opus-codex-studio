@@ -1,0 +1,39 @@
+{
+  "sha256": "169bc9cbd6c53d1e8cef6ba29d50dbae5a826018fc5f7cd71dccfc0ce9e94777",
+  "flash_verified": true,
+  "different_bytes": 0,
+  "build": "P15-CAM15-01",
+  "parked_status_rows": 20,
+  "photo_rows": 5,
+  "fan_rows": 5,
+  "wheel_and_fan_output_zero": true,
+  "imu_ready": true,
+  "battery_mv": [
+    11373,
+    11399
+  ],
+  "frame_sequence": [
+    1381,
+    1531,
+    1681,
+    1831,
+    1981
+  ],
+  "sequence_delta_per_approximately_1s_poll": [
+    150,
+    150,
+    150,
+    150
+  ],
+  "parked_pilot_us": [
+    2547,
+    2651
+  ],
+  "parked_all_us": [
+    4787,
+    5341
+  ],
+  "serial_commands_sent": 0,
+  "physical_drive_runs": 0,
+  "road_ready_claim": false
+}
