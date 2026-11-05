@@ -1,0 +1,61 @@
+{
+  "round_id": "2026-11-05-camera-reference-flash",
+  "source_project": "CRAZY-CIRCUIT",
+  "task_id": 73,
+  "experience_package": "a9c9ea7d",
+  "experience_refs": [
+    "CC-F#72",
+    "CC-F#45"
+  ],
+  "geometry": {
+    "owner_height_mm": 150,
+    "distances_cm": [
+      20,
+      30,
+      35
+    ],
+    "two_point_fit_approx": {
+      "focal_px": 163.506,
+      "pitch_deg": 39.3986
+    },
+    "held_out_30cm_residual_px": -1.933,
+    "final_adjusted_calibration": false
+  },
+  "overlay": {
+    "raw_size": [
+      188,
+      120
+    ],
+    "row": 40,
+    "display_only": true,
+    "raw_modified": false,
+    "physical_visibility_confirmed": false
+  },
+  "checks": {
+    "launch_gate_cases": 64,
+    "include_removal_negative_witness_detected": true,
+    "deployment_cases": 22,
+    "script_parse_checks": 4
+  },
+  "flash": {
+    "sha256": "e65d7aa35336f5537e9a8b4f78e05d3152928bc5ad592f3025a6e2ce25375631",
+    "result": "PASS",
+    "readback_differences": 0
+  },
+  "parked_readback": {
+    "build": "P15-CAMREF-01",
+    "wheel_output_zero": true,
+    "fan_output_zero": true,
+    "imu_ready": true,
+    "remote_launch_count": 0
+  },
+  "source_evidence_local_only": [
+    "projection-fit.json",
+    "deploy/gate-tests/result.json",
+    "deploy/REVIEW.md",
+    "deploy/flash-receipt.json",
+    "deploy/postflash.txt"
+  ],
+  "author": "codex",
+  "coordination": "Two native worker reports verified; Opus handoff pending acknowledgement."
+}
