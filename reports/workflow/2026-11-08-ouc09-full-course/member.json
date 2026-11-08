@@ -1,0 +1,158 @@
+{
+  "round_id": "2026-11-08-ouc09-full-course",
+  "metrics": [
+    {
+      "name": "measured_wall",
+      "value": 2817.785032,
+      "unit": "seconds",
+      "basis": "Recorded round start to cutoff, including build recovery and physical-preparation wait"
+    },
+    {
+      "name": "source_files",
+      "value": 688,
+      "unit": "files",
+      "basis": "Frozen tested/built input manifest"
+    },
+    {
+      "name": "changed_from08",
+      "value": 12,
+      "unit": "files",
+      "basis": "Hashed source comparison"
+    },
+    {
+      "name": "full_route_passed",
+      "value": 8,
+      "unit": "cases",
+      "basis": "Final frozen inputs in both plants"
+    },
+    {
+      "name": "full_route_total",
+      "value": 8,
+      "unit": "cases",
+      "basis": "Four conditions per plant"
+    },
+    {
+      "name": "max_lateral",
+      "value": 50.6957,
+      "unit": "mm",
+      "basis": "Full1ms traces"
+    },
+    {
+      "name": "control_checks",
+      "value": 447,
+      "unit": "checks",
+      "basis": "Actual controller regression"
+    },
+    {
+      "name": "startup_cases",
+      "value": 15,
+      "unit": "cases",
+      "basis": "19 extracted hardware-control functions"
+    },
+    {
+      "name": "startup_checks",
+      "value": 374963,
+      "unit": "checks",
+      "basis": "Startup regression log"
+    },
+    {
+      "name": "full_c_compilations",
+      "value": 174,
+      "unit": "units",
+      "basis": "Final ADS build log"
+    },
+    {
+      "name": "final_native_build",
+      "value": 4.517,
+      "unit": "seconds",
+      "basis": "Final ADS timing"
+    },
+    {
+      "name": "build_errors",
+      "value": 0,
+      "unit": "errors",
+      "basis": "Final native log"
+    },
+    {
+      "name": "new_warnings",
+      "value": 0,
+      "unit": "warnings",
+      "basis": "Normalized comparison with frozen baseline"
+    },
+    {
+      "name": "completed_experiment_batches",
+      "value": 20,
+      "unit": "batches",
+      "basis": "Retained batch summaries; not all early runs had immutable binary snapshots"
+    },
+    {
+      "name": "flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Official receipt or no flasher invocation"
+    },
+    {
+      "name": "remote_starts",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No launch commands"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator; no independent reviewer claimed"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider accounting unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing data"
+    },
+    {
+      "name": "tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not counted end to end"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive receipt measures its own interval"
+    }
+  ],
+  "evidence": [
+    "Historical source and HEX hash audit",
+    "Final controller/startup logs and static-frame replay",
+    "Frozen two-plant eight-case route regression",
+    "Full ADS build and688-input release manifest"
+  ],
+  "limits": [
+    "Passing fixed-pitch flat-ground simulations does not establish physical stability over obstacles or glare robustness.",
+    "Camera pitch/focal parameters and fan thrust remain inherited model assumptions; only150mm height is owner supplied.",
+    "Archived stable125 success is not a matched physical A/B baseline for the new course.",
+    "No independent Opus review was performed; this is coordinator implementation and self-review.",
+    "Only sanitized aggregate workflow records are uploaded."
+  ],
+  "summary": "Refine OUC09 corner tracking against the archived125 baseline, pass the exact school course, and prepare125/30 firmware for physical deployment.",
+  "completed": [
+    "Verified all684 archived stable125 source hashes and the historical HEX identity before adapting its controller to the current47-node course.",
+    "Retained OUC primary steering and element state control; auxiliary photo observes only. Default speed125 and fan30 remain fixed.",
+    "Corrected near-line heading holds, close-junction confirmation and speed continuity, symbol gap fill, and polygon heading/mileage handoff.",
+    "Passed8/8 final full-course cases across two plants with the unchanged55mm quality and60mm out-of-line rules; maximum lateral error50.6957mm.",
+    "Verified447 control checks and15 startup cases with374963 assertions; replayed4 stored real frames with temporal warm-up.",
+    "Built174 C units from source in a clean ADS directory,0 errors and12 inherited warnings, no new warnings; bound tests, frozen simulation inputs and HEX to the same688 hashes.",
+    "Preserved old08, MIN01 and initial09 identities separately; final release identifier is09R2."
+  ],
+  "remaining": [
+    "Connect downloader and verify current physical preparation, then flash and read back the frozen09R2 identity and125/30.",
+    "Validate physical line following, resistor/dash traversal and body stability with owner-controlled launches."
+  ]
+}

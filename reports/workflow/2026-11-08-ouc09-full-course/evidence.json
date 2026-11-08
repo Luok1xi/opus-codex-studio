@@ -1,0 +1,123 @@
+{
+  "sanitized": true,
+  "source_files": 688,
+  "changed_from08": 12,
+  "route_pass": 8,
+  "route_total": 8,
+  "max_lateral_mm": 50.6957,
+  "route_quality_limit_mm": 55,
+  "out_of_line_limit_mm": 60,
+  "actual_fan_percent": 30,
+  "max_speed": 125,
+  "control_checks": 447,
+  "startup_cases": 15,
+  "startup_checks": 374963,
+  "full_c_compilations": 174,
+  "compile_errors": 0,
+  "new_warnings": 0,
+  "flash_actions": 0,
+  "physical_acceptance": false,
+  "experiments": [
+    {
+      "batch": "baseline-fan30",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "dense-admission",
+      "passed": 6,
+      "cases": 8
+    },
+    {
+      "batch": "dense80",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "geometry61",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "geometry61-line-exit",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "hex-handoff",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "hex-reference",
+      "passed": 3,
+      "cases": 8
+    },
+    {
+      "batch": "hex-row75",
+      "passed": 6,
+      "cases": 8
+    },
+    {
+      "batch": "hold-response",
+      "passed": 4,
+      "cases": 8
+    },
+    {
+      "batch": "junction-confirm",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "nearstem61",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "polygon-line",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "polygon-stem-hold",
+      "passed": 8,
+      "cases": 8
+    },
+    {
+      "batch": "raw-junction",
+      "passed": 0,
+      "cases": 1
+    },
+    {
+      "batch": "release-final",
+      "passed": 8,
+      "cases": 8
+    },
+    {
+      "batch": "response-row70",
+      "passed": 3,
+      "cases": 8
+    },
+    {
+      "batch": "response300",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "stem-reference",
+      "passed": 6,
+      "cases": 8
+    },
+    {
+      "batch": "symbol-fill",
+      "passed": 0,
+      "cases": 8
+    },
+    {
+      "batch": "turn15-row70",
+      "passed": 0,
+      "cases": 8
+    }
+  ],
+  "raw_project_data_uploaded": false
+}
