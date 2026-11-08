@@ -1,0 +1,132 @@
+{
+  "round_id": "2026-11-08-school-height150",
+  "summary": "Apply owner-supplied camera height in an isolated candidate, improve bright-floor filtering and stop residual steering when forward motion is rejected; retain failed route regression and withhold deployment.",
+  "completed": [
+    "Staged only 688 manifest-listed source files from the frozen on-car baseline; seven reviewed files changed.",
+    "Updated forward/inverse camera projections consistently to owner-supplied 150mm; route and distance atlas byte-identical.",
+    "Separated height-only replay evidence from threshold and motion-gate changes; map acceptance stays below15.",
+    "Two saved real frames and deterministic variants checked: 36 cases, 842 checks; sanitizer run passed.",
+    "One clipped-brightness variant remains rejected by design; this is not full glare robustness.",
+    "Actual motion-control gate passed19 checks; zero-forward requests clear inner-controller state and both outputs.",
+    "Actual extracted launch functions passed15 cases and374963 checks; fan30 startup remains unchanged.",
+    "Final unchanged-criteria route matrix passed7 of8; right-offset physics case stops safely at node11.",
+    "Paired old/new thresholds reproduce identical failing route behavior; threshold is not the cause in that fixture.",
+    "Extended terminal run covers all47 nodes and stop26 at81.184mm past finish, wheels and fan off.",
+    "Clean final MCU build has0 errors and14 inherited warnings, no new warnings; tested/built source parity and payload checks passed.",
+    "Read-only wireless query reverified on-car baseline, speed125, fan30 and47 nodes; captured original-lens frame.",
+    "New candidate is frozen with an explicit offline-only/do-not-flash status; no remote start, parameter write or flash."
+  ],
+  "remaining": [
+    "Resolve right-offset route localization loss without weakening the matching/out-of-line/stale-input gates.",
+    "Obtain a clear original-lens image at the normal starting pose; current holdout contains foreground objects.",
+    "Physical glare robustness, line following, turn timing and complete-lap acceptance remain unvalidated."
+  ],
+  "metrics": [
+    {
+      "name": "source_files",
+      "value": 688,
+      "unit": "files",
+      "basis": "Manifest-only staging and final hash comparison"
+    },
+    {
+      "name": "changed_files",
+      "value": 7,
+      "unit": "files",
+      "basis": "Reviewed source delta from frozen baseline"
+    },
+    {
+      "name": "route_passed",
+      "value": 7,
+      "unit": "cases",
+      "basis": "Final eight-case C and physics regression"
+    },
+    {
+      "name": "route_failed",
+      "value": 1,
+      "unit": "cases",
+      "basis": "Right-offset physics case stops3 at node11"
+    },
+    {
+      "name": "sanitized_image_cases",
+      "value": 36,
+      "unit": "cases",
+      "basis": "Actual candidate parser and navigator under address/undefined-behavior sanitizers"
+    },
+    {
+      "name": "motion_gate_checks",
+      "value": 19,
+      "unit": "checks",
+      "basis": "Full candidate control loop with hardware stubs"
+    },
+    {
+      "name": "final_build_wall",
+      "value": 5.675,
+      "unit": "seconds",
+      "basis": "MCU full-build log"
+    },
+    {
+      "name": "measured_task_wall",
+      "value": 1295.718708,
+      "unit": "seconds",
+      "basis": "Staging-to-cutoff; includes waits and analysis, excludes earlier context retrieval"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Coordinator-only implementation; handoff does not imply independent review"
+    },
+    {
+      "name": "flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No flasher invoked"
+    },
+    {
+      "name": "read_only_device_queries",
+      "value": 3,
+      "unit": "queries",
+      "basis": "Parked-state guard before each identity/record/image request"
+    },
+    {
+      "name": "total_tool_errors",
+      "value": null,
+      "unit": "errors",
+      "basis": "No complete instrumented count; helper failures described separately"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider accounting unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Billing unavailable"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Measured archive receipt is recorded after report cutoff"
+    }
+  ],
+  "evidence": [
+    "Source/HEX manifest and candidate diff",
+    "Height-only and final exact-source real replays",
+    "Actual gate and launch regressions",
+    "Paired threshold route probes and final route summaries",
+    "Extended finish-stop evidence",
+    "Read-only identity and original-lens capture receipt"
+  ],
+  "limits": [
+    "Height150 is owner supplied; pitch46/focal94/ahead40 remain inherited, not physically calibrated.",
+    "Full-route tests use zero fan; fan30 timing is tested separately with hardware stubs.",
+    "Current scene has foreground objects; camera saturation count alone does not distinguish track from glare.",
+    "One route failure remains; build success is not physical acceptance.",
+    "No matched workflow quality/timing baseline and no speedup claim.",
+    "Only sanitized aggregate reports are uploaded; no source, firmware, images, raw logs, databases or credentials."
+  ]
+}

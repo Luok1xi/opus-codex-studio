@@ -1,0 +1,79 @@
+{
+  "round_id": "2026-11-08-school-height150",
+  "source_files": 688,
+  "changed_source_files": 7,
+  "route_cases": [
+    {
+      "condition": "nominal",
+      "engine": "csim",
+      "passed": true,
+      "stop": 0.0,
+      "node": 47.0
+    },
+    {
+      "condition": "nominal",
+      "engine": "pybullet",
+      "passed": true,
+      "stop": 0.0,
+      "node": 47.0
+    },
+    {
+      "condition": "left",
+      "engine": "csim",
+      "passed": true,
+      "stop": 0.0,
+      "node": 47.0
+    },
+    {
+      "condition": "left",
+      "engine": "pybullet",
+      "passed": true,
+      "stop": 0.0,
+      "node": 47.0
+    },
+    {
+      "condition": "right",
+      "engine": "csim",
+      "passed": true,
+      "stop": 0.0,
+      "node": 47.0
+    },
+    {
+      "condition": "right",
+      "engine": "pybullet",
+      "passed": false,
+      "stop": 3.0,
+      "node": 11.0
+    },
+    {
+      "condition": "weaker",
+      "engine": "csim",
+      "passed": true,
+      "stop": 0.0,
+      "node": 47.0
+    },
+    {
+      "condition": "weaker",
+      "engine": "pybullet",
+      "passed": true,
+      "stop": 0.0,
+      "node": 47.0
+    }
+  ],
+  "image_cases": 36,
+  "image_checks": 842,
+  "motion_checks": 19,
+  "launch_cases": 15,
+  "launch_checks": 374963,
+  "terminal_passed": true,
+  "terminal_past_finish_mm": 81.18400000000008,
+  "compile_errors": 0,
+  "new_warnings": 0,
+  "inherited_warnings": 14,
+  "flash_actions": 0,
+  "remote_starts": 0,
+  "setting_writes": 0,
+  "candidate_status": "offline_only_route_regression_failed",
+  "physical_acceptance": "not_performed",
+  "raw_project_data_uploaded": false
+}
