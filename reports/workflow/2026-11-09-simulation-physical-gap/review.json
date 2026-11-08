@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-simulation-physical-gap",
+  "task_summary": "Explain why saved website laps and earlier physical success do not establish acceptance of the current control revision.",
+  "workflow_version": "WORKFLOW_REVIEW.md; evidence identity comparison",
+  "started_at": "2026-11-08T17:09:44+00:00",
+  "measurement_cutoff_at": "2026-11-08T17:12:42.351529+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Check replay configuration and control identity",
+      "Separate historical success from current regression",
+      "Do not change hardware or firmware"
+    ],
+    "completed": [
+      "Inspected two saved website replay payloads and their exact controller branch.",
+      "Compared historical successful physical control with later deployed-source behavior.",
+      "Recounted existing camera mismatch acceptance evidence; separated observation from root-cause hypotheses."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_review_interval",
+      "value": 178.351529,
+      "unit": "seconds",
+      "basis": "Known clock sample after initial read to cutoff; initial read excluded"
+    },
+    {
+      "name": "firmware_edits",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "website_edits",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "new_simulations",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "external_model_calls",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "full_round_wall",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not instrumented for full interval; archive receipt separately measures upload"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Not instrumented for full interval; archive receipt separately measures upload"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Not instrumented for full interval; archive receipt separately measures upload"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not instrumented for full interval; archive receipt separately measures upload"
+    }
+  ],
+  "observations": [
+    "Saved replays and current implementation use different geometry, controllers and operating conditions.",
+    "A successful historical physical state sequence was not preserved in the failing later revision.",
+    "Known sensor-model mismatch tests already expose failure outside the displayed nominal case.",
+    "One guessed simulation source path was absent; switched to manifest-backed controller paths without further guessing."
+  ],
+  "recommendations": [
+    {
+      "id": "CC-COMPARE-IDENTITY-20261109",
+      "action": "Bind every displayed result to controller, map, camera and operating settings; preserve proven state handoffs when changing maps.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "Future comparisons must show identical inputs or explicitly list differences; source facts precede proposed repair."
+    }
+  ],
+  "evidence": [
+    "Saved replay metadata and exact controller branches",
+    "Historical successful-run audit and later source settings",
+    "Recorded camera sensitivity matrix"
+  ],
+  "limits": [
+    "No new simulation or physical result.",
+    "No live website deployment or vehicle identity check.",
+    "Original repair remains unfinished.",
+    "No matched workflow baseline or speedup claim.",
+    "No source, raw logs, images, sessions or databases uploaded."
+  ],
+  "comparison": null
+}

@@ -1,0 +1,84 @@
+{
+  "round_id": "2026-11-09-simulation-physical-gap",
+  "summary": "Explain why saved website laps and earlier physical success do not establish acceptance of the current control revision.",
+  "metrics": [
+    {
+      "name": "observed_review_interval",
+      "value": 178.351529,
+      "unit": "seconds",
+      "basis": "Known clock sample after initial read to cutoff; initial read excluded"
+    },
+    {
+      "name": "firmware_edits",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "website_edits",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "new_simulations",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "external_model_calls",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only evidence comparison"
+    },
+    {
+      "name": "full_round_wall",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not instrumented for full interval; archive receipt separately measures upload"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Not instrumented for full interval; archive receipt separately measures upload"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Not instrumented for full interval; archive receipt separately measures upload"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not instrumented for full interval; archive receipt separately measures upload"
+    }
+  ],
+  "completed": [
+    "Inspected two saved website replay payloads and their exact controller branch.",
+    "Compared historical successful physical control with later deployed-source behavior.",
+    "Recounted existing camera mismatch acceptance evidence; separated observation from root-cause hypotheses."
+  ],
+  "remaining": [],
+  "evidence": [
+    "Saved replay metadata and exact controller branches",
+    "Historical successful-run audit and later source settings",
+    "Recorded camera sensitivity matrix"
+  ],
+  "limits": [
+    "No new simulation or physical result.",
+    "No live website deployment or vehicle identity check.",
+    "Original repair remains unfinished.",
+    "No matched workflow baseline or speedup claim.",
+    "No source, raw logs, images, sessions or databases uploaded."
+  ]
+}
