@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-ouc125-restore",
+  "task_summary": "Restore OUC primary control after multi-run diagnosis, isolate auxiliary navigation and withhold the candidate after route regression failure.",
+  "workflow_version": "WORKFLOW_REVIEW.md + source authority tests + immutable builds + unchanged acceptance",
+  "started_at": "2026-11-08T18:14:36.406661+08:00",
+  "measurement_cutoff_at": "2026-11-08T10:45:28.628432+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "OUC owns control; auxiliary photo cannot command motion",
+      "Clean build and startup/control regression",
+      "Full-course and physical acceptance"
+    ],
+    "completed": [
+      "Reviewed17 complete manual launch intervals across3 boot epochs; all stopped with code3, without assigning unrecorded physical element positions.",
+      "Implemented isolated OUC primary control and removed all photo motion/route authority; retained125/30,47 events and existing hardware/startup calibration.",
+      "Verified426 control checks and15 actual-function startup cases; replayed4 real images with temporal warm-up.",
+      "Preserved immutable historical manifests and completed a full C-source build with0 errors and no new warnings.",
+      "Ran unchanged route acceptance, retained failed experiments separately, and explicitly withheld the candidate after0/8 complete-route passes."
+    ],
+    "remaining": [
+      "Correct OUC turn entry/exit on the current course and pass the unchanged full-route regression.",
+      "Validate resistor/dash traversal and body stability physically; no candidate flash performed."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "measured_wall",
+      "value": 1852.221771,
+      "unit": "seconds",
+      "basis": "Initial multi-run investigation timestamp to cutoff; includes steering and tool recovery"
+    },
+    {
+      "name": "captured_launch_intervals",
+      "value": 17,
+      "unit": "runs",
+      "basis": "Boot-aware parser of7 frozen recorder files"
+    },
+    {
+      "name": "source_files",
+      "value": 688,
+      "unit": "files",
+      "basis": "Immutable input manifests"
+    },
+    {
+      "name": "changed_source_files",
+      "value": 9,
+      "unit": "files",
+      "basis": "Final source diff against08"
+    },
+    {
+      "name": "control_checks",
+      "value": 426,
+      "unit": "checks",
+      "basis": "Actual PID/vision linked test"
+    },
+    {
+      "name": "startup_cases",
+      "value": 15,
+      "unit": "cases",
+      "basis": "Actual extracted functions"
+    },
+    {
+      "name": "full_route_passed",
+      "value": 0,
+      "unit": "cases",
+      "basis": "Final two-model regression"
+    },
+    {
+      "name": "full_route_total",
+      "value": 8,
+      "unit": "cases",
+      "basis": "Same course and acceptance boundaries"
+    },
+    {
+      "name": "final_clean_build_wall",
+      "value": 4.756,
+      "unit": "seconds",
+      "basis": "ADS full C build log"
+    },
+    {
+      "name": "flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No flasher invoked"
+    },
+    {
+      "name": "remote_starts",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No launch commands"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage accounting"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing"
+    },
+    {
+      "name": "tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not instrumented end-to-end"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Will be measured in archive receipt"
+    }
+  ],
+  "observations": [
+    "A visual module being present did not make it the active control path; call-path audit was necessary.",
+    "Restoring the prior controller did not restore full-course acceptance under the new course/camera conditions.",
+    "Several local parameter changes progressed farther but failed the common acceptance criteria and were rejected.",
+    "Cold-only image replay initially suggested invalid resistor detection; temporal warm-up changed the result and was added before reporting.",
+    "An ADS close request left a process holding the workspace. New startup then waited; only verified current-workspace processes were closed.",
+    "Removing object files alone only reran assembly; generated assembly must also be invalidated for a full source rebuild.",
+    "No matched workflow baseline; no speedup claim."
+  ],
+  "recommendations": [
+    {
+      "id": "CC-OUC-AUTHORITY-20261108",
+      "action": "Test that auxiliary navigation cannot write motion or route state, and run real images with temporal initialization.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Future candidates pass the same authority and warm-up regressions; full-route quality still required.",
+      "experience_refs": [
+        "WF-PID-EXPLAIN-20261023-CAUSE",
+        "CC-D#25"
+      ],
+      "adoption": "\u6539\u540e"
+    },
+    {
+      "id": "CC-ADS-CLEAN-20261108",
+      "action": "Treat close as a request until process exit and invalidate compiler-generated assembly as well as objects for a full build.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "A later isolated build starts without workspace lock conflict and emits full C compilation evidence."
+    }
+  ],
+  "evidence": [
+    "Versioned source/diff and manifest",
+    "Controller and startup test logs",
+    "Temporal static-image replay",
+    "Unchanged eight-case route regression",
+    "Boot-aware multi-run aggregate"
+  ],
+  "limits": [
+    "Candidate is not approved for flashing.",
+    "Full route and physical stability remain unaccepted.",
+    "Static frames and fixed-pitch simulation do not prove physical nose-over prevention.",
+    "Only sanitized aggregate reports are uploaded."
+  ],
+  "comparison": null
+}

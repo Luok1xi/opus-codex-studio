@@ -1,0 +1,16 @@
+{
+  "source_files": 688,
+  "changed_files": 9,
+  "control_checks_passed": 426,
+  "startup_cases_passed": 15,
+  "route_cases_passed": 0,
+  "route_cases_total": 8,
+  "physical_acceptance": false,
+  "flash_actions": 0,
+  "review_only_build": true,
+  "final_build_errors": 0,
+  "final_inherited_warnings": 12,
+  "new_warnings": 0,
+  "sanitized": true,
+  "raw_logs_images_source_databases_uploaded": false
+}

@@ -1,0 +1,126 @@
+{
+  "round_id": "2026-11-08-ouc125-restore",
+  "metrics": [
+    {
+      "name": "measured_wall",
+      "value": 1852.221771,
+      "unit": "seconds",
+      "basis": "Initial multi-run investigation timestamp to cutoff; includes steering and tool recovery"
+    },
+    {
+      "name": "captured_launch_intervals",
+      "value": 17,
+      "unit": "runs",
+      "basis": "Boot-aware parser of7 frozen recorder files"
+    },
+    {
+      "name": "source_files",
+      "value": 688,
+      "unit": "files",
+      "basis": "Immutable input manifests"
+    },
+    {
+      "name": "changed_source_files",
+      "value": 9,
+      "unit": "files",
+      "basis": "Final source diff against08"
+    },
+    {
+      "name": "control_checks",
+      "value": 426,
+      "unit": "checks",
+      "basis": "Actual PID/vision linked test"
+    },
+    {
+      "name": "startup_cases",
+      "value": 15,
+      "unit": "cases",
+      "basis": "Actual extracted functions"
+    },
+    {
+      "name": "full_route_passed",
+      "value": 0,
+      "unit": "cases",
+      "basis": "Final two-model regression"
+    },
+    {
+      "name": "full_route_total",
+      "value": 8,
+      "unit": "cases",
+      "basis": "Same course and acceptance boundaries"
+    },
+    {
+      "name": "final_clean_build_wall",
+      "value": 4.756,
+      "unit": "seconds",
+      "basis": "ADS full C build log"
+    },
+    {
+      "name": "flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No flasher invoked"
+    },
+    {
+      "name": "remote_starts",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No launch commands"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage accounting"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing"
+    },
+    {
+      "name": "tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not instrumented end-to-end"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Will be measured in archive receipt"
+    }
+  ],
+  "evidence": [
+    "Versioned source/diff and manifest",
+    "Controller and startup test logs",
+    "Temporal static-image replay",
+    "Unchanged eight-case route regression",
+    "Boot-aware multi-run aggregate"
+  ],
+  "limits": [
+    "Candidate is not approved for flashing.",
+    "Full route and physical stability remain unaccepted.",
+    "Static frames and fixed-pitch simulation do not prove physical nose-over prevention.",
+    "Only sanitized aggregate reports are uploaded."
+  ],
+  "summary": "Restore OUC primary control after multi-run diagnosis, isolate auxiliary navigation and withhold the candidate after route regression failure.",
+  "completed": [
+    "Reviewed17 complete manual launch intervals across3 boot epochs; all stopped with code3, without assigning unrecorded physical element positions.",
+    "Implemented isolated OUC primary control and removed all photo motion/route authority; retained125/30,47 events and existing hardware/startup calibration.",
+    "Verified426 control checks and15 actual-function startup cases; replayed4 real images with temporal warm-up.",
+    "Preserved immutable historical manifests and completed a full C-source build with0 errors and no new warnings.",
+    "Ran unchanged route acceptance, retained failed experiments separately, and explicitly withheld the candidate after0/8 complete-route passes."
+  ],
+  "remaining": [
+    "Correct OUC turn entry/exit on the current course and pass the unchanged full-route regression.",
+    "Validate resistor/dash traversal and body stability physically; no candidate flash performed."
+  ]
+}
