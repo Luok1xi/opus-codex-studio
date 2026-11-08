@@ -1,0 +1,51 @@
+{
+  "round_id": "2026-11-08-school04-restore-fan30",
+  "firmware": "SCHOOL375-ESC125-04",
+  "sha256": "2d0acca7c561abbf102a5f36cafbebeda7b5f8bf25715abc70fddd6fb9813545",
+  "hex_bytes": 1110989,
+  "source_files_changed": 0,
+  "rebuilt": false,
+  "flash_attempts": 1,
+  "flash_summary": {
+    "ABORTS": 0,
+    "ERRORS": 0,
+    "WARNINGS": 0
+  },
+  "verification_pass": true,
+  "differences_bytes": 0,
+  "flasher_elapsed_ms": 4030,
+  "postflash_camera_fps": 150,
+  "settings_readback": {
+    "build": "SCHOOL375-ESC125-04",
+    "speed": 125,
+    "fan_pct": 30,
+    "route_len": 47,
+    "running": 0
+  },
+  "direction_gains_sent": {
+    "kp": 6.4,
+    "kd": 0,
+    "basis": "frozen PID_Init entry 12; Speed_index(125)=12; no later entry12 override"
+  },
+  "remote_vehicle_launches": 0,
+  "fan_target_is_not_physical_output": true,
+  "old_failure": {
+    "observed_stop_code": 3,
+    "source_meaning": "fresh line unavailable/control readiness guard",
+    "owner_report": "forward tipping at launch or during travel",
+    "board_log_rows_after_reconnect": 0,
+    "cause_confirmed": false
+  },
+  "direction_gains_hardware_readback": false,
+  "passive_recording_started": true,
+  "recording_port": "COM5",
+  "recording_limit_minutes": 30,
+  "completed_physical_lap_verified": false,
+  "fan_spin_verified": false,
+  "local_evidence_hashes": {
+    "flash-SCHOOL375-ESC125-04-RESTORE-2d0acca7-20261108-141028.log": "10a7765a7741642dde58eaa02d01a0e0749c844d31f2c87b22d1754bf0c71dd1",
+    "before-rollback.txt": "46947eda2606c6545844ae135aa34cbcfdca2e44399a447434bb2f36998b7c5a",
+    "postflash.txt": "31ad89a95b61092772ca7625b89c323add48c56086b71333e6c4ae9044165567",
+    "receipt.json": "e2611f659b29475f7fcebb05958b60d30131b16b3a50990ed97e102c5b7f9529"
+  }
+}

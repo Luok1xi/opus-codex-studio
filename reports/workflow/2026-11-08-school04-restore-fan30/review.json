@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-school04-restore-fan30",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-08T14:07:15.725008+08:00",
+  "measurement_cutoff_at": "2026-11-08T06:16:54.879564+00:00",
+  "task_summary": "响应Owner实跑前倾反馈，原样回退校赛04并准备125/30人工试跑。",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "原产物SHA一致，官方写入/回读通过，125/30及47节点回显，停车且无线采集新鲜。"
+    ],
+    "completed": [
+      "按完整SHA原样恢复已保存校赛04，不重编、不混入v2候选。",
+      "单次官方烧录校验PASS/0差异，相机150fps；设置125/比赛负压30并取得独立[race]回读。",
+      "显式发送原版方向表项6.4/0，轮速PI回显未变；启动位始终0，开始有时限的被动无线录制。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_elapsed",
+      "value": 579.154556,
+      "unit": "seconds",
+      "basis": "本轮首次记录至设置及采集验收；包括Owner换线等待。"
+    },
+    {
+      "name": "flasher_elapsed",
+      "value": 4.03,
+      "unit": "seconds",
+      "basis": "实际工具输出。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独测量重叠等待。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "准备未独立计时，远端步骤另存实际回执。"
+    }
+  ],
+  "observations": [
+    "同一原生Codex成员独立复核原产物和参数包；仅主协调者操作硬件，没有本轮外部Opus调用。",
+    "旧版停车码3不能独立证明前倾根因；下载器接回后导出LOG0，未编造行车波形。",
+    "早期批量上下文读取输出过大，后续缩小为精确函数/字段；一次valuepack.h路径猜测不存在，实际协议在wireless.h。",
+    "不修改已保存校赛原件；使用协议显式发送原表项，避免浮点缓存未知导致增益清零；没有方向表项硬件读回。",
+    "换接后首次打开旧COM7失败且未发送字节；重新枚举发现COM5，随后身份/参数核对成功。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-rollback-versus-physical-stability",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "恢复版本同时写明路线、起点、物理适配边界；固件身份/停车通过不能升级为新底盘稳定。",
+      "next_check": "由Owner完成首跑，结合真实记录判断前倾发生阶段，不以开30%自动宣称修复。",
+      "experience_refs": [
+        "R50",
+        "TE#33"
+      ],
+      "adoption": "改后"
+    }
+  ],
+  "evidence": [
+    "同目录evidence.json；业务库完整交接及本地烧录/参数/录制证据。"
+  ],
+  "limits": [
+    "没有同任务同验收基线，不声称提效。",
+    "04原版没有先建负压再放轮阶段；30%是油门目标，不是实测吸力。",
+    "该版8/8既有仿真为125/fan0；本轮未新增30%完赛验证。",
+    "前倾根因及实车完整一圈尚未验证。"
+  ],
+  "comparison": null
+}
