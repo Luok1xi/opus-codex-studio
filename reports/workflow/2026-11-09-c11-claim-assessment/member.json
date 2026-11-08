@@ -1,0 +1,82 @@
+{
+  "round_id": "2026-11-09-c11-claim-assessment",
+  "summary": "Assess a proposed recovery plan against saved evidence and distinguish observed failure from causal hypotheses.",
+  "metrics": [
+    {
+      "name": "observed_review_interval",
+      "value": 165.055046,
+      "unit": "seconds",
+      "basis": "Known clock sample to review cutoff; earlier attachment reading excluded"
+    },
+    {
+      "name": "firmware_edits",
+      "value": 0,
+      "unit": "files",
+      "basis": "Read-only assessment"
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No serial or flash access"
+    },
+    {
+      "name": "new_simulations",
+      "value": 0,
+      "unit": "runs",
+      "basis": "Recomputed existing trace evidence"
+    },
+    {
+      "name": "new_delegations",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No new model consultation"
+    },
+    {
+      "name": "full_round_wall",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Full interval or accounting not instrumented; archive receipt separately measures upload"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Full interval or accounting not instrumented; archive receipt separately measures upload"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Full interval or accounting not instrumented; archive receipt separately measures upload"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Full interval or accounting not instrumented; archive receipt separately measures upload"
+    },
+    {
+      "name": "total_tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Full interval or accounting not instrumented; archive receipt separately measures upload"
+    }
+  ],
+  "completed": [
+    "Read supplied discussion and compared its claims with saved source, historical audit and final traces.",
+    "Confirmed failed acceptance and corrected reset-versus-progress and state-versus-turn interpretations.",
+    "Proposed bounded causal comparisons without implementing a new candidate."
+  ],
+  "remaining": [],
+  "evidence": [
+    "Local source and recorded trace reinspection",
+    "Structured claim assessment retained in the project workspace"
+  ],
+  "limits": [
+    "Assessment complete; original repair remains unfinished.",
+    "No new simulation, vehicle identity check or hardware acceptance.",
+    "No token/cost or workflow speedup claim.",
+    "Only sanitized aggregate workflow reports are archived; project evidence remains local."
+  ]
+}
