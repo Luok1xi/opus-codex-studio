@@ -1,0 +1,95 @@
+{
+  "round_id": "2026-11-08-school-startfix",
+  "metrics": [
+    {
+      "name": "source_files",
+      "value": 688,
+      "unit": "files",
+      "basis": "Frozen manifest and build-input comparison"
+    },
+    {
+      "name": "full_build_wall",
+      "value": 6.08,
+      "unit": "seconds",
+      "basis": "MCU build log"
+    },
+    {
+      "name": "flash_wall",
+      "value": 4.075,
+      "unit": "seconds",
+      "basis": "Official flasher output"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Coordinator performed this bounded task"
+    },
+    {
+      "name": "confirmed_helper_failures",
+      "value": 2,
+      "unit": "failures",
+      "basis": "Host stub omission and release helper path assertion corrected"
+    },
+    {
+      "name": "safety_test_detected_source_defects",
+      "value": 1,
+      "unit": "defects",
+      "basis": "Manual fan cap absent on one path; corrected"
+    },
+    {
+      "name": "total_tool_errors",
+      "value": null,
+      "unit": "errors",
+      "basis": "No complete instrumented count; other access/policy errors described"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Billing unavailable"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive receipt records actual timing after report cutoff"
+    }
+  ],
+  "evidence": [
+    "Frozen source and release manifests",
+    "Exact-source real-frame and startup regression summaries",
+    "Route and finish-stop summaries",
+    "Verified flash receipt",
+    "Live query and capture receipts"
+  ],
+  "limits": [
+    "One post-stop real frame plus deterministic variants does not cover all real track images.",
+    "Full-route tests use zero fan; fan30 timing is validated separately with stubbed hardware.",
+    "No physical turn timing, line adhesion or complete-lap success claimed.",
+    "No matched workflow quality/timing baseline, no speedup claim.",
+    "No raw source, serial records, images, firmware, live databases or credentials uploaded."
+  ],
+  "summary": "Correct real-frame startup rejection while preserving requested settings and route, then clean-build and deploy after current physical preparation.",
+  "completed": [
+    "Isolated manifest-only source copy and six reviewed source changes; historical source preserved",
+    "Real input admission plus invalid-input and stale-frame rejection checked with unchanged matching limit",
+    "Previously successful ESC launch sequence restored and checked using extracted actual functions",
+    "Manual fan maximum clamp regression found and corrected before building",
+    "Eight full-route cases and terminal stop passed; route tests use zero fan",
+    "Fresh MCU build, tested-source parity, payload identity and warning parity verified",
+    "Owner-confirmed physical setup; one verified flash with zero byte differences",
+    "Live wired readback of expected identity, requested settings, stationary output and camera 150 fps",
+    "Live wireless identity and settings verified after reconnection",
+    "Read-only continuous capture opened and fresh data confirmed"
+  ],
+  "remaining": [
+    "Owner-operated physical launch and line-following/early-turn/corner-speed acceptance remain pending"
+  ]
+}
