@@ -3,7 +3,7 @@
   "metrics": [
     {
       "name": "measured_wall",
-      "value": 2817.785032,
+      "value": 3143.463454,
       "unit": "seconds",
       "basis": "Recorded round start to cutoff, including build recovery and physical-preparation wait"
     },
@@ -87,7 +87,7 @@
     },
     {
       "name": "flash_actions",
-      "value": 0,
+      "value": 1,
       "unit": "actions",
       "basis": "Official receipt or no flasher invocation"
     },
@@ -149,10 +149,11 @@
     "Passed8/8 final full-course cases across two plants with the unchanged55mm quality and60mm out-of-line rules; maximum lateral error50.6957mm.",
     "Verified447 control checks and15 startup cases with374963 assertions; replayed4 stored real frames with temporal warm-up.",
     "Built174 C units from source in a clean ADS directory,0 errors and12 inherited warnings, no new warnings; bound tests, frozen simulation inputs and HEX to the same688 hashes.",
-    "Preserved old08, MIN01 and initial09 identities separately; final release identifier is09R2."
+    "Preserved old08, MIN01 and initial09 identities separately; final release identifier is09R2.",
+    "Flashed the frozen candidate once through the official entry and recorded live readback evidence.",
+    "Verified09R2/125/30/47/OUC through restored wireless and started passive capture; no remote start or setting write."
   ],
   "remaining": [
-    "Connect downloader and verify current physical preparation, then flash and read back the frozen09R2 identity and125/30.",
     "Validate physical line following, resistor/dash traversal and body stability with owner-controlled launches."
   ]
 }

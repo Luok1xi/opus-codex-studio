@@ -15,7 +15,7 @@
   "full_c_compilations": 174,
   "compile_errors": 0,
   "new_warnings": 0,
-  "flash_actions": 0,
+  "flash_actions": 1,
   "physical_acceptance": false,
   "experiments": [
     {

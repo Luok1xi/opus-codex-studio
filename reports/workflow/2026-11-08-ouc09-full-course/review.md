@@ -9,15 +9,15 @@ Refine OUC09 corner tracking against the archived125 baseline, pass the exact sc
 - 工作流：WORKFLOW_REVIEW.md + frozen simulation inputs + full ADS source rebuild
 - 验收状态：partial
 - 开始：2026-11-08T20:06:53.114201+08:00
-- 测量截止：2026-11-08T12:53:50.899233+00:00
-- 墙钟秒数：2817.785032
+- 测量截止：2026-11-08T12:59:16.577655+00:00
+- 墙钟秒数：3143.463454
 - 合格配对耗时变化（%）：None
 
 ## 实测数据
 
 | 指标 | 值 | 单位 | 口径 |
 |---|---:|---|---|
-| measured_wall | 2817.785032 | seconds | Recorded round start to cutoff, including build recovery and physical-preparation wait |
+| measured_wall | 3143.463454 | seconds | Recorded round start to cutoff, including build recovery and physical-preparation wait |
 | source_files | 688 | files | Frozen tested/built input manifest |
 | changed_from08 | 12 | files | Hashed source comparison |
 | full_route_passed | 8 | cases | Final frozen inputs in both plants |
@@ -31,7 +31,7 @@ Refine OUC09 corner tracking against the archived125 baseline, pass the exact sc
 | build_errors | 0 | errors | Final native log |
 | new_warnings | 0 | warnings | Normalized comparison with frozen baseline |
 | completed_experiment_batches | 20 | batches | Retained batch summaries; not all early runs had immutable binary snapshots |
-| flash_actions | 0 | actions | Official receipt or no flasher invocation |
+| flash_actions | 1 | actions | Official receipt or no flasher invocation |
 | remote_starts | 0 | actions | No launch commands |
 | agents_dispatched | 0 | agents | Single coordinator; no independent reviewer claimed |
 | usage | 未知 | tokens | Provider accounting unavailable |
@@ -54,10 +54,11 @@ Refine OUC09 corner tracking against the archived125 baseline, pass the exact sc
 - Verified447 control checks and15 startup cases with374963 assertions; replayed4 stored real frames with temporal warm-up.
 - Built174 C units from source in a clean ADS directory,0 errors and12 inherited warnings, no new warnings; bound tests, frozen simulation inputs and HEX to the same688 hashes.
 - Preserved old08, MIN01 and initial09 identities separately; final release identifier is09R2.
+- Flashed the frozen candidate once through the official entry and recorded live readback evidence.
+- Verified09R2/125/30/47/OUC through restored wireless and started passive capture; no remote start or setting write.
 
 ## 未完成
 
-- Connect downloader and verify current physical preparation, then flash and read back the frozen09R2 identity and125/30.
 - Validate physical line following, resistor/dash traversal and body stability with owner-controlled launches.
 
 ## 收益与损耗观察
