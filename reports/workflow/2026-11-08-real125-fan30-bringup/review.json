@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-real125-fan30-bringup",
+  "task_summary": "Build and flash the explicitly requested isolated route candidate, verify identity and requested settings, establish wireless capture and inspect restart-related stationary sensor readings.",
+  "workflow_version": "WORKFLOW_REVIEW.md + project-specific build/flash receipts",
+  "started_at": "2026-11-08T06:51:25+00:00",
+  "measurement_cutoff_at": "2026-11-08T07:09:04.410713+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Isolated source provenance and fresh MCU build",
+      "Explicit flash authorization and physical preparation",
+      "Verified flash and live readback of requested settings",
+      "Continuous capture established; actual run diagnosis follows observed run"
+    ],
+    "completed": [
+      "Source hashes verified, empty build output directory, fresh complete build",
+      "One verified flash with zero byte differences",
+      "Both wired and wireless readback matched new identity and requested settings",
+      "Read-only recorder confirmed fresh and growing",
+      "Three startup segments separated; latest stationary output remained zero over ten seconds"
+    ],
+    "remaining": [
+      "Owner-run lap and symptom diagnosis are pending"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "source_files_verified",
+      "value": 688,
+      "unit": "files",
+      "basis": "Frozen candidate manifest checked before copying"
+    },
+    {
+      "name": "full_build_wall",
+      "value": 6.553,
+      "unit": "seconds",
+      "basis": "ADS full-build log"
+    },
+    {
+      "name": "flash_wall",
+      "value": 4.121,
+      "unit": "seconds",
+      "basis": "Official flasher reported overall time"
+    },
+    {
+      "name": "flash_attempts",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "One official burn receipt"
+    },
+    {
+      "name": "failed_device_open",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "Stale wireless port absent before live device enumeration"
+    },
+    {
+      "name": "script_policy_build_failure",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "First child PowerShell blocked script; temporary process permission then approved"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No delegation occurred"
+    },
+    {
+      "name": "model_usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing receipt"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive not completed at cutoff"
+    }
+  ],
+  "observations": [
+    "Owner clarified that a new flash was required; source-only readiness was not the intended result.",
+    "Device enumeration must occur in the actual device-access context; initial limited-context view was stale.",
+    "Current build identity and source candidate identity were unified before freezing.",
+    "Restart-separated sensor readings prevented treating improved bias as resolved prematurely."
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-DEVICE-CONTEXT-20261108",
+      "action": "Enumerate and open hardware in the same execution context, then confirm continuous data before declaring capture ready.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next device task has one consistent enumeration/readback receipt.",
+      "experience_refs": [
+        "WS-D#669",
+        "WS-D#588",
+        "TE#33"
+      ]
+    }
+  ],
+  "evidence": [
+    "Frozen-source manifest receipt",
+    "Fresh full build and normalized warning comparison",
+    "Official flash receipt with zero difference verification",
+    "Wired/wireless query receipts and capture status",
+    "Restart-segment stationary sensor summary"
+  ],
+  "limits": [
+    "No physical lap or tracking-fix claim yet.",
+    "Filtered deadband telemetry is not raw sensor-noise evidence.",
+    "No matched workflow baseline; no efficiency claim.",
+    "Raw source, serial streams, firmware and device identifiers excluded from upload."
+  ],
+  "comparison": null
+}

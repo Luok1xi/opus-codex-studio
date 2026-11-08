@@ -1,0 +1,83 @@
+{
+  "round_id": "2026-11-08-real125-fan30-bringup",
+  "summary": "Build and flash the explicitly requested isolated route candidate, verify identity and requested settings, establish wireless capture and inspect restart-related stationary sensor readings.",
+  "completed": [
+    "Source hashes verified, empty build output directory, fresh complete build",
+    "One verified flash with zero byte differences",
+    "Both wired and wireless readback matched new identity and requested settings",
+    "Read-only recorder confirmed fresh and growing",
+    "Three startup segments separated; latest stationary output remained zero over ten seconds"
+  ],
+  "remaining": [
+    "Owner-run lap and symptom diagnosis are pending"
+  ],
+  "evidence": [
+    "Frozen-source manifest receipt",
+    "Fresh full build and normalized warning comparison",
+    "Official flash receipt with zero difference verification",
+    "Wired/wireless query receipts and capture status",
+    "Restart-segment stationary sensor summary"
+  ],
+  "metrics": [
+    {
+      "name": "source_files_verified",
+      "value": 688,
+      "unit": "files",
+      "basis": "Frozen candidate manifest checked before copying"
+    },
+    {
+      "name": "full_build_wall",
+      "value": 6.553,
+      "unit": "seconds",
+      "basis": "ADS full-build log"
+    },
+    {
+      "name": "flash_wall",
+      "value": 4.121,
+      "unit": "seconds",
+      "basis": "Official flasher reported overall time"
+    },
+    {
+      "name": "flash_attempts",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "One official burn receipt"
+    },
+    {
+      "name": "failed_device_open",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "Stale wireless port absent before live device enumeration"
+    },
+    {
+      "name": "script_policy_build_failure",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "First child PowerShell blocked script; temporary process permission then approved"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No delegation occurred"
+    },
+    {
+      "name": "model_usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing receipt"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive not completed at cutoff"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "verified_source_files": 688,
+  "full_build_errors": 0,
+  "full_build_warnings": 14,
+  "new_warning_kinds": 0,
+  "flash_actions": 1,
+  "flash_aborts": 0,
+  "flash_errors": 0,
+  "flash_warnings": 0,
+  "flash_difference_bytes": 0,
+  "postflash_identity_confirmed": true,
+  "wireless_identity_confirmed": true,
+  "requested_speed_and_fan_readback_match": true,
+  "capture_started": true,
+  "capture_commands_sent": 0,
+  "remote_launches": 0,
+  "parameter_packets_sent": 0,
+  "stationary_gyro_report_zero_after_second_restart": true,
+  "physical_lap_observed": false
+}
