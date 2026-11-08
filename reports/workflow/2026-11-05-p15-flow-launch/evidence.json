@@ -1,0 +1,91 @@
+{
+  "scope": "P15 round aggregate; no raw logs, source files, binary images, hardware identifiers or private absolute paths.",
+  "task": 74,
+  "root_review": {
+    "diagnostic_workers": 2,
+    "late_archive_readonly_workers": 1,
+    "opus_takeover_handoff": 615,
+    "opus_flash_handoff": 617
+  },
+  "run01": {
+    "build": "P15-FLOW-01",
+    "hex_sha256": "51f9ff6c223c95e5dccb42e7e80a9d24dff9edb7e71e407e510c10f2eca701d7",
+    "raw_sha256": "fc5c0d55a19363dc70b16d0d1b2e31c444a2fd0af89a92595f95081853b9ef75",
+    "capture_bytes": 270311,
+    "complete_status_lines": 1493,
+    "parser_checks_passed": 15,
+    "photo_stop_count": 0,
+    "board_log_rows": 0,
+    "record_export_commands": 1,
+    "user_reset_preparation": true,
+    "observed_calibration_spans_ms": [
+      14750,
+      5500
+    ],
+    "calibration_span_upper_bounds_ms": [
+      15250,
+      6000
+    ],
+    "max_abs_wheel_pwm": 0,
+    "max_abs_encoder_counts_per_2ms": 1
+  },
+  "fix": {
+    "build": "P15-FLOW-02",
+    "hex_sha256": "11dab43d5df9a53ceb707bb9f3362ecd7a5ed38d9fecba43fd16c194c3e8d086",
+    "hex_bytes": 823467,
+    "hex_records": 10717,
+    "ads_errors": 0,
+    "ads_warnings": 11,
+    "changed_source_count": 6,
+    "settle_ms": 2500,
+    "clean_calibration_ms": 1000,
+    "calibration_samples": 500,
+    "reject_peak_to_peak_over_dps": 4,
+    "nonzero_fan_spinup_ms": 2500,
+    "expected_ready_ms": 6000,
+    "host_cases": 10,
+    "host_assertions": 42628,
+    "extracted_functions": 13,
+    "host_rerun_date": "2026-11-08",
+    "opus_readback_differing_bytes": 0,
+    "opus_flash_time": "2026-11-05T16:40:14+08:00"
+  },
+  "real_car_after_fix": {
+    "source_finding_initial_four": 199,
+    "later_handoff": 618,
+    "deduplicated_stop28_count": 5,
+    "match_distances_mm": [
+      1150,
+      1788,
+      1788,
+      563,
+      1788
+    ],
+    "same_node_stop_count": 3,
+    "board_record_sizes": [
+      43,
+      69
+    ],
+    "clean_calibration_peak_to_peak_dps": [
+      0.14,
+      0.21
+    ],
+    "valid_fixed_fan_paired_result": false,
+    "finished_route_verified": false
+  },
+  "reference_links": {
+    "development": "https://github.com/Luok1xi/opus-codex-studio/blob/5c20be4c341ddecebe4ae6a2168253042214d0cd/reports/workflow/2026-11-05-p15-flow-development/review.md",
+    "original_flash": "https://github.com/Luok1xi/opus-codex-studio/blob/c5efdcc15a1647b98d5ac9630161dc4bf7752511/reports/workflow/2026-11-05-p15-flow-flash/review.md",
+    "teamhub_handoffs": [
+      614,
+      615,
+      617,
+      618,
+      621,
+      622
+    ],
+    "later_different_task": 79,
+    "later_handoff": 635
+  },
+  "current_vehicle_version_verified": false
+}
