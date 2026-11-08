@@ -1,22 +1,32 @@
 {
   "round_id": "2026-11-08-real125-fan30-bringup",
-  "summary": "Build and flash the explicitly requested isolated route candidate, verify identity and requested settings, establish wireless capture and inspect restart-related stationary sensor readings.",
+  "summary": "Deliver the explicitly requested isolated firmware, capture owner-operated starts, and diagnose failure against the proven starting baseline and real sensor input.",
   "completed": [
     "Source hashes verified, empty build output directory, fresh complete build",
     "One verified flash with zero byte differences",
     "Both wired and wireless readback matched new identity and requested settings",
     "Read-only recorder confirmed fresh and growing",
-    "Three startup segments separated; latest stationary output remained zero over ten seconds"
+    "Three startup segments separated; latest stationary output remained zero over ten seconds",
+    "Five failed owner-operated starts preserved separately from restart segments",
+    "Complete onboard record and real camera frame retrieved with read-only commands",
+    "Unmodified current navigator rejected the real input in an isolated offline replay",
+    "Current and historically successful source manifests verified; inherited control difference identified"
   ],
   "remaining": [
-    "Owner-run lap and symptom diagnosis are pending"
+    "Physical starting acceptance failed; no corrected firmware has been deployed",
+    "Real input/projection and readiness integration require correction and validation",
+    "Line-following, turn timing, corner speed and full lap remain unvalidated"
   ],
   "evidence": [
     "Frozen-source manifest receipt",
     "Fresh full build and normalized warning comparison",
     "Official flash receipt with zero difference verification",
     "Wired/wireless query receipts and capture status",
-    "Restart-segment stationary sensor summary"
+    "Restart-segment stationary sensor summary",
+    "Closed run transition summary",
+    "Complete indexed onboard record summary",
+    "Real camera frame replay result with exact-source hashes",
+    "Historical/current source comparison and local project handoff"
   ],
   "metrics": [
     {
@@ -78,6 +88,48 @@
       "value": null,
       "unit": "seconds",
       "basis": "Archive not completed at cutoff"
+    },
+    {
+      "name": "observed_failed_starts",
+      "value": 5,
+      "unit": "starts",
+      "basis": "Closed capture, complete running transitions"
+    },
+    {
+      "name": "onboard_record_samples",
+      "value": 17,
+      "unit": "samples",
+      "basis": "Complete indexed dump with terminator"
+    },
+    {
+      "name": "offline_real_frame_replay",
+      "value": 1,
+      "unit": "experiment",
+      "basis": "Unmodified navigator and saved frame"
+    },
+    {
+      "name": "diagnostic_flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Only serial queries and offline work"
+    },
+    {
+      "name": "initial_archive_wall",
+      "value": 16.075637,
+      "unit": "seconds",
+      "basis": "Verified initial archive receipt"
+    },
+    {
+      "name": "diagnostic_evidence_helper_rework",
+      "value": 2,
+      "unit": "assertion failures",
+      "basis": "Later starts and manifest path-separator normalization"
+    },
+    {
+      "name": "total_tool_errors",
+      "value": null,
+      "unit": "errors",
+      "basis": "No complete instrumented count; observed query and helper issues described"
     }
   ]
 }

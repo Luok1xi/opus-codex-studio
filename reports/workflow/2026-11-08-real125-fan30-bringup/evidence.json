@@ -1,20 +1,19 @@
 {
-  "verified_source_files": 688,
-  "full_build_errors": 0,
-  "full_build_warnings": 14,
-  "new_warning_kinds": 0,
-  "flash_actions": 1,
-  "flash_aborts": 0,
-  "flash_errors": 0,
-  "flash_warnings": 0,
-  "flash_difference_bytes": 0,
-  "postflash_identity_confirmed": true,
-  "wireless_identity_confirmed": true,
-  "requested_speed_and_fan_readback_match": true,
-  "capture_started": true,
-  "capture_commands_sent": 0,
-  "remote_launches": 0,
-  "parameter_packets_sent": 0,
-  "stationary_gyro_report_zero_after_second_restart": true,
-  "physical_lap_observed": false
+  "round_id": "2026-11-08-real125-fan30-bringup",
+  "source": "Local verified aggregate receipts",
+  "clean_build_verified": true,
+  "flash_readback_verified": true,
+  "physical_start_passed": false,
+  "failed_starts": 5,
+  "onboard_dump_complete": true,
+  "offline_real_input_rejection_reproduced": true,
+  "current_source_unchanged": true,
+  "diagnosis_firmware_mutations": 0,
+  "diagnosis_remote_starts": 0,
+  "unresolved": [
+    "Physical integration correction",
+    "Successful start",
+    "Tracking and complete lap"
+  ],
+  "raw_project_data_included": false
 }
