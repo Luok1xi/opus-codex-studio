@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-c11-guide-evaluation",
+  "task_summary": "Evaluate an isolated guide-to-task handoff and bounded turn-exit repair, incorporate the requested reviewer consultation, and reject promotion when full-course acceptance fails.",
+  "workflow_version": "WORKFLOW_REVIEW.md; isolated implementation, explicit state contract, unchanged acceptance limits",
+  "started_at": "2026-11-08T15:22:53.543547+00:00",
+  "measurement_cutoff_at": "2026-11-08T16:19:34.125360+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Preserve frozen sources and vehicle",
+      "Separate physical guide from task counter with verified handoff",
+      "Pass segment and full-course acceptance before promotion",
+      "Keep reviewer advice and measured results distinct"
+    ],
+    "completed": [
+      "Rechecked frozen historical and deployed-source identities and created a source-only isolated evaluation.",
+      "Compared planned-side admission and restored bounded turn-exit supervision with explicit failure reasons.",
+      "Consulted the requested reviewer through one verified abstract model call and reviewed its separate local handoff; corrected unsupported historical and symbol assumptions.",
+      "Implemented the owner-approved lead-in guide separately from task numbering while retaining one turn state machine and its distance datum.",
+      "Passed44 unit scenarios with167 assertions, ten normal segments and four fail-closed injected segments.",
+      "Ran all eight final full-course conditions under unchanged quality limits; three passed and five failed. No flash approval or physical actions.",
+      "Detected and fixed a physics replay schema mismatch and a far-line optical false-proof case; retained original failed evidence."
+    ],
+    "remaining": [
+      "Repair full-course exit-lock and dense-turn quality failures; do not promote current evaluation.",
+      "Complete target compilation in the licensed IDE and verify RAM/timing only when preparing a viable candidate.",
+      "Physical odometry/camera calibration and vehicle acceptance remain separate later stages."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "claim_to_review_cutoff_wall",
+      "value": 3400.581813,
+      "unit": "seconds",
+      "basis": "Task-claim timestamp to report preparation; includes owner steering and local testing; later archive excluded"
+    },
+    {
+      "name": "final_unit_scenarios",
+      "value": 44,
+      "unit": "scenarios",
+      "basis": "Actual sanitizer-enabled host run"
+    },
+    {
+      "name": "final_unit_assertions",
+      "value": 167,
+      "unit": "assertions",
+      "basis": "Actual host test output"
+    },
+    {
+      "name": "final_segment_passed",
+      "value": 10,
+      "unit": "runs",
+      "basis": "Ten normal segment completion records"
+    },
+    {
+      "name": "final_fault_stops_passed",
+      "value": 4,
+      "unit": "runs",
+      "basis": "Output-zero and300ms post-stop coast evidence"
+    },
+    {
+      "name": "final_full_course_passed",
+      "value": 3,
+      "unit": "runs",
+      "basis": "Unchanged quality thresholds; eight final cases"
+    },
+    {
+      "name": "final_full_course_total",
+      "value": 8,
+      "unit": "runs",
+      "basis": "Four conditions in two models"
+    },
+    {
+      "name": "external_model_calls_completed",
+      "value": 1,
+      "unit": "calls",
+      "basis": "Verified reviewer reply; abstract minimal payload only"
+    },
+    {
+      "name": "external_model_elapsed",
+      "value": 38.422,
+      "unit": "seconds",
+      "basis": "Consultation receipt; not token or cost usage"
+    },
+    {
+      "name": "external_detailed_payload_rejections",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "Automatic approval rejected detailed payload; it was not sent"
+    },
+    {
+      "name": "target_native_build_failed",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "IDE-only compiler license rejected standalone invocation; no target HEX"
+    },
+    {
+      "name": "frozen_source_files_checked_each",
+      "value": 688,
+      "unit": "files",
+      "basis": "Two independent frozen trees"
+    },
+    {
+      "name": "modified_source_files",
+      "value": 9,
+      "unit": "files",
+      "basis": "Frozen baseline source diff"
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No serial, flashing or remote launch"
+    },
+    {
+      "name": "child_agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "One direct reviewer consult, no recursive delegation"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Not fully instrumented; archive interval is recorded separately"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Not fully instrumented; archive interval is recorded separately"
+    },
+    {
+      "name": "total_tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not fully instrumented; archive interval is recorded separately"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not fully instrumented; archive interval is recorded separately"
+    },
+    {
+      "name": "full_round_wall",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not fully instrumented; archive interval is recorded separately"
+    }
+  ],
+  "observations": [
+    "Segment success did not predict full-course acceptance; the unrepaired evaluation remains explicitly unapproved.",
+    "Several iterative control revisions and full runs were needed; no matched baseline supports a speedup claim.",
+    "A duplicated replay header caused malformed physics CSV interpretation; both writers now share one schema function.",
+    "A synthetic distant-line counterexample exposed ambiguity between small image pixels and large physical displacement; an inherited-model ground intercept check was added, with physical calibration still pending.",
+    "Detailed external consultation was rejected by automatic review; the completed consultation used only abstract design information. Full project evidence remained local.",
+    "The reviewer response contained a wrong symbol assumption; consultation did not replace source/image verification or acceptance.",
+    "Standalone target compilation hit the existing IDE-only licensing restriction; no workaround was attempted and no target artifact was claimed.",
+    "Some command/path assumptions and quoting errors caused avoidable retries. Known recipe and schema checks should precede broad validation."
+  ],
+  "recommendations": [
+    {
+      "id": "CC-REPLAY-SCHEMA-SINGLE-20261109",
+      "action": "Use one replay schema emitter for both host models and assert column count before evaluating quality.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Every model trace must retain finite fields, continuous timestamps and correct fan/speed columns."
+    },
+    {
+      "id": "CC-GUIDE-TASK-CONTRACT-20261109",
+      "action": "Keep physical guide execution, task progress and distance datum separate, and fail closed when the guide was not admitted.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Future changes retain missed-guide and datum-preservation tests; full-course failures remain failures.",
+      "experience_refs": [
+        "WF-PRODUCTION-CONTRACT-20261028",
+        "CRAZY-RATE-VERSION-CADENCE"
+      ],
+      "adoption": "改后"
+    },
+    {
+      "id": "CC-CONSULT-MINIMUM-20261109",
+      "action": "Start reviewer consultation with the minimum abstract question, then add only explicitly authorized evidence where needed.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Review call receipts and ensure project evidence is not included implicitly."
+    }
+  ],
+  "evidence": [
+    "Local frozen manifests and source diff",
+    "Verified abstract reviewer response and local handoff",
+    "Final unit, segment, fault and full-course summaries",
+    "No target artifact and explicit no-flash manifest"
+  ],
+  "limits": [
+    "No physical repair or acceptance claim.",
+    "Final full-course acceptance failed; target build and RAM/timing are unverified.",
+    "Historical turn settings were evaluated, not blindly restored.",
+    "No matched quality baseline or measured workflow speedup.",
+    "No raw sessions, reasoning, source, photos, telemetry or databases uploaded."
+  ],
+  "comparison": null
+}

@@ -1,0 +1,17 @@
+{
+  "sanitized": true,
+  "unit_scenarios_passed": 44,
+  "unit_assertions": 167,
+  "segments_passed": 10,
+  "segments_total": 10,
+  "faults_safe_stopped": 4,
+  "full_passed": 3,
+  "full_total": 8,
+  "quality_limit_unchanged": true,
+  "source_sets_unchanged": true,
+  "hardware_actions": 0,
+  "physical_acceptance": false,
+  "approved_for_flash": false,
+  "external_consults_completed": 1,
+  "raw_project_data_uploaded": false
+}
