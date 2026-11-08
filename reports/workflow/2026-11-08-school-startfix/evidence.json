@@ -33,5 +33,20 @@
   "owner_physical_preparation_confirmed": true,
   "remote_vehicle_starts": 0,
   "physical_launch_accepted": false,
-  "raw_project_data_included": false
+  "raw_project_data_included": false,
+  "owner_attempts": 4,
+  "owner_attempts_completed_without_stop3": 0,
+  "capture_bytes": 445845,
+  "capture_boot_resets": 0,
+  "last_board_record_samples": 17,
+  "current_real_frame_match_after": 24.246901,
+  "matching_threshold": 15,
+  "observed_zero_forward_wheel_targets": [
+    -237,
+    237
+  ],
+  "diagnostic_flashes": 0,
+  "diagnostic_setting_writes": 0,
+  "exact_source_files_reverified": 688,
+  "continuous_capture_fresh_at_final_check": false
 }

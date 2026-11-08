@@ -60,6 +60,30 @@
       "value": null,
       "unit": "seconds",
       "basis": "Archive receipt records actual timing after report cutoff"
+    },
+    {
+      "name": "observed_failed_owner_starts",
+      "value": 4,
+      "unit": "starts",
+      "basis": "Complete closed capture with no resets"
+    },
+    {
+      "name": "diagnostic_flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Only read-only queries and offline analysis"
+    },
+    {
+      "name": "initial_archive_wall",
+      "value": 17.294888,
+      "unit": "seconds",
+      "basis": "Earlier verified archive receipt"
+    },
+    {
+      "name": "diagnostic_initial_snapshot_to_cutoff",
+      "value": 554.841626,
+      "unit": "seconds",
+      "basis": "Measured diagnostic snapshot interval; earlier request/context work excluded"
     }
   ],
   "evidence": [
@@ -67,16 +91,21 @@
     "Exact-source real-frame and startup regression summaries",
     "Route and finish-stop summaries",
     "Verified flash receipt",
-    "Live query and capture receipts"
+    "Live query and capture receipts",
+    "Closed four-attempt capture summary",
+    "Complete last-attempt onboard dump summary",
+    "Current-frame rejection and bounded diagnostic ablation",
+    "Actual zero-forward counter-rotation telemetry and source call path"
   ],
   "limits": [
-    "One post-stop real frame plus deterministic variants does not cover all real track images.",
+    "Two post-stop real frames differ; neither reconstructs the short driven attempt frame by frame.",
     "Full-route tests use zero fan; fan30 timing is validated separately with stubbed hardware.",
     "No physical turn timing, line adhesion or complete-lap success claimed.",
     "No matched workflow quality/timing baseline, no speedup claim.",
-    "No raw source, serial records, images, firmware, live databases or credentials uploaded."
+    "No raw source, serial records, images, firmware, live databases or credentials uploaded.",
+    "Physical acceptance failed; calibration/prefill success cannot be reported as a successful launch."
   ],
-  "summary": "Correct real-frame startup rejection while preserving requested settings and route, then clean-build and deploy after current physical preparation.",
+  "summary": "Correct and deploy the isolated startup candidate, then diagnose four failed owner-operated starts against live telemetry, saved real images and exact source.",
   "completed": [
     "Isolated manifest-only source copy and six reviewed source changes; historical source preserved",
     "Real input admission plus invalid-input and stale-frame rejection checked with unchanged matching limit",
@@ -87,9 +116,16 @@
     "Owner-confirmed physical setup; one verified flash with zero byte differences",
     "Live wired readback of expected identity, requested settings, stationary output and camera 150 fps",
     "Live wireless identity and settings verified after reconnection",
-    "Read-only continuous capture opened and fresh data confirmed"
+    "Read-only continuous capture opened and fresh data confirmed",
+    "Four complete owner-operated failed starts preserved with no restart in capture",
+    "Calibration and fan prefill progression distinguished from navigation acceptance failure",
+    "Complete stopped-state onboard record, identity and camera image read back",
+    "Exact released navigator rejected the newly captured input in offline replay",
+    "Observed zero mean forward target with nonzero counter-rotating wheel targets traced to readiness/control coupling"
   ],
   "remaining": [
-    "Owner-operated physical launch and line-following/early-turn/corner-speed acceptance remain pending"
+    "Physical starting acceptance FAILED in all four attempts; no further corrected firmware deployed",
+    "Real-image/model alignment and unified forward/steering admission need correction",
+    "Line following, early turns, corner speed and full-lap behavior still unvalidated"
   ]
 }
