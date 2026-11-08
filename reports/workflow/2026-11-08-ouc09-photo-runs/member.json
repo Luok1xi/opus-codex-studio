@@ -1,0 +1,113 @@
+{
+  "round_id": "2026-11-08-ouc09-photo-runs",
+  "metrics": [
+    {
+      "name": "measured_analysis_wall",
+      "value": 562.435396,
+      "unit": "seconds",
+      "basis": "First saved analysis timestamp to cutoff; initial capture preparation preceded it"
+    },
+    {
+      "name": "photo_runs",
+      "value": 3,
+      "unit": "runs",
+      "basis": "Owner order and complete wireless intervals"
+    },
+    {
+      "name": "board_samples",
+      "value": 194,
+      "unit": "samples",
+      "basis": "Header, contiguous indices and END"
+    },
+    {
+      "name": "software_reproductions",
+      "value": 1,
+      "unit": "cases",
+      "basis": "Frozen actual controller binary and route code"
+    },
+    {
+      "name": "unchanged_source_files",
+      "value": 688,
+      "unit": "files",
+      "basis": "Release hash manifest"
+    },
+    {
+      "name": "firmware_edits",
+      "value": 0,
+      "unit": "files",
+      "basis": "No firmware writes"
+    },
+    {
+      "name": "flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No flasher invocation"
+    },
+    {
+      "name": "remote_starts",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No launch command"
+    },
+    {
+      "name": "readonly_queries",
+      "value": 3,
+      "unit": "queries",
+      "basis": "Parked S/P/I intent log"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider accounting"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable"
+    },
+    {
+      "name": "tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not instrumented"
+    },
+    {
+      "name": "archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Measured in archive receipt"
+    }
+  ],
+  "evidence": [
+    "Three owner-labeled photos and source hashes",
+    "Three boot-consistent wireless intervals",
+    "Complete194-row onboard record",
+    "Unchanged source/binary hashes and diagnostic output"
+  ],
+  "limits": [
+    "Exact moving path and actual timeout sub-branch were not recorded.",
+    "No new firmware was implemented or flashed in this analysis round.",
+    "No physical full-lap acceptance.",
+    "Only sanitized aggregate workflow records are uploaded."
+  ],
+  "summary": "Diagnose three photographed09R2 stops using preserved telemetry and a frozen-controller reproduction.",
+  "completed": [
+    "Preserved the last run onboard record before reboot:194 contiguous20ms samples with terminator.",
+    "Aligned three owner photos in order to three complete wireless launch/stop intervals; all stopped with code3.",
+    "Separated observed photo location from internal route progress and inferred wrong-branch trajectory.",
+    "Reproduced the dash hold boundary handing a large fresh line error to saturated steering in the frozen controller.",
+    "Verified688 source inputs unchanged and restored passive capture; no firmware/parameter change or flash."
+  ],
+  "remaining": [
+    "Implement guarded lane reacquisition and straight-junction route isolation in a separate candidate, then rerun full-course acceptance.",
+    "Physical acceptance remains open; no claimed repair or full-lap success."
+  ]
+}

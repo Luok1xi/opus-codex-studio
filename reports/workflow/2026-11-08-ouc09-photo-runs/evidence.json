@@ -1,0 +1,17 @@
+{
+  "sanitized": true,
+  "owner_photos": 3,
+  "wireless_runs": 3,
+  "all_stop3": true,
+  "latest_board_samples": 194,
+  "record_complete": true,
+  "hold_exit_error_px": 56,
+  "hold_exit_yaw_command": -300,
+  "code_path_reproduced": true,
+  "source_unchanged": 688,
+  "firmware_edits": 0,
+  "flashes": 0,
+  "parameters_written": 0,
+  "physical_acceptance": false,
+  "raw_project_data_uploaded": false
+}
