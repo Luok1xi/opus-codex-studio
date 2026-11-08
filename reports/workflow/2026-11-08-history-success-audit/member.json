@@ -1,0 +1,132 @@
+{
+  "round_id": "2026-11-08-history-success-audit",
+  "summary": "Audit historical successful controller against current early-turn failures, verify owner-authoritative track geometry, and defer physical calibration.",
+  "metrics": [
+    {
+      "name": "claim_to_cutoff_wall",
+      "value": 883.554876,
+      "unit": "seconds",
+      "basis": "Task-claim timestamp to review preparation; initial context lookup and later archive excluded"
+    },
+    {
+      "name": "historical_source_files_each",
+      "value": 684,
+      "unit": "files",
+      "basis": "Two historical trees checked against historical manifest plus documented profile difference"
+    },
+    {
+      "name": "frozen_source_files_each",
+      "value": 688,
+      "unit": "files",
+      "basis": "Frozen reference and deployed diagnostic checked against release manifests"
+    },
+    {
+      "name": "historical_rows_decoded",
+      "value": 932,
+      "unit": "rows",
+      "basis": "Strict count and continuous index with END delimiter"
+    },
+    {
+      "name": "historical_planned_turns_matched",
+      "value": 15,
+      "unit": "turns",
+      "basis": "Measured state3 direction sequence matches old route"
+    },
+    {
+      "name": "current_rows_rechecked",
+      "value": 234,
+      "unit": "rows",
+      "basis": "Complete latest saved diagnostic record"
+    },
+    {
+      "name": "drawing_checks",
+      "value": 31,
+      "unit": "checks",
+      "basis": "25 dimension relations and6 regular-hex derived sides"
+    },
+    {
+      "name": "route_distances_checked",
+      "value": 47,
+      "unit": "entries",
+      "basis": "Route geometry sum equals frozen table entry"
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No serial, flash, commands or launches"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator; historical reports treated as historical evidence"
+    },
+    {
+      "name": "owner_clarifications",
+      "value": 1,
+      "unit": "answers",
+      "basis": "Actual midpoint start confirmation"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "total_tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "full_round_wall",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    }
+  ],
+  "completed": [
+    "Verified historical successful baseline against frozen source and HEX evidence, separating later reference labels from deployed identity.",
+    "Re-decoded complete historical record and compared its state transitions with saved current failure telemetry.",
+    "Compared effective control, geometry and route settings; distinguished observed missing admission from unrecorded rejection causes.",
+    "Recorded owner clarification and excluded an inconsistent start-location hypothesis as the actual cause.",
+    "Checked authoritative dimensioned drawing against frozen topology and all47 cumulative route distances.",
+    "Verified frozen and deployed source inventories unchanged; no firmware edits, serial access, flash or launch.",
+    "Produced local source diff, evidence manifest, geometry check and bounded diagnosis report."
+  ],
+  "remaining": [],
+  "evidence": [
+    "Historical source and HEX hash inventory",
+    "Strict old-record parsing and saved diagnostic comparison",
+    "Owner-confirmed start and authoritative drawing",
+    "Dimension and cumulative route-distance checks",
+    "Local read-only source diff"
+  ],
+  "limits": [
+    "Physical failure remains unresolved; this audit is not a repair or a flash approval.",
+    "No new full-lap simulation or hardware acceptance performed.",
+    "Historical completion did not measure current physical55/60mm limits.",
+    "No matched quality baseline; no speedup claim.",
+    "No raw sessions, source, photos, telemetry or databases uploaded."
+  ]
+}

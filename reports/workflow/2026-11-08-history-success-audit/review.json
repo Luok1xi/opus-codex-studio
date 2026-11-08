@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-history-success-audit",
+  "task_summary": "Audit historical successful controller against current early-turn failures, verify owner-authoritative track geometry, and defer physical calibration.",
+  "workflow_version": "WORKFLOW_REVIEW.md; frozen evidence and effective-source comparison",
+  "started_at": "2026-11-08T15:01:01.364720+00:00",
+  "measurement_cutoff_at": "2026-11-08T15:15:44.919596+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Identify successful historical version from original evidence",
+      "Separate map, parameters, observations and causal hypotheses",
+      "Preserve frozen source and car state",
+      "Verify authoritative drawing and defer calibration"
+    ],
+    "completed": [
+      "Verified historical successful baseline against frozen source and HEX evidence, separating later reference labels from deployed identity.",
+      "Re-decoded complete historical record and compared its state transitions with saved current failure telemetry.",
+      "Compared effective control, geometry and route settings; distinguished observed missing admission from unrecorded rejection causes.",
+      "Recorded owner clarification and excluded an inconsistent start-location hypothesis as the actual cause.",
+      "Checked authoritative dimensioned drawing against frozen topology and all47 cumulative route distances.",
+      "Verified frozen and deployed source inventories unchanged; no firmware edits, serial access, flash or launch.",
+      "Produced local source diff, evidence manifest, geometry check and bounded diagnosis report."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "claim_to_cutoff_wall",
+      "value": 883.554876,
+      "unit": "seconds",
+      "basis": "Task-claim timestamp to review preparation; initial context lookup and later archive excluded"
+    },
+    {
+      "name": "historical_source_files_each",
+      "value": 684,
+      "unit": "files",
+      "basis": "Two historical trees checked against historical manifest plus documented profile difference"
+    },
+    {
+      "name": "frozen_source_files_each",
+      "value": 688,
+      "unit": "files",
+      "basis": "Frozen reference and deployed diagnostic checked against release manifests"
+    },
+    {
+      "name": "historical_rows_decoded",
+      "value": 932,
+      "unit": "rows",
+      "basis": "Strict count and continuous index with END delimiter"
+    },
+    {
+      "name": "historical_planned_turns_matched",
+      "value": 15,
+      "unit": "turns",
+      "basis": "Measured state3 direction sequence matches old route"
+    },
+    {
+      "name": "current_rows_rechecked",
+      "value": 234,
+      "unit": "rows",
+      "basis": "Complete latest saved diagnostic record"
+    },
+    {
+      "name": "drawing_checks",
+      "value": 31,
+      "unit": "checks",
+      "basis": "25 dimension relations and6 regular-hex derived sides"
+    },
+    {
+      "name": "route_distances_checked",
+      "value": 47,
+      "unit": "entries",
+      "basis": "Route geometry sum equals frozen table entry"
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No serial, flash, commands or launches"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator; historical reports treated as historical evidence"
+    },
+    {
+      "name": "owner_clarifications",
+      "value": 1,
+      "unit": "answers",
+      "basis": "Actual midpoint start confirmation"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "total_tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    },
+    {
+      "name": "full_round_wall",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not fully instrumented; archive interval reported separately in verified receipt"
+    }
+  ],
+  "observations": [
+    "Static website firmware label was not a live vehicle identity and its displayed number was a replay sector rather than a physical junction identifier.",
+    "Observed state-machine non-admission is stronger evidence than attributing every stop to the previously suspected hold exit.",
+    "Direct owner clarification ruled out using the battery-centre start alternative as an actual explanation.",
+    "Some combined searches exceeded output budgets and several assumed metadata paths were absent; subsequent checks used exact files and structured summaries.",
+    "Existing control initialization contains later overrides; final values were checked instead of reading the first assignment.",
+    "No independent new reviewer was dispatched; original author attribution was retained for historical reports."
+  ],
+  "recommendations": [
+    {
+      "id": "CC-HISTORY-STATE-CONTRACT-20261108",
+      "action": "Compare actual state transitions and effective overrides before labelling a controller as restored to a successful baseline.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Future isolated revision links every changed control behavior to its baseline and matching segment evidence.",
+      "experience_refs": [
+        "WF-PRODUCTION-CONTRACT-20261028",
+        "CRAZY-RATE-VERSION-CADENCE"
+      ],
+      "adoption": "改后"
+    },
+    {
+      "id": "CC-NODE-ADMISSION-EVIDENCE-20261108",
+      "action": "Preserve raw and filtered turn observations, distance residual, confirmation count and explicit rejection reason in a later isolated diagnostic.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "First-corner segment distinguishes classifier, geometry and rate rejection before changes are promoted."
+    }
+  ],
+  "evidence": [
+    "Historical source and HEX hash inventory",
+    "Strict old-record parsing and saved diagnostic comparison",
+    "Owner-confirmed start and authoritative drawing",
+    "Dimension and cumulative route-distance checks",
+    "Local read-only source diff"
+  ],
+  "limits": [
+    "Physical failure remains unresolved; this audit is not a repair or a flash approval.",
+    "No new full-lap simulation or hardware acceptance performed.",
+    "Historical completion did not measure current physical55/60mm limits.",
+    "No matched quality baseline; no speedup claim.",
+    "No raw sessions, source, photos, telemetry or databases uploaded."
+  ],
+  "comparison": null
+}

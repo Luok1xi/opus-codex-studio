@@ -1,0 +1,14 @@
+{
+  "sanitized": true,
+  "comparison_complete": true,
+  "historical_rows": 932,
+  "planned_turns_matched": 15,
+  "current_rows": 234,
+  "dimension_checks": 31,
+  "route_distances": 47,
+  "source_sets_unchanged": true,
+  "hardware_actions": 0,
+  "physical_acceptance": false,
+  "calibration_deferred": true,
+  "raw_project_data_uploaded": false
+}
