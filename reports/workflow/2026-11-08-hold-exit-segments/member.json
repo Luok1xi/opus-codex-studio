@@ -1,0 +1,126 @@
+{
+  "round_id": "2026-11-08-hold-exit-segments",
+  "metrics": [
+    {
+      "name": "measured_wall",
+      "value": 1075.454321,
+      "unit": "seconds",
+      "basis": "Source isolation timestamp to review cutoff; initial reading preceded timestamp"
+    },
+    {
+      "name": "controller_scenarios",
+      "value": 23,
+      "unit": "scenarios",
+      "basis": "Final sanitizer harness"
+    },
+    {
+      "name": "controller_assertions",
+      "value": 123,
+      "unit": "assertions",
+      "basis": "Final sanitizer harness"
+    },
+    {
+      "name": "normal_segment_passes",
+      "value": 6,
+      "unit": "cases",
+      "basis": "Three fixtures by two starts"
+    },
+    {
+      "name": "reconstructed_safety_passes",
+      "value": 4,
+      "unit": "cases",
+      "basis": "Two scenarios by two near-line validity conditions"
+    },
+    {
+      "name": "target_files_changed",
+      "value": 4,
+      "unit": "files",
+      "basis": "Hash audit"
+    },
+    {
+      "name": "baseline_source_verified",
+      "value": 688,
+      "unit": "files",
+      "basis": "Frozen manifest"
+    },
+    {
+      "name": "target_builds",
+      "value": 0,
+      "unit": "builds",
+      "basis": "No target compiler invoked"
+    },
+    {
+      "name": "flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No flash tool"
+    },
+    {
+      "name": "serial_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "No serial tool"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator"
+    },
+    {
+      "name": "post_initial_source_refinements",
+      "value": 1,
+      "unit": "passes",
+      "basis": "Period labeling and partial-state guard hardened together"
+    },
+    {
+      "name": "tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not instrumented; exploratory reads included nonexistent paths and oversized results"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No authoritative provider usage"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive duration stored in final receipt"
+    }
+  ],
+  "evidence": [
+    "Unchanged baseline hash manifest",
+    "Actual-controller sanitizer tests",
+    "Versioned record roundtrip",
+    "Matched reconstructed inputs and300ms plant coast"
+  ],
+  "limits": [
+    "No new firmware HEX, target link map or hardware timing result.",
+    "Fault reconstructions use injected vision outputs; synchronized real near-line fields were missing.",
+    "No physical segment or lap acceptance.",
+    "Only sanitized aggregate reports uploaded."
+  ],
+  "summary": "Freeze09R2 and isolate guarded dash/fork hold exit with board diagnostics and short tests.",
+  "completed": [
+    "Frozen deployed09R2:688 source files and11 release/evidence artifacts unchanged.",
+    "Isolated hold exit guard and versioned onboard diagnostic source; four target files changed; no tuning change.",
+    "Passed23 controller scenarios/123 assertions and actual serial formatter/decoder roundtrip with three malformed-record rejections.",
+    "Passed6 normal short-segment conditions with10.3498mm peak; baseline also passed these controls.",
+    "Four output-level fault reconstructions sent the baseline beyond60mm; experiment stopped safely, peak7.7475mm including300ms coast.",
+    "Kept55mm quality and60mm out-of-line thresholds,125 speed and30 percent fan; no whole-lap search."
+  ],
+  "remaining": [
+    "Target compilation, RAM placement and ISR timing validation pending; no candidate HEX or flash.",
+    "Synchronized physical fault-frame/telemetry acceptance pending; output reconstruction is not original camera replay."
+  ]
+}

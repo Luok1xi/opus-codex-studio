@@ -1,0 +1,22 @@
+{
+  "sanitized": true,
+  "frozen_source_files": 688,
+  "frozen_artifacts": 11,
+  "target_files_changed": 4,
+  "controller_scenarios": 23,
+  "controller_assertions": 123,
+  "normal_pass": 6,
+  "normal_total": 6,
+  "normal_peak_mm": 10.3498,
+  "baseline_counterexample_out": 4,
+  "reconstruction_safe_stop": 4,
+  "reconstruction_peak_mm": 7.7475,
+  "quality_mm": 55,
+  "out_mm": 60,
+  "coast_ms": 300,
+  "flash_actions": 0,
+  "target_builds": 0,
+  "real_acceptance": false,
+  "promotion_allowed": false,
+  "raw_project_data_uploaded": false
+}
