@@ -1,0 +1,18 @@
+{
+  "sanitized": true,
+  "version": "SCHOOL375-C27-EVAL10",
+  "approved_for_flash": false,
+  "normal_segments": "6/6",
+  "fault_safe_stops": "4/4",
+  "full_laps": "0/8",
+  "controller_scenarios": 36,
+  "controller_assertions": 138,
+  "fill_inputs": 35,
+  "fill_modes": 4,
+  "native_units": 174,
+  "native_errors": 0,
+  "new_warnings": 0,
+  "physical_acceptance": false,
+  "hardware_actions": 0,
+  "raw_project_data_uploaded": false
+}

@@ -1,0 +1,145 @@
+{
+  "round_id": "2026-11-08-c27-evaluation",
+  "summary": "Evaluate national-team visual reconstruction ideas offline after diagnostic physical failure; reject promotion when route acceptance fails.",
+  "metrics": [
+    {
+      "name": "measured_wall",
+      "value": 983.737575,
+      "unit": "seconds",
+      "basis": "Isolated evaluation directory creation to review cutoff; includes context recovery and report preparation; excludes earlier physical capture"
+    },
+    {
+      "name": "controller_scenarios",
+      "value": 36,
+      "unit": "scenarios",
+      "basis": "Sanitizer test output"
+    },
+    {
+      "name": "controller_assertions",
+      "value": 138,
+      "unit": "assertions",
+      "basis": "Actual PID and wire record tests"
+    },
+    {
+      "name": "full_laps_attempted",
+      "value": 8,
+      "unit": "runs",
+      "basis": "Four conditions, two engines"
+    },
+    {
+      "name": "full_laps_passed",
+      "value": 0,
+      "unit": "runs",
+      "basis": "All stopped at relock guard"
+    },
+    {
+      "name": "normal_segments_passed",
+      "value": 6,
+      "unit": "runs",
+      "basis": "Centered and offset straight/dash/fork"
+    },
+    {
+      "name": "fault_safe_stops",
+      "value": 4,
+      "unit": "runs",
+      "basis": "Synthetic fault cases; physical acceptance separate"
+    },
+    {
+      "name": "fill_cases",
+      "value": 35,
+      "unit": "inputs",
+      "basis": "Eleven geometry, two stationary real, twenty-two development replay"
+    },
+    {
+      "name": "native_compile_units",
+      "value": 174,
+      "unit": "units",
+      "basis": "Clean native build log"
+    },
+    {
+      "name": "native_new_warnings",
+      "value": 0,
+      "unit": "warnings",
+      "basis": "Normalized comparison with frozen baseline"
+    },
+    {
+      "name": "native_build_attempts",
+      "value": 1,
+      "unit": "builds",
+      "basis": "One clean target build succeeded"
+    },
+    {
+      "name": "flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Offline evaluation scope"
+    },
+    {
+      "name": "serial_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "Offline evaluation scope"
+    },
+    {
+      "name": "remote_launches",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No vehicle control"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator; existing research handoff only"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider accounting unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Billing unavailable"
+    },
+    {
+      "name": "tool_failure_count",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not globally instrumented; known rework described"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Report creation and archive timing recorded separately; full overhead not instrumented"
+    }
+  ],
+  "completed": [
+    "Preserved frozen historical sources/artifacts and deployed diagnostic source/HEX; identities kept separate.",
+    "Complete saved physical record exposes ordinary-following deviation conflict while route index stays0; missing raw corner/distance prevents exact first-node cause attribution.",
+    "Implemented independently derived restricted near-gap fill, bounded ordinary-line conflict stop, and versioned full-sequence/yaw diagnostics in isolated offline source.",
+    "Actual-C fill comparison completed on35 inputs across4 modes; static and development sources labeled separately from synchronized moving evidence.",
+    "Six simple segments and four injected safe-stop cases passed;36 controller scenarios/138 assertions and actual record roundtrip passed.",
+    "All8 full laps failed completion with stop28. No quality/out limit relaxation, no promotion, no physical retry request.",
+    "Native174-unit build passed with0 errors and12 inherited warnings;3559bytes static CPU0 headroom. Source/host parity and artifact identity audited."
+  ],
+  "remaining": [
+    "The physical vehicle is not fixed or accepted. No synchronized moving camera frames or exact rejected-node evidence available.",
+    "No target cycle or stack high-water measurements for the evaluation. Host timing includes Python/ctypes/copy overhead.",
+    "No qualified firmware candidate: full-lap completion0/8."
+  ],
+  "evidence": [
+    "Sanitized source-freeze/native-build summary",
+    "Actual-C host comparison aggregates",
+    "Segment and full-lap result aggregates",
+    "Wire schema roundtrip and bounded physical-record sensitivity"
+  ],
+  "limits": [
+    "Raw code, logs, camera frames, sessions and databases stay local.",
+    "Simulation safety stop is not completed-lap quality or physical acceptance.",
+    "Only one of repeated physical starts has a complete saved detailed record."
+  ]
+}
