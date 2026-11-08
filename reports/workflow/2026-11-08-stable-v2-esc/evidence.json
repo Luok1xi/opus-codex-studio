@@ -1,0 +1,35 @@
+{
+  "round_id": "2026-11-08-stable-v2-esc",
+  "baseline_sha256": "52856003a468c735d31564cf49785337fe849db707a3be24dd593e62ba4bfcea",
+  "donor_sha256": "ae47ba8c295afb053216e88b80e13a676c5ad48dbafc61077bc82d1a008e702b",
+  "candidate_sha256": "ecece3237d796901f1bdd88ac9799de4992335a94ecb0a1df69bb14193ab543b",
+  "candidate_bytes": 300955,
+  "changed_files": [
+    "code/control.c",
+    "code/control.h",
+    "code/vision_link.c",
+    "code/wireless.c",
+    "user/cpu0_main.c"
+  ],
+  "source_files": 684,
+  "unchanged_source_files": 679,
+  "target_object_files": 173,
+  "build_errors": 0,
+  "build_warnings": 11,
+  "warnings_identical_to_baseline": true,
+  "hex_elf_payload_equal": true,
+  "payload_bytes": 124927,
+  "host_tests_passed": true,
+  "host_result_sha256": "3c8a3974600eed8ae040ca568d0aea98e12d26699bcb50850a2aecfedcd1fd5f",
+  "host_cases_per_build": 20,
+  "host_assertions_per_build": 373973,
+  "host_builds": [
+    "GCC optimized",
+    "ASan/UBSan"
+  ],
+  "scope": "ESC interface and startup sequencing; no wheel PID, encoder or vision/route algorithm changes.",
+  "source_review": "Native Codex independent review found no blocking defect; actual source equality and all-mode launch gating verified.",
+  "physical_actions": 0,
+  "current_car_identity_checked": false,
+  "physical_validation": "not performed; no claim about RPM/suction/current chassis lap stability"
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-stable-v2-esc",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-08T13:46:06.422348+08:00",
+  "measurement_cutoff_at": "2026-11-08T05:54:26.626377+00:00",
+  "task_summary": "将MIN-01的无刷风机输出与必要启动流程移入原始稳定v2，交付独立可烧录候选。",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "可追溯v2底稿；驱动/视觉/路线保持；无刷输出和阶段边界测试通过；ADS净编与产物来源核验。"
+    ],
+    "completed": [
+      "完成V2-ESC-01，仅5个启动、输出及状态相关文件变化；保留679份原文件。",
+      "S5及无线共用启动初始化，关风机校零、预转后放轮；限80%，保留超时保护。",
+      "独立源码审查、真实C函数主机验证及ADS173对象净编通过；HEX载荷逐字节匹配ELF。",
+      "保存冻结源码、HEX、map、构建日志、原v2回退和完整交接。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_elapsed",
+      "value": 500.204029,
+      "unit": "seconds",
+      "basis": "首个本轮已记录时间至交付核验截止；含工具启动及协调。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "没有提供方usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未与实现重叠时间单独测量。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "复盘准备未独立计时；远程写入回读另存回执。"
+    },
+    {
+      "name": "source_files_changed",
+      "value": 5,
+      "unit": "files",
+      "basis": "684项冻结清单比对。"
+    }
+  ],
+  "observations": [
+    "先核对发现两版轮驱/编码器相同，因此移植无刷输出和启动依赖，没有照搬后期整份控制文件。",
+    "一位原生Codex独立审查；另一位编写并运行隔离C验证。没有本轮外部Opus调用；历史Opus证据不是本轮回执。",
+    "ADS启动期间两次菜单尚未就绪，第三次发出构建；第一次目标构建即0错误。关闭请求后进程稍后退出，未强杀其他ADS。",
+    "最初上下文和技能批量读取仍有大输出截断；主实现随后改用精确函数/清单读取。",
+    "主机提取器最初把注释内PWM示例当调用，改为行首实际语句后通过；未修改固件来迎合测试。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-adapter-port-invariants",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "小范围硬件移植同时核对输出转换、全部启动入口及阶段依赖；对不该迁移的控制/视觉/路线用冻结文件和函数比较锁定。",
+      "next_check": "后续固件恢复/适配复用不变项门禁；新硬件波形和实跑另验，不把编译通过当运行通过。",
+      "experience_refs": [
+        "WS-D666",
+        "FL05",
+        "FL11",
+        "FL12"
+      ],
+      "adoption": "改后"
+    }
+  ],
+  "evidence": [
+    "同目录evidence.json；项目完整handoff与out/verification；独立成员报告。"
+  ],
+  "limits": [
+    "没有同任务同质量基线，不能声称协作提效。",
+    "软件交付通过，未烧录、未测实际电调波形/风机和圈速。",
+    "保持旧v2记录长度与已知控制行为，并非修复全部旧车问题。"
+  ],
+  "comparison": null
+}
