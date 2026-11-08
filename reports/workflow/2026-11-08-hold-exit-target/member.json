@@ -1,0 +1,128 @@
+{
+  "round_id": "2026-11-08-hold-exit-target",
+  "metrics": [
+    {
+      "name": "measured_wall",
+      "value": 1469.080501,
+      "unit": "seconds",
+      "basis": "Target directory creation to review cutoff, includes rebuild and connection waits; excludes earlier reading"
+    },
+    {
+      "name": "native_build_attempts",
+      "value": 2,
+      "unit": "builds",
+      "basis": "One compile-time record padding failure, one successful clean build"
+    },
+    {
+      "name": "native_compile_units",
+      "value": 174,
+      "unit": "units",
+      "basis": "Final compiler log"
+    },
+    {
+      "name": "native_new_warnings",
+      "value": 0,
+      "unit": "warnings",
+      "basis": "Normalized comparison against frozen baseline"
+    },
+    {
+      "name": "controller_scenarios",
+      "value": 23,
+      "unit": "scenarios",
+      "basis": "Sanitizer harness"
+    },
+    {
+      "name": "controller_assertions",
+      "value": 126,
+      "unit": "assertions",
+      "basis": "Sanitizer harness"
+    },
+    {
+      "name": "flash_attempts",
+      "value": 2,
+      "unit": "actions",
+      "basis": "First failed at DAS initialization before erase; second verifiedPASS"
+    },
+    {
+      "name": "flash_successes",
+      "value": 1,
+      "unit": "actions",
+      "basis": "Official receipt"
+    },
+    {
+      "name": "successful_flash_time",
+      "value": 4008,
+      "unit": "milliseconds",
+      "basis": "Flasher log"
+    },
+    {
+      "name": "serial_queries",
+      "value": 5,
+      "unit": "commands",
+      "basis": "Per-capture intent receipts"
+    },
+    {
+      "name": "remote_launches",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Only readback queries"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator"
+    },
+    {
+      "name": "tool_failure_count",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not globally instrumented; concrete rework listed below"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No authoritative provider usage"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Unavailable"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive duration in final readback receipt"
+    }
+  ],
+  "evidence": [
+    "Frozen source/HEX manifest and native compiler/map",
+    "Official flash receipts and live serial readbacks",
+    "Controller tests and strict record decoder",
+    "Local deployment handoff"
+  ],
+  "limits": [
+    "No active physical acceptance.",
+    "Static timing and link headroom do not prove active-loop timing or stack high-water.",
+    "Only sanitized aggregate reports uploaded."
+  ],
+  "summary": "Build and deploy isolated hold-exit diagnostics, verify stationary identity, and prepare owner-controlled segment trials.",
+  "completed": [
+    "Preserved frozen09R2 source and release; copied688 inputs into an isolated target tree.",
+    "Clean174-unit native build passed with0 errors and12 unchanged warnings; CPU0 link headroom3559bytes after reserved stacks/CSA.",
+    "23 host controller scenarios/126 assertions and LOG2 roundtrip passed; stop28 keeps unsafe56px exit out of normal PID.",
+    "Official diagnostic flash verified after owner-confirmed reconnect; live wired identity125/fan30/OUC/47 nodes matches frozen HEX.",
+    "Stationary30s timing showed no new lateness or execution overruns;2ms/5ms measured maxima45/18us in that window.",
+    "Empty prelaunch LOG2 record accepted only for count0/start0/period0; nonempty invalid-period records remain rejected.",
+    "Wireless identity and stopped settings verified after owner restored module; passive run capture prepared.",
+    "Owner ran the car; passive wireless recorded a stop28 and later stop3. Owner located the failure at dashed line. First-run timing reached74/49us with no overrun or late count."
+  ],
+  "remaining": [
+    "Dashed-line traversal has not passed. Detailed failure diagnosis awaits a stopped, unrestarted board-record export; repeated launches prevented three guarded queries.",
+    "No physical route or segment quality acceptance; no real stack high-water result.",
+    "C27 evaluation deferred by owner until current diagnostic tests; reference reads only."
+  ]
+}

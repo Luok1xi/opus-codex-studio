@@ -1,0 +1,22 @@
+{
+  "sanitized": true,
+  "version": "SCHOOL375-HOLD125-D01",
+  "hex_sha256": "30fde65f31a1fab2d27b0c75b5319e85823ed9ed5090d47ad91f3bb351c756ed",
+  "native_compilations": 174,
+  "native_errors": 0,
+  "inherited_warnings": 12,
+  "new_warnings": 0,
+  "cpu0_free": 3559,
+  "controller_scenarios": 23,
+  "controller_assertions": 126,
+  "flash_attempts": 2,
+  "flash_successes": 1,
+  "flash_ms": 4008,
+  "stationary_max2_us": 45,
+  "stationary_max5_us": 18,
+  "stationary_late_delta": 0,
+  "wireless_verified": true,
+  "physical_acceptance": false,
+  "remote_launches": 0,
+  "raw_project_data_uploaded": false
+}
