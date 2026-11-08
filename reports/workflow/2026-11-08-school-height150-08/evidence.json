@@ -1,0 +1,28 @@
+{
+  "round_id": "2026-11-08-school-height150-08",
+  "source_files": 688,
+  "changed_from07": 4,
+  "changed_from06": 7,
+  "route_pass": 8,
+  "route_total": 8,
+  "image_cases": 37,
+  "image_checks": 852,
+  "motion_checks": 19,
+  "launch_cases": 15,
+  "launch_checks": 374963,
+  "compile_errors": 0,
+  "inherited_warnings": 14,
+  "new_warnings": 0,
+  "flash_actions": 1,
+  "remote_starts": 0,
+  "reference_files_hash_verified": 6,
+  "physical_acceptance": "failed_stop3",
+  "raw_project_data_uploaded": false,
+  "complete_board_records": [
+    55,
+    60
+  ],
+  "complete_scene_images": 2,
+  "pose_scan_is_ground_truth": false,
+  "firmware_changes_after_flash": 0
+}

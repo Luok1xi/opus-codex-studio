@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-school-height150-08",
+  "task_summary": "Deploy isolated08 after offline regression, compare the supplied control source, and diagnose physical visual-stop failures without confusing simulation with real acceptance.",
+  "workflow_version": "WORKFLOW_REVIEW.md + immutable source freeze + active-path audit + physical evidence separation",
+  "started_at": "2026-11-08T09:11:58.681307+00:00",
+  "measurement_cutoff_at": "2026-11-08T09:53:41.843045+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Clean identified deployment",
+      "Effective control-source comparison",
+      "Physical resistor and route completion"
+    ],
+    "completed": [
+      "Preserved688 manifest-listed source files and isolated the08 candidate; four changes from07, seven from06.",
+      "Added a small-residual pose-correction deadband after reproducing07 longitudinal localization drift; kept matching/out-of-line/stale criteria unchanged.",
+      "Eight of eight unchanged route cases passed in two simulation engines; real-frame and motion/launch checks passed; no claim of physical acceptance.",
+      "Clean build passed with zero errors and14 inherited warnings; tested/built source identity and historical snapshots verified.",
+      "User authorized deployment and confirmed actual download preparation. One official flash verified; wired and wireless readbacks matched125/30/47.",
+      "Read-only record spans several start/stop attempts across two boot epochs; user reports three starts repeatedly stopping at the shown location. Per-attempt correspondence is not assumed.",
+      "A captured run shows matching error rising above admission threshold before drive inhibition and stop3. User reports stopping at a resistor.",
+      "Verified six Ningxia reference files against original extraction manifest; checked actual initialization and active125 control path.",
+      "Documented missing dedicated resistor handling, bypassed legacy route/control path, inherited symbol geometry and limited diagnostic coverage.",
+      "Preserved two complete board records of55 and60 samples and complete post-stop/pre-resistor images with owner-specified scene context.",
+      "Later explicit identity readback succeeded. A missing image reply and a one-item array helper bug were retained as failed attempts; corrected helper obtained complete images and recording resumed.",
+      "Exact frozen vision code accepts some offline pose hypotheses for both resistor and sparse post-stop images; this does not establish true pose or dynamic reliability."
+    ],
+    "remaining": [
+      "Obtain a continuous resistor entry/body/exit sequence and per-frame pose/rejection evidence; current static frames do not isolate the dynamic cause.",
+      "Implement and validate the evidence-supported visual correction in a new isolated candidate, without relaxing stop protection.",
+      "Accept physical125/fan30 resistor crossing, first corner and repeated complete laps; current08 has failed physical trials."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "source_files",
+      "value": 688,
+      "unit": "files",
+      "basis": "Frozen source manifest rehashed after deployment"
+    },
+    {
+      "name": "changed_from07",
+      "value": 4,
+      "unit": "files",
+      "basis": "Reviewed source delta"
+    },
+    {
+      "name": "route_passed",
+      "value": 8,
+      "unit": "cases",
+      "basis": "Two engines, same eight conditions and criteria"
+    },
+    {
+      "name": "real_input_cases",
+      "value": 37,
+      "unit": "cases",
+      "basis": "37cases852checks and sanitizer validation"
+    },
+    {
+      "name": "motion_gate_checks",
+      "value": 19,
+      "unit": "checks",
+      "basis": "Actual controller with hardware stubs"
+    },
+    {
+      "name": "launch_cases",
+      "value": 15,
+      "unit": "cases",
+      "basis": "374963checks using extracted actual functions"
+    },
+    {
+      "name": "clean_build_wall",
+      "value": 6.342,
+      "unit": "seconds",
+      "basis": "Build log"
+    },
+    {
+      "name": "flash_wall",
+      "value": 4.031,
+      "unit": "seconds",
+      "basis": "Official flasher log"
+    },
+    {
+      "name": "flash_actions",
+      "value": 1,
+      "unit": "actions",
+      "basis": "Official verification receipt"
+    },
+    {
+      "name": "remote_starts",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Only read-only device queries; recorder sends no commands"
+    },
+    {
+      "name": "read_only_queries",
+      "value": 14,
+      "unit": "queries",
+      "basis": "Initial3,wired1,wireless1,diagnostic3+3,image retries1+1,pre-resistor1; failed replies retained"
+    },
+    {
+      "name": "captured_start_intervals",
+      "value": 4,
+      "unit": "attempts",
+      "basis": "Three intervals in first recorder, one in second; not all linked to owner-reported three attempts"
+    },
+    {
+      "name": "measured_task_wall",
+      "value": 2503.161738,
+      "unit": "seconds",
+      "basis": "Initial clear-scene work timestamp through cutoff; includes user waits and analysis"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Coordinator only; no independent reviewer claimed"
+    },
+    {
+      "name": "total_tool_errors",
+      "value": null,
+      "unit": "errors",
+      "basis": "Not fully instrumented"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider accounting unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Billing unavailable"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive timing will be stored in its receipt"
+    }
+  ],
+  "observations": [
+    "Offline route success did not predict physical resistor passage; missing corresponding failure-scene evidence is an acceptance gap.",
+    "The source contains legacy visual modules, but the active125 path uses a different navigator; auditing call paths prevents ineffective gain changes.",
+    "Effective yaw gains equal the reference after profile initialization; an older report based on earlier assignments is inapplicable.",
+    "Map symbols exist but their placement/shape is inherited; no dedicated resistor crossing state machine is connected to the active path.",
+    "Recorder began after the initial failure; later attempts were captured. Latched stop codes and boot resets were separated from new stop events.",
+    "Helper exploration included missing-path reads and oversized output; no exact failure count was measured.",
+    "Parked diagnostic returned valid log/image data but no explicit identity response; retained the failed receipt rather than claiming complete query success.",
+    "No matched workflow baseline or independent reviewer; no workflow speedup claim.",
+    "Single-item PowerShell array expansion caused one image-helper wait failure; corrected in the local helper only. Source/vehicle remained unchanged.",
+    "Both supplied real frames admit some offline pose hypotheses, demonstrating that a low match residual alone cannot certify true localization."
+  ],
+  "recommendations": [
+    {
+      "id": "CC-08-ACTIVE-PATH-ELEMENT-ACCEPTANCE",
+      "action": "Require an active-call-path feature inventory and real element entry/body/exit evidence before describing a visual port as complete.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "Next candidate documents which element outputs drive steering and passes the captured resistor sequence.",
+      "experience_refs": [
+        "CC-20261108-OPTICAL-CALIBRATION"
+      ],
+      "adoption": "改后"
+    },
+    {
+      "id": "CC-08-FAILURE-EVIDENCE-CAPTURE",
+      "action": "Preserve concrete navigation rejection reason and pre-stop visual evidence; begin recording before manual launch.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "A physical failure can be tied to an exact reason, frame and route state without inference from a latched stop code."
+    }
+  ],
+  "evidence": [
+    "Immutable source/HEX manifests and clean-build log",
+    "Eight-case route regression and exact-source image/control/launch checks",
+    "Official flash and wired/wireless readback receipts",
+    "Read-only serial record with boot-separated start/stop transitions",
+    "Six-file reference hash audit and executed effective initialization",
+    "Partial parked diagnostic receipt, complete board log and current image",
+    "Two owner-contextualized static images, two complete board records and offline multi-pose fit diagnostics"
+  ],
+  "limits": [
+    "Only height150 is owner supplied; other projection values remain inherited.",
+    "Full-route tests use fan0; fan30 startup tested separately with stubs.",
+    "No physical full-lap acceptance;08 stops3 in local trials.",
+    "No raw source, firmware, images, logs, chats, databases or credentials uploaded.",
+    "No matched timing-quality baseline; unknown metrics remain null.",
+    "Image scene context is owner-confirmed, but exact metric pose and failure-time frames are absent; grid optima are hypotheses only."
+  ],
+  "comparison": null
+}
