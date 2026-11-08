@@ -1,0 +1,54 @@
+{
+  "round_id": "2026-11-08-stable-v2-esc-flash",
+  "firmware": "V2-ESC-01",
+  "candidate_sha256": "ecece3237d796901f1bdd88ac9799de4992335a94ecb0a1df69bb14193ab543b",
+  "candidate_bytes": 300955,
+  "flash_attempts": 1,
+  "flash_summary": {
+    "ABORTS": 0,
+    "ERRORS": 0,
+    "WARNINGS": 0
+  },
+  "verification_pass": true,
+  "differences_bytes": 0,
+  "flasher_reported_elapsed_ms": 1894,
+  "passive_serial_port": "COM9",
+  "baud": 3000000,
+  "preflight": {
+    "result": "PASS",
+    "telemetry_available": true,
+    "parked_control_state_verified": true,
+    "supply_sample_verified": true,
+    "physical_isolation_relied_on": false,
+    "parked_rows": 16,
+    "fan_rows": 4,
+    "distinct_timestamps": 16,
+    "min_vbat_mv": 12862.0,
+    "max_vbat_mv": 12880.0
+  },
+  "postboot": {
+    "esc_lines": 6,
+    "tune_lines": 24,
+    "speed": 125,
+    "fan_command": 0,
+    "fan_output": 0,
+    "wheel_pwm_left": 0,
+    "wheel_pwm_right": 0,
+    "running": 0,
+    "phase": 0,
+    "imu_ready": true,
+    "battery_min_mv": 12835,
+    "battery_max_mv": 12871,
+    "reported_idle_pulse_us": 1000
+  },
+  "serial_write_calls": 0,
+  "remote_vehicle_launches": 0,
+  "hardware_waveform_measured": false,
+  "fan_spin_tested": false,
+  "track_tested": false,
+  "local_evidence_hashes": {
+    "flash-V2-ESC-01-ecece323-20261108-140031.log": "cbe406ce74fc100c82a8b23719782782bc7520184ff29bb2a6b3ff1300c2f0e9",
+    "preflash.txt": "5166c3eb3d81dce07ac89d2c8fac060ad7a91c358bcc9be7ba6937672af81ae1",
+    "postflash.txt": "0f26e788e1d01efd7aa24b54d0ad3582f48ac2ed80b3b8a397eaed1b51e64854"
+  }
+}

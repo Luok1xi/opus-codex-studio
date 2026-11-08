@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-stable-v2-esc-flash",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-08T13:57:06.326956+08:00",
+  "measurement_cutoff_at": "2026-11-08T06:02:21.071981+00:00",
+  "task_summary": "将已验收的稳定v2无刷适配版写入车辆，核对烧录与停车启动状态；实跑由Owner另行完成。",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "目标SHA一致、烧录校验PASS/0差异、板上新版本身份与停车状态一致。"
+    ],
+    "completed": [
+      "以完整SHA锁定V2-ESC-01，单次官方烧录和回读校验通过，差异0字节。",
+      "新程序启动标记与默认125/负压0一致，连续停车数据确认双轮PWM0、IMU就绪、电池约12.85V。",
+      "保存官方回执、前后采样与离线验证；未发送串口指令或远程发车。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_elapsed",
+      "value": 314.745025,
+      "unit": "seconds",
+      "basis": "首个本轮记录时间到证据核验截止；包含等待Owner确认准备状态。"
+    },
+    {
+      "name": "flasher_elapsed",
+      "value": 1.894,
+      "unit": "seconds",
+      "basis": "AurixFlasher本次实际输出。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "与独立准备重叠，未单独计时。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "复盘准备未单独计时；远程归档耗时另存回执。"
+    }
+  ],
+  "observations": [
+    "一位原生Codex成员复核冻结产物并独立读取烧录/启动证据；只有主协调者接触串口和下载器；无本轮外部Opus调用。",
+    "普通权限CIM读取失败一次，获准读取后识别COM9；Python无pyserial，改用现有.NET只读串口脚本，不安装新依赖。",
+    "单次烧录完成；无需固件修改或重新编译。",
+    "未将软件pulse_us字段当成逻辑分析仪测量，也未把停车验收当赛道稳定性验收。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-flash-identity-and-boot",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "每次烧录以完整SHA锁定目标，实时识别串口；分别保存编程校验和板上身份/停车数据。",
+      "next_check": "下一次换机/换端口仍以新启动标记核对；新版本赛道表现单独验收。",
+      "experience_refs": [
+        "R50",
+        "TE#33"
+      ],
+      "adoption": "直接"
+    }
+  ],
+  "evidence": [
+    "同目录evidence.json及本地完整烧录/停车日志。"
+  ],
+  "limits": [
+    "无同任务同验收基线，不声称工作流提效。",
+    "未测新版本风机波形/转速/吸力，未完成赛道实跑。"
+  ],
+  "comparison": null
+}
