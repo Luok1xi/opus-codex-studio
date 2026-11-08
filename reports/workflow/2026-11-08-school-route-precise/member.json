@@ -1,0 +1,68 @@
+{
+  "round_id": "2026-11-08-school-route-precise",
+  "summary": "Codex performed isolated route-data adaptation and offline validation; owner requested stop after completion.",
+  "completed": [
+    "Validated source provenance",
+    "Generated consistent map and firmware route tables",
+    "Six geometry checks, eight model runs and a separate terminal stop check passed",
+    "Matched all eight existing trace hashes; preserved source formatting",
+    "Owner requested transition to physical tuning"
+  ],
+  "remaining": [],
+  "evidence": [
+    "Local aggregate geometry check receipt",
+    "Eight matched trace hashes and unchanged model criteria",
+    "Separate terminal-stop receipt",
+    "Source manifest and binary equivalence receipt"
+  ],
+  "metrics": [
+    {
+      "name": "total_wall_time",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Exact task-start timestamp was not recorded"
+    },
+    {
+      "name": "model_tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage record available"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing record available"
+    },
+    {
+      "name": "delegated_agents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No dispatch occurred"
+    },
+    {
+      "name": "simulation_runs",
+      "value": 8,
+      "unit": "runs",
+      "basis": "Two engines times four fixed conditions"
+    },
+    {
+      "name": "format_rework_events",
+      "value": 3,
+      "unit": "events",
+      "basis": "Atlas output newline, explicit Windows UTF-8, and preservation of original firmware CRLF were corrected"
+    },
+    {
+      "name": "render_dependency_probe_failures",
+      "value": 3,
+      "unit": "attempts",
+      "basis": "Three generic interpreters lacked Pillow; existing simulator environment succeeded"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive not yet complete at cutoff"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-school-route-precise",
+  "task_summary": "Complete an isolated route-data adaptation against the supplied dimensioned course, verify simulator equivalence, then stop offline optimization at owner request.",
+  "workflow_version": "WORKFLOW_REVIEW.md + TeamHub project isolation",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-08T06:45:03.518281+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Dimension and coverage checks pass",
+      "Paired existing models complete the route with unchanged acceptance thresholds",
+      "Source changes remain isolated; no hardware actions",
+      "Stop route optimization once simulation completion is established"
+    ],
+    "completed": [
+      "Validated source provenance",
+      "Generated consistent map and firmware route tables",
+      "Six geometry checks, eight model runs and a separate terminal stop check passed",
+      "Matched all eight existing trace hashes; preserved source formatting",
+      "Owner requested transition to physical tuning"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "total_wall_time",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Exact task-start timestamp was not recorded"
+    },
+    {
+      "name": "model_tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage record available"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing record available"
+    },
+    {
+      "name": "delegated_agents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No dispatch occurred"
+    },
+    {
+      "name": "simulation_runs",
+      "value": 8,
+      "unit": "runs",
+      "basis": "Two engines times four fixed conditions"
+    },
+    {
+      "name": "format_rework_events",
+      "value": 3,
+      "unit": "events",
+      "basis": "Atlas output newline, explicit Windows UTF-8, and preservation of original firmware CRLF were corrected"
+    },
+    {
+      "name": "render_dependency_probe_failures",
+      "value": 3,
+      "unit": "attempts",
+      "basis": "Three generic interpreters lacked Pillow; existing simulator environment succeeded"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive not yet complete at cutoff"
+    }
+  ],
+  "observations": [
+    "Latest handoff prevented stale firmware identity reuse.",
+    "Behavior trace equality established a no-regression result, not improved vehicle tracking.",
+    "Avoid probing generic interpreters when the existing runner already identifies its environment.",
+    "No delegation or unmeasured speedup claim."
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-ROUTE-20261108-ENV",
+      "action": "Read interpreter location from the established simulation runner before rendering.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Use the declared existing environment on the next course artifact task.",
+      "experience_refs": [
+        "R87",
+        "R95",
+        "CC-F#175"
+      ],
+      "adoption": "改后"
+    }
+  ],
+  "evidence": [
+    "Local aggregate geometry check receipt",
+    "Eight matched trace hashes and unchanged model criteria",
+    "Separate terminal-stop receipt",
+    "Source manifest and binary equivalence receipt"
+  ],
+  "limits": [
+    "No matched workflow timing baseline.",
+    "No new MCU build, flash or physical-lap validation.",
+    "Raw project source, maps, private paths and session data excluded from uploaded reports."
+  ],
+  "comparison": null
+}
