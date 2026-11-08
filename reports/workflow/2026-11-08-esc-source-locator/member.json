@@ -1,0 +1,70 @@
+{
+  "round_id": "2026-11-08-esc-source-locator",
+  "summary": "只读核对历史最小无刷适配和近期地图候选的工程身份、信号映射及启动流程，形成工程定位说明并更正两项概括。",
+  "completed": [
+    "定位两份同名工程及各自用途",
+    "核对两个HEX文件摘要和三份关键源码冻结一致性",
+    "发现启动等待与手动输出限幅差异，补充交接并明确此前表述不准确"
+  ],
+  "remaining": [],
+  "evidence": [
+    "本地源文件、适配脚本、两个工程描述文件、两个HEX摘要及三文件冻结比对",
+    "本地交接补充说明；源码及完整业务资料不上传"
+  ],
+  "metrics": [
+    {
+      "name": "墙钟时间",
+      "value": 164.595,
+      "unit": "seconds",
+      "basis": "包含只读核对及交接说明整理，归档另计"
+    },
+    {
+      "name": "HEX摘要核验",
+      "value": 2,
+      "unit": "files",
+      "basis": "实际读取两个已有文件"
+    },
+    {
+      "name": "关键冻结源码核验",
+      "value": 3,
+      "unit": "files",
+      "basis": "三个文件均匹配已交付清单"
+    },
+    {
+      "name": "车辆命令及烧录",
+      "value": 0,
+      "unit": "operations",
+      "basis": "没有打开串口或调用烧录器"
+    },
+    {
+      "name": "子代理调用",
+      "value": 0,
+      "unit": "agents",
+      "basis": "无分派或外部评审"
+    },
+    {
+      "name": "真实token",
+      "value": null,
+      "unit": "tokens",
+      "basis": "未取得提供方usage"
+    },
+    {
+      "name": "费用",
+      "value": null,
+      "unit": "currency",
+      "basis": "未取得账单"
+    },
+    {
+      "name": "复核返工独立耗时",
+      "value": null,
+      "unit": "seconds",
+      "basis": "一次清单路径分隔符索引失败后归一化成功，未单独计时"
+    },
+    {
+      "name": "复盘总开销",
+      "value": null,
+      "unit": "seconds",
+      "basis": "报告与核对混合；远端同步时间另存凭据"
+    }
+  ]
+}
