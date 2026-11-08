@@ -1,0 +1,14 @@
+{
+  "sanitized": true,
+  "version": "SCHOOL375-HOLD125-D01",
+  "board_rows": 234,
+  "board_complete": true,
+  "wireless_complete": false,
+  "host_failure_recovered": true,
+  "owner_runs": 1,
+  "serial_read_queries": 4,
+  "flash_actions": 0,
+  "remote_launches": 0,
+  "physical_acceptance": false,
+  "raw_project_data_uploaded": false
+}

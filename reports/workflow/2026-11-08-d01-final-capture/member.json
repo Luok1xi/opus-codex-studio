@@ -1,0 +1,122 @@
+{
+  "round_id": "2026-11-08-d01-final-capture",
+  "summary": "Preserve one owner-operated vehicle run and analyze turn-state failure without changing firmware.",
+  "metrics": [
+    {
+      "name": "measured_capture_analysis_wall",
+      "value": 612.314105,
+      "unit": "seconds",
+      "basis": "Recorder start to analysis/review cutoff; excludes initial source/context preparation"
+    },
+    {
+      "name": "owner_runs",
+      "value": 1,
+      "unit": "runs",
+      "basis": "Single owner launch captured before logger failure; recovered board interval overlaps same run"
+    },
+    {
+      "name": "board_records",
+      "value": 234,
+      "unit": "rows",
+      "basis": "Strict LOG2 count/index/time/END decode"
+    },
+    {
+      "name": "serial_read_queries",
+      "value": 4,
+      "unit": "commands",
+      "basis": "P before run, then S/P/I parked recovery"
+    },
+    {
+      "name": "wireless_stream_complete",
+      "value": 0,
+      "unit": "boolean",
+      "basis": "Host status file sharing error interrupted passive log"
+    },
+    {
+      "name": "board_record_complete",
+      "value": 1,
+      "unit": "boolean",
+      "basis": "Saved full stopped board buffer"
+    },
+    {
+      "name": "firmware_writes",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No build or flash"
+    },
+    {
+      "name": "parameter_writes",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only command allowlist"
+    },
+    {
+      "name": "remote_launches",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Owner physical S5 only"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator"
+    },
+    {
+      "name": "logger_lock_regression_passed",
+      "value": 1,
+      "unit": "tests",
+      "basis": "Exclusive file lock fixture; no serial open"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Not authoritatively instrumented; archive timing kept in receipt"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Not authoritatively instrumented; archive timing kept in receipt"
+    },
+    {
+      "name": "total_tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not authoritatively instrumented; archive timing kept in receipt"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not authoritatively instrumented; archive timing kept in receipt"
+    }
+  ],
+  "completed": [
+    "Verified current firmware tag and125/fan30/47 over live wireless before owner launch.",
+    "Saved raw wireless bytes and host byte timestamps; recovered complete234-row onboard log after host-side status-file sharing failure.",
+    "Read-only stopped identity/image export completed; owner confirmed unchanged stopped pose.",
+    "Compared two real records: ordinary-following conflict repeats around1s while route progress stays0; separated observed state from missing admission evidence.",
+    "Corrected effective first-node window interpretation to200mm from actual enabled macros; left firmware untouched.",
+    "Fixed advisory heartbeat failure handling and verified it under an exclusive file lock without hardware.",
+    "Saved hashed local evidence, waveform plot and limitations; kept deployed sources/HEX unchanged."
+  ],
+  "remaining": [
+    "Physical route failure remains unresolved; no repair or acceptance claimed.",
+    "Raw/filtered corner, route-distance rejection and ra_seen were not recorded, so exact gate remains uncertain.",
+    "Stationary snapshot is later than motion failure; passive wireless stream has a documented gap."
+  ],
+  "evidence": [
+    "Local hash-manifest aggregate",
+    "Strict board-record decoding and same-run timestamp overlap",
+    "Live identity and read-only command receipts",
+    "Source gate inspection and actual telemetry plot",
+    "Offline file-lock regression"
+  ],
+  "limits": [
+    "No raw telemetry, images, code, sessions or databases uploaded.",
+    "No matched quality baseline; no speedup claim.",
+    "Derived yaw/odometry uses20ms samples, not the firmware2ms state."
+  ]
+}
