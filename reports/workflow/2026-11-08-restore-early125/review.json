@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-restore-early125",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-08T05:28:44.662116+00:00",
+  "measurement_cutoff_at": "2026-11-08T05:35:41.660775+00:00",
+  "task_summary": "找回提速275前的历史125稳定固件，按原件交付供Owner自行烧录。",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "以历史烧录和实跑记录定位版本，交付原件并核对字节与HEX校验。"
+    ],
+    "completed": [
+      "恢复52856003稳定v2和6becddff整圈记录版，两份与原保存及历史干净重建一致。",
+      "结合官方日志和实跑交接核实身份；注明有刷风机接口与当前无刷适配区别。",
+      "Owner纠正后排除c81d/ae47；没有代码更改、烧录或串口命令。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_local_elapsed",
+      "value": 416.998659,
+      "unit": "seconds",
+      "basis": "首个现轮已记录时间至文件交付核验截止，含查找、用户纠正和协调；不代表更早历史任务时间。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未独立计时。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "本地生成与复核未独立计时；远程写入回读时长另存归档回执。"
+    },
+    {
+      "name": "physical_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "仅只读查找、复制与登记。"
+    }
+  ],
+  "observations": [
+    "一位原生Codex成员独立核验历史产物；没有本轮外部Opus调用。历史Opus报告只作为存档证据。",
+    "任务初始候选选晚，用户指出后重新向10月29日历史核对；没有首次通过认定。",
+    "两次搜索范围太宽产生截断输出，随后改用数据库短列查询和精确文件。",
+    "部分历史索引含旧状态或乱码，最终引用原始SHA、回执及具体运行报告，不靠标题推定。",
+    "复盘校验器首次拒绝 complete 状态值，按既有 schema 改为 passed 后重新验证。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-restore-identify-era-first",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "恢复旧固件先用用户描述的事件顺序定位版本，再列原版、只加记录版和硬件适配版；不以同为125或最新同系列代替。",
+      "next_check": "下次恢复请求核对事件时间、HEX、实跑证据和硬件接口，记录是否再次选错。"
+    }
+  ],
+  "evidence": [
+    "同目录evidence.json；历史H476/H536；本地两份原始产物和manifest。"
+  ],
+  "limits": [
+    "没有匹配质量基线，不报告提效。",
+    "当前硬件可运行性未验证；旧跑通不代表新底盘稳定。"
+  ],
+  "comparison": null
+}

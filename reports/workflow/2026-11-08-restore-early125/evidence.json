@@ -1,0 +1,33 @@
+{
+  "round_id": "2026-11-08-restore-early125",
+  "artifact_checks": [
+    {
+      "name": "smart_car_stable_nofan125_v2.hex",
+      "label": "10月29日稳定v2原件",
+      "sha256": "52856003a468c735d31564cf49785337fe849db707a3be24dd593e62ba4bfcea",
+      "bytes": 297784,
+      "hex_records": 3888,
+      "hex_checksums_pass": true,
+      "exact_copy": true,
+      "matches_historical_clean_rebuild": true
+    },
+    {
+      "name": "smart_car_stable_nofan125_v2_laprec.hex",
+      "label": "同控制逻辑，增加整圈记录的历史原件",
+      "sha256": "6becddff78accdc0318c430935b3cb9488677e4a6e0a8ef1b6bd9edeea1a793c",
+      "bytes": 297792,
+      "hex_records": 3888,
+      "hex_checksums_pass": true,
+      "exact_copy": true,
+      "matches_historical_clean_rebuild": true
+    }
+  ],
+  "history_refs": [
+    "CRAZY-CIRCUIT H476",
+    "CRAZY-CIRCUIT H536"
+  ],
+  "physical_actions": 0,
+  "source_edits": 0,
+  "recompiles": 0,
+  "selection_rework": "Initially scoped c81d after an ambiguous option; Owner clarified earlier pre275 stable. Corrected to 52856003/6becddff before delivery or any hardware action."
+}
