@@ -1,0 +1,12 @@
+{
+  "round_id": "2026-11-08-noseover-light-diagnosis",
+  "board_samples": 109,
+  "read_only_queries": 3,
+  "firmware_changes": 0,
+  "flash_actions": 0,
+  "remote_starts": 0,
+  "body_pitch_recorded": false,
+  "simulation_camera_follows_body_pitch": false,
+  "cause_of_initial_tip": "unresolved",
+  "raw_project_data_uploaded": false
+}

@@ -1,0 +1,97 @@
+{
+  "round_id": "2026-11-08-noseover-light-diagnosis",
+  "summary": "Explain repeated first-resistor nose-over after lighting changes and distinguish real visual control, simulation limitations and post-tip evidence.",
+  "completed": [
+    "Confirmed actual forward nose-over and separated post-tip/stuck motor data from normal grounded tuning.",
+    "Read firmware identity and preserved109 complete20ms board samples plus complete current camera frame.",
+    "Found a zero-output interval followed by resumed low target and negative wheel outputs; correlated source gate/reset/restart behavior.",
+    "Verified the simulation uses image-based control but its virtual camera ignores chassis pitch/roll; floor is a plane and tested routes used fan0.",
+    "Verified two frozen historical control/vision files and contrasted their local visual control with current125 map navigation.",
+    "Retained causal uncertainty and advised no further repeated starts before the protection and failure evidence gaps are addressed."
+  ],
+  "remaining": [
+    "Establish the order of forward tip, visual loss and control transitions with synchronized body attitude and visual evidence.",
+    "Implement and verify a justified isolated protection/control correction before another physical trial."
+  ],
+  "metrics": [
+    {
+      "name": "measured_wall",
+      "value": 580.304729,
+      "unit": "seconds",
+      "basis": "Initial telemetry snapshot to cutoff; includes user clarification waits"
+    },
+    {
+      "name": "board_samples",
+      "value": 109,
+      "unit": "samples",
+      "basis": "LOG109 with complete sequential records and END"
+    },
+    {
+      "name": "read_only_device_queries",
+      "value": 3,
+      "unit": "queries",
+      "basis": "P/S/I parked queries with receipt"
+    },
+    {
+      "name": "flash_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No flasher invoked"
+    },
+    {
+      "name": "remote_starts",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Only read-only commands"
+    },
+    {
+      "name": "firmware_changes",
+      "value": 0,
+      "unit": "files",
+      "basis": "Source inspection only"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Single coordinator"
+    },
+    {
+      "name": "tool_failures",
+      "value": null,
+      "unit": "failures",
+      "basis": "Not instrumented end-to-end"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider accounting absent"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing available"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Archive duration will be recorded separately"
+    }
+  ],
+  "evidence": [
+    "Owner failure clarification",
+    "Read-only identity and109-sample board record",
+    "Current camera frame and offline fit diagnostic",
+    "Frozen historical source hashes and current gate/reset/control code",
+    "Simulator camera, collision-plane and invocation source"
+  ],
+  "limits": [
+    "Root cause of the initial nose-over remains unproved.",
+    "Lighting comparison is not matched by pose/time.",
+    "Electrical coast/brake behavior at PWM0 is not inferred.",
+    "Only aggregate workflow reports uploaded; no images, raw logs, source, databases or credentials."
+  ]
+}
