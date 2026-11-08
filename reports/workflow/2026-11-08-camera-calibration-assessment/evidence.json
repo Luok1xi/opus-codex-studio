@@ -1,0 +1,29 @@
+{
+  "scope": "Assessment only",
+  "source_camera_driver_parity_versions": [
+    "MIN01",
+    "05",
+    "06"
+  ],
+  "compared_source_files": 4,
+  "default_resolution": [
+    188,
+    120
+  ],
+  "default_fps": 150,
+  "default_exposure_parameter": 450,
+  "default_gain_parameter": 64,
+  "defaults_equal": true,
+  "runtime_camera_registers_read_this_round": false,
+  "owner_reported_hardware_unchanged": true,
+  "owner_comparison": "same camera earlier physical image",
+  "owner_reported_height_mm": 150,
+  "model_height_mm": 180,
+  "model_pitch_degrees": 46,
+  "actual_pitch_verified": false,
+  "actual_fov_verified": false,
+  "firmware_edits": 0,
+  "device_commands": 0,
+  "flashes": 0,
+  "raw_project_data_uploaded": false
+}

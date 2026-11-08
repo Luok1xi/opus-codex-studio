@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-08-camera-calibration-assessment",
+  "task_summary": "Assess glare, reported field-of-view change and a minimal physical calibration plan before further vehicle work.",
+  "workflow_version": "WORKFLOW_REVIEW.md; owner-limited assessment",
+  "started_at": "2026-11-08T08:10:34.916952+00:00",
+  "measurement_cutoff_at": "2026-11-08T08:16:05.107792+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Honor assessment-only scope",
+      "Separate optical hypotheses, source defaults and live measurements",
+      "Give staged calibration plan and minimal owner preparation"
+    ],
+    "completed": [
+      "Owner confirmed same-camera historical comparison and unchanged installation",
+      "Camera default/driver parity verified across three frozen versions",
+      "Primary manufacturer documentation checked for optics, sensor windows and calibration",
+      "Owner height incorporated; model discrepancy explicitly identified",
+      "Plan distinguishes light control, effective field of view, ground mapping and later control fix"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "camera_source_files_compared",
+      "value": 4,
+      "unit": "files across three versions",
+      "basis": "Current SHA comparison"
+    },
+    {
+      "name": "new_vehicle_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "Read-only local and web investigation only"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No delegation"
+    },
+    {
+      "name": "model_usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing receipt"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Final archive receipt supplies measured transfer duration"
+    }
+  ],
+  "observations": [
+    "Recorded timing starts at assessment folder creation; initial contextual reads and clarification preceded it.",
+    "Equal firmware defaults do not prove equal active camera registers or physical field of view.",
+    "The two saved real frames were not a controlled same-pose comparison; saturation percentages were not used as proof of optical change.",
+    "A user-provided measurement superseded the proposed repeated height measurement.",
+    "The physical-camera height differs from the model; pitch/intrinsics remain unknown."
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-CIRCUIT-PHYSICAL-CAMERA-BASELINE-20261108",
+      "action": "Freeze actual camera configuration and fit physical geometry before tuning navigation against a simulated camera model.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "Read back effective sensor window and use held-out ground markers at owner-provided height before a new candidate is accepted."
+    }
+  ],
+  "evidence": [
+    "Source camera parity and model geometry",
+    "Explicit owner clarification",
+    "Manufacturer optics and sensor references",
+    "Local staged assessment plan; project handoff"
+  ],
+  "limits": [
+    "Assessment completed; physical calibration and firmware correction intentionally deferred per owner.",
+    "Reported height is owner-provided, not independently measured by this agent.",
+    "No proof yet that optical angle actually changed; no active camera register snapshot in this round.",
+    "No matched workflow baseline or speedup claim.",
+    "No raw images, logs, source code, firmware or credentials uploaded."
+  ],
+  "comparison": null
+}

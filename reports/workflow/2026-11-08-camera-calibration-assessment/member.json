@@ -1,0 +1,63 @@
+{
+  "round_id": "2026-11-08-camera-calibration-assessment",
+  "metrics": [
+    {
+      "name": "camera_source_files_compared",
+      "value": 4,
+      "unit": "files across three versions",
+      "basis": "Current SHA comparison"
+    },
+    {
+      "name": "new_vehicle_commands",
+      "value": 0,
+      "unit": "commands",
+      "basis": "Read-only local and web investigation only"
+    },
+    {
+      "name": "agents_dispatched",
+      "value": 0,
+      "unit": "agents",
+      "basis": "No delegation"
+    },
+    {
+      "name": "model_usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing receipt"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Final archive receipt supplies measured transfer duration"
+    }
+  ],
+  "evidence": [
+    "Source camera parity and model geometry",
+    "Explicit owner clarification",
+    "Manufacturer optics and sensor references",
+    "Local staged assessment plan; project handoff"
+  ],
+  "limits": [
+    "Assessment completed; physical calibration and firmware correction intentionally deferred per owner.",
+    "Reported height is owner-provided, not independently measured by this agent.",
+    "No proof yet that optical angle actually changed; no active camera register snapshot in this round.",
+    "No matched workflow baseline or speedup claim.",
+    "No raw images, logs, source code, firmware or credentials uploaded."
+  ],
+  "summary": "Assess glare, reported field-of-view change and a minimal physical calibration plan before further vehicle work.",
+  "completed": [
+    "Owner confirmed same-camera historical comparison and unchanged installation",
+    "Camera default/driver parity verified across three frozen versions",
+    "Primary manufacturer documentation checked for optics, sensor windows and calibration",
+    "Owner height incorporated; model discrepancy explicitly identified",
+    "Plan distinguishes light control, effective field of view, ground mapping and later control fix"
+  ],
+  "remaining": []
+}
