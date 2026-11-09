@@ -1,0 +1,86 @@
+{
+  "measurement_cutoff_at": "2026-11-10T02:24:31.8919228+08:00",
+  "evidence": [
+    "16/16 simulated laps; per-case route event and trace hashes matched baseline",
+    "Host and TC264 compiled same six source hashes",
+    "Boundary and directed-junction tests"
+  ],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "schema_version": 1,
+  "task_summary": "Separate historical failure stages and test an isolated steering preview boundary change.",
+  "observations": [
+    "Parallel readers independently distinguished admission from exit failures. A fixture had to carry prior replay progress to represent a later route occurrence. Initial target build needed the existing compiler environment and patch check had to account for CRLF."
+  ],
+  "quality": {
+    "status": "passed",
+    "remaining": [],
+    "acceptance": [
+      "Isolated patch, shared source build and two-engine regression"
+    ],
+    "completed": [
+      "Host unit cases passed",
+      "16 complete simulated laps; eight matched case trace and event hashes",
+      "TC264 built; six matching shared source hashes"
+    ]
+  },
+  "recommendations": [
+    {
+      "status": "proposed",
+      "next_check": "Verify wrong branch and correct branch in both directed visits.",
+      "action": "For isolated late route fixtures, carry both node index and completed replay state.",
+      "id": "WF-20261110-LATE-ROUTE-REPLAY-FIXTURE",
+      "owner": "codex"
+    }
+  ],
+  "started_at": null,
+  "round_id": "2026-11-10-astra-preview",
+  "comparison": null,
+  "limits": [
+    "No matched workflow timing baseline",
+    "Candidate not deployed; no new hardware evidence"
+  ],
+  "metrics": [
+    {
+      "name": "Actual provider usage",
+      "value": null,
+      "basis": "Not available",
+      "unit": "tokens"
+    },
+    {
+      "name": "Round time",
+      "value": null,
+      "basis": "No reliable round start timestamp",
+      "unit": "seconds"
+    },
+    {
+      "name": "Simulation run wall",
+      "value": 51.7904,
+      "basis": "Existing qualification runner",
+      "unit": "seconds"
+    },
+    {
+      "name": "Native audit agents",
+      "value": 2,
+      "basis": "Read-only reports inspected",
+      "unit": "agents"
+    },
+    {
+      "name": "Vehicle operations",
+      "value": 0,
+      "basis": "Host and target builds only",
+      "unit": "operations"
+    },
+    {
+      "name": "Test setup rework",
+      "value": 1,
+      "basis": "Late route fixture initially failed to skip already traversed replay segments",
+      "unit": "attempts"
+    },
+    {
+      "name": "Review overhead",
+      "value": null,
+      "basis": "Not measured separately",
+      "unit": "seconds"
+    }
+  ]
+}
