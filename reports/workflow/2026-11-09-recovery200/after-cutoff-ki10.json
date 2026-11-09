@@ -1,0 +1,138 @@
+{
+  "parent_round": "2026-11-09-recovery200",
+  "kind": "post-cutoff-continuation-not-a-new-review-round",
+  "original_cutoff_preserved": "2026-11-09T16:17:55.1117694+08:00",
+  "verified_at": "2026-11-09T16:23:56.9952353+08:00",
+  "status": "partial-left-wheel-candidate",
+  "additional_activity": {
+    "observed_user_runs": 1,
+    "complete_records_analyzed": 1,
+    "queries_P": 1,
+    "queries_C": 1,
+    "parameter_writes": 0,
+    "flashes": 0,
+    "remote_starts": 0
+  },
+  "fixed_conditions": {
+    "wheel": "left",
+    "kp": 20,
+    "target": 200,
+    "fan_command_percent": 30,
+    "nominal_sample_ms": 2
+  },
+  "response_ki_1_2": {
+    "status": "complete_pulse",
+    "feedback": "encL",
+    "target": 200,
+    "sample_dt_ms": 2,
+    "feedback_reached_90pct": true,
+    "fall_measurable_from_90pct": true,
+    "rise_10_to_90_ms": 16,
+    "peak_feedback": 223,
+    "peak_delay_ms": 160,
+    "overshoot_pct": 11.5,
+    "settling_5pct_ms": 674,
+    "plateau_last_200ms_error_pct": -0.165,
+    "plateau_last_200ms_peak_to_peak_pct": 9.0,
+    "plateau_tail_window_ms": 200,
+    "fall_90_to_10_ms": 58,
+    "return_to_zero_5pct_ms": 110,
+    "return_reverse_peak_pct": 4.0,
+    "baseline_feedback_mean": 0.0
+  },
+  "response_ki_1_0": {
+    "status": "complete_pulse",
+    "feedback": "encL",
+    "target": 200,
+    "sample_dt_ms": 2,
+    "feedback_reached_90pct": true,
+    "fall_measurable_from_90pct": true,
+    "rise_10_to_90_ms": 18,
+    "peak_feedback": 216,
+    "peak_delay_ms": 160,
+    "overshoot_pct": 8.0,
+    "settling_5pct_ms": 384,
+    "plateau_last_200ms_error_pct": 0.06,
+    "plateau_last_200ms_peak_to_peak_pct": 8.5,
+    "plateau_tail_window_ms": 200,
+    "fall_90_to_10_ms": 70,
+    "return_to_zero_5pct_ms": 110,
+    "return_reverse_peak_pct": 7.0,
+    "baseline_feedback_mean": 0.0
+  },
+  "comparison": {
+    "first200ms_iae": [
+      6.718,
+      6.918
+    ],
+    "return_iae": [
+      6.176,
+      6.968
+    ],
+    "total_iae": [
+      15.986,
+      16.44
+    ],
+    "tail_rms": [
+      4.16,
+      3.92
+    ],
+    "meaning": "Ordered aggregate metrics for Ki1.2 then1.0; not raw telemetry. IAE is feedback-error times seconds, not distance."
+  },
+  "conclusion": "Retain left20/1.0 as a candidate: lower overshoot and faster settling, but larger startup and return accumulated errors. Not an overall optimum or acceptance of both wheels/yaw loop.",
+  "limits": [
+    "Single run per setting; battery and physical conditions not matched.",
+    "Feedback already has firmware slew limiting; nominal timestamps only.",
+    "No subsequent test or gain update requested in this closeout."
+  ],
+  "automatic_capture": {
+    "complete_file_saved": true,
+    "initial_auto_ack": false,
+    "initial_failure": "Truncated timestamp fragment at the serial handover was joined to a complete stopped status.",
+    "file_only_fix": "Only remove an exact leading t=digits fragment when followed immediately by a complete tune status; retain motion and rollback rejection.",
+    "root_tests_passed": 10,
+    "root_test_seconds": 0.272,
+    "real_file_copy_validation": "passed",
+    "manual_ack_after_independent_review": true,
+    "new_live_run_of_parser_fix": false,
+    "detection_seconds_note": "Elapsed watcher wait includes waiting for the user; not stop-to-export latency."
+  },
+  "current_state_at_last_read": {
+    "kp_left": 20,
+    "ki_left": 1.0,
+    "target": 200,
+    "fan_command_percent": 30,
+    "recorder": "closed",
+    "watcher": "finished",
+    "port": "released",
+    "future_capture_requires_restart": true
+  },
+  "artifacts": [
+    {
+      "ref": "export-20261109-161948/capture.bin",
+      "sha256": "e17e7764044ef2c75e7441db3197cef0452a1ed5f3f0b76adb74e6e16ff56f58"
+    },
+    {
+      "ref": "left200-ab/ki12-vs10.json",
+      "sha256": "3b922c61756d1310c9700eb5b298c7936839691f3444e5c7537596c4318f8683"
+    },
+    {
+      "ref": "left200-ab/ki12-vs10.png",
+      "sha256": "fef6e374b4e3680763e4399b459e9644a47046e1e89d83938078dd4228ef15e6"
+    },
+    {
+      "ref": "watch_export.py",
+      "sha256": "aa417ab8cf8cd710fb0ea20b82dc61b6f25b169453ca7ddecb755904efd6a01c"
+    },
+    {
+      "ref": "member-report-auto-export-boundary.json",
+      "sha256": "1ced7b27632d2880892637df8732d880aebef5203c1d1c793e8de961301e54b8"
+    }
+  ],
+  "coordination": "Native independent comparison and parser review; root integration. No external Opus response claimed.",
+  "tokens": null,
+  "cost": null,
+  "review_overhead_seconds": null,
+  "matched_workflow_baseline": null,
+  "speedup_claim": false
+}
