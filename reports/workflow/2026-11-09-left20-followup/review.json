@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-left20-followup",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "draft": false,
+  "started_at": "2026-11-09T15:32:22+08:00",
+  "measurement_cutoff_at": "2026-11-09T16:01:20.5150250+08:00",
+  "task_summary": "核对Kp20实测与历史发车事件，并记录目标200的后续配置。",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "区分真实采集、参数回读、候选预计及未完成试验。",
+      "保持当前参数、负载及采样口径可追溯；本阶段不宣布所有控制环通过。"
+    ],
+    "completed": [
+      "目标80仅最后一份1000点完整记录可用；阶段内发车2次，完整新分析1条。",
+      "目标200第10趟完成STOP20后主板重启；参数回读失败，完整记录未取得，4个高段点不能代替全波形。",
+      "修复历史漏报和无参数回复假成功；根协调者复核历史8PASS（0.074s），两版回读脚本的空/有效回复与语法检查通过。",
+      "自动导出入口完成，混合camera/tune及重启时间边界已修，根协调者最终9PASS（0.228s）；仅stub验证，尚未实车启用。"
+    ],
+    "remaining": [
+      "等待用户重插电脑USB接收器，重新确认当前配置身份；重启前参数不冒充当前回读。",
+      "目标200完整板载记录可能丢失，该响应及左右轮、角速度环、赛道稳定性未验收。",
+      "自动导出工具尚未实车启动使用，实际无线导出成功率和设备兼容性待验证。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "actual_queries",
+      "value": 6,
+      "unit": "queries",
+      "basis": "仅本阶段实际回执计数；上阶段累计值不可直接带入。"
+    },
+    {
+      "name": "actual_parameter_writes",
+      "value": 2,
+      "unit": "writes",
+      "basis": "仅本阶段实际回执计数；上阶段累计值不可直接带入。"
+    },
+    {
+      "name": "actual_flashes",
+      "value": 0,
+      "unit": "flashes",
+      "basis": "仅本阶段实际回执计数；上阶段累计值不可直接带入。"
+    },
+    {
+      "name": "actual_runs",
+      "value": 2,
+      "unit": "runs",
+      "basis": "仅统计本阶段实际发车；导出阶段前的记录不算新发车。"
+    },
+    {
+      "name": "newly_analyzed_runs",
+      "value": 1,
+      "unit": "records",
+      "basis": "本阶段首次分析的物理记录数量；原始发车可以发生在阶段之前。"
+    },
+    {
+      "name": "actual_remote_launches",
+      "value": 0,
+      "unit": "commands",
+      "basis": "仅本阶段实际回执计数；上阶段累计值不可直接带入。"
+    },
+    {
+      "name": "observed_elapsed",
+      "value": 1738.515025,
+      "unit": "seconds",
+      "basis": "阶段开始到实际测量截止，含等待；无截止则未知。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无真实usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "human_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "实际收尾开销另记脚本回执，不推算。"
+    }
+  ],
+  "observations": [
+    "仅保存脱敏聚合；不读取或上传私人聊天。",
+    "无同质量工作流基线，不声称协作提效。",
+    "查询6条（P5/C1）、写参数2条（T/F），烧录0、远程启动0；运行完成事件与完整波形分开计数。",
+    "脚本error:null不证明参数回读成功；当前车辆参数仍unknown。",
+    "完成三个源码事项，不宣称协作提效；自动导出是离线验证通过，不是实车验收通过。"
+  ],
+  "recommendations": [
+    {
+      "id": "left80-measured-comparison",
+      "owner": "codex",
+      "status": "proposed",
+      "action": "依据同目标真实响应比较超调、稳定窗口与回零，再决定下一参数。",
+      "next_check": "完整导出新一趟并核对实时参数；未写候选不能计为已试。"
+    }
+  ],
+  "evidence": [
+    "evidence.json：本阶段聚合证据和验证结论。"
+  ],
+  "limits": [
+    "等待用户重插电脑USB接收器，重新确认当前配置身份；重启前参数不冒充当前回读。",
+    "目标200完整板载记录可能丢失，该响应及左右轮、角速度环、赛道稳定性未验收。",
+    "自动导出工具尚未实车启动使用，实际无线导出成功率和设备兼容性待验证。",
+    "脚本不会关闭T101或自动发车。"
+  ],
+  "comparison": null
+}

@@ -1,0 +1,301 @@
+{
+  "round_id": "2026-11-09-left20-followup",
+  "task_id": 101,
+  "task_key": "left20-followup-20261109",
+  "draft": false,
+  "stage_started_at": "2026-11-09T15:32:22+08:00",
+  "measurement_cutoff_at": "2026-11-09T16:01:20.5150250+08:00",
+  "evidence_snapshot_at": "2026-11-09T16:01:20.5150250+08:00",
+  "vehicle_activity": {
+    "actual_queries": 6,
+    "actual_parameter_writes": 2,
+    "actual_flashes": 0,
+    "actual_runs": 2,
+    "newly_analyzed_runs": 1,
+    "actual_remote_launches": 0,
+    "valid_new_state_received": true,
+    "count_basis": {
+      "scope": "Command receipts through15:50:33 only; P5+C1, two T/F writes, two in-stage starts, one complete record analyzed.",
+      "reported_Kp20_start_events": 2,
+      "pre_stage_start_events": 1,
+      "within_stage_start_events": 2,
+      "complete_Kp20_captures_available": 1,
+      "pre_stage_counter_window": "t1761390 to1769390",
+      "within_stage_counter_window": "t2081390 to2089390",
+      "event_basis": "Coordinator inspected live history; first run was missed by last_status-only check and overwritten onboard.",
+      "status_query_P": 5,
+      "capture_export_C": 1,
+      "complete_captures_newly_analyzed": 1,
+      "run10": {
+        "target": 200,
+        "counter_window": [
+          2518554,
+          2526556
+        ],
+        "stop_code": 20,
+        "full_record_exported": false
+      },
+      "reboot": {
+        "counter_before": 2580306,
+        "counter_after": 9040
+      },
+      "latest_reply": {
+        "source_ref": "car-status-20261109-155015/receipt.json",
+        "status_received": true,
+        "approx_voltage_v": 12.8,
+        "params_reply_bytes": 0,
+        "tune_cfg_received": false,
+        "script_old_error_null_means_reply_success": false
+      }
+    }
+  },
+  "candidate": {
+    "kp_left": 20,
+    "ki_left": 1.2,
+    "target": 200,
+    "fan_command_percent": 30,
+    "status": "Historical run10 completed before reboot, current parameters unknown; full response unavailable, not accepted.",
+    "tested": true,
+    "full_capture_analysed": false,
+    "accepted": false,
+    "current_configured": false
+  },
+  "coordination": {
+    "watch_history_fix": {
+      "status": "8PASS_rechecked_by_root",
+      "root_recheck_at_local": "15:52",
+      "root_measured_test_seconds": 0.074,
+      "frozen_source": "verify_125_original",
+      "tests_rerun_by_this_child": false
+    },
+    "task101_status": "in_progress",
+    "task_changed_by_script": false,
+    "read_status_reply_fix": {
+      "status": "fixed_and_root_checked",
+      "condition": "Missing either params or tune_cfg is an error.",
+      "cases": [
+        "Real empty reply rejected.",
+        "Earlier successful reply accepted."
+      ],
+      "powershell_syntax_checks_passed": 2,
+      "source": "Coordinator report; no new tests by this child."
+    },
+    "automatic_watch_export": {
+      "status": "completed_offline_only",
+      "root_full_source_review": true,
+      "root_final_tests_passed": 9,
+      "root_final_test_seconds": 0.228,
+      "poll_interval_ms": 250,
+      "protocol": "Detect new completed run, require no reboot and stopped state, release recorder, query P/C only, validate1000 points and acknowledge; failure preserves receipt and exits.",
+      "reboot_guard": "First exported t must be at least the latest recorded t at recorder close, not merely the old stop t.",
+      "initial_mixed_camera_tune_rejection_fixed": true,
+      "real_vehicle_use_started": false,
+      "validation_scope": "Stub fixtures only; not live vehicle acceptance."
+    },
+    "hardware_wait": "Owner computer USB receiver replug pending; no further vehicle trials by this child.",
+    "previous_child_timing": {
+      "source_ref": "run10-draft-receipt.json",
+      "start_source": "First read tool emitted local datetime15:49:31.335621+08:00.",
+      "end_source": "Final generation/readback emitted local datetime15:51:46.285796+08:00.",
+      "measured_elapsed_seconds": 134.950175,
+      "scope": "Wall interval across reading, drafting and tools, not shell CPU time; excludes work before first tool and subsequent handoff.",
+      "full_turn_seconds": null
+    },
+    "handoff": "HANDOFF20.txt full context created by root; no other-agent acknowledgement claimed.",
+    "source_changes": {
+      "count": 3,
+      "items": [
+        "History transition detection instead of last_status only.",
+        "Reject replies missing params or tune_cfg.",
+        "Automatic completed-capture export with stopped/reboot/timestamp gates."
+      ]
+    },
+    "handoffs": {
+      "ids": [
+        707,
+        708,
+        709
+      ],
+      "full_text_readback_matches": true,
+      "acknowledged_for_others": false,
+      "source_ref": "handoff20-receipts.json"
+    }
+  },
+  "live_parameters": {
+    "status": "Unknown after reboot; waiting for owner to replug the computer USB receiver.",
+    "kp_left": null,
+    "ki_left": null,
+    "target": null,
+    "fan_command_percent": null,
+    "readback_verified": false,
+    "last_confirmed_before_reboot": {
+      "at": "2026-11-09T15:40:08.5310510+08:00",
+      "kp_left": 20,
+      "ki_left": 1.2,
+      "target": 200,
+      "fan_command_percent": 30
+    },
+    "identity_gate": {
+      "query_only": "#P",
+      "export_C_sent": false,
+      "mutation_sent": false,
+      "latest_source_ref": "car-status-20261109-155015/receipt.json",
+      "params_reply_bytes": 0,
+      "tune_cfg_received": false,
+      "old_error_field_not_confirmation": true
+    }
+  },
+  "response_comparison": {
+    "source_ref": "left80-ab/kp16-18-20.json",
+    "report_status": "pass",
+    "scope": "Three single-record target80 settings; only one complete Kp20 record exists.",
+    "workflow_speedup_claim": false
+  },
+  "actual_trials": [
+    {
+      "id": "last_complete_kp20_target80",
+      "captured_before_stage": false,
+      "physical_start_within_stage": true,
+      "samples": 1000,
+      "kp": 20,
+      "ki": 1.2,
+      "target": 80,
+      "fan_command_percent": 30,
+      "response": {
+        "status": "complete_pulse",
+        "feedback": "encL",
+        "target": 80,
+        "sample_dt_ms": 2,
+        "feedback_reached_90pct": true,
+        "fall_measurable_from_90pct": true,
+        "rise_10_to_90_ms": 42,
+        "peak_feedback": 100,
+        "peak_delay_ms": 118,
+        "overshoot_pct": 25.0,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": -0.075,
+        "plateau_last_200ms_peak_to_peak_pct": 17.5,
+        "plateau_tail_window_ms": 200,
+        "fall_90_to_10_ms": 44,
+        "return_to_zero_5pct_ms": 108,
+        "return_reverse_peak_pct": 18.75,
+        "baseline_feedback_mean": 0.0
+      },
+      "max_abs_pwm_command": 2498,
+      "capture_sha256": "381a7afca6b35c651efb8cb1e5b4fff3da77355d045cc527858804f29d408a97",
+      "source_ref": "export-20261109-153605/capture.metrics.json"
+    },
+    {
+      "id": "run10-target200-no-full-capture",
+      "physical_start_within_stage": true,
+      "kp": 20,
+      "ki": 1.2,
+      "target": 200,
+      "fan_command_percent": 30,
+      "run_counter_window": [
+        2518554,
+        2526556
+      ],
+      "stop_code": 20,
+      "completed_event_confirmed_by_coordinator": true,
+      "samples": null,
+      "response": null,
+      "full_capture_exported": false,
+      "newly_analyzed_complete_record": false,
+      "possible_record_loss_after_reboot": true,
+      "source_ref": "left-kp20-ki120-target200-10/record-20261109-154126.bin",
+      "source_scope": "Local reference only; no raw upload or new raw analysis.",
+      "true_peak": null,
+      "rise_ms": null,
+      "settling_ms": null,
+      "rms": null,
+      "sparse_points_only": true,
+      "sparse_scope": "Only four sparse high-phase observations; observed max218 is not the complete-response peak. Full peak/rise/settling/RMS remain unknown.",
+      "unavailable_capture_record": "Coordinator stored unavailable-capture.json with stop/reboot facts.",
+      "high_stage_points": 4,
+      "observed_max": 218,
+      "observed_min": 199
+    }
+  ],
+  "member_aggregates": [
+    {
+      "author": "codex",
+      "role": "native automatic export worker",
+      "source_ref": "member-report-auto-export.json",
+      "source_sha256": "88e957dffcee0210712e78decd51dd516d3480b3d40d25df6a8a9033d5561fef",
+      "reported_final_tests": 9,
+      "full_agent_elapsed_seconds": null,
+      "tokens": null,
+      "cost": null,
+      "provenance": "Actual native member report frozen by coordinator; root9PASS source review confirmed."
+    }
+  ],
+  "rework": [
+    {
+      "issue": "Last-status-only inspection missed completed history and allowed old full capture to be overwritten.",
+      "status": "History detector corrected, root8PASS; missing full capture not recovered."
+    },
+    {
+      "issue": "Read script error:null was possible without params/tune_cfg replies.",
+      "status": "Both variants now reject missing reply; root checks passed."
+    },
+    {
+      "issue": "Automatic export initially confused camera with tune status; final reboot boundary also required latest recorder-close t.",
+      "status": "Both corrected and frozen; root final9PASS, live use not started."
+    }
+  ],
+  "source_artifacts": [
+    {
+      "source_ref": "export-20261109-153605/capture.metrics.json",
+      "sha256": "2020e5853897e0491fbea0df65e50c2264435a1d51f5209350b750e9df079bd3"
+    },
+    {
+      "source_ref": "export-20261109-153605/receipt.json",
+      "sha256": "bacb4581a5211f8b32a35fb347fa3bca42f36231cdeb3e59faf453ec9541b36a"
+    },
+    {
+      "source_ref": "left80-ab/kp16-18-20.json",
+      "sha256": "1a0b4704a2976160b29feea718989d002d3969a8b55deb3fcefdc50ba713940e"
+    },
+    {
+      "source_ref": "configure-20261109-153954/receipt.json",
+      "sha256": "38a9cdcd9a6fbe87e88a8f636f5f27779b68d86c9cc99f2df0254c8b36fc8b37"
+    },
+    {
+      "source_ref": "export-20261109-154810/receipt.json",
+      "sha256": "3557bcb6f5aa85089e855641d52293e236b6baf9abe513016c381a71c4b9e26a"
+    },
+    {
+      "source_ref": "car-status-20261109-154916/receipt.json",
+      "sha256": "c7b0fc36a150453da4f6390cae61731e7c1ab3bc560733dffa16e449471ba833"
+    },
+    {
+      "source_ref": "car-status-20261109-155015/receipt.json",
+      "sha256": "f7b300b02fb6feb9931501ff4b4ca23f1cff9949b1ba8e1c9142e4ae7078ce20"
+    },
+    {
+      "source_ref": "HANDOFF20.txt",
+      "sha256": "e73b1fd21c539d9bb48bf937baca5c175742cd91ae6174c33a3277f03a0062fb",
+      "scope": "Local full handoff referenced only; contents not uploaded."
+    },
+    {
+      "source_ref": "member-report-auto-export.json",
+      "sha256": "88e957dffcee0210712e78decd51dd516d3480b3d40d25df6a8a9033d5561fef"
+    },
+    {
+      "source_ref": "handoff20-receipts.json",
+      "sha256": "704debf0379b54eff6f41e250054f65fb27b8ac7e79693723ce051845884a847"
+    }
+  ],
+  "verification_tests": [
+    "回执截至15:50:33：P5/C1、T/F各一次；154916无命令，155015仅P且params0字节。",
+    "历史检测最终8PASS（0.074s）；自动导出最终9PASS（0.228s），后者含混合状态与最后记录时间边界。",
+    "根协调者完整读源和复跑；自动导出仅stub，未远程启用或发车。",
+    "H707/H708/H709完整交接已由根协调者逐字回读；未代其他成员ack。"
+  ],
+  "physical_tuning_complete": false,
+  "task_completion": "coordinator_decides",
+  "tokens": null,
+  "cost": null,
+  "speedup_claim": false
+}
