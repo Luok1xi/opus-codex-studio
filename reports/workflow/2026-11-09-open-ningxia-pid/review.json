@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-open-ningxia-pid",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-09T13:27:42.849812+08:00",
+  "measurement_cutoff_at": "2026-11-09T05:41:13.115887+00:00",
+  "task_summary": "启动已有离线PID练习工具，核对指定联系人的历史读取能力；当前不可读时恢复并打开本机登录入口。",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "确认既有工具来源及功能边界，并核对可见窗口存在。",
+      "不冒充完整聊天读取；恢复并打开用户自助登录入口。"
+    ],
+    "completed": [
+      "PID应用SHA256与既有资料清单一致，窗口标题及非零句柄验证通过，未占用串口。",
+      "旧私聊导出为263条且标明不完整，截止2026-10-19；未读取其他联系人消息。",
+      "定位到归档中的QQ读取运行包，备份并修复加载器迁移后的失效路径；本机登录页HTTP200，已再次打开。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_elapsed",
+      "value": 810.266075,
+      "unit": "seconds",
+      "basis": "本轮开始至登录入口恢复和归档准备，含用户中途追加需求。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方真实usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "并行查找未独立计时。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "准备未独立计时；提交/远端回读耗时另见回执。"
+    }
+  ],
+  "observations": [
+    "一名原生成员只读核对工具来源、QQ入口和迁移后的运行包；无外部Opus调用。",
+    "旧历史读取脚本依赖路径、当前配置路径及运行包路径均已过期；先验证再使用。",
+    "一次内联Python引号失败，后改结构化操作；一次日志输出被自动审批拒绝，改为布尔摘要及过滤后输出成功，无凭据上传。",
+    "先尝试相对模块路径仍未监听，恢复启动器使用的完整file URL后登录页上线；原文件备份保留。",
+    "聊天读取接口尚未就绪，当前交付为登录准备完成，不能把网页200当作账号已登录或历史已读。"
+  ],
+  "recommendations": [
+    {
+      "id": "verify-runtime-after-migration",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "迁移后依次检查启动器、模块路径、私有配置和本机端口，再宣布可用；入口启动与用户登录分别验证。",
+      "next_check": "用户登录后先核对只读API、指定联系人、分页停止原因和最新截止时间。"
+    },
+    {
+      "id": "private-log-summary-first",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "含登录信息的运行日志优先输出布尔诊断；必要文本先整行排除认证字段并遮盖路径、链接和长数字。",
+      "next_check": "后续读取不将认证信息、原始私聊、账号标识写入工作流报告或远端。"
+    }
+  ],
+  "evidence": [
+    "evidence.json仅含脱敏验证结果；本机路径和具体恢复入口留在本地交接。"
+  ],
+  "limits": [
+    "未读到本轮新增聊天，用户仍需完成登录；历史完整性、图片和附件内容均未验证。",
+    "无桌面截图工具，验证来自窗口属性和HTTP状态，不声称看见页面中的二维码。",
+    "无匹配质量基线，不能声称协作节省时间。"
+  ],
+  "comparison": null
+}

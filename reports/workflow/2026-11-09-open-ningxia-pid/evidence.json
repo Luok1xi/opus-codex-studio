@@ -1,0 +1,26 @@
+{
+  "round_id": "2026-11-09-open-ningxia-pid",
+  "task_id": 99,
+  "pid_app": {
+    "source_manifest_match": true,
+    "window_verified": true,
+    "offline_simulation_only": true,
+    "serial_commands_sent": 0
+  },
+  "chat_access": {
+    "old_export_count": 263,
+    "old_cutoff": "2026-10-19",
+    "old_complete": false,
+    "login_page_http": 200,
+    "loopback_only": true,
+    "module_path_backup": true,
+    "latest_messages_read": false,
+    "login_required": true
+  },
+  "native_workers": 1,
+  "external_opus_calls": 0,
+  "private_chat_uploaded": false,
+  "tokens": null,
+  "cost": null,
+  "speedup_claim": false
+}
