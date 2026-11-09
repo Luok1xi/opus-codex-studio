@@ -1,0 +1,133 @@
+{
+  "round_id": "2026-11-09-c12-contract-repair-and-flash",
+  "summary": "Repair first-turn admission and safe steering handoff in an isolated candidate, validate it and flash after renewed owner authorization.",
+  "metrics": [
+    {
+      "name": "round_wall_including_owner_pause",
+      "value": 34754.60506,
+      "unit": "seconds",
+      "basis": "Task start to measurement cutoff; includes overnight pause requested by owner, not active work time"
+    },
+    {
+      "name": "review_local_packaging_so_far",
+      "value": 34.906315,
+      "unit": "seconds",
+      "basis": "Local packaging start to cutoff; upload and later monitoring excluded"
+    },
+    {
+      "name": "full_sim_executions",
+      "value": 98,
+      "unit": "cases",
+      "basis": "Saved experiment summaries; includes rejected experiments"
+    },
+    {
+      "name": "accepted_full_cases",
+      "value": 8,
+      "unit": "cases",
+      "basis": "Four conditions times two engines"
+    },
+    {
+      "name": "accepted_segments",
+      "value": 10,
+      "unit": "cases",
+      "basis": "Saved segment results"
+    },
+    {
+      "name": "accepted_fault_stops",
+      "value": 4,
+      "unit": "cases",
+      "basis": "Saved fault and coast checks"
+    },
+    {
+      "name": "external_model_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No model delegation during this implementation round"
+    },
+    {
+      "name": "subagents",
+      "value": 0,
+      "unit": "agents",
+      "basis": "Coordinator only"
+    },
+    {
+      "name": "flash_operations",
+      "value": 1,
+      "unit": "actions",
+      "basis": "Official verified receipt"
+    },
+    {
+      "name": "remote_launches",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Serial write allowlist contains read-only queries only"
+    },
+    {
+      "name": "active_work",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No complete matched measurement available"
+    },
+    {
+      "name": "owner_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No complete matched measurement available"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No complete matched measurement available"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No complete matched measurement available"
+    },
+    {
+      "name": "all_tool_failures",
+      "value": null,
+      "unit": "calls",
+      "basis": "No complete matched measurement available"
+    },
+    {
+      "name": "physical_runs_observed",
+      "value": 2,
+      "unit": "runs",
+      "basis": "Two distinct board record starts and complete exported blocks; both stopped30"
+    }
+  ],
+  "completed": [
+    "Isolated repair preserves frozen baselines and separates build, flash and live identities.",
+    "Passed segmented/fault checks, eight full-lap cases and all state-handoff audits under unchanged limits.",
+    "Completed clean official target build, verified official flash and stationary wired/wireless identity.",
+    "Saved and attributed both first physical trials; identified repeated outgoing-lane relock timeout without changing protections.",
+    "Reproduced the outgoing recovery/speed coupling defect in an unchanged host controller; recorded incomplete restoration of stable turning parameters.",
+    "Rejected an unpowered manual distance sample and stopped measurement after the owner reported a rollback to an old stable version."
+  ],
+  "remaining": [
+    "Physical acceptance failed twice; fixes for the demonstrated controller regression are not implemented.",
+    "Current owner-restored firmware identity is unverified; powered odometry and camera distance calibration are not completed."
+  ],
+  "evidence": [
+    "Frozen source hashes and clean-build manifest",
+    "Segment, fault and full-lap summaries with handoff audit",
+    "Official flash receipt and stationary wired/wireless readback",
+    "Rejected experiments retained locally",
+    "Two separately attributable physical records and owner-confirmed unmoved parked image",
+    "Ten host diagnostic assertions and two preserved failed probe attempts",
+    "Historical effective controller source comparison and local regression review",
+    "Rejected manual sample, capture heartbeat/raw-byte evidence and owner-reported rollback"
+  ],
+  "limits": [
+    "Simulation does not establish physical completion or calibrated distance accuracy.",
+    "Physical trial results and sensor/odometry calibration remain separate work.",
+    "No measured target camera processing time or stack high-water result.",
+    "No independent peer review or matched workflow baseline; no speedup claim.",
+    "Only sanitized aggregate workflow reports uploaded, no project sources, images, raw serial logs or databases.",
+    "Current physical outcome is two stop30 failures; do not repeat trials or label the candidate physically accepted.",
+    "No new repair or flash after the failed physical trials; the rollback version was reported by the owner and not independently identified."
+  ]
+}
