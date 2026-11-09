@@ -1,0 +1,330 @@
+{
+  "round_id": "2026-11-09-left80-ab",
+  "task_id": 101,
+  "task_key": "left80-ab-20261109",
+  "draft": false,
+  "stage_started_at": "2026-11-09T15:15:54+08:00",
+  "measurement_cutoff_at": "2026-11-09T15:27:16+08:00",
+  "evidence_snapshot_at": "2026-11-09T15:27:16+08:00",
+  "vehicle_activity": {
+    "actual_queries": 8,
+    "actual_parameter_writes": 2,
+    "actual_flashes": 0,
+    "actual_runs": 1,
+    "newly_analyzed_runs": 2,
+    "actual_remote_launches": 0,
+    "valid_new_state_received": true,
+    "count_basis": {
+      "scope": "Stage15:15:54 to15:27:16: two exports P/C, two gains P/K/P.",
+      "status_queries_P": 6,
+      "capture_export_C": 2,
+      "physical_starts_within_stage": 1,
+      "newly_analyzed_physical_records": 2,
+      "run06_captured_before_stage": true,
+      "run07_started_within_stage": true,
+      "run08_completed": false
+    }
+  },
+  "candidate": {
+    "kp_left": 20,
+    "ki_left": 1.2,
+    "target": 80,
+    "fan_command_percent": 30,
+    "written_to_vehicle": true,
+    "status": "applied_and_readback_verified_waiting_run08",
+    "tested": false,
+    "caveat": "Higher Kp can strengthen correction while raising initial command; improvement is not guaranteed."
+  },
+  "coordination": {
+    "native_independent_review_received": true,
+    "root_visual_review": "passed per coordinator",
+    "plot_panels": 4,
+    "plot_artifacts": 1,
+    "opus_report_received": false,
+    "dsh_report_received": false,
+    "task101_status": "in_progress",
+    "task_changed_by_script": false,
+    "stage06_handoffs": {
+      "ids": [
+        701,
+        702,
+        703
+      ],
+      "full_readback": true,
+      "acknowledged_for_others": false
+    },
+    "stage07_handoff": "Coordinator will supply actual receipt separately."
+  },
+  "live_parameters": {
+    "readback_at": "2026-11-09T15:25:35.7697587+08:00",
+    "kp_left": 20,
+    "ki_left": 1.2,
+    "kp_right": 24.8,
+    "ki_right": 1.62,
+    "target": 80,
+    "fan_command_percent": 30,
+    "readback_verified": true,
+    "readback_basis": "Coordinator confirmed readback; command receipt independently inspected.",
+    "next_recording": "run08_waiting_user_S5",
+    "physical_trial_completed_for_current_parameters": false
+  },
+  "response_comparison": {
+    "scope": "Same target80/Kp18/fan command30; one sequential physical record each, not controlled repeated trials.",
+    "rows": [
+      {
+        "kp": 18.0,
+        "ki": 7.0,
+        "target": 80,
+        "fan_command_percent": 30,
+        "capture_sha256": "5c8f720843b8532c737d45c72334f31de322c68b513dc25cf8b5ab4580c411ee",
+        "peak": 183,
+        "overshoot_percent": 128.75,
+        "rise_10_90_ms": 8,
+        "return_5pct_ms": 118,
+        "high_settle_5pct_ms": null,
+        "tail200ms_rms_counts": 3.824918,
+        "return500ms_iae_count_per_2ms_times_s": 1.606,
+        "max_abs_pwm_command": 3855,
+        "near_pwm8330_samples": 0,
+        "at_pwm8500_samples": 0
+      },
+      {
+        "kp": 18.0,
+        "ki": 1.2,
+        "target": 80,
+        "fan_command_percent": 30,
+        "capture_sha256": "ef65998aa1923c0e970398b0fc2761f8c10d085bb675768ff32f8fe6743a54fd",
+        "peak": 103,
+        "overshoot_percent": 28.75,
+        "rise_10_90_ms": 48,
+        "return_5pct_ms": 108,
+        "high_settle_5pct_ms": null,
+        "tail200ms_rms_counts": 2.771281,
+        "return500ms_iae_count_per_2ms_times_s": 3.438,
+        "max_abs_pwm_command": 2246,
+        "near_pwm8330_samples": 0,
+        "at_pwm8500_samples": 0
+      }
+    ],
+    "conclusion": "Lower overshoot and tail RMS withKi1.20, slower rise and larger return-phase integrated error; no overall best gain declared.",
+    "iae_definition": "sum(abs(feedback-target))*0.002; count-per-2ms times seconds, not physical distance.",
+    "limits": [
+      "Voltage, temperature, contact and orientation not experimentally controlled.",
+      "Recorded PWM not near limits does not exclude hardware current or voltage limits.",
+      "Left-wheel80 only; no acceptance of target200, right wheel or trajectory."
+    ],
+    "workflow_speedup_claim": false,
+    "kp18_vs16": {
+      "rows": [
+        {
+          "kp": 18.0,
+          "ki": 1.2,
+          "target": 80,
+          "peak": 103,
+          "overshoot_percent": 28.75,
+          "rise_ms": 48,
+          "return_ms": 108,
+          "tail200ms_rms": 2.771281,
+          "return500ms_iae": 3.438,
+          "max_abs_pwm": 2246,
+          "near_pwm_samples": 0
+        },
+        {
+          "kp": 16.0,
+          "ki": 1.2,
+          "target": 80,
+          "peak": 107,
+          "overshoot_percent": 33.75,
+          "rise_ms": 32,
+          "return_ms": 110,
+          "tail200ms_rms": 2.929164,
+          "return500ms_iae": 3.5,
+          "max_abs_pwm": 2473,
+          "near_pwm_samples": 0
+        }
+      ],
+      "conclusion": "Kp16 did not improve peak or plateau/RMS in this single pair; do not keep lowering Kp. Kp20 next trial is not yet validated."
+    }
+  },
+  "actual_trials": [
+    {
+      "id": "physical-run06-analyzed-here",
+      "captured_before_stage": true,
+      "physical_start_within_stage": false,
+      "stage_role": "newly_analyzed_record",
+      "side": "left",
+      "surface": "blue_cloth",
+      "samples": 1000,
+      "sample_period_basis": "nominal2ms",
+      "kp": 18,
+      "ki": 1.2,
+      "target": 80,
+      "fan_command_percent": 30,
+      "response": {
+        "status": "complete_pulse",
+        "feedback": "encL",
+        "target": 80,
+        "sample_dt_ms": 2,
+        "feedback_reached_90pct": true,
+        "fall_measurable_from_90pct": true,
+        "rise_10_to_90_ms": 48,
+        "peak_feedback": 103,
+        "peak_delay_ms": 130,
+        "overshoot_pct": 28.75,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": -0.275,
+        "plateau_last_200ms_peak_to_peak_pct": 15.0,
+        "plateau_tail_window_ms": 200,
+        "fall_90_to_10_ms": 46,
+        "return_to_zero_5pct_ms": 108,
+        "return_reverse_peak_pct": 17.5,
+        "baseline_feedback_mean": 0.0
+      },
+      "max_abs_pwm_command": 2246,
+      "software_near_limit_samples": 0,
+      "stop_code": 20,
+      "feedback_semantics": "Firmware-conditioned encoder feedback, not independent shaft-speed measurement.",
+      "capture_sha256": "ef65998aa1923c0e970398b0fc2761f8c10d085bb675768ff32f8fe6743a54fd",
+      "source_ref": "export-20261109-151642/capture.metrics.json"
+    },
+    {
+      "id": "physical-run07",
+      "captured_before_stage": false,
+      "physical_start_within_stage": true,
+      "stage_role": "newly_analyzed_record",
+      "side": "left",
+      "surface": "blue_cloth",
+      "samples": 1000,
+      "sample_period_basis": "nominal2ms",
+      "kp": 16,
+      "ki": 1.2,
+      "target": 80,
+      "fan_command_percent": 30,
+      "response": {
+        "status": "complete_pulse",
+        "feedback": "encL",
+        "target": 80,
+        "sample_dt_ms": 2,
+        "feedback_reached_90pct": true,
+        "fall_measurable_from_90pct": true,
+        "rise_10_to_90_ms": 32,
+        "peak_feedback": 107,
+        "peak_delay_ms": 152,
+        "overshoot_pct": 33.75,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": 0.55,
+        "plateau_last_200ms_peak_to_peak_pct": 17.5,
+        "plateau_tail_window_ms": 200,
+        "fall_90_to_10_ms": 46,
+        "return_to_zero_5pct_ms": 110,
+        "return_reverse_peak_pct": 16.25,
+        "baseline_feedback_mean": 0.0
+      },
+      "max_abs_pwm_command": 2473,
+      "software_near_limit_samples": 0,
+      "stop_code": 20,
+      "feedback_semantics": "Firmware-conditioned encoder feedback, not independent shaft-speed measurement.",
+      "capture_sha256": "fe8063a165433eab52acb8c957013ec61972fd7b7db8b036389ceecfc7fbfece",
+      "source_ref": "export-20261109-152400/capture.metrics.json"
+    }
+  ],
+  "member_aggregates": [
+    {
+      "author": "codex",
+      "role": "native independent raw-record comparison reviewer",
+      "provenance": "Native result identified by coordinator; aggregate and hashes locally checked.",
+      "source_ref": "left80-ab/comparison-review.json",
+      "source_sha256": "d01226c9866d13150ffbb32216a33cc8b1e9f3aaab63ce7680ddfb0a95ca1a5a",
+      "status": "passed_record_integrity_and_calculation_only",
+      "script_started_at": "2026-11-09T15:20:28.847348+08:00",
+      "script_finished_at": "2026-11-09T15:20:29.528649+08:00",
+      "script_wall_seconds": 0.6813002999988385,
+      "full_agent_wall_seconds": null,
+      "tokens": null,
+      "cost": null,
+      "hardware_actions": 0,
+      "plots_reviewed_by_root": true
+    },
+    {
+      "author": "codex",
+      "role": "native workflow scaffold worker",
+      "source_ref": "workflow-left80-ab/scaffold-check-receipt.json",
+      "source_sha256": "385634a34d042c32713ba4eca21828e8d2fbdd089212758e77cc3fd705be814e",
+      "started_at": "2026-11-09T15:16:58.407763+08:00",
+      "finished_at": "2026-11-09T15:19:19.563356+08:00",
+      "wall_seconds": 141.155593,
+      "verification_seconds": 0.297741,
+      "tokens": null,
+      "cost": null,
+      "hardware_actions": 0,
+      "uploads": 0
+    },
+    {
+      "author": "codex",
+      "role": "native independent Kp18-vs16 reviewer",
+      "provenance": "Actual native report supplied by coordinator and checked locally.",
+      "source_ref": "left80-ab/kp18-vs16.json",
+      "source_sha256": "1482b3634667e256d76e9c7b0b6f8dfa3856b5e1a98989dc1eccbb8328992471",
+      "script_started_at": "2026-11-09T15:26:48.389970+08:00",
+      "script_finished_at": "2026-11-09T15:26:49.077533+08:00",
+      "script_wall_seconds": 0.6876738999999361,
+      "full_agent_wall_seconds": null,
+      "tokens": null,
+      "cost": null,
+      "hardware_actions": 0
+    }
+  ],
+  "rework": [],
+  "source_artifacts": [
+    {
+      "source_ref": "export-20261109-151642/receipt.json",
+      "sha256": "696a81cb2bc520725b97f80b980743a1008f04817d4eaf2a485543c731b2d1bb"
+    },
+    {
+      "source_ref": "export-20261109-151642/capture.metrics.json",
+      "sha256": "13afaac2397f64aa9b9f6a848492a012593b8a9c4b5f1631a22aa298a8a5d13f"
+    },
+    {
+      "source_ref": "gains-20261109-151804/receipt.json",
+      "sha256": "fff73c23e1a4bf9f5eae0e5058ab6a3a5516fd0fbb4b15ffd9c9c97e7b3cf7f6"
+    },
+    {
+      "source_ref": "left80-ab/comparison-review.json",
+      "sha256": "d01226c9866d13150ffbb32216a33cc8b1e9f3aaab63ce7680ddfb0a95ca1a5a"
+    },
+    {
+      "source_ref": "left80-ab/left80-comparison.png",
+      "sha256": "dba7579a75529d675f032defa581ea640af2f77304dbcf101e5c5bdb998c4803"
+    },
+    {
+      "source_ref": "export-20261109-152400/receipt.json",
+      "sha256": "a6cd5bbcd7d0673fd5b0b5e01adfae54cb15ffda9bd875a9b0185e9e6741f795"
+    },
+    {
+      "source_ref": "export-20261109-152400/capture.metrics.json",
+      "sha256": "ae22e6bc211be6234cd84b7ef41029824b29dc71261d38bad7a95c5cbb8ed9e2"
+    },
+    {
+      "source_ref": "gains-20261109-152523/receipt.json",
+      "sha256": "3a1c7c0e8607ae2dc57403a8c7ef250c86fb2282dcc7f66edecb34e07358a26c"
+    },
+    {
+      "source_ref": "left80-ab/kp18-vs16.json",
+      "sha256": "1482b3634667e256d76e9c7b0b6f8dfa3856b5e1a98989dc1eccbb8328992471"
+    },
+    {
+      "source_ref": "left80-ab/kp18-vs16.png",
+      "sha256": "065b9427c4f498a6f1802e0ab4ea235f0541e2e419c7f1de24fe08069b1349d5"
+    }
+  ],
+  "verification_tests": [
+    "新分析两条不同hash的1000点记录；独立复算顺序、阶段、目标及右轮零输出一致。",
+    "四份本阶段命令回执合计P6/C2/K2；无烧录和远程发车。",
+    "两次对照图表完成独立核对；20/1.20只确认写入回读，未计为实测通过。"
+  ],
+  "physical_tuning_complete": false,
+  "task_completion": "coordinator_decides",
+  "tokens": null,
+  "cost": null,
+  "speedup_claim": false
+}
