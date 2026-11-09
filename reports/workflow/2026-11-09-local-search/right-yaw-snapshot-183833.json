@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-local-search",
+  "stage": "right-and-yaw",
+  "draft": false,
+  "status": "in_progress",
+  "new_review_round": false,
+  "stage_start_at": null,
+  "final_cutoff_at": null,
+  "notes_updated_at": "2026-11-09T18:40:25.190039+08:00",
+  "scope": "Sanitized ongoing-stage snapshot for the existing local-search round; not tuning completion.",
+  "trials": [
+    {
+      "local_ref": "right-kp195-ki100-target200-01/host-v2-20261109-175825-e0c596/attempt-01/capture.metrics.json",
+      "capture_sha256": "3e2cb62544448950d3f47df64f8ec0b2637bd5225739d4344298a33ea727da8d",
+      "samples": 1000,
+      "side": 2,
+      "target": 200,
+      "fan_percent": 30,
+      "rise_ms": 16,
+      "overshoot_percent": 6.5,
+      "return_ms": 132,
+      "peak_feedback": 213,
+      "max_abs_wheel_pwm": 3864,
+      "kp_right": 19.5,
+      "ki_right": 1,
+      "tail_p2p_counts": 21,
+      "tail_rms_counts": 4.96689,
+      "fixed_window_p2p_counts": 21,
+      "strict_balanced_all_pass": false
+    },
+    {
+      "local_ref": "right-kp185-ki100-target200-02/host-v2-20261109-180021-a0a092/attempt-01/capture.metrics.json",
+      "capture_sha256": "73e699095d34814cad1c24832f86cd5c5cbd82a0119fcd126da781e958fe0c3f",
+      "samples": 1000,
+      "side": 2,
+      "target": 200,
+      "fan_percent": 30,
+      "rise_ms": 24,
+      "overshoot_percent": 8,
+      "return_ms": 110,
+      "peak_feedback": 216,
+      "max_abs_wheel_pwm": 3746,
+      "kp_right": 18.5,
+      "ki_right": 1,
+      "tail_p2p_counts": 25,
+      "tail_rms_counts": 6.336403,
+      "fixed_window_p2p_counts": 34,
+      "strict_balanced_all_pass": false
+    },
+    {
+      "local_ref": "yaw-left-kp0083-ki0008-target90-01/host-v2-20261109-180313-068909/attempt-01/capture.metrics.json",
+      "capture_sha256": "72eec8d5107c405d3d755cef815c3c5bad26e04df31532e57fc8aed557febf6f",
+      "samples": 1000,
+      "side": 4,
+      "target": 90,
+      "fan_percent": 30,
+      "rise_ms": 36,
+      "overshoot_percent": 174.1111,
+      "return_ms": null,
+      "peak_feedback": 246.7,
+      "max_abs_wheel_pwm": 2097,
+      "yaw_kp": 0.083,
+      "yaw_ki": 0.008,
+      "units": "gyro degrees per second",
+      "strict_settling_ms": null,
+      "accepted": false
+    },
+    {
+      "local_ref": "export-20261109-181043/capture.metrics.json",
+      "capture_sha256": "2c3d5a204e53c705ed71f566ebb29abacac126c5da56e59b34a6962ad721cee0",
+      "samples": 1000,
+      "side": 4,
+      "target": 90,
+      "fan_percent": 30,
+      "yaw_kp": 0.083,
+      "yaw_ki": 0.002,
+      "rise_ms": 20,
+      "peak_feedback_dps": 194.2,
+      "overshoot_percent": 115.7778,
+      "strict_settling_ms": null,
+      "return_ms": null,
+      "tail_p2p_dps": 168.6,
+      "max_abs_wheel_pwm": 1887,
+      "accepted": false,
+      "association": "Manual coordinator association, not continuous firmware-run identity.",
+      "manual_validation_ref": "export-20261109-181043/manual-validation.json",
+      "manual_validation_sha256": "f2d8bb79fc1908f3ba8884b54d31de95354c60ec4c5ed050bf574ca55e1df930",
+      "complete_parked_statuses": 28,
+      "clock_advancing_and_metadata_match": true,
+      "ack_saved": true
+    },
+    {
+      "local_ref": "both-kp195-ki100-target20-diagnostic/host-v2-20261109-181702-b16706/attempt-01/capture.metrics.json",
+      "capture_sha256": "76e0bbaf7813327fb7bd9124f7b7f70fe2770dd989c716398d87acb9255f482d",
+      "samples": 1000,
+      "side": 3,
+      "target": 20,
+      "wheel_kp_both": 19.5,
+      "wheel_ki_both": 1,
+      "fan_percent": 30,
+      "role": "One supplementary low-speed diagnostic; discontinued scope, not main target acceptance.",
+      "accepted_for_main_goal": false
+    },
+    {
+      "local_ref": "yaw-left-kp0200-ki0002-target90-03/host-v2-20261109-182459-d43fc4/attempt-01/capture.metrics.json",
+      "capture_sha256": "8d65475075f9615aaa681a47a2d7c4f1ef376fd01bf7667ee3a1851a0841cf89",
+      "samples": 1000,
+      "side": 4,
+      "target": 90,
+      "fan_percent": 30,
+      "yaw_kp": 0.2,
+      "yaw_ki": 0.002,
+      "rise_ms": 24,
+      "peak_feedback_dps": 208.7,
+      "overshoot_percent": 131.8889,
+      "strict_settling_ms": null,
+      "return_ms": null,
+      "tail_p2p_dps": 157.9,
+      "max_abs_wheel_pwm": 2041,
+      "accepted": false,
+      "association": "Guarded host without firmware runID."
+    },
+    {
+      "local_ref": "export-20261109-182818/capture.metrics.json",
+      "capture_sha256": "687e1a1757015d818f2085ce91c507dc1d5713f64866bf5e184372bac7a458fa",
+      "samples": 1000,
+      "side": 4,
+      "target": 200,
+      "fan_percent": 30,
+      "yaw_kp": 0.2,
+      "yaw_ki": 0.002,
+      "rise_ms": 22,
+      "peak_feedback_dps": 255.1,
+      "overshoot_percent": 27.55,
+      "strict_settling_ms": null,
+      "return_ms": null,
+      "tail_p2p_dps": 57.7,
+      "max_abs_wheel_pwm": 2089,
+      "accepted": false,
+      "association": "Manual sampled-clock association with gaps."
+    },
+    {
+      "local_ref": "yaw-left-kp0300-ki0002-target200-05/host-v2-20261109-183325-222c3f/attempt-01/capture.metrics.json",
+      "capture_sha256": "ee17b0ab2ee03264e6279d3e0405d4b8c394912993f2a8c5ce24eaa5b02f4fac",
+      "samples": 1000,
+      "side": 4,
+      "target": 200,
+      "fan_percent": 30,
+      "yaw_kp": 0.3,
+      "yaw_ki": 0.002,
+      "rise_ms": 24,
+      "peak_feedback_dps": 312.6,
+      "overshoot_percent": 56.3,
+      "strict_settling_ms": null,
+      "return_ms": null,
+      "tail_p2p_dps": 82.1,
+      "max_abs_wheel_pwm": 2510,
+      "accepted": false,
+      "association": "Guarded host without firmware runID."
+    }
+  ],
+  "right_decision": {
+    "temporarily_selected": {
+      "kp": 19.5,
+      "ki": 1,
+      "target": 200,
+      "fan_percent": 30
+    },
+    "restoration_receipt": "gains-20261109-180120/receipt.json",
+    "reason": "Plateau closer to Owner priority than18.5; tailP2P21 still exceeds20.",
+    "full_acceptance": false,
+    "comparison_ref": "right-closeout/compare.json",
+    "comparison_sha256": "3f9bd099b2eb91cf1c6ffa0fa6d8805fb1f2f345f937a08fac6e21621c2765ec"
+  },
+  "yaw_diagnosis": {
+    "evidence_ref": "yaw-left-kp0083-ki0008-target90-01/yaw-baseline-independent-analysis.json",
+    "evidence_sha256": "fe3865be2ccb62ea928d9859eb04e9c1d87820aef026a9ccb0032fb4fde88b93",
+    "peak_dps": 246.7,
+    "overshoot_percent": 174.1111,
+    "onset_to_10pct_ms": 102,
+    "onset_to_90pct_ms": 138,
+    "wheel_target_limit_hits": 0,
+    "near_pwm_limit_hits": 0,
+    "hypothesis": "Delayed onset at low wheel speed plus accumulation in cascaded wheel/yaw integrators may interact with friction and load. Not unique hardware-cause identification.",
+    "software_limit_scope": "Baseline .083/.008 target90 only: no logged wheel-target or PWM clipping. The later .30/.002 target200 run hit wheel target60 for8samples.",
+    "next_candidate": {
+      "yaw_kp": 0.15,
+      "yaw_ki": 0.002,
+      "target_dps": 200,
+      "fan_percent": 30,
+      "state": "Written and read back; physical result outside this snapshot."
+    },
+    "accepted": false,
+    "second_result_summary": "Ki.002 reduced observed peak from246.7to194.2dps, but plateau p2p increased from147.4to168.6dps; no full response acceptance."
+  },
+  "documented_operations": {
+    "scope": "Twenty-five bounded leaf receipts through.15setting at18:38:02; eight complete runs through.30. New06 activity after snapshot excluded.",
+    "counts": {
+      "P": 39,
+      "C": 8,
+      "T": 6,
+      "F": 6,
+      "K": 5,
+      "A": 4
+    },
+    "queries": 47,
+    "writes": 21,
+    "observed_starts": 8,
+    "full_captures": 8,
+    "remote_starts": 0,
+    "flashes": 0,
+    "receipt_refs": [
+      "right-kp195-ki100-target200-01/host-v2-20261109-175825-e0c596/attempt-01/receipt.json",
+      "right-kp185-ki100-target200-02/host-v2-20261109-180021-a0a092/attempt-01/receipt.json",
+      "yaw-left-kp0083-ki0008-target90-01/host-v2-20261109-180313-068909/attempt-01/receipt.json",
+      "configure-20261109-175556/receipt.json",
+      "gains-20261109-175626/receipt.json",
+      "gains-20261109-175913/receipt.json",
+      "gains-20261109-180120/receipt.json",
+      "configure-20261109-180143/receipt.json",
+      "yaw-gains-20261109-180737-165faa/receipt.json",
+      "yaw-left-kp0083-ki0002-target90-02/host-v2-20261109-180942-0487c2/attempt-01/receipt.json",
+      "export-20261109-181043/receipt.json",
+      "configure-20261109-181453/receipt.json",
+      "both-kp195-ki100-target20-diagnostic/host-v2-20261109-181702-b16706/attempt-01/receipt.json",
+      "gains-20261109-181853/receipt.json",
+      "configure-20261109-182133/receipt.json",
+      "configure-20261109-182249/receipt.json",
+      "gains-20261109-182337/receipt.json",
+      "yaw-gains-20261109-182403-829824/receipt.json",
+      "configure-20261109-182543/receipt.json",
+      "yaw-gains-20261109-183223-aa1c0a/receipt.json",
+      "export-20261109-182818/receipt.json",
+      "yaw-left-kp0200-ki0002-target90-03/host-v2-20261109-182459-d43fc4/attempt-01/receipt.json",
+      "yaw-left-kp0200-ki0002-target200-04/host-v2-20261109-182736-70d66c/attempt-01/receipt.json",
+      "yaw-left-kp0300-ki0002-target200-05/host-v2-20261109-183325-222c3f/attempt-01/receipt.json",
+      "yaw-gains-20261109-183753-3d239d/receipt.json"
+    ],
+    "trial_breakdown": {
+      "right": 2,
+      "yaw90": 3,
+      "yaw200": 2,
+      "discontinued_low20": 1
+    }
+  },
+  "coordination_rework": [
+    {
+      "issue": "PowerShell true token should be$true. Recorder/watcher already started, but process receipt write failed.",
+      "effect": "Preparation evidence gap only; no duplicate start or flash.",
+      "status": "Coordinator corrected receipt."
+    },
+    {
+      "issue": "CIM path slash mismatch failed process lookup.",
+      "resolution": "Used verified existing process IDs to complete preparation receipt.",
+      "effect": "No duplicate start or flash."
+    },
+    {
+      "issue": "Analysis association argumentcoordinator_associated is not accepted by CLI.",
+      "resolution": "Reran with allowedconfirmed token; separate manual-validation retains observation-gap and runID limitations.",
+      "effect": "No data destruction, repeated physical run or firmware action."
+    },
+    {
+      "issue": "One target20 diagnostic and preparation of a second branch diverged from Owner requested rapid right-wheel-to-yaw sequence.",
+      "correction": "Stop low-speed branch; preserve existing sample and return to angular-rate90/200.",
+      "counts": "Ki1:one observed run. Ki.5:zero events after reboot. Configure20 already in flight before correction completed18:21:48.",
+      "no_duplicate_flash_or_remote_start": true
+    },
+    {
+      "issue": "Wheel-only actuator_summary invoked foryaw; prior blanket no-analysis-failure wording was wrong.",
+      "correction": "Preserve failure and separate successful waveform analysis from secondary summary; complete data intact."
+    },
+    {
+      "issue": "Local notes generation used live wildcard event count and caught newly completed06 beyond intended snapshot.",
+      "correction": "Bound snapshot to listed08 complete runs and18:38:33 ready time; later06 left for next update.",
+      "hardware_actions": 0
+    }
+  ],
+  "limits": [
+    "Each right gain was tested once; mechanical/contact/battery conditions do not support causal optimum claims.",
+    "Nominal2ms timing; conditioned encoder feedback is not raw shaft speed.",
+    "Gyro feedback has filtering/deadband; stationary yaw test is not forward-speed or visual direction acceptance.",
+    "Fan30 is requested throttle, not measured suction.",
+    "RAM settings need recheck after reboot."
+  ],
+  "remaining": [
+    "Incorporate.15/.002target200 result aftersnapshot; angular-rate tuning stillinprogress.",
+    "Onlyyaw90/200 next, againstOwner10percent goal; no low20 branch.",
+    "Rightwheel temporary; yaw/visual/fulltrack acceptance incomplete."
+  ],
+  "local_notes_timing": {
+    "first_read_at": "2026-11-09T18:07:26.143148+08:00",
+    "written_at": "2026-11-09T18:08:35.239223+08:00",
+    "elapsed_seconds": 69.096075,
+    "scope": "This bounded local aggregation only, not physical stage or full task.",
+    "latest_update_first_read_at": "2026-11-09T18:37:46.695608+08:00",
+    "latest_update_written_at": "2026-11-09T18:40:25.190039+08:00",
+    "latest_update_elapsed_seconds": 158.494431,
+    "snapshot_closeout_elapsed_seconds": 112.190039
+  },
+  "usage": null,
+  "cost": null,
+  "human_wait_seconds": null,
+  "efficiency_gain_claim": false,
+  "database_writes": 0,
+  "network_calls": 0,
+  "hardware_actions_by_this_child": 0,
+  "current_diagnostic": {
+    "state": "Discontinued byOwner; no further low-speed trials.",
+    "target20_completed_runs": 1,
+    "ki_half_completed_runs": 0,
+    "ki_half_event_ref": "both-kp195-ki050-target20-diagnostic/capture-events.json",
+    "ki_half_event_sha256": "aaa1adea12281f8fc3ade0f78b4408563cecd0fbdc3e1cd8e7f1826404321ec6",
+    "ki_half_observed_events": 0,
+    "ki_half_boots": 2,
+    "last_configure20_ref": "configure-20261109-182133/receipt.json",
+    "last_configure20_completed_at": "2026-11-09T18:21:48.3049366+08:00",
+    "ordering": "Coordinator reports Configure20 was already sent before the new Owner direction.",
+    "next_action": "Low20 branch closed; wheel19.5/1 restored and yaw90/200 resumed."
+  },
+  "capture_recovery": {
+    "first_failure_ref": "yaw-left-kp0083-ki0002-target90-02/auto-export-receipt-20261109-180823-be0218.json",
+    "first_failure": "status file PermissionError; automatic collection failed, precise read location not proven from receipt.",
+    "retry_failure_ref": "yaw-left-kp0083-ki0002-target90-02/host-v2-20261109-180942-0487c2/attempt-01/receipt.json",
+    "retry_failure": "OnlyP sent; malformed initial prefix failed before-capture guard soC was not sent.",
+    "recovery": "Coordinator closed recorder, restarted watcher, then reused originalExportP/C to recover existing cache; no repeated physical run.",
+    "manual_association_limit": "28 complete parked statuses, increasing sampled clock and matching metadata support association; observation gap remains and firmware has no shared runID.",
+    "ack_ref": "yaw-left-kp0083-ki0002-target90-02/capture-events-ack.json",
+    "failures_preserved": true
+  },
+  "tool_updates": {
+    "v2c": {
+      "tests_passed": 5,
+      "test_seconds": 0.002,
+      "bounded_permission_attempts": 3,
+      "retry_spacing_seconds": 0.1,
+      "maximum_extra_wait_seconds": 0.2,
+      "live_success_verified": true,
+      "test_report_ref": "host-capture-v2c/test-results.json",
+      "test_report_sha256": "c4351a57c926506c80d7f8e2a08086c17655df03f846be4cbebe7e4bd8b9dd9d",
+      "manifest_ref": "host-capture-v2c/manifest.json",
+      "manifest_sha256": "b07661677d4fd408edeabc1678ba0c33dda2cf9a2b3d793201176507ea13fb50",
+      "manifest_files_verified": 13,
+      "limit": "Only status-access PermissionError retry; does not fix malformed status prefixes.",
+      "live_success_count": 3,
+      "live_result_ref": "both-kp195-ki100-target20-diagnostic/host-v2-20261109-181702-b16706/result.json",
+      "live_success_limit": "Capture+ack succeeded forlow20,yaw90.20,yaw200.30; yaw secondary analysis failed. Yaw200.20 LFdeadline failure needed manual export."
+    },
+    "yaw_gain_setter": {
+      "tests_passed": 8,
+      "test_result_source": "Coordinator reported independent tests.",
+      "live_readback_successes": 1,
+      "live_receipt_ref": "yaw-gains-20261109-180737-165faa/receipt.json"
+    }
+  },
+  "scope_correction": {
+    "owner_instruction": "Stop target20 diagnostic; return to angular-rate90/200 with10percent target; no new two-wheel low-speed branch.",
+    "acceptance_threshold_definition": "RetainOwner10percent wording; exact per-metric application belongs to coordinator, not inferred as a new pass.",
+    "status": "Applied; no further low20 physical trial afterOwner correction.",
+    "reason": "Low-speed branch diverged from Owner preferred pace and primary angular-rate objective.",
+    "prior_low_speed_result": "Preserved as auxiliary evidence only; no main-goal acceptance claim.",
+    "no_more_low_speed_trials": true,
+    "new_review_round": false
+  },
+  "stage_closed": false,
+  "snapshot_cutoff_at": "2026-11-09T18:38:33+08:00",
+  "snapshot_cutoff_source": "Coordinator observed recorder ready at18:38:33; subsequent06 event and result deliberately excluded.",
+  "snapshot_ready_for_coordinator_archive": true,
+  "current_runtime_snapshot": {
+    "yaw_kp": 0.15,
+    "yaw_ki": 0.002,
+    "target_dps": 200,
+    "fan_percent": 30,
+    "wheel_kp_both": 19.5,
+    "wheel_ki_both": 1,
+    "readback_ref": "yaw-gains-20261109-183753-3d239d/receipt.json",
+    "confirmed_at": "2026-11-09T18:38:02.0346597+08:00",
+    "trial06_state_at_snapshot": "Recorder ready; subsequent event/result outside snapshot.",
+    "accepted": false
+  },
+  "additional_transport_recovery": {
+    "failed_ref": "yaw-left-kp0200-ki0002-target200-04/host-v2-20261109-182736-70d66c/attempt-01/receipt.json",
+    "failure": "Passive actual-LF500msdeadline expired; zero commands sent.",
+    "recovered_export_ref": "export-20261109-182818/receipt.json",
+    "manual_validation_ref": "export-20261109-182818/manual-validation.json",
+    "complete_parked_statuses": 31,
+    "same_observed_run_no_repeat": true,
+    "limits": "User completion plus matching metadata/advancing stopped clock; observation gaps and no shared firmware runID."
+  },
+  "analysis_failure_correction": {
+    "prior_no_analysis_failure_claim_withdrawn": true,
+    "automatic_yaw_postprocesses_checked": 3,
+    "response_analysis_succeeded": 3,
+    "wheel_only_actuator_summary_failed": 3,
+    "capture_integrity_preserved": true,
+    "reason": "Automatic yaw dispatch invokes a wheel-only secondary summary. Whole postprocess must not be called successful.",
+    "evidence": [
+      {
+        "ref": "yaw-left-kp0083-ki0008-target90-01/host-v2-20261109-180313-068909/attempt-01/capture.postprocess.json",
+        "sha256": "9db544399d1a664336d6f58a20d35593c53bac07ebba2a5987a7f36ff23e524e",
+        "response_analysis_exit": 0,
+        "wheel_only_summary_exit": 1
+      },
+      {
+        "ref": "yaw-left-kp0200-ki0002-target90-03/host-v2-20261109-182459-d43fc4/attempt-01/capture.postprocess.json",
+        "sha256": "1ab25af95d4804d78cfbff2d994b8b19cd1803d22d1085c3f21741090a3e1808",
+        "response_analysis_exit": 0,
+        "wheel_only_summary_exit": 1
+      },
+      {
+        "ref": "yaw-left-kp0300-ki0002-target200-05/host-v2-20261109-183325-222c3f/attempt-01/capture.postprocess.json",
+        "sha256": "79254797ac2b605fa7c63e611f971388662b9a02ee379b7f3521e0a82c7e58ec",
+        "response_analysis_exit": 0,
+        "wheel_only_summary_exit": 1
+      }
+    ],
+    "implementation_fix_claimed": false
+  },
+  "collaboration_status": {
+    "actual_external_opus_participation": false,
+    "sources": "Native independent reviewers and root coordinator evidence only; no externalOpus acceptance.",
+    "new_review_round": false
+  }
+}
