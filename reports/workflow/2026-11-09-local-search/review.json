@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-local-search",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "draft": false,
+  "started_at": "2026-11-09T16:30:48.8619939+08:00",
+  "measurement_cutoff_at": "2026-11-09T16:33:42.3247844+08:00",
+  "task_summary": "基于六份目标200记录准备局部参数探索，保留20/1.00对照。",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "区分真实采集、参数回读、候选预计及未完成试验。",
+      "保持当前参数、负载及采样口径可追溯；本阶段不宣布所有控制环通过。"
+    ],
+    "completed": [
+      "六份既有目标200记录完成独立聚合；20/1.00低超调、稳定较快，但IAE不是最好；旧记录重分析不算新采样。",
+      "左20/0.90目标200、风机30%已写回读；截止时新实跑0、仅P2和参数写1。",
+      "自动保存及ack后接现有波形/指标分析，后处理状态单独保存；根协调者读diff并复跑11PASS（1.137s），旧实录复制生成1000行CSV及图表通过。"
+    ],
+    "remaining": [
+      "20/0.90尚待本阶段截止后的真实试跑验证，不能提前宣布优于20/1.00。",
+      "自动后处理尚无新实车端到端结果，左右轮和角速度环未全部验收，T101保持进行中。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "actual_queries",
+      "value": 2,
+      "unit": "queries",
+      "basis": "仅本阶段实际回执计数；上阶段累计值不可直接带入。"
+    },
+    {
+      "name": "actual_parameter_writes",
+      "value": 1,
+      "unit": "writes",
+      "basis": "仅本阶段实际回执计数；上阶段累计值不可直接带入。"
+    },
+    {
+      "name": "actual_flashes",
+      "value": 0,
+      "unit": "flashes",
+      "basis": "仅本阶段实际回执计数；上阶段累计值不可直接带入。"
+    },
+    {
+      "name": "actual_runs",
+      "value": 0,
+      "unit": "runs",
+      "basis": "仅统计本阶段实际发车；导出阶段前的记录不算新发车。"
+    },
+    {
+      "name": "newly_analyzed_runs",
+      "value": 0,
+      "unit": "records",
+      "basis": "本阶段首次分析的物理记录数量；原始发车可以发生在阶段之前。"
+    },
+    {
+      "name": "actual_remote_launches",
+      "value": 0,
+      "unit": "commands",
+      "basis": "仅本阶段实际回执计数；上阶段累计值不可直接带入。"
+    },
+    {
+      "name": "observed_elapsed",
+      "value": 173.462791,
+      "unit": "seconds",
+      "basis": "阶段开始到实际测量截止，含等待；无截止则未知。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无真实usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "human_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "未单独计量。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "实际收尾开销另记脚本回执，不推算。"
+    }
+  ],
+  "observations": [
+    "仅保存脱敏聚合；不读取或上传私人聊天。",
+    "无同质量工作流基线，不声称协作提效。",
+    "Kp18–20、Ki0.90–1.20只是局部探索区间，不是已知最优；电压与接地状态未严格控制。",
+    "后处理失败单独记capture.postprocess.json，不伪造采样丢失或抹掉已成功保存/ack的记录。",
+    "截止后S5提示及新运行不混入此报告；不安装PlotJuggler，不声明整体提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "left80-measured-comparison",
+      "owner": "codex",
+      "status": "proposed",
+      "action": "依据同目标真实响应比较超调、稳定窗口与回零，再决定下一参数。",
+      "next_check": "完整导出新一趟并核对实时参数；未写候选不能计为已试。"
+    }
+  ],
+  "evidence": [
+    "evidence.json：本阶段聚合证据和验证结论。"
+  ],
+  "limits": [
+    "20/0.90尚待本阶段截止后的真实试跑验证，不能提前宣布优于20/1.00。",
+    "自动后处理尚无新实车端到端结果，左右轮和角速度环未全部验收，T101保持进行中。",
+    "脚本不会关闭T101或自动发车。"
+  ],
+  "comparison": null
+}

@@ -1,0 +1,251 @@
+{
+  "round_id": "2026-11-09-local-search",
+  "task_id": 101,
+  "task_key": "local-search-20261109",
+  "draft": false,
+  "stage_started_at": "2026-11-09T16:30:48.8619939+08:00",
+  "measurement_cutoff_at": "2026-11-09T16:33:42.3247844+08:00",
+  "evidence_snapshot_at": "2026-11-09T16:33:42.3247844+08:00",
+  "vehicle_activity": {
+    "actual_queries": 2,
+    "actual_parameter_writes": 1,
+    "actual_flashes": 0,
+    "actual_runs": 0,
+    "newly_analyzed_runs": 0,
+    "actual_remote_launches": 0,
+    "valid_new_state_received": true,
+    "count_basis": {
+      "scope": "This stage starts16:30:48.8619939; one P/K/P gains receipt. Six prior captures are reused comparison evidence, not new stage physical runs.",
+      "status_queries_P": 2,
+      "capture_export_C": 0,
+      "prior_captures_reused": 6
+    }
+  },
+  "candidate": {
+    "kp_left": 20,
+    "ki_left": 0.9,
+    "target": 200,
+    "fan_command_percent": 30,
+    "written_to_vehicle": true,
+    "tested": false,
+    "baseline": {
+      "kp_left": 20,
+      "ki_left": 1.0
+    },
+    "exploratory_range": {
+      "kp": [
+        18,
+        20
+      ],
+      "ki": [
+        0.9,
+        1.2
+      ]
+    },
+    "known_optimum": false
+  },
+  "coordination": {
+    "native_six_capture_review": "completed",
+    "watch_report_wrapper": {
+      "status": "completed_offline_validation",
+      "integration": "watch_export.main invokes existing analyze_response and actuator_summary after save/ack success.",
+      "postprocess_receipt": "capture.postprocess.json",
+      "root_diff_review": true,
+      "tests_passed": 11,
+      "root_test_seconds": 1.137,
+      "prior_real_capture_copy_checked": true,
+      "generated_csv_rows": 1000,
+      "postprocess_failure_preserves_capture": true,
+      "capture_schema_changed": false,
+      "fresh_live_end_to_end_result": false
+    },
+    "plotjuggler": "Official CSV support checked by coordinator; not installed.",
+    "task101_status": "in_progress",
+    "task_changed_by_script": false,
+    "watcher_started": true,
+    "watcher_pid": 47396,
+    "S5_prompt_after_cutoff": true,
+    "new_run_by_cutoff": false
+  },
+  "live_parameters": {
+    "kp_left": 20,
+    "ki_left": 0.9,
+    "kp_right": 24.8,
+    "ki_right": 1.62,
+    "target": 200,
+    "fan_command_percent": 30,
+    "readback_verified": true,
+    "readback_at": "2026-11-09T16:32:03.3927110+08:00",
+    "source_ref": "gains-20261109-163150/receipt.json",
+    "run13_status": "waiting_for_physical_test_at_cutoff; later S5 prompt outside this report"
+  },
+  "response_comparison": {
+    "status": "completed_prior_six_capture_aggregation",
+    "rows": [
+      {
+        "capture": "142234",
+        "kp": 25.0,
+        "ki": 1.6,
+        "fan": "30",
+        "rise_ms": 20,
+        "peak": 271,
+        "overshoot_pct": 35.5,
+        "settle5_ms": 890,
+        "plateau_mean": 200.28,
+        "plateau_rms": 4.211888,
+        "plateau_pp": 20,
+        "total_iae": 14.614,
+        "initial200ms_iae": 7.216,
+        "return500ms_iae": 4.452,
+        "return_settle_ms": 40,
+        "source_sha256": "4ffb2bc772323032709b788b92a9db305bce90785b5acc60ac0d42b3e8754663"
+      },
+      {
+        "capture": "142907",
+        "kp": 18.0,
+        "ki": 1.6,
+        "fan": "30",
+        "rise_ms": 24,
+        "peak": 240,
+        "overshoot_pct": 20.0,
+        "settle5_ms": null,
+        "plateau_mean": 200.73,
+        "plateau_rms": 4.859012,
+        "plateau_pp": 25,
+        "total_iae": 14.922,
+        "initial200ms_iae": 6.41,
+        "return500ms_iae": 5.516,
+        "return_settle_ms": 90,
+        "source_sha256": "1c0a5bd90e81adffa9a475d66d641c9ac0e2b584848091977a8d87ca165d929e"
+      },
+      {
+        "capture": "143409",
+        "kp": 18.0,
+        "ki": 0.8,
+        "fan": "30",
+        "rise_ms": 98,
+        "peak": 224,
+        "overshoot_pct": 12.0,
+        "settle5_ms": null,
+        "plateau_mean": 199.72,
+        "plateau_rms": 6.696268,
+        "plateau_pp": 37,
+        "total_iae": 19.806,
+        "initial200ms_iae": 7.758,
+        "return500ms_iae": 7.678,
+        "return_settle_ms": 122,
+        "source_sha256": "30cc3e26b9005e20b7fd1b64a9f8d2853395a15d3622e6137c2c94c80c59e28b"
+      },
+      {
+        "capture": "144345",
+        "kp": 18.0,
+        "ki": 1.2,
+        "fan": "30",
+        "rise_ms": 26,
+        "peak": 220,
+        "overshoot_pct": 10.0,
+        "settle5_ms": null,
+        "plateau_mean": 200.44,
+        "plateau_rms": 6.618157,
+        "plateau_pp": 27,
+        "total_iae": 15.998,
+        "initial200ms_iae": 5.906,
+        "return500ms_iae": 5.982,
+        "return_settle_ms": 118,
+        "source_sha256": "6b791964cb57c9bcd22cf280f3b1033ef5833b6b135ba79be6245b0e6710296a"
+      },
+      {
+        "capture": "161329",
+        "kp": 20.0,
+        "ki": 1.2,
+        "fan": "30",
+        "rise_ms": 16,
+        "peak": 223,
+        "overshoot_pct": 11.5,
+        "settle5_ms": 674,
+        "plateau_mean": 199.67,
+        "plateau_rms": 4.160529,
+        "plateau_pp": 18,
+        "total_iae": 15.986,
+        "initial200ms_iae": 6.718,
+        "return500ms_iae": 6.176,
+        "return_settle_ms": 110,
+        "source_sha256": "9d1c7319809554743c34c11454ac87df3f8e2195e2769cca614d98b1d9407599"
+      },
+      {
+        "capture": "161948",
+        "kp": 20.0,
+        "ki": 1.0,
+        "fan": "30",
+        "rise_ms": 18,
+        "peak": 216,
+        "overshoot_pct": 8.0,
+        "settle5_ms": 384,
+        "plateau_mean": 200.12,
+        "plateau_rms": 3.916631,
+        "plateau_pp": 17,
+        "total_iae": 16.44,
+        "initial200ms_iae": 6.918,
+        "return500ms_iae": 6.968,
+        "return_settle_ms": 110,
+        "source_sha256": "e17e7764044ef2c75e7441db3197cef0452a1ed5f3f0b76adb74e6e16ff56f58"
+      }
+    ],
+    "time_basis": "nominal2ms",
+    "iae_window": "first high sample through final zero sample,1.5s",
+    "conclusion": "20/1.00 is a low-overshoot and faster-settling candidate, not the minimum-IAE or proven optimum.",
+    "limits": "Sequential single runs, voltage and physical state not controlled. Kp18/Ki0.8 slowdown is warning, not predictedKp20/Ki0.9 result.",
+    "workflow_speedup_claim": false
+  },
+  "actual_trials": [],
+  "member_aggregates": [
+    {
+      "author": "codex",
+      "role": "native six-capture independent reviewer",
+      "source_ref": "left200-ab/target200-six-captures.json",
+      "source_sha256": "0e75591f2e1907c0d33192edfb2cf37e925e3d79674ade1b4ca64a2299e02728",
+      "status": "reported_and_aggregate_locally_checked",
+      "full_elapsed_seconds": null,
+      "tokens": null,
+      "cost": null
+    },
+    {
+      "author": "codex",
+      "role": "native automatic postprocessing implementer",
+      "source_ref": "member-report-auto-analysis.json",
+      "source_sha256": "5a2a31e1cc4efab5c0d18ddd23d4ddf0eb05c7ed39f27079d130c32413d20dc5",
+      "status": "implementation_and_offline_tests_complete",
+      "root_verified_tests": 11,
+      "root_test_seconds": 1.137,
+      "full_elapsed_seconds": null,
+      "tokens": null,
+      "cost": null,
+      "fresh_live_validation": false
+    }
+  ],
+  "rework": [],
+  "source_artifacts": [
+    {
+      "source_ref": "left200-ab/target200-six-captures.json",
+      "sha256": "0e75591f2e1907c0d33192edfb2cf37e925e3d79674ade1b4ca64a2299e02728"
+    },
+    {
+      "source_ref": "gains-20261109-163150/receipt.json",
+      "sha256": "6b1866f59d980b4a8e45ded40fd1bc1a453b5c6b764d6d2427d105de3df04443"
+    },
+    {
+      "source_ref": "member-report-auto-analysis.json",
+      "sha256": "5a2a31e1cc4efab5c0d18ddd23d4ddf0eb05c7ed39f27079d130c32413d20dc5"
+    }
+  ],
+  "verification_tests": [
+    "gains163150回执P/K/P，K字段200/90/248/162；截止时新physical0、flash0、remote0。",
+    "根协调者复跑11项PASS（1.137s）；既有161948实录复制生成1000行CSV、PNG、metrics、actuator。",
+    "后处理失败不影响capture有效性测试通过；原采集schema不改，CSV保留time_ms。"
+  ],
+  "physical_tuning_complete": false,
+  "task_completion": "coordinator_decides",
+  "tokens": null,
+  "cost": null,
+  "speedup_claim": false
+}
