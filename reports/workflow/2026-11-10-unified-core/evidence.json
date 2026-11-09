@@ -4,7 +4,7 @@
   "source_project": "CRAZY-CIRCUIT",
   "task_id": 103,
   "scope": "Authorized offline simulation and target compilation achieved; physical/system validation remains unverified.",
-  "measurement_cutoff_at": "2026-11-09T17:43:48Z",
+  "measurement_cutoff_at": "2026-11-09T17:48:25Z",
   "provenance": "Archive helper read aggregate acceptance/build/test JSON and compared frozen host/target manifests; remaining clearly labeled outcomes are coordinator reports.",
   "acceptance": {
     "engines": [
@@ -25,9 +25,9 @@
     "user_revised_goal": "approximately 50 mm",
     "all_repeats_identical": true,
     "frozen_input_drift": 0,
-    "batch_wall_seconds": 79.18726407,
+    "batch_wall_seconds": 74.628531831,
     "config_sha256": "d69e9a7974b5a7081eecd8d89862e72cb71cc9059c770813e373dde4bd1a4d11",
-    "source_manifest_sha256": "1383b01c09633313f9f638d5db463abddc8eeffaacc69eb29795217d8009a3c6",
+    "source_manifest_sha256": "e29729c94a4690e7ea5062788f2d22a4d96fd82fb7f4e2e82d84d80f7acc1342",
     "maximum_lateral_mm": {
       "csim": [
         50.7093,
@@ -42,7 +42,11 @@
     "post_zero_output_travel_mm": [
       298.7611424305316,
       394.99402899080445
-    ]
+    ],
+    "all_completion_state_retained": true,
+    "terminal_route_index": 47,
+    "post_stop_route_index_retained": true,
+    "summary_route_complete": true
   },
   "target_build": {
     "toolchain": "ADS TASKING v1.1r8 Build 22011964",
@@ -54,14 +58,14 @@
       "vendor": 36,
       "implicit_float": 3
     },
-    "elapsed_seconds": 13.124,
-    "rom_bytes": 384123,
+    "elapsed_seconds": 11.493,
+    "rom_bytes": 384057,
     "ram_bytes": 138232,
     "shared_core_sources": 6,
     "host_target_manifest_hash_matches": 6,
     "all_core_sources_compiled": true,
     "core_unchanged_during_build": true,
-    "elf_sha256": "0349563b26455483b283be3770a9cad905a657e4b5389d64f3ff4895c26b8149",
+    "elf_sha256": "aaa311ded239b80945e161945a1de465bfee17f7b0a43b9d511e7bb5c74c5310",
     "target_execution_event_parity": "not verified",
     "target_execution_timing_hil": "not verified"
   },
@@ -71,9 +75,9 @@
       "source": "coordinator report"
     },
     "car_safety": {
-      "passed": 55,
+      "passed": 60,
       "failures": 0,
-      "source": "aggregate JSON; real shared core on host with mocked inputs"
+      "source": "Latest aggregate JSON after terminal-state fix; real shared core on host with mocked inputs"
     },
     "platform_contract": {
       "passed": 37,
@@ -83,6 +87,11 @@
     "route_vision_and_sanitizers": {
       "passed": true,
       "count": null,
+      "source": "coordinator report"
+    },
+    "config_update_dry_run": {
+      "passed": 7,
+      "actual_value_changes": false,
       "source": "coordinator report"
     }
   },
@@ -95,7 +104,23 @@
     "redundant_repeat2": "completed; 4 summary files observed",
     "redundant_repeat3": "coordinator terminated; no final summary files observed",
     "duplicated_runtime_seconds": null,
-    "artifact_directory_names_are_not_iteration_counts": true
+    "artifact_directory_names_are_not_iteration_counts": true,
+    "late_acceptance_gap": {
+      "found": "Post-stop frame reset route state despite complete events",
+      "first_gate_missed": true,
+      "corrected": "Retain completed route until new start/init; add terminal/post-stop/summary assertions",
+      "old_results_fail_new_assertions": true,
+      "final_matrix_runs": 24,
+      "required_rerun_seconds": 74.628531831,
+      "comparison_script_seconds": 6.2253,
+      "scope": "Necessary regression verification, not redundant coordination work"
+    },
+    "corrected_evidence_pending_interval": {
+      "start": "2026-11-09T17:44:51Z",
+      "end": "2026-11-09T17:47:29Z",
+      "seconds": 158,
+      "includes_useful_preparation": true
+    }
   },
   "experience": {
     "refs": [
@@ -111,20 +136,24 @@
   },
   "aggregate_evidence_hashes": [
     {
-      "file": "acceptance-summary.json",
-      "sha256": "59322a55af60c913e9bd366de01466ad2a256ffb042536749c21e42ee4769b35"
+      "file": "acceptance-final-summary.json",
+      "sha256": "7e13c02aeabef757deb20e5a96e492c37aa6ca186925165f4de10f185b2d4df8"
     },
     {
       "file": "target-result.json",
-      "sha256": "4d1fa3dcbe9c82bf98508c131d5221858222eafcb462718258737336aa2e17de"
+      "sha256": "6bc126c05881d8a35551c939b13030d634ef0ce7dabb5b825f5f4fa95f7e61c1"
     },
     {
       "file": "car-safety.json",
-      "sha256": "f2af43edf42056e0974c03a50a2d110426acd021d37676044040430695d021aa"
+      "sha256": "ef5e80101672c95526ecfcaa5f54b9d0a28ef260ca8bb60a8964bab6fcb7aac9"
     },
     {
       "file": "platform-contract.json",
       "sha256": "98d60d0dc3aaacef48e429f384181cfed433c8ff6a819d5d7dc1422817cdc498"
+    },
+    {
+      "file": "running-trajectory-comparison.json",
+      "sha256": "c9e5ff5eb8fd093999fd5332269d3c439389c915b234558b5291165e723fabf9"
     }
   ],
   "usage": null,
@@ -136,5 +165,18 @@
     "review.json",
     "review.md",
     "evidence.json"
-  ]
+  ],
+  "report_revision": 2,
+  "supersedes_database_review_id": 593,
+  "running_trajectory_comparison": {
+    "cases": 24,
+    "all_unchanged": true,
+    "scope": "RUNNING first row through terminal row inclusive; all CSV fields; LF-normalized row bytes"
+  },
+  "previous_snapshot": {
+    "database_review_id": 593,
+    "private_commit": "400b81d81a8035a68221933d7a919fe7219d45ac",
+    "batch_wall_seconds": 79.18726407,
+    "status": "superseded; final-state retention acceptance incomplete"
+  }
 }
