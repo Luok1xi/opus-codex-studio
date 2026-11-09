@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-unified-camera150",
+  "source_project": "CRAZY-CIRCUIT",
+  "task_id": 105,
+  "recorded_at": "2026-11-09T18:17:18Z",
+  "report_review_id": 597,
+  "first_archive_receipt_id": 598,
+  "previous_report_commit": "d0747f49a784e434e4b1d1de97c257b3c03d095c",
+  "updates": {
+    "rendering_verification": "completed",
+    "rendering_provenance": "Coordinator visually verified generated report and trajectory plot using an existing WSL environment; no dependency installation.",
+    "rendering_values_verified": {
+      "camera_height_mm": 150,
+      "pitch_degrees": 46,
+      "runs_completed": 24,
+      "max_lateral_mm": [
+        45.505,
+        51.723
+      ],
+      "latest_target_build": true
+    },
+    "frozen_evidence_hashes_verified": true,
+    "known_recoverable_tool_failures_total": 7,
+    "supersedes_known_failure_count_at_report_cutoff": 4,
+    "additional_failures": [
+      "Target input list was initially treated as a dictionary; all 15 inputs subsequently verified.",
+      "First renderer relative path did not match the working directory.",
+      "Windows renderer lacked matplotlib; existing WSL environment succeeded without installation."
+    ],
+    "algorithm_rework": 0,
+    "hardware_actions": 0,
+    "report_tool_hardcoded_height_and_metrics_removed": true,
+    "next_improvement": "Use full CLI paths, existing verified environments and canonical manifest parsing."
+  },
+  "handoff_id": 766,
+  "first_archive_wall_seconds": 179,
+  "usage": null,
+  "cost": null,
+  "speedup_claim": false,
+  "upload_scope": "Sanitized completion receipt only; no plots, source or logs uploaded."
+}
