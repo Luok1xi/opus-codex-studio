@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-unified-camera150",
+  "source_project": "CRAZY-CIRCUIT",
+  "task_id": 105,
+  "measurement_cutoff_at": "2026-11-09T18:14:34Z",
+  "camera": {
+    "height_mm": 150,
+    "previous_height_mm": 180,
+    "height_source": "user-confirmed",
+    "pitch_degrees": 46,
+    "pitch_measured": false,
+    "only_config_difference": "camera.height_mm",
+    "old_results_preserved": true
+  },
+  "config_sha256": "970efde190e7d313920c92c4b88f60bcfd6d4816e9265f5b328bc9cd86894bfd",
+  "source_manifest_sha256": "09bb60c589982a2c35a0350be70783d60b26ace8c028a05800a03d0dd8847ff2",
+  "acceptance": {
+    "jobs": 24,
+    "completed": 24,
+    "conditions": 8,
+    "repeats": 3,
+    "strict50_passed": 12,
+    "historical55_reference_passed": 24,
+    "max_lateral_mm": [
+      45.505,
+      51.7229
+    ],
+    "lap_seconds": [
+      16.532,
+      17.352
+    ],
+    "batch_seconds": 73.866856244,
+    "all_completion_state_retained": true,
+    "complete_event_failures": 0,
+    "lifecycle_failures": 0,
+    "all_repeats_identical": true,
+    "input_drift": 0
+  },
+  "builds": {
+    "host": {
+      "accepted": true,
+      "seconds": 2.274337162
+    },
+    "target": {
+      "accepted": true,
+      "seconds": 12.314,
+      "errors": 0,
+      "warnings": 39,
+      "rom_bytes": 384057,
+      "ram_bytes": 138232,
+      "elf_sha256": "4f8b7f8701162495aab3365135bbf3680012d0da8bf171380139bf71f2d5bd41"
+    },
+    "matching_shared_core_sources": 6
+  },
+  "tests": {
+    "config_and_writeback_checks": 14,
+    "architecture_passed": true,
+    "source": "coordinator report"
+  },
+  "rendering_tool_verification": "pending coordinator final receipt",
+  "coordination": {
+    "native_codex": true,
+    "external_opus_participation_claim": false,
+    "reporting_tool_work_did_not_change_control": true,
+    "algorithm_rework": 0,
+    "known_tool_retry_events": 4
+  },
+  "hardware_actions": 0,
+  "aggregate_evidence_hashes": [
+    {
+      "file": "change-proof.json",
+      "sha256": "77d23a2d61ad92384002a4e0dd7124cec03c97dd2c822241a754819c7a18eb5a"
+    },
+    {
+      "file": "acceptance-camera150-summary.json",
+      "sha256": "20c32ac542972fb9427dd9c772de3024c580396c54193d5a5759fd3a44871ad6"
+    },
+    {
+      "file": "host-build-result.json",
+      "sha256": "c0993eec10669ec36308dc874f1d65214f257eccb5d9d3ddc1da98f09a38b05b"
+    },
+    {
+      "file": "target-result.json",
+      "sha256": "daf1991eb56c338068083517659378a54400d628df9fc990370cb2b32171aef8"
+    }
+  ],
+  "usage": null,
+  "cost": null,
+  "speedup_claim": false,
+  "archive_started_at": "2026-11-09T18:13:26Z",
+  "upload_whitelist": [
+    "review.json",
+    "review.md",
+    "evidence.json"
+  ]
+}
