@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-readonly-tuning-learning",
+  "task_summary": "Refresh an authorized local technical conversation, inspect its linked figures and compare teaching claims with saved controller implementation and repeatability evidence. Source material remains local.",
+  "workflow_version": "WORKFLOW_REVIEW.md and WORKFLOW_DATABASE.md; TeamHub project isolation; native Codex child tasks",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-10T00:00:30.544540+08:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Refresh the authorized source through a final read-only cutoff check.",
+      "Distinguish source teaching, saved implementation and measured repeatability; state unavailable evidence.",
+      "Preserve the no-vehicle-action boundary and archive only sanitized process evidence."
+    ],
+    "completed": [
+      "Coordinator verified the final read-only cutoff: 769 IDs retained, zero added; reply targets resolved and four key drawings visually inspected.",
+      "Native Codex repeatability child reviewed 23 saved trials and identified limits on fine parameter ranking.",
+      "Native Codex implementation child returned source references and verified saved firmware provenance; coordinator separated saved implementation facts from current physical performance.",
+      "Coordinator saved the technical learning note and comparison artifacts locally; no vehicle actions occurred."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "retrieved_messages",
+      "value": 769,
+      "unit": "messages",
+      "basis": "Coordinator-reported aggregate from the authorized local read-only API; source text is excluded."
+    },
+    {
+      "name": "evening_images_retrieved",
+      "value": 44,
+      "unit": "images",
+      "basis": "Coordinator reported 44 of 45 available evening image references retrieved; missing image remains a coverage limitation."
+    },
+    {
+      "name": "key_drawings_reviewed",
+      "value": 4,
+      "unit": "images",
+      "basis": "Coordinator-reported visual inspection; no images are archived."
+    },
+    {
+      "name": "saved_trials_reviewed",
+      "value": 23,
+      "unit": "trials",
+      "basis": "Received native Codex child result, relayed by coordinator; no raw trial data archived."
+    },
+    {
+      "name": "native_codex_child_tasks",
+      "value": 3,
+      "unit": "tasks",
+      "basis": "Two analytical child assignments and one archive helper, per coordinator dispatch; not external Opus or DeepSeek calls."
+    },
+    {
+      "name": "vehicle_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Coordinator attests no serial access, parameter writes, flashes or launches in this round."
+    },
+    {
+      "name": "known_retrieval_corrections",
+      "value": 1,
+      "unit": "corrections",
+      "basis": "PowerShell date comparison was corrected by retaining date strings with DateKind String; complete tool-failure total is unknown."
+    },
+    {
+      "name": "total_round_wall",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Exact task start unavailable; approximate first retrieval anchor was 2026-11-09T23:55:45+08:00, which is not the full user-task start."
+    },
+    {
+      "name": "actual_model_usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No complete provider usage record for parent and children."
+    },
+    {
+      "name": "actual_cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No bill or equivalent cost evidence."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not measured separately."
+    },
+    {
+      "name": "review_and_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlapped with coordinator analysis; active time not measured separately."
+    },
+    {
+      "name": "first_pass_acceptance",
+      "value": null,
+      "unit": "ratio",
+      "basis": "Read-only learning acceptance is complete; independent first-pass acceptance and complete rework denominator were not measured."
+    },
+    {
+      "name": "new_records_on_final_recheck",
+      "value": 0,
+      "unit": "messages",
+      "basis": "Coordinator final check at 2026-11-10T00:00:30.544540+08:00; same 769 IDs."
+    }
+  ],
+  "observations": [
+    "Parallel scopes were source/implementation checking, saved-trial repeatability review, and sanitized workflow archive. Received child findings are evidence of work performed, not proof of time saved.",
+    "Same-configuration variation can exceed some fine parameter differences; the resulting analysis must avoid a causal ranking unsupported by repeatability.",
+    "One date-comparison correction and unnecessarily broad context output added avoidable processing. No matched quality baseline exists.",
+    "Only the coordinator consolidates the user round; this archive helper does not start a recursive review round or acknowledge for another agent."
+  ],
+  "recommendations": [
+    {
+      "id": "WF-DATETIME-ROUND102-20261109",
+      "action": "For this source refresh, retain ISO timestamps as strings or explicitly parse both operands with the same timezone-aware type before filtering; request bounded fields before emitting context.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "On the next refresh, confirm the newest record and filter boundary agree, and compare emitted field count with requested scope. Benefit is not yet measured."
+    }
+  ],
+  "evidence": [
+    "Coordinator-provided aggregate task evidence for CRAZY-CIRCUIT task 102; source bodies excluded.",
+    "Received native Codex trial and saved-controller reviews, consolidated into a local technical learning note; raw content remains local.",
+    "evidence.json retains aggregate coverage, boundaries and provenance only."
+  ],
+  "comparison": null,
+  "limits": [
+    "This is a coordinator-authored consolidated process report; it is not an independently authored Opus or DeepSeek report.",
+    "One of 45 evening image references was not retrieved; no claim of complete image coverage.",
+    "No current vehicle or physical-control acceptance is established by read-only source and saved-experiment review.",
+    "No raw chats, personal identities, screenshots, telemetry, source code, sessions, credentials or databases are uploaded.",
+    "Unknown timing, usage and acceptance metrics remain null; no causal workflow speedup claim.",
+    "Read-only learning acceptance is complete. Missing media, finite history and non-matched trial conditions limit inference; hardware tuning completion, an exact optimum or a hardware-fault diagnosis is not claimed."
+  ]
+}
