@@ -16,3 +16,5 @@ Owner 要求自 2026-10-18 起执行。每轮一份可读报告和结构化数�
 | [2026-11-09 只读调参学习复核](2026-11-09-readonly-tuning-learning/review.md) | 学习任务验收完成，媒体和历史覆盖有限；无同条件基线，不宣称提效 | [JSON](2026-11-09-readonly-tuning-learning/review.json)、[脱敏聚合证据](2026-11-09-readonly-tuning-learning/evidence.json) |
 
 | [2026-11-10 网站调参与详细速度波形](2026-11-10-web-speed-tuning/review.md) | 本机构建、52 项检查和 14 项页面流程通过；实车无线收发待确认；无同条件基线 | [JSON](2026-11-10-web-speed-tuning/review.json)、[脱敏证据](2026-11-10-web-speed-tuning/evidence.json) |
+
+| [2026-11-10 同源核心最终修订](2026-11-10-unified-core/review.md) | 新24次离线验收与真实目标编译完成；终态保持修复后重验；原严格50mm为12/24，实车/HIL未验证 | [JSON](2026-11-10-unified-core/review.json)、[脱敏证据](2026-11-10-unified-core/evidence.json) |
