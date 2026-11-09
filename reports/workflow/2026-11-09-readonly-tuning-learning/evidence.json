@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-readonly-tuning-learning",
+  "source_project": "CRAZY-CIRCUIT",
+  "task_id": 102,
+  "provenance": "Coordinator's bounded task statement and received native child findings, consolidated by the archive helper. No source conversation was read by this helper.",
+  "coverage": {
+    "messages_retrieved": 769,
+    "evening_images_expected": 45,
+    "evening_images_retrieved": 44,
+    "key_drawings_reviewed": 4,
+    "saved_trials_reviewed": 23,
+    "final_cutoff_recheck": "passed at 2026-11-10T00:00:30.544540+08:00; same 769 IDs; zero added"
+  },
+  "analysis": {
+    "repeatability_review": "received",
+    "saved_controller_review": "received; source references and saved build provenance verified",
+    "conclusion_scope": "Teaching, source implementation and saved trials are different evidence layers; current physical validation is outside this round."
+  },
+  "actions": {
+    "serial_accesses": 0,
+    "vehicle_parameter_writes": 0,
+    "flashes": 0,
+    "remote_launches": 0
+  },
+  "coordination": {
+    "native_codex_children": 3,
+    "external_opus_reply_claim": false,
+    "external_deepseek_reply_claim": false,
+    "subdelegation_by_archive_helper": false
+  },
+  "known_rework": [
+    "Date-filter operand handling corrected using DateKind String.",
+    "Extra broad context output; complete failure and rework totals unavailable."
+  ],
+  "upload_whitelist": [
+    "review.json",
+    "review.md",
+    "evidence.json"
+  ],
+  "quality_baseline": null,
+  "usage": null,
+  "cost": null,
+  "speedup_claim": false,
+  "local_deliverable": "Coordinator saved technical learning and repeatability artifacts locally; contents and personal paths excluded from archive."
+}
