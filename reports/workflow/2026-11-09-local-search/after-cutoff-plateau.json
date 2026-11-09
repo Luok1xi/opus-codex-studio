@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-local-search",
+  "continuation_id": "after-cutoff-plateau",
+  "draft": false,
+  "previous_cutoff": "2026-11-09T17:06:41.2230957+08:00",
+  "evidence_snapshot_at": "2026-11-09T17:43:35.3899232+08:00",
+  "continuation_cutoff_at": "2026-11-09T17:43:35.3899232+08:00",
+  "quality": "partial",
+  "task101_status": "in_progress",
+  "new_review_round_created": false,
+  "owner_priority": {
+    "reported_at_local": "17:32",
+    "primary": "Lower plateau peak-to-peak fluctuation.",
+    "completion_preference": "Good overall practical balance, then pause fine tuning.",
+    "exploration_budget": {
+      "max_groups": 2,
+      "groups": [
+        "Kp18/Ki1.00",
+        "Kp19.5/Ki1.00"
+      ]
+    },
+    "strict_old_gate_all_pass_required_for_temporary_selection": false,
+    "temporary_selection": {
+      "kp_left": 19.5,
+      "ki_left": 1,
+      "target": 200,
+      "fan_percent": 30,
+      "status": "temporary_left_wheel_only"
+    }
+  },
+  "owner_correction": {
+    "battery_ejection_reported_at_local": "17:11",
+    "earlier_disturbance_extent": "unknown",
+    "earlier_causal_parameter_rankings_withdrawn": true,
+    "older_files_preserved": true,
+    "usable_history_boundary": [
+      "latest export171149 selected byOwner",
+      "17:17 fixed-battery repeat"
+    ],
+    "latest171149_bound_to_event16": false
+  },
+  "progress": [
+    "Four v2b live runs saved, acknowledged and analyzed on their first capture attempt.",
+    "OriginalKp21 onlyP attempt lost its complete cache after Owner reboot; failed event retained.",
+    "Initial19.5 setting followed by reboot had zero observed starts. Reconfigured19.5 yielded two full1000-point records.",
+    "Left-wheel fine sweep paused with19.5/1.00 target200 fan30 temporarily selected; right-wheel and yaw acceptance incomplete."
+  ],
+  "usable_complete_records": [
+    {
+      "source_ref": "export-20261109-171149/capture.metrics.json",
+      "metrics_artifact_sha256": "56b11ba4cdafd401fa015c89422c9d3943180cabcb0f3e620fce2c7c43824c5c",
+      "capture_sha256": "7db8487fd72cb3255b2ee023222a885da2b630217a60860cc2ad0d797580dbff",
+      "samples": 1000,
+      "kp_left": 22,
+      "ki_left": 1,
+      "target": 200,
+      "fan_command_percent": 30,
+      "plateau_peak_to_peak_counts": 17,
+      "rise_ms": 64,
+      "overshoot_percent": 7,
+      "strict_settling_ms": 192,
+      "return_ms": 136,
+      "status": "Owner-designated usable latest/history boundary; not proof all strict gates pass.",
+      "association": "not bound to event16; owner-selected latest cache"
+    },
+    {
+      "source_ref": "export-20261109-171703/capture.metrics.json",
+      "metrics_artifact_sha256": "e822f1cef2c2a4e1476c28e950ff6d66c4d561d9b8deef61a037b7ee56f8fa88",
+      "capture_sha256": "f57d1b4d51580083ffe5c5e992748b7edda934e2e8c2c11a2e5f25928abad32a",
+      "samples": 1000,
+      "kp_left": 22,
+      "ki_left": 1,
+      "target": 200,
+      "fan_command_percent": 30,
+      "plateau_peak_to_peak_counts": 21,
+      "rise_ms": 24,
+      "overshoot_percent": 10.5,
+      "strict_settling_ms": null,
+      "return_ms": 126,
+      "status": "Owner-designated usable latest/history boundary; not proof all strict gates pass.",
+      "association": "coordinator-confirmed fixed-battery repeat"
+    },
+    {
+      "source_ref": "left-kp21-ki100-target200-rearmed-v2b/host-v2-20261109-172950-23767b/attempt-01/capture.metrics.json",
+      "metrics_artifact_sha256": "292194a8be2312f5359e582082ca7909586455dbbb0f8a484d45a353160fe18c",
+      "capture_sha256": "256ba65f86ed86cfd519d90f69833376f0c4568f6fa07ef5b0cdd1e2dd7ee74a",
+      "samples": 1000,
+      "kp_left": 21,
+      "ki_left": 1,
+      "target": 200,
+      "fan_command_percent": 30,
+      "plateau_peak_to_peak_counts": 28,
+      "rise_ms": 24,
+      "overshoot_percent": 8,
+      "strict_settling_ms": null,
+      "return_ms": 108,
+      "status": "Owner-designated usable latest/history boundary; not proof all strict gates pass.",
+      "association": "confirmed",
+      "plateau_rms_counts": 6.733,
+      "rms_source": "Coordinator independent aggregate"
+    },
+    {
+      "source_ref": "left-kp18-ki100-target200-plateau/host-v2-20261109-173513-d5a805/attempt-01/capture.metrics.json",
+      "metrics_artifact_sha256": "2b4d9130e632efbbc63fbdeb0875dfc8b86d278f0669c2ab9fb3eb8dee80eebb",
+      "capture_sha256": "ecb22ae74111f0968633e2774555d5dde266bb366c162cbaaad8fda0fee4089d",
+      "samples": 1000,
+      "kp_left": 18,
+      "ki_left": 1,
+      "target": 200,
+      "fan_command_percent": 30,
+      "plateau_peak_to_peak_counts": 18,
+      "rise_ms": 82,
+      "overshoot_percent": 8.5,
+      "strict_settling_ms": 774,
+      "return_ms": 114,
+      "status": "Owner-designated usable latest/history boundary; not proof all strict gates pass.",
+      "association": "confirmed"
+    },
+    {
+      "source_ref": "left-kp195-ki100-target200-plateau-rearmed/host-v2-20261109-174125-725f88/attempt-01/capture.metrics.json",
+      "metrics_artifact_sha256": "415c9e170a6f6bffb97d7eaed8c5e3d81fe902b01477520ad189c3ed317b9546",
+      "capture_sha256": "abcac492aebe382d9aa05e3f61b5a8d571e2402aec641a7e911bdf9b2008577e",
+      "samples": 1000,
+      "kp_left": 19.5,
+      "ki_left": 1,
+      "target": 200,
+      "fan_command_percent": 30,
+      "plateau_peak_to_peak_counts": 15,
+      "plateau_rms_counts": 3.519943,
+      "rise_ms": 58,
+      "overshoot_percent": 7.5,
+      "strict_settling_ms": 226,
+      "return_ms": 118,
+      "max_abs_wheel_pwm": 3870,
+      "association": "confirmed_by_guarded_host_without_firmware_run_id",
+      "status": "Balanced temporary use only; not old strict gate or optimum.",
+      "fixed_window_ms_start": 300,
+      "fixed_window_ms_end": 1000,
+      "fixed_window_p2p_counts": 18,
+      "fixed_window_rms_counts": 3.646,
+      "fixed_window_source": "Coordinator independent aggregate of same capture."
+    },
+    {
+      "source_ref": "left-kp195-ki100-target200-confirm/host-v2-20261109-174316-782d52/attempt-01/capture.metrics.json",
+      "metrics_artifact_sha256": "a2eba91e7ed2fe7e47bbf5a3b400e08c4260350ee69ad630cfb2e05d9a124e34",
+      "capture_sha256": "737859610473b739271fbf0b0089b79653d6c2266cafbd9ed672708f6692ed5d",
+      "samples": 1000,
+      "kp_left": 19.5,
+      "ki_left": 1,
+      "target": 200,
+      "fan_command_percent": 30,
+      "plateau_peak_to_peak_counts": 18,
+      "plateau_rms_counts": 4.053394,
+      "rise_ms": 28,
+      "overshoot_percent": 7,
+      "strict_settling_ms": 234,
+      "return_ms": 128,
+      "max_abs_wheel_pwm": 3870,
+      "association": "confirmed_by_guarded_host_without_firmware_run_id",
+      "status": "Balanced temporary use only; not old strict gate or optimum.",
+      "fixed_window_ms_start": 300,
+      "fixed_window_ms_end": 1000,
+      "fixed_window_p2p_counts": 18,
+      "fixed_window_rms_counts": 3.704,
+      "fixed_window_source": "Coordinator independent aggregate of same capture."
+    }
+  ],
+  "current_candidate": {
+    "kp_left": 19.5,
+    "ki_left": 1,
+    "target": 200,
+    "fan_command_percent": 30,
+    "kp_right": 24.8,
+    "ki_right": 1.62,
+    "state": "Temporarily selected after two complete rearmed trials; left-wheel fine search paused.",
+    "source_ref": "gains-20261109-173956/verified.bin",
+    "readback_source_sha256": "9badcc9461f8c3e065987584a0ee07c9076079ac116edc95c0e884338cc10cac",
+    "receipt_ref": "gains-20261109-173956/receipt.json",
+    "confirmed_at": "2026-11-09T17:40:09.3881601+08:00",
+    "temporary_choice": true,
+    "complete_records": [
+      "abcac492aebe382d9aa05e3f61b5a8d571e2402aec641a7e911bdf9b2008577e",
+      "737859610473b739271fbf0b0089b79653d6c2266cafbd9ed672708f6692ed5d"
+    ],
+    "runtime_persistence": "RAM only; reboot clears tuning parameters; readback/reconfiguration required.",
+    "right_wheel_acceptance": false,
+    "yaw_loop_acceptance": false,
+    "preset_ref": "plateau-closeout/left-wheel-balanced-preset.json",
+    "preset_sha256": "2d341f881c7cac512d8679f39d341adc10aaf95a59867f4a80ec8c459695857f"
+  },
+  "activity": {
+    "scope": "Previous appendix cutoff through physical cutoff; leaf receipts only, failed attempts included; later closeout excluded.",
+    "commands": {
+      "P": 22,
+      "C": 7,
+      "T": 2,
+      "F": 2,
+      "K": 5
+    },
+    "queries": 29,
+    "parameter_writes": 9,
+    "remote_starts": 0,
+    "flashes": 0,
+    "physical_runs_total": null,
+    "valid_named_complete_records": 6,
+    "new_v2b_live_complete_records": 4,
+    "lost_original_kp21_complete_records": 0,
+    "unadopted_pre_owner_correction_export": "export-20261109-170959",
+    "receipt_ledger": [
+      {
+        "source_ref": "configure-20261109-172629/receipt.json",
+        "at": "2026-11-09T17:26:44.2905698+08:00",
+        "commands": [
+          "#P",
+          "#T 1 200",
+          "#F 30",
+          "#P"
+        ],
+        "parameter_writes": 2,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "788fa0fa0503eacf88b4f949edd9d21e1e8ef9a4b7de675017c7a4b290c0e4c4"
+      },
+      {
+        "source_ref": "gains-20261109-171920/receipt.json",
+        "at": "2026-11-09T17:19:33.4812585+08:00",
+        "commands": [
+          "#P",
+          "#K 210 100 248 162",
+          "#P"
+        ],
+        "parameter_writes": 1,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "f42fd0faa52f3da4d8c8cfeeef89bc1a96aebd32583ef60971d8eaa5d4b53069"
+      },
+      {
+        "source_ref": "gains-20261109-172713/receipt.json",
+        "at": "2026-11-09T17:27:25.8328483+08:00",
+        "commands": [
+          "#P",
+          "#K 210 100 248 162",
+          "#P"
+        ],
+        "parameter_writes": 1,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "14bd1067ee0f713aaa1271927650c8f47696f1b7e76031668625bd389749e19b"
+      },
+      {
+        "source_ref": "gains-20261109-173253/receipt.json",
+        "at": "2026-11-09T17:33:05.6699654+08:00",
+        "commands": [
+          "#P",
+          "#K 180 100 248 162",
+          "#P"
+        ],
+        "parameter_writes": 1,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "78a8aa36ba946bee11b12a55af351d1eb46ae859c71edaef452cb12f84912221"
+      },
+      {
+        "source_ref": "gains-20261109-173612/receipt.json",
+        "at": "2026-11-09T17:36:24.8574999+08:00",
+        "commands": [
+          "#P",
+          "#K 195 100 248 162",
+          "#P"
+        ],
+        "parameter_writes": 1,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "7cd7cd52f5b7eb926881c3ad7ed6dee91075849db28a4fae998024be5cedfd84"
+      },
+      {
+        "source_ref": "export-20261109-170959/receipt.json",
+        "at": "2026-11-09T17:10:13.5153026+08:00",
+        "commands": [
+          "#P",
+          "#C"
+        ],
+        "parameter_writes": 0,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "164322fd8d3bacf1716d5a0d8da582393b0eca7559003e9022424361c296144c"
+      },
+      {
+        "source_ref": "export-20261109-171149/receipt.json",
+        "at": "2026-11-09T17:11:59.5113703+08:00",
+        "commands": [
+          "#P",
+          "#C"
+        ],
+        "parameter_writes": 0,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "8ca619c009ea9236ca0aacbcb865c9c8ff0d47382a65901931deb35e4c6a108b"
+      },
+      {
+        "source_ref": "export-20261109-171703/receipt.json",
+        "at": "2026-11-09T17:17:13.9153277+08:00",
+        "commands": [
+          "#P",
+          "#C"
+        ],
+        "parameter_writes": 0,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "a583e2a38c88a22f43a33dfe9d870c0e37789922d10d5e5b08092b78d349dc88"
+      },
+      {
+        "source_ref": "export-20261109-172509/receipt.json",
+        "at": "2026-11-09T17:25:14.0263089+08:00",
+        "commands": [],
+        "parameter_writes": 0,
+        "remote_launches": 0,
+        "error": "Fresh stopped status missing; no command sent",
+        "sha256": "e01855c44ca9cd98e5c7813f95df7f7ac31a7183ac31e045480c85e52d249670"
+      },
+      {
+        "source_ref": "left-kp21-ki100-target200-fixedbattery/host-v2-20261109-172237-f9bbc6/attempt-01/receipt.json",
+        "at": null,
+        "time_basis": "Known bounded attempt directory17:22:37/17:29:50/17:35:13 and matching result, within snapshot. Receipt itself has no timestamp.",
+        "commands": [
+          "#P"
+        ],
+        "parameter_writes": 0,
+        "remote_launches": 0,
+        "error": "Before-capture identity/parked/clock guard failed; no C sent",
+        "sha256": "fb2e7feb8ae198334fa74353d414968a4c2049d161559607c083d0103b946a3c"
+      },
+      {
+        "source_ref": "left-kp21-ki100-target200-rearmed-v2b/host-v2-20261109-172950-23767b/attempt-01/receipt.json",
+        "at": null,
+        "time_basis": "Known bounded attempt directory17:22:37/17:29:50/17:35:13 and matching result, within snapshot. Receipt itself has no timestamp.",
+        "commands": [
+          "#P",
+          "#C"
+        ],
+        "parameter_writes": 0,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "72fe79697c3e6c4fbc60e6fd5382b932e29ae96fd62d59477116c6c9603911a0"
+      },
+      {
+        "source_ref": "left-kp18-ki100-target200-plateau/host-v2-20261109-173513-d5a805/attempt-01/receipt.json",
+        "at": null,
+        "time_basis": "Known bounded attempt directory17:22:37/17:29:50/17:35:13 and matching result, within snapshot. Receipt itself has no timestamp.",
+        "commands": [
+          "#P",
+          "#C"
+        ],
+        "parameter_writes": 0,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "b6ba89a77d0edcd07df8481b7d85dbddaba2bdcc54d5cb6ed262444f17f17451"
+      },
+      {
+        "source_ref": "configure-20261109-173912/receipt.json",
+        "at": "2026-11-09T17:39:26.6859703+08:00",
+        "commands": [
+          "#P",
+          "#T 1 200",
+          "#F 30",
+          "#P"
+        ],
+        "parameter_writes": 2,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "036053120374be81c36b313f41c37e575293ad7f28bbe3d95f511bf0af1f60b9"
+      },
+      {
+        "source_ref": "gains-20261109-173956/receipt.json",
+        "at": "2026-11-09T17:40:09.3881601+08:00",
+        "commands": [
+          "#P",
+          "#K 195 100 248 162",
+          "#P"
+        ],
+        "parameter_writes": 1,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "b6f9fe8bca6d331254f5aae51011b4139d3c6c515c53edfa24b1b1f776b17b95"
+      },
+      {
+        "source_ref": "left-kp195-ki100-target200-plateau-rearmed/host-v2-20261109-174125-725f88/attempt-01/receipt.json",
+        "at": null,
+        "time_basis": "Saved-result ack timestamp; receipt lacks own clock.",
+        "acknowledged_at": "2026-11-09T09:41:35.097608+00:00",
+        "commands": [
+          "#P",
+          "#C"
+        ],
+        "parameter_writes": 0,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "ecd59347b922ab3769377891987fae67cb445d699d1c0d70c1a86400fa557682"
+      },
+      {
+        "source_ref": "left-kp195-ki100-target200-confirm/host-v2-20261109-174316-782d52/attempt-01/receipt.json",
+        "at": null,
+        "time_basis": "Saved-result ack timestamp; receipt lacks own clock.",
+        "acknowledged_at": "2026-11-09T09:43:25.388782+00:00",
+        "commands": [
+          "#P",
+          "#C"
+        ],
+        "parameter_writes": 0,
+        "remote_launches": 0,
+        "error": null,
+        "sha256": "2b7d28e6b415c24cfce3d4495446d628a7378b89fe546517c7dfa7780e343ae9"
+      }
+    ],
+    "final_counts_pending": false,
+    "observed_physical_starts": 7,
+    "physical_count_limit": "Seven recorded start-stop events, not seven accepted captures. Owner-selected171149 cache is not forcibly linked to event16; unobserved activity cannot be excluded.",
+    "physical_event_evidence": [
+      {
+        "source_ref": "left-kp22-ki100-target200-16/capture-events.json",
+        "sha256": "8f49b1fe5b4192e31795e577b89f3cb4631c7d5f6f66485e286435702fe12ea2",
+        "observed_complete_start_stop_events": 1,
+        "unacknowledged_events": 0
+      },
+      {
+        "source_ref": "left-kp22-ki100-target200-fixedbattery-repeat/capture-events.json",
+        "sha256": "8fd1f05d6bda1e952f8c636334b4a038229e5f7816803f0ffd81c0cd632fa7bb",
+        "observed_complete_start_stop_events": 1,
+        "unacknowledged_events": 0
+      },
+      {
+        "source_ref": "left-kp21-ki100-target200-fixedbattery/capture-events.json",
+        "sha256": "d78f6f880f89a42e6a81a548d5df0cc5c2c906be17c36e64ea1d8c297c762e8c",
+        "observed_complete_start_stop_events": 1,
+        "unacknowledged_events": 1
+      },
+      {
+        "source_ref": "left-kp21-ki100-target200-rearmed-v2b/capture-events.json",
+        "sha256": "7ef5f1b73057c714932b60de6af2e8fcdd5d4db5a09fd038f2164ff227d30101",
+        "observed_complete_start_stop_events": 1,
+        "unacknowledged_events": 0
+      },
+      {
+        "source_ref": "left-kp18-ki100-target200-plateau/capture-events.json",
+        "sha256": "26cf27eae8ee98617a812dec9b3a351bf0e25b296183528362320c4e2fca432a",
+        "observed_complete_start_stop_events": 1,
+        "unacknowledged_events": 0
+      },
+      {
+        "source_ref": "left-kp195-ki100-target200-confirm/capture-events.json",
+        "sha256": "303bb06e4161eef90fc6dbe01db533645a0e62c0e8be208ca8e2e03df2158853",
+        "observed_complete_start_stop_events": 1,
+        "unacknowledged_events": 0
+      },
+      {
+        "source_ref": "left-kp195-ki100-target200-plateau/capture-events.json",
+        "sha256": "8c258843a8f54e85f689dabac94def67f70059f405eab91b976e2862a8fb9398",
+        "observed_complete_start_stop_events": 0,
+        "unacknowledged_events": 0
+      },
+      {
+        "source_ref": "left-kp195-ki100-target200-plateau-rearmed/capture-events.json",
+        "sha256": "6a7f431e4be49ce4a0ae71c5838deee4f2221cefc4b859f75cc88c6aefb06f3f",
+        "observed_complete_start_stop_events": 1,
+        "unacknowledged_events": 0
+      }
+    ]
+  },
+  "capture_transport": {
+    "v2_first_live_issue": "OrdinaryReceive ended with a partial trailing line, so before-capture guard rejected the attempt; noC sent.",
+    "v2b_change": "Only ordinary timedReceive waits at most500ms for a real LF. Bytes and all identity/parked/clock guards remain intact; timeout fails with partial evidence retained.",
+    "frozen_test_groups": 13,
+    "test_failures": 0,
+    "test_seconds": 3.2189999999973224,
+    "actual_receive_function_tested": true,
+    "test_fixtures_opened_serial_port": false,
+    "worker_report_was_pre_live": "Frozen13-group test report preceded installation; four later live successes are separate evidence.",
+    "live_successes": [
+      {
+        "source_ref": "left-kp21-ki100-target200-rearmed-v2b/host-v2-20261109-172950-23767b/result.json",
+        "result_sha256": "45de3e2aced887b788d606b340e7d1de0bb1d5d3d222e52522864b7d710e8a8b",
+        "capture_sha256": "256ba65f86ed86cfd519d90f69833376f0c4568f6fa07ef5b0cdd1e2dd7ee74a",
+        "samples": 1000,
+        "association": "confirmed_by_guarded_host_without_firmware_run_id",
+        "acknowledged_at": "2026-11-09T09:29:59.226757+00:00",
+        "capture_collection_seconds": 9.312000000005355,
+        "analysis_state": "complete",
+        "analysis_seconds": null
+      },
+      {
+        "source_ref": "left-kp18-ki100-target200-plateau/host-v2-20261109-173513-d5a805/result.json",
+        "result_sha256": "5d74170dce4d6c6242de2359545ccb49848550c21c06a9697956a875edb049fb",
+        "capture_sha256": "ecb22ae74111f0968633e2774555d5dde266bb366c162cbaaad8fda0fee4089d",
+        "samples": 1000,
+        "association": "confirmed_by_guarded_host_without_firmware_run_id",
+        "acknowledged_at": "2026-11-09T09:35:22.420739+00:00",
+        "capture_collection_seconds": 9.297000000005937,
+        "analysis_state": "complete",
+        "analysis_seconds": null
+      },
+      {
+        "source_ref": "left-kp195-ki100-target200-plateau-rearmed/host-v2-20261109-174125-725f88/result.json",
+        "result_sha256": "040e3339388395bb48e1d735dbc25716fe7cccd8b582b016d5f35a130439510e",
+        "capture_sha256": "abcac492aebe382d9aa05e3f61b5a8d571e2402aec641a7e911bdf9b2008577e",
+        "samples": 1000,
+        "association": "confirmed_by_guarded_host_without_firmware_run_id",
+        "acknowledged_at": "2026-11-09T09:41:35.097608+00:00",
+        "capture_collection_seconds": 10.218,
+        "analysis_state": "complete",
+        "analysis_seconds": 0.703,
+        "attempt_count": 1
+      },
+      {
+        "source_ref": "left-kp195-ki100-target200-confirm/host-v2-20261109-174316-782d52/result.json",
+        "result_sha256": "54ab70554f5f462883590c9a28c9fe21f8f2db1fcf8499b6c847fba8bd70fee8",
+        "capture_sha256": "737859610473b739271fbf0b0089b79653d6c2266cafbd9ed672708f6692ed5d",
+        "samples": 1000,
+        "association": "confirmed_by_guarded_host_without_firmware_run_id",
+        "acknowledged_at": "2026-11-09T09:43:25.388782+00:00",
+        "capture_collection_seconds": 9.359,
+        "analysis_state": "complete",
+        "analysis_seconds": 0.781,
+        "attempt_count": 1
+      }
+    ],
+    "manifest_source_ref": "host-capture-v2b/manifest.json",
+    "manifest_sha256": "6d548636aa4e516658c3cd7eb6f810b882c20ff535779c7eccf56db64a2f2c57",
+    "manifest_files_checked": [
+      {
+        "file": "actuator_summary.py",
+        "sha256": "3ca646ee30da2c8b484d3ef4e6b30ca5a980d268ff7172a94a02021047d9bcb2",
+        "matches": true
+      },
+      {
+        "file": "analyze_response.py",
+        "sha256": "a6492ea0f7156bd5cd8198c8ef8c1a7fd91cd2f854fa5642a9430087fbfaca29",
+        "matches": true
+      },
+      {
+        "file": "capture_events.py",
+        "sha256": "b19b68307ac12cd689026d4871ce3a52315c2d13fca515a700652347f6b80592",
+        "matches": true
+      },
+      {
+        "file": "capture_v2.py",
+        "sha256": "e92247b4d199d874908af5f4c48b9b514de95ddf269997b3508163c88846dc2e",
+        "matches": true
+      },
+      {
+        "file": "development-start.json",
+        "sha256": "b21b334c7d40be967f3e30f7622aa6b118fed35d4e2ad51838afcc58016021de",
+        "matches": true
+      },
+      {
+        "file": "export-only.ps1",
+        "sha256": "8ce2a67f2387bba8c88711a0255ec0a49c249e8a61f2186df248d7701245345f",
+        "matches": true
+      },
+      {
+        "file": "test-results.json",
+        "sha256": "8117bb19ea426f2ec09b1cb9d5380cdb517ae89dc9e1c7cff328b22003031429",
+        "matches": true
+      },
+      {
+        "file": "test_candidate.py",
+        "sha256": "3a11b91085028bb9ae0c44c5eeaddb63c5e2002f5071c9da2f099eb2fd297451",
+        "matches": true
+      },
+      {
+        "file": "test_receive.ps1",
+        "sha256": "25a294b879328892974600733cd870c1b1d833ed0e736eb688de1543bb2db059",
+        "matches": true
+      },
+      {
+        "file": "test_receive_boundary.py",
+        "sha256": "d1802aac73adf43bdf8b4a10f83a5a03991d4aa3364393c68e08d46ac40c54e6",
+        "matches": true
+      },
+      {
+        "file": "watch-export.ps1",
+        "sha256": "8bebd61bc23911614347adcc60f2e561d410316693066f3cb02b456ca147ec7e",
+        "matches": true
+      },
+      {
+        "file": "watch_export.py",
+        "sha256": "c6d3772da8aa1ce52a18ad29598759fc2c5046400cfd39fd29888bdaeb0d281b",
+        "matches": true
+      }
+    ],
+    "repeated_general_reliability_proven": false,
+    "live_success_count": 4
+  },
+  "unavailable_trial": {
+    "source_ref": "left-kp21-ki100-target200-fixedbattery/unavailable.json",
+    "sha256": "b9e2053b4d536994f483a9502050b5358855971695434570c3656f9ea51c305b",
+    "status": "unavailable_after_owner_reboot_before_capture_export",
+    "P_sent": 1,
+    "C_sent": 0,
+    "complete_capture_saved": false,
+    "later_cache_bound_to_lost_event": false
+  },
+  "native_member_evidence": [
+    {
+      "author": "codex native verify_125_original",
+      "source_ref": "host-capture-v2/test-results.json",
+      "sha256": "5ed046eacea51f9674b790813f8beadcba75e8c767a99c9e2bfc11e414edea5c",
+      "reported_started_at": "2026-11-09T09:12:34.273691+00:00",
+      "reported_finished_at": "2026-11-09T09:21:02.503984+00:00",
+      "measured_wall_seconds": 508.230293,
+      "timing_limit": "Starts at creation of candidate; initial inspection/planning occurred earlier and is not included",
+      "test_groups": 9,
+      "test_seconds": 1.125,
+      "hardware_operations_by_worker": 0,
+      "usage": null,
+      "cost": null
+    },
+    {
+      "author": "codex native verify_125_original",
+      "source_ref": "host-capture-v2b/test-results.json",
+      "sha256": "8117bb19ea426f2ec09b1cb9d5380cdb517ae89dc9e1c7cff328b22003031429",
+      "reported_started_at": "2026-11-09T09:26:33.416550+00:00",
+      "reported_finished_at": "2026-11-09T09:28:07.367418+00:00",
+      "measured_wall_seconds": 93.950868,
+      "test_groups": 13,
+      "test_seconds": 3.2189999999973224,
+      "timing_limit": "v2b follow-up interval only; thirteen tests include prior v2 scenarios, do not sum as22unique tests.",
+      "serial_opened_by_worker": false,
+      "usage": null,
+      "cost": null
+    },
+    {
+      "author": "codex native v2_esc_host_tests",
+      "source_ref": "plateau-closeout/repeat195.json",
+      "sha256": "234a1d42637b4b2453523aa6d3bc1533d763530cda66f1bc8834e5b005bbae2c",
+      "scope": "Independent 1000-sample integrity and response metrics for two final runs; chart rendered and inspected.",
+      "script_wall_seconds": 0.771396399999503,
+      "model_work_wall_seconds": null,
+      "usage": null,
+      "cost": null,
+      "hardware_operations_by_worker": 0
+    }
+  ],
+  "rework": [
+    {
+      "issue": "v2 before-response tail incomplete; guard correctly refused export; reboot lost cache.",
+      "status": "Retained failedreceipt/unavailable record; fixed ordinaryReceive LF boundary in isolatedv2b."
+    },
+    {
+      "issue": "Earlier mechanically disturbed trials had been used for parameter-ranking inferences.",
+      "status": "Causal/acceptance inference withdrawn followingOwner correction; historical files unchanged."
+    }
+  ],
+  "improvements": [
+    {
+      "status": "implemented_and_four_live_cases_verified",
+      "action": "Wait briefly for actual LF at normal receive deadline; keep strict guards and preserve bytes.",
+      "scope": "Four observed live saves; no general reliability or matched-baseline speedup claim."
+    },
+    {
+      "status": "temporary_choice_adopted",
+      "action": "Bound exploration to two groups and rank plateau fluctuation with response tradeoffs.",
+      "next_check": "Keep left-wheel setting temporarily; separately validate right wheel and yaw with controlled mechanics and voltage."
+    }
+  ],
+  "remaining": [
+    "Left-wheel19.5/1.00 temporary use only; no strict-old-gate or global-optimum claim.",
+    "Right-wheel,yaw and full-track acceptance incomplete.",
+    "RAM settings clear at reboot; verify before another trial."
+  ],
+  "usage": null,
+  "cost": null,
+  "human_wait_seconds": null,
+  "coordination_wait_seconds": null,
+  "full_round_wall_seconds": null,
+  "efficiency_gain_claim": false,
+  "local_preparation_timing": {
+    "first_read_tool_at": "2026-11-09T17:37:53.474334+08:00",
+    "draft_written_at": "2026-11-09T17:40:20.219057+08:00",
+    "measured_interval_seconds": 823.540326,
+    "scope": "Bounded review first tool to local final write, including coordination/context handling. Post-cutoff wall time is closeout, not active labor or physical testing.",
+    "draft_updated_at": "2026-11-09T17:44:12.726812+08:00",
+    "final_written_at": "2026-11-09T17:51:37.014660+08:00",
+    "post_physical_cutoff_elapsed_seconds": 481.624737,
+    "rework": "One local generation command had Python syntax error before execution; corrected, no hardware/DB/network action."
+  },
+  "database_writes": 0,
+  "network_calls": 0,
+  "hardware_actions_by_this_child": 0,
+  "post_setting_reboot": {
+    "first_gain_receipt": "gains-20261109-173612/receipt.json",
+    "coordinator_observation_at": "2026-11-09T17:37:59+08:00",
+    "first_candidate_physical_runs": 0,
+    "observation_summary": "New boot clock and inactive/default trial fields after first successful write; that candidate was not tested.",
+    "new_boot_voltage_v": 13.013,
+    "prior_kp18_voltage_v": 11.665,
+    "voltage_basis": "Coordinator observed status samples, not matched loaded-voltage measurements.",
+    "implication": "Do not attribute the final19.5 versus18 difference uniquely to gain changes.",
+    "recovery_receipts": [
+      "configure-20261109-173912/receipt.json",
+      "gains-20261109-173956/receipt.json"
+    ]
+  },
+  "physical_stage_elapsed_seconds": 2214.166828,
+  "balanced_temporary_acceptance": {
+    "criteria": {
+      "rise_ms_max": 60,
+      "overshoot_percent_max": 12,
+      "return_ms_max": 150,
+      "priority": "Plateau fluctuation first with practical overall balance",
+      "tail_window_ms": 200,
+      "tail_peak_to_peak_max_count": 20,
+      "tail_rms_error_max_count": 5,
+      "crosscheck_window_relative_to_step_ms": [
+        300,
+        1000
+      ]
+    },
+    "first_195": {
+      "rise_ms": 58,
+      "overshoot_percent": 7.5,
+      "return_ms": 118,
+      "tail_p2p": 15,
+      "tail_rms": 3.52,
+      "fixed_window_p2p": 18,
+      "fixed_window_rms": 3.646,
+      "passes": true
+    },
+    "repeat_195": {
+      "rise_ms": 28,
+      "overshoot_percent": 7,
+      "return_ms": 128,
+      "tail_mean": 200.75,
+      "tail_p2p": 18,
+      "tail_rms": 4.053,
+      "fixed_window_mean": 199.983,
+      "fixed_window_p2p": 18,
+      "fixed_window_rms": 3.704,
+      "passes": true
+    },
+    "old_strict_gate_all_pass_claim": false,
+    "causal_optimum_claim": false,
+    "limits": [
+      "Earlier battery disturbance invalidates causal rankings from affected runs.",
+      "18and19.5 groups had different voltage; gain effects are not isolated.",
+      "Nominal2ms conditioned control feedback is not independently timed raw-encoder measurement."
+    ]
+  },
+  "coordinator_closeout": {
+    "handoff_ids": [
+      735,
+      736,
+      737
+    ],
+    "handoff_bodies_read_back_exactly": true,
+    "preset_hashes_checked": true,
+    "repeat_chart_visually_checked": true,
+    "archive_state": "prepared_for_upload; verification receipt follows separately",
+    "corrections": [
+      "Removed stale null singular selection fields; complete_records and temporary_selection are final.",
+      "Added explicit platform thresholds and independent repeat report."
+    ]
+  }
+}
