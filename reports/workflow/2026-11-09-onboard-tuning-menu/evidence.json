@@ -1,0 +1,50 @@
+{
+  "round_id": "2026-11-09-onboard-tuning-menu",
+  "project_task": 97,
+  "baseline_hex_sha256": "2bfb17ecb0d60f03f37bd59bb40490efae92d2fdaa78f5467cd4451d36727bbd",
+  "candidate_hex_sha256": "81899ec739a22e83e30c12d0d0cceb6c41d46710934f2a13fab7df53ac2bb1b6",
+  "upstream_snapshot": "0de6a8b7465bec140b3256d2d21fda60232aae75",
+  "actual_upstream_code_reused": [
+    "menu_nav.c",
+    "menu_nav.h"
+  ],
+  "upstream_source_exact_copy": true,
+  "native_workers": 3,
+  "external_opus_calls": 0,
+  "model_assertions": 303,
+  "integration_groups": 19,
+  "target_objects": 175,
+  "target_errors": 0,
+  "target_warnings": 11,
+  "new_warnings": 0,
+  "build_attempt_history": {
+    "attempts": 6,
+    "failed": 4,
+    "successful": 2,
+    "earlier_failures": "See unchanged member-evidence.json; no new build errors inOUC port"
+  },
+  "resources_delta_vs_base_bytes": {
+    "flash_code_and_data_bytes": 8366,
+    "ram_code_and_data_bytes": 1026,
+    "ram_reserved_bytes": 0
+  },
+  "actual_linked_nav_api_count": 6,
+  "hardware_actions": 0,
+  "flash_actions": 0,
+  "serial_actions": 0,
+  "source_scope": {
+    "changed_existing_files": [
+      "code/vision_link.c",
+      "code/vision_link.h",
+      "code/wireless.c",
+      "user/cpu0_main.c"
+    ],
+    "unchanged_base_files": 680
+  },
+  "measured_user_facing_render": "Offline actual renderer output with original display glyphs; sample data, no live screen claim.",
+  "rework": [
+    "Owner-steered replacement of self-written navigation with existing upstream implementation.",
+    "Zero race-speed preservation, single-field precision, pending key release and target display signature fixes."
+  ],
+  "archive_boundary": "Only these three sanitized workflow files; no source code, raw session, telemetry, credentials, images or databases."
+}
