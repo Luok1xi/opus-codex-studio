@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-web-speed-tuning",
+  "source_project": "LUOKIXI-WEB",
+  "task_id": 12,
+  "provenance": "Coordinator final delivery statement plus archive-helper read-only verification of three local aggregate logs.",
+  "measurement_cutoff_at": "2026-11-10T00:29:29+08:00",
+  "input_version": null,
+  "output_version": null,
+  "validation": {
+    "unit": {
+      "passed": 52,
+      "total": 52,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 2.1230501
+    },
+    "saved_capture": {
+      "points": 1000,
+      "chunking_patterns": 4,
+      "source": "Coordinator report; raw capture excluded."
+    },
+    "browser": {
+      "passed": 14,
+      "total": 14,
+      "page_errors": 0,
+      "viewport_width": 390,
+      "horizontal_overflow": false,
+      "service": "Existing local built website",
+      "method": "Isolated headless Edge",
+      "flow_groups": [
+        "No automatic serial commands; firmware capability readback and limits; preserve unedited gains; running guard",
+        "Capture ownership before header; detailed real-record scope; range, cursor, side switching",
+        "PNG/CSV export; import/compare; empty damaged capture rejection",
+        "Reboot clears drafts; local history survives refresh; narrow viewport"
+      ]
+    },
+    "build": {
+      "passed": true,
+      "duration_seconds": 1.52,
+      "page_js_kb": 80.41,
+      "page_js_gzip_kb": 30.94,
+      "existing_large_chunk_warning": "three module"
+    }
+  },
+  "delivery": {
+    "product_files_changed": 8,
+    "new_dependencies": 0,
+    "public_sites_updated": false,
+    "current_vehicle_wireless_validation": "pending user confirmation",
+    "local_history_runs": 12
+  },
+  "actions": {
+    "actual_serial_accesses": 0,
+    "flashes": 0,
+    "remote_launches": 0
+  },
+  "coordination": {
+    "native_codex_children": 3,
+    "external_opus_reply_claim": false,
+    "external_deepseek_reply_claim": false,
+    "archive_helper_subdelegation": false
+  },
+  "known_fixed_issues": [
+    "Unedited wheel gains could be overwritten",
+    "Capture ownership race before header arrival",
+    "Draft parameters surviving reboot",
+    "Capture-end feedback",
+    "Yaw-mode display",
+    "Empty or damaged capture exception"
+  ],
+  "known_test_rework": [
+    "ESM entry path",
+    "Multiple matching element locator",
+    "Recorded old status mixed with simulated clock"
+  ],
+  "complete_failure_rework_count": null,
+  "local_evidence_hashes": [
+    {
+      "file": "browser-results.json",
+      "sha256": "7e87bf748ae9977b94e38f3d9d606c088d572910145164e75afd5284986fef6d"
+    },
+    {
+      "file": "unit-tests.log",
+      "sha256": "21114b8eb35350bed8281d53271a8be7dd0b6a20827dadb69246f3d02f12be37"
+    },
+    {
+      "file": "build.log",
+      "sha256": "bcf27247922d66214fb9b7024f1a53ac0060cf4c1b7d383a191e4ea22559ab7e"
+    }
+  ],
+  "quality_baseline": null,
+  "usage": null,
+  "cost": null,
+  "speedup_claim": false,
+  "upload_whitelist": [
+    "review.json",
+    "review.md",
+    "evidence.json"
+  ]
+}
