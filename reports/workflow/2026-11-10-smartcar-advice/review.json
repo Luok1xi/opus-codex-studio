@@ -1,0 +1,85 @@
+{
+  "started_at": null,
+  "recommendations": [
+    {
+      "action": "Run unchanged baseline repeats before comparing fine gain increments.",
+      "next_check": "Compare between-run variation with the size of the proposed effect.",
+      "status": "proposed",
+      "owner": "codex",
+      "id": "WF-20261110-CAR-BASELINE"
+    }
+  ],
+  "round_id": "2026-11-10-smartcar-advice",
+  "comparison": null,
+  "task_summary": "Prioritize experiments using the latest physical evidence and simulation acceptance.",
+  "observations": [
+    "Local latest records live in multiple workspaces; project tasks led to the newest artifacts. Independent review distinguished route admission from exit handoff."
+  ],
+  "measurement_cutoff_at": "2026-11-10T02:02:58.3413838+08:00",
+  "metrics": [
+    {
+      "unit": "tokens",
+      "value": null,
+      "name": "Provider tokens",
+      "basis": "No metered provider usage"
+    },
+    {
+      "unit": "seconds",
+      "value": null,
+      "name": "Round time",
+      "basis": "No verified start timestamp"
+    },
+    {
+      "unit": "agents",
+      "value": 1,
+      "name": "Native audit agents",
+      "basis": "One read-only independent comparison"
+    },
+    {
+      "unit": "calls",
+      "value": 0,
+      "name": "Opus and DeepSeek dispatches",
+      "basis": "Neither dispatched"
+    },
+    {
+      "unit": "operations",
+      "value": 0,
+      "name": "Vehicle operations",
+      "basis": "Evidence review only"
+    },
+    {
+      "unit": "seconds",
+      "value": null,
+      "name": "Review and archive overhead",
+      "basis": "Not separately timed"
+    },
+    {
+      "unit": "revisions",
+      "value": 0,
+      "name": "Deliverable rework",
+      "basis": "First delivery"
+    }
+  ],
+  "quality": {
+    "remaining": [],
+    "acceptance": [
+      "Distinguish physical observations, simulation results and proposed next checks"
+    ],
+    "completed": [
+      "Reviewed repeatability, segment failures, same-source integration and a public system identification reference"
+    ],
+    "status": "passed"
+  },
+  "schema_version": 1,
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "evidence": [
+    "Local repeatability summary and independent read-only review of physical segment diagnosis",
+    "Same-source simulator acceptance report",
+    "https://docs.wpilib.org/en/stable/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.html"
+  ],
+  "limits": [
+    "No matched baseline",
+    "No new vehicle measurements",
+    "Remote archive requires hash readback"
+  ]
+}
