@@ -1,0 +1,28 @@
+{
+  "round_id": "2026-11-09-old-version-waveforms",
+  "project_task": 98,
+  "capture_bytes": 78657,
+  "board_record_sha256": "1a806afb7bcc4f4e92415ffb3052a1887e87bf9378bb2f130cc9b2d17f172b44",
+  "board_points": 930,
+  "nominal_dt_ms": 20,
+  "first_last_span_s": 18.58,
+  "active_turns": 15,
+  "gyro_peak_dps": 383.3,
+  "same_sample_command_dps": 250,
+  "max_visual_phase_error_px": -39,
+  "native_workers": 1,
+  "external_opus_calls": 0,
+  "remote_launches": 0,
+  "parameter_writes": 0,
+  "flash_actions": 0,
+  "read_only_requests": [
+    "#S",
+    "#P"
+  ],
+  "capture_closed": true,
+  "plot_groups": 4,
+  "csv_exports": 2,
+  "identity_limit": "Owner old-version report plus last flash ledger; no runtime build ID echo.",
+  "stop_limit": "stop26 already present before this launch; not proven fresh stop cause.",
+  "upload_boundary": "Only three sanitized workflow files. No raw telemetry, plots, source, sessions, credentials or databases."
+}

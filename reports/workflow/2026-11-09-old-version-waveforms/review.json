@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-old-version-waveforms",
+  "workflow_version": "WORKFLOW_REVIEW-2026-10-18",
+  "started_at": "2026-11-09T12:55:49.650198+08:00",
+  "measurement_cutoff_at": "2026-11-09T05:08:34.750653+00:00",
+  "task_summary": "只读采集当前旧版实车波形，独立核查异常并交付可查看/下载图表。",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "保存本轮真实运行及停车后记录，不以旧仿真或旧数据冒充。",
+      "按真实协议完整性检查后出图，明确采样、身份和因果限制。"
+    ],
+    "completed": [
+      "确认COM5实际来字节后被动录制Owner手动发车，停车后读取现有板载记录与参数；串口已释放。",
+      "严格核验930行旧LOG编号/字段/END，独立分阶段统计，区分旧无反馈尝试与当前运动数据、锁存停车码及记录时间口径。",
+      "交付4组PNG/SVG、CSV、原始记录与本地下载包；图已实际查看，无固件或参数改变。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "observed_elapsed",
+      "value": 765.100455,
+      "unit": "seconds",
+      "basis": "任务开始至采集、分析、出图和归档准备截止，含等待Owner手动发车及绘图库安装。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方真实usage。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "成员检查与主协调采集/绘图重叠，未独立测量。"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "报告准备未独立计时，远端提交/回读耗时在回执单列。"
+    }
+  ],
+  "observations": [
+    "一名原生成员独立解析和按源码解释字段；主协调独占串口，外部Opus调用为0。",
+    "起初只搜索schoolcar-fw/work漏掉根目录新capture；根目录元数据发现后立即更新来源，未将旧记录冒充当前。",
+    "本机几套Python均缺绘图库，WSL也无matplotlib；重复探测耗时，最后在独立任务目录安装绘图依赖成功。",
+    "CIM权限及初次pyserial缺失没有阻止使用已有PowerShell只读采集器；经验查询一次错用--limit后改为实际--k。",
+    "原完整成员大输出曾截断；关键新记录均保存原文件、完整解析，后续输出保持摘要。",
+    "run状态与实际轮速分开；源码旧LOG没有逐行时间戳与route_done，保留名义20ms及锁存停车码的不确定性。"
+  ],
+  "recommendations": [
+    {
+      "id": "waveform-real-sampling-and-epochs",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "先验证当前原始记录、时钟重置和采样索引，再按控制阶段比较目标/反馈；共同目标不代替每轮目标。",
+      "next_check": "后续对照沿用同周期同字段，保留原始索引，不用稀疏无线峰值代表快速动态。"
+    },
+    {
+      "id": "waveform-capture-owner-and-refresh",
+      "owner": "codex",
+      "status": "adopted",
+      "action": "单一串口拥有者，确认实时字节增长，停车后导出并完成END检查；不重启覆盖当前记录。",
+      "next_check": "下一趟仍先看到更新状态再宣布采集就绪。",
+      "experience_refs": [
+        "WS-D#586"
+      ],
+      "adoption": "直接"
+    },
+    {
+      "id": "waveform-runtime-pointer",
+      "owner": "codex",
+      "status": "proposed",
+      "action": "后续绘图复用已确认的独立matplotlib目录，避免多环境盲探。",
+      "next_check": "下一次先检查此目录和导入版本；净节时需匹配基线。"
+    }
+  ],
+  "evidence": [
+    "evidence.json是脱敏聚合；完整图/原始数据仅留本地项目，成员完整报告入独立数据库。"
+  ],
+  "limits": [
+    "单次波形支持角速度超出和出弯大纠偏，不能唯一定位机械/执行器/控制增益根因。",
+    "没有实时固件构建标识；930点跨度不是独立完圈计时。",
+    "未修改控制或完成调参验收。",
+    "无匹配基线，不能宣称协作净提效。"
+  ],
+  "comparison": null
+}
