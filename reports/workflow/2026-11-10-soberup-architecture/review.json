@@ -1,0 +1,62 @@
+{
+  "observations": [
+    "Public repository retrieval unavailable; local source snapshots provide executable entry points. Confirm active call paths before assigning meaning to auxiliary files."
+  ],
+  "quality": {
+    "completed": [
+      "Verified vision and navigation entry points and isolated recommendations"
+    ],
+    "acceptance": [
+      "Trace frame, route and motor responsibilities in the reference source"
+    ],
+    "remaining": [],
+    "status": "passed"
+  },
+  "started_at": null,
+  "metrics": [
+    {
+      "value": null,
+      "name": "Actual usage",
+      "unit": "tokens",
+      "basis": "No provider usage"
+    },
+    {
+      "value": null,
+      "name": "Wall time",
+      "unit": "seconds",
+      "basis": "Start not metered"
+    },
+    {
+      "value": 1,
+      "name": "Read-only native reviewer",
+      "unit": "agent",
+      "basis": "Independent source read"
+    },
+    {
+      "value": 0,
+      "name": "Firmware edits",
+      "unit": "files",
+      "basis": "Read-only architecture review"
+    },
+    {
+      "value": null,
+      "name": "Review overhead",
+      "unit": "seconds",
+      "basis": "Not separately timed"
+    }
+  ],
+  "round_id": "2026-11-10-soberup-architecture",
+  "recommendations": [],
+  "measurement_cutoff_at": "2026-11-10T02:29:02.9002101+08:00",
+  "limits": [
+    "No matched workflow baseline",
+    "No runtime experiments"
+  ],
+  "comparison": null,
+  "evidence": [
+    "Local upstream reference source, vision and navigation entry points and control calls"
+  ],
+  "task_summary": "Compare architecture of two upstream reference branches with the team shared-core structure.",
+  "schema_version": 1,
+  "workflow_version": "WORKFLOW_REVIEW.md"
+}
