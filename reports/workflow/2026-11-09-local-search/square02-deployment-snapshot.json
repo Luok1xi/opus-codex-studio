@@ -1,0 +1,106 @@
+{
+  "round_id": "2026-11-09-local-search",
+  "appendix": "square02-deployment-verified",
+  "status": "in_progress",
+  "snapshot_cutoff_at": "2026-11-09T19:16:53.496413+08:00",
+  "task_completed": false,
+  "prior_candidate_ref": "candidate-square02-workflow.json",
+  "prior_candidate_unchanged": true,
+  "source_and_binary": {
+    "build": "2BFB-SQUARE-02",
+    "scope": "Onegyro filter window10to3 and twoidentity changes;PI defaults unchanged.",
+    "hex_sha256": "2df1edd448b85b1545340a762daf77ffbd7650d444a75cd5f3f350146808e004",
+    "source_manifest_sha256": "b8edfe806b65c849c115352d8e9516e3bca914fa75690b62b9fdce0b86b1fabe"
+  },
+  "flash": {
+    "user_authorized_and_prepared": true,
+    "count": 1,
+    "started_at": "2026-11-09T19:12:37.0285623+08:00",
+    "finished_at": "2026-11-09T19:12:39.2724986+08:00",
+    "wall_seconds": 2.243936,
+    "exit_code": 0,
+    "errors": 0,
+    "aborts": 0,
+    "verify": "PASS",
+    "difference_bytes": 0,
+    "xml_ref": "work/yaw-feedback-window-20261109/deploy/flash-square02-20261109-191237.xml",
+    "xml_sha256": "bab8886f67a824cb945dbf0eccd018c89d7075040f304a956bf7adc6f1eba646",
+    "receipt_initial_status": "awaiting_log_and_runtime_verification",
+    "final_verification_ref": "work/yaw-feedback-window-20261109/deploy/deployment-verified.json",
+    "final_verification_sha256": "50f384449077b5db88bf21968aa843a5ad80143ae204bdb9102faf8ccf83bd5d"
+  },
+  "parked_runtime_verification": {
+    "at": "2026-11-09T19:14:49.4041301+08:00",
+    "port": "COM6",
+    "baud": 3000000,
+    "preflash_vbat_v": 11.63,
+    "preflash_source": "Coordinator parked precheck",
+    "identity": "2BFB-SQUARE-02",
+    "yaw_kp": 0.18,
+    "yaw_ki": 0.002,
+    "wheel_kp_both": 19.5,
+    "wheel_ki_both": 1,
+    "target_dps": 90,
+    "fan_percent": 30,
+    "running": false,
+    "wheel_and_fan_outputs_zero": true,
+    "receipts": [
+      "host-square02/configure-20261109-191304/receipt.json",
+      "host-square02/gains-20261109-191335/receipt.json",
+      "host-square02/yaw-gains-20261109-191410-31c357/receipt.json"
+    ]
+  },
+  "next_transition": {
+    "state": "WaitingOwner to poweroff, remove downloader and reconnect wireless/fan with carparked onbluecloth.",
+    "RAM_warning": "Power cycle clears parameters; priorCOM6 values are not promised after reboot.",
+    "required_before_S5": "Read fresh wireless identity/stopped state; reapply and verify target/gains/fan and capture readiness.",
+    "unconditional_launch_ready": false
+  },
+  "host_square02": {
+    "manifest_sha256": "b325f187dc5e8a6de6029455623a76c0d27bd6cc14f5f6eca89faf242d01d4c2",
+    "files": 51,
+    "all_file_hashes_verified_by": "root coordinator",
+    "python_tests": 26,
+    "powershell_checks": 43,
+    "test_report_sha256": "9e07cef2961abcfe7ff41b29bac4b005be0a40d74254349a74f247007ca3a928",
+    "synthetic_fixture_limit": "Offline02fixtures are identity-replaced copies, not physical response data.",
+    "prior_v2d_files_unchanged": 14,
+    "history_files_unchanged": 25,
+    "runtime_commands_confirmed": true,
+    "wireless_reliability_proven": false
+  },
+  "physical_performance": {
+    "new_response_trials": 0,
+    "accepted_10percent": false,
+    "source_programming_pass_is_performance_pass": false,
+    "measurement_limit": "gyro_x10 filtering changed too; no rawgyro. Old/new plots alone do not isolate control improvement."
+  },
+  "future_topics": {
+    "feedforward_implemented": false,
+    "target_ramp_implemented": false,
+    "output_limit_changes_implemented": false
+  },
+  "rework": {
+    "issue": "Root diff output decoded asGBK failed.",
+    "resolution": "ExplicitUTF8 decode succeeded.",
+    "data_modified": false
+  },
+  "operations": {
+    "flash_count": 1,
+    "remote_starts": 0,
+    "three_runtime_receipts_queries": 6,
+    "three_runtime_receipts_writes": 4,
+    "other_counts": null
+  },
+  "tokens": null,
+  "cost": null,
+  "network_calls_by_child": 0,
+  "hardware_actions_by_child": 0,
+  "new_review_round": false,
+  "archive05": "Pending coordinator private upload/verification; do not registerarchive receipt yet.",
+  "local_note_timing": {
+    "first_read_at": "2026-11-09T19:15:33.693161+08:00",
+    "written_at": "2026-11-09T19:16:53.496413+08:00",
+    "wall_seconds": 79.803252
+  }
+}
