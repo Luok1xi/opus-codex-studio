@@ -1,0 +1,272 @@
+{
+  "round_id": "2026-11-09-recovery200",
+  "task_id": 101,
+  "task_key": "recovery200-20261109",
+  "draft": false,
+  "stage_started_at": "2026-11-09T16:07:10+08:00",
+  "measurement_cutoff_at": "2026-11-09T16:17:55.1117694+08:00",
+  "evidence_snapshot_at": "2026-11-09T16:17:55.1117694+08:00",
+  "vehicle_activity": {
+    "actual_queries": 11,
+    "actual_parameter_writes": 4,
+    "actual_flashes": 0,
+    "actual_runs": 1,
+    "newly_analyzed_runs": 1,
+    "actual_remote_launches": 0,
+    "valid_new_state_received": true,
+    "count_basis": {
+      "scope": "Stage16:07:10 to16:17:55: P10/C1, T/F/K/K writes; run12 armed only, not started.",
+      "status_queries_P": 10,
+      "capture_export_C": 1,
+      "query_group_counts": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "receipt_summaries": [
+        {
+          "source_ref": "car-status-20261109-160710/receipt.json",
+          "at": "2026-11-09T16:07:29.0703947+08:00",
+          "commands": [
+            "#P"
+          ],
+          "parameter_writes": 0,
+          "error": "Parameter reply incomplete or missing; fresh telemetry alone is not parameter verification"
+        },
+        {
+          "source_ref": "car-status-20261109-160914/receipt.json",
+          "at": "2026-11-09T16:09:33.8950008+08:00",
+          "commands": [
+            "#P",
+            "#P"
+          ],
+          "parameter_writes": 0,
+          "error": null
+        },
+        {
+          "source_ref": "configure-20261109-161053/receipt.json",
+          "at": "2026-11-09T16:11:07.6880798+08:00",
+          "commands": [
+            "#P",
+            "#T 1 200",
+            "#F 30",
+            "#P"
+          ],
+          "parameter_writes": 2,
+          "error": null
+        },
+        {
+          "source_ref": "gains-20261109-161135/receipt.json",
+          "at": "2026-11-09T16:11:47.7405975+08:00",
+          "commands": [
+            "#P",
+            "#K 200 120 248 162",
+            "#P"
+          ],
+          "parameter_writes": 1,
+          "error": null
+        },
+        {
+          "source_ref": "export-20261109-161329/receipt.json",
+          "at": "2026-11-09T16:13:39.3547553+08:00",
+          "commands": [
+            "#P",
+            "#C"
+          ],
+          "parameter_writes": 0,
+          "error": null
+        },
+        {
+          "source_ref": "gains-20261109-161658/receipt.json",
+          "at": "2026-11-09T16:17:11.3931270+08:00",
+          "commands": [
+            "#P",
+            "#K 200 100 248 162",
+            "#P"
+          ],
+          "parameter_writes": 1,
+          "error": null
+        }
+      ],
+      "full_operation_elapsed_seconds": null
+    }
+  },
+  "candidate": {
+    "kp_left": 20,
+    "ki_left": 1.0,
+    "target": 200,
+    "fan_command_percent": 30,
+    "written_to_vehicle": true,
+    "status": "applied_readback_verified_waiting_run12",
+    "tested": false,
+    "improvement_proven": false
+  },
+  "coordination": {
+    "receiver_replug": "completed_per_coordinator",
+    "host_send_pacing_ms": 15,
+    "firmware_changed": false,
+    "automatic_capture": {
+      "real_success_count": 1,
+      "repeated_reliability_verified": false
+    },
+    "comparison_worker": "completed_native_report_verified_by_root",
+    "task101_status": "in_progress",
+    "task_changed_by_script": false,
+    "run12": "armed_no_start_prompt_no_new_run"
+  },
+  "live_parameters": {
+    "kp_left": 20,
+    "ki_left": 1.0,
+    "kp_right": 24.8,
+    "ki_right": 1.62,
+    "target": 200,
+    "fan_command_percent": 30,
+    "readback_verified": true,
+    "readback_at": "2026-11-09T16:17:11.3931270+08:00",
+    "source_ref": "gains-20261109-161658/receipt.json",
+    "run12_status": "recorder_ready_not_started",
+    "source": "Coordinator confirmed readback; command receipt independently inspected."
+  },
+  "response_comparison": {
+    "status": "completed_descriptive_only",
+    "source_ref": "left200-ab/compare.json",
+    "source_sha256": "9eebdda308b04b296b0ea33c743ac1b3cce46855489fe5ecff6c21010500ae17",
+    "root_plot_review": "passed",
+    "common_ki": 1.2,
+    "common_target": 200,
+    "fan_command_percent": 30,
+    "kp18": {
+      "total_iae": 15.998,
+      "first200ms_iae": 5.906,
+      "tail_rms": 6.62,
+      "overshoot_pct": 10,
+      "parked_prefix_voltage_v": 11.798
+    },
+    "kp20": {
+      "total_iae": 15.986,
+      "first200ms_iae": 6.718,
+      "tail_rms": 4.16,
+      "overshoot_pct": 11.5,
+      "parked_prefix_voltage_v": 12.037
+    },
+    "voltage_scope": "Stopped-prefix readings, not running voltage.",
+    "conclusion": "Mixed tradeoffs; no overall improvement or causal gain conclusion.",
+    "workflow_speedup_claim": false
+  },
+  "actual_trials": [
+    {
+      "id": "run11-target200-auto-saved",
+      "physical_start_within_stage": true,
+      "samples": 1000,
+      "kp": 20,
+      "ki": 1.2,
+      "target": 200,
+      "fan_command_percent": 30,
+      "run_counter_window": [
+        1800304,
+        1808304
+      ],
+      "stop_code": 20,
+      "response": {
+        "status": "complete_pulse",
+        "feedback": "encL",
+        "target": 200,
+        "sample_dt_ms": 2,
+        "feedback_reached_90pct": true,
+        "fall_measurable_from_90pct": true,
+        "rise_10_to_90_ms": 16,
+        "peak_feedback": 223,
+        "peak_delay_ms": 160,
+        "overshoot_pct": 11.5,
+        "settling_5pct_ms": 674,
+        "plateau_last_200ms_error_pct": -0.165,
+        "plateau_last_200ms_peak_to_peak_pct": 9.0,
+        "plateau_tail_window_ms": 200,
+        "fall_90_to_10_ms": 58,
+        "return_to_zero_5pct_ms": 110,
+        "return_reverse_peak_pct": 4.0,
+        "baseline_feedback_mean": 0.0
+      },
+      "max_abs_pwm_command": 4037,
+      "near_pwm8330_samples": 0,
+      "capture_sha256": "9d1c7319809554743c34c11454ac87df3f8e2195e2769cca614d98b1d9407599",
+      "source_ref": "export-20261109-161329/capture.metrics.json",
+      "automatic_export_verified": true,
+      "ack_recorded": true
+    }
+  ],
+  "member_aggregates": [
+    {
+      "author": "codex",
+      "role": "native target200 comparison reviewer",
+      "source_ref": "left200-ab/compare.json",
+      "source_sha256": "9eebdda308b04b296b0ea33c743ac1b3cce46855489fe5ecff6c21010500ae17",
+      "status": "completed_comparison_only",
+      "script_started_at": "2026-11-09T16:15:49.828651+08:00",
+      "script_finished_at": "2026-11-09T16:15:50.517796+08:00",
+      "script_wall_seconds": 0.6891141999949468,
+      "full_agent_elapsed_seconds": null,
+      "tokens": null,
+      "cost": null,
+      "provenance": "Actual native comparison supplied by coordinator; source hash verified, plot reviewed by root."
+    }
+  ],
+  "rework": [
+    {
+      "issue": "First post-replug query produced no parameter reply.",
+      "resolution": "Subsequent paced two-query read succeeded; pacing and repetition changed together, root cause not isolated."
+    }
+  ],
+  "source_artifacts": [
+    {
+      "source_ref": "car-status-20261109-160710/receipt.json",
+      "sha256": "e4b1b171d8fb5a8eb0a19eea79b2da388ac1c898cda4f0172fa83964f79ac75d"
+    },
+    {
+      "source_ref": "car-status-20261109-160914/receipt.json",
+      "sha256": "7ccc8cae11156ac065398c5855463f431e4933d67d8e2db0e9aa1399cb536c73"
+    },
+    {
+      "source_ref": "configure-20261109-161053/receipt.json",
+      "sha256": "05fe439d40d36670da257e74dd4d85e2fd2d46c102e6534052f14cfbc8d1a6d3"
+    },
+    {
+      "source_ref": "gains-20261109-161135/receipt.json",
+      "sha256": "e6db7c0d05cbce2bcf5588285d89fa77d68437e4a6e1fcf43a316c9592dbf13c"
+    },
+    {
+      "source_ref": "export-20261109-161329/receipt.json",
+      "sha256": "7d437d763a05b56398ef53ca7cf6199961aa9ce5e7910b4cda4489732654df6e"
+    },
+    {
+      "source_ref": "export-20261109-161329/capture.metrics.json",
+      "sha256": "b4df51f2b734e71efb8564c61429d84817062b40e5f99acec807d4fe07f6b73e"
+    },
+    {
+      "source_ref": "left200-ab/compare.json",
+      "sha256": "9eebdda308b04b296b0ea33c743ac1b3cce46855489fe5ecff6c21010500ae17"
+    },
+    {
+      "source_ref": "gains-20261109-161658/receipt.json",
+      "sha256": "9df5a2aa0e00d919579f9e7a90748899e28923c6f00a36a69569557862e48eef"
+    },
+    {
+      "source_ref": "left200-ab/plot.png",
+      "sha256": "bed5a1b59c7a2b8bfa4604fb3cc8be788ba5842b0b3946f8331979f761b57d9a",
+      "root_visual_review": "passed"
+    }
+  ],
+  "verification_tests": [
+    "第11趟1000点哈希和metadata匹配；独立compare.json哈希核对一致，根协调者已查看对照图。",
+    "配置回执增加P/K/P，确认仅左Ki改为1.00；计数P10/C1、写4、实跑1、完整分析1、烧录和远程启动0。",
+    "原有成员报告evidence保留；本次只聚合和生成，不新增物理试验。"
+  ],
+  "physical_tuning_complete": false,
+  "task_completion": "coordinator_decides",
+  "tokens": null,
+  "cost": null,
+  "speedup_claim": false
+}
