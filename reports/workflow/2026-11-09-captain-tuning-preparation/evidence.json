@@ -1,0 +1,850 @@
+{
+  "round_id": "2026-11-09-captain-tuning-preparation",
+  "task_id": 100,
+  "related_task_ids": [
+    101
+  ],
+  "task_key": "captain-chat-refresh-20261109",
+  "draft": false,
+  "evidence_snapshot_at": "2026-11-09T15:09:29+08:00",
+  "project_task_status": {
+    "task_100": {
+      "status": "done",
+      "revision": 2,
+      "scope": "Bounded local chat audit only",
+      "basis": "Coordinator reports database updated; child did not modify task."
+    },
+    "task_101": {
+      "status": "in_progress",
+      "scope": "Left/right wheel and yaw acceptance incomplete"
+    },
+    "child_changed_task_status": false
+  },
+  "chat_scope": {
+    "authorized_contact_only": true,
+    "local_processing_only": true,
+    "returned_records": 404,
+    "media_items": {
+      "images": 46,
+      "files": 2,
+      "videos": 1
+    },
+    "all_media_retrieved": false,
+    "full_history_verified": false,
+    "identity_body_media_or_credentials_uploaded": false,
+    "stable_recheck": {
+      "compared_at_local": "14:01",
+      "previous_at_local": "13:49",
+      "records": 404,
+      "added": 0,
+      "removed": 0,
+      "changed": 0,
+      "all_media_retrieved": false,
+      "full_history_verified": false
+    }
+  },
+  "prior_response": {
+    "samples": 930,
+    "turns": 15,
+    "overshoot_percent_range": [
+      24.68,
+      53.32
+    ],
+    "single_cause_proven": false
+  },
+  "former_test": {
+    "target_cap": 80,
+    "fan_enabled": false,
+    "constant_target_seconds": 2,
+    "return_to_zero_observed": false
+  },
+  "initial_probe": {
+    "stage": "initial_probe_only",
+    "query_time_local": "13:54",
+    "read_only_queries": 1,
+    "query_reply_received": false,
+    "parameter_writes": 0,
+    "launches": 0,
+    "flashes": 0,
+    "note": "Historical stage only; use vehicle_activity for current aggregate status."
+  },
+  "candidate": {
+    "target_cap": 200,
+    "fixed_fan": true,
+    "target_shape": "zero-target-zero",
+    "automatic_duration_seconds": 2,
+    "saturation_back_calculation": true,
+    "status": "flashed_five_left_trials_target80_ki120_restored_sixth_waiting_S5"
+  },
+  "build_verification": {
+    "label": "square01",
+    "object_count": 175,
+    "errors": 0,
+    "existing_warning_count": 11,
+    "new_warning_count": 0,
+    "hex_sha256": "ef1ffdd31a3bf1ec8e4ae6fed427903774d3ef5821ead7deeca7ff1ff1533410",
+    "status": "passed_build_only",
+    "flashed_at_build_stage": false,
+    "scope_note": "Build receipt precedes deployment; its flashed=false is not current hardware state.",
+    "source_ref": "square01/target-verification.json"
+  },
+  "flash_verification": {
+    "version": "2BFB-SQUARE-01",
+    "hex_sha256": "ef1ffdd31a3bf1ec8e4ae6fed427903774d3ef5821ead7deeca7ff1ff1533410",
+    "at": "2026-11-09T14:17:40.6575266+08:00",
+    "status": "PASS",
+    "official_verify_passed": true,
+    "owner_authorized": true,
+    "isolation_confirmed": true,
+    "source_ref": "deploy/flash-2BFB-SQUARE-01-ef1ffdd3-20261109-141738.receipt.json"
+  },
+  "startup_verification": {
+    "status": "passed_startup_only",
+    "new_build_readback": "2BFB-SQUARE-01",
+    "valid_new_state_received": true,
+    "approx_battery_voltage_v": 12.53,
+    "wheel_pwm_zero": true,
+    "fan_command_percent": 0,
+    "remote_launch": false,
+    "scope_note": "Stopped reboot readback; not control-loop or track acceptance.",
+    "source_ref": "car-status-20261109-141757/receipt.json"
+  },
+  "analyzer_review": {
+    "findings_found": 3,
+    "findings_fixed_and_retested": 3,
+    "targeted_retest_cases_passed": 3,
+    "reviewed_sha256": "7293c26da9614ea949e2ddbd0beac183833ea46ee4d6bb2c7843acc0e863ae19",
+    "result": "all_three_prior_findings_addressed",
+    "checks": [
+      "Newest incomplete capture rejected without old-run fallback.",
+      "Short 800-point capture marked partial.",
+      "No-motion falling and recovery times remain null."
+    ],
+    "source_ref": "read-only-review/response-retest.json"
+  },
+  "live_parameters": {
+    "readback_at": "2026-11-09T15:04:07.9026083+08:00",
+    "last_gain_write_at": "2026-11-09T15:04:07.9026083+08:00",
+    "side": "left",
+    "target_count_per_2ms": 80,
+    "fan_command_percent": 30,
+    "kp_left": 18,
+    "ki_left": 1.2,
+    "kp_right": 24.8,
+    "ki_right": 1.62,
+    "readback_verified": true,
+    "readback_basis": "Coordinator verified gain restore after this command receipt.",
+    "completed_unique_trials": 5,
+    "status_at_snapshot": "Restored18/1.20 at target80; sixth capture armed and waiting user S5, not completed.",
+    "source_ref": "gains-20261109-150355/receipt.json",
+    "next_unwritten_candidate": {
+      "kp_left": 16,
+      "ki_left": 1.2,
+      "written_to_vehicle": false,
+      "decision_status": "Wait for current18/1.20 target80 waveform before deciding.",
+      "theoretical_first_pwm_command_before": 1382.4,
+      "theoretical_first_pwm_command_after": 1238.4,
+      "theoretical_first_command_change_percent": -10.4167,
+      "calculation_scope": "Controller-command estimate only, not measured motor response.",
+      "caveat": "Lower Kp can also reduce damping; improvement is not guaranteed."
+    }
+  },
+  "actual_trials": [
+    {
+      "id": "left-response-01",
+      "kind": "real_vehicle_wheel_response",
+      "surface": "blue_cloth",
+      "setup": "Grounded real car, single left-wheel test on blue cloth; not a suspended-wheel test or track lap.",
+      "simulation": false,
+      "user_started_S5": true,
+      "build": "2BFB-SQUARE-01",
+      "samples": 1000,
+      "nominal_sample_dt_ms": 2,
+      "nominal_duration_ms": 2000,
+      "time_basis": "sample index times nominal 2 ms; no per-sample hardware clock",
+      "stop_code": 20,
+      "stop_basis": "Coordinator-confirmed automatic two-second trial stop.",
+      "side": "left",
+      "target_count_per_2ms": 200,
+      "fan_command_percent": 30,
+      "kp_left": 25.0,
+      "ki_left": 1.6,
+      "kp_right": 24.8,
+      "ki_right": 1.62,
+      "gain_decoding": {
+        "kp_divisor": 10,
+        "ki_divisor": 100
+      },
+      "response": {
+        "status": "complete_pulse",
+        "feedback": "encL",
+        "target": 200,
+        "sample_dt_ms": 2,
+        "feedback_reached_90pct": true,
+        "fall_measurable_from_90pct": true,
+        "rise_10_to_90_ms": 20,
+        "peak_feedback": 271,
+        "peak_delay_ms": 36,
+        "overshoot_pct": 35.5,
+        "settling_5pct_ms": 890,
+        "plateau_last_200ms_error_pct": 0.14,
+        "plateau_last_200ms_peak_to_peak_pct": 10.0,
+        "plateau_tail_window_ms": 200,
+        "fall_90_to_10_ms": 32,
+        "return_to_zero_5pct_ms": 40,
+        "return_reverse_peak_pct": 4.0,
+        "baseline_feedback_mean": 0.0
+      },
+      "max_abs_wheel_pwm_command": 5052,
+      "feedback_semantics": "Control feedback after existing firmware slew limit of plus/minus20 counts per2ms, not raw encoder. Analyzer adds no smoothing.",
+      "capture_sha256": "4ffb2bc772323032709b788b92a9db305bce90785b5acc60ac0d42b3e8754663",
+      "source_ref": "export-20261109-142234/capture.metrics.json",
+      "acceptance": "Completed pulse capture; not control-loop or track acceptance."
+    },
+    {
+      "id": "left-response-02",
+      "kind": "real_vehicle_wheel_response",
+      "surface": "blue_cloth",
+      "setup": "Grounded real car, single left-wheel test on blue cloth; not a suspended-wheel test or track lap.",
+      "simulation": false,
+      "user_started_S5": true,
+      "build": "2BFB-SQUARE-01",
+      "samples": 1000,
+      "nominal_sample_dt_ms": 2,
+      "nominal_duration_ms": 2000,
+      "time_basis": "sample index times nominal 2 ms; no per-sample hardware clock",
+      "stop_code": 20,
+      "stop_basis": "Coordinator-confirmed automatic two-second trial stop.",
+      "side": "left",
+      "target_count_per_2ms": 200,
+      "fan_command_percent": 30,
+      "kp_left": 18.0,
+      "ki_left": 1.6,
+      "kp_right": 24.8,
+      "ki_right": 1.62,
+      "gain_decoding": {
+        "kp_divisor": 10,
+        "ki_divisor": 100
+      },
+      "response": {
+        "status": "complete_pulse",
+        "feedback": "encL",
+        "target": 200,
+        "sample_dt_ms": 2,
+        "feedback_reached_90pct": true,
+        "fall_measurable_from_90pct": true,
+        "rise_10_to_90_ms": 24,
+        "peak_feedback": 240,
+        "peak_delay_ms": 36,
+        "overshoot_pct": 20.0,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": 0.365,
+        "plateau_last_200ms_peak_to_peak_pct": 12.5,
+        "plateau_tail_window_ms": 200,
+        "fall_90_to_10_ms": 42,
+        "return_to_zero_5pct_ms": 90,
+        "return_reverse_peak_pct": 5.5,
+        "baseline_feedback_mean": 0.0
+      },
+      "max_abs_wheel_pwm_command": 3952,
+      "feedback_semantics": "Control feedback after existing firmware slew limit of plus/minus20 counts per2ms, not raw encoder. Analyzer adds no smoothing.",
+      "capture_sha256": "1c0a5bd90e81adffa9a475d66d641c9ac0e2b584848091977a8d87ca165d929e",
+      "source_ref": "export-20261109-142907/capture.metrics.json",
+      "acceptance": "Completed pulse capture; not control-loop or track acceptance."
+    },
+    {
+      "id": "left-response-03",
+      "kind": "real_vehicle_wheel_response",
+      "surface": "blue_cloth",
+      "setup": "Grounded real car, single left-wheel test on blue cloth; not a suspended-wheel test or track lap.",
+      "simulation": false,
+      "user_started_S5": true,
+      "build": "2BFB-SQUARE-01",
+      "samples": 1000,
+      "nominal_sample_dt_ms": 2,
+      "nominal_duration_ms": 2000,
+      "time_basis": "sample index times nominal 2 ms; no per-sample hardware clock",
+      "stop_code": 20,
+      "stop_basis": "Coordinator-confirmed automatic two-second trial stop.",
+      "side": "left",
+      "target_count_per_2ms": 200,
+      "fan_command_percent": 30,
+      "kp_left": 18.0,
+      "ki_left": 0.8,
+      "kp_right": 24.8,
+      "ki_right": 1.62,
+      "gain_decoding": {
+        "kp_divisor": 10,
+        "ki_divisor": 100
+      },
+      "response": {
+        "status": "complete_pulse",
+        "feedback": "encL",
+        "target": 200,
+        "sample_dt_ms": 2,
+        "feedback_reached_90pct": true,
+        "fall_measurable_from_90pct": true,
+        "rise_10_to_90_ms": 98,
+        "peak_feedback": 224,
+        "peak_delay_ms": 198,
+        "overshoot_pct": 12.0,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": -0.14,
+        "plateau_last_200ms_peak_to_peak_pct": 18.5,
+        "plateau_tail_window_ms": 200,
+        "fall_90_to_10_ms": 86,
+        "return_to_zero_5pct_ms": 122,
+        "return_reverse_peak_pct": 6.0,
+        "baseline_feedback_mean": 0.0
+      },
+      "max_abs_wheel_pwm_command": 3536,
+      "feedback_semantics": "Control feedback after existing firmware slew limit of plus/minus20 counts per2ms, not raw encoder. Analyzer adds no smoothing.",
+      "capture_sha256": "30cc3e26b9005e20b7fd1b64a9f8d2853395a15d3622e6137c2c94c80c59e28b",
+      "source_ref": "export-20261109-143409/capture.metrics.json",
+      "acceptance": "Completed pulse capture; not control-loop or track acceptance."
+    },
+    {
+      "id": "left-response-04",
+      "kind": "real_vehicle_wheel_response",
+      "surface": "blue_cloth",
+      "setup": "Grounded real car, single left-wheel test on blue cloth; not a suspended-wheel test or track lap.",
+      "simulation": false,
+      "user_started_S5": true,
+      "build": "2BFB-SQUARE-01",
+      "samples": 1000,
+      "nominal_sample_dt_ms": 2,
+      "nominal_duration_ms": 2000,
+      "time_basis": "sample index times nominal 2 ms; no per-sample hardware clock",
+      "stop_code": 20,
+      "stop_basis": "Coordinator-confirmed automatic two-second trial stop.",
+      "side": "left",
+      "target_count_per_2ms": 200,
+      "fan_command_percent": 30,
+      "kp_left": 18.0,
+      "ki_left": 1.2,
+      "kp_right": 24.8,
+      "ki_right": 1.62,
+      "gain_decoding": {
+        "kp_divisor": 10,
+        "ki_divisor": 100
+      },
+      "response": {
+        "status": "complete_pulse",
+        "feedback": "encL",
+        "target": 200,
+        "sample_dt_ms": 2,
+        "feedback_reached_90pct": true,
+        "fall_measurable_from_90pct": true,
+        "rise_10_to_90_ms": 26,
+        "peak_feedback": 220,
+        "peak_delay_ms": 112,
+        "overshoot_pct": 10.0,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": 0.22,
+        "plateau_last_200ms_peak_to_peak_pct": 13.5,
+        "plateau_tail_window_ms": 200,
+        "fall_90_to_10_ms": 58,
+        "return_to_zero_5pct_ms": 118,
+        "return_reverse_peak_pct": 7.0,
+        "baseline_feedback_mean": 0.0
+      },
+      "max_abs_wheel_pwm_command": 3749,
+      "feedback_semantics": "Control feedback after existing firmware slew limit of plus/minus20 counts per2ms, not raw encoder. Analyzer adds no smoothing.",
+      "capture_sha256": "6b791964cb57c9bcd22cf280f3b1033ef5833b6b135ba79be6245b0e6710296a",
+      "source_ref": "export-20261109-144345/capture.metrics.json",
+      "acceptance": "Completed pulse capture; not control-loop or track acceptance."
+    },
+    {
+      "id": "left-response-05",
+      "kind": "real_vehicle_wheel_response",
+      "surface": "blue_cloth",
+      "setup": "Grounded real car, single left-wheel test on blue cloth; not a suspended-wheel test or track lap.",
+      "simulation": false,
+      "user_started_S5": true,
+      "build": "2BFB-SQUARE-01",
+      "samples": 1000,
+      "nominal_sample_dt_ms": 2,
+      "nominal_duration_ms": 2000,
+      "time_basis": "sample index times nominal 2 ms; no per-sample hardware clock",
+      "stop_code": 20,
+      "stop_basis": "Coordinator-confirmed automatic two-second trial stop.",
+      "side": "left",
+      "target_count_per_2ms": 80,
+      "fan_command_percent": 30,
+      "kp_left": 18,
+      "ki_left": 7,
+      "kp_right": 24.8,
+      "ki_right": 1.62,
+      "gain_decoding": {
+        "kp_divisor": 10,
+        "ki_divisor": 100
+      },
+      "response": {
+        "status": "complete_pulse",
+        "feedback": "encL",
+        "target": 80,
+        "sample_dt_ms": 2,
+        "feedback_reached_90pct": true,
+        "fall_measurable_from_90pct": true,
+        "rise_10_to_90_ms": 8,
+        "peak_feedback": 183,
+        "peak_delay_ms": 28,
+        "overshoot_pct": 128.75,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": 0.2625,
+        "plateau_last_200ms_peak_to_peak_pct": 20.0,
+        "plateau_tail_window_ms": 200,
+        "fall_90_to_10_ms": 10,
+        "return_to_zero_5pct_ms": 118,
+        "return_reverse_peak_pct": 15.0,
+        "baseline_feedback_mean": 0.0
+      },
+      "max_abs_wheel_pwm_command": 3855,
+      "feedback_semantics": "Control feedback after existing firmware slew limit of plus/minus20 counts per2ms, not raw encoder. Analyzer adds no smoothing.",
+      "capture_sha256": "5c8f720843b8532c737d45c72334f31de322c68b513dc25cf8b5ab4580c411ee",
+      "source_ref": "export-20261109-150305/capture.metrics.json",
+      "acceptance": "Rejected escalation to target200 after128.75% overshoot; no observed near-limit PWM saturation.",
+      "purpose": "Target80 Ki7 short-step screening, not a same-target200 A/B."
+    }
+  ],
+  "response_comparison": {
+    "kind": "descriptive_real_response_comparison",
+    "surface": "blue_cloth",
+    "rows": [
+      {
+        "trial_id": "left-response-01",
+        "kp_left": 25.0,
+        "ki_left": 1.6,
+        "overshoot_pct": 35.5,
+        "rise_10_to_90_ms": 20,
+        "settling_5pct_ms": 890,
+        "plateau_last_200ms_error_pct": 0.14,
+        "plateau_last_200ms_peak_to_peak_pct": 10.0,
+        "fall_90_to_10_ms": 32,
+        "return_to_zero_5pct_ms": 40,
+        "return_reverse_peak_pct": 4.0,
+        "max_abs_wheel_pwm_command": 5052,
+        "target_count_per_2ms": 200
+      },
+      {
+        "trial_id": "left-response-02",
+        "kp_left": 18.0,
+        "ki_left": 1.6,
+        "overshoot_pct": 20.0,
+        "rise_10_to_90_ms": 24,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": 0.365,
+        "plateau_last_200ms_peak_to_peak_pct": 12.5,
+        "fall_90_to_10_ms": 42,
+        "return_to_zero_5pct_ms": 90,
+        "return_reverse_peak_pct": 5.5,
+        "max_abs_wheel_pwm_command": 3952,
+        "target_count_per_2ms": 200
+      },
+      {
+        "trial_id": "left-response-03",
+        "kp_left": 18.0,
+        "ki_left": 0.8,
+        "overshoot_pct": 12.0,
+        "rise_10_to_90_ms": 98,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": -0.14,
+        "plateau_last_200ms_peak_to_peak_pct": 18.5,
+        "fall_90_to_10_ms": 86,
+        "return_to_zero_5pct_ms": 122,
+        "return_reverse_peak_pct": 6.0,
+        "max_abs_wheel_pwm_command": 3536,
+        "target_count_per_2ms": 200
+      },
+      {
+        "trial_id": "left-response-04",
+        "kp_left": 18.0,
+        "ki_left": 1.2,
+        "overshoot_pct": 10.0,
+        "rise_10_to_90_ms": 26,
+        "settling_5pct_ms": null,
+        "plateau_last_200ms_error_pct": 0.22,
+        "plateau_last_200ms_peak_to_peak_pct": 13.5,
+        "fall_90_to_10_ms": 58,
+        "return_to_zero_5pct_ms": 118,
+        "return_reverse_peak_pct": 7.0,
+        "max_abs_wheel_pwm_command": 3749,
+        "target_count_per_2ms": 200
+      }
+    ],
+    "fourth_minus_first": {
+      "overshoot_percentage_points": -25.5,
+      "rise_10_to_90_ms": 6,
+      "return_to_zero_5pct_ms": 78,
+      "max_abs_wheel_pwm_command": -1303
+    },
+    "conclusion": "18/1.20 has the lowest observed overshoot in these four single trials (10%), but no qualifying 5% settling window; zero-return118ms is slower than baseline40ms. Not a full stability acceptance.",
+    "limits": [
+      "One trial per gain setting; no repeated randomized load/battery matched experiment.",
+      "Same firmware, target200 and fan command30; actual suction and physical load were not measured.",
+      "Feedback contains firmware slew limiting; nominal sample cadence is not a measured hardware clock."
+    ],
+    "workflow_speedup_claim": false,
+    "target80_screen": {
+      "trial_id": "left-response-05",
+      "kp_left": 18,
+      "ki_left": 7,
+      "target_count_per_2ms": 80,
+      "peak_feedback": 183,
+      "overshoot_pct": 128.75,
+      "max_abs_wheel_pwm_command": 3855,
+      "near_limit_saturation_observed": false,
+      "rise_10_to_90_ms": 8,
+      "return_to_zero_5pct_ms": 118,
+      "settling_5pct_ms": null,
+      "result": "Did not escalate to200; restoredKi1.20. Overshoot occurred without near-limit PWM evidence.",
+      "comparison_scope": "Different target from first four trials; not a matched gain A/B or proof of a unique physical cause."
+    }
+  },
+  "model_validation": {
+    "status": "completed_unqualified",
+    "final_result": "no_model_qualified_for_parameter_recommendation",
+    "first_order": {
+      "failed_checks": 8,
+      "total_checks": 8,
+      "validation_passed": false,
+      "parameter_recommendation": null,
+      "source_ref": "calibrated-model/validation-and-sweep.json",
+      "sha256": "c45004ae61b694f369fb6dd803a36fea0db44ba2ab4a01b54c400285f8c73f32",
+      "source_encoding": "utf-8"
+    },
+    "exploratory_scan": {
+      "cases": 221,
+      "validated_for_tuning": false,
+      "adopt_best_case": false
+    },
+    "second_order": {
+      "status": "completed_unqualified",
+      "folds": 3,
+      "folds_passed": 0,
+      "mean_closed_dynamic_rmse_first_order": 17.383907,
+      "mean_closed_dynamic_rmse_second_order": 17.622476,
+      "required_relative_improvement": 0.2,
+      "observed_relative_improvement": -0.013724,
+      "validation_design": "First three runs leave-one-run-out; fourth was already seen and is external check only, not blind validation.",
+      "external_check": {
+        "passed": false,
+        "predicted_peak": 200.0,
+        "actual_peak": 220,
+        "predicted_return_ms": 76,
+        "actual_return_ms": 118
+      },
+      "parameter_recommendation": null,
+      "additional_model_orders_planned": false,
+      "source_ref": "calibrated-model/second-order/results.json",
+      "sha256": "2ff966cb5dd9e9f9c4cbdb9a9c4c03ddb9427ddfe0612ca8be45ae2dee152f5d",
+      "source_encoding": "utf-8"
+    },
+    "formula_scope": "Source tool uses the same control formula and cycle; plant model and units differ.",
+    "ki_7": {
+      "status": "physical_target80_trial_completed_escalation_rejected",
+      "written_to_vehicle": true,
+      "restored_after_trial": 1.2,
+      "fifth_trial_source_ref": "export-20261109-150305/capture.metrics.json"
+    },
+    "next_physical_stage": {
+      "status": "sixth_trial_waiting_user_S5",
+      "kp_left": 18,
+      "ki_left": 1.2,
+      "target": 80,
+      "counted_as_completed_run": false,
+      "next_candidate_only": {
+        "kp_left": 16,
+        "ki_left": 1.2,
+        "written": false
+      }
+    },
+    "source": "Locally checked aggregate reports plus coordinator handoff; no newly run model or hardware by this child.",
+    "current_tuning_policy": "Owner stopped further practice-software tuning; use measured physical responses for incremental estimates."
+  },
+  "practice_audit": {
+    "status": "completed",
+    "final_result": "passed_practice_model_only",
+    "source_ref": "practice-tool-audit/practice-comparison.json",
+    "sha256": "b1a977d7433b87de29f8bb030ae04781ba46a133206269f1030f52983d36cccf",
+    "source_encoding": "gb18030",
+    "actual_source_stepSim_executed": true,
+    "cases": 8,
+    "samples": 8000,
+    "samples_per_case": 1000,
+    "repeat_csv_identical": true,
+    "fixed_parameters": {
+      "kp": 18,
+      "Ts_s": 0.002,
+      "A": 0.9,
+      "plant_gain": 2,
+      "plant_time_constant_s": 0.084,
+      "output_min": -100,
+      "output_max": 100,
+      "delta_clamp": "disabled (0/0)",
+      "initial_state": "all zero",
+      "disturbance": 0,
+      "profile": "0 for0.5s, positive target for1s,0 for0.5s"
+    },
+    "results": [
+      {
+        "target": 49.21,
+        "kp": 18,
+        "ki": 1.2,
+        "rise10to90_ms": 64,
+        "overshoot_percent": 0,
+        "settle5_percent_ms": 88,
+        "return_settle5_percent_ms": 88
+      },
+      {
+        "target": 49.21,
+        "kp": 18,
+        "ki": 6,
+        "rise10to90_ms": 18,
+        "overshoot_percent": 0,
+        "settle5_percent_ms": 26,
+        "return_settle5_percent_ms": 22
+      },
+      {
+        "target": 49.21,
+        "kp": 18,
+        "ki": 7,
+        "rise10to90_ms": 18,
+        "overshoot_percent": 0.0,
+        "settle5_percent_ms": 24,
+        "return_settle5_percent_ms": 20
+      },
+      {
+        "target": 49.21,
+        "kp": 18,
+        "ki": 10,
+        "rise10to90_ms": 18,
+        "overshoot_percent": 0.204768,
+        "settle5_percent_ms": 24,
+        "return_settle5_percent_ms": 18
+      },
+      {
+        "target": 10.016,
+        "kp": 18,
+        "ki": 1.2,
+        "rise10to90_ms": 46,
+        "overshoot_percent": 0,
+        "settle5_percent_ms": 68,
+        "return_settle5_percent_ms": 66
+      },
+      {
+        "target": 10.016,
+        "kp": 18,
+        "ki": 6,
+        "rise10to90_ms": 8,
+        "overshoot_percent": 0,
+        "settle5_percent_ms": 12,
+        "return_settle5_percent_ms": 12
+      },
+      {
+        "target": 10.016,
+        "kp": 18,
+        "ki": 7,
+        "rise10to90_ms": 6,
+        "overshoot_percent": 0.0,
+        "settle5_percent_ms": 10,
+        "return_settle5_percent_ms": 10
+      },
+      {
+        "target": 10.016,
+        "kp": 18,
+        "ki": 10,
+        "rise10to90_ms": 4,
+        "overshoot_percent": 1.075087,
+        "settle5_percent_ms": 8,
+        "return_settle5_percent_ms": 8
+      }
+    ],
+    "root_visual_and_harness_check_completed": true,
+    "interpretation": "At target49.21 Ki6/7/10 all rise in18ms, settle26/24/24ms and return22/20/18ms. Ki7 is a reasonable practice-model compromise, not a validated real-car setting.",
+    "real_car_parameter_recommendation": null,
+    "limits": [
+      "Practice plant is not identified from the vehicle and omits traction, battery, fan, delay, integer feedback, slew limit and actuator deadzone.",
+      "No global optimum or real-car performance claim."
+    ],
+    "later_ki7_physical_screen": "User requested separate target80 physical screening; rejected escalation and restoredKi1.20. Practice result is not vehicle acceptance."
+  },
+  "measurement_corrections": {
+    "status": "corrected_before_publication",
+    "prior_draft_error": "Ki160/162 was incorrectly converted with divisor10 as16/16.2.",
+    "correct_rule": "Kp protocol integer /10; Ki protocol integer /100.",
+    "correct_prior_left_ki": 1.6,
+    "correct_right_ki": 1.62,
+    "current_left_ki": 1.2,
+    "surface_correction": "Current trials were grounded single-wheel tests on blue cloth; no claim of suspended testing.",
+    "duplicate_rule": "Same capture hash in export143938 and143409 is one physical run; both exports count as read-only commands.",
+    "private_repository_had_wrong_draft": false,
+    "database_had_wrong_draft": false
+  },
+  "member_aggregates": [
+    {
+      "author": "codex",
+      "role": "native child workflow aggregation and independent response review",
+      "stage": "four-trial-rollup",
+      "status": "completed_local_draft_only",
+      "started_at": "2026-11-09T14:53:03.841149+08:00",
+      "measurement_cutoff_at": "2026-11-09T15:00:31.255997+08:00",
+      "measured_wall_seconds": 447.414848,
+      "verification_started_at": "2026-11-09T14:57:12.230105+08:00",
+      "verification_completed_at": "2026-11-09T15:00:31.255997+08:00",
+      "verification_seconds": 0.366474,
+      "timing_scope": "Current bounded child stage from first tool clock to latest verification; automated verification intervals only. Earlier read/reasoning review time unknown. Final receipt writing and handoff excluded; overall user round remains active.",
+      "earlier_read_review_seconds": null,
+      "tokens": null,
+      "cost": null,
+      "human_wait_seconds": null,
+      "completed": [
+        "Aggregated14 allowed command receipts plus one coordinator-reported query.",
+        "Deduplicated five exports into four real blue-cloth left-wheel trials.",
+        "Corrected Ki scaling and added response tradeoffs.",
+        "Preserved pending model/practice validation and partial control acceptance.",
+        "Verified practice and both model result aggregates with SHA256; unqualified vehicle models not adopted."
+      ],
+      "checks_passed": 33,
+      "new_workflow_round_created": false,
+      "database_writes": 0,
+      "uploads": 0,
+      "hardware_actions": 0,
+      "verification_intervals": [
+        {
+          "started_at": "2026-11-09T14:57:12.230105+08:00",
+          "finished_at": "2026-11-09T14:57:12.562130+08:00",
+          "seconds": 0.332025,
+          "scope": "33 scaffold checks and four-trial draft readback"
+        },
+        {
+          "started_at": "2026-11-09T15:00:31.221548+08:00",
+          "finished_at": "2026-11-09T15:00:31.255997+08:00",
+          "seconds": 0.034449,
+          "scope": "Completed practice/model aggregate schema/privacy/readback"
+        }
+      ],
+      "artifact_evidence": [
+        {
+          "source_ref": "practice-tool-audit/practice-comparison.json",
+          "sha256": "b1a977d7433b87de29f8bb030ae04781ba46a133206269f1030f52983d36cccf",
+          "source_encoding": "gb18030"
+        },
+        {
+          "source_ref": "calibrated-model/validation-and-sweep.json",
+          "sha256": "c45004ae61b694f369fb6dd803a36fea0db44ba2ab4a01b54c400285f8c73f32",
+          "source_encoding": "utf-8"
+        },
+        {
+          "source_ref": "calibrated-model/second-order/results.json",
+          "sha256": "2ff966cb5dd9e9f9c4cbdb9a9c4c03ddb9427ddfe0612ca8be45ae2dee152f5d",
+          "source_encoding": "utf-8"
+        }
+      ],
+      "rework": [
+        {
+          "issue": "Legacy encoding in practice report rejected by UTF-8 reader",
+          "resolution": "Decoded that existing report as GB18030, extracted only allowed aggregate fields; generated workflow reports remain UTF-8.",
+          "failed_read_attempts": 1
+        }
+      ],
+      "other_member_attribution": "No fabricated Opus/DSH reports. Model/practice result artifacts are included as evidence; coordinator may attach their actual native member reports separately."
+    },
+    {
+      "author": "codex",
+      "role": "native child workflow aggregation",
+      "stage": "fifth-trial-rollup",
+      "status": "completed_local_draft_only",
+      "started_at": "2026-11-09T15:06:29.984653+08:00",
+      "measurement_cutoff_at": "2026-11-09T15:08:04.590291+08:00",
+      "measured_wall_seconds": 94.605638,
+      "verification_started_at": "2026-11-09T15:08:04.554425+08:00",
+      "verification_completed_at": "2026-11-09T15:08:04.590291+08:00",
+      "verification_seconds": 0.035866,
+      "timing_scope": "This bounded update only; final receipt generation and handoff excluded. Overall round remains active.",
+      "other_review_seconds": null,
+      "tokens": null,
+      "cost": null,
+      "hardware_actions": 0,
+      "database_writes": 0,
+      "uploads": 0,
+      "completed": [
+        "19 allowed receipts aggregated; P24/C6/writes9.",
+        "Fifth physical response recorded; pending sixth and unwritten16/1.20 excluded.",
+        "Ki7/80 overshoot rejection and restored18/1.20 reflected."
+      ],
+      "rework": [
+        {
+          "issue": "An auxiliary display read omitted explicit UTF8 and failed under defaultGBK",
+          "resolution": "Used existing strictUTF8 JSON reader; no writes occurred in failed read.",
+          "failed_read_attempts": 1
+        }
+      ]
+    }
+  ],
+  "vehicle_activity": {
+    "valid_new_state_received": true,
+    "read_only_queries": 30,
+    "parameter_writes": 9,
+    "remote_launches": 0,
+    "physical_trials": 5,
+    "flashes": 1,
+    "hardware_wiring_confirmed": true,
+    "count_basis": {
+      "scope": "Final measured snapshot at 2026-11-09T15:09:29+08:00; pending sixth run and proposed Kp16 excluded.",
+      "status_query_P": 24,
+      "capture_export_C": 6,
+      "initial_query_without_receipt": 1,
+      "initial_query_basis": "Coordinator-confirmed 13:54 pure query without reply.",
+      "status_receipts": 6,
+      "configure_receipts": 2,
+      "gain_receipts": 5,
+      "export_receipts": 6,
+      "parameter_write_unit": "Commands: two T, two F, five K writes; not scalar parameter count.",
+      "physical_trial_unit": "Five distinct completed user-S5 grounded left-wheel captures on blue cloth; repeated export excluded; sixth awaiting S5 not counted.",
+      "remote_launch_basis": "Reviewed command receipts contain no launch; user pressed S5 for the physical trial.",
+      "duplicate_exports": [
+        {
+          "source_ref": "export-20261109-143938/capture.metrics.json",
+          "duplicate_of": "export-20261109-143409/capture.metrics.json",
+          "capture_sha256": "30cc3e26b9005e20b7fd1b64a9f8d2853395a15d3622e6137c2c94c80c59e28b",
+          "counted_as_new_run": false
+        }
+      ],
+      "receipt_count": 19,
+      "command_count_in_receipts": 38,
+      "total_commands_including_initial_query": 39,
+      "vehicle_evidence_snapshot_at": "2026-11-09T15:04:07.9026083+08:00",
+      "stage_cutoff_confirmed_by_coordinator": "2026-11-09T15:09:29+08:00"
+    }
+  },
+  "verification_tests": [
+    "ADS完整构建175对象、0错误、11既有警告、0新增警告；官方烧录校验PASS，HEX哈希一致。",
+    "最新停车回读左18/1.20、右24.8/1.62，目标80、风机命令30%；第6趟尚未启动。",
+    "五个不同hash的1000点实车响应；6次导出包含一次重复旧趟，不计第6次实跑。",
+    "截至测量截止，回执P23加13:54补记P1共P24，C6，只读命令30；写参9，烧录1，远程发车0。",
+    "分析器三个已发现问题均修复并定向复测通过。",
+    "练习模型8组8000点、重复输出一致和实际源码函数摘要核对完成；结果限于练习模型。",
+    "实车一阶8个模型及二阶三折均未通过；第四趟后续只作为已见外部检查，没有合格模型推荐参数。",
+    "第5趟Ki7/目标80独立核验1000点、phase250/500/250、峰183与PWM最大3855、无8330近限样本；右轮目标与输出均零。"
+  ],
+  "change_results": [
+    "square01完整程序构建175个对象，0错误、11条既有警告；用户确认隔离并授权后，14:17官方烧录校验PASS，重启新构建输出归零。",
+    "无线目标200、风机30%；用户按S5在蓝布上完成四趟真实左轮单轮响应，每趟1000点，非仿真、非架空测试。",
+    "四趟左轮Kp/Ki依次25/1.60、18/1.60、18/0.80、18/1.20，超调依次35.5%、20%、12%、10%。",
+    "末趟18/1.20上升26ms、回零118ms，未满足完整5%稳定窗口；最低超调不等于控制环验收通过。",
+    "前四趟的5次导出中14:39与14:34捕获hash相同，计为重复导出，不新增实跑趟次。",
+    "纠正早期未发布草稿Ki换算：Ki字段除以100，160为1.60、162为1.62；当前左Ki为1.20。",
+    "离线分析器复核发现3项缺陷，全部修复并完成3项定向复测。",
+    "练习模型完成8组8000点实际源码实验与重复一致性检查；结果只适用于该模型。",
+    "实车解释模型一阶8项失败、二阶三折均失败；保持参数推荐为空，未把221组扫描最优当作可用调参。",
+    "新增第5趟真实1000点Ki7/目标80筛查，自动STOP20；撤回升200计划并恢复Ki1.20回读。"
+  ],
+  "physical_tuning_complete": false,
+  "task_completion": "coordinator_decides",
+  "tokens": null,
+  "cost": null,
+  "human_wait_seconds": null,
+  "coordination_wait_seconds": null,
+  "speedup_claim": false
+}
