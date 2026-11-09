@@ -1,0 +1,47 @@
+{
+  "round_id": "2026-11-09-gear-retune-data",
+  "project": "CRAZY-CIRCUIT",
+  "task": 96,
+  "owner_correction": "Same tooth count; new parts or reassembly. Old firmware is now reported intermittently unstable.",
+  "results": {
+    "new_complete_post_rollback_runs": 0,
+    "new_passive_packet_bytes": 10,
+    "older_complete_runs_examined": 2,
+    "current_vehicle_build_verified": false,
+    "transmission_ratio_change_proven": false,
+    "exact_new_gains_justified": false
+  },
+  "operations": {
+    "serial_connections": 0,
+    "flashes": 0,
+    "firmware_changes": 0,
+    "parameter_writes": 0,
+    "physical_starts": 0,
+    "simulation_reruns": 0
+  },
+  "coordination": {
+    "native_children": 2,
+    "external_opus_calls": 0,
+    "received_actual_child_reports": 2,
+    "historical_audit_reused": true
+  },
+  "local_evidence": [
+    {
+      "name": "REPORT.md",
+      "sha256": "7fa9953eae8c31afcf9b8dc25e191c784b86513d5b6e478030a265b374a36d9f"
+    },
+    {
+      "name": "latest-evidence.json",
+      "sha256": "b91e36336ff1c0e7cec6aca401f384f9f32e0c64d98e948cc63b7a39ef26a847"
+    },
+    {
+      "name": "gear-evidence.json",
+      "sha256": "e81bd7f6362b9dd67cd8f10ad36a259a61ef0f4c4f77bf1fa6b24da84c3ecb02"
+    }
+  ],
+  "limits": [
+    "No complete dynamic recording of the current rollback version was located.",
+    "Earlier saved runs cannot identify the cause of present intermittent behavior.",
+    "Raw telemetry, physical images, sources, chats, personal paths and databases are excluded from upload."
+  ]
+}
