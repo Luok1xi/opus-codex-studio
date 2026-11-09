@@ -1,0 +1,55 @@
+{
+  "round_id": "2026-11-09-history125-recheck",
+  "scope": "Read-only historical-versus-current firmware and saved physical-run audit",
+  "source_integrity": {
+    "frozen_files_checked": 688,
+    "mismatches": 0
+  },
+  "record_integrity": {
+    "historical_complete_onboard_rows": 932,
+    "recent_complete_runs": 2
+  },
+  "local_evidence": [
+    {
+      "name": "REPORT.md",
+      "sha256": "4ec5775dc84c6bb8fcf6e24e6f9cc6a4ec77920d203a7341aae62b1d21f128fa"
+    },
+    {
+      "name": "old-evidence.json",
+      "sha256": "4c2f3deab77d39a749019598c9c48e2a4f8ee26871829d9e14e9202afb7975cd"
+    },
+    {
+      "name": "c12-evidence.json",
+      "sha256": "7e68b8f12945b1c3f155edad487d87e971aab38b1d1d8d76b9335c95d8d3253c"
+    },
+    {
+      "name": "source-evidence.json",
+      "sha256": "f4ef2b352d606dfcb8e3e2a257ac2faebbecb58c0e9c7ff167e6f739d052224a"
+    }
+  ],
+  "verified_outcomes": [
+    "Historical successful physical runs have independent contemporaneous evidence.",
+    "Later source changes extend beyond map data; earlier report confused admission with active steering.",
+    "Recent saved runs turn but fail optical exit reacquisition; unique physical root cause remains unverified.",
+    "Encoder conversion already includes unit scaling; a naive second conversion would duplicate it."
+  ],
+  "coordination": {
+    "native_children": 2,
+    "external_opus_calls": 0,
+    "child_evidence_received": 2,
+    "existing_audit_reused": true
+  },
+  "operations": {
+    "firmware_edits": 0,
+    "flashes": 0,
+    "serial_connections": 0,
+    "parameter_sends": 0,
+    "physical_runs_started": 0,
+    "simulation_reruns": 0
+  },
+  "limits": [
+    "No fresh chip identity or vehicle calibration in this round.",
+    "No matched workflow quality/timing baseline.",
+    "Raw telemetry, source code, device images, conversations and local paths are excluded from this upload."
+  ]
+}
