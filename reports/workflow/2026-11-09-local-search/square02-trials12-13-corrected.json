@@ -1,0 +1,170 @@
+{
+ "round_id": "2026-11-09-local-search",
+ "appendix": "square02-trials12-13-research-pivot",
+ "status": "in_progress",
+ "task_completed": false,
+ "snapshot_cutoff_at": "2026-11-09T19:37:57.944779+08:00",
+ "trials": [
+  {
+   "trial": "12",
+   "metrics_ref": "yaw-filter3-kp0180-ki0002-target90-12/host-v2-20261109-191829-7da4e6/attempt-01/capture.metrics.json",
+   "capture_sha256": "5e27d60ddab97f7eabed971c0c1bd168fabd9f4cd204671f3437001bbb8d15ff",
+   "samples": 1000,
+   "build": "2BFB-SQUARE-02",
+   "yaw_kp": 0.18,
+   "yaw_ki": 0.002,
+   "wheel_kp_both": 19.5,
+   "wheel_ki_both": 1,
+   "fan_percent": 30,
+   "target_dps": 90,
+   "peak_dps": 199.5,
+   "overshoot_percent": 121.6667,
+   "rise_ms": 50,
+   "tail_p2p_dps": 214.4,
+   "settling_ms": null,
+   "return_ms": null,
+   "max_abs_pwm": 1976,
+   "auto_saved_and_acked": true,
+   "postprocess_state": "complete",
+   "postprocess_steps": [
+    {
+     "script": "analyze_response.py",
+     "exit_code": 0,
+     "state": null
+    },
+    {
+     "script": "actuator_summary.py",
+     "exit_code": null,
+     "state": "not_applicable"
+    }
+   ],
+   "ack_at": "2026-11-09T11:18:38.781058+00:00",
+   "accepted": false
+  },
+  {
+   "trial": "13",
+   "metrics_ref": "yaw-filter3-kp0180-ki0002-target200-13-rearmed/host-v2-20261109-192707-171756/attempt-01/capture.metrics.json",
+   "capture_sha256": "9f86cd3c5f67d0ebc415b70975eff08c9b4c23ab585e46835da411cbd5434806",
+   "samples": 1000,
+   "build": "2BFB-SQUARE-02",
+   "yaw_kp": 0.18,
+   "yaw_ki": 0.002,
+   "wheel_kp_both": 19.5,
+   "wheel_ki_both": 1,
+   "fan_percent": 30,
+   "target_dps": 200,
+   "peak_dps": 271.3,
+   "overshoot_percent": 35.65,
+   "rise_ms": 20,
+   "tail_p2p_dps": 118.7,
+   "settling_ms": null,
+   "return_ms": null,
+   "max_abs_pwm": 2007,
+   "auto_saved_and_acked": true,
+   "postprocess_state": "complete",
+   "postprocess_steps": [
+    {
+     "script": "analyze_response.py",
+     "exit_code": 0,
+     "state": null
+    },
+    {
+     "script": "actuator_summary.py",
+     "exit_code": null,
+     "state": "not_applicable"
+    }
+   ],
+   "ack_at": "2026-11-09T11:27:16.329749+00:00",
+   "accepted": false
+  }
+ ],
+ "trial13_restart": {
+  "old_event_ref": "yaw-filter3-kp0180-ki0002-target200-13/capture-events.json",
+  "event_report_sha256": "e08147259badceb57ab7d104297b10d873bc1551b986a9a4cd86a117aedff879",
+  "parsed_events": 0,
+  "invalid_lines_latest": 356,
+  "previous_root_observed_invalid_lines": 353,
+  "parse_limit": "Damaged observations; zero parsed events proves neither no run nor two runs.",
+  "owner_report": "Reboot and no completed-trial confirmation for original13.",
+  "confirmed_complete13_count": 1,
+  "basis": "Onlyrearmed13has a complete1000-point export after restored settings.",
+  "unconfirmed_old13_run_count": null
+ },
+ "stage_counts": {
+  "new_physical_runs": 2,
+  "full1000_captures": 2,
+  "automatic_save_ack_successes": 2,
+  "flashes": 0,
+  "remote_starts": 0,
+  "all_commands": null
+ },
+ "performance_limits": [
+  "Neither90nor200meets10percent target.",
+  "gyro_x10 measurement filter changed10to3; no rawgyro. Before/after curve changes cannot isolate control improvement.",
+  "Two auto-save successes do not establish general wireless reliability.",
+  "Nominal2ms sample timing, conditioned gyro/encoder signals and changing voltage/contact/load remain confounds."
+ ],
+ "source_flash_runtime": {
+  "live_build_evidence": "02inboth capture metadata",
+  "live_hex_sha256": "2df1edd448b85b1545340a762daf77ffbd7650d444a75cd5f3f350146808e004",
+  "flash_source": "Previously verified deployment; no new flash in this increment.",
+  "runtime_at_last_capture": "yaw.18/.002,wheels19.5/1,target200,fan30; no claim after an unobserved reset."
+ },
+ "candidate03": {
+  "status": "Protocol draft only; paused atOwner direction; not adopted.",
+  "firmware_created_or_modified": false,
+  "production_host_code_created_or_modified": false,
+  "built": false,
+  "flashed": false,
+  "source": "Root relayed implementer andhost worker confirmations."
+ },
+ "strategy_change": {
+  "recorded_at": "2026-11-09T19:37:36.971183+08:00",
+  "owner_message_exact_time": null,
+  "scope": "Pause03 implementation; first research established tuning tutorials including online/social sources and reconsider strategy.",
+  "research_owners": "Official/web, social tutorials and local vehicle-evidence tracks; root plus native independent review, no externalOpus participation.",
+  "research_complete": false,
+  "new_review_round": false
+ },
+ "teamdb_check": {
+  "project": "CRAZY-CIRCUIT",
+  "category": "07",
+  "inbox": "codex",
+  "latest_opus_handoff": 634,
+  "latest_opus_at": "2026-11-06T19:36:13.570796+08:00",
+  "full_evidence_read": [
+   634,
+   745
+  ],
+  "new_opus_control_handoff_found": false,
+  "limit": "Explicit descending-id query in projectDB; no claim about unrecorded external conversations.",
+  "external_opus_acceptance": false
+ },
+ "preserved": [
+  "candidate-square02-workflow.json",
+  "square02-deployment-snapshot.json",
+  "published1838andthrough11canonical"
+ ],
+ "tokens": null,
+ "cost": null,
+ "full_round_seconds": null,
+ "new_review_round": false,
+ "archive05": {
+  "deployment_validation_document": 42,
+  "verified_by": "root coordinator",
+  "commit": "44e020241f77a55a5b46fd73bc83d972af3469b0",
+  "state": "Root verified sameJSON/LF-normalized text; originalCRLFbytes differ, category05 recordsbothhashes.",
+  "payload_lf_sha256": "75cf7bc8ea8ce791652f90e15468e0c9dbb70404e7fe4c3985d0907c34b25741"
+ },
+ "local_preparation": {
+  "first_read_at": "2026-11-09T19:35:46.389927+08:00",
+  "written_at": "2026-11-09T19:37:57.944779+08:00",
+  "wall_seconds": 131.554852
+ },
+ "correction": {
+  "supersedes_validation_document": 43,
+  "original_preserved": true,
+  "recorded_at": "2026-11-09T19:40:35.837545+08:00",
+  "scope": "Old13 observation limit and archive status only; no new physical trial."
+ }
+}
