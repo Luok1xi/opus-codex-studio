@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-local-search",
+  "continuation_id": "after-cutoff-trial13",
+  "draft": false,
+  "main_report_commit": "26eed7b98429a426a1210beac231d75aaca23050",
+  "main_measurement_cutoff_at": "2026-11-09T16:33:42.3247844+08:00",
+  "continuation_cutoff_at": "2026-11-09T16:56:45.235147+08:00",
+  "prepared_at": "2026-11-09T16:55:49.199105+08:00",
+  "quality": "partial",
+  "scope": "Continuation of the already archived round; no new workflow review and no amendment of main-cutoff results.",
+  "completed": [
+    "Original armed trial13 did not start before reboot;16:48 history scan found zero run events and two boots.",
+    "After recovery,20/0.90 target200 fan30 was restored and a rearmed physical trial completed withSTOP20.",
+    "The complete1000-point export was saved;watch reported a fragmented-line validation error, root checked completeness and recorded explicit acknowledgement at16:53:11.",
+    "The previous20/1.00 record performed better on overshoot, rise, settling, return and integrated error than this single20/0.90 record.",
+    "Fragmented-line handling fixed; native12 fixture tests passed, including8 negative cases, and root reviewed implementation.",
+    "Trial14 at20/1.00 target200 fan30 completed; fixed watcher exported1000 samples, acknowledged, and completed automatic analysis in0.75s."
+  ],
+  "recovery": {
+    "first_identity_query_replied": false,
+    "first_attempt_parameter_writes": 0,
+    "subsequent_configure": "P/T/F/P succeeded",
+    "subsequent_gains": "P/K/P succeeded",
+    "restored_kp_left": 20,
+    "restored_ki_left": 0.9,
+    "target": 200,
+    "fan_command_percent": 30,
+    "pre_rearm_scan_at_local": "16:48",
+    "pre_rearm_run_events": 0,
+    "pre_rearm_boots": 2
+  },
+  "trial13": {
+    "kind": "real_physical_left_wheel",
+    "rearmed": true,
+    "completed_at_local_approx": "16:52:05",
+    "stop_code": 20,
+    "samples": 1000,
+    "time_basis": "sample index times nominal 2 ms; no per-sample hardware clock",
+    "kp_left": 20,
+    "ki_left": 0.9,
+    "kp_right": 24.8,
+    "ki_right": 1.62,
+    "target": 200,
+    "fan_command_percent": 30,
+    "response": {
+      "status": "complete_pulse",
+      "feedback": "encL",
+      "target": 200,
+      "sample_dt_ms": 2,
+      "feedback_reached_90pct": true,
+      "fall_measurable_from_90pct": true,
+      "rise_10_to_90_ms": 72,
+      "peak_feedback": 222,
+      "peak_delay_ms": 170,
+      "overshoot_pct": 11.0,
+      "settling_5pct_ms": 874,
+      "plateau_last_200ms_error_pct": -0.245,
+      "plateau_last_200ms_peak_to_peak_pct": 10.5,
+      "plateau_tail_window_ms": 200,
+      "fall_90_to_10_ms": 80,
+      "return_to_zero_5pct_ms": 138,
+      "return_reverse_peak_pct": 6.0,
+      "baseline_feedback_mean": 0.0
+    },
+    "max_abs_pwm_command": 3886,
+    "capture_sha256": "ebeae21ebc5853b61346451a737928500c31b12e22d948cee1a8043e08b147eb",
+    "source_ref": "export-20261109-165205/capture.metrics.json",
+    "complete_capture_confirmed_by_root": true,
+    "watch_validation_passed_initially": false,
+    "explicit_root_ack": true,
+    "feedback_scope": "Firmware-conditioned wheel feedback, not independently measured raw shaft speed."
+  },
+  "comparison": {
+    "scope": "Sequential single complete records atKp20,target200,fan command30; physical state not controlled.",
+    "baseline_ki1_00": {
+      "overshoot_percent": 8,
+      "rise_ms": 18,
+      "settling5_ms": 384,
+      "return_ms": 110,
+      "total_iae": 16.44
+    },
+    "trial_ki0_90": {
+      "overshoot_percent": 11,
+      "rise_ms": 72,
+      "settling5_ms": 874,
+      "return_ms": 138,
+      "total_iae": 17.67
+    },
+    "iae_basis": "Nominal2ms integration over the same1.5-second active plus return window; aggregate counts-per2ms times seconds, not distance.",
+    "conclusion": "Do not adoptKi0.90 as an improvement from this result; restoreKi1.00 for a same-battery repeat. No universal optimum or causal claim.",
+    "root_plot_review_completed": true,
+    "trial14_repeat_ki1_00": {
+      "overshoot_percent": 10,
+      "rise_ms": 16,
+      "settling5_ms": null,
+      "return_ms": 144,
+      "max_abs_pwm_command": 3941
+    },
+    "repeatability_note": "Repeat atKi1.00 had no qualifying5%settling window and return144ms; the earlier favorableKi1.00 result is not a universal stability guarantee."
+  },
+  "next_step": {
+    "kp_left": 20,
+    "ki_left": 1.1,
+    "target": 200,
+    "fan_command_percent": 30,
+    "status": "Planned next candidate after this cutoff; not counted as applied or tested here.",
+    "restoration_verified": null,
+    "written_by_cutoff": false,
+    "trial_completed": false
+  },
+  "activity": {
+    "scope": "After main cutoff through trial14 complete postprocessing; six local command receipts.",
+    "commands": {
+      "P": 9,
+      "C": 2,
+      "T": 1,
+      "F": 1,
+      "K": 2
+    },
+    "queries": 11,
+    "parameter_writes": 4,
+    "physical_trials_completed": 2,
+    "new_complete_records_analyzed": 2,
+    "firmware_flashes": 0,
+    "remote_starts": 0,
+    "trial14_started_by_cutoff": true,
+    "receipt_evidence": [
+      {
+        "source_ref": "configure-20261109-164843/receipt.json",
+        "at": "2026-11-09T16:48:51.0536800+08:00",
+        "sha256": "7193d9601478d16132cf1d8e8a493b75cb909f6ebd64e5f18afdfb411456f5ea",
+        "parameter_writes": 0,
+        "remote_launches": 0
+      },
+      {
+        "source_ref": "configure-20261109-164908/receipt.json",
+        "at": "2026-11-09T16:49:22.6723595+08:00",
+        "sha256": "acccb154fb5a23a25808f8600a11d4d28bd4ad60c71928a9743de0930cf4d5dd",
+        "parameter_writes": 2,
+        "remote_launches": 0
+      },
+      {
+        "source_ref": "gains-20261109-164943/receipt.json",
+        "at": "2026-11-09T16:49:56.0212031+08:00",
+        "sha256": "d174f453eee8309d6f7aea793e80a1fad1131cadb152e6304e7f06fd64140e40",
+        "parameter_writes": 1,
+        "remote_launches": 0
+      },
+      {
+        "source_ref": "gains-20261109-165344/receipt.json",
+        "at": "2026-11-09T16:53:56.9100630+08:00",
+        "sha256": "b475460f7b22d8ac4ad48265b9bd2e7b2c148974255bd9310c3b7471cc7031e3",
+        "parameter_writes": 1,
+        "remote_launches": 0
+      },
+      {
+        "source_ref": "export-20261109-165205/receipt.json",
+        "at": "2026-11-09T16:52:16.1925795+08:00",
+        "sha256": "f92125caf909f4564d8a3a4afecc23c6d233be5c4bac4d3c34c8e63c5b61ffee",
+        "parameter_writes": 0,
+        "remote_launches": 0
+      },
+      {
+        "source_ref": "export-20261109-165634/receipt.json",
+        "at": "2026-11-09T16:56:44.4208846+08:00",
+        "sha256": "c4cb8d68ae34b3d782e6f6d416442a36577e835068dbe5efff49d992922e0dd7",
+        "parameter_writes": 0,
+        "remote_launches": 0
+      }
+    ],
+    "same_round_including_main_cutoff": {
+      "P": 11,
+      "C": 2,
+      "T": 1,
+      "F": 1,
+      "K": 3,
+      "queries": 13,
+      "parameter_writes": 5,
+      "physical_trials_completed": 2
+    },
+    "aggregation_note": "Main report P2/K1 and zero runs; appendix P9/C2/T1/F1/K2, two completed physical records. NextKi1.10 plan is outside cutoff."
+  },
+  "fix_validation": {
+    "status": "completed_native_fixture_validation",
+    "final_tests_passed": 12,
+    "negative_cases": 8,
+    "test_seconds": 1.191,
+    "test_actor": "native worker per coordinator",
+    "root_implementation_review_completed": true,
+    "watch_export_sha256": "51865d99a54758d31055eb5ddfbe86e00c3a7d6f849ffcbd0b9f7586fe8c428c",
+    "test_sha256": "20005b92309f88963b96231a8ecd4f8b2b36870ed1bdf437bcda9ab87b9c2310",
+    "original_failed_receipt_preserved": true,
+    "root_explicit_ack": {
+      "id": "981d2c8212f848423944fbfc",
+      "at_local": "16:53:11"
+    },
+    "new_fixed_version_live_capture_proven": true,
+    "fixed_version_live_success_count": 1,
+    "repeated_reliability_proven": false
+  },
+  "coordination": {
+    "handoff_ids": [
+      719,
+      720,
+      721
+    ],
+    "full_body_readback_matches": true,
+    "acknowledged_for_others": false,
+    "member_source": "Current native reviewers only; no Opus or DSH response asserted.",
+    "member_evidence": {
+      "author": "codex native worker",
+      "provenance": "Coordinator supplied native12PASS report and reviewed implementation; source/test hashes independently checked.",
+      "full_elapsed_seconds": null,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "rework": [
+    {
+      "issue": "Root invoked aPowerShell script withPython, producingSyntaxError.",
+      "serial_actions_from_failed_invocation": 0,
+      "status": "Correct interpreter then used."
+    },
+    {
+      "issue": "Same marker conflicted for two other handoff recipients.",
+      "affected_recipients": 2,
+      "status": "Retried with unique recipient markers; full readback succeeded."
+    },
+    {
+      "issue": "Watch validation rejected fragmented wrapper line although complete capture was present.",
+      "status": "Root explicit ack preserved; native fix12PASS including8 negatives, reviewed by root; fresh fixed-version live capture pending."
+    }
+  ],
+  "remaining": [
+    "Next20/1.10 candidate is planned outside cutoff, not validated here.",
+    "One fixed-version live save/ack/analyze success is not repeated reliability proof.",
+    "Right-wheel,yaw and full-vehicle acceptance remain incomplete;T101 remains active."
+  ],
+  "source_artifacts": [
+    {
+      "source_ref": "export-20261109-165205/capture.metrics.json",
+      "sha256": "1815cd69d8598149678198fada0d18614307c52eae92fe04817a618d218bd409"
+    },
+    {
+      "source_ref": "watch_export.py",
+      "sha256": "51865d99a54758d31055eb5ddfbe86e00c3a7d6f849ffcbd0b9f7586fe8c428c",
+      "content_uploaded": false
+    },
+    {
+      "source_ref": "test_watch_export.py",
+      "sha256": "20005b92309f88963b96231a8ecd4f8b2b36870ed1bdf437bcda9ab87b9c2310",
+      "content_uploaded": false
+    },
+    {
+      "source_ref": "left200-ab/ki10-vs09.json",
+      "sha256": "cf4bb164b4981b19782743e5b7ad83d1a627e2d092ca925bb7746e59a7fb0488",
+      "content_uploaded": false
+    },
+    {
+      "source_ref": "left200-ab/ki10-vs09.png",
+      "sha256": "60e2109964d114804f340ebddbbcd24ab852020920c3593b8a9caa6cce9eefa7",
+      "content_uploaded": false
+    },
+    {
+      "source_ref": "export-20261109-165634/capture.metrics.json",
+      "sha256": "6f6e0f493140f18f4a45bd9f0167192459723196246f75e96f07fa27705ba275",
+      "content_uploaded": false
+    },
+    {
+      "source_ref": "export-20261109-165634/capture.postprocess.json",
+      "sha256": "76f72ca98437c1029ad15ae9d8e3d64ebc375cd76511e541953276796e53a074",
+      "content_uploaded": false
+    },
+    {
+      "source_ref": "left-kp20-ki100-target200-14-repeat/auto-export.stdout.json",
+      "sha256": "6f3a9a089fe053ef1b104f6fb6513c9a5f0780e7a4e837b6fdc98cf873b377e8",
+      "content_uploaded": false
+    }
+  ],
+  "tokens": null,
+  "cost": null,
+  "human_wait_seconds": null,
+  "coordination_wait_seconds": null,
+  "full_operation_elapsed_seconds": null,
+  "speedup_claim": false,
+  "continuation_cutoff_basis": "Actual filesystem write timestamp of trial14 capture.postprocess.json, after complete automatic analysis. It is artifact completion time, not a reconstructed stopwatch measurement.",
+  "trial14": {
+    "kind": "real_physical_left_wheel_same_battery_repeat",
+    "samples": 1000,
+    "kp_left": 20,
+    "ki_left": 1.0,
+    "target": 200,
+    "fan_command_percent": 30,
+    "stop_code": 20,
+    "response": {
+      "status": "complete_pulse",
+      "feedback": "encL",
+      "target": 200,
+      "sample_dt_ms": 2,
+      "feedback_reached_90pct": true,
+      "fall_measurable_from_90pct": true,
+      "rise_10_to_90_ms": 16,
+      "peak_feedback": 220,
+      "peak_delay_ms": 128,
+      "overshoot_pct": 10.0,
+      "settling_5pct_ms": null,
+      "plateau_last_200ms_error_pct": -0.325,
+      "plateau_last_200ms_peak_to_peak_pct": 10.0,
+      "plateau_tail_window_ms": 200,
+      "fall_90_to_10_ms": 84,
+      "return_to_zero_5pct_ms": 144,
+      "return_reverse_peak_pct": 7.0,
+      "baseline_feedback_mean": 0.0
+    },
+    "max_abs_pwm_command": 3941,
+    "capture_sha256": "e8109c50ec6c3c661c4ed12499b627619f9c462c37e3c9f30cf57b14187f0690",
+    "source_ref": "export-20261109-165634/capture.metrics.json",
+    "automatic_export": true,
+    "automatic_ack": true,
+    "automatic_analysis": {
+      "state": "complete",
+      "seconds": 0.75,
+      "csv_rows": 1000
+    },
+    "recovered_fragment_headers": 1,
+    "complete_status_rows": 29,
+    "association_limit": "Guarded host chronology, no device-provided shared run ID; not proof between sampled telemetry."
+  }
+}
+
