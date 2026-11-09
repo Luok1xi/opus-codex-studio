@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-unified-core",
+  "source_project": "CRAZY-CIRCUIT",
+  "task_id": 103,
+  "scope": "Authorized offline simulation and target compilation achieved; physical/system validation remains unverified.",
+  "measurement_cutoff_at": "2026-11-09T17:43:48Z",
+  "provenance": "Archive helper read aggregate acceptance/build/test JSON and compared frozen host/target manifests; remaining clearly labeled outcomes are coordinator reports.",
+  "acceptance": {
+    "engines": [
+      "csim",
+      "pybullet"
+    ],
+    "conditions": [
+      "nominal",
+      "left",
+      "right",
+      "weaker"
+    ],
+    "repeats": 3,
+    "jobs": 24,
+    "completed": 24,
+    "strict_50mm_passed": 12,
+    "historical_55mm_reference_passed": 24,
+    "user_revised_goal": "approximately 50 mm",
+    "all_repeats_identical": true,
+    "frozen_input_drift": 0,
+    "batch_wall_seconds": 79.18726407,
+    "config_sha256": "d69e9a7974b5a7081eecd8d89862e72cb71cc9059c770813e373dde4bd1a4d11",
+    "source_manifest_sha256": "1383b01c09633313f9f638d5db463abddc8eeffaacc69eb29795217d8009a3c6",
+    "maximum_lateral_mm": {
+      "csim": [
+        50.7093,
+        51.2042
+      ],
+      "pybullet": [
+        45.5555,
+        46.3801
+      ]
+    },
+    "post_zero_output_window_ms": 500,
+    "post_zero_output_travel_mm": [
+      298.7611424305316,
+      394.99402899080445
+    ]
+  },
+  "target_build": {
+    "toolchain": "ADS TASKING v1.1r8 Build 22011964",
+    "cpu": "tc26xb",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 39,
+    "warning_breakdown_coordinator_report": {
+      "vendor": 36,
+      "implicit_float": 3
+    },
+    "elapsed_seconds": 13.124,
+    "rom_bytes": 384123,
+    "ram_bytes": 138232,
+    "shared_core_sources": 6,
+    "host_target_manifest_hash_matches": 6,
+    "all_core_sources_compiled": true,
+    "core_unchanged_during_build": true,
+    "elf_sha256": "0349563b26455483b283be3770a9cad905a657e4b5389d64f3ff4895c26b8149",
+    "target_execution_event_parity": "not verified",
+    "target_execution_timing_hil": "not verified"
+  },
+  "tests": {
+    "config": {
+      "passed": 7,
+      "source": "coordinator report"
+    },
+    "car_safety": {
+      "passed": 55,
+      "failures": 0,
+      "source": "aggregate JSON; real shared core on host with mocked inputs"
+    },
+    "platform_contract": {
+      "passed": 37,
+      "failures": 0,
+      "source": "aggregate JSON; actual platform source with fake BSP, not HIL"
+    },
+    "route_vision_and_sanitizers": {
+      "passed": true,
+      "count": null,
+      "source": "coordinator report"
+    }
+  },
+  "coordination": {
+    "native_implementation_children": 3,
+    "native_archive_helpers": 1,
+    "external_opus_or_deepseek_reply_claim": false,
+    "known_correction_rounds_after_initial_lap_failure": 3,
+    "total_iterations": null,
+    "redundant_repeat2": "completed; 4 summary files observed",
+    "redundant_repeat3": "coordinator terminated; no final summary files observed",
+    "duplicated_runtime_seconds": null,
+    "artifact_directory_names_are_not_iteration_counts": true
+  },
+  "experience": {
+    "refs": [
+      "R132"
+    ],
+    "package": "1dd1198b",
+    "adoption": "coordinator reports separation of plant and camera/control parameters; no physical transfer claim"
+  },
+  "hardware_actions": {
+    "serial_accesses": 0,
+    "flashes": 0,
+    "remote_starts": 0
+  },
+  "aggregate_evidence_hashes": [
+    {
+      "file": "acceptance-summary.json",
+      "sha256": "59322a55af60c913e9bd366de01466ad2a256ffb042536749c21e42ee4769b35"
+    },
+    {
+      "file": "target-result.json",
+      "sha256": "4d1fa3dcbe9c82bf98508c131d5221858222eafcb462718258737336aa2e17de"
+    },
+    {
+      "file": "car-safety.json",
+      "sha256": "f2af43edf42056e0974c03a50a2d110426acd021d37676044040430695d021aa"
+    },
+    {
+      "file": "platform-contract.json",
+      "sha256": "98d60d0dc3aaacef48e429f384181cfed433c8ff6a819d5d7dc1422817cdc498"
+    }
+  ],
+  "usage": null,
+  "cost": null,
+  "matched_quality_baseline": null,
+  "speedup_claim": false,
+  "archive_timer_started_at": "2026-11-09T17:40:29Z",
+  "upload_whitelist": [
+    "review.json",
+    "review.md",
+    "evidence.json"
+  ]
+}
