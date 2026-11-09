@@ -1,0 +1,86 @@
+{
+  "round_id": "2026-11-09-local-search",
+  "kind": "post-cutoff-continuation-not-new-review",
+  "cutoff": "2026-11-09T17:06:41.2230957+08:00",
+  "previous_cutoff": "2026-11-09T16:56:45.235147+08:00",
+  "quality": "partial",
+  "completed": {
+    "trial15": true,
+    "params": {
+      "kpL": 20,
+      "kiL": 1.1,
+      "target": 200,
+      "fan_percent": 30
+    },
+    "samples": 1000,
+    "capture_sha256": "10945fca32ca87eeb52b20d61a48140f9f612afb33465d58a00e74dc2979bb29",
+    "rise_ms": 28,
+    "overshoot_pct": 12,
+    "return_ms": 122,
+    "total_iae": 15.92,
+    "tail_rms": 3.53,
+    "independent_check": "981 intact samples from damaged first transfer match the reread exactly; header and queried gains agree;28 complete reread statuses parked without clock rollback",
+    "manual_association": "6d8f936c7767b2f658580e39; no common device run ID"
+  },
+  "comparison": {
+    "ki1_repeat": {
+      "rise_ms": 16,
+      "overshoot_pct": 10,
+      "return_ms": 144,
+      "total_iae": 16.344,
+      "tail_rms": 4.23
+    },
+    "decision": "Ki1.1 improves steady-state and return measures but increases startup overshoot. Keep20/1.0 as startup reference; trial16 Kp22/Ki1.0 prepared, untested at cutoff.",
+    "limits": "Sequential single-wheel tests, changing battery/load not controlled. Nominal2ms firmware-conditioned feedback, not raw shaft measurements. No optimum or full-vehicle acceptance."
+  },
+  "rework": [
+    {
+      "issue": "Initial gain final reply absent",
+      "result": "Same gain retried and read back; no launch"
+    },
+    {
+      "issue": "First capture lost701 bytes spanning19 incomplete samples",
+      "result": "Original preserved; reread onboard buffer without rerun recovered all1000; no interpolation"
+    },
+    {
+      "issue": "Automatic status validation rejected damaged header",
+      "result": "Failed receipt preserved; no new parser relaxation; host automation is not yet robust across wireless damage"
+    }
+  ],
+  "activity": {
+    "commands": {
+      "P": 8,
+      "C": 2,
+      "K": 3
+    },
+    "queries": 10,
+    "parameter_writes": 3,
+    "physical_runs": 1,
+    "complete_physical_records": 1,
+    "exports": 2,
+    "remote_starts": 0,
+    "flashes": 0
+  },
+  "next": {
+    "kpL": 22,
+    "kiL": 1,
+    "target": 200,
+    "fan_percent": 30,
+    "readback_confirmed": true,
+    "recording_ready": true,
+    "run_completed": false
+  },
+  "coordination": {
+    "native_data_review": true,
+    "native_integrity_review": true,
+    "external_opus_response": false
+  },
+  "improvement": {
+    "proposal": "Add bounded read-only capture retries and transport framing with explicit completeness checks; never interpolate missing rows or rerun wheels automatically.",
+    "status": "proposed"
+  },
+  "usage": null,
+  "cost": null,
+  "matched_baseline": null,
+  "speedup_claim": false
+}
