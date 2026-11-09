@@ -4,7 +4,7 @@
   "task_summary": "Read current car data after identical gear replacement and determine whether retuning is justified.",
   "workflow_version": "WORKFLOW_REVIEW.md",
   "started_at": "2026-11-09T11:28:41.996112+08:00",
-  "measurement_cutoff_at": "2026-11-09T03:36:13.858500+00:00",
+  "measurement_cutoff_at": "2026-11-09T03:43:44.528657+00:00",
   "quality": {
     "status": "partial",
     "acceptance": [
@@ -16,25 +16,26 @@
       "Verified the latest rollback flash log and matching historical binary hash; kept runtime readback unverified.",
       "Preserved three bounded serial read attempts and separated missing live run data from prior physical evidence.",
       "Incorporated owner confirmation of identical replacement gears without assuming a changed gear ratio.",
-      "Reused an existing parallel source review rather than duplicating its simulation or changing its workspace."
+      "Reused an existing parallel source review rather than duplicating its simulation or changing its workspace.",
+      "After owner confirmed stopped and powered state, attempted a bounded read-only onboard export twice and preserved its zero-byte result."
     ],
     "remaining": [
-      "Current post-rollback run is not exported; parked confirmation and a functioning link are pending.",
+      "Current onboard run remains unexported; wired connection was requested because wireless returned no data.",
       "Mechanical cause and any required control-gain changes remain unmeasured."
     ]
   },
   "metrics": [
     {
       "name": "elapsed_including_owner_wait",
-      "value": 451.862388,
+      "value": 902.532545,
       "unit": "seconds",
       "basis": "Start to cutoff; includes waiting for factual parked confirmation"
     },
     {
       "name": "serial_read_windows",
-      "value": 3,
+      "value": 4,
       "unit": "windows",
-      "basis": "Saved receipts: passive, profile query, passive recheck"
+      "basis": "Previous three windows plus one35second onboard-export window"
     },
     {
       "name": "read_only_profile_queries",
@@ -95,12 +96,19 @@
       "value": null,
       "unit": "seconds",
       "basis": "Not separately timed; archive receipt records upload elapsed"
+    },
+    {
+      "name": "read_only_onboard_export_requests",
+      "value": 2,
+      "unit": "queries",
+      "basis": "Initial #S plus one retry after7seconds without received bytes; no settings changed"
     }
   ],
   "observations": [
     "The owner clarified identical gears; the initial possible ratio-change hypothesis was narrowed, not treated as a fact.",
     "A rollback flash log was located despite no standard JSON receipt; matching artifacts were hashed.",
-    "The serial port opened, but one short packet and unanswered query did not establish a live dynamic record."
+    "The serial port opened, but one short packet and unanswered query did not establish a live dynamic record.",
+    "Owner confirmed parked state, but the complete35second export window returned zero bytes. The next dependency is a physical wired data path, not permission to flash."
   ],
   "recommendations": [
     {

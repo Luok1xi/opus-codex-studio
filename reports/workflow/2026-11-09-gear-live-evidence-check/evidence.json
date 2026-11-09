@@ -2,17 +2,21 @@
   "identical_replacement_gear_owner_confirmed": true,
   "latest_flash_verified": true,
   "runtime_identity_verified": false,
-  "serial_windows": 3,
+  "serial_windows": 4,
   "bytes_by_window": [
     10,
     0,
+    0,
     0
   ],
-  "read_only_queries": 1,
+  "read_only_queries": 3,
   "complete_current_runs": 0,
   "gear_ratio_change_proven": false,
   "parameter_changes": 0,
   "flash_actions": 0,
   "remote_launches": 0,
-  "raw_project_data_uploaded": false
+  "raw_project_data_uploaded": false,
+  "owner_parked_confirmed": true,
+  "onboard_export_bytes": 0,
+  "wired_connection_pending": true
 }
