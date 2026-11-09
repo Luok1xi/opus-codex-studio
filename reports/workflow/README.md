@@ -14,3 +14,5 @@ Owner 要求自 2026-10-18 起执行。每轮一份可读报告和结构化数�
 原始聊天/推理、会话日志、凭据和完整项目源码不进入本目录。`null`为未知，不能解释为零。token数为调用累计处理量，缓存输入是其子集，不代表实付账单。
 
 | [2026-11-09 只读调参学习复核](2026-11-09-readonly-tuning-learning/review.md) | 学习任务验收完成，媒体和历史覆盖有限；无同条件基线，不宣称提效 | [JSON](2026-11-09-readonly-tuning-learning/review.json)、[脱敏聚合证据](2026-11-09-readonly-tuning-learning/evidence.json) |
+
+| [2026-11-10 网站调参与详细速度波形](2026-11-10-web-speed-tuning/review.md) | 本机构建、52 项检查和 14 项页面流程通过；实车无线收发待确认；无同条件基线 | [JSON](2026-11-10-web-speed-tuning/review.json)、[脱敏证据](2026-11-10-web-speed-tuning/evidence.json) |
