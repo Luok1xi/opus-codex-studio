@@ -1,0 +1,79 @@
+{
+  "comparison": null,
+  "round_id": "2026-11-10-school-tune-handoff",
+  "task_summary": "Verify existing vision and route integration and repair the parked tuning-to-race transition in an isolated candidate.",
+  "observations": [
+    "Latest tuning capture identity differed from an older deployment entry. Route-specific compatibility made the school-map branch a smaller base than the tuning branch."
+  ],
+  "limits": [
+    "No matching workflow baseline",
+    "No new full-lap simulation or hardware test"
+  ],
+  "recommendations": [
+    {
+      "action": "Check latest recorded firmware identity and exercise the tune-to-race transition against the intended map before deployment.",
+      "next_check": "Read back planned mode, route count, cruise and final gains.",
+      "status": "proposed",
+      "id": "WF-20261110-TUNE-RACE-SOURCE-MATCH",
+      "owner": "codex"
+    }
+  ],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "quality": {
+    "acceptance": [
+      "Existing vision and map logic preserved; race mode restores previous cruise and keeps gains; clean target build"
+    ],
+    "status": "passed",
+    "completed": [
+      "Host extracted production transaction and route-init regression passed",
+      "Clean TC264 build succeeded; compared 688 baseline files"
+    ],
+    "remaining": []
+  },
+  "measurement_cutoff_at": "2026-11-10T02:36:36.7863235+08:00",
+  "schema_version": 1,
+  "evidence": [
+    "Host route and mode transaction passed",
+    "Clean target build 0 errors, 14 warnings",
+    "Source identity comparison: three files changed including build metadata"
+  ],
+  "metrics": [
+    {
+      "name": "Actual tokens",
+      "unit": "tokens",
+      "value": null,
+      "basis": "Unavailable"
+    },
+    {
+      "name": "Round time",
+      "unit": "seconds",
+      "value": null,
+      "basis": "Not metered"
+    },
+    {
+      "name": "Native reviewers",
+      "unit": "agents",
+      "value": 2,
+      "basis": "Read-only checks in parallel"
+    },
+    {
+      "name": "Vehicle operations",
+      "unit": "operations",
+      "value": 0,
+      "basis": "No serial or flashing"
+    },
+    {
+      "name": "Test fixture rework",
+      "unit": "attempts",
+      "value": 1,
+      "basis": "Signedness of test stubs corrected"
+    },
+    {
+      "name": "Review overhead",
+      "unit": "seconds",
+      "value": null,
+      "basis": "Not timed separately"
+    }
+  ],
+  "started_at": null
+}
