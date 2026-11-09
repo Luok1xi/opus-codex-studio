@@ -1,0 +1,147 @@
+{
+  "round_id": "2026-11-09-local-search",
+  "continuation": "yaw-through11-offline-review",
+  "status": "in_progress",
+  "stage_closed": false,
+  "snapshot_cutoff_at": "2026-11-09T18:59:43.103076+08:00",
+  "final_task_cutoff": null,
+  "previous_increment_ref": "after-snapshot-yaw-through10-ready11.json",
+  "previous_file_preserved": true,
+  "trial10_summary": {
+    "yaw_kp": 0.15,
+    "yaw_ki": 0.003,
+    "target_dps": 200,
+    "peak_dps": 287.1,
+    "fixed_rms_dps": 32.13,
+    "fixed_within_10pct_percent": 38.29,
+    "accepted": false,
+    "capture_sha256": "05954ed12f39f633651bedd9e9e9540a67413664f624f7351317b64ebf08c6eb"
+  },
+  "trial11": {
+    "metrics_ref": "export-20261109-185650/capture.metrics.json",
+    "capture_sha256": "907bccb5c5a5b0be86dfd79598da7518bd04e81fa2802f3d5a693c90d4b5fed5",
+    "samples": 1000,
+    "yaw_kp": 0.18,
+    "yaw_ki": 0.002,
+    "target_dps": 90,
+    "fan_percent": 30,
+    "peak_dps": 209.8,
+    "overshoot_percent": 133.1111,
+    "tail_p2p_dps": 168.2,
+    "rise_ms": 22,
+    "settling_ms": null,
+    "return_ms": null,
+    "accepted": false
+  },
+  "capture_recovery": {
+    "automatic_version": "v2d",
+    "first_live_succeeded": false,
+    "failed_receipt": "yaw-left-kp0180-ki0002-target90-11/host-v2-20261109-185629-c70a3a/attempt-01/receipt.json",
+    "failed_attempt_commands": "P only; noC",
+    "recovery_receipt": "export-20261109-185650/receipt.json",
+    "recovery_commands": "P/C",
+    "complete_cache_recovered": true,
+    "manual_validation_ref": "export-20261109-185650/manual-validation.json",
+    "complete_parked_statuses": 28,
+    "metadata_match_and_advancing_clock": true,
+    "ack_saved": true,
+    "ack_at": "2026-11-09T10:58:08.273322+00:00",
+    "limit": "User completion and kept power plus matching metadata/advancing stopped clock support association; observation gaps and no firmware runID remain."
+  },
+  "v2d_validation": {
+    "offline_groups_passed": 22,
+    "manifest_sha256": "ace58c8ac3ef04fa6149ae4113a2fad21e024dd2fb362e80552228bc3bed5f6b",
+    "manifest_files": 14,
+    "live_reliability_proven": false,
+    "firmware_changed": false,
+    "note": "Offline prefix repair and yaw summary skip do not imply successful live capture; failed guard preserved."
+  },
+  "runtime_at_snapshot": {
+    "yaw_kp": 0.18,
+    "yaw_ki": 0.002,
+    "target_dps": 90,
+    "fan_percent": 30,
+    "wheel_kp_both": 19.5,
+    "wheel_ki_both": 1,
+    "state": "Parked; collector closed, perroot coordinator.",
+    "accepted": false
+  },
+  "next_work": {
+    "mode": "Offline review only",
+    "candidate_topics": [
+      "Assess gyro filter window10to3 and other control-structure changes."
+    ],
+    "source_modified": false,
+    "hex_changed": false,
+    "flashed": false,
+    "physical_trial_authorized_by_this_note": false
+  },
+  "constraints": [
+    "No target20 trials; yaw90/200 only when physical work resumes.",
+    "OwnerS5; complete buffer before next settings; no remote start.",
+    "No10percent acceptance claim.",
+    "EarlierH739/H740/H741runtime replaced by later trials; preserve old evidence."
+  ],
+  "frozen1838snapshot": {
+    "ref": "right-yaw-snapshot-183833.json",
+    "sha256": "987bf0ca3de1317219e203434f823c5190b45270a8e7e8f45994740ca5139d53",
+    "changed": false,
+    "workflow_validation_document": 38,
+    "workflow_archive_document": 39,
+    "contains_trial06onward": false
+  },
+  "operation_counts": null,
+  "tokens": null,
+  "cost": null,
+  "network_calls": 0,
+  "hardware_actions_by_child": 0,
+  "new_review_round": false,
+  "local_preparation": {
+    "first_read_at": "2026-11-09T18:58:55.176294+08:00",
+    "written_at": "2026-11-09T18:59:43.103076+08:00",
+    "wall_seconds": 47.926782
+  },
+  "intermediate_trials": [
+    {
+      "trial": 6,
+      "kp": 0.15,
+      "ki": 0.002,
+      "target": 200,
+      "peak": 237.6,
+      "fixed_rms": 23.31,
+      "fixed_inband_percent": 60,
+      "passed": false
+    },
+    {
+      "trial": 7,
+      "kp": 0.18,
+      "ki": 0.002,
+      "target": 200,
+      "peak": 242.7,
+      "fixed_rms": 20.67,
+      "fixed_inband_percent": 58.57,
+      "passed": false
+    },
+    {
+      "trial": 8,
+      "kp": 0.18,
+      "ki": 0.001,
+      "target": 200,
+      "peak": 228.9,
+      "fixed_rms": 39.93,
+      "fixed_inband_percent": 22.86,
+      "passed": false
+    },
+    {
+      "trial": 9,
+      "kp": 0.1,
+      "ki": 0.002,
+      "target": 200,
+      "peak": 268.3,
+      "fixed_rms": 33.74,
+      "fixed_inband_percent": 36.86,
+      "passed": false
+    }
+  ],
+  "comparison_limits": "Single trials, decreasing battery voltage and changing contact conditions; measured comparisons do not establish a causal optimum. Fixed plateau is300-1000ms after the rising step. No extra analysis smoothing."
+}
