@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-09-vision-route-calibration-plan",
+  "task_summary": "Explain visual and route calibration after wheel/yaw tuning and how to diagnose early turning.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-09T17:13:55+08:00",
+  "measurement_cutoff_at": "2026-11-09T09:15:54.255512+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Separate visual and actuator loops",
+      "Preserve coordinate, controller and safety constraints",
+      "Provide a staged diagnosis for early turns"
+    ],
+    "completed": [
+      "Read current saved OUC sampling and turn-state code alongside project vision/route references.",
+      "Separated actuator inner-loop tuning, image geometry, visual steering and route execution acceptance.",
+      "Defined staged validation that preserves quality limits and does not confuse detecting a corner with turning."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "round_wall",
+      "value": 119.255512,
+      "unit": "seconds",
+      "basis": "First read to local cutoff; exact active and review timing unavailable"
+    },
+    {
+      "name": "vehicle_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "Read-only design clarification; no serial access"
+    },
+    {
+      "name": "code_changes",
+      "value": 0,
+      "unit": "changes",
+      "basis": "No implementation requested in this phase"
+    },
+    {
+      "name": "external_model_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No dispatch"
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Unavailable"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured"
+    }
+  ],
+  "observations": [
+    "The visual outer loop depends on image geometry and cannot be treated as fully tuned before visual calibration.",
+    "Both preview contamination and premature state-machine triggers can appear as early turning.",
+    "Finite-radius turning requires a measured lead distance, so forcing turn onset exactly at a map vertex is not a valid universal fix."
+  ],
+  "recommendations": [
+    {
+      "id": "VISION-ROUTE-STATE-POSITION",
+      "action": "Record physical reference, frame evidence, controller state, target yaw and observed yaw together for single-corner acceptance before full laps.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "On the next authorized segment, identify which transition deviates before changing thresholds."
+    }
+  ],
+  "evidence": [
+    "Saved OUC weighted-row implementation",
+    "Saved route admission, direct trigger and fallback source",
+    "Previously confirmed outgoing-lane recovery failure",
+    "Existing image geometry and route strategy references"
+  ],
+  "limits": [
+    "No physical validation or new tuning values.",
+    "No current-car firmware or fresh run claim.",
+    "No matched workflow baseline or speedup claim.",
+    "No raw code, private messages, telemetry, images or databases in archive."
+  ],
+  "comparison": null
+}
