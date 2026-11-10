@@ -1,0 +1,75 @@
+{
+  "task_summary": "Separate editable, acknowledged, and measured wheel targets and mark observed target changes on the live plot.",
+  "evidence": [
+    "Targeted frontend checks and real-page mock serial browser results",
+    "Canvas stroke verification, ordinary mode and continuous mode regression"
+  ],
+  "observations": [
+    "A configuration reply has no device timestamp. The rendered marker uses the first status point that carries the new applied target, with the encoder response kept separate.",
+    "Delayed reply and delayed applied-target scenarios distinguish the three visible values in a deterministic browser test."
+  ],
+  "metrics": [
+    {
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable",
+      "name": "Actual model usage"
+    },
+    {
+      "value": 1,
+      "unit": "review",
+      "basis": "Read-only comparison of reply semantics and timed wheel feedback",
+      "name": "Independent reviews"
+    },
+    {
+      "value": 3,
+      "unit": "scenarios",
+      "basis": "New delayed-reply plot check and two existing controls regressions",
+      "name": "Browser scenarios passed"
+    },
+    {
+      "value": 0,
+      "unit": "retries",
+      "basis": "All three passed on first execution",
+      "name": "Browser scenario retries"
+    },
+    {
+      "value": 0,
+      "unit": "operations",
+      "basis": "Mock serial and source only",
+      "name": "Physical operations"
+    },
+    {
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately metered",
+      "name": "Coordination and review overhead"
+    }
+  ],
+  "quality": {
+    "acceptance": [
+      "Keep drafts separate from paired configuration readback and encoder feedback",
+      "Draw a marker from device-timed status when the selected wheels first report the new target",
+      "Keep existing timed and continuous mode interactions functional"
+    ],
+    "remaining": [],
+    "status": "passed",
+    "completed": [
+      "42 scoped tests, targeted lint and rebuilt site",
+      "Three served-page simulated serial scenarios passed",
+      "Canvas verified only after status shows target change and not on parked or repeated settings"
+    ]
+  },
+  "started_at": "2026-11-10T12:53:19+08:00",
+  "round_id": "2026-11-10-live-target-feedback",
+  "measurement_cutoff_at": "2026-11-10T12:57:52.0584518+08:00",
+  "limits": [
+    "Current physical device behavior was not measured",
+    "Marker resolution is limited by serial status sampling",
+    "No matched workflow baseline"
+  ],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "schema_version": 1,
+  "recommendations": [],
+  "comparison": null
+}
