@@ -1,0 +1,65 @@
+{
+  "quality": {
+    "completed": [
+      "Checked bounded shared ledger and recent artifact paths",
+      "Separated a known local candidate from the requested artifact"
+    ],
+    "acceptance": [
+      "Identify candidate source and build identity, then perform source review"
+    ],
+    "status": "partial",
+    "remaining": [
+      "Need source or handoff pointer for requested artifact"
+    ]
+  },
+  "observations": [
+    "Latest shared authorship entry is a design handoff rather than a firmware release."
+  ],
+  "limits": [
+    "Missing source prevents technical review",
+    "No matched workflow baseline"
+  ],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "task_summary": "Locate the independently authored firmware candidate before reviewing its behavior.",
+  "metrics": [
+    {
+      "unit": "tokens",
+      "name": "Provider usage",
+      "basis": "Unavailable",
+      "value": null
+    },
+    {
+      "unit": "seconds",
+      "name": "Wall time",
+      "basis": "Start not metered",
+      "value": null
+    },
+    {
+      "unit": "operations",
+      "name": "Hardware actions",
+      "basis": "Read-only search",
+      "value": 0
+    },
+    {
+      "unit": "requests",
+      "name": "Coordination",
+      "basis": "Asked for artifact pointer",
+      "value": 1
+    },
+    {
+      "unit": "seconds",
+      "name": "Review overhead",
+      "basis": "Not metered",
+      "value": null
+    }
+  ],
+  "round_id": "2026-11-10-dsh-firmware-review-intake",
+  "comparison": null,
+  "started_at": null,
+  "recommendations": [],
+  "measurement_cutoff_at": "2026-11-10T11:51:49.4710349+08:00",
+  "schema_version": 1,
+  "evidence": [
+    "Project task and handoff inventory and bounded recent filesystem scan"
+  ]
+}
