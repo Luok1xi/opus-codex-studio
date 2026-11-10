@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-ki0001-dsh-check",
+  "task_summary": "Verify applied angular gains and the chart source for a repeated test.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T15:58:18+08:00",
+  "measurement_cutoff_at": "2026-11-10T16:03:04.1447774+08:00",
+  "quality": {
+    "completed": [
+      "Verified three complete records, signed wheel commands and plot field mapping",
+      "Recomputed the phase statistics and visually validated a local comparison chart"
+    ],
+    "status": "passed",
+    "acceptance": [
+      "Verify intended gain encoding and actual saved values",
+      "Check plot field mapping and capture provenance"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "basis": "Provider usage unavailable",
+      "unit": "tokens",
+      "value": null,
+      "name": "Actual model usage"
+    },
+    {
+      "basis": "Read-only capture and plotting check",
+      "unit": "agent",
+      "value": 1,
+      "name": "Independent reviews"
+    },
+    {
+      "basis": "Contiguous indexes and closing markers checked",
+      "unit": "runs",
+      "value": 3,
+      "name": "Complete repetitions audited"
+    },
+    {
+      "basis": "Saved evidence only",
+      "unit": "operations",
+      "value": 0,
+      "name": "Physical operations"
+    },
+    {
+      "basis": "Not separately metered",
+      "unit": "seconds",
+      "value": null,
+      "name": "Coordination and review overhead"
+    }
+  ],
+  "observations": [
+    "The intended command and saved effective settings agree. Receive logs cannot establish who entered a command.",
+    "The current renderer uses the correct feedback field. An independent overlay resolves the scaling and shows that a recurring tracking lag and an isolated spike are distinct observations."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Board code and complete captures reviewed locally",
+    "Existing chart source and independent comparison reviewed locally"
+  ],
+  "comparison": null,
+  "limits": [
+    "No outbound command journal",
+    "No matched workflow baseline"
+  ]
+}
