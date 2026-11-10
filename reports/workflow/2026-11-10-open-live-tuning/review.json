@@ -1,0 +1,75 @@
+{
+  "recommendations": [],
+  "task_summary": "Compare open-source serial tuning tools and document the existing vehicle live-setpoint workflow.",
+  "metrics": [
+    {
+      "name": "Actual model usage",
+      "unit": "tokens",
+      "basis": "No provider usage report",
+      "value": null
+    },
+    {
+      "name": "Research assignments",
+      "unit": "agents",
+      "basis": "Independent serial tools, motor tools, and local implementation",
+      "value": 3
+    },
+    {
+      "name": "Synthesis assignments",
+      "unit": "agent",
+      "basis": "Report writer consumed the three note files",
+      "value": 1
+    },
+    {
+      "name": "Physical operations",
+      "unit": "operations",
+      "basis": "Source and saved evidence only",
+      "value": 0
+    },
+    {
+      "name": "Coordination and review overhead",
+      "unit": "seconds",
+      "basis": "Not separately metered",
+      "value": null
+    },
+    {
+      "name": "Rework",
+      "unit": "retries",
+      "basis": "Research iterations were not separately counted",
+      "value": null
+    }
+  ],
+  "observations": [
+    "Separate checking of serial send capability and vehicle firmware semantics avoided classifying telemetry-only viewers as equivalent to live control.",
+    "Comparisons are stronger when a repository license, the send path, and the readback path are recorded separately."
+  ],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T12:47:17+08:00",
+  "evidence": [
+    "Three focused source notes and one reviewed report",
+    "Official upstream repositories and documentation",
+    "Local frontend and firmware source plus saved flash and build evidence"
+  ],
+  "comparison": null,
+  "round_id": "2026-11-10-open-live-tuning",
+  "limits": [
+    "No matched workflow baseline",
+    "Tools were not installed or tested on the vehicle",
+    "Current physical firmware identity was not queried"
+  ],
+  "measurement_cutoff_at": "2026-11-10T12:51:41.0153665+08:00",
+  "quality": {
+    "completed": [
+      "Checked saved physical evidence, firmware command paths and the current webpage capability checks",
+      "Separated runtime setpoint, parameter readback, and chart sampling across upstream projects",
+      "Delivered a local sourced comparison"
+    ],
+    "acceptance": [
+      "Give an actionable firmware-specific procedure and distinguish wheel target and yaw target",
+      "Compare verified primary sources for command writes, readback, and plotting"
+    ],
+    "remaining": [],
+    "status": "passed"
+  },
+  "schema_version": 1
+}
