@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-gyro-fan-live",
+  "task_summary": "Verify a diagnostic flash, collect repeated stationary hardware measurements, and build the measured calibration.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T16:21:16+08:00",
+  "measurement_cutoff_at": "2026-11-10T16:32:30.7703923+08:00",
+  "quality": {
+    "completed": [
+      "Verified flash and live board identity",
+      "Saved four complete captures with stationary output",
+      "Derived the setting from the saved captures and built an isolated candidate"
+    ],
+    "remaining": [],
+    "acceptance": [
+      "Verify flashed image and runtime identity",
+      "Save and validate repeated radio captures",
+      "Generate a separately identifiable calibrated build"
+    ],
+    "status": "passed"
+  },
+  "metrics": [
+    {
+      "basis": "Provider usage unavailable",
+      "unit": "tokens",
+      "name": "Actual model usage",
+      "value": null
+    },
+    {
+      "basis": "Read-only command path review",
+      "unit": "agent",
+      "name": "Independent reviewers",
+      "value": 1
+    },
+    {
+      "basis": "Program and verification receipt",
+      "unit": "flash",
+      "name": "Verified flashes",
+      "value": 1
+    },
+    {
+      "basis": "Saved board records, each with 1500 contiguous samples",
+      "unit": "runs",
+      "name": "Complete measured repetitions",
+      "value": 4
+    },
+    {
+      "basis": "Four completed runs with physical start required by firmware",
+      "unit": "presses",
+      "name": "Operator start actions",
+      "value": 4
+    },
+    {
+      "basis": "Not separately metered",
+      "unit": "seconds",
+      "name": "Review overhead",
+      "value": null
+    }
+  ],
+  "observations": [
+    "The wired configuration needed pacing and the operator selected radio-only measurement. The radio path was then verified by runtime readback.",
+    "Separating recording from analysis preserved all repeats and the control condition. The physical start requirement led to sequential operator coordination."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Local program verification and device identity receipt",
+    "Four local radio records and isolated compilation receipt"
+  ],
+  "comparison": null,
+  "limits": [
+    "New calibration build compiled but remains unflashed",
+    "No matched workflow baseline"
+  ]
+}
