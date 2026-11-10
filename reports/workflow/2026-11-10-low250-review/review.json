@@ -1,0 +1,65 @@
+{
+  "comparison": null,
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": null,
+  "recommendations": [],
+  "task_summary": "Independently review the identified low-high-low tuning candidate against its predecessor and recorded execution.",
+  "observations": [
+    "Flasher log supplied the artifact path when the build label had no shared handoff. A transport-complete export captured an aborted vehicle run."
+  ],
+  "measurement_cutoff_at": "2026-11-10T11:58:10.8516345+08:00",
+  "schema_version": 1,
+  "round_id": "2026-11-10-low250-review",
+  "quality": {
+    "completed": [
+      "Build identity and two-file source delta checked",
+      "One complete export of an aborted run and stop status analyzed",
+      "Protocol and unintended yaw behavior identified"
+    ],
+    "remaining": [],
+    "acceptance": [
+      "Attribute the exact build and verify source behavior against saved data"
+    ],
+    "status": "passed"
+  },
+  "limits": [
+    "Fault source beyond observed feedback and stop condition remains undetermined",
+    "No matched workflow baseline"
+  ],
+  "evidence": [
+    "Build hash matched local compile receipt",
+    "Source comparison, capture continuity and stop reason cross-checked"
+  ],
+  "metrics": [
+    {
+      "unit": "tokens",
+      "basis": "Not reported",
+      "value": null,
+      "name": "Actual provider usage"
+    },
+    {
+      "unit": "seconds",
+      "basis": "Start not recorded",
+      "value": null,
+      "name": "Wall time"
+    },
+    {
+      "unit": "agents",
+      "basis": "Firmware and trace cross-check",
+      "value": 1,
+      "name": "Independent read-only reviews"
+    },
+    {
+      "unit": "operations",
+      "basis": "Saved trace and source only",
+      "value": 0,
+      "name": "Vehicle operations"
+    },
+    {
+      "unit": "seconds",
+      "basis": "Not measured",
+      "value": null,
+      "name": "Review overhead"
+    }
+  ]
+}
