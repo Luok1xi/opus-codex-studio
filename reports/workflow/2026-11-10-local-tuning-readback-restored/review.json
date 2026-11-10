@@ -1,0 +1,69 @@
+{
+  "limits": [
+    "Private content was kept local",
+    "Electrical and mechanical root causes of residual oscillation remain unconfirmed",
+    "No matched workflow baseline"
+  ],
+  "observations": [
+    "Checking screenshot statistics against each recorded field exposed why the apparent flat measurement conflicted with the actuator targets.",
+    "A cutoff refresh changed the interpretation from a tentative adjustment suggestion to a later measurement inconsistency."
+  ],
+  "task_summary": "Restore user-controlled access, verify the latest tuning guidance, and reconcile it with measured feedback.",
+  "measurement_cutoff_at": "2026-11-10T15:35:27.7410264+08:00",
+  "comparison": null,
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T15:30:36+08:00",
+  "recommendations": [],
+  "quality": {
+    "completed": [
+      "User handled login; authorized local reads succeeded",
+      "Rechecked the cutoff and inspected only the relevant local chart attachments",
+      "Matched screenshot values to the wrong field and recalculated the actual measured response",
+      "Rendered and reviewed an updated comparison plot locally"
+    ],
+    "remaining": [],
+    "acceptance": [
+      "Refresh the selected local conversation after user login and recheck the retrieval cutoff",
+      "Match the shown chart with the actual board recording and separate plotting error from control response"
+    ],
+    "status": "passed"
+  },
+  "evidence": [
+    "Verified local retrieval timestamps and plot comparison",
+    "Independent decoded capture fields and reviewed rendering"
+  ],
+  "schema_version": 1,
+  "round_id": "2026-11-10-local-tuning-readback-restored",
+  "metrics": [
+    {
+      "basis": "Provider usage unavailable",
+      "unit": "tokens",
+      "value": null,
+      "name": "Actual model usage"
+    },
+    {
+      "basis": "First read and two cutoff checks after login",
+      "unit": "snapshots",
+      "value": 3,
+      "name": "Successful conversation snapshots"
+    },
+    {
+      "basis": "Inspected in the selected conversation only",
+      "unit": "images",
+      "value": 4,
+      "name": "Relevant local images reviewed"
+    },
+    {
+      "basis": "Saved capture analysis only",
+      "unit": "operations",
+      "value": 0,
+      "name": "Physical operations"
+    },
+    {
+      "basis": "Not separately metered",
+      "unit": "seconds",
+      "value": null,
+      "name": "Coordination and review overhead"
+    }
+  ]
+}
