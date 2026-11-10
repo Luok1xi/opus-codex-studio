@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-brushed125-nofan",
+  "task_summary": "Prepare, verify and capture a low-speed no-suction trial with a previous vehicle on the current course.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T22:37:59+08:00",
+  "measurement_cutoff_at": "2026-11-10T22:55:31+08:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Separate historical and current routes",
+      "Run an isolated two-engine sensitivity comparison",
+      "Build, verify and read back the selected target",
+      "Capture one physical run"
+    ],
+    "completed": [
+      "Verified the historical controller defaults and incompatible route length",
+      "Completed 12 host runs and verified zero fan output",
+      "Verified one target programming and stationary serial readback",
+      "Captured the first physical run and validated sequential onboard telemetry",
+      "Saved the complete 17-sample first physical launch attempt"
+    ],
+    "remaining": [
+      "The vehicle stopped before commanding motor output, so moving track behavior is still unverified"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Host scenarios",
+      "value": 12,
+      "unit": "runs",
+      "basis": "Three configured limits, two engines and two conditions"
+    },
+    {
+      "name": "Target programming",
+      "value": 1,
+      "unit": "writes",
+      "basis": "Programmer verification and stationary serial readback"
+    },
+    {
+      "name": "Delegated read-only inspections",
+      "value": 1,
+      "unit": "agents",
+      "basis": "Native subagent returned independent hardware and route evidence"
+    },
+    {
+      "name": "Unsuccessful build attempts",
+      "value": 3,
+      "unit": "attempts",
+      "basis": "Source-path assertion, unsupported standalone entry, UI-only extension in headless ADS"
+    },
+    {
+      "name": "Actual model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "name": "Review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured"
+    },
+    {
+      "name": "Physical launch attempts with complete board data",
+      "value": 1,
+      "unit": "attempts",
+      "basis": "17 indexed onboard samples plus the start and stop status"
+    }
+  ],
+  "observations": [
+    "A read-only parallel inspection separated the previously successful old-course image from verified current-course images.",
+    "The target was built from a hash-verified existing baseline. Disabling the UI-dependent build extension in the isolated workspace restored the supported headless build path.",
+    "The current-map speed-and-yaw sweep preserved gain values and checked the actual zero-suction output. Simulation and target stationary verification were recorded separately.",
+    "Startup loss protection ended the physical attempt with no motor output. The available record locates the failure before steering control could be evaluated."
+  ],
+  "recommendations": [],
+  "comparison": null,
+  "limits": [
+    "No matched workflow baseline",
+    "The host grip cases are assumptions rather than measurements of the current surface"
+  ],
+  "evidence": [
+    "Frozen source comparison and successful integrated build",
+    "Programmer verification and stationary identity readback",
+    "Twelve host traces with checked zero suction",
+    "Complete first launch attempt, zero wheel output, stop status"
+  ]
+}
