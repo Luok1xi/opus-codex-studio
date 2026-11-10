@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-angle-tuning-next",
+  "task_summary": "Resolve an operating-point ambiguity and give an evidence-based next controller test.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T21:28:10+08:00",
+  "measurement_cutoff_at": "2026-11-10T21:30:56.6650852+08:00",
+  "quality": {
+    "status": "passed",
+    "remaining": [],
+    "completed": [
+      "Refreshed local context twice",
+      "Independently confirmed target bounds, wheel signs and stop condition",
+      "Specified a bounded forward-motion comparison and a single-parameter sequence"
+    ],
+    "acceptance": [
+      "Verify latest authorized local context",
+      "Trace the current controller test branch and compare saved captures",
+      "Specify the next test without conflating reference and confirmed calibration"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Actual model usage",
+      "value": null,
+      "basis": "Provider usage unavailable",
+      "unit": "tokens"
+    },
+    {
+      "name": "Independent reviewers",
+      "value": 1,
+      "basis": "Source and record review",
+      "unit": "agent"
+    },
+    {
+      "name": "Local context checks",
+      "value": 2,
+      "basis": "Initial and cutoff readbacks",
+      "unit": "reads"
+    },
+    {
+      "name": "Physical operations",
+      "value": 0,
+      "basis": "Read-only diagnosis",
+      "unit": "operations"
+    },
+    {
+      "name": "Review overhead",
+      "value": null,
+      "basis": "Not separately metered",
+      "unit": "seconds"
+    }
+  ],
+  "observations": [
+    "The same displayed firmware name identified different target allocation rules. Comparing actual wheel commands separated an unreachable test range from PI performance.",
+    "Rechecking the local context avoided turning a reference operating point into an unsupported confirmed calibration."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Local context confirmed and retained locally",
+    "Frozen source, historical and current measurements, and flash record checked locally"
+  ],
+  "comparison": null,
+  "limits": [
+    "New operating-point test is proposed",
+    "No matched workflow baseline"
+  ]
+}
