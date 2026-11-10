@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-yaw-severe-shake",
+  "task_summary": "Separate recurring oscillation, intermittent feedback bursts and actuator saturation in saved controller tests.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T20:36:48+08:00",
+  "measurement_cutoff_at": "2026-11-10T20:40:31.7966645+08:00",
+  "quality": {
+    "remaining": [],
+    "status": "passed",
+    "acceptance": [
+      "Validate current run metadata and match frozen source",
+      "Quantify the distinct signatures and their diagnostic limits"
+    ],
+    "completed": [
+      "Recomputed key windows and validated a synchronized comparison chart",
+      "Reviewed controller and acquisition paths independently",
+      "Included a newly saved comparison at the analysis cutoff"
+    ]
+  },
+  "metrics": [
+    {
+      "value": null,
+      "name": "Actual model usage",
+      "basis": "Provider usage unavailable",
+      "unit": "tokens"
+    },
+    {
+      "value": 2,
+      "name": "Independent reviewers",
+      "basis": "Separate firmware and record reviews",
+      "unit": "agents"
+    },
+    {
+      "value": 0,
+      "name": "Physical operations",
+      "basis": "Saved data analysis only",
+      "unit": "operations"
+    },
+    {
+      "value": null,
+      "name": "Coordination and review overhead",
+      "basis": "Not separately metered",
+      "unit": "seconds"
+    }
+  ],
+  "observations": [
+    "The same displayed build name identified two different profiles, so matching the saved profile to frozen source and the flash path prevented a mistaken comparison.",
+    "Comparing constant wheel commands, feedback, and actuator limits separated recurring roughness from a transient spike. A newly saved contrasting record materially affected the diagnostic confidence."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Local controller source, flash receipt and saved captures",
+    "Local synchronized plot and independent cross-check"
+  ],
+  "comparison": null,
+  "limits": [
+    "No new physical diagnostic performed",
+    "Decimated measurements cannot establish raw-signal ordering",
+    "No matched workflow baseline"
+  ]
+}
