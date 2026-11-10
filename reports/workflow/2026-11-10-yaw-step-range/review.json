@@ -1,0 +1,59 @@
+{
+  "measurement_cutoff_at": "2026-11-10T14:18:34.4110407+08:00",
+  "started_at": "2026-11-10T14:15:02+08:00",
+  "task_summary": "Decide the initial angular-rate PI range and acceleration/deceleration test profile from a project handoff.",
+  "comparison": null,
+  "schema_version": 1,
+  "evidence": [
+    "Local handoff, actual phase-generation source, and existing matched historical comparison"
+  ],
+  "recommendations": [],
+  "observations": [
+    "The latest handoff was a local document and its suggested user command did not control the full emitted test profile. Inspecting the phase source prevented a false lower-target assumption.",
+    "The prior yaw results used different wheel gains and fan conditions. They guide the bracket but do not establish an accepted tune."
+  ],
+  "limits": [
+    "The planned angular-rate profile and gains have not been deployed or exercised on the vehicle",
+    "No matched workflow baseline"
+  ],
+  "metrics": [
+    {
+      "unit": "tokens",
+      "name": "Actual model usage",
+      "basis": "Provider usage unavailable",
+      "value": null
+    },
+    {
+      "unit": "agent",
+      "name": "Independent reviews",
+      "basis": "Read-only handoff and historical measurement cross-check",
+      "value": 1
+    },
+    {
+      "unit": "operations",
+      "name": "Physical operations",
+      "basis": "Existing files and source only",
+      "value": 0
+    },
+    {
+      "unit": "seconds",
+      "name": "Coordination and review overhead",
+      "basis": "Not separately metered",
+      "value": null
+    }
+  ],
+  "round_id": "2026-11-10-yaw-step-range",
+  "quality": {
+    "status": "passed",
+    "completed": [
+      "Read and cross-checked the handoff against the current source, latest wheel logs and historical yaw captures",
+      "Recorded a conservative first-run plan and staged search criteria"
+    ],
+    "remaining": [],
+    "acceptance": [
+      "Read the full newest handoff and distinguish wheel PI from yaw PI",
+      "Check the actual firmware profile and historical controls before proposing initial bounds"
+    ]
+  },
+  "workflow_version": "WORKFLOW_REVIEW.md"
+}
