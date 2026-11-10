@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-captain-method-access",
+  "task_summary": "Verify access to the owner-selected local tuning conversation and understand the recorded tuning method.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T02:21:45.674Z",
+  "measurement_cutoff_at": "2026-11-10T02:24:15.026Z",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Verify actual saved text and teaching images",
+      "State retrieval cutoff and current refresh limitations",
+      "Keep private conversation and credentials local"
+    ],
+    "completed": [
+      "Confirmed saved conversation and inspected selected original text plus four teaching images.",
+      "Reused prior task evidence and audited read-only helper with exact contact matching.",
+      "Distinguished readable saved evidence from unavailable live refresh."
+    ],
+    "remaining": [
+      "Fresh live conversation retrieval was unavailable during this round."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "observed_wall",
+      "value": 149.352,
+      "unit": "seconds",
+      "basis": "Timer begins after initial discovery and ends at local report creation; excludes initial discovery and later archival."
+    },
+    {
+      "name": "vehicle_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "No serial access or vehicle command."
+    },
+    {
+      "name": "external_model_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No delegation."
+    },
+    {
+      "name": "images_inspected",
+      "value": 4,
+      "unit": "images",
+      "basis": "Direct local image viewing."
+    },
+    {
+      "name": "usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured."
+    }
+  ],
+  "observations": [
+    "Older memory initially pointed to a different chat service; current project evidence identified the relevant local conversation workflow.",
+    "Live service access failed; saved records remained readable and were labelled with their actual cutoff.",
+    "Two discovery outputs were overbroad and truncated; later reads were bounded to specific files and fields."
+  ],
+  "recommendations": [
+    {
+      "id": "CHAT-ACCESS-PROJECT-FIRST-20261110",
+      "action": "Resolve the contact and current service from bounded project evidence before probing an older remembered chat service; bound directory and inbox output.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "Next authorized contact retrieval should identify the correct service without unrelated probes or truncated discovery output."
+    }
+  ],
+  "evidence": [
+    "Local access summary and saved-snapshot metadata inspected",
+    "Four teaching images inspected locally",
+    "Exact-target read-only helper self-check passed",
+    "Live refresh returned an access failure"
+  ],
+  "limits": [
+    "No claim of complete server history or current live synchronization.",
+    "No vehicle tuning or firmware verification performed.",
+    "Raw chat, names, identifiers, images, credentials and databases excluded from upload.",
+    "No matched quality baseline; no speedup claim."
+  ],
+  "comparison": null
+}
