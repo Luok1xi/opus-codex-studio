@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-brushed125-dsh-frame",
+  "task_summary": "Use existing real camera captures and the measured height to separate launch failure from first-corner recognition.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T23:17:37+08:00",
+  "measurement_cutoff_at": "2026-11-10T23:22:15+08:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Validate archived raw payloads",
+      "Compare both calibrated-height assumptions in the frozen matcher",
+      "Replay the reported pre-corner view separately from the verified launch view"
+    ],
+    "completed": [
+      "Verified four complete recorded camera payloads",
+      "Reproduced the historical launch rejection in identical navigation sources",
+      "Applied the reported distance at plausible map poses and independently replayed the original image-line branch"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Validated historical camera payloads",
+      "value": 4,
+      "unit": "frames",
+      "basis": "Header, full payload, terminator and local hash"
+    },
+    {
+      "name": "Synthetic controls",
+      "value": 2,
+      "unit": "frames",
+      "basis": "Reused prior idealized controls at both heights"
+    },
+    {
+      "name": "Independent evidence inspections",
+      "value": 1,
+      "unit": "agents",
+      "basis": "Native subagent located the comparable archived incident"
+    },
+    {
+      "name": "Actual model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "name": "Review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured"
+    }
+  ],
+  "observations": [
+    "The correction supplied by the operator changed the interpretation of the pre-corner frame; the historical launch frame was kept independent.",
+    "Correcting only camera height did not meet the historical launch threshold.",
+    "The original line detector could identify the corner under repeated-frame offline replay, which does not demonstrate on-vehicle route admission."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Complete camera payload checks and executable matcher results",
+    "Prior source equality check",
+    "Separate source-based image-line replay",
+    "Reference route and measured height"
+  ],
+  "comparison": null,
+  "limits": [
+    "No matched workflow baseline",
+    "No new live vehicle measurement",
+    "The exact physical reference point of the reported distance and the full camera projection are unverified"
+  ]
+}
