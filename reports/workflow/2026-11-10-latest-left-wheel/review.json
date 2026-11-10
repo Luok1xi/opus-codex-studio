@@ -1,0 +1,67 @@
+{
+  "measurement_cutoff_at": "2026-11-10T13:43:21.1116067+08:00",
+  "metrics": [
+    {
+      "unit": "tokens",
+      "name": "Actual model usage",
+      "basis": "Provider usage unavailable",
+      "value": null
+    },
+    {
+      "unit": "runs",
+      "name": "Complete captures checked",
+      "basis": "Index, header length and closing marker verified",
+      "value": 8
+    },
+    {
+      "unit": "agent",
+      "name": "Independent reviews",
+      "basis": "Read-only cross-check refreshed after the newest file completed",
+      "value": 1
+    },
+    {
+      "unit": "operations",
+      "name": "Physical operations",
+      "basis": "Saved evidence only",
+      "value": 0
+    },
+    {
+      "unit": "seconds",
+      "name": "Coordination and review overhead",
+      "basis": "Not separately metered",
+      "value": null
+    }
+  ],
+  "quality": {
+    "remaining": [],
+    "status": "passed",
+    "completed": [
+      "Rechecked the live file cutoff and included a newly completed run",
+      "Computed per-phase metrics from eight complete recent captures, six with matching build and fan setting",
+      "Cross-checked the newest stop transition and independent transient calculations"
+    ],
+    "acceptance": [
+      "Verify the current capture cutoff, continuity, recording-time configuration and stop reason",
+      "Compare phase tracking with matched setting records, separating changes in conditions"
+    ]
+  },
+  "task_summary": "Review the newest completed wheel tuning run and give the next single-variable decision.",
+  "started_at": "2026-11-10T13:40:58+08:00",
+  "observations": [
+    "A raw file was still being written at the initial snapshot. Rechecking the cutoff found a new completed capture and prevented reporting the previous run as latest.",
+    "Lower startup overshoot did not imply better tracking at all later steps. Phase-specific comparisons support a repeat instead of more gain changes."
+  ],
+  "evidence": [
+    "Continuity-checked capture samples, independent aggregation, verified source and raw stop transition"
+  ],
+  "recommendations": [],
+  "comparison": null,
+  "round_id": "2026-11-10-latest-left-wheel",
+  "limits": [
+    "Battery conditions differed across trials",
+    "Left wheel and sampled feedback only, no dual-wheel or track validation",
+    "No matched workflow baseline"
+  ],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "schema_version": 1
+}
