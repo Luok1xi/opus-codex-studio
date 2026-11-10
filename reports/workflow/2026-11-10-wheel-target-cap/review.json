@@ -1,0 +1,62 @@
+{
+  "observations": [
+    "The command policy and the input default are different values. The prior frontend change deliberately kept the ordinary target range while recognizing the fan separately."
+  ],
+  "recommendations": [],
+  "measurement_cutoff_at": "2026-11-10T12:39:51.5351148+08:00",
+  "comparison": null,
+  "quality": {
+    "remaining": [],
+    "acceptance": [
+      "Separate the frontend command ceiling from the dynamic input default and board capability"
+    ],
+    "completed": [
+      "Eight assertions verified current cap and command behavior"
+    ],
+    "status": "passed"
+  },
+  "evidence": [
+    "Current frontend cap and firmware profiles, checked by a deterministic parser assertion"
+  ],
+  "limits": [
+    "Current connected board was not queried",
+    "No matched workflow baseline"
+  ],
+  "metrics": [
+    {
+      "value": null,
+      "name": "Actual model usage",
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "value": 8,
+      "name": "Assertions passed",
+      "unit": "assertions",
+      "basis": "Direct check of the current frontend parser"
+    },
+    {
+      "value": null,
+      "name": "Review overhead",
+      "unit": "seconds",
+      "basis": "No separate interval recorded"
+    },
+    {
+      "value": 0,
+      "name": "Delegations",
+      "unit": "agents",
+      "basis": "Direct scoped diagnosis"
+    },
+    {
+      "value": 0,
+      "name": "Rework",
+      "unit": "retries",
+      "basis": "Scoped assertions passed on first execution"
+    }
+  ],
+  "schema_version": 1,
+  "round_id": "2026-11-10-wheel-target-cap",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "task_summary": "Explain the wheel target ceiling in the current tuning UI.",
+  "started_at": "2026-11-10T12:39:24+08:00"
+}
