@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "observations": [
+    "Protocol and phase timing agreed before work. An early stop can retain complete transport data and must be distinguished from a completed physical test."
+  ],
+  "started_at": "2026-11-10T11:59:49.3613776+08:00",
+  "recommendations": [],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "limits": [
+    "No matched workflow baseline",
+    "No real vehicle test; candidate band is a chosen initial acceptance setting"
+  ],
+  "round_id": "2026-11-10-low250-guard",
+  "measurement_cutoff_at": "2026-11-10T12:03:47.8237208+08:00",
+  "metrics": [
+    {
+      "name": "Actual provider usage",
+      "value": null,
+      "basis": "No metered usage",
+      "unit": "tokens"
+    },
+    {
+      "name": "Native implementation agents",
+      "value": 1,
+      "basis": "Firmware in isolated directory while coordinator modified web",
+      "unit": "agents"
+    },
+    {
+      "name": "Vehicle operations",
+      "value": 0,
+      "basis": "No actual motion, flash or serial",
+      "unit": "operations"
+    },
+    {
+      "name": "Host test fixture rework",
+      "value": 1,
+      "basis": "Function extraction marker corrected",
+      "unit": "attempts"
+    },
+    {
+      "name": "Review and sync overhead",
+      "value": null,
+      "basis": "Not separately timed",
+      "unit": "seconds"
+    }
+  ],
+  "comparison": null,
+  "quality": {
+    "remaining": [],
+    "completed": [
+      "Production C tick functions exercised on host with UBSan",
+      "Official TC264 clean build 0 errors and 11 warnings",
+      "40 focused web tests and mock serial browser passed",
+      "Verified prior failing low-speed samples all outside the configured band"
+    ],
+    "status": "passed",
+    "acceptance": [
+      "Reject unsafe high transition, preserve yaw shape, verify full and stopped recordings"
+    ]
+  },
+  "task_summary": "Prevent high-stage speed testing before a verified low-speed platform and expose the result in the existing tuning UI.",
+  "evidence": [
+    "Host bounded timing and selected-wheel cases",
+    "Clean target compile and verified build hash",
+    "Web transport, parameter and capture checks"
+  ]
+}
