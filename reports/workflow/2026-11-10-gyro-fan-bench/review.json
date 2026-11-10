@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-gyro-fan-bench",
+  "task_summary": "Prepare a stationary calibration build and validate the offline measurement path.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T16:13:09+08:00",
+  "measurement_cutoff_at": "2026-11-10T16:18:58.2274683+08:00",
+  "quality": {
+    "completed": [
+      "Built a separate image and independently reviewed the wheel output and recording paths",
+      "Verified capture analysis against one valid and four invalid inputs"
+    ],
+    "status": "partial",
+    "acceptance": [
+      "Verify the diagnostic build and stationary sampling path",
+      "Obtain paired hardware captures and calculate a threshold"
+    ],
+    "remaining": [
+      "Obtain physical captures before setting a measured threshold"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Actual model usage",
+      "value": null,
+      "basis": "Provider usage unavailable",
+      "unit": "tokens"
+    },
+    {
+      "name": "Independent reviewers",
+      "value": 1,
+      "basis": "Read-only source and operation review",
+      "unit": "agent"
+    },
+    {
+      "name": "Compiler errors",
+      "value": 0,
+      "basis": "Completed official toolchain build log",
+      "unit": "errors"
+    },
+    {
+      "name": "Compiler warnings",
+      "value": 11,
+      "basis": "Same warning set as frozen source",
+      "unit": "warnings"
+    },
+    {
+      "name": "Physical operations",
+      "value": 0,
+      "basis": "Only offline work performed",
+      "unit": "operations"
+    },
+    {
+      "name": "Coordination and review overhead",
+      "value": null,
+      "basis": "Not separately metered",
+      "unit": "seconds"
+    }
+  ],
+  "observations": [
+    "Existing feedback had already passed the threshold under investigation. Capturing the signal before that stage is necessary.",
+    "The sandboxed build did not start successfully. An isolated local retry produced a complete build."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Frozen build hashes and local compiler receipt",
+    "Capture analysis fixture and independent readback"
+  ],
+  "comparison": null,
+  "limits": [
+    "Stationary physical capture is pending",
+    "No matched workflow baseline"
+  ]
+}
