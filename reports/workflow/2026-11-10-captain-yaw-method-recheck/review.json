@@ -1,0 +1,76 @@
+{
+  "started_at": "2026-11-10T15:22:26+08:00",
+  "limits": [
+    "Fresh local conversation not retrieved",
+    "Saved samples are decimated and cannot isolate an electrical, mechanical or sensor cause",
+    "No matched workflow baseline"
+  ],
+  "task_summary": "Refresh an authorized local tuning reference and audit the integrity of the current control measurements.",
+  "recommendations": [],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "metrics": [
+    {
+      "unit": "tokens",
+      "basis": "Provider usage unavailable",
+      "value": null,
+      "name": "Actual model usage"
+    },
+    {
+      "unit": "attempts",
+      "basis": "Initial, following launcher, and final bounded retry",
+      "value": 3,
+      "name": "Local read attempts"
+    },
+    {
+      "unit": "runs",
+      "basis": "Continuous sample index and end marker checks",
+      "value": 4,
+      "name": "Complete captures independently recomputed"
+    },
+    {
+      "unit": "agent",
+      "basis": "Only non-chat vehicle source and saved telemetry reviewed",
+      "value": 1,
+      "name": "Independent reviewers"
+    },
+    {
+      "unit": "operations",
+      "basis": "No vehicle connection or control",
+      "value": 0,
+      "name": "Physical operations"
+    },
+    {
+      "unit": "seconds",
+      "basis": "Not separately metered",
+      "value": null,
+      "name": "Coordination and review overhead"
+    }
+  ],
+  "schema_version": 1,
+  "observations": [
+    "A successful component initialization did not imply an active read endpoint. Keep the access cutoff explicit.",
+    "Field names, scale and recorded target transitions are separate checks. Plotting the adjacent field can produce a plausible but wrong trace."
+  ],
+  "round_id": "2026-11-10-captain-yaw-method-recheck",
+  "evidence": [
+    "Reviewed local saved evidence and read-interface status without exposing private content",
+    "Verified capture layout against the firmware and checked a corrected local chart"
+  ],
+  "measurement_cutoff_at": "2026-11-10T15:28:48.5245114+08:00",
+  "quality": {
+    "status": "partial",
+    "remaining": [
+      "Local read interface was still unavailable at the last check. Fresh reference requires a user-controlled login or supplied excerpt."
+    ],
+    "acceptance": [
+      "Verify freshness of the local reference and distinguish saved evidence from new content",
+      "Audit actual capture schema, timing, gain encoding and control sequence"
+    ],
+    "completed": [
+      "Confirmed the latest accessible saved reference and checked the local interface before and after its existing launcher",
+      "Verified two plotted-field and time-axis errors and a changed command scale against source",
+      "Recomputed continuous capture data and reviewed a corrected local plot"
+    ]
+  },
+  "comparison": null
+}
