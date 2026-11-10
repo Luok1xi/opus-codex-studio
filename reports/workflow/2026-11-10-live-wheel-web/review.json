@@ -1,0 +1,77 @@
+{
+  "metrics": [
+    {
+      "value": null,
+      "name": "Actual model usage",
+      "basis": "Provider usage unavailable",
+      "unit": "tokens"
+    },
+    {
+      "value": 2,
+      "name": "Independent read-only reviews",
+      "basis": "One firmware trace and one frontend telemetry trace",
+      "unit": "reviews"
+    },
+    {
+      "value": 2,
+      "name": "Browser scenarios passed",
+      "basis": "Live tuning and separate parked fan regression",
+      "unit": "scenarios"
+    },
+    {
+      "value": 0,
+      "name": "Browser scenario retries",
+      "basis": "Both accepted scenarios passed at first run",
+      "unit": "retries"
+    },
+    {
+      "value": 0,
+      "name": "Physical operations",
+      "basis": "Existing saved records and mock serial only",
+      "unit": "operations"
+    },
+    {
+      "value": null,
+      "name": "Coordination and review overhead",
+      "basis": "Not separately metered",
+      "unit": "seconds"
+    }
+  ],
+  "schema_version": 1,
+  "limits": [
+    "Current physical firmware identity and physical run duration not measured this round",
+    "Live chart fidelity limited to status frames sent by the board",
+    "No matched workflow baseline"
+  ],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "recommendations": [],
+  "task_summary": "Expose a live wheel-speed plot during tuning and distinguish a timed run from rolling waveform retention.",
+  "observations": [
+    "The previous browser check proved changing numbers and a post-stop export. This round also checked real canvas strokes and pixel changes before requesting any export. Reuse that criterion when modifying the live view.",
+    "Firmware-confirmed mode and recording retention now appear separately. Independent checks verified the firmware timeout and the existing telemetry ingestion path."
+  ],
+  "evidence": [
+    "Scoped test and lint output; site build",
+    "Two simulated serial browser checks on the served page",
+    "Verified saved flash and capture identity; separate compiled hold firmware receipt"
+  ],
+  "measurement_cutoff_at": "2026-11-10T12:35:27.6907152+08:00",
+  "comparison": null,
+  "round_id": "2026-11-10-live-wheel-web",
+  "started_at": "2026-11-10T12:30:17+08:00",
+  "quality": {
+    "remaining": [],
+    "status": "passed",
+    "acceptance": [
+      "Show live commanded and measured wheel speed next to tuning controls",
+      "Distinguish firmware-confirmed timed and hold modes, voltage stops, and invalid target text",
+      "Preserve parked waveform capture and fan settings"
+    ],
+    "completed": [
+      "42 frontend regressions, targeted lint, and rebuilt site",
+      "Served browser with simulated serial drew actual traces and changed canvas pixels during a target update",
+      "Separate browser regression confirmed existing fan behavior",
+      "Compared verified flash and capture records with the already-built hold candidate"
+    ]
+  }
+}
