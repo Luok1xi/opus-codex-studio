@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-sim-corner-base-speed",
+  "task_summary": "Trace simulated corner-speed planning from configuration through wheel commands and recorded output.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T21:19:42+08:00",
+  "measurement_cutoff_at": "2026-11-10T21:22:02.9571432+08:00",
+  "quality": {
+    "status": "passed",
+    "completed": [
+      "Verified baseline and unified simulation replays and controller paths",
+      "Cross-checked a historical higher-speed case and independent source reading"
+    ],
+    "remaining": [],
+    "acceptance": [
+      "Distinguish reference configuration, actual base command and wheel differential",
+      "Cite matching replay examples and separate historical variants"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Actual model usage",
+      "value": null,
+      "basis": "Provider usage unavailable",
+      "unit": "tokens"
+    },
+    {
+      "name": "Independent reviewers",
+      "value": 1,
+      "basis": "Source and replay cross-check",
+      "unit": "agent"
+    },
+    {
+      "name": "Physical operations",
+      "value": 0,
+      "basis": "Saved evidence only",
+      "unit": "operations"
+    },
+    {
+      "name": "Review overhead",
+      "value": null,
+      "basis": "Not separately metered",
+      "unit": "seconds"
+    }
+  ],
+  "observations": [
+    "Reference limits and commanded base values differ. Reading replay rows tied the source behavior to an observed before, during, and after sequence.",
+    "Historical runs used different controller profiles and geometry, so the values were presented separately."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Local frozen source, configuration, invocation and replay rows",
+    "Local historical comparison and independent verification"
+  ],
+  "comparison": null,
+  "limits": [
+    "No new hardware or simulator run",
+    "No matched workflow baseline"
+  ]
+}
