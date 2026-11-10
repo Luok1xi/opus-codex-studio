@@ -1,0 +1,78 @@
+{
+  "metrics": [
+    {
+      "name": "Actual tokens",
+      "basis": "No provider usage",
+      "value": null,
+      "unit": "tokens"
+    },
+    {
+      "name": "Round time",
+      "basis": "Start not metered",
+      "value": null,
+      "unit": "seconds"
+    },
+    {
+      "name": "Native read-only reviews",
+      "basis": "Independent firmware protocol comparison",
+      "value": 1,
+      "unit": "agents"
+    },
+    {
+      "name": "Hardware serial operations",
+      "basis": "Mock port",
+      "value": 0,
+      "unit": "operations"
+    },
+    {
+      "name": "Retry",
+      "basis": "Website was stopped on first browser check",
+      "value": 1,
+      "unit": "attempts"
+    },
+    {
+      "name": "Review overhead",
+      "basis": "Not timed separately",
+      "value": null,
+      "unit": "seconds"
+    }
+  ],
+  "limits": [
+    "No matched workflow timing baseline",
+    "Physical connection not tested"
+  ],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "measurement_cutoff_at": "2026-11-10T10:56:02.5052076+08:00",
+  "evidence": [
+    "Focused unit tests, production build and browser Web Serial mock"
+  ],
+  "schema_version": 1,
+  "comparison": null,
+  "recommendations": [
+    {
+      "id": "WF-20261110-TUNING-NEGATIVE-ACK",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Repeat mock reject, mismatch and accept cases when protocol changes.",
+      "action": "Keep rejection and mismatched readback in serial UI integration tests."
+    }
+  ],
+  "round_id": "2026-11-10-web-tuning-readback",
+  "started_at": null,
+  "task_summary": "Repair local speed-tuning command feedback and verify with a simulated serial port.",
+  "quality": {
+    "remaining": [],
+    "acceptance": [
+      "Distinguish rejection, stale readback and confirmed write on existing local website"
+    ],
+    "completed": [
+      "Production build and focused lint passed",
+      "37 focused tests including opt-in capture",
+      "Browser rejected, mismatched and accepted paths verified"
+    ],
+    "status": "passed"
+  },
+  "observations": [
+    "Compare write acknowledgement with the requested fields. A subsequent generic read can hide the original rejection. Existing site startup required verified database backups and no pending migrations."
+  ]
+}
