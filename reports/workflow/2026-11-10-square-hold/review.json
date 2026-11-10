@@ -1,0 +1,60 @@
+{
+  "observations": [
+    "Separate the moving-target profile from a parked gain change. Keeping the recorder on a bounded ring preserves local memory over indefinite runs."
+  ],
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "metrics": [
+    {
+      "name": "Actual model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage report"
+    },
+    {
+      "name": "Native agents",
+      "value": 2,
+      "unit": "agents",
+      "basis": "Isolated firmware implementation and separate read-only review"
+    },
+    {
+      "name": "Physical operations",
+      "value": 0,
+      "unit": "operations",
+      "basis": "Builds and simulated ports only"
+    },
+    {
+      "name": "Review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately metered"
+    }
+  ],
+  "comparison": null,
+  "schema_version": 1,
+  "measurement_cutoff_at": "2026-11-10T12:16:09.2617276+08:00",
+  "recommendations": [],
+  "limits": [
+    "No matched workflow baseline",
+    "On-board voltage calibration and physical shutdown latency unverified"
+  ],
+  "task_summary": "Replace the dynamic speed timer with a board-side voltage cutoff and bounded rolling recording.",
+  "round_id": "2026-11-10-square-hold",
+  "started_at": "2026-11-10T12:08:41.6177861+08:00",
+  "evidence": [
+    "Official compile log and host regression",
+    "Mock serial verified 11700 inclusive, low/stale stop text and recent waveform"
+  ],
+  "quality": {
+    "completed": [
+      "Native host regression and official target build",
+      "41 focused web tests and real page verification using mock serial",
+      "Independent review of timer, sampler, start and stop paths"
+    ],
+    "remaining": [],
+    "acceptance": [
+      "Sustained target holds at the inclusive voltage boundary and stops when voltage is too low or stale",
+      "Existing timed tuning and recent waveform retrieval preserved"
+    ],
+    "status": "passed"
+  }
+}
