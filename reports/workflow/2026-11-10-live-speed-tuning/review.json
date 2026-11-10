@@ -1,0 +1,59 @@
+{
+  "quality": {
+    "status": "passed",
+    "remaining": [],
+    "acceptance": [
+      "Legacy command templates without automatic writes; bounded firmware experiment with actual target readback; host and target builds"
+    ],
+    "completed": [
+      "39 focused website tests passed including a saved capture",
+      "Live and legacy browser workflows verified via mock serial",
+      "Actual C firmware functions verified on host and clean TC264 build 0 errors, 11 warnings"
+    ]
+  },
+  "limits": [
+    "No matched workflow baseline",
+    "Physical wireless throughput, bench behavior and vehicle motion unverified"
+  ],
+  "evidence": [
+    "Website production build and browser mock confirmed old version hidden, parked arm and live 80 to 120",
+    "TC264 clean build and host timing probe"
+  ],
+  "round_id": "2026-11-10-live-speed-tuning",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "comparison": null,
+  "started_at": "2026-11-10T11:41:11.2059717+08:00",
+  "measurement_cutoff_at": "2026-11-10T11:46:07.5307184+08:00",
+  "task_summary": "Add command templates to the local tuning interface and implement a bounded dynamic wheel speed experiment.",
+  "recommendations": [],
+  "schema_version": 1,
+  "observations": [
+    "Defined protocol before parallel implementation. Separate live capture profile keeps 2 ms and 6 ms record timestamps unambiguous."
+  ],
+  "metrics": [
+    {
+      "name": "Actual model usage",
+      "unit": "tokens",
+      "value": null,
+      "basis": "No provider usage record"
+    },
+    {
+      "name": "Native implementation agents",
+      "unit": "agents",
+      "value": 1,
+      "basis": "Firmware candidate built in separate directory while coordinator edited website"
+    },
+    {
+      "name": "Hardware operations",
+      "unit": "operations",
+      "value": 0,
+      "basis": "Builds, host probes and mock serial only"
+    },
+    {
+      "name": "Review and sync overhead",
+      "unit": "seconds",
+      "value": null,
+      "basis": "Not separately timed"
+    }
+  ]
+}
