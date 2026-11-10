@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-brushed125-start-gate",
+  "task_summary": "Trace a no-motion stop to the startup gate and verify a focused operator diagnosis.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T15:05:14+00:00",
+  "measurement_cutoff_at": "2026-11-10T15:08:31+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Trace the first stopped launch to the exact code path",
+      "Give an operator check tied to the actual course and firmware",
+      "Replay a complete live stationary camera frame if available"
+    ],
+    "completed": [
+      "Traced the saved physical attempt and controller period to the startup timeout",
+      "Matched the displayed launch marker to the frozen reference pose",
+      "Scored five controlled stationary views with the target matcher"
+    ],
+    "remaining": [
+      "The live serial receiver did not deliver a camera frame, so the failing predicate on the vehicle is unresolved"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "Prior run onboard samples reviewed",
+      "value": 17,
+      "unit": "samples",
+      "basis": "Saved indexed capture"
+    },
+    {
+      "name": "Synthetic stationary replays",
+      "value": 5,
+      "unit": "scenes",
+      "basis": "Same target matcher with an idealized renderer"
+    },
+    {
+      "name": "Live serial checks",
+      "value": 2,
+      "unit": "checks",
+      "basis": "Bounded passive windows with no incoming bytes"
+    },
+    {
+      "name": "Read-only independent inspections",
+      "value": 1,
+      "unit": "agents",
+      "basis": "Native subagent independently verified startup condition and route origin"
+    },
+    {
+      "name": "Actual model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "name": "Review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured"
+    }
+  ],
+  "observations": [
+    "A known gate, its scheduler period and the saved trace agreed on the failure stage.",
+    "The controlled inputs separated height mismatch from a heading effect in one idealized scene. They do not determine the physical cause.",
+    "The live receiver was enumerated but returned no bytes during the check windows."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Saved launch and stop records",
+    "Exact source and frozen course reference",
+    "Controlled matcher outputs",
+    "Passive receive byte counts"
+  ],
+  "comparison": null,
+  "limits": [
+    "No matched workflow baseline",
+    "No current live camera frame",
+    "Controlled scenes omit real reflections and exposure"
+  ]
+}
