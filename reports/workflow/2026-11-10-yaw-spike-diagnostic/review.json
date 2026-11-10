@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-yaw-spike-diagnostic",
+  "task_summary": "Trace a feedback spike and define a controlled diagnostic for the existing filters.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T16:06:34+08:00",
+  "measurement_cutoff_at": "2026-11-10T16:10:19.3441140+08:00",
+  "quality": {
+    "remaining": [],
+    "acceptance": [
+      "Refresh authorized local context at cutoff",
+      "Trace the active feedback and capture paths",
+      "Separate supported observations from unresolved causes"
+    ],
+    "completed": [
+      "Read local context twice, with an end-of-analysis refresh",
+      "Checked firmware filter and event timing against an independent read-only review",
+      "Defined a one-variable hardware comparison and a synchronized sampling follow-up"
+    ],
+    "status": "passed"
+  },
+  "metrics": [
+    {
+      "unit": "tokens",
+      "basis": "Provider usage unavailable",
+      "name": "Actual model usage",
+      "value": null
+    },
+    {
+      "unit": "agent",
+      "basis": "Read-only firmware and event inspection",
+      "name": "Independent reviews",
+      "value": 1
+    },
+    {
+      "unit": "reads",
+      "basis": "Initial check and cutoff recheck",
+      "name": "Local refreshes",
+      "value": 2
+    },
+    {
+      "unit": "operations",
+      "basis": "Local evidence only",
+      "name": "Physical operations",
+      "value": 0
+    },
+    {
+      "unit": "seconds",
+      "basis": "Not separately metered",
+      "name": "Coordination and review overhead",
+      "value": null
+    }
+  ],
+  "observations": [
+    "Tracing the actual signal path prevented treating the chart as unfiltered data.",
+    "The record interval and processed-only columns limit causal ordering. Source review narrowed the next test without increasing controller complexity."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Local authorized context checked and retained locally",
+    "Saved telemetry and source paths checked locally"
+  ],
+  "comparison": null,
+  "limits": [
+    "No physical comparison or new flash in this round",
+    "No matched workflow baseline"
+  ]
+}
