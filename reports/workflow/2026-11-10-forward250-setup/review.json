@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-forward250-setup",
+  "task_summary": "Prepare and verify an isolated forward-motion controller test and check readiness for live parameter setup.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T22:09:42+08:00",
+  "measurement_cutoff_at": "2026-11-10T22:15:13.1244915+08:00",
+  "quality": {
+    "completed": [
+      "Identified a configuration mismatch via read-only telemetry",
+      "Built an isolated test image and verified the command envelope, schedule and offline identity",
+      "Verified that the live battery was below the agreed threshold"
+    ],
+    "status": "partial",
+    "remaining": [
+      "Replace the battery, connect the programmer, flash the candidate and verify runtime gains"
+    ],
+    "acceptance": [
+      "Verify the existing board configuration and the new test schedule",
+      "Apply and verify the requested gains in the matching hardware mode"
+    ]
+  },
+  "metrics": [
+    {
+      "value": null,
+      "basis": "Provider usage unavailable",
+      "unit": "tokens",
+      "name": "Actual model usage"
+    },
+    {
+      "value": 1,
+      "basis": "Source and configuration readback",
+      "unit": "agent",
+      "name": "Independent reviewers"
+    },
+    {
+      "value": 0,
+      "basis": "Completed official toolchain output",
+      "unit": "errors",
+      "name": "Verified offline build errors"
+    },
+    {
+      "value": 0,
+      "basis": "Only a readback was sent",
+      "unit": "writes",
+      "name": "Physical parameter writes"
+    },
+    {
+      "value": null,
+      "basis": "Not separately metered",
+      "unit": "seconds",
+      "name": "Review overhead"
+    }
+  ],
+  "observations": [
+    "A candidate name did not match the actual wheel target sign. Source review before live setup avoided selecting the wrong motion mode.",
+    "Read-only serial status identified a physical prerequisite before any programming or movement."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Local build receipt, command envelope check and board status readback"
+  ],
+  "comparison": null,
+  "limits": [
+    "Hardware setup pending",
+    "No matched workflow baseline"
+  ]
+}
