@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-10-rectangle-vision-review",
+  "task_summary": "Review a small-course vision tuning workflow and distinguish observation from parameter writes.",
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "started_at": "2026-11-10T22:16:38+08:00",
+  "measurement_cutoff_at": "2026-11-10T22:19:03.8179619+08:00",
+  "quality": {
+    "completed": [
+      "Independently checked existing candidates, frozen source and protocol scaling",
+      "Defined a repeatable observation and stopped-update sequence"
+    ],
+    "remaining": [],
+    "acceptance": [
+      "Verify route dependencies, command gates and telemetry",
+      "Specify a controlled comparison appropriate to the course"
+    ],
+    "status": "passed"
+  },
+  "metrics": [
+    {
+      "basis": "Provider usage unavailable",
+      "value": null,
+      "unit": "tokens",
+      "name": "Actual model usage"
+    },
+    {
+      "basis": "Read-only firmware review",
+      "value": 1,
+      "unit": "agent",
+      "name": "Independent reviewers"
+    },
+    {
+      "basis": "Source and saved evidence only",
+      "value": 0,
+      "unit": "operations",
+      "name": "Physical operations"
+    },
+    {
+      "basis": "Not separately metered",
+      "value": null,
+      "unit": "seconds",
+      "name": "Review overhead"
+    }
+  ],
+  "observations": [
+    "A similarly named candidate supported live speed commands but not live controller gains. Historical versions also differed in protocol scaling.",
+    "Reviewing route admission and export branches narrowed the appropriate next test without changing the active board."
+  ],
+  "recommendations": [],
+  "evidence": [
+    "Local firmware, candidate handoffs and saved board readback"
+  ],
+  "comparison": null,
+  "limits": [
+    "The small physical course has not been measured or tested",
+    "No matched workflow baseline"
+  ]
+}
