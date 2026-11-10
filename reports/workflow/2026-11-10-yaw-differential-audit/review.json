@@ -1,0 +1,66 @@
+{
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "evidence": [
+    "Board source, three complete saved captures and visually checked comparison"
+  ],
+  "limits": [
+    "Gyroscope absolute physical scale and wheel slip were not independently measured",
+    "No matched workflow baseline"
+  ],
+  "schema_version": 1,
+  "quality": {
+    "status": "passed",
+    "completed": [
+      "Recomputed three complete recordings from their board field layout",
+      "Found a second mismatch between reported configuration and the actual phase target",
+      "Verified signed targets and measured wheel difference, counted sample clipping, and rendered a side-by-side comparison"
+    ],
+    "acceptance": [
+      "Check recorded field mapping and scale, differential signs, and gain encoding",
+      "Separate display errors from actual tracking and physical calibration"
+    ],
+    "remaining": []
+  },
+  "observations": [
+    "A current-phase target and a stored configuration are different signals. Verifying the wire fields against their assignments avoids treating one as the other.",
+    "Measured and commanded differential traces separate channel-sign concerns from controller output clipping."
+  ],
+  "metrics": [
+    {
+      "unit": "tokens",
+      "name": "Actual model usage",
+      "value": null,
+      "basis": "Provider usage unavailable"
+    },
+    {
+      "unit": "runs",
+      "name": "Complete recordings independently audited",
+      "value": 3,
+      "basis": "Sample index and closing record verified"
+    },
+    {
+      "unit": "agent",
+      "name": "Independent reviewers",
+      "value": 1,
+      "basis": "Read-only source and capture cross-check"
+    },
+    {
+      "unit": "operations",
+      "name": "Physical operations",
+      "value": 0,
+      "basis": "Saved evidence only"
+    },
+    {
+      "unit": "seconds",
+      "name": "Coordination and review overhead",
+      "value": null,
+      "basis": "Not separately metered"
+    }
+  ],
+  "round_id": "2026-11-10-yaw-differential-audit",
+  "measurement_cutoff_at": "2026-11-10T15:41:00.9564204+08:00",
+  "started_at": "2026-11-10T15:37:51+08:00",
+  "recommendations": [],
+  "comparison": null,
+  "task_summary": "Audit wheel differential, measured angular rate, and the most recent unstable control run."
+}
