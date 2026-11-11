@@ -1,0 +1,22 @@
+{
+  "scope": "Sanitized aggregate findings; no raw chat, source, telemetry or databases.",
+  "actual_source_inputs_matched": 6,
+  "actual_function_checks": 16,
+  "sanitizers_passed": true,
+  "hardware_accessed": false,
+  "firmware_modified": false,
+  "complete_capture_rows": 47,
+  "capture_span_seconds": 1.84,
+  "duplicate_export_detected": true,
+  "local_evidence_hashes": {
+    "settings.json": "8745cefc7b1b05669e9a615875466dc7fbe7f6b6bfb7ab327a77cc0eccb892b5",
+    "source-review.md": "a621d64710cb08f203bf17869ff259762b827235dcec5777053d6d805f1d1450",
+    "result.json": "f83c3359273a3fc1ec7a8b2ba52c97f5000a4fd1f80fc3718e8a4013938f4941",
+    "DIAGNOSIS.md": "828b94555b7b9be40b35e3adcf92e1867eda41aa5b10db456d99a65f357ddee9"
+  },
+  "boundaries": [
+    "Synthetic boundary inputs are not a full raw-image replay.",
+    "Latest completed run was element-disabled; later pending runs are excluded.",
+    "Version string was stale, so recorded flash receipt, source hashes and runtime settings were separated."
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-11-image-error-zero",
+  "task_summary": "直接诊断前方直角存在但图像偏差很小直到丢线，明确观测盲区与无效零值，给出修复边界。",
+  "workflow_version": "WORKFLOW_REVIEW.md + current source identity + bounded telemetry evidence",
+  "started_at": "2026-11-11T14:27:44+00:00",
+  "measurement_cutoff_at": "2026-11-11T14:36:15.471091+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "绑定最新完整记录的实际参数及最后烧录来源，不沿用下午候选。",
+      "用实际函数区分有效零、保持旧值和无效零。",
+      "明确解决方案与未验证范围，不越权改车。"
+    ],
+    "completed": [
+      "16项原函数测试通过；6项输入与当前目标回执匹配。",
+      "核实直角接管关闭、局部采样窗盲区、失效100ms后替代零。",
+      "发现重复导出的旧记录曾贴新参数标签，按时间与hash区分。",
+      "Owner确认前方弯时仍直走，报告提供最小视觉与交接修复顺序。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Native contributors",
+      "value": 2,
+      "unit": "agents",
+      "basis": "Bounded identity recovery and independent actual-function checks."
+    },
+    {
+      "name": "Owner questions",
+      "value": 1,
+      "unit": "questions",
+      "basis": "Distinguished approaching-straight from already-turning observation; no repeat drive requested."
+    },
+    {
+      "name": "Hardware changes",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial, flash or runtime writes."
+    },
+    {
+      "name": "External dispatch",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No DSH or Opus handoff."
+    },
+    {
+      "name": "Usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No scoped provider usage."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Review overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured; final archive after cutoff."
+    }
+  ],
+  "observations": [
+    "An actual five-hour firmware/config change made the earlier same-day candidate stale; refreshed identity before concluding.",
+    "The GUI zero value is ambiguous without validity/age; original C reproduced both legitimate and missing-data zeros.",
+    "Bounded extraction excluded reasoning and did not execute recovered commands.",
+    "The inbox query again returned oldest historical bodies; no old hardware statement was used as current evidence."
+  ],
+  "recommendations": [
+    {
+      "id": "IMAGE-VALIDITY",
+      "action": "下一轮实现将新鲜、保持、无效分开记录和显示，缺失图像不要画成居中。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "同一固定图像序列验证零值与失效在图上可区分。",
+      "experience_refs": [
+        "TE#38"
+      ],
+      "adoption": "改后"
+    },
+    {
+      "id": "CAPTURE-IDENTITY",
+      "action": "新运行参数只绑定新记录；同hash的手动导出仍归原试跑。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "相邻K参数比较必须同时核cap hash和实际回读。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "没有同步现场原图，不能证明每一帧爬线失败细节。",
+    "本轮提供定位与解决方案，未实现或烧录视觉修复。",
+    "无同条件效率基线，不宣称提速。"
+  ]
+}
