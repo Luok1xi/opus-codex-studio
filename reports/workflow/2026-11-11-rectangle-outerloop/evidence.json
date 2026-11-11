@@ -1,0 +1,33 @@
+{
+  "source_project": "CRAZY-CIRCUIT",
+  "task": 133,
+  "handoff": 774,
+  "release_sha256": "ce3bad3306146257b743e387cf754ab38862efa53aef477eb7aabb7b62d0cfbc",
+  "target_build": {
+    "accepted": true,
+    "errors": 0,
+    "warnings": 13,
+    "same_warnings_as_baseline": true,
+    "elapsed_seconds": 8.89
+  },
+  "selected_real_c_function_checks": 4808,
+  "independent_review": {
+    "blocking_findings": 0,
+    "sha256": "c5e15383ca5af5206fda78a425622c5448432cad1975ad970213428c50e38c6c"
+  },
+  "flash": {
+    "result": "PASS",
+    "errors": 0,
+    "aborts": 0,
+    "warnings": 0,
+    "receipt_sha256": "8bfeb8fbd383044e9ed1d233e5b34d8846c78ae17e75ccc9f1281deb809a5773"
+  },
+  "postflash": {
+    "new_identity_and_gains_read_back": true,
+    "parked_outputs_zero": true,
+    "receipt_sha256": "eaf4683848c99ae791fdd2b435396885de26ce64700e819ac7b6cca4ba21cc11"
+  },
+  "remote_start_commands": 0,
+  "dynamic_validation": false,
+  "raw_chats_source_code_and_hardware_logs_uploaded": false
+}
