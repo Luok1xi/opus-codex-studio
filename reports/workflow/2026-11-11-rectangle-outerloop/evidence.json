@@ -29,5 +29,16 @@
   },
   "remote_start_commands": 0,
   "dynamic_validation": false,
-  "raw_chats_source_code_and_hardware_logs_uploaded": false
+  "raw_chats_source_code_and_hardware_logs_uploaded": false,
+  "owner_scope_correction": {
+    "handoff": 775,
+    "checked_source_defaults": {
+      "elements": 1,
+      "fixed_image_pd": 0
+    },
+    "local_handoff_sha256": "4f815d5914d28e3424fb57ed7920654eae31ed21a1d2c7368f25ccd51a499a8e",
+    "firmware_edits": 0,
+    "serial_operations": 0,
+    "flash_operations": 0
+  }
 }
