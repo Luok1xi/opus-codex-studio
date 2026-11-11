@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "local_artifact_validation": "passed",
+  "archive_and_run_crosscheck": "passed",
+  "sample_count": 1500,
+  "stage_counts": [
+    300,
+    300,
+    300,
+    300,
+    300
+  ],
+  "source_snapshot_files": 616,
+  "source_mismatches": 0,
+  "hardware_access": false,
+  "raw_private_data_uploaded": false,
+  "original_archive_modified": false,
+  "review_findings_corrected": 2,
+  "delivery_scope": "local historical settings and evidence handoff; no vehicle deployment",
+  "limitations": [
+    "live state not checked",
+    "no external model acceptance",
+    "no matched efficiency baseline"
+  ]
+}

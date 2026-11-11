@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-11-dsh-tuning-recovery",
+  "task_summary": "恢复用户授权的归档技术调参设置，核对历史试验、重启状态、源码和固件身份，提供本地接力文件。此归档只保存工作流聚合事实。",
+  "workflow_version": "WORKFLOW_REVIEW + project-scoped TeamHub + bounded two-agent recovery",
+  "started_at": "2026-11-11T05:29:09+00:00",
+  "measurement_cutoff_at": "2026-11-11T05:44:39.305167+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "恢复最后完整试验设置并与重启后的最后历史状态分开。",
+      "以原始采集和对应源码核对配置，而非只引用助手叙述。",
+      "本地交接可被新会话读取，禁止本轮车辆操作及固件改写。"
+    ],
+    "completed": [
+      "已保存本地说明、结构化设置和经过哈希核对的必要试验证据。",
+      "完整1500点记录与归档回执一致，五段数据各300点。",
+      "两个原生子代理分别核对归档与源码，协调者独立核对采集完整性。",
+      "项目任务已完成，交接正文已入独立项目库；未冒认接收方已验收。",
+      "复核两处说明问题已改：复制命令去掉行尾说明，普通转弯参数不称全局限幅。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "native_subagents",
+      "value": 2,
+      "unit": "agents",
+      "basis": "本轮实际两个原生协作者；不等同于外部模型咨询"
+    },
+    {
+      "name": "external_model_consultations",
+      "value": 0,
+      "unit": "calls",
+      "basis": "未调用用户DSH或Opus模型，只读已有归档"
+    },
+    {
+      "name": "vehicle_io_or_flash",
+      "value": 0,
+      "unit": "actions",
+      "basis": "未打开串口、发车、烧录或修改车辆源码"
+    },
+    {
+      "name": "captured_samples_checked",
+      "value": 1500,
+      "unit": "samples",
+      "basis": "协调者验证连续索引、结束标志和五段各300点"
+    },
+    {
+      "name": "source_files_checked",
+      "value": 616,
+      "unit": "C/H files",
+      "basis": "源码审查子代理核对冻结、构建输入与可编辑工程"
+    },
+    {
+      "name": "documentation_review_edits",
+      "value": 2,
+      "unit": "edits",
+      "basis": "独立复核提出并已完成两处说明修正"
+    },
+    {
+      "name": "model_tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "没有统一可信的提供方用量记录"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "没有账单数据"
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "并行阅读与等待未分别计时"
+    },
+    {
+      "name": "review_archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "复核及归档与交付整理重叠，未独立计时"
+    },
+    {
+      "name": "tool_failures_total",
+      "value": null,
+      "unit": "failures",
+      "basis": "至少观察到数据库默认权限写入失败、一次错误子命令；未完整计数"
+    },
+    {
+      "name": "new_owner_clarifications",
+      "value": 0,
+      "unit": "questions",
+      "basis": "从现有本地证据恢复，未要求Owner重复交接"
+    }
+  ],
+  "observations": [
+    "参数目录名和固件显示标识存在复用；以捕获头、源码执行路径和HEX哈希交叉核对才可恢复身份。",
+    "归档中最后一次完整试验后又发生重启与模式切换，因此仅摘取最后一张图会错误描述最后状态。",
+    "已纠正历史助手对相似命令的解释；记录潜在代码问题，但未超范围修固件或发起新试验。",
+    "一条默认权限写入失败改用授权路径完成；一条无效帮助子命令已纠正。",
+    "无同条件基线；不能由并行或产物数量宣称提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "R-RECOVERY-STATE-SPLIT",
+      "action": "交接分列最后完整试验、最后重启状态、编译默认和实时未知值；本轮已采用。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下次接力核对是否仍能明确区分四类来源"
+    },
+    {
+      "id": "R-RECOVERY-COMMAND-COPY",
+      "action": "可复制设备命令与解释分开，复核协议倍率和注释支持；本轮已修正。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下次只读审查可复制示例是否满足实际解析器格式"
+    },
+    {
+      "id": "R-RECOVERY-LEDGER-UPDATE",
+      "action": "建议设备修改方每次构建后同步版本标签、采集字段说明及交接库，减少从大归档恢复。",
+      "owner": "dsh",
+      "status": "proposed",
+      "next_check": "等待真实执行者回执，不把此建议计为已实施"
+    }
+  ],
+  "evidence": [
+    "evidence.json: 脱敏聚合核验；原始私人归档、车辆源码、采集和本地路径均未上传。"
+  ],
+  "limits": [
+    "仅历史文件恢复，当前车辆运行时状态未知。",
+    "发现的固件调用冲突尚未修复；这不属于本轮恢复任务。",
+    "远端上传与后续回读发生在测量截止之后；以提交内容回读作为归档凭据。",
+    "无匹配基线，不声称速度改善。"
+  ],
+  "comparison": null
+}
