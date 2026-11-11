@@ -1,0 +1,29 @@
+{
+  "scope": "Sanitized aggregate results only. No raw telemetry, chat, project source, credentials or databases.",
+  "baseline_source_snapshot_matched": 683,
+  "baseline_artifact_match": true,
+  "actual_c_assertions": {
+    "current_audit": 221,
+    "baseline_audit": 5,
+    "constant_cruise": 854
+  },
+  "target_build": {
+    "errors": 0,
+    "warnings": 13,
+    "hardware_accessed": false,
+    "flashed": false
+  },
+  "candidate_hex_sha256": "2dfb1f0f13fed102ac4ae9375da19f7b94f012d62c3d75853f30e4d775c4c648",
+  "local_report_hashes": {
+    "baseline.json": "d22bf776028e82a94e7bc0e0a75db5caf709b41294131f4672273bf286f89b4b",
+    "review.md": "8bd9c713ead6a43f8e5d819b822ee8f4c27cbee7ad91bf566a6c0ac194b6becf",
+    "FINDINGS.md": "196c23cc7bf23a8e4a4f208a4589e0aa549d9f84312daed7cc0989d923785c0a",
+    "candidate05-static-review.md": "b3e3901c0d616922417b3751bddf24326e1f5c6499209379ac4ba850a82ace53"
+  },
+  "boundaries": [
+    "Synthetic selected-function tests, not full dynamics or hardware validation.",
+    "Old route-disabled code repeats the same corner too; not a new-code regression.",
+    "Fixed high image gain can reverse output at handover without a derivative-history spike.",
+    "Owner later authorized a constant cruise candidate; it does not fix the separate handover defects."
+  ]
+}

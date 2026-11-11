@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-11-turn-code-audit",
+  "task_summary": "Codex直接对照旧稳定源码审计转弯异常；按Owner后续要求准备保持250行驶基速的离线候选。",
+  "workflow_version": "WORKFLOW_REVIEW.md + source-bound deterministic tests",
+  "started_at": "2026-11-11T09:16:40+00:00",
+  "measurement_cutoff_at": "2026-11-11T09:32:20.402264+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "找到与指定旧HEX对应的真实工程并核来源。",
+      "区分旧缺口、新模式冲突和实车未证实因果。",
+      "保持250候选通过离线与目标编译，原冻结版不被覆盖。"
+    ],
+    "completed": [
+      "三份旧HEX相同，683文件来源快照匹配。",
+      "真实C当前221、旧5断言通过；发现原route0重触发和固定图像增益交接冲突。",
+      "独立恒速候选854断言通过，官方ADS零错误；未使用串口或烧录。",
+      "未向DSH再次交接；原生只读辅助用于证据定位与复核，Codex承担结论与实现。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Native contributors",
+      "value": 2,
+      "unit": "agents",
+      "basis": "Bounded source provenance and independent C review; no recursive agents."
+    },
+    {
+      "name": "External model dispatch",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No DSH or Opus dispatch."
+    },
+    {
+      "name": "Hardware or runtime changes",
+      "value": 0,
+      "unit": "operations",
+      "basis": "Offline artifacts only."
+    },
+    {
+      "name": "Model usage",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No reliable scoped usage supplied."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing data."
+    },
+    {
+      "name": "Coordination and archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured; coordination in total wall time, final archive after cutoff."
+    }
+  ],
+  "observations": [
+    "Owner narrowed responsibility to Codex; no new DSH handoff was sent.",
+    "Original test harness constants differed from hardware constants; new reproducer extracted actual macros and did not reuse that mismatch.",
+    "Exact baseline artifact discovery prevented calling an inherited defect a new regression.",
+    "Initial ADS run could not write its Eclipse configuration; authorized compiler-only retry succeeded.",
+    "Early listing of not-yet-created helper output and an invalid task-help verb added avoidable tool errors.",
+    "Owner requested constant250 during audit; isolated candidate changed the drive target without also changing legacy steering gain scheduling."
+  ],
+  "recommendations": [
+    {
+      "id": "TURN-REAL-CONSTANTS",
+      "action": "针对切换边界测试使用实际宏与函数，并绑定编译输入哈希。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续修复验证必须覆盖route0旧角释放与正负指令交接。",
+      "experience_refs": [
+        "CC-F#168"
+      ],
+      "adoption": "改后"
+    },
+    {
+      "id": "TURN-GAIN-SEPARATION",
+      "action": "速度策略变更与方向增益变更分开；恒速候选不得冒称交接缺陷已修好。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "未来实车验收分别保留速度设定、角速目标、轮差速与元素状态。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "没有同质量时间基线，不能宣称协作加速。",
+    "离线状态复现不是完整仿真或实车验证。",
+    "没有同步翻转时刻与角点原图，不判定唯一翻车原因。",
+    "恒250指行驶基速，左右轮仍差速；转弯交接修复及实车试跑尚未实施。"
+  ]
+}
