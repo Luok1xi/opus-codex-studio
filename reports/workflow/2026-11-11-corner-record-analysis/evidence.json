@@ -1,0 +1,27 @@
+{
+  "source_project": "CRAZY-CIRCUIT",
+  "task": 134,
+  "trial_count": 3,
+  "exported_points": [
+    42,
+    18,
+    19
+  ],
+  "raw_capture_complete": [
+    true,
+    true,
+    true
+  ],
+  "sample_spacing_ms": 40,
+  "configuration_binding": "Timestamped actual readbacks from the authorized local tuning session; no inferred values from folder names.",
+  "analysis_sha256": "72b9c5d83ec5b9f1f1f02675397847497e4311237d0b907c1ca1178930951cee",
+  "independent_source_review_sha256": "1b956d1fd59b9572a0f9c96777350b86af2a03a9ba192153f613a6e02e415018",
+  "settings_v2_sha256": "fe640f4ab81f04a3c80a1f2e2d0c8caf18212f262bed8221818d6f81a9f5ecb5",
+  "plot_sha256": "158c19cc662321255b1f5d51264c991596bceae39f6d37a241c9a5a03fc5fef8",
+  "firmware_edits": 0,
+  "hardware_operations": 0,
+  "serial_operations": 0,
+  "flash_operations": 0,
+  "new_experiments": 0,
+  "sanitization": "Only workflow aggregates/hashes; no raw telemetry, chat/session, source or database uploaded."
+}
