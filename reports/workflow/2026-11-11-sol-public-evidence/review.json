@@ -1,0 +1,43 @@
+{
+  "workflow_version": "WORKFLOW_REVIEW.md",
+  "observations": [
+    "Public reports are self-attributed. The session cannot be identified from them."
+  ],
+  "recommendations": [],
+  "quality": {
+    "status": "passed",
+    "remaining": [],
+    "acceptance": [
+      "Verify public documentation and distinguish reports from attribution"
+    ],
+    "completed": [
+      "Checked official model documentation and public tester reports"
+    ]
+  },
+  "task_summary": "Assess public rollout reports as evidence of a session model.",
+  "schema_version": 1,
+  "measurement_cutoff_at": "2026-11-11T13:32:06.6388118+08:00",
+  "limits": [
+    "No matched workflow baseline"
+  ],
+  "comparison": null,
+  "metrics": [
+    {
+      "value": null,
+      "unit": "tokens",
+      "basis": "Provider data unavailable",
+      "name": "Actual usage"
+    },
+    {
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately measured",
+      "name": "Review overhead"
+    }
+  ],
+  "round_id": "2026-11-11-sol-public-evidence",
+  "evidence": [
+    "Official model documentation and public tester reports"
+  ],
+  "started_at": null
+}
