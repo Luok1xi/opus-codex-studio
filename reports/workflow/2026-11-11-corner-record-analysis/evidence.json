@@ -23,5 +23,17 @@
   "serial_operations": 0,
   "flash_operations": 0,
   "new_experiments": 0,
-  "sanitization": "Only workflow aggregates/hashes; no raw telemetry, chat/session, source or database uploaded."
+  "sanitization": "Only workflow aggregates/hashes; no raw telemetry, chat/session, source or database uploaded.",
+  "followup_170344": {
+    "points": 86,
+    "complete": true,
+    "settings_sha256": "3b1e512734b768b073802502e8571655ea79b007da5e7134044feb7ccda23119",
+    "analysis_sha256": "b2af2da6391af14a8e9126c20c5a11e6b9368fd78f50a671704986dd925d58ad",
+    "source_review_sha256": "47bf1b5db011ab7b9092df5d78404e84cde1003db44cd8659877a4da395ee89c",
+    "plot_sha256": "b06c84c6d53ed156ac872d6c6b3090d42be44eccc04fe7a24f7920b3de2ff550",
+    "owner_correction_recorded": true,
+    "handoff": 778,
+    "hardware_operations": 0,
+    "firmware_changes": 0
+  }
 }
