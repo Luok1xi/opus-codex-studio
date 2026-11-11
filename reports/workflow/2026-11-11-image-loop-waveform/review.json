@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-11-image-loop-waveform",
+  "task_summary": "解释图像位置环误差波形与角速度阶跃跟踪的区别，以冻结源码核对语义；不进行车辆操作。",
+  "workflow_version": "bounded source check + one native concept review",
+  "started_at": "2026-11-11T08:03:40+00:00",
+  "measurement_cutoff_at": "2026-11-11T08:05:41.077230+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "区分目标、反馈和误差，不把位置误差调成方波。",
+      "核对本项目外环到内环连接，明确直道与弯道及无图零值区别。"
+    ],
+    "completed": [
+      "冻结源码核实图像偏差是加权像素偏移，外环输出作为角速度目标。",
+      "独立概念复核一致，保留当前板上程序未核实边界。",
+      "说明可重复验证方式；未设置参数或操纵车辆。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "native_reviewers",
+      "value": 1,
+      "unit": "agents",
+      "basis": "一个既有原生协作者，只审概念。"
+    },
+    {
+      "name": "external_model_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "未咨询外部DSH或Opus。"
+    },
+    {
+      "name": "hardware_actions",
+      "value": 0,
+      "unit": "actions",
+      "basis": "未开串口、烧录或发车。"
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "无提供方完整计量。"
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "无账单。"
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "复核与源码查阅并行，未单独计时。"
+    },
+    {
+      "name": "rework",
+      "value": 0,
+      "unit": "changes",
+      "basis": "本轮概念复核没有要求重写结论。"
+    }
+  ],
+  "observations": [
+    "不能仅凭平整的误差曲线判断好坏：视觉失效清零、状态切换和预瞄必须区分。",
+    "老参考材料的架构数字不直接套用，核对与归档匹配的源码。",
+    "没有匹配基线，不作速度收益声明。"
+  ],
+  "recommendations": [
+    {
+      "id": "R-ERROR-PLOT-VALIDITY",
+      "action": "后续波形同时提供误差目标、角速度目标/实测和视觉有效状态，避免把失效零线当稳定。",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "下一轮实测采集是否有相应字段；本轮未改采集器。"
+    }
+  ],
+  "evidence": [
+    "本地只读源码与回答留存；上传仅为本工作流聚合报告，不含项目源码、私人会话或采集。"
+  ],
+  "limits": [
+    "当前设备程序和参数未回读。",
+    "说明波形评价方法，不宣布外环调好。",
+    "本测量截止不含随后远端归档时间。"
+  ],
+  "comparison": null
+}
