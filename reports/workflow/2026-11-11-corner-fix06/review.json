@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-11-corner-fix06",
+  "task_summary": "修复矩形直角已被视觉识别但局部偏差接近零时未接管的问题，参考已有海大与国二代码，形成不烧录的独立候选。",
+  "workflow_version": "WORKFLOW_REVIEW.md + bounded reference review + isolated implementation + actual C regression + ADS build",
+  "started_at": "2026-11-11T14:39:28+00:00",
+  "measurement_cutoff_at": "2026-11-11T15:00:00.171387+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "从当前已记录烧录来源隔离，不覆盖其他工作。",
+      "现有视觉实际灰度回放与控制/桥接真实C回归通过。",
+      "源码与官方目标构建绑定，保留未实车验证边界。"
+    ],
+    "completed": [
+      "保留已识别角点通路，默认自动直角；三帧新线确认、同帧有效性、防旧角重入、有界交回。",
+      "修正无路线时残留校赛补线与冷启动路线恢复；保留用户选择的250基础轮速。",
+      "新增有效/保持/丢失状态及伴随记录，原采集协议保留。",
+      "475张合成灰度、5700次实际流水线、2645图像检查；419控制及140接口检查，内存检查通过。",
+      "官方TC264编译0错误13警告；冻结HEX与全部输入哈希。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Native contributors",
+      "value": 2,
+      "unit": "agents",
+      "basis": "One source-reference and independent-review worker, one image/bridge verification worker; root implemented and integrated."
+    },
+    {
+      "name": "Source review findings closed",
+      "value": 4,
+      "unit": "findings",
+      "basis": "Unbounded handover, mismatched frame validity, route0 residual fill, cold-start route restore; fixed with targeted tests."
+    },
+    {
+      "name": "Target builds",
+      "value": 2,
+      "unit": "successful builds",
+      "basis": "Initial and final ADS runs; final receipt matches frozen sources."
+    },
+    {
+      "name": "Root control harness compile correction",
+      "value": 1,
+      "unit": "failures",
+      "basis": "Initial Werror misleading-indentation in two test loops; braces corrected."
+    },
+    {
+      "name": "Hardware changes",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial opening, runtime writes, flashing, or starting."
+    },
+    {
+      "name": "External model dispatch",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Native workers only; no DSH/Opus delegation."
+    },
+    {
+      "name": "Tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No scoped provider usage supplied."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Coordination wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Overlapped with implementation; not independently measured."
+    },
+    {
+      "name": "Review/archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Review overlapped implementation; archive verification occurs after cutoff."
+    }
+  ],
+  "observations": [
+    "Independent review found four concrete integration errors after the first passing unit suite; fresh integration tests closed them.",
+    "Existing OUC already detects standard long-arm corners even when Gaussian deviation is zero or invalid; a new vision rewrite was not justified by the replay.",
+    "A local national-second-prize reference uses a different navigation task; source mechanisms and physical units were compared instead of copying gains.",
+    "Frozen current-flash lineage avoided replacing active DSH work."
+  ],
+  "recommendations": [
+    {
+      "id": "CORNER-SNAPSHOT",
+      "action": "控制状态切换只接受同一视觉帧的方向、有效性和采集时间；新增交回策略同时测试下一弯是否可重入。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一次真实连续图像回放复核同帧记录与相邻弯。",
+      "experience_refs": [
+        "TE#38",
+        "CC-F#7"
+      ],
+      "adoption": "改后"
+    },
+    {
+      "id": "GEOMETRY-ACCEPTANCE",
+      "action": "基础速度与角速上限同时做半径检查，不把状态机测试通过当作高速贴线通过。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "实测轮速换算与角速度跟踪后再定高速弯触发位置。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "未烧录、未接串口；没有整圈闭环或8/8工况验收。",
+    "相机俯角、轮速标度、抓地未重新标定；250基础速度的物理过弯能力未证实。",
+    "同条件效率基线不存在，不宣称协作提速。"
+  ]
+}

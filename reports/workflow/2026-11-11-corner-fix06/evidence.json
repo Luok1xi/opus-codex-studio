@@ -1,0 +1,33 @@
+{
+  "scope": "Sanitized aggregate implementation and verification only. No raw sessions, source, vehicle telemetry or database.",
+  "identity": "STABLELINE-CORNER-06",
+  "hex_sha256": "30c26c117dc9f8e46c38753f08b2eeef117f24215225bc926271f481946b5efc",
+  "software_checks": {
+    "control": 419,
+    "bridge": 140,
+    "image": 2645
+  },
+  "synthetic_gray_cases": 475,
+  "image_pipeline_calls": 5700,
+  "target_errors": 0,
+  "target_warnings": 13,
+  "source_bound_to_build": true,
+  "hardware_accessed": false,
+  "flashed": false,
+  "physical_acceptance": false,
+  "independent_review_findings_closed": 4,
+  "evidence_hashes": {
+    "FREEZE.json": "ca0f50d7fa9c3604f941ac4e03b9332da927f6ec1bd4dd786114e1766fc044ec",
+    "README.md": "b7ccf2dc8fbd16af626befa648a7670ccb41251dfb2c37b5acef6d4f610e7508",
+    "reference-review.md": "43edd007039a9a2d9ba8be092065787f3043971fa1d9d1de5f661d6f409b36a8",
+    "review.md": "93fd4e391f321806692a9c01be11b8a38e923642f9ec480946e6b17dbe3b9656",
+    "control-tests/result.json": "4bfce384fb61dd12856da5d459d7cc8cbb4d21b30330f911d5b9215e0f9945d4",
+    "image-tests/summary.json": "4ad0c0f5cdd6767bdb1b4cf8d2695e089fc8ba8ad0557d620e4a61288eb13702",
+    "bridge-tests/result.json": "1aadcfdb8c8d6546d96c83b152a150894dfb675bd91a9e3f8d4cb15907a3adb8"
+  },
+  "limits": [
+    "Image tests use synthetic projection and per-case reset, not synchronized field video.",
+    "Control tests use observations/heading inputs, not a full plant or whole-lap test.",
+    "High-speed turning geometry remains unvalidated."
+  ]
+}
