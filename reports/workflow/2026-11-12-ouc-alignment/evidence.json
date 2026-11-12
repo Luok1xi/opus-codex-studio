@@ -1,0 +1,37 @@
+{
+  "scope": "Sanitized workflow aggregates only; no project source, raw images, telemetry, conversations or database.",
+  "reference_commit": "0de6a8b7465bec140b3256d2d21fda60232aae75",
+  "candidate_hex_sha256": "74917d55d97f3e0e13d315b0c7ff51b32bc9868483f8b221a7aec296f8cd1ceb",
+  "frozen_input_files_checked": 626,
+  "source_unchanged": true,
+  "hex_unchanged": true,
+  "audit_matrix_stages": 22,
+  "reference_state_subfunctions": 8,
+  "common_image_function_bodies_equal": 15,
+  "common_maze_function_bodies_equal": 11,
+  "bridge_checks": 11,
+  "primitive_gray_calls": 38,
+  "lookahead_comparison_frames": 86,
+  "firmware_edits": 0,
+  "target_builds_this_round": 0,
+  "hardware_accessed": false,
+  "flashed": false,
+  "evidence_hashes": {
+    "README.md": "28c76734446d480ef8e11ce4cf3375a7f57a5f75a7ad9e41ad715631cda5c4e9",
+    "callchain-review.md": "63bf08a5fe9874f964428389551eba0e432643914cbc4f8b2a4bb31a0aa60160",
+    "callchain-evidence.json": "afd7d547a354fcce806d71139c4cf93fb958e546209ccfdb77b0bd9cd25b0a0a",
+    "bridge-review.md": "f04b46901d3a1d7263117675db4c7dbac34e8b4a9459d13a9eee420f9772b06b",
+    "bridge-evidence.json": "1a2837dd0e7706a77af474229d29074b03f15792729b223796b777b0834f7470",
+    "bridge-probe/result.json": "8ca277f817bed74fe6103b09a825562182486387a4153624bf47c2fad81a463b",
+    "primitive-audit/result.json": "a6af8c4facdb453a3010777fa6afeba540119a31dcd198d97242435624658f79",
+    "primitive-audit/static-comparison.json": "43e1e5c883cdc58ef117004aa1d24edd295f44329deac9a5619b6afb84a721e9",
+    "primitive-audit/report.md": "819b0de643cc2c13defe4026746efa1f5e08c968811a3c0e9e83793c48235448",
+    "primitive-audit/summary.json": "67eb3265e3db1152976a1687ca3759c117e82ab8ead02407d5f34b9a8386c560",
+    "ab-common-min/result.json": "605e87a4c4599544c86c8c2c71dca61db8339e03ca8c5244de39128dbfa65267"
+  },
+  "limits": [
+    "Read-only source audit, not complete upstream state-machine execution or a physical trial.",
+    "Identified functions omitted from the ordinary-only port are not all accidental missed calls.",
+    "Synthetic comparisons do not establish the cause of a particular real-car corner failure."
+  ]
+}
