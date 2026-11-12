@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-12-ouc-aligned08",
+  "task_summary": "按海大main补齐视觉状态/选点与十字重建缺项，保持原控制公式，在独立候选完成离线回归和TC264编译。",
+  "workflow_version": "WORKFLOW_REVIEW.md + isolated candidate + call-chain alignment + real C replay + target build",
+  "started_at": "2026-11-12T02:35:08+00:00",
+  "measurement_cutoff_at": "2026-11-12T04:30:12.342441+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "源代码实际调用对齐，区分视觉状态和固定航向接管。",
+      "保留07与原控制配置，验证边界/真实灰度链及目标编译。",
+      "明确模型发现与实车验收边界；没有串口/烧录。"
+    ],
+    "completed": [
+      "补视觉ANGLE、fork选边/guide、cross重建和三帧保持；J0/route0保留。",
+      "桥使用重建前拓扑；修失效旧值显示、保持叠加、抓图超时。",
+      "状态98、选点858、真实灰度整链54、桥48、外环403、控制不变12检查通过。",
+      "最终15041次灰度调用和目标0错误13警告；冻结候选并核对旧626输入与HEX不变。",
+      "发现并修复角态11例遮挡误报；明确保留原式38cm选点突变，不冒称实车稳定。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Round wall clock to report cutoff",
+      "value": 6904.342,
+      "unit": "seconds",
+      "basis": "UTC task start to report cutoff; includes coordination, environment waits and rework, excludes later remote archive verification."
+    },
+    {
+      "name": "Native contributors",
+      "value": 3,
+      "unit": "agents",
+      "basis": "State/line, image/cross tests, bridge/review; one root coordinator."
+    },
+    {
+      "name": "External model dispatch",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No external Opus or DSH dispatch."
+    },
+    {
+      "name": "Target build attempts",
+      "value": 2,
+      "unit": "builds",
+      "basis": "First failed contiguous DSPR1 RAM placement; second passed after cold backup placement in DSPR0."
+    },
+    {
+      "name": "Hardware operations",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial, flashing or launch."
+    },
+    {
+      "name": "Tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No scoped provider usage available."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Review archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Review overlapped implementation; remote verification after cutoff."
+    }
+  ],
+  "observations": [
+    "Three exclusive source scopes enabled review findings to become bounded patches; no matched quality baseline exists, so no speedup claim.",
+    "The first active grayscale test caught a state-dependent validity regression that ordinary-mode parity did not detect; the failed evidence was preserved before correction.",
+    "Target compilation exposed RAM placement missed by host tests; 4800 bytes of cold cross rollback storage moved without changing algorithms.",
+    "Local test adaptation needed explicit UTF-8 reading and robust relative-path resolution; a metadata git read required local permission elevation. These were harness/environment rework, not vehicle failures.",
+    "The bridge reviewer subsequently authored bridge fixes. Reports distinguish author verification from root review, rather than claiming fully independent acceptance.",
+    "Upstream common-min selection caused an early large input step in the inherited camera model. The team retained and disclosed the actual behavior instead of silently smoothing it or calling all tuning solved."
+  ],
+  "recommendations": [
+    {
+      "id": "UPSTREAM-CALLCHAIN-FIRST",
+      "action": "以原入口、状态、选点、消费者为一条链验收，并保留刻意适配清单。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续启用fork或ring必须验证owner生命周期，不用接口存在代替运行时接通。",
+      "experience_refs": [
+        "UPSTREAM-CALLCHAIN-FIRST",
+        "CC-OUC-AUTHORITY-20261108"
+      ],
+      "adoption": "改后"
+    },
+    {
+      "id": "ACTIVE-MODE-VALIDITY-REGRESSION",
+      "action": "普通模式对照之外，强制在每个新状态加入遮挡/短线/重复帧/失效恢复样本。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续视觉修改保留本轮13例和三帧到期整链用例。"
+    },
+    {
+      "id": "TARGET-MEMORY-EARLY-CHECK",
+      "action": "增加大型静态缓冲前先核对目标RAM余量，host测试通过后仍单独检查link map。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续图像模块新增缓存时记录所在内存与大小。"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "Source-aligned visual candidate; not a physical or closed-loop full-course acceptance.",
+    "J0/route0: angle selection active; fork/cross owner interfaces covered offline, not enabled as a new route engine.",
+    "Original common-min switching jumps at modeled 380mm: left -1 to -84, right -1 to +83; retained and reported, not smoothed.",
+    "Normal gap fill remains mode0; ring/inertial replay and all-element routing not enabled.",
+    "Compiled PID defaults are unchanged and do not stand for recent volatile tuning.",
+    "No scoped token/cost or matched workflow baseline; no speedup claim."
+  ]
+}

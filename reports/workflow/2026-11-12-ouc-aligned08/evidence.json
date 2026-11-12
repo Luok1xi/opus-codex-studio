@@ -1,0 +1,47 @@
+{
+  "scope": "Sanitized workflow aggregates only; no project source, raw images, telemetry, conversations or database.",
+  "candidate_hex_sha256": "ff8f385cc0c19d096fe3444d38762e3ce8132c15e093de9cd78966023b0be55e",
+  "reference_commit": "0de6a8b7465bec140b3256d2d21fda60232aae75",
+  "baseline_files_verified": 626,
+  "baseline_source_and_hex_unchanged": true,
+  "checks": {
+    "state": 98,
+    "line": 858,
+    "gray_active": 54,
+    "bridge": 48,
+    "control_invariants": 12,
+    "outer": 403
+  },
+  "final_gray_pipeline_calls": 15041,
+  "normal_comparison_calls_each": 7322,
+  "normal_output_differences": 0,
+  "target_build_attempts": 2,
+  "target_final_errors": 0,
+  "target_final_warnings": 13,
+  "state_occlusion_cases_first_false_valid": 11,
+  "state_occlusion_cases_final_rejected": 13,
+  "hardware_accessed": false,
+  "flashed": false,
+  "evidence_hashes": {
+    "state-tests/result.json": "383ba65f8a335bea2414ef4d01e172a17012d90f1af6bf904a9aea3c20f80084",
+    "state-tests/line-result.json": "3afd13bf5d28e598f06af3762d1cdec8162628a9b83a94262b8dd25a03a5fe56",
+    "vision-tests/candidate08-final/result.json": "ed07c049f2fd216e7dedbe20dd7120cd2e04fa7f15a7ab01809d581310a04c88",
+    "vision-tests/active08-final/result.json": "6dda531020ef507274298a11cd1ce61647ff6ad0b5ef6c475ef3e1e30ad6c7f7",
+    "vision-tests/active-integration-final/result.json": "664dabcc59fe07ba32187232255f4f34dd403a6950a74a2f813b910b0937ecfc",
+    "review-tests/bridge_result.json": "e61c4b8cd56a01a050ec351d6de79fe1590d9da5991b667269c73433d77a2044",
+    "review-tests/invariants.json": "c31b5527d9d1ab7560d0d2ecaec82c6d60020aeed19e81696dbf90e257677c45",
+    "control-tests/result.json": "a5300d2189bda93af91a6f2644dfd7031bbba8997ff22f3bdcf9900ad394905b",
+    "README.md": "133d25e43c65bc566dc5df1862fd45a36c35e8565c45820bbb99bd1fa0d9199f",
+    "vision-tests/summary.json": "fee6e6e371ddc6284191c1f2a22c2755739ee516cf1d0c9d81974e8078aa5209",
+    "vision-tests/analysis.md": "7e52c22421ec018097606dfe84f2e58dddd4fcbe21d71e95e3f4d01e87cc7bdb",
+    "vision-tests/07-vs-08-active.png": "06d279c45539aaf95e690065af81e1ae973578d296521f2d1940f8d6f02b74b2",
+    "review-tests/review.md": "813ef2ca15965d37d7b29a2996989a5e87cafffd010ec3e6c1e1c3449601a0c5"
+  },
+  "limits": [
+    "Source-aligned visual candidate; not a physical or closed-loop full-course acceptance.",
+    "J0/route0: angle selection active; fork/cross owner interfaces covered offline, not enabled as a new route engine.",
+    "Original common-min switching jumps at modeled 380mm: left -1 to -84, right -1 to +83; retained and reported, not smoothed.",
+    "Normal gap fill remains mode0; ring/inertial replay and all-element routing not enabled.",
+    "Compiled PID defaults are unchanged and do not stand for recent volatile tuning."
+  ]
+}
