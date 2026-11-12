@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-12-visual-measurement09",
+  "task_summary": "核查用户提出的三项视觉测量链缺陷；用实际C区分配对与预瞄、空间与时间滤波、保持与失效，提出分项修正策略。",
+  "workflow_version": "WORKFLOW_REVIEW.md + frozen-source probes + independent bounded geometry/control audits",
+  "started_at": "2026-11-12T06:47:14+00:00",
+  "measurement_cutoff_at": "2026-11-12T07:08:39.737198+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "逐项区分源码事实、可复现机制和未证明的实车因果。",
+      "使用冻结代码实际C回放与滤波诊断变体，不以未烧录版冒充现车。",
+      "保留原固件，记录限制和前轮参数文字更正。"
+    ],
+    "completed": [
+      "10张灰度、60次实际六单元C调用，定位同带配对与预瞄跳变两个独立问题。",
+      "25组控制信号/相位/滤波变体，保持边界与cross失效检查；ASan/UBSan清洁。",
+      "跟踪真实include/init/参数写入链，确认250限幅和启动增益，纠正旧报告默认来源。",
+      "冻结08全部输入与HEX未改；没有串口、烧录或新固件。"
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "Round wall clock to report cutoff",
+      "value": 1285.737,
+      "unit": "seconds",
+      "basis": "UTC start to cutoff, includes coordination and read-only probes; excludes later remote verification."
+    },
+    {
+      "name": "Native contributors",
+      "value": 3,
+      "unit": "agents",
+      "basis": "Geometry audit, control probes, bounded test plan; root consolidated."
+    },
+    {
+      "name": "Geometry actual C calls",
+      "value": 60,
+      "unit": "calls",
+      "basis": "10 grayscale inputs x2 modes x3 warmup frames."
+    },
+    {
+      "name": "Control diagnostic cases",
+      "value": 25,
+      "unit": "cases",
+      "basis": "Signal/phase/filter combinations in saved real-C probe."
+    },
+    {
+      "name": "Production edits and target builds",
+      "value": 0,
+      "unit": "operations",
+      "basis": "Frozen inputs and HEX reverified unchanged; variants live only in diagnostic harness."
+    },
+    {
+      "name": "Hardware operations",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial, flash or launch."
+    },
+    {
+      "name": "External model dispatch",
+      "value": 0,
+      "unit": "calls",
+      "basis": "Native agents only."
+    },
+    {
+      "name": "Tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No scoped usage evidence."
+    },
+    {
+      "name": "Cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing evidence."
+    },
+    {
+      "name": "Review archive overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Review overlaps task; remote verification occurs after cutoff."
+    }
+  ],
+  "observations": [
+    "Initial hypotheses were tested rather than simply affirmed: same-row pairing alone failed and corner-jump targets were on the correct outgoing band.",
+    "A30px step saturated all variants, hiding delay. It was retained and supplemented with an unsaturated4px step and phase check.",
+    "Local default macro inspection initially suggested no yaw cap; full include chain corrected that preliminary hypothesis before final conclusions.",
+    "Previous report misidentified config values as startup gains. Actual assignment and override paths were traced and a separate correction recorded without rewriting frozen evidence.",
+    "The bounded inbox returned historical handoffs; they were not treated as current runtime authorization or live hardware state.",
+    "No matched workflow baseline exists; reduced synthetic signal variation is not an efficiency or physical stability claim."
+  ],
+  "recommendations": [
+    {
+      "id": "ACTIVE-ASSIGNMENT-CHAIN",
+      "action": "参数报告必须从启动赋值、宏include、运行写入口追到最终消费者，不能只读参数表。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下次生成固件摘要时对照实际初始化与无线回读口径。"
+    },
+    {
+      "id": "UNSATURATED-FILTER-COMPARISON",
+      "action": "滤波对照同时保留未饱和小阶跃、噪声和饱和大阶跃，分别记录P延迟与D尾。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "后续候选不能以限幅后的首拍到位宣称没有时延。"
+    },
+    {
+      "id": "GEOMETRY-CAUSE-SEPARATION",
+      "action": "将白带配错、跨截面和预瞄位置跳变作为不同机制验证。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "几何修改同时覆盖横向直角和同行双白带反例。",
+      "experience_refs": [
+        "CC-F#216",
+        "CC-F#215"
+      ],
+      "adoption": "改后"
+    }
+  ],
+  "evidence": [
+    "evidence.json"
+  ],
+  "comparison": null,
+  "limits": [
+    "No current vehicle firmware identity, runtime parameter readback or physical telemetry captured.",
+    "Synthetic input/output probes, not closed-loop vehicle acceptance or a new deployable firmware.",
+    "Hypotheses about latest physical run remain unproven; no speedup claim."
+  ]
+}

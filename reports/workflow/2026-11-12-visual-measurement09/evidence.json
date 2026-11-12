@@ -1,0 +1,31 @@
+{
+  "source_identity": "STABLELINE-OUCALIGN-08",
+  "hex_sha256": "ff8f385cc0c19d096fe3444d38762e3ce8132c15e093de9cd78966023b0be55e",
+  "all_frozen_inputs_checked": 628,
+  "source_and_hex_unchanged": true,
+  "hardware_accessed": false,
+  "flashed": false,
+  "new_firmware_generated": false,
+  "geometry_pipeline_calls": 60,
+  "geometry_inputs": 10,
+  "geometry_final_observations": 20,
+  "control_signal_phase_variant_cases": 25,
+  "sanitizers_clean": true,
+  "evidence": {
+    "README.md": "b1026621138757316b80ac21634bb8587b3053151d2ce696f213ce76f98a8a10",
+    "geometry-audit.md": "d2c7480596befccd4f264b3b3411aa99b2dd8719951174bba83e7559ae7a909d",
+    "geometry-result.json": "e7d6e1ec2a18f651360356ee065183e849e74a9b61148a1ca7d42071cee5730f",
+    "control-audit.md": "68101c94cc62effbd363adf7b2a2f45138b3b2bd667dab638183c29f90cf14bf",
+    "control-probe/result.json": "6d5975adb32c53a10c7460c51974bf88a2b7341f92dbc1c911adb252c3651192",
+    "test-plan.md": "9484bd73c2a376783bf09e6ef4b54970183d842fd211185cc5eb5c018100782f"
+  },
+  "scope": "Sanitized workflow aggregates; no source, raw frames, raw sessions, telemetry or live databases.",
+  "findings": [
+    "Cross-row pairing is not sufficient evidence of early turning: tested 380mm corner target remains on the correct band; lookahead jumps to the exit.",
+    "Same-row unique pairs can still average into a black gap between two distinct bands.",
+    "D-only 5ms reduced synthetic command noise peak-to-peak from81.73 to36.36; P unchanged, derivative tail longer.",
+    "100ms hold exists, but one side exit is not necessarily invalid; shortening hold alone stops earlier rather than creating turn measurements.",
+    "Actual profile yaw cap250 plus nominal speed mapping corresponds to about0.501m steady tracking radius.",
+    "Prior report startup gain labels were corrected by following PID_Init assignments, not config filenames."
+  ]
+}
