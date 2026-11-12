@@ -1,0 +1,35 @@
+{
+  "scope": "Sanitized aggregate outcomes only; no raw sessions, project code, telemetry or database.",
+  "identity": "STABLELINE-VISUAL-07",
+  "hex_sha256": "74917d55d97f3e0e13d315b0c7ff51b32bc9868483f8b221a7aec296f8cd1ceb",
+  "control_checks": 387,
+  "vision_required_checks": 3521,
+  "vision_optional_diagnostic_failures": 19,
+  "synthetic_gray_cases": 1044,
+  "pipeline_calls": 14644,
+  "target_errors": 0,
+  "target_warnings": 13,
+  "source_bound_to_build_and_tests": true,
+  "original_source_unchanged": true,
+  "hardware_accessed": false,
+  "flashed": false,
+  "physical_acceptance": false,
+  "evidence_hashes": {
+    "FREEZE.json": "a317039392a0d8fc1063b6322312a617b31eaf3d772b1a216fdad99c2a7d5847",
+    "README.md": "cd85ea0878c1ebe79dddec2cfc9f92ceadbe5d3e789534c53f37d3efe18e7892",
+    "reference-review.md": "d66578b6d0d3aafe0180915843914930136a63dd482d7d20f9a6d78dd68a54e6",
+    "review.md": "d20e5278e719dfcb2e842b18e54ba47a92f3e9aca3940200b34a0d5403a363f9",
+    "review-evidence.json": "74b322cc39bffb26e26539f8fed165b1a952173776379204c2b09aa9e9c4b5c6",
+    "control-tests/result.json": "45603a12baf366e5d9e7e4a6edf16004e8ed9cbbe42ad2723ba193175e166110",
+    "vision-tests/summary.json": "e98cfb476b4617df793bb2986b323f78186a174c25a0e6026ca1329462e761d9",
+    "vision-tests/analysis.md": "d1333f9fa38ed8589fcbc268c37892b671dbf42cdfbf7a50ecdb53856781527b",
+    "vision-tests/right-corner-comparison.png": "e791a2a9820f9c2abc6960092d0e982118eace419159a3a378eac61a8e690b23"
+  },
+  "limits": [
+    "Generated grayscale and prescribed poses are not closed-loop or real car trials.",
+    "Active no-fill rectangle scope; 19 extra interpolation/noise diagnostic failures retained.",
+    "Gap/dash support weakens when short dead-end segments are invalidated.",
+    "Gain operating point changes despite preserving pixel units.",
+    "No high-speed, physical lap, camera calibration, or timing acceptance."
+  ]
+}
