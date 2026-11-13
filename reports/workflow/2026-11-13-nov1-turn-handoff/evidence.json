@@ -1,0 +1,189 @@
+{
+  "schema": "nov1-turn-handoff-evidence/1",
+  "execution_state": "paused_by_owner",
+  "measurement_checkpoint": {
+    "start_utc": "2026-11-13T07:37:41Z",
+    "owner_stop_utc": "2026-11-13T08:17:29Z",
+    "seconds": 2388,
+    "includes_human_wait": true,
+    "whole_task_duration": false
+  },
+  "on_car_firmware_sha256": "5dafe559eca020ee13ebb4d275b5f32a8fc72e9521fbc4ae15148dab1ffe9a55",
+  "quiet_first_physical_start": {
+    "launch_device_ms": 243790,
+    "calibration_device_ms": [
+      246290,
+      247290
+    ],
+    "first_fan_device_ms": 247280,
+    "first_wheel_device_ms": 249760,
+    "timestamp_basis": "Coordinator readout of stored status/M2; asynchronous telemetry timing is not an atomic phase-order trace.",
+    "board_samples": 225,
+    "sample_period_ms": 20,
+    "first_to_last_board_span_s": 4.48,
+    "binding_status": "verified",
+    "stop_code": 3,
+    "owner_observation": "Left turn into the junction before the dashed section, not line loss after travelling straight through the dashes."
+  },
+  "saved_runs": [
+    {
+      "run_id": "boot-000-run-001",
+      "binding_status": "verified",
+      "board_samples": 225,
+      "sample_period_ms": 20,
+      "exports_complete": {
+        "#P": true,
+        "#I": true,
+        "#S": true
+      },
+      "stop_code": 3,
+      "analysed_in_this_stage": true
+    },
+    {
+      "run_id": "boot-000-run-002",
+      "binding_status": "unknown",
+      "board_samples": 94,
+      "sample_period_ms": 20,
+      "exports_complete": {
+        "#P": true,
+        "#I": true,
+        "#S": true
+      },
+      "stop_code": 3,
+      "analysed_in_this_stage": false
+    },
+    {
+      "run_id": "boot-000-run-003",
+      "binding_status": "unknown",
+      "board_samples": 228,
+      "sample_period_ms": 20,
+      "exports_complete": {
+        "#P": true,
+        "#I": true,
+        "#S": true
+      },
+      "stop_code": 3,
+      "analysed_in_this_stage": false
+    }
+  ],
+  "collector": {
+    "state": "closed",
+    "started_utc": "2026-11-13T07:39:13.908571+00:00",
+    "ended_utc": "2026-11-13T08:09:13.946599+00:00",
+    "fault_count": 0,
+    "process_exit_code": 0,
+    "process_exit_source": "Coordinator execution completion receipt; worker did not reopen port."
+  },
+  "legacy_turn_nominal_smoke": [
+    {
+      "engine": "csim",
+      "passed": false,
+      "distance_m": 0.85,
+      "time_s": 0.771,
+      "max_lateral_mm": 60.0402,
+      "route_k": 0.0,
+      "result_sha256": "25e5ee3ae74fe1e9b18489aa2bbaa2575a867f4a684c9ecc9d83b920d39dc4c2"
+    },
+    {
+      "engine": "pybullet",
+      "passed": false,
+      "distance_m": 0.84,
+      "time_s": 0.755,
+      "max_lateral_mm": 60.2926,
+      "route_k": 0.0,
+      "result_sha256": "6c37692ca6f4dbb4c9c766cd7f5ef9367c9a6aebd31221b2b5c7094ca95f6a2d"
+    }
+  ],
+  "isolated_row_sweep": [
+    {
+      "row": 62,
+      "first_corner_including_exit_max_mm": 60.0455,
+      "distance_m": 0.89,
+      "failure_route_k": 0,
+      "passed": false,
+      "source_snapshot_sha256": "4ba2ccdc6bbfe97863dd631e90449fd86d39afa24f746ae634e0a2b19508275f"
+    },
+    {
+      "row": 52,
+      "first_corner_including_exit_max_mm": 59.8522,
+      "distance_m": 3.73,
+      "failure_route_k": 4,
+      "passed": false,
+      "source_snapshot_sha256": "0d305602f809937d602f27ed95a5a46c81441d875686a601423bfa320313036e"
+    },
+    {
+      "row": 42,
+      "first_corner_including_exit_max_mm": 44.1669,
+      "distance_m": 6.61,
+      "failure_route_k": 8,
+      "passed": false,
+      "source_snapshot_sha256": "693edcd755fc13b1f547dc76e3b4f12839d1bf89d64edd595d56d221908b6716"
+    },
+    {
+      "row": 47,
+      "first_corner_including_exit_max_mm": 46.7975,
+      "distance_m": 6.62,
+      "failure_route_k": 8,
+      "passed": false,
+      "source_snapshot_sha256": "50465cb74e8283e2974658f51f20d9087a95bd2bbae8a444d18122cf9c2c9b95"
+    },
+    {
+      "row": 32,
+      "first_corner_including_exit_max_mm": 49.4355,
+      "distance_m": 3.42,
+      "failure_route_k": 3,
+      "passed": false,
+      "source_snapshot_sha256": "571d37ddbb82f7f8cf2c6ad5768a22c26c82c3ad53fdf0abb5f6da115fc009db"
+    }
+  ],
+  "row_sweep_full_passes": 0,
+  "row47_merged": false,
+  "main_turn_row": 70,
+  "route_fix": {
+    "condition_change": "route row threshold <=119 to <=0",
+    "actual_C_synthetic_assertions": 19,
+    "cases": 3,
+    "all_after_cases_passed": true,
+    "before_premature_case_failed_as_expected": true,
+    "before_after_same_test_source": true,
+    "after_source_sha256": "451c74322ffcdf5861c599ad5929aaea159679cf0d42bc4341bfa9f70ec0d367",
+    "joint_full_route_simulation": false,
+    "target_ADS_after_combination": false,
+    "new_candidate_flashed": false
+  },
+  "artifact_index": [
+    {
+      "reference": "closed-capture/manifest.json",
+      "sha256": "95703254c2cd22e423f56747bb5728e153d568fc570c7a1c048cbaf5c34f8ec2",
+      "uploaded": false
+    },
+    {
+      "reference": "row-sweep/SUMMARY.json",
+      "sha256": "f22bc63c027b2352fe22a34ae0061d4f6b9f2cae753484b0c822f4c743333f04",
+      "uploaded": false
+    },
+    {
+      "reference": "candidate/gap-crossing-before.json",
+      "sha256": "a40fa84cf082c4fb328d4e675f6257acc0511de17258d6fcebe8f9e71b6dda70",
+      "uploaded": false
+    },
+    {
+      "reference": "candidate/gap-crossing-after.json",
+      "sha256": "de42e796b21c164ca81afeec971965a0cc47c33728bcdfd557de9117f4b0a6b1",
+      "uploaded": false
+    },
+    {
+      "reference": "candidate/tests-turn/result.json",
+      "sha256": "3cf626539703869b1c6e0849d5a101b9682e246d3837473abd82059cf0439cc3",
+      "uploaded": false
+    },
+    {
+      "reference": "candidate/config/school.json",
+      "sha256": "701dde2f2f84bfc5952a6c342f326a3a6d1aa996cc399854b854defefb639b51",
+      "uploaded": false
+    }
+  ],
+  "privacy": "Aggregates and source/artifact hashes only; no raw telemetry, image, firmware/source, private filesystem paths, personal chat or databases uploaded.",
+  "review_worker_hardware_operations": 0,
+  "archive_checkpoint_start_utc": "2026-11-13T08:18:39Z"
+}
