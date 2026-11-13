@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "source_project": "CRAZY-CIRCUIT",
+  "task_id": 144,
+  "profile": "SCHOOL375-250-FAN50-V2",
+  "hex_sha256": "512a51be8124fbc3cfa23e8d2f739df73eeb8dfe4e6cead337e5c1d140291d3d",
+  "host_snapshot_sha256": "3075d31557993af9cb0c3bf536382fafdad30ca3c02aae5512aeb7d9cec00b90",
+  "matrix": {
+    "passed": 24,
+    "jobs": 24,
+    "repeats": 3,
+    "source_drift": [],
+    "max_lateral_mm": 57.4468,
+    "running_50mm_passed": 6,
+    "route_identity_passed": true,
+    "time_range_s": [
+      29.752,
+      30.648
+    ]
+  },
+  "target": {
+    "accepted": true,
+    "errors": 0,
+    "warnings": 13,
+    "same_shared_inputs": 36,
+    "dspr_free_bytes": [
+      20542,
+      4959
+    ]
+  },
+  "sensitivity": {
+    "no_force": {
+      "passed": 0,
+      "jobs": 2
+    },
+    "half_force": {
+      "passed": 2,
+      "jobs": 2
+    },
+    "slower_fan": {
+      "passed": 2,
+      "jobs": 2
+    },
+    "physical_force_calibrated": false
+  },
+  "failed_experiments_preserved": {
+    "turn95_rate320": "0/2",
+    "turn95_rate380": "7/8",
+    "turn85_rate340": "6/8",
+    "run_decel10": "6/8",
+    "run_decel15": "6/8"
+  },
+  "hardware_actions": 0,
+  "artifact_location": "Local project; no source, chat or raw logs uploaded.",
+  "limitations": [
+    "60mm running development bound, not strict50mm.",
+    "Physical calibration, HIL, flashing and racing not performed.",
+    "250 is a ceiling; ordinary and custom corners remain limited.",
+    "Same-seed repeats are not general robustness."
+  ]
+}
