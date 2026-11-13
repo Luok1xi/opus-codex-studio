@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-13-quiet-launch-build-flash",
+  "task_summary": "Reorder launch to quiet IMU calibration, fan pre-spin, then wheel release; freeze, compile and deploy the minimal repair. Physical launch and driving acceptance remain pending under project task149.",
+  "workflow_version": "Single root hardware owner; bounded native worker implementation/registration; separate sanitized archive worker. Existing WORKFLOW_REVIEW and TeamHub rules.",
+  "started_at": null,
+  "measurement_cutoff_at": "2026-11-13T07:40:39.343257+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "Preserve original quiet-calibration thresholds/retries and local S5 cancellation.",
+      "Compile and freeze exact target artifact; confirm flash byte comparison and stopped outputs.",
+      "Verify the changed launch sequence on the physical car before claiming the symptom fixed."
+    ],
+    "completed": [
+      "Actual C launch mock passed ASan/UBSan, including phase cancellation, noisy retries, fan timing and STOP reason.",
+      "ADS build accepted with 0 errors and 13 existing warnings; inputs unchanged.",
+      "Frozen 5dafe559 HEX programmed with PASS and 0 different bytes.",
+      "Saved postflash M2 CRCs valid; wheel/fan outputs zero.",
+      "Tuning registry adds only the new exact HEX and same schema; original 9773 retained."
+    ],
+    "remaining": [
+      "Root/Owner wireless physical launch and driving acceptance. No successful new launch or course completion claimed."
+    ]
+  },
+  "metrics": [
+    {
+      "name": "target_build_duration",
+      "value": 9.844000000011874,
+      "unit": "seconds",
+      "basis": "Final official ADS receipt; not whole-stage elapsed time."
+    },
+    {
+      "name": "launch_mock_duration",
+      "value": 6.772225951000053,
+      "unit": "seconds",
+      "basis": "Recorded actual-C ASan/UBSan invocation; not a vehicle test."
+    },
+    {
+      "name": "flash_difference",
+      "value": 0,
+      "unit": "bytes",
+      "basis": "Saved official flash verification log."
+    },
+    {
+      "name": "saved_flash_receipts",
+      "value": 1,
+      "unit": "receipts",
+      "basis": "One successful receipt supplied for this stage; not a claim about unrecorded attempts."
+    },
+    {
+      "name": "flash_tool_duration",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No exact duration available in the bounded saved receipt/log used."
+    },
+    {
+      "name": "metadata_repairs_observed",
+      "value": 1,
+      "unit": "repairs",
+      "basis": "QUIET-LAUNCH.md and FREEZE.json record restoring ADS .settings omitted from old source ZIP, and including it in new source package."
+    },
+    {
+      "name": "whole_stage_elapsed",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No trustworthy stage start timestamp; do not infer from file modification times."
+    },
+    {
+      "name": "whole_stage_rework_count",
+      "value": null,
+      "unit": "reworks",
+      "basis": "Only one packaging repair documented; full coding/retry ledger unavailable."
+    },
+    {
+      "name": "review_preparation_checkpoint",
+      "value": 130.343257,
+      "unit": "seconds",
+      "basis": "Archive worker clock checkpoint to evidence extraction cutoff; excludes earlier review work and subsequent database/upload."
+    },
+    {
+      "name": "archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "In progress at this report cutoff; final archive receipt records its measured checkpoint interval."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not separately timed."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No provider usage for matching parent/child scope."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No billing record."
+    }
+  ],
+  "observations": [
+    "Finding CC-F#218 distinguishes a calibration wait with zero wheel commands from a turn-controller failure; its vibration cause remains a hypothesis.",
+    "Physical launch stays with the root hardware owner; archive worker opens no serial port, flashes nothing and does not dispatch another agent.",
+    "The stage restores missing ADS project metadata instead of changing behavior to work around a build issue.",
+    "Owner narrowed work to the immediate repair; no new track matrix or expanded tuning test suite was run, and old passing results are not relabeled as new acceptance.",
+    "Successful programming, stopped reboot and mocked phase coverage are distinct from physical launch success.",
+    "No matched same-quality baseline exists; net speedup cannot be established."
+  ],
+  "recommendations": [
+    {
+      "id": "QUIET-LAUNCH-PACKAGE-METADATA",
+      "action": "Keep ADS .settings and project descriptors in future frozen source packages; the new quiet package includes them.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next isolated extraction should compile without restoring missing project preferences.",
+      "experience_refs": [
+        "RECT04-READBACK"
+      ],
+      "adoption": "�ĺ�"
+    },
+    {
+      "id": "QUIET-LAUNCH-PHYSICAL-GATE",
+      "action": "Append a new physical launch result to the existing finding instead of rewriting the earlier diagnosis as confirmed.",
+      "owner": "codex",
+      "status": "proposed",
+      "next_check": "Use the next actual S5 launch to confirm quiet calibration completes before fan pre-spin and wheel release; retain failure evidence.",
+      "experience_refs": [
+        "CC-F#218"
+      ],
+      "adoption": "ֱ��"
+    }
+  ],
+  "evidence": [
+    "evidence.json: sanitized hashes and aggregate checks only.",
+    "CRAZY-CIRCUIT task149 remains in_progress; finding218 is unchanged.",
+    "Prior stage fc5d3df remains unchanged; this is a separate build/flash acceptance stage."
+  ],
+  "comparison": null,
+  "limits": [
+    "Physical new launch and driving were not accepted at this cutoff.",
+    "Fan vibration is plausible but was not directly measured in raw calibration samples.",
+    "Gyro filtered output can remain stale during calibration and cannot prove raw stability.",
+    "No measured fan RPM or suction; software output/timing checks only.",
+    "Original noisy-calibration retry policy remains; no threshold was bypassed.",
+    "Volatile live parameters are not persisted by flashing and need fresh readback.",
+    "Stage start, total cost, total model usage and overall rework count are unknown.",
+    "No raw logs/source/HEX/credentials or databases are uploaded."
+  ]
+}
