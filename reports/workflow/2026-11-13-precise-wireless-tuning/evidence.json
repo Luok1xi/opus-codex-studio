@@ -1,0 +1,22 @@
+{
+  "round_id": "2026-11-13-precise-wireless-tuning",
+  "firmware_sha256": "9773c5987f42064f04017858b773627fa69b679dea8921654ad4bc3647d0ddef",
+  "schema_sha256": "e20ed7b500483dfb2ccbeba73916e683c54478e25c64f4139417bd5e43e8c9db",
+  "python_tests": 92,
+  "target": {
+    "errors": 0,
+    "inherited_warnings": 13
+  },
+  "default_trace_matches": 2,
+  "browser_viewports": [
+    1365,
+    390
+  ],
+  "map_data_changed": false,
+  "hardware_operations": 0,
+  "source_uploaded": false,
+  "raw_logs_uploaded": false,
+  "images_uploaded": false,
+  "databases_uploaded": false,
+  "usage": null
+}
