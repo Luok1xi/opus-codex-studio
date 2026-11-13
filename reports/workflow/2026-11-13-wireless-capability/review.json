@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-13-wireless-capability",
+  "task_summary": "Verify exact candidate wireless tuning capability and record owner-Codex tuning ownership.",
+  "workflow_version": "Read-only source audit with one scoped independent check",
+  "started_at": "2026-11-13T05:30:57.493Z",
+  "measurement_cutoff_at": "2026-11-13T05:36:40.849Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Trace both wireless setters to actual control use in the specified candidate; distinguish source capability from hardware verification."
+    ],
+    "completed": [
+      "Audited legacy binary packet and ASCII commands, gain-bin semantics, ownership lock and restart behavior.",
+      "Recorded that the observer is only partly tunable and is not a complete runtime tuning release."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "native_reviewers",
+      "value": 1,
+      "unit": "agents",
+      "basis": "One native reviewer returned source evidence; no external collaborator invoked."
+    },
+    {
+      "name": "hardware_operations",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No serial open, setting, flash or start."
+    },
+    {
+      "name": "lookup_command_errors",
+      "value": 3,
+      "unit": "commands",
+      "basis": "One unsupported singular record table, one nonexistent task subcommand, one search with nonexistent paths; corrected by actual help/path reads."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "Not independently measured."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "Not independently measured."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not independently measured."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not independently measured."
+    },
+    {
+      "name": "total_rework",
+      "value": null,
+      "unit": "events",
+      "basis": "Not independently measured."
+    }
+  ],
+  "observations": [
+    "Telemetry receive support does not establish parameter write/readback support.",
+    "Independent check found selected-speed gain writes differ from actual turning-speed gain reads and stale ValuePack cache semantics.",
+    "No matched quality baseline; no workflow speedup claimed."
+  ],
+  "recommendations": [
+    {
+      "id": "WIRELESS-CAPABILITY-BEFORE-TUNE",
+      "action": "Freeze a per-firmware capability and readback contract before a supervised tuning session.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next candidate must exercise mode transitions and complete configuration readback before hardware acceptance.",
+      "experience_refs": [
+        "WF-20261110-TUNE-RACE-SOURCE-MATCH"
+      ]
+    }
+  ],
+  "evidence": [
+    "evidence.json is sanitized; detailed source references remain in the local project handoff."
+  ],
+  "comparison": null,
+  "limits": [
+    "Read-only capability audit; no new firmware implementation or hardware verification.",
+    "Start timestamp begins at the initial capability-read checkpoint, not the exact user message.",
+    "Remote archival occurs after the measurement cutoff."
+  ]
+}
