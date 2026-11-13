@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-13-qll-nov1-no-node",
+  "task_summary": "将已有视觉移植候选改为11月1日启动/驱动基础、2ms速度环、视觉触发顺序选路；交付可编译开发检查点，稳定全圈目标仍未完成。",
+  "workflow_version": "WORKFLOW_REVIEW + project database + native scoped agents",
+  "started_at": "2026-11-13T02:00:03.914Z",
+  "measurement_cutoff_at": "2026-11-13T03:38:42.162523+00:00",
+  "quality": {
+    "status": "partial",
+    "acceptance": [
+      "保留原版启动/驱动约定和2ms轮速环；不用世界坐标/全程里程节点触发。",
+      "同一视觉/路线/控制源编入host和TC264；不触碰串口/烧录。",
+      "精确校赛250目标，8/8全圈、事件顺序完整、最大偏差约50mm并重复验证。"
+    ],
+    "completed": [
+      "原版/候选14项启动用例通过；无全局节点门槛审计完成。",
+      "原生80x60及元素移植、阈值/残留/补线拓扑/路口交接缺陷已修复并回归。",
+      "最终ADS编译0错误/23警告；与host的50项共同编译输入一致，硬件操作0。",
+      "完成当前八工况与外部资格审查，保存全部失败并明确禁止标记为稳定版。"
+    ],
+    "remaining": [
+      "当前0/8全圈通过；两种植物模型的失败位置不同，仍需定位。",
+      "全程250未实现；普通及特殊弯道仍有限速。",
+      "重复稳定性、2ms板端最坏执行时间、动态栈水位、完整语义环岛/符号分类尚未验证。",
+      "清晰core/platform/app目录抽取尚未完成；旧偏差控制保持100ms仍存在。"
+    ]
+  },
+  "metrics": [
+    {
+      "name": "native_child_contributors",
+      "value": 3,
+      "unit": "agents",
+      "basis": "Native qll host/build reviewer, OUC80 implementer and parameter/loop analyst; actual replies received."
+    },
+    {
+      "name": "external_opus_or_dsh_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No external studio workers invoked during this resumed implementation segment; database handoff is not acceptance."
+    },
+    {
+      "name": "final_matrix_passes",
+      "value": 0,
+      "unit": "of 8",
+      "basis": "Current frozen build, both plants and four conditions; unsuccessful full-course trials retained."
+    },
+    {
+      "name": "matrix_wall_seconds",
+      "value": 11.867147781,
+      "unit": "seconds",
+      "basis": "Measured whole runner interval, not sum of parallel job durations."
+    },
+    {
+      "name": "host_build_wall_seconds",
+      "value": 18.446633675999976,
+      "unit": "seconds",
+      "basis": "Current immutable host build receipt."
+    },
+    {
+      "name": "target_final_build_seconds",
+      "value": 7.578000000008615,
+      "unit": "seconds",
+      "basis": "Final successful ADS invocation; prior failed builds excluded from this metric."
+    },
+    {
+      "name": "known_target_link_failure_events",
+      "value": 2,
+      "unit": "events",
+      "basis": "Saved initial CPU1 RAM overflow and final 275-byte overflow; limited to these identified events, not all tool failures."
+    },
+    {
+      "name": "startup_cases_passed",
+      "value": 14,
+      "unit": "cases",
+      "basis": "Seven original/candidate paired startup scenarios using actual source; not on-board ISR validation."
+    },
+    {
+      "name": "total_tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No trustworthy complete cross-compaction provider usage."
+    },
+    {
+      "name": "total_cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No provider billing receipt."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Not independently timed."
+    },
+    {
+      "name": "independent_review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Interleaved with implementation; not separately timed."
+    },
+    {
+      "name": "total_rework_count",
+      "value": null,
+      "unit": "events",
+      "basis": "No exhaustive unified event inventory."
+    },
+    {
+      "name": "whole_logical_task_wall",
+      "value": null,
+      "unit": "seconds",
+      "basis": "Prior day/pauses not covered by this resumed interval."
+    },
+    {
+      "name": "hardware_operations",
+      "value": 0,
+      "unit": "operations",
+      "basis": "This segment did not open serial ports, flash or start actuators."
+    }
+  ],
+  "observations": [
+    "用户最新要求改变了底层和路线方案，旧距离候选被明确标记替代；不把这个范围改变算作算法修复收益。",
+    "并行成员负责视觉、目标适配及独立分析，协调者集中编译/矩阵/资格审查；没有声称Opus已接受。",
+    "源码未冻结导致的一次快照漂移被构建门禁拒绝，该结果未计入验收。",
+    "实际发现并修复初始化遗漏、符号重复、无效帧残留和目标RAM溢出；不能仅凭局部用例通过推断全圈通过。",
+    "补线前原始拓扑和补线后追线拓扑分层保存，避免用平滑/修复产生的证据确认元素。",
+    "工具结果读取曾过大；后续只提取摘要字段。没有同质量配对基线，不宣称多人并行提效。"
+  ],
+  "recommendations": [
+    {
+      "id": "CRAZY-QLL12-FREEZE",
+      "action": "实现阶段结束后固定共同源快照，再并行host/target构建；漂移即拒绝关联旧结果。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "下一次行为改动后重新生成快照和完整矩阵，核对同源哈希。",
+      "experience_refs": [
+        "CC-F217"
+      ]
+    },
+    {
+      "id": "CRAZY-QLL12-RAW-REPAIR",
+      "action": "视觉接口明确原始拓扑与修复后追线的证据来源，保留断缝/宽白块/空帧反例。",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "新增元素时用相同保存图像确认不会因补线制造叉路或抹掉真实断口。"
+    }
+  ],
+  "evidence": [
+    "evidence.json: aggregate build, startup and full-course results; full project evidence remains local.",
+    "Private project handoff task143 / decision64; status remains in_progress."
+  ],
+  "comparison": null,
+  "limits": [
+    "记录开始时间仅覆盖本次恢复后的测量区间，包含实现、协调及部分复盘；不是整个跨日逻辑任务耗时。",
+    "归档开始/截止另存archive-receipt；本报告截止以后的上传和回读不包含在当前墙钟。",
+    "没有完整usage、费用、等待或复核拆分计时，均记null；不把工具输出tokens当消耗。",
+    "静态RAM余量不是栈水位或2ms硬实时证明；完整仿真失败，不允许以编译通过代替稳定验收。",
+    "未读车、未烧录；昨晚125立即转向的唯一现场原因尚未确证。"
+  ]
+}
