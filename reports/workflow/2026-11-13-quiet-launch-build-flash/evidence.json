@@ -1,0 +1,79 @@
+{
+  "schema": "quiet-launch-stage-evidence/1",
+  "scope": "Build, deployment and stopped reboot only; new driving behavior unverified.",
+  "firmware_sha256": "5dafe559eca020ee13ebb4d275b5f32a8fc72e9521fbc4ae15148dab1ffe9a55",
+  "base_firmware_sha256": "9773c5987f42064f04017858b773627fa69b679dea8921654ad4bc3647d0ddef",
+  "target_build": {
+    "accepted": true,
+    "errors": 0,
+    "warnings": 13,
+    "seconds": 9.844000000011874,
+    "inputs_unchanged": true
+  },
+  "launch_mock": {
+    "passed": true,
+    "asan_ubsan": true,
+    "seconds": 6.772225951000053
+  },
+  "flash": {
+    "result": "PASS",
+    "different_bytes": 0,
+    "receipt_at": "2026-11-13T15:32:42.3745231+08:00",
+    "duration_seconds": null
+  },
+  "postflash": {
+    "crc_valid_m2": 30,
+    "status_rows": 12,
+    "device_t_min": 6840,
+    "device_t_max": 9740,
+    "all_wheel_and_fan_outputs_zero": true,
+    "vbat_mv_min": 12472,
+    "vbat_mv_max": 12490
+  },
+  "source_archive": {
+    "sha256": "0ad99d85ac807741ac9b31679aedc45cf2d6cf5cce5538c521fcc95424f55760",
+    "ads_project_metadata_included": true
+  },
+  "reference": "CRAZY-CIRCUIT finding 218 remains historical; append deployment handoff only.",
+  "artifact_index": [
+    {
+      "reference": "quiet-release/FREEZE.json",
+      "sha256": "8d370c1167a26a851a7e93c8e9c076a2ae8c02d6829968c038db9140a1770dd6",
+      "uploaded": false
+    },
+    {
+      "reference": "quiet-candidate/QUIET-LAUNCH.md",
+      "sha256": "a4bd6064bd7bcf7d753d86106b4faffec7b9b89734f22df7fcbb1cb350eb1b5d",
+      "uploaded": false
+    },
+    {
+      "reference": "quiet-candidate/tests-launch/result.json",
+      "sha256": "b1c01e0cc78cbe8e1b9a6965e6d471e3ffd6ca6ee34c61c033f100d7393008a9",
+      "uploaded": false
+    },
+    {
+      "reference": "quiet-candidate/target-build/target-result.json",
+      "sha256": "eba594fc77a532d9710b6cc103f987d3d203b2d75f134435f8de355dd00793fe",
+      "uploaded": false
+    },
+    {
+      "reference": "quiet-flash/flash-receipt.json",
+      "sha256": "19dd4c94335f15f6ed717ed6717252e0095b2fb69746c2c197c748dad2663102",
+      "uploaded": false
+    },
+    {
+      "reference": "quiet-flash/flash.log",
+      "sha256": "233980b8579a728cf8f7b98ada0dc5ba27dd9529a03123d3db8ac58935c86c56",
+      "uploaded": false
+    },
+    {
+      "reference": "quiet-flash/postflash.txt",
+      "sha256": "dbacd72f5ba021a556b7fe4862ae417609da86a6982ca32e2830e9e161791a8e",
+      "uploaded": false
+    }
+  ],
+  "privacy": "Only aggregate metrics and hashes are uploaded; raw logs, firmware/source, private paths, database and individual chat content remain local.",
+  "review_checkpoint_start_utc": "2026-11-13T07:38:29+00:00",
+  "review_evidence_cutoff_utc": "2026-11-13T07:40:39.343257+00:00",
+  "reviewer_hardware_operations": 0
+}
