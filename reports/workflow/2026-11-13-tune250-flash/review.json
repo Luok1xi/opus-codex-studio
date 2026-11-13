@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-13-tune250-flash",
+  "task_summary": "Flash the owner-authorized frozen tuning release and verify exact programming plus stopped boot state.",
+  "workflow_version": "Single hardware owner; one bounded native source audit; existing official flashing entry",
+  "started_at": "2026-11-13T06:30:57.502Z",
+  "measurement_cutoff_at": "2026-11-13T06:43:41Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": ["Exact frozen HEX programmed and byte-verified.", "Fresh powered parked preflight and zero-output postflash telemetry.", "Read-only complete configuration response validated."],
+    "completed": ["One programming attempt passed; zero differing bytes.", "50 postflash M2 records passed CRC and all wheel/fan outputs were zero.", "All 463 configuration keys returned with valid CRC and matching profile."],
+    "remaining": []
+  },
+  "metrics": [
+    {"name":"flash_attempts","value":1,"unit":"attempts","basis":"One official programming receipt."},
+    {"name":"flash_tool_duration","value":1.982,"unit":"seconds","basis":"Official flasher reported 1982 ms; not total round duration."},
+    {"name":"verification_differences","value":0,"unit":"bytes","basis":"Official verification log."},
+    {"name":"native_reviewers","value":1,"unit":"agents","basis":"One source-only boot/UART audit; no second hardware operator."},
+    {"name":"parameter_writes","value":0,"unit":"writes","basis":"One read-only Q command only."},
+    {"name":"remote_launches","value":0,"unit":"commands","basis":"No remote start command sent."},
+    {"name":"tokens","value":null,"unit":"tokens","basis":"No comparable whole-round provider usage."},
+    {"name":"cost","value":null,"unit":"currency","basis":"Unavailable."},
+    {"name":"review_overhead","value":null,"unit":"seconds","basis":"No isolated measurement."},
+    {"name":"archive_overhead","value":null,"unit":"seconds","basis":"Archive occurs after this measurement cutoff."},
+    {"name":"coordination_wait","value":null,"unit":"seconds","basis":"No isolated measurement."}
+  ],
+  "observations": [
+    "Two Python environments lacked the serial dependency; a bounded .NET read-only query reused the existing transport pattern.",
+    "CIM enumeration alone was misleading; .NET port enumeration and present PnP confirmed the downloader.",
+    "A broad source-file search was unnecessary and returned access noise; use the documented runtime directly next round.",
+    "Current user authorization and fresh stopped/power telemetry supported flashing without another redundant permission question.",
+    "No matched baseline exists; no speedup claim."
+  ],
+  "recommendations": [
+    {"id":"FLASH-EXACT-IDENTITY-BOOT","action":"Keep exact HEX hash, flash receipt and fresh stopped-output evidence separate from simulation claims.","owner":"codex","status":"adopted","next_check":"Apply again at the next authorized flash.","experience_refs":["WS-D#669","R50"]},
+    {"id":"SERIAL-RUNTIME-PREFLIGHT","action":"Document and use a verified installed serial runtime instead of trying arbitrary Python environments.","owner":"codex","status":"proposed","next_check":"Next wireless session must import serial successfully before opening a port."}
+  ],
+  "evidence": ["Exact image and raw hardware evidence remain local in the project flash record; only aggregates are archived.","Project task148 records hardware ownership."],
+  "comparison": null,
+  "limits": ["Only flashing, stopped boot and wired configuration query accepted in this round; driving and wireless tests are subsequent work.","Owner confirmed connection and direct flashing, but physical isolation was not freshly reasserted; passive stopped outputs and power were checked.","Firmware retains its existing launch conditions; successful programming does not prove race completion.","Wall-clock interval starts at the flash-discovery checkpoint and includes environment/tool overhead."]
+}
