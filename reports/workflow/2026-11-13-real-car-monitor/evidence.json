@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-13-real-car-monitor",
+  "tests": 58,
+  "browser_viewports": [
+    1365,
+    390
+  ],
+  "photo_export_verified": true,
+  "firmware": {
+    "hex_sha256": "4342d959c9368a58e2030e5890650c9a207f766e2428b7efc871867946027a7b",
+    "errors": 0,
+    "inherited_warnings": 13,
+    "only_changed_file": "vision_link.c",
+    "control_tokens_unchanged": true,
+    "hardware_verified": false
+  },
+  "known_real_timebase_ms": 20,
+  "real_capture_lengths": [
+    144,
+    151,
+    186
+  ],
+  "raw_logs_uploaded": false,
+  "images_uploaded": false,
+  "source_uploaded": false,
+  "usage": null,
+  "workflow_comparison": null
+}
