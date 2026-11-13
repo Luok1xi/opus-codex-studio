@@ -1,0 +1,10 @@
+{
+  "round_id": "2026-11-13-wireless-capability",
+  "firmware_sha256": "4342d959c9368a58e2030e5890650c9a207f766e2428b7efc871867946027a7b",
+  "source_audited": true,
+  "wireless_tuning": "partial",
+  "complete_configuration_readback": false,
+  "hardware_verified": false,
+  "raw_data_uploaded": false,
+  "source_uploaded": false
+}
