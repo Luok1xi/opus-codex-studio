@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-13-real-car-monitor",
+  "task_summary": "Build a local real-car evidence monitor: run segmentation, loop plots, stopped images, position-photo pairing and observation-only firmware.",
+  "workflow_version": "Project database with scoped native implementers and independent review",
+  "started_at": "2026-11-13T04:49:46.021Z",
+  "measurement_cutoff_at": "2026-11-13T05:26:19.326768+00:00",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Offline real-log replay with honest time and run association.",
+      "Stop-only read capture, immutable provenance and local waveform/photo review.",
+      "Observation firmware compiles; existing control source remains unchanged."
+    ],
+    "completed": [
+      "58 unit tests passed; two real-log reports generated; desktop/mobile rendering and photo export checked.",
+      "Actual UART-export timing and partial image framing audited against saved evidence.",
+      "Firmware compiled with 0 errors and 13 inherited warnings; exact-C CRC/FIFO mocks passed.",
+      "Independent review corrected mixed image timestamp/frame provenance and several reader/assembly defects."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "native_child_contributors",
+      "value": 3,
+      "unit": "agents",
+      "basis": "Three native contributors returned scoped evidence; no impersonated external review."
+    },
+    {
+      "name": "external_studio_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "DSH file handoff was read; no external Opus/DSH invocation."
+    },
+    {
+      "name": "unit_tests",
+      "value": 58,
+      "unit": "tests",
+      "basis": "Final unittest receipt."
+    },
+    {
+      "name": "target_build_seconds",
+      "value": 8.39100000000326,
+      "unit": "seconds",
+      "basis": "Final coherent observer target build receipt."
+    },
+    {
+      "name": "hardware_operations",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No live serial open, firmware flash, gain write or remote launch."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No reliable complete measurement available."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No reliable complete measurement available."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No reliable complete measurement available."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No reliable complete measurement available."
+    },
+    {
+      "name": "archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No reliable complete measurement available."
+    },
+    {
+      "name": "total_rework",
+      "value": null,
+      "unit": "events",
+      "basis": "No reliable complete measurement available."
+    }
+  ],
+  "observations": [
+    "Reused existing chart/store code instead of a second website or server.",
+    "Real inputs exposed CRCRLF splitting and EOF image terminator differences absent from initial synthetic fixtures; these were fixed with regression tests.",
+    "Independent review found an observer camera timestamp/frame mismatch; the candidate was rebuilt and old hash removed from active automatic-export profiles.",
+    "Report assembly was hardened for path confinement, snapshot hashes, stop byte bounds and invalid export associations.",
+    "Browser startup first failed from missing cached executable and local restrictions; installed Edge completed final validation.",
+    "No matched quality/time workflow baseline exists; no efficiency speedup claimed."
+  ],
+  "recommendations": [
+    {
+      "id": "REALMON-C-FIXTURE",
+      "action": "Keep exact C-generated frames and real truncated/mixed-newline logs in local protocol regression tests.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Next telemetry change must pass the parser contract before field use.",
+      "experience_refs": [
+        "WF-TUNE-HEADER-CONTRACT-20261028"
+      ]
+    },
+    {
+      "id": "REALMON-OBSERVED-ID",
+      "action": "Separate observed controller route position, human photo annotation, retained export and live device identity in every report.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "First supervised capture must preserve one complete run and photo without cross-run association.",
+      "experience_refs": [
+        "CRAZY-STOPPED-LOG-BEFORE-RESET"
+      ]
+    }
+  ],
+  "evidence": [
+    "evidence.json contains sanitized aggregates only.",
+    "Full source, raw logs and photographs remain local; project task145 contains the handoff."
+  ],
+  "comparison": null,
+  "limits": [
+    "This round delivers offline tooling and an unflashed observer candidate; no real-car lap or wireless throughput acceptance.",
+    "Physical corner/element position still needs external confirmation; route counters are not ground truth.",
+    "50Hz full-run telemetry cannot replace 2ms short capture for high-frequency speed-loop analysis.",
+    "Stop images are requested after stopping, not synchronized fault-trigger frames.",
+    "Two nominal plant trajectory hashes match for the earlier observer revision; final camera-provenance-only fix was rebuilt/mock-tested, not rerun as a full matrix.",
+    "Measurement cutoff precedes remote archive verification; unknown usage and overhead remain null."
+  ]
+}
