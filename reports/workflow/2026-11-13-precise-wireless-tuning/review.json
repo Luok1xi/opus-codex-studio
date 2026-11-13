@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "round_id": "2026-11-13-precise-wireless-tuning",
+  "task_summary": "Deliver a stopped-only precise wireless tuning candidate with immutable configuration/run/owner-evaluation records; correct the review map display.",
+  "workflow_version": "Single coordinator; scoped firmware, host integration and independent native review",
+  "started_at": "2026-11-13T05:39:10.006Z",
+  "measurement_cutoff_at": "2026-11-13T06:26:50.899Z",
+  "quality": {
+    "status": "passed",
+    "acceptance": [
+      "Single stopped parameter write, complete checked readback and exact historical restore.",
+      "Bind actual configuration revision to runs and preserve owner observations without altering old trials.",
+      "Compile target and preserve default simulation behavior; verify local report UI."
+    ],
+    "completed": [
+      "92 Python tests pass; actual C-generated configuration and M2 bytes parse correctly.",
+      "Target build has 0 errors and 13 inherited warnings; two default plant traces exactly match the frozen baseline.",
+      "Immutable configuration archives, partial-write handling, reboot invalidation and per-run binding implemented.",
+      "Desktop/mobile waveform, owner-note export and comparison UI checked in installed browser.",
+      "Complete optical map displayed; missing upper-left link was presentation-only, map hashes remain unchanged."
+    ],
+    "remaining": []
+  },
+  "metrics": [
+    {
+      "name": "native_contributors",
+      "value": 3,
+      "unit": "agents",
+      "basis": "Two scoped implementers and one independent reviewer returned evidence."
+    },
+    {
+      "name": "external_studio_calls",
+      "value": 0,
+      "unit": "calls",
+      "basis": "No external DSH/Opus worker invoked."
+    },
+    {
+      "name": "python_tests",
+      "value": 92,
+      "unit": "tests",
+      "basis": "Final two-suite receipt: 34 tuning/ledger plus 58 existing monitor."
+    },
+    {
+      "name": "default_trace_matches",
+      "value": 2,
+      "unit": "plants",
+      "basis": "Final candidate C and physics-plant CSV hashes equal frozen baseline."
+    },
+    {
+      "name": "hardware_operations",
+      "value": 0,
+      "unit": "operations",
+      "basis": "No real serial, flash, command or launch."
+    },
+    {
+      "name": "approval_timeout",
+      "value": 1,
+      "unit": "events",
+      "basis": "Final local test approval timed out; one allowed retry succeeded."
+    },
+    {
+      "name": "initial_target_build_failures",
+      "value": 1,
+      "unit": "builds",
+      "basis": "Snapshot RAM placement failed target linker, retained evidence then assigned CPU0 RAM."
+    },
+    {
+      "name": "tokens",
+      "value": null,
+      "unit": "tokens",
+      "basis": "No reliable complete measurement."
+    },
+    {
+      "name": "cost",
+      "value": null,
+      "unit": "currency",
+      "basis": "No reliable complete measurement."
+    },
+    {
+      "name": "coordination_wait",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No reliable complete measurement."
+    },
+    {
+      "name": "review_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No reliable complete measurement."
+    },
+    {
+      "name": "archive_overhead",
+      "value": null,
+      "unit": "seconds",
+      "basis": "No reliable complete measurement."
+    },
+    {
+      "name": "total_rework",
+      "value": null,
+      "unit": "events",
+      "basis": "No reliable complete measurement."
+    }
+  ],
+  "observations": [
+    "Fine user-facing steps follow actual control and electrical resolution, and float restoration preserves raw bits.",
+    "Independent review found an old write path bypassing revision and an M2 arrival ordering bug that altered the previous completed run; both fixed with bounded tests.",
+    "Owner noticed a missing map link: the report had drawn only route traversal; full optical geometry now displays separately from planned route.",
+    "Artifact registration waited for current source/build hashes instead of reusing an earlier successful HEX.",
+    "Initial temporary test directory access failed; tests moved inside the workspace. Packaging assumed a generic zip filename, then used the actual frozen manifest name.",
+    "No matched quality/time baseline exists, so no general speedup claimed."
+  ],
+  "recommendations": [
+    {
+      "id": "TUNE-CONFIG-RUN-REVISION",
+      "action": "Keep full configuration snapshots plus runtime revision and freeze completed-run bindings against later M2 arrivals.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "First supervised hardware trial must verify reboot, readback and next-run separation.",
+      "experience_refs": [
+        "WF-20261110-TUNE-RACE-SOURCE-MATCH"
+      ]
+    },
+    {
+      "id": "FULL-MAP-SEPARATE-ROUTE",
+      "action": "Render the full optical course separately from the planned route; test an untraversed branch.",
+      "owner": "codex",
+      "status": "adopted",
+      "next_check": "Any subsequent course update must retain the known full-map link and geometry hash."
+    }
+  ],
+  "evidence": [
+    "Sanitized evidence.json contains aggregates; source/logs/photos remain local.",
+    "Local project task147 and handoff hold complete implementation evidence. Earlier capability audit is in reports/workflow/2026-11-13-wireless-capability/."
+  ],
+  "comparison": null,
+  "limits": [
+    "Candidate 9773c598 is frozen but unflashed; no real wireless throughput, control-period or changed-parameter race validation.",
+    "Only two default nominal plants rerun; not a new full disturbance matrix.",
+    "Optical symbols remain inherited references and are not guaranteed identical to newly placed field components.",
+    "Legacy writing clients are disabled in this candidate; only the checked tuning client writes parameters.",
+    "Measurement starts at implementation read checkpoint and ends before archival."
+  ]
+}
